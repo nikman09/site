@@ -14,7 +14,7 @@
 			<li  class="<?= ($submenu == "pegawai") ? "active root-level" : ""; ?> ">
 				<a href="<?php echo base_url() ?>kepegawaian/admin/pegawai">
 					<i class="fa fa-users"></i>
-					<span class="title">Data Pegawai </span>
+					<span class="title">Data Pegawai</span>
 				</a>
 			</li>
 		</ul>

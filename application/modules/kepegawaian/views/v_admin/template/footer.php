@@ -2,7 +2,7 @@
 
 &copy;
 <?php echo date('Y') ?>
-<strong> Arsip</strong> Balai Jasa Kontruksi Wilayah V
+<strong> Aplikasi kepegawaian</strong> Dinas Perindustrian Provinsi Kalimantan Selatan
 
 
 	

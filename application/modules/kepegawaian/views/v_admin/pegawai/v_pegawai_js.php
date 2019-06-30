@@ -58,31 +58,22 @@ jQuery( document ).ready( function( $ ) {
             },
 
             rules: {
-                email: {
-                    email: true
-                },
-                nohp: {
-                    required: false
-                },  
-                tanggal_lahir: {
+                nama: {
                     required: true
-                }, 
-                alamat: {
-                    required: false
-                }, 
+                },
+                nip: {
+                    required: true
+                },  
+                
                 jk: {
                     required: true
                 },
-                cabang: {
-                    required: true
+                password: {
+                    required: true,
+                    minlength : 6
                 },
-                jabatan: {
-                    required: true
-                },
-                nama: {
-					required: true
-				},
                 
+               
             },
             messages: {
 			

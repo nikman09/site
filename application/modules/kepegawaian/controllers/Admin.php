@@ -138,6 +138,14 @@ class Admin extends CI_Controller {
 
     }
 
+    function gantipassword()
+    {
+        $id_pegawai = $this->input->post("id_pegawai");
+        $variabel['csrf'] = csrf();
+        $variabel['data'] = $this->m_pegawai->lihatdatasatu($id_pegawai)->row_array();
+        $this->load->view("v_admin/pegawai/v_password",$variabel);
+    }
+
 
 
 }

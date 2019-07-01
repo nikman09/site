@@ -13,7 +13,7 @@ class M_pegawai extends CI_Model
         return $this->db->get('tb_pegawai');
     }
    
-    function lihatdatasatu($id_pegawai)
+      function lihatdatasatu($id_pegawai)
     {
         $this->db->select("tb_pegawai.*,tb_seksi.seksi");
         $this->db->join("tb_seksi","tb_seksi.id_seksi=tb_pegawai.id_seksi","left");

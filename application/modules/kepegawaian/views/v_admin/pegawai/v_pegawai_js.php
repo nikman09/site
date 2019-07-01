@@ -1,5 +1,11 @@
 <script>
 jQuery( document ).ready( function( $ ) {
+    var csfrData = {};
+    csfrData['<?php echo $this->security->get_csrf_token_name(); ?>'] = '<?php echo $this->security->get_csrf_hash(); ?>';
+    $.ajaxSetup({
+        data: csfrData
+    });
+
     var $table1 = jQuery( '#table-1' );            
     // Initialize DataTable
     $table1.DataTable( {
@@ -36,6 +42,27 @@ jQuery( document ).ready( function( $ ) {
         }
         });
     });
+
+    $('.kunci').click(function (e) {
+        
+		var v_id_pegawai = this.id;
+		var v_url = "<?php echo base_url() ?>kepegawaian/admin/gantipassword";
+		$.ajax({
+			type: 'POST',
+			url: v_url,
+			data: {
+				id_pegawai: v_id_pegawai
+			},
+			beforeSend: function () {
+            //	$("#loading").show();
+             
+			},
+			success: function (response) {
+			//	$("#loading").hide();
+				$('#modal-lihat').html(response)
+			}
+		});
+	});
 
           $('#form').validate({ // initialize plugin
             highlight: function (label) {

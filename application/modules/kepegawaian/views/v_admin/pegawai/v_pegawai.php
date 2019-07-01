@@ -36,7 +36,7 @@
 							<tr>
 								<td>
 								<a href='".base_url('kepegawaian/admin/pegawailihat?id='.$row['id_pegawai'].'')."' class='btn btn-default btn-xs ' title='Lihat'><i class='fa fa-eye'></i></a>
-								<a href='".base_url('kepegawaian/admin/pegawaiedit?id='.$row['id_pegawai'].'')."' class='btn btn-info btn-xs' title='Edit'><i class='fa fa-edit'></i></a>
+								<a href='#' class='btn btn-info btn-xs kunci' title='Password' data-toggle='modal' id='".$row['id_pegawai']."' data-target='#myModal'><i class='fa fa-key' id='".$row['id_pegawai']."'  ></i></a>
 								<a href='#' class='btn btn-danger btn-xs hapus' title='Hapus' id='".$row['id_pegawai']."'><i class='fa fa-trash-o'></i></a>
 								</td>
 								<td>".$row['nama']."</td>
@@ -52,3 +52,12 @@
 		</tbody>
 	</table>
 </div>
+
+<div class="modal fade" id="myModal">
+		<div class="modal-dialog">
+			<div class="modal-content"  id="modal-lihat">
+				
+			
+			</div>
+		</div>
+	</div>

@@ -273,19 +273,7 @@
 					</div>
 				</div>
 
-				<div class="form-group">
-					<label class="col-lg-4 control-label">Unit Kerja</label>
-					<div class="col-lg-8">
-					<select class="form-control" name="id_seksi">
-					<option value='' disabled>.:Pilih Unit Kerja:.</option>
-						<?php
-							foreach($seksi->result_array() as $row){
-								echo "<option value='".$row['id_seksi']."' ".($data['id_seksi']==$row['id_seksi']?'selected':'').">".$row['seksi']."</option>";
-							}
-						?>
-					</select>
-					</div>
-				</div>
+			
 				<div class="form-group">
 						<label class="col-sm-4 control-label">Foto</label>
 						<div class="col-sm-8">

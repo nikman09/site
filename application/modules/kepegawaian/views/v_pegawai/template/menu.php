@@ -19,7 +19,7 @@
 					</a>
 				</li>
 			
-				<li class="<?= ($submenu == "ruangan" || $submenu == "ruanganedit"  || $submenu == "ruangantambah" || $submenu == "lemari" || $submenu == "lemaritambah"  || $submenu == "lemariedit"  || $submenu == "rak" || $submenu == "raktambah"  || $submenu == "rakedit" || $submenu == "tempatarsip" || $submenu == "tempatarsiptambah"  || $submenu == "tempatarsipedit") ? "opened active root-level" : ""; ?> has-sub ">
+				<li class="<?= ($submenu == "cpns" || $submenu == "cpnsedit" || $submenu == "pns" || $submenu == "pnsedit"  ) ? "opened active root-level" : ""; ?> has-sub ">
 					<a href="">
 						<i class="fa fa-list"></i>
 						<span class="title">Dokumen</span>
@@ -30,8 +30,8 @@
 								<span class="title">CPNS</span>
 							</a>
 						</li>
-						<li  class="<?= ($submenu == "lemari" || $submenu == "lemaritambah"  || $submenu == "lemariedit" || $submenu == "rak" || $submenu == "raktambah"  || $submenu == "rakedit") ? " active" : ""; ?>">
-							<a href="<?php echo base_url() ?>Arsip/lemari">
+						<li  class="<?= ($submenu == "pns" || $submenu == "pnsedit") ? " active" : ""; ?>">
+							<a href="<?php echo base_url() ?>kepegawaian/pns">
 								<span class="title">PNS</span>
 							</a>
 						</li>

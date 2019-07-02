@@ -39,17 +39,39 @@ jQuery( document ).ready( function( $ ) {
 
             rules: {
                
-                email: {
-                    email: true
+                skpns: {
+                    required: true
                 },
-            
+                tglskpns: {
+                    required: true
+                },
+                tmtpns: {
+                    required: true
+                },
+                golongan: {
+                    required: true
+                },
+                pejabatpengesahan: {
+                    required: true
+                }
                 
             },
             messages: {
-                email: {
-                    email: "Format Email Salah"
+                skpns: {
+                    required: "Nomor SK PNS harus diisi"
                 },
-              
+                tglskpns: {
+                    required: "Tanggal SK PNS harus diisi"
+                },
+                tmtpns: {
+                    required: "TMT harus diisi"
+                },
+                golongan: {
+                    required: "Golongan Awal harus diisi"
+                },
+                pejabatpengesahan: {
+                    required: "Pejabat Pengesahan  harus diisi"
+                },
             }
         });
 </script>

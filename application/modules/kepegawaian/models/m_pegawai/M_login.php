@@ -11,7 +11,6 @@ class M_login extends CI_Model
     {
         $this->db->where("nip",$nip);
         $this->db->where("password",$password);
-        $this->db->join("tb_seksi","tb_pegawai.id_seksi=tb_seksi.id_seksi","left");
         return $this->db->get('tb_pegawai');
     }
 }

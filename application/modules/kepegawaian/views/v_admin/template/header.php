@@ -125,7 +125,7 @@
 								</a>
 							</li>
 							<li>
-								<a href="<?php echo base_url() ?>kepegawaian/login/logout">
+								<a href="<?php echo base_url() ?>kepegawaian/login/logoutadministrator">
 									<i class="entypo-logout"></i>
 									Log Out
 								</a>
@@ -144,7 +144,7 @@
 					<!-- Language Selector -->
 					<li class="sep"></li>
 					<li>
-						<a href="<?php echo base_url() ?>kepegawaian/login/logout">
+						<a href="<?php echo base_url() ?>kepegawaian/login/logoutadministrator">
 							Log Out <i class="entypo-logout right"></i>
 						</a>
 					</li>

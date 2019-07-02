@@ -32,7 +32,7 @@ jQuery( document ).ready( function( $ ) {
                 text: 'Hapus',
                 btnClass: 'btn-primary',
                 action: function(){
-                    window.location.assign("<?php echo base_url() ?>arsip/pegawaihapus?id="+v_id);
+                    window.location.assign("<?php echo base_url() ?>kepegawaian/admin/pegawaihapus?id="+v_id);
                 }
             },
             batal: function () {
@@ -60,6 +60,51 @@ jQuery( document ).ready( function( $ ) {
 			success: function (response) {
 			//	$("#loading").hide();
 				$('#modal-lihat').html(response)
+                $('#form').validate({ // initialize plugin
+                    highlight: function (label) {
+                        $(label).closest('.form-group').removeClass('has-success').addClass('has-error');
+                        //$('.error').css({'font-size':'9px','margin-bottom':'0px'});
+                        $('#status-error').css({'font-size':'9px'});
+                    },
+                    success: function (label) {
+                        $(label).closest('.form-group').removeClass('has-error');
+                        label.remove();
+                    },
+                    errorPlacement: function (error, element) {
+                        var placement = element.closest('.input-group');
+                        if (!placement.get(0)) {
+                            placement = element;
+                        }
+                        if (error.text() !== '') {
+                            placement.after(error);
+                        }
+                    },
+
+                    rules: {
+                        password: {
+                            required: true,
+                            minlength   : 6
+                        },
+                        kpassword: {
+                            required: true,
+                            equalTo : password
+                        }
+                        
+                    
+                    },
+                    messages: {
+                        password: {
+                            required    : "Password tidak boleh kosong",
+                            minlength   : "Password minimal 6 karakter"
+                        },
+                        kpassword: {
+                            required: "Konfirmasi Password tidak boleh kosong",
+                            equalTo : "Konfirmasi Password harus sama dengan Password"
+                        }
+                        
+                    }
+                });
+                
 			}
 		});
 	});

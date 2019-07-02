@@ -13,7 +13,7 @@
 
 <h3>List Pegawai</h3>
 <div class="table-responsive">
-	<?php pesan_get('msg',"Berhasil Menghapus Data Pegawai","Gagal Menghapus Data Pegawai") ?>
+	<?php pesan_get('msg',"Berhasil Menghapus Data Pegawai","Gagal Menghapus Data Pegawai","Berhasil Mengganti Password") ?>
 	<a style="margin: 5px 0 10px 0px" href="<?php echo base_url() ?>kepegawaian/admin/pegawaitambah" class="btn  btn-primary">
 		<i class="fa fa-plus"></i> Tambah Pegawai</a>
 	<table class="table table-bordered  datatable" id="table-1" style="font-size:12px">

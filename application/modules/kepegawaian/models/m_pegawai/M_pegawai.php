@@ -8,15 +8,13 @@ class M_pegawai extends CI_Model
     }
     function lihatdata()
     {
-        $this->db->select("tb_pegawai.id_pegawai, tb_pegawai.nip, tb_pegawai.tempat_lahir,  tb_pegawai.tanggal_lahir ,tb_pegawai.nama, tb_pegawai.email, tb_pegawai.alamat, tb_pegawai.jk, tb_pegawai.nohp, tb_pegawai.id_seksi, tb_seksi.seksi, tb_pegawai.status, tb_pegawai.foto");
-        $this->db->join("tb_seksi","tb_seksi.id_seksi=tb_pegawai.id_seksi","left");
+        $this->db->select("tb_pegawai.*");
         return $this->db->get('tb_pegawai');
     }
    
     function lihatdatasatu($id_pegawai)
     {
-        $this->db->select("tb_pegawai.*,tb_seksi.seksi");
-        $this->db->join("tb_seksi","tb_seksi.id_seksi=tb_pegawai.id_seksi","left");
+        $this->db->select("tb_pegawai.*");
         $this->db->where("tb_pegawai.id_pegawai",$id_pegawai);
         return $this->db->get('tb_pegawai');
     }

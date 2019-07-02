@@ -6,6 +6,7 @@ class Admin extends CI_Controller {
         parent::__construct();
         cekloginadmin();
         $this->load->model("m_admin/m_pegawai");
+        $this->load->model("m_admin/m_seksi");
     }
 
     // Dashboard
@@ -73,6 +74,16 @@ class Admin extends CI_Controller {
       
         $variabel['csrf'] = csrf();
         if ($this->input->post()) {
+            $nip = $this->input->post('nip');
+            $nip2 = $this->input->post('nip2');
+            if ( $nip!= $nip2) {
+                $is_unique =  '|is_unique[tb_pegawai.nip]';
+             } else {
+                $is_unique =  '';
+             }
+             
+            $this->form_validation->set_rules('nip','NIP','required|trim'. $is_unique.'');
+            if($this->form_validation->run() != false){
             $array=array(
                 'nama'=> $this->input->post('nama'),
                 'nip'=> $this->input->post('nip'),
@@ -98,7 +109,6 @@ class Admin extends CI_Controller {
                 'karpeg'=>$this->input->post('karpeg'),
                 'taspen'=>$this->input->post('taspen'),
                 'npwp'=>$this->input->post('npwp'),
-                'id_seksi'=>$this->input->post('id_seksi')
                 );
                 $id_pegawai = $this->input->post("id_pegawai");
                 $config['upload_path'] = './assets/images/foto';
@@ -121,21 +131,44 @@ class Admin extends CI_Controller {
                 }
                 $exec = $this->m_pegawai->editdata($id_pegawai,$array);
                 if ($exec){
-                 redirect(base_url("kepegawaian/biodataedit?id=".$id_pegawai."&msg=1"));
+                 redirect(base_url("kepegawaian/admin/pegawaiedit?id=".$id_pegawai."&msg=1"));
                 }
+               }else{
+                    $id_pegawai = $this->input->get("id");
+                    $exec = $this->m_pegawai->lihatdatasatu($id_pegawai);
+                    if ($exec->num_rows()>0){
+                        $variabel['data'] = $exec ->row_array();
+                        $this->layout->renderadmin('v_admin/pegawai/v_pegawai_edit',$variabel,'v_admin/pegawai/v_pegawai_edit_js');
+                    } else {
+                        redirect(base_url("kepegawaian/admin/pegawai"));
+                    }
+               }
           
       } else {
-            $id_pegawai = $this->session->userdata("id_pegawai");
+            $id_pegawai = $this->input->get("id");
             $exec = $this->m_pegawai->lihatdatasatu($id_pegawai);
             if ($exec->num_rows()>0){
                 $variabel['data'] = $exec ->row_array();
-                $variabel['seksi'] = $this->m_seksi->lihatdata();
-                $this->layout->render('v_pegawai/pegawai/v_pegawai_edit',$variabel,'v_pegawai/pegawai/v_pegawai_edit_js');
+                $this->layout->renderadmin('v_admin/pegawai/v_pegawai_edit',$variabel,'v_admin/pegawai/v_pegawai_edit_js');
             } else {
-                redirect(base_url("kepegawaian/biodata"));
+                redirect(base_url("kepegawaian/admin/pegawai"));
             }
       }
 
+    }
+
+    function pegawaihapus()
+    {
+        $id_pegawai = $this->input->get("id");
+        $query2 = $this->m_pegawai->lihatdatasatu($id_pegawai);
+        $row2 = $query2->row();
+        $berkas1temp = $row2->foto;
+        $path1 ='./assets/images/foto/'.$berkas1temp.'';
+        if(is_file($path1)) {
+            unlink($path1);
+        }
+        $exec = $this->m_pegawai->hapus($id_pegawai);
+        redirect(base_url()."kepegawaian/admin/pegawai?msg=1");
     }
 
     function gantipassword()
@@ -145,7 +178,27 @@ class Admin extends CI_Controller {
         $variabel['data'] = $this->m_pegawai->lihatdatasatu($id_pegawai)->row_array();
         $this->load->view("v_admin/pegawai/v_password",$variabel);
     }
+    function gantipasswordproses()
+    {
+        $variabel['csrf'] = csrf();
+        if ($this->input->post()) {
+            $array=array(
+                'password'=> md5($this->input->post('password')),
+                );
+                $id_pegawai = $this->input->post("id_pegawai");
+                $exec = $this->m_pegawai->editdata($id_pegawai,$array);
+                if ($exec){
+                 redirect(base_url("kepegawaian/admin/pegawai?msg=1"));
+                }
+      } else {
+      }
 
+    }
+
+ 
+
+
+    
 
 
 }

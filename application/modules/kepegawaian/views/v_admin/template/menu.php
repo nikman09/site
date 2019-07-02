@@ -11,7 +11,7 @@
 					<span class="title">Beranda </span>
 				</a>
 			</li>
-			<li  class="<?= ($submenu == "pegawai") ? "active root-level" : ""; ?> ">
+			<li  class="<?= ($submenu == "pegawai" || $submenu == "pegawailihat"  || $submenu == "pegawaiedit" ) ? "active root-level" : ""; ?> ">
 				<a href="<?php echo base_url() ?>kepegawaian/admin/pegawai">
 					<i class="fa fa-users"></i>
 					<span class="title">Data Pegawai</span>

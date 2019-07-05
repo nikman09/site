@@ -43,18 +43,7 @@
 							<p  class="form-control-static" > : <?php echo $data['nama']; ?> </p>
 						</div>
 					</div>
-					<div class="form-group">
-						<label class="col-lg-4 control-label">Gelar Depan</label>
-						<div class="col-lg-8">
-							<p  class="form-control-static" > : <?php echo $data['gelardepan']; ?> </p>
-						</div>
-					</div>
-					<div class="form-group">
-						<label class="col-lg-4 control-label">Gelar Belakang</label>
-						<div class="col-lg-8">
-							<p  class="form-control-static" > : <?php echo $data['gelarbelakang']; ?> </p>
-						</div>
-					</div>
+					
 					<div class="form-group">
 						<label class="col-lg-4 control-label">Tempat Lahir</label>
 						<div class="col-lg-8">
@@ -80,7 +69,7 @@
 						</div>
 					</div>
 					<div class="form-group">
-						<label class="col-lg-4 control-label">Status</label>
+						<label class="col-lg-4 control-label">Status Perkawinan</label>
 						<div class="col-lg-8">
 							<p  class="form-control-static" > : <?php echo $data['status']; ?></p>
 						</div>
@@ -104,14 +93,9 @@
 							<p class="form-control-static" > : <?php echo $data['nohp'] ?></p>
 						</div>
 					</div>
+					
 					<div class="form-group">
-						<label class="col-lg-4 control-label">Kodepos</label>
-						<div class="col-lg-8">
-							<p class="form-control-static" > : <?php echo $data['kodepos'] ?></p>
-						</div>
-					</div>
-					<div class="form-group">
-						<label class="col-lg-4 control-label">Email</label>
+						<label class="col-lg-4 control-label">Alamat Email</label>
 						<div class="col-lg-8">
 							<p class="form-control-static" > : <?php echo $data['email'] ?></p>
 						</div>

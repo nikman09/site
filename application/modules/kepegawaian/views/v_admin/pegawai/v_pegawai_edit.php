@@ -8,7 +8,7 @@
 </li>
 </ol>
 
-<h3>Edit Pegawai</h3>
+<h3>Edit Biodata</h3>
 <div class="panel panel-primary" data-collapsed="0">
 <div class="panel-heading">
 	<div class="panel-title">

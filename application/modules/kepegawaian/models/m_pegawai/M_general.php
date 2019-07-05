@@ -7,11 +7,11 @@ class M_general extends CI_Model
         parent::__construct();
     }
    
-    function datalemariajax($id_ruangan)
+    function datasubjabatanajax($id_jabatan)
       {
-        $this->db->where('id_ruangan', $id_ruangan);
-        $this->db->order_by("nama_lemari","ASC");
-        $hasil = $this->db->get('tb_lemari');
+        $this->db->where('id_jabatan', $id_jabatan);
+        $this->db->order_by("nama_subjabatan","ASC");
+        $hasil = $this->db->get('tb_subjabatan');
         return $hasil->result();
       }
 
@@ -39,10 +39,10 @@ class M_general extends CI_Model
         return $hasil->result();
       }
 
-      function ambillemari($id_ruangan){
-        $this->db->where('id_ruangan', $id_ruangan);
-        $this->db->order_by("nama_lemari","ASC");
-        return $this->db->get('tb_lemari');
+      function ambilsubjabatan($id_jabatan){
+        $this->db->where('id_jabatan', $id_jabatan);
+        $this->db->order_by("nama_subjabatan","ASC");
+        return $this->db->get('tb_subjabatan');
       }
 
       function ambilrak($id_lemari){

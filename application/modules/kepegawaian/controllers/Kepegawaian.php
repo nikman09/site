@@ -8,7 +8,9 @@ class Kepegawaian extends CI_Controller {
         $this->load->model("m_pegawai/m_general");
         $this->load->model("m_pegawai/m_seksi");
         $this->load->model("m_pegawai/m_pegawai");
-        $this->load->model("m_pegawai/m_cpns");
+        $this->load->model("m_pegawai/m_jabatan");
+        $this->load->model("m_pegawai/m_pangkat");
+        $this->load->model("m_pegawai/m_pendidikan");
         $this->load->model("m_pegawai/m_pns");
         
     }
@@ -47,12 +49,13 @@ class Kepegawaian extends CI_Controller {
     {
       
         $variabel['csrf'] = csrf();
+        $variabel['jabatan'] = $this->m_jabatan->lihatdata();
+        $variabel['pangkat'] = $this->m_pangkat->lihatdata();
+        $variabel['pendidikan'] = $this->m_pendidikan->lihatdata();
         if ($this->input->post()) {
             $array=array(
                 'nama'=> $this->input->post('nama'),
                 'nip'=> $this->input->post('nip'),
-                'gelardepan'=> $this->input->post('gelardepan'),
-                'gelarbelakang'=> $this->input->post('gelarbelakang'),
                 'tempat_lahir'=> $this->input->post('tempat_lahir'),
                 'tanggal_lahir'=>tanggalawal($this->input->post('tanggal_lahir')),
                 'jk'=> $this->input->post('jk'),
@@ -61,18 +64,12 @@ class Kepegawaian extends CI_Controller {
                 'goldar'=>$this->input->post('goldar'),
                 'alamat'=>$this->input->post('alamat',FALSE),
                 'nohp'=>$this->input->post('nohp'),
-                'kodepos'=>$this->input->post('kodepos'),
                 'email'=>$this->input->post('email'),
                 'statuspegawai'=>$this->input->post('statuspegawai'),
-                'jenis'=>$this->input->post('jenis'),
-                'jabatan'=>$this->input->post('jabatan'),
-                'kedudukan'=>$this->input->post('kedudukan'),
-                'ktp'=>$this->input->post('ktp'),
-                'bpjs'=>$this->input->post('bpjs'),
-                'karis'=>$this->input->post('karis'),
-                'karpeg'=>$this->input->post('karpeg'),
-                'taspen'=>$this->input->post('taspen'),
-                'npwp'=>$this->input->post('npwp'),
+                'id_jabatan'=>$this->input->post('id_jabatan'),
+                'id_subjabatan'=>$this->input->post('id_subjabatan'),
+                'id_pangkat'=>$this->input->post('id_pangkat'),
+                'id_pendidikan'=>$this->input->post('id_pendidikan')
                 );
                 $id_pegawai = $this->input->post("id_pegawai");
                 $config['upload_path'] = './assets/images/foto';
@@ -103,6 +100,7 @@ class Kepegawaian extends CI_Controller {
             $exec = $this->m_pegawai->lihatdatasatu($id_pegawai);
             if ($exec->num_rows()>0){
                 $variabel['data'] = $exec ->row_array();
+                $variabel['datasubjabatan']=$this->m_general->ambilsubjabatan($variabel['data']['id_jabatan']);
                 $this->layout->render('v_pegawai/pegawai/v_pegawai_edit',$variabel,'v_pegawai/pegawai/v_pegawai_edit_js');
             } else {
                 redirect(base_url("kepegawaian/biodata"));
@@ -111,144 +109,11 @@ class Kepegawaian extends CI_Controller {
 
     }
 
-
-    function cpns()
+    function subjabatan()
     {
-   
-        $variabel['csrf'] = csrf();
-        $id_pegawai = $this->session->userdata("id_pegawai");
-        $exec = $this->m_cpns->lihatdatasatu($id_pegawai);
-        if ($exec->num_rows()>0){
-            $variabel['data'] = $exec ->row_array();
-            $this->layout->render('v_pegawai/cpns/v_cpns_lihat',$variabel,'v_pegawai/cpns/v_cpns_js');
-        } else {
-            $array = array (
-                "id_pegawai" =>$id_pegawai
-            );
-            $exec = $this->m_cpns->tambahdata($array);
-            redirect(base_url("kepegawaian/cpns"));
-        }
+      $id=$this->input->post('id_jabatan');
+      $data=$this->m_general->datasubjabatanajax($id);
+      echo json_encode($data);
     }
-
-
-    function cpnsedit()
-    {
- 
-        $variabel['csrf'] = csrf();
-        if ($this->input->post()) {
-            $array=array(
-                'nomorsk'=> $this->input->post('nomorsk'),
-                'tanggalsk'=> tanggalawal($this->input->post('tanggalsk')),
-                'tmt'=> tanggalawal($this->input->post('tmt')),
-                'golonganawal'=> $this->input->post('golonganawal'),
-                'tingkatpendidikan'=> $this->input->post('tingkatpendidikan'),
-                'pejabatpengesahan'=> $this->input->post('pejabatpengesahan'),
-               
-                );
-                $id_pegawai = $this->input->post("id_pegawai");
-                $config['upload_path'] = './assets/berkas/cpns';
-                $config['allowed_types'] = 'jpg|jpeg|JPG|JPEG|pdf|PNG|png';
-                $this->load->library('upload', $config);
-                if ($this->upload->do_upload("berkas"))
-                {
-                    $upload = $this->upload->data();
-                    $berkas = $upload["raw_name"].$upload["file_ext"];
-                    $array['berkas']=$berkas;
-
-                    $query2 = $this->m_cpns->lihatdatasatu($id_pegawai);
-                    $row2 = $query2->row();
-                    $berkas1temp = $row2->berkas;
-                    $path1 ='./assets/berkas/cpns/'.$berkas1temp.'';
-                    echo "$path1";
-                    if(is_file($path1)) {
-                        unlink($path1); //menghapus gambar di folder produk
-                    }
-                }
-                $exec = $this->m_cpns->editdata($id_pegawai,$array);
-                if ($exec){
-                 redirect(base_url("kepegawaian/cpnsedit?id=".$id_pegawai."&msg=1"));
-                }
-          
-      } else {
-            $id_pegawai = $this->session->userdata("id_pegawai");
-            $exec = $this->m_cpns->lihatdatasatu($id_pegawai);
-            if ($exec->num_rows()>0){
-                $variabel['data'] = $exec ->row_array();
-                $this->layout->render('v_pegawai/cpns/v_cpns_edit',$variabel,'v_pegawai/cpns/v_cpns_edit_js');
-            } else {
-                redirect(base_url("kepegawaian/cpns"));
-            }
-      }
-
-    }
-
-    function pns()
-    {
-   
-        $variabel['csrf'] = csrf();
-        $id_pegawai = $this->session->userdata("id_pegawai");
-        $exec = $this->m_pns->lihatdatasatu($id_pegawai);
-        if ($exec->num_rows()>0){
-            $variabel['data'] = $exec ->row_array();
-            $this->layout->render('v_pegawai/pns/v_pns_lihat',$variabel,'v_pegawai/pns/v_pns_js');
-        } else {
-            $array = array (
-                "id_pegawai" =>$id_pegawai
-            );
-            $exec = $this->m_pns->tambahdata($array);
-            redirect(base_url("kepegawaian/pns"));
-        }
-    }
-
-
-    function pnsedit()
-    {
- 
-        $variabel['csrf'] = csrf();
-        if ($this->input->post()) {
-            $array=array(
-                'skpns'=> $this->input->post('skpns'),
-                'tglskpns'=> tanggalawal($this->input->post('tglskpns')),
-                'tmtpns'=> tanggalawal($this->input->post('tmtpns')),
-                'golongan'=> $this->input->post('golongan'),
-                'pejabatpengesahan'=> $this->input->post('pejabatpengesahan')
-                );
-                $id_pegawai = $this->input->post("id_pegawai");
-                $config['upload_path'] = './assets/berkas/pns';
-                $config['allowed_types'] = 'jpg|jpeg|JPG|JPEG|pdf|PNG|png';
-                $this->load->library('upload', $config);
-                if ($this->upload->do_upload("berkas"))
-                {
-                    $upload = $this->upload->data();
-                    $berkas = $upload["raw_name"].$upload["file_ext"];
-                    $array['berkas']=$berkas;
-
-                    $query2 = $this->m_pns->lihatdatasatu($id_pegawai);
-                    $row2 = $query2->row();
-                    $berkas1temp = $row2->berkas;
-                    $path1 ='./assets/berkas/pns'.$berkas1temp.'';
-                    echo "$path1";
-                    if(is_file($path1)) {
-                        unlink($path1); //menghapus gambar di folder produk
-                    }
-                }
-                $exec = $this->m_pns->editdata($id_pegawai,$array);
-                if ($exec){
-                 redirect(base_url("kepegawaian/pnsedit?id=".$id_pegawai."&msg=1"));
-                }
-          
-      } else {
-            $id_pegawai = $this->session->userdata("id_pegawai");
-            $exec = $this->m_pns->lihatdatasatu($id_pegawai);
-            if ($exec->num_rows()>0){
-                $variabel['data'] = $exec ->row_array();
-                $this->layout->render('v_pegawai/pns/v_pns_edit',$variabel,'v_pegawai/pns/v_pns_edit_js');
-            } else {
-                redirect(base_url("kepegawaian/pns"));
-            }
-      }
-
-    }
-
 
 }

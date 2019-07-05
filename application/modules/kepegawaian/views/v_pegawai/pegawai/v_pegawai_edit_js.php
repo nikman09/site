@@ -1,5 +1,11 @@
 <script>
 jQuery( document ).ready( function( $ ) {
+    var csfrData = {};
+    csfrData['<?php echo $this->security->get_csrf_token_name(); ?>'] = '<?php echo $this->security->get_csrf_hash(); ?>';
+    $.ajaxSetup({
+        data: csfrData
+    });
+
     var $table1 = jQuery( '#table-1' );            
     // Initialize DataTable
     $table1.DataTable( {
@@ -52,39 +58,37 @@ jQuery( document ).ready( function( $ ) {
                     required: true
                 }, 
                 agama: {
-                    required: true
+               
                 },
-                jabatan: {
-                    required: true
-                },
+               
                 status: {
-                    required: true
+           
                 }, 
                 goldar: {
-					required: true
+				
 				},
                 alamat: {
-					required: true
+				
 				},
                 nohp: {
-					required: true
+				
 				},
                 kodepos: {
 				},
                 alamat: {
-					required: true
+					
 				},
                 statuspegawai: {
-					required: true
+				
 				},
                 jenis: {
-					required: true
+					
 				},
                 jabatan: {
-					required: true
+					
 				},
                 kedudukan: {
-					required: true
+				
 				},
                 ktp: {
 				
@@ -180,4 +184,28 @@ jQuery( document ).ready( function( $ ) {
 				},
             }
         });
+
+        $('#id_jabatan').change(function(){
+           
+        var id=$(this).val();
+      
+        $.ajax({
+            url : "<?php echo base_url();?>kepegawaian/subjabatan",
+            method : "POST",
+            data : {id_jabatan: id},
+            async : false,
+            dataType : 'json',
+            success: function(data){
+             
+                var html ='<option value="" disabled selected>.:Pilih Keterangan Jabatan:.</option>';
+                    var i;
+                    for(i=0; i<data.length; i++){
+                        html += '<option value="'+data[i].id_subjabatan+'">'+data[i].nama_subjabatan+'</option>';
+                    }
+                    $('#id_subjabatan').html(html);
+                   
+                
+            }
+        });
+    });
 </script>

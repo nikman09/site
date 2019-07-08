@@ -19,77 +19,23 @@
 					</a>
 				</li>
 			
-				<li class="<?= ($submenu == "cpns" || $submenu == "cpnsedit" || $submenu == "pns" || $submenu == "pnsedit"  ) ? "opened active root-level" : ""; ?> has-sub ">
+				<li class="<?= ($submenu == "berkas" || $submenu == "berkastambah"  ) ? "opened active root-level" : ""; ?> has-sub ">
 					<a href="">
 						<i class="fa fa-list"></i>
-						<span class="title">Dokumen</span>
+						<span class="title">Data Pegawai</span>
 					</a>
 					<ul>
-						<li  class="<?= ($submenu == "cpns" || $submenu == "cpnsedit") ? " active" : ""; ?>">
-							<a href="<?php echo base_url() ?>kepegawaian/cpns">
-								<span class="title">CPNS</span>
+						<li  class="<?= ($submenu == "berkas" || $submenu == "berkastambah" || $submenu == "berkasedit") ? " active" : ""; ?>">
+							<a href="<?php echo base_url() ?>kepegawaian/berkas">
+								<span class="title">Berkas Pegawai</span>
 							</a>
 						</li>
-						<li  class="<?= ($submenu == "pns" || $submenu == "pnsedit") ? " active" : ""; ?>">
-							<a href="<?php echo base_url() ?>kepegawaian/pns">
-								<span class="title">PNS</span>
-							</a>
-						</li>
-						<li  class="<?= ($submenu == "tempatarsip" || $submenu == "tempatarsiptambah"  || $submenu == "tempatarsipedit") ? " active" : ""; ?>">
+						<li  class="<?= ($submenu == "rpendidikan" || $submenu == "rpendidikantambah"  || $submenu == "rpendidikanedit") ? " active" : ""; ?>">
 							<a href="<?php echo base_url() ?>Arsip/tempatarsip">
-								<span class="title">Pangkat</span>
+								<span class="title">Riwayat Pendidikan</span>
 							</a>
 						</li>
-						<li  class="<?= ($submenu == "tempatarsip" || $submenu == "tempatarsiptambah"  || $submenu == "tempatarsipedit") ? " active" : ""; ?>">
-							<a href="<?php echo base_url() ?>Arsip/tempatarsip">
-								<span class="title">Jabatan</span>
-							</a>
-						</li>
-						<li  class="<?= ($submenu == "tempatarsip" || $submenu == "tempatarsiptambah"  || $submenu == "tempatarsipedit") ? " active" : ""; ?>">
-							<a href="<?php echo base_url() ?>Arsip/tempatarsip">
-								<span class="title">Pendidikan</span>
-							</a>
-						</li>
-						<li  class="<?= ($submenu == "tempatarsip" || $submenu == "tempatarsiptambah"  || $submenu == "tempatarsipedit") ? " active" : ""; ?>">
-							<a href="<?php echo base_url() ?>Arsip/tempatarsip">
-								<span class="title">DIKLAT</span>
-							</a>
-						</li>
-						<li  class="<?= ($submenu == "tempatarsip" || $submenu == "tempatarsiptambah"  || $submenu == "tempatarsipedit") ? " active" : ""; ?>">
-							<a href="<?php echo base_url() ?>Arsip/tempatarsip">
-								<span class="title">Keluarga</span>
-							</a>
-						</li>
-						<li  class="<?= ($submenu == "tempatarsip" || $submenu == "tempatarsiptambah"  || $submenu == "tempatarsipedit") ? " active" : ""; ?>">
-							<a href="<?php echo base_url() ?>Arsip/tempatarsip">
-								<span class="title">Tanda Jasa</span>
-							</a>
-						</li>
-						<li  class="<?= ($submenu == "tempatarsip" || $submenu == "tempatarsiptambah"  || $submenu == "tempatarsipedit") ? " active" : ""; ?>">
-							<a href="<?php echo base_url() ?>Arsip/tempatarsip">
-								<span class="title">Organisasi</span>
-							</a>
-						</li>
-						<li  class="<?= ($submenu == "tempatarsip" || $submenu == "tempatarsiptambah"  || $submenu == "tempatarsipedit") ? " active" : ""; ?>">
-							<a href="<?php echo base_url() ?>Arsip/tempatarsip">
-								<span class="title">KGB</span>
-							</a>
-						</li>
-						<li  class="<?= ($submenu == "tempatarsip" || $submenu == "tempatarsiptambah"  || $submenu == "tempatarsipedit") ? " active" : ""; ?>">
-							<a href="<?php echo base_url() ?>Arsip/tempatarsip">
-								<span class="title">Cuti</span>
-							</a>
-						</li>
-						<li  class="<?= ($submenu == "tempatarsip" || $submenu == "tempatarsiptambah"  || $submenu == "tempatarsipedit") ? " active" : ""; ?>">
-							<a href="<?php echo base_url() ?>Arsip/tempatarsip">
-								<span class="title">Hukuman</span>
-							</a>
-						</li>
-						<li  class="<?= ($submenu == "tempatarsip" || $submenu == "tempatarsiptambah"  || $submenu == "tempatarsipedit") ? " active" : ""; ?>">
-							<a href="<?php echo base_url() ?>Arsip/tempatarsip">
-								<span class="title">Cetak</span>
-							</a>
-						</li>
+						
 					</ul>
 				</li>
 

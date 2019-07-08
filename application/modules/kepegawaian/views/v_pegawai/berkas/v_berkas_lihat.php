@@ -26,6 +26,11 @@
 			<?php pesan_get('msg',"Berhasil Mengedit Data Pegawai","Gagal Mengedit Data Pegawai") ?>
 			<div class="row">
 				<div class="col-md-6">
+				<a href="<?php echo base_url('kepegawaian/admin/pegawai?id='.$data['id_pegawai'].'') ?>" class="btn btn-primary btn-s-xs">
+				<i class="fa fa-arrow-left"></i> Kembali</a> &nbsp	<a href="<?php echo base_url('kepegawaian/admin/pegawaiedit?id='.$data['id_pegawai'].'') ?>" class="btn btn-default btn-s-xs">
+				<i class="fa fa-edit"></i> Edit</a>
+			
+				<hr/>
 				<div class="form-group">
 						<label class="col-lg-4 control-label">NIP</label>
 						<div class="col-lg-8">
@@ -40,12 +45,17 @@
 					</div>
 					
 					<div class="form-group">
-						<label class="col-lg-4 control-label">Tempat/Tanggal Lahir</label>
+						<label class="col-lg-4 control-label">Tempat Lahir</label>
 						<div class="col-lg-8">
-							<p  class="form-control-static" > : <?php echo $data['tempat_lahir']; ?> /  <?php echo tanggal($data['tanggal_lahir'])	; ?></p>
+							<p  class="form-control-static" > : <?php echo $data['tempat_lahir']; ?> </p>
 						</div>
 					</div>
-					
+					<div class="form-group">
+						<label class="col-lg-4 control-label">Tanggal Lahir</label>
+						<div class="col-lg-8">
+							<p  class="form-control-static" > : <?php echo tanggal($data['tanggal_lahir'])	; ?> </p>
+						</div>
+					</div>
 					<div class="form-group">
 						<label class="col-lg-4 control-label">Jenis Kelamin</label>
 						<div class="col-lg-8">
@@ -72,11 +82,18 @@
 					</div>
 					<hr/>
 					<div class="form-group">
-					<label class="col-lg-4 control-label">Alamat / Telepon</label>
+					<label class="col-lg-4 control-label">Alamat</label>
 						<div class="col-lg-8">
-							<p class="form-control-static"> : <?php echo $data['alamat']?> / <?php echo $data['nohp'] ?></p>
+							<p class="form-control-static"> : <?php echo $data['alamat']?></p>
 						</div>
 					</div>
+					<div class="form-group">
+						<label class="col-lg-4 control-label">Telepon</label>
+						<div class="col-lg-8">
+							<p class="form-control-static" > : <?php echo $data['nohp'] ?></p>
+						</div>
+					</div>
+					
 					<div class="form-group">
 						<label class="col-lg-4 control-label">Alamat Email</label>
 						<div class="col-lg-8">
@@ -84,59 +101,68 @@
 						</div>
 						
 					</div>
+					
 					<div class="form-group">
-						<label class="col-lg-4 control-label">Kepegawaian</label>
+						<label class="col-lg-4 control-label">Status Kepegawaian</label>
 						<div class="col-lg-8">
-							<p class="form-control-static" > : <?php echo $data['statuspegawai'] ?> Pemprov Kalimantan Selatan</p>
+							<p class="form-control-static" > : <?php echo $data['statuspegawai'] ?></p>
 						</div>
 					</div>
 					<div class="form-group">
-						<label class="col-lg-4 control-label">Jabatan</label>
+						<label class="col-lg-4 control-label">Jenis Kepegawaian</label>
 						<div class="col-lg-8">
-							<p class="form-control-static" > : <?php echo $data['nama_jabatan'] ?>  <?php if ( $data['nama_subjabatan']!="") echo " / ".$data['nama_subjabatan'] ?> </p>
-						</div>
-					</div>
-
-					<div class="form-group">
-						<label class="col-lg-4 control-label">Pangkat</label>
-						<div class="col-lg-8">
-							<p class="form-control-static" > : <?php echo $data['pangkat'] ?></p>
+							<p class="form-control-static" > : <?php echo $data['jenis'] ?></p>
 						</div>
 					</div>
 					<div class="form-group">
-						<label class="col-lg-4 control-label">Pendidikan Terakhir</label>
+						<label class="col-lg-4 control-label">Jenis Jabatan</label>
 						<div class="col-lg-8">
-							<p class="form-control-static" > : <?php echo $data['pendidikan'] ?></p>
-						</div>
-					</div>
-					<div class="form-group">
-						<label class="col-lg-4 control-label">Tanggal Mulai Kerja</label>
-						<div class="col-lg-8">
-							<p class="form-control-static" > : <?php echo tanggal($data['tmkerja']) ?></p>
+							<p class="form-control-static" > : <?php echo $data['jabatan'] ?></p>
 						</div>
 					</div>
 
 					<div class="form-group">
-						<label class="col-lg-4 control-label">Masa Kerja</label>
+						<label class="col-lg-4 control-label">Kedudukan Pegawai</label>
 						<div class="col-lg-8">
-							<p class="form-control-static" > : <?php
-								$tanggal1 = new DateTime($data['tmkerja']); 
-								$tanggal2 = new DateTime();
-								$perbedaan = $tanggal2->diff($tanggal1);
-								echo $perbedaan->y.' Tahun '.$perbedaan->m.' Bulan';
-							 ?></p>
+							<p class="form-control-static" > : <?php echo $data['kedudukan'] ?></p>
 						</div>
 					</div>
-
 					<div class="form-group">
-						<label class="col-lg-4 control-label">Dokumen Pegawai</label>
+						<label class="col-lg-4 control-label">Kartu Penduduk</label>
 						<div class="col-lg-8">
-							<p class="form-control-static" > : 
-								<a href="<?php echo base_url('kepegawaian/berkas') ?>" class="btn btn-primary btn-s-xs"><i class="fa fa-file"></i> Data</a>
-							</p>
+							<p class="form-control-static" > : <?php echo $data['ktp'] ?></p>
 						</div>
 					</div>
-				
+					<div class="form-group">
+						<label class="col-lg-4 control-label">BPJS</label>
+						<div class="col-lg-8">
+							<p class="form-control-static" > : <?php echo $data['bpjs'] ?></p>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-lg-4 control-label">Karis/Karsu</label>
+						<div class="col-lg-8">
+							<p class="form-control-static" > : <?php echo $data['karis'] ?></p>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-lg-4 control-label">Kartu Pegawai</label>
+						<div class="col-lg-8">
+							<p class="form-control-static" > : <?php echo $data['karpeg'] ?></p>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-lg-4 control-label">Taspen</label>
+						<div class="col-lg-8">
+							<p class="form-control-static" > : <?php echo $data['taspen'] ?></p>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-lg-4 control-label">NPWP</label>
+						<div class="col-lg-8">
+							<p class="form-control-static" > : <?php echo $data['npwp'] ?></p>
+						</div>
+					</div>
 				
 				
 				</div>
@@ -158,9 +184,7 @@
 			</div>
 		</div>
 		<footer class="panel-footer text-left bg-light lter">
-			<a href="<?php echo base_url('kepegawaian/biodataedit?id='.$data['id_pegawai'].'') ?>" class="btn btn-info btn-s-xs">
-				<i class="fa fa-edit"></i> Edit</a>
-			&nbsp
+		
 		</footer>
 	</form>
 </div>

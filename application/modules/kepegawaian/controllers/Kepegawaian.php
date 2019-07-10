@@ -12,6 +12,7 @@ class Kepegawaian extends CI_Controller {
         $this->load->model("m_pegawai/m_pangkat");
         $this->load->model("m_pegawai/m_pendidikan");
         $this->load->model("m_pegawai/m_berkas");
+        $this->load->model("m_pegawai/m_riwayatpendidikan");
     }
 
     // Dashboard
@@ -215,6 +216,278 @@ class Kepegawaian extends CI_Controller {
       }
     }
 
+  
+    function uploadkariskarsu()
+    {
+        $variabel['csrf'] = csrf();
+        if ($this->input->post()) {
+             $id_pegawai = $this->session->userdata("id_pegawai");
+             $exec = $this->m_berkas->lihatdataberkas($id_pegawai);
+             if ($exec->num_rows()==0){
+                $array2 = array (
+                    "id_pegawai" =>$id_pegawai
+                );
+                $exec = $this->m_berkas->tambahdata($array2);
+              }
+            $array=array(
+                'kariskarsu'=> $this->input->post('kariskarsu')
+                );
+                $id_pegawai = $this->input->post("id_pegawai");
+                $config['upload_path'] = './assets/berkas/kariskarsu';
+                $config['allowed_types'] = 'jpg|jpeg|JPG|JPEG|pdf|PNG|png';
+                $this->load->library('upload', $config);
+                if ($this->upload->do_upload("kariskarsu"))
+                {
+                    $upload = $this->upload->data();
+                    $kariskarsu = $upload["raw_name"].$upload["file_ext"];
+                    $array['kariskarsu']=$kariskarsu;
+
+                    $query2 = $this->m_berkas->lihatdatasatu($id_pegawai);
+                    $row2 = $query2->row();
+                    $berkas1temp = $row2->kariskarsu;
+                    $path1 ='./assets/images/kariskarsu/'.$berkas1temp.'';
+                    echo "$path1";
+                    if(is_file($path1)) {
+                        unlink($path1); //menghapus gambar di folder produk
+                    }
+                }
+                $exec = $this->m_berkas->editdata($id_pegawai,$array);
+                if ($exec){
+                 redirect(base_url("kepegawaian/berkas?msg=1&l=Kartu Nikah"));
+                }
+          
+      } else {
+        redirect(base_url("kepegawaian/berkas"));
+      }
+    }
+
+    function uploadkartukeluarga()
+    {
+        $variabel['csrf'] = csrf();
+        if ($this->input->post()) {
+             $id_pegawai = $this->session->userdata("id_pegawai");
+             $exec = $this->m_berkas->lihatdataberkas($id_pegawai);
+             if ($exec->num_rows()==0){
+                $array2 = array (
+                    "id_pegawai" =>$id_pegawai
+                );
+                $exec = $this->m_berkas->tambahdata($array2);
+              }
+            $array=array(
+                'kartukeluarga'=> $this->input->post('kartukeluarga')
+                );
+                $id_pegawai = $this->input->post("id_pegawai");
+                $config['upload_path'] = './assets/berkas/kartukeluarga';
+                $config['allowed_types'] = 'jpg|jpeg|JPG|JPEG|pdf|PNG|png';
+                $this->load->library('upload', $config);
+                if ($this->upload->do_upload("kartukeluarga"))
+                {
+                    $upload = $this->upload->data();
+                    $kartukeluarga = $upload["raw_name"].$upload["file_ext"];
+                    $array['kartukeluarga']=$kartukeluarga;
+
+                    $query2 = $this->m_berkas->lihatdatasatu($id_pegawai);
+                    $row2 = $query2->row();
+                    $berkas1temp = $row2->kartukeluarga;
+                    $path1 ='./assets/images/kartukeluarga/'.$berkas1temp.'';
+                    echo "$path1";
+                    if(is_file($path1)) {
+                        unlink($path1); //menghapus gambar di folder produk
+                    }
+                }
+                $exec = $this->m_berkas->editdata($id_pegawai,$array);
+                if ($exec){
+                 redirect(base_url("kepegawaian/berkas?msg=1&l=Kartu Nikah"));
+                }
+          
+      } else {
+        redirect(base_url("kepegawaian/berkas"));
+      }
+    }
+
+    function uploadbpjs()
+    {
+        $variabel['csrf'] = csrf();
+        if ($this->input->post()) {
+             $id_pegawai = $this->session->userdata("id_pegawai");
+             $exec = $this->m_berkas->lihatdataberkas($id_pegawai);
+             if ($exec->num_rows()==0){
+                $array2 = array (
+                    "id_pegawai" =>$id_pegawai
+                );
+                $exec = $this->m_berkas->tambahdata($array2);
+              }
+            $array=array(
+                'bpjs'=> $this->input->post('bpjs')
+                );
+                $id_pegawai = $this->input->post("id_pegawai");
+                $config['upload_path'] = './assets/berkas/bpjs';
+                $config['allowed_types'] = 'jpg|jpeg|JPG|JPEG|pdf|PNG|png';
+                $this->load->library('upload', $config);
+                if ($this->upload->do_upload("bpjs"))
+                {
+                    $upload = $this->upload->data();
+                    $bpjs = $upload["raw_name"].$upload["file_ext"];
+                    $array['bpjs']=$bpjs;
+
+                    $query2 = $this->m_berkas->lihatdatasatu($id_pegawai);
+                    $row2 = $query2->row();
+                    $berkas1temp = $row2->bpjs;
+                    $path1 ='./assets/images/bpjs/'.$berkas1temp.'';
+                    echo "$path1";
+                    if(is_file($path1)) {
+                        unlink($path1); //menghapus gambar di folder produk
+                    }
+                }
+                $exec = $this->m_berkas->editdata($id_pegawai,$array);
+                if ($exec){
+                 redirect(base_url("kepegawaian/berkas?msg=1&l=Kartu Nikah"));
+                }
+          
+      } else {
+        redirect(base_url("kepegawaian/berkas"));
+      }
+    }
+
+    function uploadtaspen()
+    {
+        $variabel['csrf'] = csrf();
+        if ($this->input->post()) {
+             $id_pegawai = $this->session->userdata("id_pegawai");
+             $exec = $this->m_berkas->lihatdataberkas($id_pegawai);
+             if ($exec->num_rows()==0){
+                $array2 = array (
+                    "id_pegawai" =>$id_pegawai
+                );
+                $exec = $this->m_berkas->tambahdata($array2);
+              }
+            $array=array(
+                'taspen'=> $this->input->post('taspen')
+                );
+                $id_pegawai = $this->input->post("id_pegawai");
+                $config['upload_path'] = './assets/berkas/taspen';
+                $config['allowed_types'] = 'jpg|jpeg|JPG|JPEG|pdf|PNG|png';
+                $this->load->library('upload', $config);
+                if ($this->upload->do_upload("taspen"))
+                {
+                    $upload = $this->upload->data();
+                    $taspen = $upload["raw_name"].$upload["file_ext"];
+                    $array['taspen']=$taspen;
+
+                    $query2 = $this->m_berkas->lihatdatasatu($id_pegawai);
+                    $row2 = $query2->row();
+                    $berkas1temp = $row2->taspen;
+                    $path1 ='./assets/images/taspen/'.$berkas1temp.'';
+                    echo "$path1";
+                    if(is_file($path1)) {
+                        unlink($path1); //menghapus gambar di folder produk
+                    }
+                }
+                $exec = $this->m_berkas->editdata($id_pegawai,$array);
+                if ($exec){
+                 redirect(base_url("kepegawaian/berkas?msg=1&l=Kartu Nikah"));
+                }
+          
+      } else {
+        redirect(base_url("kepegawaian/berkas"));
+      }
+    }
+
+    function uploadskcpns()
+    {
+        $variabel['csrf'] = csrf();
+        if ($this->input->post()) {
+             $id_pegawai = $this->session->userdata("id_pegawai");
+             $exec = $this->m_berkas->lihatdataberkas($id_pegawai);
+             if ($exec->num_rows()==0){
+                $array2 = array (
+                    "id_pegawai" =>$id_pegawai
+                );
+                $exec = $this->m_berkas->tambahdata($array2);
+              }
+            $array=array(
+                'skcpns'=> $this->input->post('skcpns')
+                );
+                $id_pegawai = $this->input->post("id_pegawai");
+                $config['upload_path'] = './assets/berkas/skcpns';
+                $config['allowed_types'] = 'jpg|jpeg|JPG|JPEG|pdf|PNG|png';
+                $this->load->library('upload', $config);
+                if ($this->upload->do_upload("skcpns"))
+                {
+                    $upload = $this->upload->data();
+                    $skcpns = $upload["raw_name"].$upload["file_ext"];
+                    $array['skcpns']=$skcpns;
+
+                    $query2 = $this->m_berkas->lihatdatasatu($id_pegawai);
+                    $row2 = $query2->row();
+                    $berkas1temp = $row2->skcpns;
+                    $path1 ='./assets/images/skcpns/'.$berkas1temp.'';
+                    echo "$path1";
+                    if(is_file($path1)) {
+                        unlink($path1); //menghapus gambar di folder produk
+                    }
+                }
+                $exec = $this->m_berkas->editdata($id_pegawai,$array);
+                if ($exec){
+                 redirect(base_url("kepegawaian/berkas?msg=1&l=Kartu Nikah"));
+                }
+          
+      } else {
+        redirect(base_url("kepegawaian/berkas"));
+      }
+    }
+
+    function uploadskpns()
+    {
+        $variabel['csrf'] = csrf();
+        if ($this->input->post()) {
+             $id_pegawai = $this->session->userdata("id_pegawai");
+             $exec = $this->m_berkas->lihatdataberkas($id_pegawai);
+             if ($exec->num_rows()==0){
+                $array2 = array (
+                    "id_pegawai" =>$id_pegawai
+                );
+                $exec = $this->m_berkas->tambahdata($array2);
+              }
+            $array=array(
+                'skpns'=> $this->input->post('skpns')
+                );
+                $id_pegawai = $this->input->post("id_pegawai");
+                $config['upload_path'] = './assets/berkas/skpns';
+                $config['allowed_types'] = 'jpg|jpeg|JPG|JPEG|pdf|PNG|png';
+                $this->load->library('upload', $config);
+                if ($this->upload->do_upload("skpns"))
+                {
+                    $upload = $this->upload->data();
+                    $skpns = $upload["raw_name"].$upload["file_ext"];
+                    $array['skpns']=$skpns;
+
+                    $query2 = $this->m_berkas->lihatdatasatu($id_pegawai);
+                    $row2 = $query2->row();
+                    $berkas1temp = $row2->skpns;
+                    $path1 ='./assets/images/skpns/'.$berkas1temp.'';
+                    echo "$path1";
+                    if(is_file($path1)) {
+                        unlink($path1); //menghapus gambar di folder produk
+                    }
+                }
+                $exec = $this->m_berkas->editdata($id_pegawai,$array);
+                if ($exec){
+                 redirect(base_url("kepegawaian/berkas?msg=1&l=Kartu Nikah"));
+                }
+          
+      } else {
+        redirect(base_url("kepegawaian/berkas"));
+      }
+    }
+
+    function riwayatpendidikan()
+    {
+        $variabel['csrf'] = csrf();
+        $id_pegawai = $this->session->userdata("id_pegawai");
+        $variabel['data'] = $this->m_riwayatpendidikan->lihatdata($id_pegawai);
+        $this->layout->renderadmin('v_pegawai/riwayatpendidikan/v_riwayatpendidikan',$variabel,'v_pegawai/riwayatpendidikan/v_riwayatpendidikan_js');
+    }
     
 
 }

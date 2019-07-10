@@ -4,7 +4,7 @@
 			<i class="fa fa-list"></i>Kepegawaian</a>
 	</li>
 	<li>
-		<a href="<?php echo base_url() ?>arsip/pegawai">Pegawai</a>
+		<a href="<?php echo base_url() ?>kepegawaian">Data Pegawai</a>
 	</li>
 	<li class="active">
 		<strong>Berkas Pegawai</strong>
@@ -37,31 +37,33 @@
 			<tr>
 				<td>Karis/Karsu</td>
 				<td><?php if ($data['kariskarsu']=="") echo "<a class='btn btn-danger btn-xs'><i class='fa fa-file'></i> Lihat</a>"; else echo "<a href='".base_url()."assets/berkas/kariskarsu/".$data['kariskarsu']."'  class='btn btn-success btn-xs' target='_blank'><i class='fa fa-file'></i> Lihat</a>"; ?>
-				<a href='#' class='btn btn-info btn-xs karis' title='Upload Karis/Karsu' data-toggle='modal'  data-target='#karismodal'><i class='fa fa-upload'> </i></a></td>
+				<a href='#' class='btn btn-info btn-xs kariskarsu' title='Upload Karis/Karsu' data-toggle='modal'  data-target='#kariskarsumodal'><i class='fa fa-upload'> </i> Upload</a></td>
 			</tr>
 			<tr>
 				<td>Kartu Keluarga</td>
 				<td><?php if ($data['kartukeluarga']=="") echo "<a class='btn btn-danger btn-xs'><i class='fa fa-file'></i> Lihat</a>"; else echo "<a href='".base_url()."assets/berkas/kartukeluarga/".$data['kartukeluarga']."'  class='btn btn-success btn-xs' target='_blank'><i class='fa fa-file'></i> Lihat</a>"; ?>
-				<a href='#' class='btn btn-info btn-xs kartukeluarga' title='Upload Kartu Keluarga' data-toggle='modal'  data-target='#kartukeluargamodal'><i class='fa fa-upload'> </i></a></td>
+				<a href='#' class='btn btn-info btn-xs kartukeluarga' title='Upload Kartu Keluarga' data-toggle='modal'  data-target='#kartukeluargamodal'><i class='fa fa-upload'> </i> Upload</a></td>
 			</tr>
 			<tr>
 				<td>BPJS</td>
 				<td><?php if ($data['bpjs']=="") echo "<a class='btn btn-danger btn-xs'><i class='fa fa-file'></i> Lihat</a>"; else echo "<a href='".base_url()."assets/berkas/bpjs/".$data['bpjs']."'  class='btn btn-success btn-xs' target='_blank'><i class='fa fa-file'></i> Lihat</a>"; ?>
-				<a href='#' class='btn btn-info btn-xs bpjs' title='Upload BPJS' data-toggle='modal'  data-target='#bpjsmodal'><i class='fa fa-upload'> </i></a></td>
+				<a href='#' class='btn btn-info btn-xs bpjs' title='Upload BPJS' data-toggle='modal'  data-target='#bpjsmodal'><i class='fa fa-upload'> </i> Upload</a></td>
 			</tr>
 			<tr>
 				<td>TASPEN</td>
 				
 				<td><?php if ($data['taspen']=="") echo "<a class='btn btn-danger btn-xs'><i class='fa fa-file'></i> Lihat</a>"; else echo "<a href='".base_url()."assets/berkas/taspen/".$data['taspen']."'  class='btn btn-success btn-xs' target='_blank'><i class='fa fa-file'></i> Lihat</a>"; ?>
-				<a href='#' class='btn btn-info btn-xs taspen' title='Upload TASPEN' data-toggle='modal'  data-target='#taspenmodal'><i class='fa fa-upload'> </i></a></td>
+				<a href='#' class='btn btn-info btn-xs taspen' title='Upload TASPEN' data-toggle='modal'  data-target='#taspenmodal'><i class='fa fa-upload'> </i> Upload</a></td>
 			</tr>
 			<tr>
 				<td>SK CPNS</td>
-				<td><a href='#' class='btn btn-info btn-xs skpcpns' title='Upload SK CPNS' data-toggle='modal'  data-target='#skcpnsmodal'><i class='fa fa-upload'> </i></a></td>
+				<td><?php if ($data['skcpns']=="") echo "<a class='btn btn-danger btn-xs'><i class='fa fa-file'></i> Lihat</a>"; else echo "<a href='".base_url()."assets/berkas/skcpns/".$data['skcpns']."'  class='btn btn-success btn-xs' target='_blank'><i class='fa fa-file'></i> Lihat</a>"; ?>
+				<a href='#' class='btn btn-info btn-xs skpcpns' title='Upload SK CPNS' data-toggle='modal'  data-target='#skcpnsmodal'><i class='fa fa-upload'> </i> Upload</a></td>
 			</tr>
 			<tr>
 				<td>SK PNS</td>
-				<td><a href='#' class='btn btn-info btn-xs skpns' title='Upload skpns' data-toggle='modal'  data-target='#skpnsmodal'><i class='fa fa-upload'> </i></a></td>
+				<td><?php if ($data['skpns']=="") echo "<a class='btn btn-danger btn-xs'><i class='fa fa-file'></i> Lihat</a>"; else echo "<a href='".base_url()."assets/berkas/skpns/".$data['skpns']."'  class='btn btn-success btn-xs' target='_blank'><i class='fa fa-file'></i> Lihat</a>"; ?>
+				<a href='#' class='btn btn-info btn-xs skpns' title='Upload skpns' data-toggle='modal'  data-target='#skpnsmodal'><i class='fa fa-upload'> </i> Upload</a></td>
 			</tr>
 		</tbody>
 	</table>
@@ -72,7 +74,7 @@
         <div class="modal-content" id="modal-lihat">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">Upload KTP <?php echo $data['ktp']; ?></h4>
+                <h4 class="modal-title">Upload KTP</h4>
             </div>
             <form role="form" class="validate" action="<?php echo base_url() ?>kepegawaian/uploadktp" method="post" enctype="multipart/form-data" id="form">
                 <div class="modal-body">
@@ -116,7 +118,7 @@
         <div class="modal-content" id="modal-lihat">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">Upload Kartu Nikah <?php echo $data['kartunikah']; ?></h4>
+                <h4 class="modal-title">Upload Kartu Nikah</h4>
             </div>
             <form role="form" class="validate" action="<?php echo base_url() ?>kepegawaian/uploadkartunikah" method="post" enctype="multipart/form-data" id="form">
                 <div class="modal-body">
@@ -137,6 +139,270 @@
 										<span class="fileinput-new">Select file</span>
 										<span class="fileinput-exists">Change</span>
 										<input type="file" name="kartunikah">
+									</span>
+									<a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
+								</div>
+							</div>
+							</div>
+						</div>	 
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
+                    <button type="submit" class="btn btn-info">Simpan</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="kariskarsumodal">
+    <div class="modal-dialog">
+        <div class="modal-content" id="modal-lihat">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Upload Karis/Karsu</h4>
+            </div>
+            <form role="form" class="validate" action="<?php echo base_url() ?>kepegawaian/uploadkariskarsu" method="post" enctype="multipart/form-data" id="form">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+						<input type="hidden" name="id_pegawai" id="id_pegawai" value="<?php echo $data['id_pegawai'] ?>">
+						<input type="hidden" name="<?=$csrf['name']?>" value="<?=$csrf['hash']?>">
+						<div class="form-group">
+						<label class="col-sm-4 control-label">File</label>
+						<div class="col-sm-8">
+							<div class="fileinput fileinput-new" data-provides="fileinput" style="margin-bottom:0;display:inline">
+								<div class="input-group">
+									<div class="form-control uneditable-input" data-trigger="fileinput">
+										<i class="glyphicon glyphicon-file fileinput-exists"></i>
+										<span class="fileinput-filename"><?php echo $data['kariskarsu']; ?></span>
+									</div>
+									<span class="input-group-addon btn btn-default btn-file">
+										<span class="fileinput-new">Select file</span>
+										<span class="fileinput-exists">Change</span>
+										<input type="file" name="kariskarsu">
+									</span>
+									<a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
+								</div>
+							</div>
+							</div>
+						</div>	 
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
+                    <button type="submit" class="btn btn-info">Simpan</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="kartukeluargamodal">
+    <div class="modal-dialog">
+        <div class="modal-content" id="modal-lihat">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Upload Kartu Keluarga</h4>
+            </div>
+            <form role="form" class="validate" action="<?php echo base_url() ?>kepegawaian/uploadkartukeluarga" method="post" enctype="multipart/form-data" id="form">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+						<input type="hidden" name="id_pegawai" id="id_pegawai" value="<?php echo $data['id_pegawai'] ?>">
+						<input type="hidden" name="<?=$csrf['name']?>" value="<?=$csrf['hash']?>">
+						<div class="form-group">
+						<label class="col-sm-4 control-label">File</label>
+						<div class="col-sm-8">
+							<div class="fileinput fileinput-new" data-provides="fileinput" style="margin-bottom:0;display:inline">
+								<div class="input-group">
+									<div class="form-control uneditable-input" data-trigger="fileinput">
+										<i class="glyphicon glyphicon-file fileinput-exists"></i>
+										<span class="fileinput-filename"><?php echo $data['kartukeluarga']; ?></span>
+									</div>
+									<span class="input-group-addon btn btn-default btn-file">
+										<span class="fileinput-new">Select file</span>
+										<span class="fileinput-exists">Change</span>
+										<input type="file" name="kartukeluarga">
+									</span>
+									<a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
+								</div>
+							</div>
+							</div>
+						</div>	 
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
+                    <button type="submit" class="btn btn-info">Simpan</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="bpjsmodal">
+    <div class="modal-dialog">
+        <div class="modal-content" id="modal-lihat">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Upload BPJS</h4>
+            </div>
+            <form role="form" class="validate" action="<?php echo base_url() ?>kepegawaian/uploadbpjs" method="post" enctype="multipart/form-data" id="form">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+						<input type="hidden" name="id_pegawai" id="id_pegawai" value="<?php echo $data['id_pegawai'] ?>">
+						<input type="hidden" name="<?=$csrf['name']?>" value="<?=$csrf['hash']?>">
+						<div class="form-group">
+						<label class="col-sm-4 control-label">File</label>
+						<div class="col-sm-8">
+							<div class="fileinput fileinput-new" data-provides="fileinput" style="margin-bottom:0;display:inline">
+								<div class="input-group">
+									<div class="form-control uneditable-input" data-trigger="fileinput">
+										<i class="glyphicon glyphicon-file fileinput-exists"></i>
+										<span class="fileinput-filename"><?php echo $data['bpjs']; ?></span>
+									</div>
+									<span class="input-group-addon btn btn-default btn-file">
+										<span class="fileinput-new">Select file</span>
+										<span class="fileinput-exists">Change</span>
+										<input type="file" name="bpjs">
+									</span>
+									<a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
+								</div>
+							</div>
+							</div>
+						</div>	 
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
+                    <button type="submit" class="btn btn-info">Simpan</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="taspenmodal">
+    <div class="modal-dialog">
+        <div class="modal-content" id="modal-lihat">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Upload Taspen</h4>
+            </div>
+            <form role="form" class="validate" action="<?php echo base_url() ?>kepegawaian/uploadtaspen" method="post" enctype="multipart/form-data" id="form">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+						<input type="hidden" name="id_pegawai" id="id_pegawai" value="<?php echo $data['id_pegawai'] ?>">
+						<input type="hidden" name="<?=$csrf['name']?>" value="<?=$csrf['hash']?>">
+						<div class="form-group">
+						<label class="col-sm-4 control-label">File</label>
+						<div class="col-sm-8">
+							<div class="fileinput fileinput-new" data-provides="fileinput" style="margin-bottom:0;display:inline">
+								<div class="input-group">
+									<div class="form-control uneditable-input" data-trigger="fileinput">
+										<i class="glyphicon glyphicon-file fileinput-exists"></i>
+										<span class="fileinput-filename"><?php echo $data['taspen']; ?></span>
+									</div>
+									<span class="input-group-addon btn btn-default btn-file">
+										<span class="fileinput-new">Select file</span>
+										<span class="fileinput-exists">Change</span>
+										<input type="file" name="taspen">
+									</span>
+									<a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
+								</div>
+							</div>
+							</div>
+						</div>	 
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
+                    <button type="submit" class="btn btn-info">Simpan</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="skcpnsmodal">
+    <div class="modal-dialog">
+        <div class="modal-content" id="modal-lihat">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Upload SK CPNS</h4>
+            </div>
+            <form role="form" class="validate" action="<?php echo base_url() ?>kepegawaian/uploadskcpns" method="post" enctype="multipart/form-data" id="form">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+						<input type="hidden" name="id_pegawai" id="id_pegawai" value="<?php echo $data['id_pegawai'] ?>">
+						<input type="hidden" name="<?=$csrf['name']?>" value="<?=$csrf['hash']?>">
+						<div class="form-group">
+						<label class="col-sm-4 control-label">File</label>
+						<div class="col-sm-8">
+							<div class="fileinput fileinput-new" data-provides="fileinput" style="margin-bottom:0;display:inline">
+								<div class="input-group">
+									<div class="form-control uneditable-input" data-trigger="fileinput">
+										<i class="glyphicon glyphicon-file fileinput-exists"></i>
+										<span class="fileinput-filename"><?php echo $data['skcpns']; ?></span>
+									</div>
+									<span class="input-group-addon btn btn-default btn-file">
+										<span class="fileinput-new">Select file</span>
+										<span class="fileinput-exists">Change</span>
+										<input type="file" name="skcpns">
+									</span>
+									<a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
+								</div>
+							</div>
+							</div>
+						</div>	 
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
+                    <button type="submit" class="btn btn-info">Simpan</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="skpnsmodal">
+    <div class="modal-dialog">
+        <div class="modal-content" id="modal-lihat">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Upload SK PNS</h4>
+            </div>
+            <form role="form" class="validate" action="<?php echo base_url() ?>kepegawaian/uploadskpns" method="post" enctype="multipart/form-data" id="form">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+						<input type="hidden" name="id_pegawai" id="id_pegawai" value="<?php echo $data['id_pegawai'] ?>">
+						<input type="hidden" name="<?=$csrf['name']?>" value="<?=$csrf['hash']?>">
+						<div class="form-group">
+						<label class="col-sm-4 control-label">File</label>
+						<div class="col-sm-8">
+							<div class="fileinput fileinput-new" data-provides="fileinput" style="margin-bottom:0;display:inline">
+								<div class="input-group">
+									<div class="form-control uneditable-input" data-trigger="fileinput">
+										<i class="glyphicon glyphicon-file fileinput-exists"></i>
+										<span class="fileinput-filename"><?php echo $data['skpns']; ?></span>
+									</div>
+									<span class="input-group-addon btn btn-default btn-file">
+										<span class="fileinput-new">Select file</span>
+										<span class="fileinput-exists">Change</span>
+										<input type="file" name="skpns">
 									</span>
 									<a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
 								</div>

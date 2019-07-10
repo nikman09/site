@@ -31,7 +31,7 @@
 							</a>
 						</li>
 						<li  class="<?= ($submenu == "rpendidikan" || $submenu == "rpendidikantambah"  || $submenu == "rpendidikanedit") ? " active" : ""; ?>">
-							<a href="<?php echo base_url() ?>Arsip/tempatarsip">
+							<a href="<?php echo base_url() ?>kepegawaian/riwayatpendidikan">
 								<span class="title">Riwayat Pendidikan</span>
 							</a>
 						</li>

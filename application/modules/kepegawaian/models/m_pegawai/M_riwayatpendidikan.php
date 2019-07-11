@@ -13,7 +13,28 @@ class M_riwayatpendidikan extends CI_Model
         $this->db->where("id_pegawai",$id_pegawai);
         return $this->db->get('tb_riwayatpendidikan');
     }
+
+    function lihatdatasatu($id_riwayatpendidikan)
+    {
+        $this->db->where("id_riwayatpendidikan",$id_riwayatpendidikan);
+        return $this->db->get('tb_riwayatpendidikan');
+    }
+    function tambahdata($array)
+    {
+        return $this->db->insert('tb_riwayatpendidikan',$array);
+    }
    
+    function hapus($id_riwayatpendidikan)
+    {
+        $this->db->where("id_riwayatpendidikan",$id_riwayatpendidikan);
+        return $this->db->delete('tb_riwayatpendidikan');
+    }
+
+    function editdata($id_riwayatpendidikan,$array)
+    {
+        $this->db->where("id_riwayatpendidikan",$id_riwayatpendidikan);
+        return $this->db->update('tb_riwayatpendidikan',$array);
+    }
     
   
 }

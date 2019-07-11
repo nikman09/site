@@ -19,7 +19,7 @@
 					</a>
 				</li>
 			
-				<li class="<?= ($submenu == "berkas" || $submenu == "berkastambah"  ) ? "opened active root-level" : ""; ?> has-sub ">
+				<li class="<?= ($submenu == "berkas" || $submenu == "berkastambah" || $submenu == "riwayatpendidikan"  ) ? "opened active root-level" : ""; ?> has-sub ">
 					<a href="">
 						<i class="fa fa-list"></i>
 						<span class="title">Data Pegawai</span>
@@ -30,7 +30,7 @@
 								<span class="title">Berkas Pegawai</span>
 							</a>
 						</li>
-						<li  class="<?= ($submenu == "rpendidikan" || $submenu == "rpendidikantambah"  || $submenu == "rpendidikanedit") ? " active" : ""; ?>">
+						<li  class="<?= ($submenu == "riwayatpendidikan") ? " active" : ""; ?>">
 							<a href="<?php echo base_url() ?>kepegawaian/riwayatpendidikan">
 								<span class="title">Riwayat Pendidikan</span>
 							</a>

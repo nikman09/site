@@ -85,7 +85,7 @@ class Kepegawaian extends CI_Controller {
                     $row2 = $query2->row();
                     $berkas1temp = $row2->foto;
                     $path1 ='./assets/images/foto/'.$berkas1temp.'';
-                    echo "$path1";
+               
                     if(is_file($path1)) {
                         unlink($path1); //menghapus gambar di folder produk
                     }
@@ -297,7 +297,7 @@ class Kepegawaian extends CI_Controller {
                 }
                 $exec = $this->m_berkas->editdata($id_pegawai,$array);
                 if ($exec){
-                 redirect(base_url("kepegawaian/berkas?msg=1&l=Kartu Nikah"));
+                 redirect(base_url("kepegawaian/berkas?msg=1&l=Kartu Keluarga"));
                 }
           
       } else {
@@ -341,7 +341,7 @@ class Kepegawaian extends CI_Controller {
                 }
                 $exec = $this->m_berkas->editdata($id_pegawai,$array);
                 if ($exec){
-                 redirect(base_url("kepegawaian/berkas?msg=1&l=Kartu Nikah"));
+                 redirect(base_url("kepegawaian/berkas?msg=1&l=BPJS"));
                 }
           
       } else {
@@ -385,7 +385,7 @@ class Kepegawaian extends CI_Controller {
                 }
                 $exec = $this->m_berkas->editdata($id_pegawai,$array);
                 if ($exec){
-                 redirect(base_url("kepegawaian/berkas?msg=1&l=Kartu Nikah"));
+                 redirect(base_url("kepegawaian/berkas?msg=1&l=TASPEN"));
                 }
           
       } else {
@@ -429,7 +429,7 @@ class Kepegawaian extends CI_Controller {
                 }
                 $exec = $this->m_berkas->editdata($id_pegawai,$array);
                 if ($exec){
-                 redirect(base_url("kepegawaian/berkas?msg=1&l=Kartu Nikah"));
+                 redirect(base_url("kepegawaian/berkas?msg=1&l=SK CPNS"));
                 }
           
       } else {
@@ -473,6 +473,51 @@ class Kepegawaian extends CI_Controller {
                 }
                 $exec = $this->m_berkas->editdata($id_pegawai,$array);
                 if ($exec){
+                 redirect(base_url("kepegawaian/berkas?msg=1&l=SK PNS"));
+                }
+          
+      } else {
+        redirect(base_url("kepegawaian/berkas"));
+      }
+    }
+
+
+    function uploadkarpeg()
+    {
+        $variabel['csrf'] = csrf();
+        if ($this->input->post()) {
+             $id_pegawai = $this->session->userdata("id_pegawai");
+             $exec = $this->m_berkas->lihatdataberkas($id_pegawai);
+             if ($exec->num_rows()==0){
+                $array2 = array (
+                    "id_pegawai" =>$id_pegawai
+                );
+                $exec = $this->m_berkas->tambahdata($array2);
+              }
+            $array=array(
+                'karpeg'=> $this->input->post('karpeg')
+                );
+                $id_pegawai = $this->input->post("id_pegawai");
+                $config['upload_path'] = './assets/berkas/karpeg';
+                $config['allowed_types'] = 'jpg|jpeg|JPG|JPEG|pdf|PNG|png';
+                $this->load->library('upload', $config);
+                if ($this->upload->do_upload("karpeg"))
+                {
+                    $upload = $this->upload->data();
+                    $karpeg = $upload["raw_name"].$upload["file_ext"];
+                    $array['karpeg']=$karpeg;
+
+                    $query2 = $this->m_berkas->lihatdatasatu($id_pegawai);
+                    $row2 = $query2->row();
+                    $berkas1temp = $row2->karpeg;
+                    $path1 ='./assets/images/karpeg/'.$berkas1temp.'';
+                    echo "$path1";
+                    if(is_file($path1)) {
+                        unlink($path1); //menghapus gambar di folder produk
+                    }
+                }
+                $exec = $this->m_berkas->editdata($id_pegawai,$array);
+                if ($exec){
                  redirect(base_url("kepegawaian/berkas?msg=1&l=Kartu Nikah"));
                 }
           
@@ -481,13 +526,103 @@ class Kepegawaian extends CI_Controller {
       }
     }
 
+
     function riwayatpendidikan()
     {
         $variabel['csrf'] = csrf();
+        $variabel['pendidikan'] = $this->m_pendidikan->lihatdata();
         $id_pegawai = $this->session->userdata("id_pegawai");
         $variabel['data'] = $this->m_riwayatpendidikan->lihatdata($id_pegawai);
-        $this->layout->renderadmin('v_pegawai/riwayatpendidikan/v_riwayatpendidikan',$variabel,'v_pegawai/riwayatpendidikan/v_riwayatpendidikan_js');
+        $variabel['id_pegawai'] = $id_pegawai;
+        
+        $this->layout->render('v_pegawai/riwayatpendidikan/v_riwayatpendidikan',$variabel,'v_pegawai/riwayatpendidikan/v_riwayatpendidikan_js');
     }
     
+    function riwayatpendidikantambah()
+    {
+        $variabel['csrf'] = csrf();
+        if ($this->input->post()){
+            $id_pegawai = $this->session->userdata("id_pegawai");
+                $array=array(
+                    'id_pegawai'=> $id_pegawai,
+                    'id_pendidikan'=> $this->input->post('id_pendidikan'),
+                    'nama'=>$this->input->post('nama'),
+                    'tahunlulus'=>$this->input->post('tahunlulus')
+                    );
+                    $config['upload_path'] = './assets/berkas/riwayatpendidikan';
+                    $config['allowed_types'] = 'jpg|jpeg|JPG|JPEG|pdf|PNG|png';
+                    $this->load->library('upload', $config);
+                    if ($this->upload->do_upload("berkas"))
+                    {
+                        $upload = $this->upload->data();
+                        $berkas = $upload["raw_name"].$upload["file_ext"];
+                        $array['berkas']=$berkas;
+                    }
+                    $exec = $this->m_riwayatpendidikan->tambahdata($array);
+                    if ($exec) redirect(base_url("kepegawaian/riwayatpendidikan?msg=1"));
+                    else redirect(base_url("kepegawaian/riwayatpendidikan?msg=0"));
+        } else {
+            $this->layout->render('v_pegawai/riwayatpendidikan/v_riwayatpendidikan',$variabel,'v_pegawai/riwayatpendidikan/v_riwayatpendidikan_js');
+    
+        }
+    }
+
+    function riwayatpendidikanhapus()
+    {
+        $id_riwayatpendidikan = $this->input->get("id");
+        $query2 = $this->m_riwayatpendidikan->lihatdatasatu($id_riwayatpendidikan);
+        $row2 = $query2->row();
+        $berkas1temp = $row2->berkas;
+        $path1 ='./assets/berkas/riwayatpendidikan/'.$berkas1temp.'';
+        if(is_file($path1)) {
+            unlink($path1);
+        }
+        $exec = $this->m_riwayatpendidikan->hapus($id_riwayatpendidikan);
+       redirect(base_url()."kepegawaian/riwayatpendidikan?msg=2");
+    }
+
+    function riwayatpendidikanedit()
+    {
+        $id_riwayatpendidikan = $this->input->post("id_riwayatpendidikan");
+        $variabel['pendidikan'] = $this->m_pendidikan->lihatdata();
+        $variabel['csrf'] = csrf();
+        $variabel['data'] = $this->m_riwayatpendidikan->lihatdatasatu($id_riwayatpendidikan)->row_array();
+        $this->load->view("v_pegawai/riwayatpendidikan/v_riwayatpendidikan_edit",$variabel);
+    }
+    function riwayatpendidikaneditproses()
+    {
+        $variabel['csrf'] = csrf();
+        if ($this->input->post()) {
+            $array=array(
+                'id_pendidikan'=> $this->input->post('id_pendidikan'),
+                'nama'=>$this->input->post('nama'),
+                'tahunlulus'=>$this->input->post('tahunlulus')
+                );
+                $id_riwayatpendidikan = $this->input->post("id_riwayatpendidikan");
+                $config['upload_path'] = './assets/berkas/riwayatpendidikan';
+                $config['allowed_types'] = 'jpg|jpeg|JPG|JPEG|pdf|PNG|png';
+                $this->load->library('upload', $config);
+                if ($this->upload->do_upload("berkas"))
+                {
+                    $upload = $this->upload->data();
+                    $berkas = $upload["raw_name"].$upload["file_ext"];
+                    $array['berkas']=$berkas;
+
+                    $query2 = $this->m_riwayatpendidikan->lihatdatasatu($id_riwayatpendidikan);
+                    $row2 = $query2->row();
+                    $berkas1temp = $row2->berkas;
+                    $path1 ='./assets/berkas/riwayatpendidikan/'.$berkas1temp.'';
+                    if(is_file($path1)) {
+                        unlink($path1); //menghapus gambar di folder produk
+                    }
+                }
+                $exec = $this->m_riwayatpendidikan->editdata($id_riwayatpendidikan,$array);
+                if ($exec){
+              redirect(base_url("kepegawaian/riwayatpendidikan?msg=0"));
+                }
+      } else {
+      }
+
+    }
 
 }

@@ -28,7 +28,7 @@
 	<meta name="msapplication-TileImage" content="<?php echo base_url() ?>assets/images/favicon/ms-icon-144x144.png">
 	<meta name="theme-color" content="#ffffff"> -->
 
-	<title>Kepegawaian</title>
+	<title>SIDAWAIPRIN</title>
 
 	<link rel="stylesheet" href="<?php echo base_url() ?>assets/back-end/js/jquery-ui/css/no-theme/jquery-ui-1.10.3.custom.min.css">
 	<link rel="stylesheet" href="<?php echo base_url() ?>assets/back-end/css/font-icons/entypo/css/entypo.css" media="screen">
@@ -59,21 +59,21 @@
 	<?php
 		$nama = $this->session->userdata("nama");
 		$foto = $this->session->userdata("foto");
-		$rule = $this->session->userdata("rule");
-		$seksi = $this->session->userdata("seksi");
+		$pangkat = $this->session->userdata("pangkat");
 
 		
 	?>
 <body class="page-body" style="font-size:12px;color:#666666">
+
 <div class="page-container"><!-- add class "sidebar-collapsed" to close sidebar by default, "chat-visible" to make chat appear always -->
 	<div class="sidebar-menu menu2">
 		<div class="sidebar-menu-inner">
 			<header class="logo-env">
 				<!-- logo -->
 				<div class="logo">
-					<a href="index.html">
-						<img src="<?php echo base_url() ?>assets/images/provinsi.png" width="25" style="margin-right:5px" alt="" />
-						<span style="font-weight:bold;color:#fff;font-size:14px;">KEPEGAWAIAN </span>
+					<a href="<?php echo base_url()."kepegawaian"; ?>">
+						<!-- <img src="<?php echo base_url() ?>assets/images/provinsi.png" width="25" style="margin-right:5px" alt="" /> -->
+						<span style="font-weight:bold;color:#fff;font-size:18px;">SIDAWAI</span><span style="font-size:14px;">PRIN</span>
 					</a>
 				</div>
 				<!-- logo collapse icon -->
@@ -112,7 +112,7 @@
 							<img src="<?php if ($foto =="") echo base_url()."assets/images/foto/default.png"; else echo base_url()."assets/images/foto/".$foto; ?>" alt="" class="img-circle" width="44" />
 							<span style="float:right;margin-top:10px">
 							<?php echo $nama ?> <br/>
-							<small style="color:#7c7c7c"><?php // echo $jabatan ?> | <?php echo $seksi ?>  <i class="fa fa-caret-down"></i></small>
+							<small style="color:#7c7c7c"><?php echo $pangkat ?>  <i class="fa fa-caret-down"></i></small>
 							</span>
 						</a>
 						<ul class="dropdown-menu">
@@ -120,7 +120,7 @@
 							<li class="caret"></li>
 							<!-- Profile sub-links -->
 							<li>
-								<a href="<?php echo base_url(); ?>kepegawaian/profil">
+								<a href="<?php echo base_url(); ?>kepegawaian/biodataedit">
 									<i class="entypo-user"></i>
 									Edit Profile
 								</a>

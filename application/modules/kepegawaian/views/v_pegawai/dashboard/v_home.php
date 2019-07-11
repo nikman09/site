@@ -9,18 +9,11 @@
 
 <!-- Footer -->
 <footer class="main">
-
 	&copy;
 	<?php echo date('Y') ?>
-	<strong>DISPERIN</strong> Aplikasi Kepegawaian
-
+	<strong> SIDAWAIPRIN</strong> (Sistem Informasi Data Pegawai Dinas Perindustrian)
 </footer>
-
 </div>
-
-
-
-
 <!-- Imported styles on this page -->
 <link rel="stylesheet" href="<?php echo base_url() ?>assets/back-end/js/jvectormap/jquery-jvectormap-1.2.2.css">
 <link rel="stylesheet" href="<?php echo base_url() ?>assets/back-end/js/rickshaw/rickshaw.min.css">

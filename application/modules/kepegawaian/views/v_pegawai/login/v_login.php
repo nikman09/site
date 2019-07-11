@@ -60,11 +60,10 @@
 		<div class="login-header login-caret" style="padding-top:10px;padding-bottom:20px">
 			<div class="login-content">
 				<a href="index.html" class="logo">
-				<img src="<?php echo base_url() ?>assets/images/provinsi.png" width="50" style="margin-right:5px;" alt="" />
-					<h2 style="color:#f7f7f7">APLIKASI KEPEGAWAIAN</h2>
-					<!--img src="<?php echo base_url() ?>assets/back-end/images/logogadget.png" width="120" alt="" -->
+					<h2 style="color:#f7f7f7;font-weight:bold;">SIDAWAI<small style="font-weight:bold;font-size:20px">PRIN</small></h2>
+					<!--img	 src="<?php echo base_url() ?>assets/back-end/images/logogadget.png" width="120" alt="" -->
 				</a>
-				<p class="description" style="color:#f7f7f7">Dinas Perindustrian Provinsi Kalimantan Selatan</p>
+				<p class="description" style="color:#f7f7f7">Sistem Informasi Data Pegawai Dinas Perindustrian Provinsi Kalimantan Selatan</p>
 				<!-- progress bar indicator -->
 			</div>
 		</div>

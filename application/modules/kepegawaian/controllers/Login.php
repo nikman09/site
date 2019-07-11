@@ -6,6 +6,7 @@ class Login extends CI_Controller {
         parent::__construct();
         $this->load->model("m_pegawai/m_login");
         $this->load->model("m_admin/m_loginadmin");
+        $this->load->model("m_pegawai/m_pegawai");
     }
     public function index()
     { 
@@ -21,16 +22,15 @@ class Login extends CI_Controller {
             $exec = $this->m_login->ceklogin($nip,$password);
             if ($exec->num_rows()>0) {
                 $data = $exec->row_array();
+                $data2 = $this->m_pegawai->lihatdatasatu($data['id_pegawai'])->row_array();;
                 $data_session = array(
                     'nip' => $data['nip'],
                     'statuslogin' => "login",
                     'nama'=> $data['nama'],
                     'foto'=> $data['foto'],
-                    'seksi'=> $data['seksi'],
-                    'id_seksi'=> $data['id_seksi'],
-                    'rule'=> $data['rule'],
                     'id_pegawai'=> $data['id_pegawai'],
-                    'status'=> $data['status']
+                    'statuspegawai'=> $data['statuspegawai'],
+                    'pangkat' => $data2['pangkat']
                     );
                 $this->session->set_userdata($data_session);
                 if (isset($_GET['m'])) {

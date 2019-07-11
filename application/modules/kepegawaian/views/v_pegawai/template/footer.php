@@ -2,7 +2,7 @@
 
 &copy;
 <?php echo date('Y') ?>
-<strong> Arsip</strong> Balai Jasa Kontruksi Wilayah V
+<strong> SIDAWAIPRIN</strong>(Sistem Informasi Data Pegawai Dinas Perindustrian)
 
 
 	

@@ -7,7 +7,7 @@
 	<meta name="description" content="Neon Admin Panel" />
 	<meta name="author" content="" />
 	<link rel="icon" href="assets/images/favicon.ico">
-	<title>Dinas Perindustrian Provinsi Kalimantan Selatan | Login</title>
+	<title>Admin SIDAWAIPRIN | Login</title>
 	<link rel="stylesheet" href="<?php echo base_url() ?>assets/back-end/js/jquery-ui/css/no-theme/jquery-ui-1.10.3.custom.min.css">
 	<link rel="stylesheet" href="<?php echo base_url() ?>assets/back-end/css/font-icons/entypo/css/entypo.css">
 	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic">
@@ -60,11 +60,12 @@
 		<div class="login-header login-caret" style="padding-top:10px;padding-bottom:20px">
 			<div class="login-content">
 				<a href="index.html" class="logo">
-				<img src="<?php echo base_url() ?>assets/images/provinsi.png" width="50" style="margin-right:5px;" alt="" />
-					<h2 style="color:#f7f7f7"><small>ADMINISTRATOR</small> <br/>APLIKASI KEPEGAWAIAN</h2>
+				<a href="index.html" class="logo">
+				<h2 style="color:#f7f7f7;font-weight:bold;"><small >Administrator</small></h2>
+					<h2 style="color:#f7f7f7;font-weight:bold;  margin-top:0px">SIDAWAI<small style="font-weight:bold;font-size:20px">PRIN</small></h2>
 					<!--img src="<?php echo base_url() ?>assets/back-end/images/logogadget.png" width="120" alt="" -->
 				</a>
-				<p class="description" style="color:#f7f7f7">Dinas Perindustrian Provinsi Kalimantan Selatan</p>
+				<p class="description" style="color:#f7f7f7">Sistem Informasi Data Pegawai Dinas Perindustrian Provinsi Kalimantan Selatan</p>
 				<!-- progress bar indicator -->
 			</div>
 		</div>

@@ -7,7 +7,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<meta name="description" content="Neon Admin Panel" />
+	<meta name="description" content="SIDAWAIPRIN" />
 	<meta name="author" content="" />
 
 	<!-- <link rel="apple-touch-icon" sizes="57x57" href="<?php echo base_url() ?>assets/images/favicon/apple-icon-57x57.png">
@@ -28,7 +28,7 @@
 	<meta name="msapplication-TileImage" content="<?php echo base_url() ?>assets/images/favicon/ms-icon-144x144.png">
 	<meta name="theme-color" content="#ffffff"> -->
 
-	<title>Kepegawaian</title>
+	<title>SIDAWAIPRIN</title>
 
 	<link rel="stylesheet" href="<?php echo base_url() ?>assets/back-end/js/jquery-ui/css/no-theme/jquery-ui-1.10.3.custom.min.css">
 	<link rel="stylesheet" href="<?php echo base_url() ?>assets/back-end/css/font-icons/entypo/css/entypo.css" media="screen">
@@ -70,9 +70,9 @@
 			<header class="logo-env">
 				<!-- logo -->
 				<div class="logo">
-					<a href="index.html">
-						<img src="<?php echo base_url() ?>assets/images/provinsi.png" width="25" style="margin-right:5px" alt="" />
-						<span style="font-weight:bold;color:#fff;font-size:14px;">KEPEGAWAIAN </span>
+				<a href="<?php echo base_url()."kepegawaian/admin"; ?>">
+						<!-- <img src="<?php echo base_url() ?>assets/images/provinsi.png" width="25" style="margin-right:5px" alt="" /> -->
+						<span style="font-weight:bold;color:#fff;font-size:18px;">SIDAWAI</span><span style="font-size:14px;">PRIN</span>
 					</a>
 				</div>
 				<!-- logo collapse icon -->

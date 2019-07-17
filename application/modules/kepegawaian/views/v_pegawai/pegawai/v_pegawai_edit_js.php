@@ -196,14 +196,19 @@ jQuery( document ).ready( function( $ ) {
             async : false,
             dataType : 'json',
             success: function(data){
-             
-                var html ='<option value="" disabled selected>.:Pilih Keterangan Jabatan:.</option>';
+                if (data.length==0) {
+                    $('#id_subjabatan').attr("hidden",true);
+                    html="";
+                    $('#id_subjabatan').html(html);
+                } else {
+                    $('#id_subjabatan').removeAttr('hidden');
+                    var html ='<option value="" disabled selected>.:Pilih Keterangan Jabatan:.</option>';
                     var i;
                     for(i=0; i<data.length; i++){
                         html += '<option value="'+data[i].id_subjabatan+'">'+data[i].nama_subjabatan+'</option>';
                     }
                     $('#id_subjabatan').html(html);
-                   
+                }
                 
             }
         });

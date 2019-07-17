@@ -42,7 +42,7 @@
 					<div class="form-group">
 						<label class="col-lg-4 control-label">Tempat/Tanggal Lahir</label>
 						<div class="col-lg-8">
-							<p  class="form-control-static" > : <?php echo $data['tempat_lahir']; ?> /  <?php echo tanggal($data['tanggal_lahir'])	; ?></p>
+							<p  class="form-control-static" > : <?php echo $data['tempat_lahir']; ?> /  <?php   if ($data['tanggal_lahir']=="0000-00-00") echo ""; else echo tanggal($data['tanggal_lahir']); ?></p>
 						</div>
 					</div>
 					
@@ -112,7 +112,7 @@
 					<div class="form-group">
 						<label class="col-lg-4 control-label">Tanggal Mulai Kerja</label>
 						<div class="col-lg-8">
-							<p class="form-control-static" > : <?php echo tanggal($data['tmkerja']) ?></p>
+							<p class="form-control-static" > : <?php  if ($data['tmkerja']=="0000-00-00") echo "-"; else echo tanggal($data['tmkerja']); ?></p>
 						</div>
 					</div>
 
@@ -120,10 +120,13 @@
 						<label class="col-lg-4 control-label">Masa Kerja</label>
 						<div class="col-lg-8">
 							<p class="form-control-static" > : <?php
+								if($data['tmkerja']!="0000-00-00") {
+
 								$tanggal1 = new DateTime($data['tmkerja']); 
 								$tanggal2 = new DateTime();
 								$perbedaan = $tanggal2->diff($tanggal1);
 								echo $perbedaan->y.' Tahun '.$perbedaan->m.' Bulan';
+								}
 							 ?></p>
 						</div>
 					</div>

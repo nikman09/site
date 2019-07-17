@@ -6,7 +6,6 @@ class Kepegawaian extends CI_Controller {
         parent::__construct();
         ceklogin();
         $this->load->model("m_pegawai/m_general");
-        $this->load->model("m_pegawai/m_seksi");
         $this->load->model("m_pegawai/m_pegawai");
         $this->load->model("m_pegawai/m_jabatan");
         $this->load->model("m_pegawai/m_pangkat");

@@ -45,15 +45,9 @@
 					</div>
 					
 					<div class="form-group">
-						<label class="col-lg-4 control-label">Tempat Lahir</label>
+						<label class="col-lg-4 control-label">Tempat/Tanggal Lahir</label>
 						<div class="col-lg-8">
-							<p  class="form-control-static" > : <?php echo $data['tempat_lahir']; ?> </p>
-						</div>
-					</div>
-					<div class="form-group">
-						<label class="col-lg-4 control-label">Tanggal Lahir</label>
-						<div class="col-lg-8">
-							<p  class="form-control-static" > : <?php echo tanggal($data['tanggal_lahir'])	; ?> </p>
+							<p  class="form-control-static" > : <?php echo $data['tempat_lahir']; ?> /  <?php   if ($data['tanggal_lahir']=="0000-00-00") echo ""; else echo tanggal($data['tanggal_lahir']); ?></p>
 						</div>
 					</div>
 					<div class="form-group">
@@ -80,20 +74,12 @@
 							<p class="form-control-static" > : <?php echo $data['goldar'] ?></p>
 						</div>
 					</div>
-					<hr/>
 					<div class="form-group">
-					<label class="col-lg-4 control-label">Alamat</label>
+					<label class="col-lg-4 control-label">Alamat / Telepon</label>
 						<div class="col-lg-8">
-							<p class="form-control-static"> : <?php echo $data['alamat']?></p>
+							<p class="form-control-static"> : <?php echo $data['alamat']?> / <?php echo $data['nohp'] ?></p>
 						</div>
 					</div>
-					<div class="form-group">
-						<label class="col-lg-4 control-label">Telepon</label>
-						<div class="col-lg-8">
-							<p class="form-control-static" > : <?php echo $data['nohp'] ?></p>
-						</div>
-					</div>
-					
 					<div class="form-group">
 						<label class="col-lg-4 control-label">Alamat Email</label>
 						<div class="col-lg-8">
@@ -101,69 +87,59 @@
 						</div>
 						
 					</div>
-					
 					<div class="form-group">
-						<label class="col-lg-4 control-label">Status Kepegawaian</label>
+						<label class="col-lg-4 control-label">Kepegawaian</label>
 						<div class="col-lg-8">
-							<p class="form-control-static" > : <?php echo $data['statuspegawai'] ?></p>
+							<p class="form-control-static" > : <?php if ($data['statuspegawai']!="") echo $data['statuspegawai']."Pemprov Kalimantan Selatan" ?> </p>
 						</div>
 					</div>
 					<div class="form-group">
-						<label class="col-lg-4 control-label">Jenis Kepegawaian</label>
+						<label class="col-lg-4 control-label">Jabatan</label>
 						<div class="col-lg-8">
-							<p class="form-control-static" > : <?php echo $data['jenis'] ?></p>
+							<p class="form-control-static" > : <?php echo $data['nama_jabatan'] ?>  <?php if ( $data['nama_subjabatan']!="") echo " / ".$data['nama_subjabatan'] ?> </p>
 						</div>
 					</div>
 					<div class="form-group">
-						<label class="col-lg-4 control-label">Jenis Jabatan</label>
+						<label class="col-lg-4 control-label">Pangkat</label>
 						<div class="col-lg-8">
-							<p class="form-control-static" > : <?php echo $data['jabatan'] ?></p>
+							<p class="form-control-static" > : <?php echo $data['pangkat'] ?></p>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-lg-4 control-label">Pendidikan Terakhir</label>
+						<div class="col-lg-8">
+							<p class="form-control-static" > : <?php echo $data['pendidikan'] ?></p>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-lg-4 control-label">Tanggal Mulai Kerja</label>
+						<div class="col-lg-8">
+							<p class="form-control-static" > : <?php  if ($data['tmkerja']=="0000-00-00") echo "-"; else echo tanggal($data['tmkerja']); ?></p>
 						</div>
 					</div>
 
 					<div class="form-group">
-						<label class="col-lg-4 control-label">Kedudukan Pegawai</label>
+						<label class="col-lg-4 control-label">Masa Kerja</label>
 						<div class="col-lg-8">
-							<p class="form-control-static" > : <?php echo $data['kedudukan'] ?></p>
+							<p class="form-control-static" > : <?php
+								if($data['tmkerja']!="0000-00-00") {
+
+								$tanggal1 = new DateTime($data['tmkerja']); 
+								$tanggal2 = new DateTime();
+								$perbedaan = $tanggal2->diff($tanggal1);
+								echo $perbedaan->y.' Tahun '.$perbedaan->m.' Bulan';
+								}
+							 ?></p>
 						</div>
 					</div>
 					<div class="form-group">
-						<label class="col-lg-4 control-label">Kartu Penduduk</label>
+						<label class="col-lg-4 control-label">Dokumen Pegawai</label>
 						<div class="col-lg-8">
-							<p class="form-control-static" > : <?php echo $data['ktp'] ?></p>
+							<p class="form-control-static" > : 
+								<a href="<?php echo base_url('kepegawaian/admin/berkas') ?>" class="btn btn-primary btn-s-xs"><i class="fa fa-file"></i> Data</a>
+							</p>
 						</div>
 					</div>
-					<div class="form-group">
-						<label class="col-lg-4 control-label">BPJS</label>
-						<div class="col-lg-8">
-							<p class="form-control-static" > : <?php echo $data['bpjs'] ?></p>
-						</div>
-					</div>
-					<div class="form-group">
-						<label class="col-lg-4 control-label">Karis/Karsu</label>
-						<div class="col-lg-8">
-							<p class="form-control-static" > : <?php echo $data['karis'] ?></p>
-						</div>
-					</div>
-					<div class="form-group">
-						<label class="col-lg-4 control-label">Kartu Pegawai</label>
-						<div class="col-lg-8">
-							<p class="form-control-static" > : <?php echo $data['karpeg'] ?></p>
-						</div>
-					</div>
-					<div class="form-group">
-						<label class="col-lg-4 control-label">Taspen</label>
-						<div class="col-lg-8">
-							<p class="form-control-static" > : <?php echo $data['taspen'] ?></p>
-						</div>
-					</div>
-					<div class="form-group">
-						<label class="col-lg-4 control-label">NPWP</label>
-						<div class="col-lg-8">
-							<p class="form-control-static" > : <?php echo $data['npwp'] ?></p>
-						</div>
-					</div>
-				
 				
 				</div>
 
@@ -172,7 +148,7 @@
 
 					<div class="form-group">
 						<label class="col-sm-4 control-label"></label>
-						<div class="col-sm-8">
+						<div class="col-sm-8" style="padding-top:20px">
 							<?php if ($data['foto']=='') { ?>
 								<img src="<?php echo base_url()."assets/images/foto/"; ?>default.png" class="thumbnail" width="200px"/>
 							<?php } else { ?>

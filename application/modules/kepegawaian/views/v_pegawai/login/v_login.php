@@ -7,7 +7,7 @@
 	<meta name="description" content="Neon Admin Panel" />
 	<meta name="author" content="" />
 	<link rel="icon" href="assets/images/favicon.ico">
-	<title>Dinas Perindustrian Provinsi Kalimantan Selatan | Login</title>
+	<title>SIDAWAIPRIN | Login</title>
 	<link rel="stylesheet" href="<?php echo base_url() ?>assets/back-end/js/jquery-ui/css/no-theme/jquery-ui-1.10.3.custom.min.css">
 	<link rel="stylesheet" href="<?php echo base_url() ?>assets/back-end/css/font-icons/entypo/css/entypo.css">
 	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic">
@@ -90,7 +90,6 @@
 								<input type="text" class="form-control" name="nip" id="nip"  placeholder="NIP" autocomplete="off" value="<?php echo set_value('nip'); ?>"
 								/>
 							</div>
-							
 						</div>
 						<div class="form-group">
 							<div class="input-group">

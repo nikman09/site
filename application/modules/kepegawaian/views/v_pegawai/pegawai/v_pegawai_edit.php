@@ -57,7 +57,7 @@
 						<label class="col-lg-4 control-label">Tanggal Lahir</label>
 						<div class="col-lg-8">
 							<div class="input-group">
-								<input type="text" class="form-control datepicker" data-format="dd-mm-yyyy" value="<?php echo tanggal($data['tanggal_lahir']); ?>"
+								<input type="text" class="form-control datepicker" data-format="dd-mm-yyyy" value="<?php  if ($data['tanggal_lahir']=="0000-00-00") echo date('d-m-Y'); else echo tanggal($data['tanggal_lahir']); ?>"
 								readonly data-validate="required" data-message-required="Tanggal tanggal_lahir " name="tanggal_lahir" style="background-color:#fff"  placeholder="dd/mm/yyyy">
 								<div class="input-group-addon" style="background-color:#fff">
 									<a href="#">
@@ -175,7 +175,7 @@
 				<div class="form-group">
 					<label class="col-lg-4 control-label"></label>
 					<div class="col-lg-8">
-						<select class="form-control" name="id_subjabatan" id="id_subjabatan"  >
+						<select class="form-control" name="id_subjabatan" id="id_subjabatan" <?php if ($datasubjabatan->num_rows()==0) echo "hidden" ?> >
 							<option value="" disabled <?php if (set_value('id_subjabatan')=="") echo "selected" ?>>.:Pilih Keterangan Jabatan:.</option>
 						<?php  (set_value('id_subjabatan')) ? $id_subjabatan = set_value('id_subjabatan') : $id_subjabatan = $data['id_subjabatan'] ; ?>
 						<?php

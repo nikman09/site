@@ -45,25 +45,9 @@
 					</div>
 				</div>
 				<div class="form-group">
-					<label class="col-lg-4 control-label">Gelar Depan</label>
-					<div class="col-lg-8">
-						<input type="text" class="form-control" name="gelardepan" value="<?php echo (set_value('gelardepan')) ? set_value('gelardepan') : $data['gelardepan'] ; ?>" 
-						/>
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="col-lg-4 control-label">Gelar Belakang</label>
-					<div class="col-lg-8">
-						<input type="text" class="form-control" name="gelarbelakang" value="<?php echo (set_value('gelarbelakang')) ? set_value('gelarbelakang') : $data['gelarbelakang'] ; ?>" 
-						/>
-					</div>
-				</div>
-
-				
-				<div class="form-group">
 					<label class="col-lg-4 control-label">Tempat Lahir</label>
 					<div class="col-lg-8">
-						<input type="text" class="form-control" name="tempat_lahir" value="<?php echo (set_value('tempat_lahir')) ? set_value('tempat_lahir') : $data['tempat_lahir'] ; ?>" 
+						<input type="text" class="form-control" name="tempat_lahir" value="<?php echo $data['tempat_lahir']; ?>" 
 						/>
 					</div>
 				</div>
@@ -72,7 +56,7 @@
 						<label class="col-lg-4 control-label">Tanggal Lahir</label>
 						<div class="col-lg-8">
 							<div class="input-group">
-								<input type="text" class="form-control datepicker" data-format="dd-mm-yyyy" value="<?php echo tanggal((set_value('tanggal_lahir')) ? set_value('tanggal_lahir') : $data['tanggal_lahir'] ); ?>"
+								<input type="text" class="form-control datepicker" data-format="dd-mm-yyyy" value="<?php  if ($data['tanggal_lahir']=="0000-00-00") echo date('d-m-Y'); else echo tanggal($data['tanggal_lahir']); ?>"
 								readonly data-validate="required" data-message-required="Tanggal tanggal_lahir " name="tanggal_lahir" style="background-color:#fff"  placeholder="dd/mm/yyyy">
 								<div class="input-group-addon" style="background-color:#fff">
 									<a href="#">
@@ -87,11 +71,9 @@
 					<label class="col-lg-4 control-label">Jenis Kelamin</label>
 					<div class="col-lg-8">
 					<select class="form-control" name="jk">
-					
 					<option value='' disabled>.:Pilih Jenis Kelamin:.</option>
-					<?php  (set_value('jk')) ? $jk = set_value('jk') : $jk = $data['jk'] ; ?>
-					   <option value="Laki-laki" <?php echo ($jk=='Laki-laki'?'selected':'') ?> >Laki-laki</option>
-					   <option value="Perempuan" <?php echo ($jk=='Perempuan'?'selected':'') ?> >Perempuan</option>
+					   <option value="Laki-laki" <?php echo ($data['jk']=='Laki-laki'?'selected':'') ?> >Laki-laki</option>
+					   <option value="Perempuan" <?php echo ($data['jk']=='Perempuan'?'selected':'') ?> >Perempuan</option>
 					</select>
 					</div>
 				</div>
@@ -100,13 +82,12 @@
 					<div class="col-lg-8">
 					<select class="form-control" name="agama">
 					<option value='' disabled>.:Pilih Agama:.</option>
-					<?php  (set_value('agama')) ? $agama = set_value('agama') : $agama = $data['agama'] ; ?>
-					   <option value="Islam" <?php echo ($agama=='Islam'?'selected':'') ?> >Islam</option>
-					   <option value="Protestan" <?php echo ($agama=='Protestan'?'selected':'') ?> >Protestan</option>
-					   <option value="Khatolik" <?php echo ($agama=='Khatolik'?'selected':'') ?> >Khatolik</option>
-					   <option value="Hindu" <?php echo ($agama=='Hindu'?'selected':'') ?> >Hindu</option>
-					   <option value="Budha" <?php echo ($agama=='Budha'?'selected':'') ?> >Budha</option>
-					   <option value="Konghucu" <?php echo ($agama=='Konghucu'?'selected':'') ?> >Konghucu</option>
+					   <option value="Islam" <?php echo ($data['agama']=='Islam'?'selected':'') ?> >Islam</option>
+					   <option value="Protestan" <?php echo ($data['agama']=='Protestan'?'selected':'') ?> >Protestan</option>
+					   <option value="Khatolik" <?php echo ($data['agama']=='Khatolik'?'selected':'') ?> >Khatolik</option>
+					   <option value="Hindu" <?php echo ($data['agama']=='Hindu'?'selected':'') ?> >Hindu</option>
+					   <option value="Budha" <?php echo ($data['agama']=='Budha'?'selected':'') ?> >Budha</option>
+					   <option value="Konghucu" <?php echo ($data['agama']=='Konghucu'?'selected':'') ?> >Konghucu</option>
 					</select>
 					</div>
 				</div>
@@ -116,11 +97,10 @@
 					<div class="col-lg-8">
 					<select class="form-control" name="status">
 						<option value='' disabled>.:Pilih Status:.</option>
-						<?php  (set_value('status')) ? $status = set_value('status') : $status = $data['status'] ; ?>
-						<option value="Belum Kawin" <?php echo ($status=='Belum Kawin'?'selected':'') ?> >Belum Kawin</option>
-					    <option value="Kawin" <?php echo ($status=='Kawin'?'selected':'') ?> >Kawin</option>
-						<option value="Janda" <?php echo ($status=='Janda'?'selected':'') ?> >Janda</option>
-						<option value="Duda" <?php echo ($status=='Duda'?'selected':'') ?> >Duda</option>
+						<option value="Belum Kawin" <?php echo ($data['status']=='Belum Kawin'?'selected':'') ?> >Belum Kawin</option>
+					    <option value="Kawin" <?php echo ($data['status']=='Kawin'?'selected':'') ?> >Kawin</option>
+						<option value="Janda" <?php echo ($data['status']=='Janda'?'selected':'') ?> >Janda</option>
+						<option value="Duda" <?php echo ($data['status']=='Duda'?'selected':'') ?> >Duda</option>
 					</select>
 					</div>
 				</div>
@@ -129,160 +109,132 @@
 					<div class="col-lg-8">
 					<select class="form-control" name="goldar">
 						<option value='' disabled>.:Pilih Golongan Darah:.</option>
-						<?php  (set_value('goldar')) ? $goldar = set_value('goldar') : $goldar = $data['goldar'] ; ?>
-						<option value="A" <?php echo ($goldar=='A'?'selected':'') ?> >A</option>
-					    <option value="B" <?php echo ($goldar=='B'?'selected':'') ?> >B</option>
-						<option value="AB" <?php echo ($goldar=='AB'?'selected':'') ?> >AB</option>
-						<option value="O" <?php echo ($goldar=='O'?'selected':'') ?> >O</option>
+						<option value="A" <?php echo ($data['status']=='A'?'selected':'') ?> >A</option>
+					    <option value="B" <?php echo ($data['status']=='B'?'selected':'') ?> >B</option>
+						<option value="AB" <?php echo ($data['status']=='AB'?'selected':'') ?> >AB</option>
+						<option value="O" <?php echo ($data['status']=='O'?'selected':'') ?> >O</option>
 					</select>
 					</div>
 				</div>
 				<div class="form-group">
 					<label class="col-lg-4 control-label">Alamat</label>
 					<div class="col-lg-8">
-						<textarea class="form-control" name="alamat"><?php echo (set_value('alamat')) ? set_value('alamat') : $data['alamat'] ; ?></textarea>
+						<textarea class="form-control" name="alamat"><?php echo $data['alamat']; ?></textarea>
 					</div>
 				</div>
 				<div class="form-group">
 					<label class="col-lg-4 control-label">Telepon</label>
 					<div class="col-lg-8">
-						<input type="text" class="form-control" name="nohp" value="<?php echo (set_value('nohp')) ? set_value('nohp') : $data['nohp'] ; ?>" 
+						<input type="text" class="form-control" name="nohp" value="<?php echo $data['nohp']; ?>" 
 						/>
 					</div>
 				</div>
+				
 				<div class="form-group">
-					<label class="col-lg-4 control-label">Kodepos</label>
+					<label class="col-lg-4 control-label">Alamat Email</label>
 					<div class="col-lg-8">
-						<input type="text" class="form-control" name="kodepos" value="<?php echo (set_value('kodepos')) ? set_value('kodepos') : $data['kodepos'] ; ?>" 
+						<input type="text" class="form-control" name="email" value="<?php echo $data['email']; ?>" 
 						/>
 					</div>
 				</div>
-				<div class="form-group">
-					<label class="col-lg-4 control-label">Email</label>
-					<div class="col-lg-8">
-						<input type="text" class="form-control" name="email" value="<?php echo (set_value('email')) ? set_value('email') : $data['email'] ; ?>" 
-						/>
-					</div>
-				</div>
-			
 				
 			</div>
 			
 			<div class="col-md-6">
 				
 			<div class="form-group">
-					<label class="col-lg-4 control-label">Status Kepegawaian</label>
+					<label class="col-lg-4 control-label">Kepegawaian</label>
 					<div class="col-lg-8">
 					<select class="form-control" name="statuspegawai">
 						<option value='' disabled>.:Pilih Status Pegawai:.</option>
-						<?php  (set_value('statuspegawai')) ? $statuspegawai = set_value('statuspegawai') : $statuspegawai = $data['statuspegawai'] ; ?>
-						<option value="Calon PNS" <?php echo ( $statuspegawai =='Calon PNS'?'selected':'') ?> >Calon PNS</option>
-					    <option value="PNS" <?php echo ($statuspegawai=='PNS'?'selected':'') ?> >PNS</option>
-						<option value="Pensiunan" <?php echo ($statuspegawai=='Pensiunan'?'selected':'') ?> >Pensiunan</option>
-						<option value="ABRI" <?php echo ($statuspegawai=='ABRI'?'selected':'') ?> >ABRI</option>
+						<option value="Calon PNS" <?php echo ($data['statuspegawai']=='Calon PNS'?'selected':'') ?> >Calon PNS</option>
+					    <option value="PNS" <?php echo ($data['statuspegawai']=='PNS'?'selected':'') ?> >PNS</option>
 					</select>
 					</div>
 				</div>
 				<div class="form-group">
-					<label class="col-lg-4 control-label">Jenis Kepegawaian</label>
+					<label class="col-lg-4 control-label">jabatan</label>
 					<div class="col-lg-8">
-					<select class="form-control" name="jenis">
-						<option value='' disabled>.:Pilih Jenis Pegawai:.</option>
-						<?php  (set_value('jenis')) ? $jenis = set_value('jenis') : $jenis = $data['jenis'] ; ?>
-						<option value="PNS Pusat DEPDAGRI" <?php echo ($jenis=='PNS Pusat DEPDAGRI'?'selected':'') ?> >PNS Pusat DEPDAGRI</option>
-					    <option value="PNS Pusat DEPDAGRI DPK" <?php echo ($jenis=='PNS Pusat DEPDAGRI DPK'?'selected':'') ?> >PNS Pusat DEPDAGRI DPK</option>
-					    <option value="PNS Pusat DEPDAGRI DPB" <?php echo ($jenis=='PNS Pusat DEPDAGRI DPB'?'selected':'') ?> >PNS Pusat DEPDAGRI DPB</option>
-					    <option value="PNS Daerah Otonom" <?php echo ($jenis=='PNS Daerah Otonom'?'selected':'') ?> >PNS Daerah Otonom</option>
-					    <option value="PNS Pusat DEP.LAN DPK" <?php echo ($jenis=='PNS Pusat DEP.LAN DPK'?'selected':'') ?> >PNS Pusat DEP.LAN DPK</option>
-					    <option value="PNS Pusat DEP.LAN DPB" <?php echo ($jenis=='PNS Pusat DEP.LAN DPB'?'selected':'') ?> >PNS Pusat DEP.LAN DPB</option>
-					    <option value="ABRI yang ditugaskan Karyakan" <?php echo ($jenis=='ABRI yang ditugaskan Karyakan'?'selected':'') ?> >ABRI yang ditugaskan Karyakan</option>
-					    
-					</select>
+						<select class="form-control" name="id_jabatan" id="id_jabatan" >
+						<option value="">.:Pilih Jabatan:.</option>
+						<?php  (set_value('id_jabatan')) ? $id_jabatan = set_value('id_jabatan') : $id_jabatan = $data['id_jabatan'] ; ?>
+						<?php
+							foreach($jabatan->result_array() as $row) {
+								
+								 echo "<option value='".$row['id_jabatan']."' ";
+								 if ($id_jabatan==$row['id_jabatan']) echo  "selected";
+								 
+								 echo ">".$row['nama_jabatan']."</option>";
+							}
+						?>
+						</select>
 					</div>
 				</div>
+				<div class="form-group">
+					<label class="col-lg-4 control-label"></label>
+					<div class="col-lg-8">
+						<select class="form-control" name="id_subjabatan" id="id_subjabatan" <?php if ($datasubjabatan->num_rows()==0) echo "hidden" ?> >
+							<option value="" disabled <?php if (set_value('id_subjabatan')=="") echo "selected" ?>>.:Pilih Keterangan Jabatan:.</option>
+						<?php  (set_value('id_subjabatan')) ? $id_subjabatan = set_value('id_subjabatan') : $id_subjabatan = $data['id_subjabatan'] ; ?>
+						<?php
+								foreach($datasubjabatan->result_array() as $row) {
+								echo "<option value='".$row['id_subjabatan']."' ".($id_subjabatan==$row['id_subjabatan']?"selected":"").">".$row['nama_subjabatan']."</option>";
+								}
+							?>
+						</select>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-lg-4 control-label">Pangkat</label>
+					<div class="col-lg-8">
+						<select class="form-control" name="id_pangkat" id="id_pangkat">
+						<option value="">.:Pilih Pangkat:.</option>
+						<?php  (set_value('id_pangkat')) ? $id_pangkat = set_value('id_pangkat') : $id_pangkat = $data['id_pangkat'] ; ?>
+						<?php
+							foreach($pangkat->result_array() as $row) {
+								
+								 echo "<option value='".$row['id_pangkat']."' ";
+								 if ($id_pangkat==$row['id_pangkat']) echo  "selected";
+								 
+								 echo ">".$row['pangkat']."</option>";
+							}
+						?>
+						</select>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-lg-4 control-label">Pendidikan Terakhir</label>
+					<div class="col-lg-8">
+						<select class="form-control" name="id_pendidikan" id="id_pendidikan">
+						<option value="">.:Pilih Pendidikan Terakhir:.</option>
+						<?php  (set_value('id_pendidikan')) ? $id_pendidikan = set_value('id_pendidikan') : $id_pendidikan = $data['id_pendidikan'] ; ?>
+						<?php
+							foreach($pendidikan->result_array() as $row) {
+								
+								 echo "<option value='".$row['id_pendidikan']."' ";
+								 if ($id_pendidikan==$row['id_pendidikan']) echo  "selected";
+								 
+								 echo ">".$row['pendidikan']."</option>";
+							}
+						?>
+						</select>
+					</div>
+				</div>
+				<div class="form-group">
+						<label class="col-lg-4 control-label">Tanggal Mulai Kerja</label>
+						<div class="col-lg-8">
+							<div class="input-group">
+								<input type="text" class="form-control datepicker" data-format="dd-mm-yyyy" value="<?php  if ($data['tmkerja']=="0000-00-00") echo date('d-m-Y'); else echo tanggal($data['tmkerja']); ?>"
+								readonly data-validate="required" data-message-required="Tanggal tmkerja " name="tmkerja" style="background-color:#fff"  placeholder="dd/mm/yyyy">
+								<div class="input-group-addon" style="background-color:#fff">
+									<a href="#">
+										<i class="entypo-calendar"></i>
+									</a>
+								</div>
+							</div>
 
-				<div class="form-group">
-					<label class="col-lg-4 control-label">Jenis Jabatan</label>
-					<div class="col-lg-8">
-					<select class="form-control" name="jabatan">
-						<option value='' disabled>.:Pilih Jenis Jabatan:.</option>
-						<?php  (set_value('jabatan')) ? $jabatan = set_value('jabatan') : $jabatan = $data['jabatan'] ; ?>
-						<option value="Struktural" <?php echo ($abatan='Struktural'?'selected':'') ?> >Struktural</option>
-					    <option value="PNS Pusat DEPDAGRI DPK" <?php echo ($jabatan=='Fungsional'?'selected':'') ?> >Fungsional</option>
-					    <option value="Pejabat Negara" <?php echo ($jabatan=='Pejabat Negara'?'selected':'') ?> >Pejabat Negara</option>
-					    <option value="Nonstruktural" <?php echo ($jabatan=='Nonstruktural'?'selected':'') ?> >Nonstruktural</option>
-					    <option value="KORPRI" <?php echo ($jabatan=='KORPRI'?'selected':'') ?> >KORPRI</option>
-					  
-					    
-					</select>
+						</div>
 					</div>
-				</div>
-
-				<div class="form-group">
-					<label class="col-lg-4 control-label">Kedudukan Pegawai</label>
-					<div class="col-lg-8">
-					<select class="form-control" name="kedudukan">
-						<option value='' disabled>.:Pilih Kedudukan Pegawai:.</option>
-						<?php  (set_value('kedudukan')) ? $kedudukan = set_value('kedudukan') : $kedudukan = $data['kedudukan'] ; ?>
-						<option value="Aktif" <?php echo ($kedudukan=='Aktif'?'selected':'') ?> >Aktif</option>
-						<option value="CLTN" <?php echo ($kedudukan=='CLTN'?'selected':'') ?> >Aktif</option>
-						<option value="Perpanjangan CLTN" <?php echo ($kedudukan=='Perpanjangan CLTN'?'selected':'') ?> >Perpanjangan CLTN</option>
-						<option value="Tugas Belajar" <?php echo ($kedudukan=='Tugas Belajar'?'selected':'') ?> >Tugas Belajar</option>
-						<option value="Pemberhentian Sementara" <?php echo ($kedudukan=='Pemberhentian Sementara'?'selected':'') ?> >Pemberhentian Sementara</option>
-						<option value="Penerima Uang Tunggu" <?php echo ($kedudukan=='Penerima Uang Tunggu'?'selected':'') ?> >Penerima Uang Tunggu</option>
-						<option value="Wajib Militer" <?php echo ($kedudukan=='Wajib Militer'?'selected':'') ?> >Wajib Militer</option>
-						<option value="PNS yang dinyatakan hilang" <?php echo ($kedudukan=='PNS yang dinyatakan hilang'?'selected':'') ?> >PNS yang dinyatakan hilang</option>
-						<option value="Pejabat Negara" <?php echo ($kedudukan=='Pejabat Negara'?'selected':'') ?> >Pejabat Negara</option>
-						<option value="Kepala Negara" <?php echo ($kedudukan=='Kepala Negara'?'selected':'') ?> >Kepala Negara</option>
-						<option value="Keberatan atas penjatuhan disiplin sesuai PP 30/1980" <?php echo ($kedudukan=='Keberatan atas penjatuhan disiplin sesuai PP 30/1980'?'selected':'') ?> >Aktif</option>
-
-					   
-					</select>
-					</div>
-				</div>
-				
-				<div class="form-group">
-					<label class="col-lg-4 control-label">Kartu Penduduk</label>
-					<div class="col-lg-8">
-						<input type="text" class="form-control" name="ktp" value="<?php echo (set_value('ktp')) ? set_value('ktp') : $data['ktp'] ; ?>" 
-						/>
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="col-lg-4 control-label">BPJS</label>
-					<div class="col-lg-8">
-						<input type="text" class="form-control" name="bpjs" value="<?php echo (set_value('bpjs')) ? set_value('bpjs') : $data['bpjs'] ; ?>" 
-						/>
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="col-lg-4 control-label">Karis/Karsu</label>
-					<div class="col-lg-8">
-						<input type="text" class="form-control" name="karis" value="<?php echo (set_value('karis')) ? set_value('karis') : $data['karis'] ; ?>" 
-						/>
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="col-lg-4 control-label">Kartu Pegawai</label>
-					<div class="col-lg-8">
-						<input type="text" class="form-control" name="karpeg" value="<?php echo (set_value('karpeg')) ? set_value('karpeg') : $data['karpeg'] ; ?>" 
-						/>
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="col-lg-4 control-label">Taspen</label>
-					<div class="col-lg-8">
-						<input type="text" class="form-control" name="taspen" value="<?php echo (set_value('taspen')) ? set_value('taspen') : $data['taspen'] ; ?>" 
-						/>
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="col-lg-4 control-label">NPWP</label>
-					<div class="col-lg-8">
-						<input type="text" class="form-control" name="npwp" value="<?php echo (set_value('npwp')) ? set_value('npwp') : $data['npwp'] ; ?>" 
-						/>
-					</div>
-				</div>
 
 				<div class="form-group">
 						<label class="col-sm-4 control-label">Foto</label>

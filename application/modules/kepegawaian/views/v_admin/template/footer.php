@@ -2,7 +2,7 @@
 
 &copy;
 <?php echo date('Y') ?>
-<strong> Aplikasi kepegawaian</strong> Dinas Perindustrian Provinsi Kalimantan Selatan
+<strong> SIDAWAIPRIN</strong>(Sistem Informasi Data Pegawai Dinas Perindustrian)
 
 
 	

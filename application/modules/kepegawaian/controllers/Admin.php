@@ -7,6 +7,10 @@ class Admin extends CI_Controller {
         cekloginadmin();
         $this->load->model("m_admin/m_pegawai");
         $this->load->model("m_admin/m_seksi");
+        $this->load->model("m_admin/m_jabatan");
+        $this->load->model("m_admin/m_pangkat");
+        $this->load->model("m_admin/m_pendidikan");
+        $this->load->model("m_admin/m_general");
     }
 
     // Dashboard
@@ -73,6 +77,9 @@ class Admin extends CI_Controller {
     {
       
         $variabel['csrf'] = csrf();
+        $variabel['jabatan'] = $this->m_jabatan->lihatdata();
+        $variabel['pangkat'] = $this->m_pangkat->lihatdata();
+        $variabel['pendidikan'] = $this->m_pendidikan->lihatdata();
         if ($this->input->post()) {
             $nip = $this->input->post('nip');
             $nip2 = $this->input->post('nip2');
@@ -87,8 +94,6 @@ class Admin extends CI_Controller {
             $array=array(
                 'nama'=> $this->input->post('nama'),
                 'nip'=> $this->input->post('nip'),
-                'gelardepan'=> $this->input->post('gelardepan'),
-                'gelarbelakang'=> $this->input->post('gelarbelakang'),
                 'tempat_lahir'=> $this->input->post('tempat_lahir'),
                 'tanggal_lahir'=>tanggalawal($this->input->post('tanggal_lahir')),
                 'jk'=> $this->input->post('jk'),
@@ -97,18 +102,13 @@ class Admin extends CI_Controller {
                 'goldar'=>$this->input->post('goldar'),
                 'alamat'=>$this->input->post('alamat',FALSE),
                 'nohp'=>$this->input->post('nohp'),
-                'kodepos'=>$this->input->post('kodepos'),
                 'email'=>$this->input->post('email'),
                 'statuspegawai'=>$this->input->post('statuspegawai'),
-                'jenis'=>$this->input->post('jenis'),
-                'jabatan'=>$this->input->post('jabatan'),
-                'kedudukan'=>$this->input->post('kedudukan'),
-                'ktp'=>$this->input->post('ktp'),
-                'bpjs'=>$this->input->post('bpjs'),
-                'karis'=>$this->input->post('karis'),
-                'karpeg'=>$this->input->post('karpeg'),
-                'taspen'=>$this->input->post('taspen'),
-                'npwp'=>$this->input->post('npwp'),
+                'tmkerja'=>tanggalawal($this->input->post('tmkerja')),
+                'id_jabatan'=>$this->input->post('id_jabatan'),
+                'id_subjabatan'=>$this->input->post('id_subjabatan'),
+                'id_pangkat'=>$this->input->post('id_pangkat'),
+                'id_pendidikan'=>$this->input->post('id_pendidikan')
                 );
                 $id_pegawai = $this->input->post("id_pegawai");
                 $config['upload_path'] = './assets/images/foto';
@@ -138,6 +138,8 @@ class Admin extends CI_Controller {
                     $exec = $this->m_pegawai->lihatdatasatu($id_pegawai);
                     if ($exec->num_rows()>0){
                         $variabel['data'] = $exec ->row_array();
+                        $variabel['datasubjabatan']=$this->m_general->ambilsubjabatan($variabel['data']['id_jabatan']);
+               
                         $this->layout->renderadmin('v_admin/pegawai/v_pegawai_edit',$variabel,'v_admin/pegawai/v_pegawai_edit_js');
                     } else {
                         redirect(base_url("kepegawaian/admin/pegawai"));
@@ -149,6 +151,8 @@ class Admin extends CI_Controller {
             $exec = $this->m_pegawai->lihatdatasatu($id_pegawai);
             if ($exec->num_rows()>0){
                 $variabel['data'] = $exec ->row_array();
+                $variabel['datasubjabatan']=$this->m_general->ambilsubjabatan($variabel['data']['id_jabatan']);
+               
                 $this->layout->renderadmin('v_admin/pegawai/v_pegawai_edit',$variabel,'v_admin/pegawai/v_pegawai_edit_js');
             } else {
                 redirect(base_url("kepegawaian/admin/pegawai"));
@@ -157,6 +161,12 @@ class Admin extends CI_Controller {
 
     }
 
+    function subjabatan()
+    {
+      $id=$this->input->post('id_jabatan');
+      $data=$this->m_general->datasubjabatanajax($id);
+      echo json_encode($data);
+    }
     function pegawaihapus()
     {
         $id_pegawai = $this->input->get("id");
@@ -188,7 +198,7 @@ class Admin extends CI_Controller {
                 $id_pegawai = $this->input->post("id_pegawai");
                 $exec = $this->m_pegawai->editdata($id_pegawai,$array);
                 if ($exec){
-                 redirect(base_url("kepegawaian/admin/pegawai?msg=1"));
+                 redirect(base_url("kepegawaian/admin/pegawai?msg=2"));
                 }
       } else {
       }

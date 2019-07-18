@@ -5,12 +5,12 @@
 
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<meta name="description" content="404 Error | Gadgetmart" />
+	<meta name="description" content="404 Error | DISPERIN" />
 	<meta name="author" content="Muhammad Ni'man Nasir" />
 
 	<link rel="icon" href="<?php echo base_url() ?>assets/back-end/images/favicon.ico">
 
-	<title>Error 404 | Gadgetmart</title>
+	<title>Error 404 | DISPERIN</title>
 
 	<link rel="stylesheet" href="<?php echo base_url() ?>assets/back-end/js/jquery-ui/css/no-theme/jquery-ui-1.10.3.custom.min.css">
 	<link rel="stylesheet" href="<?php echo base_url() ?>assets/back-end/css/font-icons/entypo/css/entypo.css">
@@ -54,7 +54,7 @@
 			
 			<hr />
 			
-			<div class="error-text">
+			<!-- <div class="error-text">
 				
 				Search Pages:
 				
@@ -69,7 +69,7 @@
 					<input type="text" class="form-control" placeholder="Search anything..." />
 				</div>
 				
-			</div>
+			</div> -->
 			
 		</div>
 	</div>

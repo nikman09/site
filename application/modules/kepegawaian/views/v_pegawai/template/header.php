@@ -44,7 +44,7 @@
 	
 
 	<link rel="stylesheet" href="<?php echo base_url() ?>assets/back-end/css/custom.css">
-	
+	<link rel="stylesheet" href="<?php echo base_url() ?>assets/front-end/web/css/neon.css">
 
 	<script src="<?php echo base_url() ?>assets/back-end/js/jquery-1.11.3.min.js"></script>
 

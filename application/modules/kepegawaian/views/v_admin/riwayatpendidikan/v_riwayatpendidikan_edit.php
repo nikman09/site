@@ -2,11 +2,13 @@
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <h4 class="modal-title">Edit Riwayat Pendidikan</h4>
             </div>
-            <form role="form" class="validate" action="<?php echo base_url() ?>kepegawaian/riwayatpendidikaneditproses" method="post" enctype="multipart/form-data" id="form">
+            <form role="form" class="validate" action="<?php echo base_url() ?>kepegawaian/admin/riwayatpendidikaneditproses" method="post" enctype="multipart/form-data" id="form">
                 <div class="modal-body">
                     <div class="row">
 					<div class="col-md-12">
 					<input type="hidden" name="id_riwayatpendidikan" id="id_riwayatpendidikan" value="<?php echo $data['id_riwayatpendidikan'] ?>">
+					<input type="hidden" name="id_pegawai" id="id_pegawai" value="<?php echo $data['id_pegawai'] ?>">
+					
 							<input type="hidden" name="<?=$csrf['name']?>" value="<?=$csrf['hash']?>">
 							<div class="form-group">
 								<label for="field-1" class="control-label">Jenjang</label>
@@ -26,7 +28,7 @@
 							</div>	
 
 							<div class="form-group">
-								<label for="field-1" class="control-label">Nama Sekolag/Perguruan Tinggi</label>
+								<label for="field-1" class="control-label">Nama Sekolah/Perguruan Tinggi</label>
 								<input type="text" class="form-control" id="nama" name="nama" placeholder="Nama Sekolah/Perguruan Tinggi"  value="<?php echo $data['nama']; ?>">
 							</div>	
 							<div class="form-group">

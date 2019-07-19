@@ -11,10 +11,12 @@
 	</li>
 </ol>
 
-<h3>Data Riwayat Pendidikan</h3>
+<h3>Data Riwayat Pendidikan "<?php echo $pegawai['nama'];  ?>"</h3>
 <div class="table-responsive">
 	<?php pesan_get('msg',"Berhasil Menambah Riwayat Pendidikan","Berhasil Mengedit Riwayat Pendidikan","Berhasil Menghapus Riwayat Pendidikan") ?>
-	<a style="margin: 5px 0 10px 0px" class="btn  btn-primary"  data-toggle='modal'  data-target='#rpendidikanmodal'>
+	<a style="margin: 5px 0 10px 0px" href="<?php echo base_url('kepegawaian/admin/pegawailihat?id='.$pegawai['id_pegawai'].'') ?>" class="btn btn-primary btn-s-xs">
+				<i class="fa fa-arrow-left"></i> Kembali</a>
+	<a style="margin: 5px 0 10px 0px" class="btn  btn-default"  data-toggle='modal'  data-target='#rpendidikanmodal'>
 		<i class="fa fa-plus"></i> Tambah Riwayat Pendidikan</a>
 	<table class="table table-bordered  datatable" id="table-1" style="font-size:12px">
 		<thead>
@@ -58,7 +60,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <h4 class="modal-title">Tambah Riwayat Pendidikan</h4>
             </div>
-            <form role="form" class="validate" action="<?php echo base_url() ?>kepegawaian/riwayatpendidikantambah" method="post" enctype="multipart/form-data" id="form">
+            <form role="form" class="validate" action="<?php echo base_url() ?>kepegawaian/admin/riwayatpendidikantambah" method="post" enctype="multipart/form-data" id="form">
                 <div class="modal-body">
                     <div class="row">
 					<div class="col-md-12">

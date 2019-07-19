@@ -132,14 +132,7 @@
 							 ?></p>
 						</div>
 					</div>
-					<div class="form-group">
-						<label class="col-lg-4 control-label">Dokumen Pegawai</label>
-						<div class="col-lg-8">
-							<p class="form-control-static" > : 
-								<a href="<?php echo base_url('kepegawaian/admin/berkas') ?>" class="btn btn-primary btn-s-xs"><i class="fa fa-file"></i> Data</a>
-							</p>
-						</div>
-					</div>
+				
 				
 				</div>
 
@@ -156,6 +149,32 @@
 							<?php } ?>
 						</div>
 					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+				<table class="table table-bordered" style="font-size:12px">
+					<thead>
+						<tr>
+							
+							<th>Riwayat Data Pegawai</th>
+							<th>Berkas</th>
+						</tr>
+					</thead>
+					<tbody>
+					<tr>
+							<td>Dokumen</td>
+							<td><a href="<?php echo base_url('kepegawaian/admin/berkas?id='.$data['id_pegawai']) ?>" class="btn btn-primary btn-s-xs"><i class="fa fa-list"></i> Lihat</a></td>
+						</tr>
+						<tr>
+							<td>Pendidikan</td>
+							<td><a href="<?php echo base_url('kepegawaian/admin/riwayatpendidikan?id='.$data['id_pegawai']) ?>" class="btn btn-primary btn-s-xs"><i class="fa fa-list"></i> Lihat</a></td>
+						</tr>
+					</tbody>
+					</table>
+				</div>
+				<div class="col-md-6">
+				
 				</div>
 			</div>
 		</div>

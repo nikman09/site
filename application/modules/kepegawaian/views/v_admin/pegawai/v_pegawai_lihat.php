@@ -24,13 +24,14 @@
 		<input type="hidden" name="<?=$csrf['name']?>" value="<?=$csrf['hash']?>">
 		<div class="panel-body">
 			<?php pesan_get('msg',"Berhasil Mengedit Data Pegawai","Gagal Mengedit Data Pegawai") ?>
-			<div class="row">
-				<div class="col-md-6">
-				<a href="<?php echo base_url('kepegawaian/admin/pegawai?id='.$data['id_pegawai'].'') ?>" class="btn btn-primary btn-s-xs">
+			<a href="<?php echo base_url('kepegawaian/admin/pegawai?id='.$data['id_pegawai'].'') ?>" class="btn btn-primary btn-s-xs">
 				<i class="fa fa-arrow-left"></i> Kembali</a> &nbsp	<a href="<?php echo base_url('kepegawaian/admin/pegawaiedit?id='.$data['id_pegawai'].'') ?>" class="btn btn-default btn-s-xs">
 				<i class="fa fa-edit"></i> Edit</a>
 			
 				<hr/>
+			<div class="row">
+				<div class="col-md-6">
+				
 				<div class="form-group">
 						<label class="col-lg-4 control-label">NIP</label>
 						<div class="col-lg-8">

@@ -92,6 +92,7 @@ class Admin extends CI_Controller {
              }
              
             $this->form_validation->set_rules('nip','NIP','required|trim'. $is_unique.'');
+            
             if($this->form_validation->run() != false){
             $array=array(
                 'nama'=> $this->input->post('nama'),
@@ -115,29 +116,52 @@ class Admin extends CI_Controller {
                 $id_pegawai = $this->input->post("id_pegawai");
                 $config['upload_path'] = './assets/images/foto';
                 $config['allowed_types'] = 'jpg|jpeg|JPG|JPEG|pdf|PNG|png';
+                $config['max_size']     =  2048;
                 $this->load->library('upload', $config);
-                if ($this->upload->do_upload("foto"))
+                if (isset($_FILES['foto']) && !empty($_FILES['foto']['name']))
                 {
-                    $upload = $this->upload->data();
-                    $foto = $upload["raw_name"].$upload["file_ext"];
-                    $array['foto']=$foto;
+                    if ($this->upload->do_upload("foto"))
+                    {
+                        $upload = $this->upload->data();
+                        $foto = $upload["raw_name"].$upload["file_ext"];
+                        $array['foto']=$foto;
 
-                    $query2 = $this->m_pegawai->lihatdatasatu($id_pegawai);
-                    $row2 = $query2->row();
-                    $berkas1temp = $row2->foto;
-                    $path1 ='./assets/images/foto/'.$berkas1temp.'';
-                    echo "$path1";
-                    if(is_file($path1)) {
-                        unlink($path1); //menghapus gambar di folder produk
+                        $query2 = $this->m_pegawai->lihatdatasatu($id_pegawai);
+                        $row2 = $query2->row();
+                        $berkas1temp = $row2->foto;
+                        $path1 ='./assets/images/foto/'.$berkas1temp.'';
+                        if(is_file($path1)) {
+                            unlink($path1); //menghapus gambar di folder produk
+                        }
+                        $exec = $this->m_pegawai->editdata($id_pegawai,$array);
+                        if ($exec){
+                            redirect(base_url("kepegawaian/admin/pegawaiedit?id=".$id_pegawai."&msg=1"));
+                        }
+                      
+                    } else {
+                        $id_pegawai = $this->input->get("id");
+                        $exec = $this->m_pegawai->lihatdatasatu($id_pegawai);
+                        if ($exec->num_rows()>0){
+                            $variabel['data'] = $exec ->row_array();
+                            $variabel['datasubjabatan']=$this->m_general->ambilsubjabatan($variabel['data']['id_jabatan']);
+                            $variabel['fotoerror'] = 1;
+                            $variabel['error'] = 0;
+                            $this->layout->renderadmin('v_admin/pegawai/v_pegawai_edit',$variabel,'v_admin/pegawai/v_pegawai_edit_js');
+                        } else {
+                            redirect(base_url("kepegawaian/admin/pegawai"));
+                        }
+
                     }
-                }
-                $exec = $this->m_pegawai->editdata($id_pegawai,$array);
-                if ($exec){
-                 redirect(base_url("kepegawaian/admin/pegawaiedit?id=".$id_pegawai."&msg=1"));
+                } else {
+                    $exec = $this->m_pegawai->editdata($id_pegawai,$array);
+                    if ($exec){
+                        redirect(base_url("kepegawaian/admin/pegawaiedit?id=".$id_pegawai."&msg=1"));
+                    }
                 }
                }else{
                     $id_pegawai = $this->input->get("id");
                     $exec = $this->m_pegawai->lihatdatasatu($id_pegawai);
+                    $variabel['error'] = 0;
                     if ($exec->num_rows()>0){
                         $variabel['data'] = $exec ->row_array();
                         $variabel['datasubjabatan']=$this->m_general->ambilsubjabatan($variabel['data']['id_jabatan']);
@@ -154,7 +178,6 @@ class Admin extends CI_Controller {
             if ($exec->num_rows()>0){
                 $variabel['data'] = $exec ->row_array();
                 $variabel['datasubjabatan']=$this->m_general->ambilsubjabatan($variabel['data']['id_jabatan']);
-               
                 $this->layout->renderadmin('v_admin/pegawai/v_pegawai_edit',$variabel,'v_admin/pegawai/v_pegawai_edit_js');
             } else {
                 redirect(base_url("kepegawaian/admin/pegawai"));

@@ -14,6 +14,8 @@
 <h3>Berkas Pegawai</h3>
 <div class="table-responsive">
 	<?php pesan_get('msg',"Berhasil Mengupload Data Berkas Pegawai","Gagal Mengupload Data Berkas Pegawai","Berhasil Mengganti Password") ?>
+	<a href="<?php echo base_url('kepegawaian/biodata') ?>" class="btn btn-default btn-s-xs" style="margin-bottom:10px">
+				<i class="fa fa-list"></i> Biodata</a> &nbsp	
 	<table class="table table-bordered" style="font-size:12px">
 		<thead>
 			<tr>

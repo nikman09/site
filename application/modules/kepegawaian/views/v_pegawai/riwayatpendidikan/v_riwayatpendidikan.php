@@ -14,8 +14,11 @@
 <h3>Data Riwayat Pendidikan</h3>
 <div class="table-responsive">
 	<?php pesan_get('msg',"Berhasil Menambah Riwayat Pendidikan","Berhasil Mengedit Riwayat Pendidikan","Berhasil Menghapus Riwayat Pendidikan") ?>
-	<a style="margin: 5px 0 10px 0px" class="btn  btn-primary"  data-toggle='modal'  data-target='#rpendidikanmodal'>
+	
+				<a style="margin: 5px 0 10px 0px" class="btn  btn-primary"  data-toggle='modal'  data-target='#rpendidikanmodal'>
 		<i class="fa fa-plus"></i> Tambah Riwayat Pendidikan</a>
+	<a style="margin: 5px 0 10px 0px" class="btn  btn-default"  href="<?php echo base_url('kepegawaian/biodata') ?>" >
+		<i class="fa fa-list"></i> Biodata</a>
 	<table class="table table-bordered  datatable" id="table-1" style="font-size:12px">
 		<thead>
 			<tr>

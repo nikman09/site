@@ -19,11 +19,14 @@
 		<a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
 	</div>
 </div>
-<form role="form" class="form-horizontal validate"  action="<?php echo base_url() ?>kepegawaian/biodataedit?id_pegawai=<?php if (isset($id_pegawai2)) echo $id_pegawai2; else echo $data['id_pegawai']; ?>"	method="post"  enctype="multipart/form-data" id="form"> 	
+
+				<div class="panel-body">
+				<form role="form" class="form-horizontal validate"  action="<?php echo base_url() ?>kepegawaian/biodataedit?id_pegawai=<?php if (isset($id_pegawai2)) echo $id_pegawai2; else echo $data['id_pegawai']; ?>"	method="post"  enctype="multipart/form-data" id="form"> 	
 
 <input type="hidden" name="<?=$csrf['name']?>" value="<?=$csrf['hash']?>">
-				<div class="panel-body">
 					<?php pesan_get('msg',"Berhasil Mengedit Data Pegawai","Gagal Mengedit Data Pegawai") ?>
+					<?php if (isset($error)) { pesanvar(0,"","Gagal Mengedit Data Pegawai"); } ?>
+					
 						<div class="row">
 							<div class="col-md-6">
 							<input type="hidden" class="form-control" name="id_pegawai" data-required="true" value="<?php echo $data['id_pegawai']; ?>" />
@@ -38,17 +41,14 @@
 				<div class="form-group">
 					<label class="col-lg-4 control-label">Nama</label>
 					<div class="col-lg-8">
-						<input type="text" class="form-control" name="nama" value="<?php echo $data['nama']; ?>" 
+						<input type="text" class="form-control" name="nama" value="<?php echo (set_value('nama')) ? set_value('nama') : $data['nama'] ; ?>" 
 						/>
 					</div>
 				</div>
-				
-
-				
 				<div class="form-group">
 					<label class="col-lg-4 control-label">Tempat Lahir</label>
 					<div class="col-lg-8">
-						<input type="text" class="form-control" name="tempat_lahir" value="<?php echo $data['tempat_lahir']; ?>" 
+						<input type="text" class="form-control" name="tempat_lahir" value="<?php echo (set_value('tempat_lahir')) ? set_value('tempat_lahir') : $data['tempat_lahir'] ; ?>" 
 						/>
 					</div>
 				</div>
@@ -57,7 +57,7 @@
 						<label class="col-lg-4 control-label">Tanggal Lahir</label>
 						<div class="col-lg-8">
 							<div class="input-group">
-								<input type="text" class="form-control datepicker" data-format="dd-mm-yyyy" value="<?php  if ($data['tanggal_lahir']=="0000-00-00") echo date('d-m-Y'); else echo tanggal($data['tanggal_lahir']); ?>"
+								<input type="text" class="form-control datepicker" data-format="dd-mm-yyyy" value="<?php $tgllhr = (set_value('tanggal_lahir')) ? set_value('tanggal_lahir') :  $data['tanggal_lahir'];  if ($tgllhr=="0000-00-00") echo date('d-m-Y'); else echo tanggal($tgllhr); ?>"
 								readonly data-validate="required" data-message-required="Tanggal tanggal_lahir " name="tanggal_lahir" style="background-color:#fff"  placeholder="dd/mm/yyyy">
 								<div class="input-group-addon" style="background-color:#fff">
 									<a href="#">
@@ -72,23 +72,25 @@
 					<label class="col-lg-4 control-label">Jenis Kelamin</label>
 					<div class="col-lg-8">
 					<select class="form-control" name="jk">
-					<option value='' disabled>.:Pilih Jenis Kelamin:.</option>
-					   <option value="Laki-laki" <?php echo ($data['jk']=='Laki-laki'?'selected':'') ?> >Laki-laki</option>
-					   <option value="Perempuan" <?php echo ($data['jk']=='Perempuan'?'selected':'') ?> >Perempuan</option>
+					<?php  (set_value('jk')) ? $jk = set_value('jk') : $jk = $data['jk'] ; ?>
+					<option value=''>.:Pilih Jenis Kelamin:.</option>
+					   <option value="Laki-laki" <?php echo ($jk=='Laki-laki'?'selected':'') ?> >Laki-laki</option>
+					   <option value="Perempuan" <?php echo ($jk=='Perempuan'?'selected':'') ?> >Perempuan</option>
 					</select>
 					</div>
 				</div>
 				<div class="form-group">
 					<label class="col-lg-4 control-label">Agama</label>
 					<div class="col-lg-8">
+					<?php  (set_value('agama')) ? $agama = set_value('agama') : $agama = $data['agama'] ; ?>
 					<select class="form-control" name="agama">
-					<option value='' disabled>.:Pilih Agama:.</option>
-					   <option value="Islam" <?php echo ($data['agama']=='Islam'?'selected':'') ?> >Islam</option>
-					   <option value="Protestan" <?php echo ($data['agama']=='Protestan'?'selected':'') ?> >Protestan</option>
-					   <option value="Khatolik" <?php echo ($data['agama']=='Khatolik'?'selected':'') ?> >Khatolik</option>
-					   <option value="Hindu" <?php echo ($data['agama']=='Hindu'?'selected':'') ?> >Hindu</option>
-					   <option value="Budha" <?php echo ($data['agama']=='Budha'?'selected':'') ?> >Budha</option>
-					   <option value="Konghucu" <?php echo ($data['agama']=='Konghucu'?'selected':'') ?> >Konghucu</option>
+					<option value='' >.:Pilih Agama:.</option>
+					   <option value="Islam" <?php echo ($agama=='Islam'?'selected':'') ?> >Islam</option>
+					   <option value="Protestan" <?php echo ($agama=='Protestan'?'selected':'') ?> >Protestan</option>
+					   <option value="Khatolik" <?php echo ($agama=='Khatolik'?'selected':'') ?> >Khatolik</option>
+					   <option value="Hindu" <?php echo ($agama=='Hindu'?'selected':'') ?> >Hindu</option>
+					   <option value="Budha" <?php echo ($agama=='Budha'?'selected':'') ?> >Budha</option>
+					   <option value="Konghucu" <?php echo ($agama=='Konghucu'?'selected':'') ?> >Konghucu</option>
 					</select>
 					</div>
 				</div>
@@ -96,37 +98,39 @@
 				<div class="form-group">
 					<label class="col-lg-4 control-label">Status Perkawinan</label>
 					<div class="col-lg-8">
+					<?php  (set_value('status')) ? $status = set_value('status') : $status = $data['status'] ; ?>
 					<select class="form-control" name="status">
-						<option value='' disabled>.:Pilih Status:.</option>
-						<option value="Belum Kawin" <?php echo ($data['status']=='Belum Kawin'?'selected':'') ?> >Belum Kawin</option>
-					    <option value="Kawin" <?php echo ($data['status']=='Kawin'?'selected':'') ?> >Kawin</option>
-						<option value="Janda" <?php echo ($data['status']=='Janda'?'selected':'') ?> >Janda</option>
-						<option value="Duda" <?php echo ($data['status']=='Duda'?'selected':'') ?> >Duda</option>
+						<option value='' >.:Pilih Status:.</option>
+						<option value="Belum Kawin" <?php echo ($status=='Belum Kawin'?'selected':'') ?> >Belum Kawin</option>
+					    <option value="Kawin" <?php echo ($status=='Kawin'?'selected':'') ?> >Kawin</option>
+						<option value="Janda" <?php echo ($status=='Janda'?'selected':'') ?> >Janda</option>
+						<option value="Duda" <?php echo ($status=='Duda'?'selected':'') ?> >Duda</option>
 					</select>
 					</div>
 				</div>
 				<div class="form-group">
 					<label class="col-lg-4 control-label">Golongan Darah</label>
 					<div class="col-lg-8">
+					<?php  (set_value('goldar')) ? $goldar = set_value('goldar') : $goldar = $data['goldar'] ; ?>
 					<select class="form-control" name="goldar">
-						<option value='' disabled>.:Pilih Golongan Darah:.</option>
-						<option value="A" <?php echo ($data['status']=='A'?'selected':'') ?> >A</option>
-					    <option value="B" <?php echo ($data['status']=='B'?'selected':'') ?> >B</option>
-						<option value="AB" <?php echo ($data['status']=='AB'?'selected':'') ?> >AB</option>
-						<option value="O" <?php echo ($data['status']=='O'?'selected':'') ?> >O</option>
+						<option value=''>.:Pilih Golongan Darah:.</option>
+						<option value="A" <?php echo ($goldar=='A'?'selected':'') ?> >A</option>
+					    <option value="B" <?php echo ($goldar=='B'?'selected':'') ?> >B</option>
+						<option value="AB" <?php echo ($goldar=='AB'?'selected':'') ?> >AB</option>
+						<option value="O" <?php echo ($goldar=='O'?'selected':'') ?> >O</option>
 					</select>
 					</div>
 				</div>
 				<div class="form-group">
 					<label class="col-lg-4 control-label">Alamat</label>
 					<div class="col-lg-8">
-						<textarea class="form-control" name="alamat"><?php echo $data['alamat']; ?></textarea>
+						<textarea class="form-control" name="alamat"><?php echo (set_value('alamat')) ? set_value('alamat') : $data['alamat'] ; ?></textarea>
 					</div>
 				</div>
 				<div class="form-group">
 					<label class="col-lg-4 control-label">Telepon</label>
 					<div class="col-lg-8">
-						<input type="text" class="form-control" name="nohp" value="<?php echo $data['nohp']; ?>" 
+						<input type="text" class="form-control" name="nohp" value="<?php echo (set_value('nohp')) ? set_value('nohp') : $data['nohp'] ; ?>" 
 						/>
 					</div>
 				</div>
@@ -134,7 +138,7 @@
 				<div class="form-group">
 					<label class="col-lg-4 control-label">Alamat Email</label>
 					<div class="col-lg-8">
-						<input type="text" class="form-control" name="email" value="<?php echo $data['email']; ?>" 
+						<input type="text" class="form-control" name="email" value="<?php echo (set_value('email')) ? set_value('email') : $data['email'] ; ?>" 
 						/>
 					</div>
 				</div>
@@ -148,9 +152,10 @@
 					<label class="col-lg-4 control-label">Kepegawaian</label>
 					<div class="col-lg-8">
 					<select class="form-control" name="statuspegawai">
-						<option value='' disabled>.:Pilih Status Pegawai:.</option>
-						<option value="Calon PNS" <?php echo ($data['statuspegawai']=='Calon PNS'?'selected':'') ?> >Calon PNS</option>
-					    <option value="PNS" <?php echo ($data['statuspegawai']=='PNS'?'selected':'') ?> >PNS</option>
+					<?php  (set_value('statuspegawai')) ? $statuspegawai = set_value('statuspegawai') : $statuspegawai = $data['statuspegawai'] ; ?>
+						<option value=''>.:Pilih Status Pegawai:.</option>
+						<option value="Calon PNS" <?php echo ($statuspegawai=='Calon PNS'?'selected':'') ?> >Calon PNS</option>
+					    <option value="PNS" <?php echo ($statuspegawai=='PNS'?'selected':'') ?> >PNS</option>
 					</select>
 					</div>
 				</div>
@@ -259,18 +264,29 @@
 						echo '<label style="color:red;font-size:10px">Upload ulang foto !</label>';
 						} 
 					?>
+					<?php 
+					if (isset($fotoerror))  {
+						echo '<label style="color:red;font-size:10px">Maksimal ukuran gambar 2 MB </label>';
+						} ;
+					?>
+					<label style="font-size:10px">&nbsp Max 2MB</label>
 					</div>
 				</div>
 			</div>
 		</div>
 </div>
 <footer class="panel-footer text-right bg-light lter">
-	<button type="submit" class="btn btn-info btn-s-xs">
+	<button type="submit" class="btn btn-primary btn-s-xs">
 		<i class="fa fa-save"></i> Simpan</button>
 	&nbsp
-	<a href="<?php echo base_url('kepegawaian/biodata') ?>" class="btn btn-danger btn-s-xs">
-		<i class="fa fa-close"></i> Keluar</a>
-
+	
+	
+	<a href="<?php echo base_url('kepegawaian/biodataedit') ?>" class="btn btn-danger btn-s-xs">
+		<i class="fa fa-refresh"></i> Reset</a>
+		</a>
+		&nbsp
+	<a href="<?php echo base_url('kepegawaian/biodata') ?>" class="btn btn-default btn-s-xs">
+		<i class="fa fa-close"></i> Kembali</a>
 		
 </footer>
 </form>

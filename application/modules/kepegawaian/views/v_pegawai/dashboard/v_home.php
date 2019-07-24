@@ -34,7 +34,8 @@
 	<link rel="stylesheet" href="<?php echo base_url() ?>assets/back-end/css/font-icons/entypo/css/entypo.css" media="screen">
 	<link rel="stylesheet" href="<?php echo base_url() ?>assets/back-end/css/font-icons/font-awesome/css/font-awesome.css">
 	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic">
-	<link rel="stylesheet" href="<?php echo base_url() ?>assets/back-end/css/bootstrap.css">
+	<!-- <link rel="stylesheet" href="<?php echo base_url() ?>assets/back-end/css/bootstrap.css"> -->
+	<link rel="stylesheet" href="<?php echo base_url() ?>assets/back-end/css/bootstrap2.css">
 	<link rel="stylesheet" href="<?php echo base_url() ?>assets/back-end/js/uikit/css/uikit.min.css">
 	<link rel="stylesheet" href="<?php echo base_url() ?>assets/back-end/css/neon-core.css">
 	<link rel="stylesheet" href="<?php echo base_url() ?>assets/back-end/css/neon-theme.css">
@@ -54,14 +55,6 @@
 	<![endif]-->
 
 	<style>
-	.portfolio-item-details .item-images .items-nav {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 150px;
-    text-align: center;
-    z-index: 215;
-}
 
 .portfolio-item-details {
     background: #ffffff;
@@ -172,7 +165,7 @@
 		
 
 
-<h3>Selamat Datang di Aplikasi Kepegawaian <!--<small>(<?php echo $tahun ?>)</small>--></h3> 
+<h3 align="center">Selamat Datang di Aplikasi <b>SIDAWAIPRIN </b><!--<small>(<?php echo $tahun ?>)</small>--></h3> 
 
 <div class="" style="min-height:420px">
 <section class="portfolio-item-details">
@@ -188,26 +181,11 @@
 				
 				<div class="item-images">
 				
-					<a href="#">
-						<img src="<?php echo base_url() ?>assets/images/portfolio-img-large-1.png" class="img-rounded" />
+					<a href="#"  style='width:100%'>
+						<img  src="<?php echo base_url() ?>assets/images/gambar1.jpg" class="img-rounded" />
 					</a>
 					
-					<a href="#">
-						<img src="<?php echo base_url() ?>assets/images/portfolio-img-large-1.png" class="img-rounded" />
-					</a>
-					
-					<a href="#">
-						<img src="<?php echo base_url() ?>assets/images/portfolio-img-large-1.png" class="img-rounded" />
-					</a>
-					
-					<a href="#">
-						<img src="<?php echo base_url() ?>assets/images/portfolio-img-large-1.png" class="img-rounded" />
-					</a>
-					
-					<a href="#">
-						<img src="<?php echo base_url() ?>assets/images/portfolio-img-large-1.png" class="img-rounded" />
-					</a>
-					
+				
 					<div class="next-prev-nav">
 						<a href="#" class="prev"></a>
 						<a href="#" class="next"></a>

@@ -5,14 +5,16 @@ class Admin extends CI_Controller {
     {
         parent::__construct();
         cekloginadmin();
+        $this->load->model("m_admin/m_dashboard");
         $this->load->model("m_admin/m_pegawai");
-        $this->load->model("m_admin/m_seksi");
         $this->load->model("m_admin/m_jabatan");
         $this->load->model("m_admin/m_pangkat");
         $this->load->model("m_admin/m_pendidikan");
         $this->load->model("m_admin/m_general");
         $this->load->model("m_admin/m_berkas");
         $this->load->model("m_admin/m_riwayatpendidikan");
+        $this->load->model("m_admin/m_subjabatan");
+        $this->load->model("m_admin/m_profil");
     }
 
     // Dashboard
@@ -23,6 +25,19 @@ class Admin extends CI_Controller {
         $seksi = $this->session->userdata("seksi");
         $nip = $this->session->userdata("nip");
         $variabel['tahun']  = date('Y');
+        $variabel['jumlahpegawaipr']  = $this->m_dashboard->jumlahpegawai();
+        $variabel['jumlahpegawailk']  = $this->m_dashboard->jumlahpegawaipr();
+        $variabel['jumlahpegawai']  = $this->m_dashboard->jumlahpegawailk();
+        $variabel['gol1']  = $this->m_dashboard->jumlahgolongan("1");
+        $variabel['gol2']  = $this->m_dashboard->jumlahgolongan("2");
+        $variabel['gol3']  = $this->m_dashboard->jumlahgolongan("3");
+        $variabel['gol4']  = $this->m_dashboard->jumlahgolongan("4");
+        $variabel['belummengisi']  = $this->m_dashboard->jumlahgolongan(null);
+        $variabel['struktural']  = $this->m_dashboard->jumlahjabatan("1");
+        $variabel['fungsionalumum']  = $this->m_dashboard->jumlahjabatan("2");
+        $variabel['fungsionaltertentu']  = $this->m_dashboard->jumlahjabatan("3");
+        $variabel['belummengisi2']  = $this->m_dashboard->jumlahjabatan("0");
+        $variabel['pangkat']  = $this->m_dashboard->pangkat();
         $this->load->view('v_admin/dashboard/v_home',$variabel);
     }
     // End Dashboard
@@ -51,7 +66,14 @@ class Admin extends CI_Controller {
                     'tanggal_lahir'=>tanggalawal($this->input->post('tanggal_lahir')),
                     'password'=>md5($this->input->post('password'))
                     );
+                   
                     $exec = $this->m_pegawai->tambahdata($array);
+                    $id = $this->db->insert_id();
+
+                    $array2=array(
+                        'id_pegawai'=> $id 
+                        );
+                    $exec2 = $this->m_berkas->tambahdata($array2);
                     if ($exec) redirect(base_url("kepegawaian/admin/pegawaitambah?msg=1"));
                     else redirect(base_url("kepegawaian/admin/pegawaitambah?msg=0"));
             }else{
@@ -742,8 +764,251 @@ class Admin extends CI_Controller {
 
     }
  
+    function jabatan()
+    {
+        $variabel['csrf'] = csrf();
+        $variabel['data'] = $this->m_jabatan->lihatdata();
+        $this->layout->renderadmin('v_admin/jabatan/v_jabatan',$variabel,'v_admin/jabatan/v_jabatan_js');
+    }
+    
+    function jabatantambah()
+    {
+        $variabel['csrf'] = csrf();
+        if ($this->input->post()){
+                $array=array(
+                    'nama_jabatan'=> $this->input->post('nama_jabatan'),
+                    );
+                    $exec = $this->m_jabatan->tambahdata($array);
+                    if ($exec) redirect(base_url("kepegawaian/admin/jabatan?msg=1"));
+                    else redirect(base_url("kepegawaian/admin/jabatan?msg=0"));
+        } else {
+            $this->layout->renderadmin('v_admin/jabatan/v_jabatan',$variabel,'v_admin/jabatan/v_jabatan_js');
+    
+        }
+    }
+
+    function jabatanhapus()
+    {
+        $id_jabatan = $this->input->get("id");
+        $exec = $this->m_jabatan->hapus($id_jabatan);
+       redirect(base_url()."kepegawaian/admin/jabatan?msg=2");
+    }
+
+    function jabatanedit()
+    {
+		$variabel['csrf'] = csrf();
+        $id_jabatan = $this->input->post("id_jabatan");
+        $variabel['data'] = $this->m_jabatan->lihatdatasatu($id_jabatan)->row_array();
+        $this->load->view("v_admin/jabatan/v_jabatan_edit",$variabel);
+    }
+    function jabataneditproses()
+    {
+        $variabel['csrf'] = csrf();
+        if ($this->input->post()) {
+            $array=array(
+                'nama_jabatan'=> $this->input->post('nama_jabatan')
+                );
+                $id_jabatan = $this->input->post("id_jabatan");
+                $exec = $this->m_jabatan->editdata($id_jabatan,$array);
+                if ($exec){
+              redirect(base_url("kepegawaian/admin/jabatan?msg=0"));
+                }
+      } else {
+      }
+
+    }
+ 
+    function rincian()
+    {
+        $variabel['csrf'] = csrf();
+        $id_jabatan = $this->input->get("id");
+        $variabel['jabatan'] = $this->m_jabatan->lihatdatasatu($id_jabatan)->row_array();
+        $variabel['data'] = $this->m_subjabatan->lihatdata($id_jabatan);    
+        $this->layout->renderadmin('v_admin/subjabatan/v_subjabatan',$variabel,'v_admin/subjabatan/v_subjabatan_js');
+    }
+    
+    function rinciantambah()
+    {
+        $variabel['csrf'] = csrf();
+        if ($this->input->post()){
+            $id_jabatan = $this->input->post("id_jabatan");
+                $array=array(
+                    'id_jabatan'=> $id_jabatan,
+                    'nama_subjabatan'=> $this->input->post('nama_subjabatan')
+                    );
+                    $exec = $this->m_subjabatan->tambahdata($array);
+                    if ($exec) redirect(base_url("kepegawaian/admin/rincian?id=$id_jabatan&msg=1"));
+                    else redirect(base_url("kepegawaian/admin/rincian?id=$id_jabatan&msg=0"));
+        } else {
+            $this->layout->renderadmin('v_admin/subjabatan/v_subjabatan',$variabel,'v_admin/subjabatan/v_subjabatan_js');
+    
+        }
+    }
+
+    function rincianhapus()
+    {
+        $id_subjabatan = $this->input->get("id");
+        $variabel = $this->m_subjabatan->lihatdatasatu($id_subjabatan)->row_array();
+        $id_jabatan = $variabel["id_jabatan"];
+        $exec = $this->m_subjabatan->hapus($id_subjabatan);
+       redirect(base_url()."kepegawaian/admin/rincian?id=$id_jabatan&msg=2");
+    }
+
+    function rincianedit()
+    {
+        $variabel['csrf'] = csrf();
+        $id_subjabatan = $this->input->post("id_subjabatan");
+        $variabel['data'] = $this->m_subjabatan->lihatdatasatu($id_subjabatan)->row_array();
+        $this->load->view("v_admin/subjabatan/v_subjabatan_edit",$variabel);
+    }
+    function rincianeditproses()
+    {
+        $variabel['csrf'] = csrf();
+        if ($this->input->post()) {
+            $array=array(
+            'nama_subjabatan'=> $this->input->post('nama_subjabatan')
+            );
+            $id_subjabatan = $this->input->post("id_subjabatan");
+            $variabel = $this->m_subjabatan->lihatdatasatu($id_subjabatan)->row_array();
+                $id_jabatan = $variabel["id_jabatan"];
+            $exec = $this->m_subjabatan->editdata($id_subjabatan,$array);
+            if ($exec){
+             redirect(base_url("kepegawaian/admin/rincian?id=$id_jabatan&msg=0"));
+            }
+      } else {
+      }
+
+    }
+
+    function tentang()
+    {
+        $variabel['csrf'] = csrf();
+        $this->layout->renderadmin("v_admin/tentang/v_tentang",$variabel);
+    }
 
 
+    function profil()
+    {
+      
+        $variabel['csrf'] = csrf();
+        if ($this->input->post()) {
+            $username = $this->input->post('username');
+            $username2 = $this->input->post('username2');
+            if ( $username!= $username2) {
+                $is_unique =  '|is_unique[tb_administrator.username]';
+             } else {
+                $is_unique =  '';
+             }
+             
+            $this->form_validation->set_rules('username','Username','required|trim'. $is_unique.'');
+            
+            if($this->form_validation->run() != false){
+            $array=array(
+                'username'=> $this->input->post('username'),
+                'nama'=> $this->input->post('nama'),
+                'alamat'=>$this->input->post('alamat',FALSE),
+                'nohp'=>$this->input->post('nohp'),
+                'email'=>$this->input->post('email')
+                );
+                $username = $this->input->post("username");
+                $config['upload_path'] = './assets/images/foto';
+                $config['allowed_types'] = 'jpg|jpeg|JPG|JPEG|pdf|PNG|png';
+                $config['max_size']     =  2048;
+                $this->load->library('upload', $config);
+                if (isset($_FILES['foto']) && !empty($_FILES['foto']['name']))
+                {
+                    if ($this->upload->do_upload("foto"))
+                    {
+                        $upload = $this->upload->data();
+                        $foto = $upload["raw_name"].$upload["file_ext"];
+                        $array['foto']=$foto;
+
+                        $query2 = $this->m_profil->lihatdatasatu($username);
+                        $row2 = $query2->row();
+                        $berkas1temp = $row2->foto;
+                        $path1 ='./assets/images/foto/'.$berkas1temp.'';
+                        if(is_file($path1)) {
+                            unlink($path1); //menghapus gambar di folder produk
+                        }
+                             $data_session = array(
+                            'admin_username'=> $username,
+                            'admin_foto'=> $foto
+                            );
+
+                            $this->session->set_userdata($data_session);
+                        $exec = $this->m_profil->editdata($username,$array);
+                        if ($exec){
+                            redirect(base_url("kepegawaian/admin/profil?&msg=1"));
+                        }
+                      
+                    } else {
+                        $username = $this->session->userdata("admin_username");
+                        $exec = $this->m_profile->lihatdatasatu($username);
+                        if ($exec->num_rows()>0){
+                            $variabel['data'] = $exec ->row_array();
+                            $variabel['fotoerror'] = 1;
+                            $variabel['error'] = 0;
+                            $this->layout->renderadmin('v_admin/profil/v_profil',$variabel,'v_admin/profil/v_profil_js');
+                        } else {
+                            redirect(base_url("kepegawaian/admin/profil"));
+                        }
+
+                    }
+                } else {
+                    $data_session = array(
+                        'admin_username'=> $username
+                        );
+                        $this->session->set_userdata($data_session);
+                    $exec = $this->m_profil->editdata($username2,$array);
+                    if ($exec){
+                        redirect(base_url("kepegawaian/admin/profil?msg=1"));
+                    }
+                }
+               }else{
+                   $username = $this->session->userdata("admin_username");
+                    $exec = $this->m_profil->lihatdatasatu($username);
+                    $variabel['error'] = 0;
+                    if ($exec->num_rows()>0){
+                        $variabel['data'] = $exec ->row_array();
+                      $this->layout->renderadmin('v_admin/profil/v_profil',$variabel,'v_admin/profil/v_profil_js');
+                    } else {
+                        redirect(base_url("kepegawaian/admin/profil"));
+                    }
+               }
+          
+      } else {
+            $username = $this->session->userdata("admin_username");
+            $exec = $this->m_profil->lihatdatasatu($username);
+            if ($exec->num_rows()>0){
+                $variabel['data'] = $exec ->row_array();
+                $this->layout->renderadmin('v_admin/profil/v_profil',$variabel,'v_admin/profil/v_profil_js');
+            } else {
+                redirect(base_url("kepegawaian/admin/profil"));
+            }
+      }
+
+    }
+
+
+    function password()
+    {
+      
+        $variabel['csrf'] = csrf();
+        if ($this->input->post()) {
+            $array=array(
+                'password'=> md5($this->input->post('password'))
+                );
+                $username = $this->session->userdata("admin_username");
+                $exec = $this->m_profil->editdata($username,$array);
+                if ($exec){
+                    redirect(base_url("kepegawaian/admin/password?msg=1"));
+                }
+         } else {
+                $this->layout->renderadmin('v_admin/password/v_password',$variabel,'v_admin/password/v_password_js');
+           
+      }
+
+    }
     
 
 

@@ -14,9 +14,9 @@
 <h3>Data Riwayat Pendidikan "<?php echo $pegawai['nama'];  ?>"</h3>
 <div class="table-responsive">
 	<?php pesan_get('msg',"Berhasil Menambah Riwayat Pendidikan","Berhasil Mengedit Riwayat Pendidikan","Berhasil Menghapus Riwayat Pendidikan") ?>
-	<a style="margin: 5px 0 10px 0px" href="<?php echo base_url('kepegawaian/admin/pegawailihat?id='.$pegawai['id_pegawai'].'') ?>" class="btn btn-primary btn-s-xs">
+	<a style="margin: 5px 0 10px 0px" href="<?php echo base_url('kepegawaian/admin/pegawailihat?id='.$pegawai['id_pegawai'].'') ?>" class="btn btn-default btn-s-xs">
 				<i class="fa fa-arrow-left"></i> Kembali</a>
-	<a style="margin: 5px 0 10px 0px" class="btn  btn-default"  data-toggle='modal'  data-target='#rpendidikanmodal'>
+	<a style="margin: 5px 0 10px 0px" class="btn  btn-primary"  data-toggle='modal'  data-target='#rpendidikanmodal'>
 		<i class="fa fa-plus"></i> Tambah Riwayat Pendidikan</a>
 	<table class="table table-bordered  datatable" id="table-1" style="font-size:12px">
 		<thead>
@@ -34,14 +34,14 @@
 						echo "
 							<tr>
 								<td>
-								<a href='#' class='btn btn-info btn-xs edit' title='Edit' data-toggle='modal' id='".$row['id_riwayatpendidikan']."' data-target='#myModal'><i class='fa fa-edit' id='".$row['id_riwayatpendidikan']."'  ></i></a>
+								<a href='#' class='btn btn-primary btn-xs edit' title='Edit' data-toggle='modal' id='".$row['id_riwayatpendidikan']."' data-target='#myModal'><i class='fa fa-edit' id='".$row['id_riwayatpendidikan']."'  ></i></a>
 								<a href='#' class='btn btn-danger btn-xs hapus' title='Hapus' id='".$row['id_riwayatpendidikan']."'><i class='fa fa-trash-o'></i></a>
 								</td>
 								<td>".$row['pendidikan']."</td>
 								<td>".$row['nama']."</td>
 								<td>".$row['tahunlulus']."</td>
 								<td>";
-								 if ($row['berkas']=="") echo "<a class='btn btn-danger btn-xs'><i class='fa fa-file'></i> Lihat</a>"; else echo "<a href='".base_url()."assets/berkas/riwayatpendidikan/".$row['berkas']."'  class='btn btn-success btn-xs' target='_blank'><i class='fa fa-file'></i> Lihat</a>";
+								 if ($row['berkas']=="") echo "<a class='btn btn-danger btn-xs' disabled><i class='fa fa-file'></i> Lihat</a>"; else echo "<a href='".base_url()."assets/berkas/riwayatpendidikan/".$row['berkas']."'  class='btn btn-success btn-xs' target='_blank'><i class='fa fa-file'></i> Lihat</a>";
 								echo "
 								</td>
 							</tr>
@@ -81,7 +81,7 @@
 							</div>	
 
 							<div class="form-group">
-								<label for="field-1" class="control-label">Nama Sekolag/Perguruan Tinggi</label>
+								<label for="field-1" class="control-label">Nama Sekolah/Perguruan Tinggi</label>
 								<input type="text" class="form-control" id="nama" name="nama" placeholder="Nama Sekolah/Perguruan Tinggi">
 							</div>	
 							<div class="form-group">
@@ -112,7 +112,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
-                    <button type="submit" class="btn btn-info">Simpan</button>
+                    <button type="submit" class="btn btn-primary">Simpan</button>
                 </div>
             </form>
         </div>

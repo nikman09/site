@@ -14,7 +14,7 @@
 <h3>Berkas Pegawai "<?php echo $pegawai['nama'] ?>" </h3>
 <div class="table-responsive">
 	<?php pesan_get('msg',"Berhasil Mengupload Data Berkas Pegawai","Gagal Mengupload Data Berkas Pegawai","Berhasil Mengganti Password") ?>
-	<a style="margin-bottom:20px" href="<?php echo base_url('kepegawaian/admin/pegawailihat?id='.$data['id_pegawai'].'') ?>" class="btn btn-primary btn-s-xs">
+	<a style="margin-bottom:20px" href="<?php echo base_url('kepegawaian/admin/pegawailihat?id='.$data['id_pegawai'].'') ?>" class="btn btn-default btn-s-xs">
 				<i class="fa fa-arrow-left"></i> Kembali</a>
 		
 	<table class="table table-bordered" style="font-size:12px">

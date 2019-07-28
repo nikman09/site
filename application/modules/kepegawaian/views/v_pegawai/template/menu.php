@@ -39,7 +39,12 @@
 					</ul>
 				</li>
 
-				
+				<li  class="<?= ($submenu == "tentang") ? "active root-level" : ""; ?> ">
+				<a href="<?php echo base_url() ?>kepegawaian/tentang">
+					<i class="fa fa-info-circle"></i>
+					<span class="title">Tentang</span>
+				</a>
+			</li>
 				
 			</ul>
 	

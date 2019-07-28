@@ -128,6 +128,12 @@
 								</a>
 							</li>
 							<li>
+								<a href="<?php echo base_url(); ?>kepegawaian/password">
+									<i class="entypo-key"></i>
+									 Ganti Password
+								</a>
+							</li>
+							<li>
 								<a href="<?php echo base_url() ?>kepegawaian/login/logout">
 									<i class="entypo-logout"></i>
 									Log Out

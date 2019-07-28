@@ -1,11 +1,11 @@
 <ol class="breadcrumb bc-3">
 <li>
-	<a href="<?php echo base_url() ?>kepegawaian">
-		<i class="fa fa-list"></i>Kepegawaian</a>
-</li>
-<li class="active">
-	<strong>Edit Pegawai</strong>
-</li>
+<a href="<?php echo base_url() ?>kepegawaian/admin/pegawai">
+	<i class="fa fa-users"></i>Pegawai</a>
+	</li>
+	<li class="active">
+		<strong>Edit Data Pegawai</strong>
+	</li>
 </ol>
 
 <h3>Edit Biodata</h3>

@@ -650,4 +650,30 @@ class Kepegawaian extends CI_Controller {
 
     }
 
+    function tentang()
+    {
+        $variabel['csrf'] = csrf();
+        $this->layout->render("v_admin/tentang/v_tentang",$variabel);
+    }
+
+    function password()
+    {
+      
+        $variabel['csrf'] = csrf();
+        if ($this->input->post()) {
+            $array=array(
+                'password'=> md5($this->input->post('password'))
+                );
+                $id_pegawai = $this->session->userdata("id_pegawai");
+                $exec = $this->m_pegawai->editdata($id_pegawai,$array);
+                if ($exec){
+                    redirect(base_url("kepegawaian/password?msg=1"));
+                }
+         } else {
+                $this->layout->render('v_pegawai/password/v_password',$variabel,'v_pegawai/password/v_password_js');
+           
+      }
+
+    }
+
 }

@@ -1,13 +1,10 @@
 <ol class="breadcrumb bc-3">
-	<li>
-		<a href="<?php echo base_url() ?>arsip">
-			<i class="fa fa-list"></i>Arsip</a>
-	</li>
-	<li>
-		<a href="<?php echo base_url() ?>arsip/pegawai">Pegawai</a>
+<li>
+	<a href="<?php echo base_url() ?>kepegawaian/admin/pegawai">
+	<i class="fa fa-users"></i>Pegawai</a>
 	</li>
 	<li class="active">
-		<strong>List Pegawai</strong>
+		<strong>Data Pegawai</strong>
 	</li>
 </ol>
 

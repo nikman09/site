@@ -1,7 +1,7 @@
 <ol class="breadcrumb bc-3">
 <li>
 	<a href="<?php echo base_url() ?>kepegawaian">
-		<i class="fa fa-list"></i>Kepegawaian</a>
+		<i class="fa fa-user"></i>Data Pegawai</a>
 </li>
 <li class="active">
 	<strong>Edit Biodata</strong>

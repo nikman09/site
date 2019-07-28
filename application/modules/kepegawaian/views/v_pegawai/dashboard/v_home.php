@@ -125,12 +125,16 @@
 						</a>
 						<ul class="dropdown-menu">
 							<!-- Reverse Caret -->
-							<li class="caret"></li>
-							<!-- Profile sub-links -->
 							<li>
 								<a href="<?php echo base_url(); ?>kepegawaian/biodataedit">
 									<i class="entypo-user"></i>
 									Edit Profile
+								</a>
+							</li>
+							<li>
+								<a href="<?php echo base_url(); ?>kepegawaian/password">
+									<i class="entypo-key"></i>
+									 Ganti Password
 								</a>
 							</li>
 							<li>
@@ -165,7 +169,7 @@
 		
 
 
-<h3 align="center">Selamat Datang di Aplikasi <b>SIDAWAIPRIN </b><!--<small>(<?php echo $tahun ?>)</small>--></h3> 
+<h3 align="center">Selamat Datang di <b>SIDAWAIPRIN </b><!--<small>(<?php echo $tahun ?>)</small>--></h3> 
 
 <div class="" style="min-height:420px">
 <section class="portfolio-item-details">

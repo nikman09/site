@@ -59,7 +59,7 @@
 	<?php
 		$nama = $this->session->userdata("admin_nama");
 		$foto = $this->session->userdata("admin_foto");
-		$rule = $this->session->userdata("admin_rule");
+		$username = $this->session->userdata("admin_username");
 
 		
 	?>
@@ -111,7 +111,7 @@
 							<img src="<?php if ($foto =="") echo base_url()."assets/images/foto/default.png"; else echo base_url()."assets/images/foto/".$foto; ?>" alt="" class="img-circle" width="44" />
 							<span style="float:right;margin-top:10px">
 							<?php echo $nama ?> <br/>
-							<small style="color:#7c7c7c">  <i class="fa fa-caret-down"></i></small>
+							<small style="color:#7c7c7c"><?php echo $username ?>  <i class="fa fa-caret-down"></i></small>
 							</span>
 						</a>
 						<ul class="dropdown-menu">
@@ -119,9 +119,15 @@
 							<li class="caret"></li>
 							<!-- Profile sub-links -->
 							<li>
-								<a href="<?php echo base_url(); ?>kepegawaian/profil">
+								<a href="<?php echo base_url(); ?>kepegawaian/admin/profil">
 									<i class="entypo-user"></i>
-									Edit Profile
+									 Profile
+								</a>
+							</li>
+							<li>
+								<a href="<?php echo base_url(); ?>kepegawaian/admin/password">
+									<i class="entypo-key"></i>
+									 Ganti Password
 								</a>
 							</li>
 							<li>

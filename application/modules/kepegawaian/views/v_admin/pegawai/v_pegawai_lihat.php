@@ -1,10 +1,10 @@
 <ol class="breadcrumb bc-3">
-	<li>
-		<a href="<?php echo base_url() ?>kepegawaian">
-			<i class="fa fa-user"></i>Kepegawaian</a>
+<li>
+<a href="<?php echo base_url() ?>kepegawaian/admin/pegawai">
+	<i class="fa fa-users"></i>Pegawai</a>
 	</li>
 	<li class="active">
-		<strong>Biodata</strong>
+		<strong>Lihat Data Pegawai</strong>
 	</li>
 </ol>
 
@@ -24,8 +24,8 @@
 		<input type="hidden" name="<?=$csrf['name']?>" value="<?=$csrf['hash']?>">
 		<div class="panel-body">
 			<?php pesan_get('msg',"Berhasil Mengedit Data Pegawai","Gagal Mengedit Data Pegawai") ?>
-			<a href="<?php echo base_url('kepegawaian/admin/pegawai?id='.$data['id_pegawai'].'') ?>" class="btn btn-primary btn-s-xs">
-				<i class="fa fa-arrow-left"></i> Kembali</a> &nbsp	<a href="<?php echo base_url('kepegawaian/admin/pegawaiedit?id='.$data['id_pegawai'].'') ?>" class="btn btn-default btn-s-xs">
+			<a href="<?php echo base_url('kepegawaian/admin/pegawai?id='.$data['id_pegawai'].'') ?>" class="btn btn-default btn-s-xs">
+				<i class="fa fa-arrow-left"></i> Kembali</a> &nbsp	<a href="<?php echo base_url('kepegawaian/admin/pegawaiedit?id='.$data['id_pegawai'].'') ?>" class="btn btn-primary btn-s-xs">
 				<i class="fa fa-edit"></i> Edit</a>
 			
 				<hr/>

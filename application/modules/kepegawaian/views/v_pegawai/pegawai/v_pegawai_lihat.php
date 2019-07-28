@@ -1,7 +1,7 @@
 <ol class="breadcrumb bc-3">
 	<li>
 		<a href="<?php echo base_url() ?>kepegawaian">
-			<i class="fa fa-user"></i>Kepegawaian</a>
+			<i class="fa fa-user"></i>Data Pegawai</a>
 	</li>
 	<li class="active">
 		<strong>Biodata</strong>
@@ -91,7 +91,7 @@
 					<div class="form-group">
 						<label class="col-lg-4 control-label">Kepegawaian</label>
 						<div class="col-lg-8">
-							<p class="form-control-static" > : <?php echo $data['statuspegawai'] ?> Pemprov Kalimantan Selatan</p>
+							<p class="form-control-static" > : <?php if ($data['statuspegawai']!="") echo $data['statuspegawai']."Pemprov Kalimantan Selatan" ?> </p>
 						</div>
 					</div>
 					<div class="form-group">

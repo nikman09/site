@@ -57,4 +57,5 @@
 	<script src="<?php echo base_url() ?>assets/back-end/js/wysihtml5/bootstrap-wysihtml5.js"></script>
 	<script src="<?php echo base_url() ?>assets/back-end/js/ckeditor/ckeditor.js"></script>
 	<script src="<?php echo base_url() ?>assets/back-end/js/ckeditor/adapters/jquery.js"></script>
+	<script src="<?php echo base_url() ?>assets/back-end/js/jquery.inputmask.bundle.js"></script>
 	

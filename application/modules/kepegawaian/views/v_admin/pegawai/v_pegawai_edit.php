@@ -61,7 +61,7 @@
 						<div class="col-lg-8">
 							<div class="input-group">
 								<input type="text" class="form-control datepicker" data-format="dd-mm-yyyy" value="<?php $tgllhr = (set_value('tanggal_lahir')) ? set_value('tanggal_lahir') :  $data['tanggal_lahir'];  if ($tgllhr=="0000-00-00") echo date('d-m-Y'); else echo tanggal($tgllhr); ?>"
-								readonly data-validate="required" data-message-required="Tanggal tanggal_lahir " name="tanggal_lahir" style="background-color:#fff"  placeholder="dd/mm/yyyy">
+								data-mask="date" data-validate="required" data-message-required="Tanggal tanggal_lahir " name="tanggal_lahir" style="background-color:#fff"  placeholder="dd/mm/yyyy">
 								<div class="input-group-addon" style="background-color:#fff">
 									<a href="#">
 										<i class="entypo-calendar"></i>
@@ -234,7 +234,7 @@
 						<div class="col-lg-8">
 							<div class="input-group">
 								<input type="text" class="form-control datepicker" data-format="dd-mm-yyyy" value="<?php $tmkerja = (set_value('tmkerja')) ? set_value('tmkerja') :  $data['tmkerja'];  if ($tmkerja=="0000-00-00") echo date('d-m-Y'); else echo tanggal($tmkerja); ?>"
-								readonly data-validate="required" data-message-required="Tanggal tmkerja " name="tmkerja" style="background-color:#fff"  placeholder="dd/mm/yyyy">
+								 data-validate="required" data-message-required="Tanggal tmkerja " name="tmkerja" style="background-color:#fff"  placeholder="dd/mm/yyyy" data-mask="date">
 								<div class="input-group-addon" style="background-color:#fff">
 									<a href="#">
 										<i class="entypo-calendar"></i>
@@ -286,7 +286,8 @@
 		<i class="fa fa-refresh"></i> Reset</a>
 		</button>
 		&nbsp
-	<a href="<?php echo base_url('kepegawaian/admin/pegawailihat?id='.$data['id_pegawai'].'') ?>" class="btn btn-default btn-s-xs">
+	<!-- <a href="<?php echo base_url('kepegawaian/admin/pegawailihat?id='.$data['id_pegawai'].'') ?>" class="btn btn-default btn-s-xs"> -->
+	<a href="<?php echo base_url('kepegawaian/admin/pegawai') ?>" class="btn btn-default btn-s-xs">
 		<i class="fa fa-close"></i> Kembali</a>
 
 		

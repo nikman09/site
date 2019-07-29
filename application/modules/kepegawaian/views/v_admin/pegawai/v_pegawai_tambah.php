@@ -27,7 +27,7 @@
 		<div class="row">
 			<div class="col-md-6">
 			<input type="hidden" name="<?=$csrf['name']?>" value="<?=$csrf['hash']?>">
-				<div class="form-group">
+			
 				<div class="form-group">
 					<label class="col-lg-4 control-label">NIP</label>
 					<div class="col-lg-8">
@@ -36,6 +36,7 @@
 						<span class="validate-has-error" style="color:#cc2424"><?php echo form_error('nip'); ?></span>
 					</div>
 				</div>
+				<div class="form-group">
 					<label class="col-lg-4 control-label">Nama</label>
 					<div class="col-lg-8">
 						<input type="text" class="form-control" name="nama" value="<?php echo set_value('nama'); ?>" 
@@ -78,7 +79,7 @@
 						<label class="col-lg-4 control-label">Tanggal Lahir</label>
 						<div class="col-lg-8">
 							<div class="input-group">
-								<input type="text" class="form-control datepicker" data-format="dd-mm-yyyy" value="<?php echo set_value('tanggal_lahir'); ?>"	readonly name="tanggal_lahir" style="background-color:#fff"  placeholder="dd/mm/yyyy" id="tanggal_lahir">
+								<input type="text" class="form-control datepicker" data-format="dd-mm-yyyy" value="<?php echo set_value('tanggal_lahir'); ?>" name="tanggal_lahir" style="background-color:#fff"  placeholder="dd/mm/yyyy" id="tanggal_lahir"  data-mask="date">
 								<div class="input-group-addon" style="background-color:#fff">
 									<a href="#">
 										<i class="entypo-calendar"></i>

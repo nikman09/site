@@ -82,7 +82,7 @@
 							</div>	
 
 							<div class="form-group">
-								<label for="field-1" class="control-label">Nama Sekolag/Perguruan Tinggi</label>
+								<label for="field-1" class="control-label">Nama Sekolah/Perguruan Tinggi</label>
 								<input type="text" class="form-control" id="nama" name="nama" placeholder="Nama Sekolah/Perguruan Tinggi">
 							</div>	
 							<div class="form-group">

@@ -74,6 +74,7 @@ class Kepegawaian extends CI_Controller {
                 $config['upload_path'] = './assets/images/foto';
                 $config['allowed_types'] = 'jpg|jpeg|JPG|JPEG|pdf|PNG|png';
                 $config['max_size']     =  2048;
+                $config['file_name'] =  $id_pegawai; 
                 $this->load->library('upload', $config);
                 if (isset($_FILES['foto']) && !empty($_FILES['foto']['name']))
                 {
@@ -171,6 +172,8 @@ class Kepegawaian extends CI_Controller {
                 $id_pegawai = $this->input->post("id_pegawai");
                 $config['upload_path'] = './assets/berkas/ktp';
                 $config['allowed_types'] = 'jpg|jpeg|JPG|JPEG|pdf|PNG|png';
+                $config['file_name'] =  $id_pegawai; 
+                $config['max_size']  =  5120;
                 $this->load->library('upload', $config);
                 if ($this->upload->do_upload("ktp"))
                 {
@@ -186,11 +189,14 @@ class Kepegawaian extends CI_Controller {
                     if(is_file($path1)) {
                         unlink($path1); //menghapus gambar di folder produk
                     }
+                    $exec = $this->m_berkas->editdata($id_pegawai,$array);
+                    if ($exec){
+                    redirect(base_url("kepegawaian/berkas?msg=1&l=KTP"));
+                    }
+                } else {
+                    redirect(base_url("kepegawaian/berkas?msg=3&l=KTP"));
                 }
-                $exec = $this->m_berkas->editdata($id_pegawai,$array);
-                if ($exec){
-                 redirect(base_url("kepegawaian/berkas?msg=1&l=KTP"));
-                }
+                
           
       } else {
         redirect(base_url("kepegawaian/berkas"));
@@ -215,6 +221,8 @@ class Kepegawaian extends CI_Controller {
                 $id_pegawai = $this->input->post("id_pegawai");
                 $config['upload_path'] = './assets/berkas/kartunikah';
                 $config['allowed_types'] = 'jpg|jpeg|JPG|JPEG|pdf|PNG|png';
+                $config['file_name'] =  $id_pegawai; 
+                $config['max_size']  =  5120;
                 $this->load->library('upload', $config);
                 if ($this->upload->do_upload("kartunikah"))
                 {
@@ -230,11 +238,14 @@ class Kepegawaian extends CI_Controller {
                     if(is_file($path1)) {
                         unlink($path1); //menghapus gambar di folder produk
                     }
+                    $exec = $this->m_berkas->editdata($id_pegawai,$array);
+                    if ($exec){
+                     redirect(base_url("kepegawaian/berkas?msg=1&l=Kartu Nikah"));
+                    }
+                } else {
+                    redirect(base_url("kepegawaian/berkas?msg=3&l=Kartu Nikah"));
                 }
-                $exec = $this->m_berkas->editdata($id_pegawai,$array);
-                if ($exec){
-                 redirect(base_url("kepegawaian/berkas?msg=1&l=Kartu Nikah"));
-                }
+                
           
       } else {
         redirect(base_url("kepegawaian/berkas"));
@@ -260,6 +271,8 @@ class Kepegawaian extends CI_Controller {
                 $id_pegawai = $this->input->post("id_pegawai");
                 $config['upload_path'] = './assets/berkas/kariskarsu';
                 $config['allowed_types'] = 'jpg|jpeg|JPG|JPEG|pdf|PNG|png';
+                $config['file_name'] =  $id_pegawai; 
+                $config['max_size']  =  5120;
                 $this->load->library('upload', $config);
                 if ($this->upload->do_upload("kariskarsu"))
                 {
@@ -275,11 +288,14 @@ class Kepegawaian extends CI_Controller {
                     if(is_file($path1)) {
                         unlink($path1); //menghapus gambar di folder produk
                     }
+                    $exec = $this->m_berkas->editdata($id_pegawai,$array);
+                    if ($exec){
+                     redirect(base_url("kepegawaian/berkas?msg=1&l=Kartu Nikah"));
+                    }
+                } else {
+                    redirect(base_url("kepegawaian/berkas?msg=3&l=Kartu Nikah"));
                 }
-                $exec = $this->m_berkas->editdata($id_pegawai,$array);
-                if ($exec){
-                 redirect(base_url("kepegawaian/berkas?msg=1&l=Kartu Nikah"));
-                }
+               
           
       } else {
         redirect(base_url("kepegawaian/berkas"));
@@ -304,6 +320,8 @@ class Kepegawaian extends CI_Controller {
                 $id_pegawai = $this->input->post("id_pegawai");
                 $config['upload_path'] = './assets/berkas/kartukeluarga';
                 $config['allowed_types'] = 'jpg|jpeg|JPG|JPEG|pdf|PNG|png';
+                $config['file_name'] =  $id_pegawai; 
+                $config['max_size']  =  5120;
                 $this->load->library('upload', $config);
                 if ($this->upload->do_upload("kartukeluarga"))
                 {
@@ -319,11 +337,14 @@ class Kepegawaian extends CI_Controller {
                     if(is_file($path1)) {
                         unlink($path1); //menghapus gambar di folder produk
                     }
+                    $exec = $this->m_berkas->editdata($id_pegawai,$array);
+                    if ($exec){
+                    redirect(base_url("kepegawaian/berkas?msg=1&l=Kartu Keluarga"));
+                    }
+                } else {
+                    redirect(base_url("kepegawaian/berkas?msg=3&l=Kartu Keluarga"));  
                 }
-                $exec = $this->m_berkas->editdata($id_pegawai,$array);
-                if ($exec){
-                 redirect(base_url("kepegawaian/berkas?msg=1&l=Kartu Keluarga"));
-                }
+                
           
       } else {
         redirect(base_url("kepegawaian/berkas"));
@@ -348,6 +369,8 @@ class Kepegawaian extends CI_Controller {
                 $id_pegawai = $this->input->post("id_pegawai");
                 $config['upload_path'] = './assets/berkas/bpjs';
                 $config['allowed_types'] = 'jpg|jpeg|JPG|JPEG|pdf|PNG|png';
+                $config['file_name'] =  $id_pegawai; 
+                $config['max_size']  =  5120;
                 $this->load->library('upload', $config);
                 if ($this->upload->do_upload("bpjs"))
                 {
@@ -363,11 +386,14 @@ class Kepegawaian extends CI_Controller {
                     if(is_file($path1)) {
                         unlink($path1); //menghapus gambar di folder produk
                     }
+                    $exec = $this->m_berkas->editdata($id_pegawai,$array);
+                    if ($exec){
+                     redirect(base_url("kepegawaian/berkas?msg=1&l=BPJS"));
+                    }
+                } else {
+                    redirect(base_url("kepegawaian/berkas?msg=3&l=BPJS"));
                 }
-                $exec = $this->m_berkas->editdata($id_pegawai,$array);
-                if ($exec){
-                 redirect(base_url("kepegawaian/berkas?msg=1&l=BPJS"));
-                }
+               
           
       } else {
         redirect(base_url("kepegawaian/berkas"));
@@ -392,6 +418,8 @@ class Kepegawaian extends CI_Controller {
                 $id_pegawai = $this->input->post("id_pegawai");
                 $config['upload_path'] = './assets/berkas/taspen';
                 $config['allowed_types'] = 'jpg|jpeg|JPG|JPEG|pdf|PNG|png';
+                $config['file_name'] =  $id_pegawai; 
+                $config['max_size']  =  5120;
                 $this->load->library('upload', $config);
                 if ($this->upload->do_upload("taspen"))
                 {
@@ -407,11 +435,14 @@ class Kepegawaian extends CI_Controller {
                     if(is_file($path1)) {
                         unlink($path1); //menghapus gambar di folder produk
                     }
+                    $exec = $this->m_berkas->editdata($id_pegawai,$array);
+                    if ($exec){
+                     redirect(base_url("kepegawaian/berkas?msg=1&l=TASPEN"));
+                    }
+                } else {
+                    redirect(base_url("kepegawaian/berkas?msg=3&l=TASPEN"));
                 }
-                $exec = $this->m_berkas->editdata($id_pegawai,$array);
-                if ($exec){
-                 redirect(base_url("kepegawaian/berkas?msg=1&l=TASPEN"));
-                }
+               
           
       } else {
         redirect(base_url("kepegawaian/berkas"));
@@ -436,6 +467,8 @@ class Kepegawaian extends CI_Controller {
                 $id_pegawai = $this->input->post("id_pegawai");
                 $config['upload_path'] = './assets/berkas/skcpns';
                 $config['allowed_types'] = 'jpg|jpeg|JPG|JPEG|pdf|PNG|png';
+                $config['file_name'] =  $id_pegawai; 
+                $config['max_size']  =  5120;
                 $this->load->library('upload', $config);
                 if ($this->upload->do_upload("skcpns"))
                 {
@@ -451,11 +484,14 @@ class Kepegawaian extends CI_Controller {
                     if(is_file($path1)) {
                         unlink($path1); //menghapus gambar di folder produk
                     }
+                    $exec = $this->m_berkas->editdata($id_pegawai,$array);
+                    if ($exec){
+                     redirect(base_url("kepegawaian/berkas?msg=1&l=SK CPNS"));
+                    }
+                } else {
+                    redirect(base_url("kepegawaian/berkas?msg=3&l=SK CPNS"));
                 }
-                $exec = $this->m_berkas->editdata($id_pegawai,$array);
-                if ($exec){
-                 redirect(base_url("kepegawaian/berkas?msg=1&l=SK CPNS"));
-                }
+               
           
       } else {
         redirect(base_url("kepegawaian/berkas"));
@@ -480,6 +516,8 @@ class Kepegawaian extends CI_Controller {
                 $id_pegawai = $this->input->post("id_pegawai");
                 $config['upload_path'] = './assets/berkas/skpns';
                 $config['allowed_types'] = 'jpg|jpeg|JPG|JPEG|pdf|PNG|png';
+                $config['file_name'] =  $id_pegawai; 
+                $config['max_size']  =  5120;
                 $this->load->library('upload', $config);
                 if ($this->upload->do_upload("skpns"))
                 {
@@ -495,11 +533,14 @@ class Kepegawaian extends CI_Controller {
                     if(is_file($path1)) {
                         unlink($path1); //menghapus gambar di folder produk
                     }
+                    $exec = $this->m_berkas->editdata($id_pegawai,$array);
+                    if ($exec){
+                     redirect(base_url("kepegawaian/berkas?msg=1&l=SK PNS"));
+                    }
+                } else {
+                    redirect(base_url("kepegawaian/berkas?msg=3&l=SK PNS"));
                 }
-                $exec = $this->m_berkas->editdata($id_pegawai,$array);
-                if ($exec){
-                 redirect(base_url("kepegawaian/berkas?msg=1&l=SK PNS"));
-                }
+               
           
       } else {
         redirect(base_url("kepegawaian/berkas"));
@@ -525,6 +566,8 @@ class Kepegawaian extends CI_Controller {
                 $id_pegawai = $this->input->post("id_pegawai");
                 $config['upload_path'] = './assets/berkas/karpeg';
                 $config['allowed_types'] = 'jpg|jpeg|JPG|JPEG|pdf|PNG|png';
+                $config['file_name'] =  $id_pegawai; 
+                $config['max_size']  =  5120;
                 $this->load->library('upload', $config);
                 if ($this->upload->do_upload("karpeg"))
                 {
@@ -540,11 +583,14 @@ class Kepegawaian extends CI_Controller {
                     if(is_file($path1)) {
                         unlink($path1); //menghapus gambar di folder produk
                     }
+                    $exec = $this->m_berkas->editdata($id_pegawai,$array);
+                    if ($exec){
+                        redirect(base_url("kepegawaian/berkas?msg=1&l=Kartu Nikah"));
+                    }
+                } else {
+                    redirect(base_url("kepegawaian/berkas?msg=3&l=Kartu Nikah"));
                 }
-                $exec = $this->m_berkas->editdata($id_pegawai,$array);
-                if ($exec){
-                 redirect(base_url("kepegawaian/berkas?msg=1&l=Kartu Nikah"));
-                }
+                
           
       } else {
         redirect(base_url("kepegawaian/berkas"));
@@ -576,6 +622,7 @@ class Kepegawaian extends CI_Controller {
                     );
                     $config['upload_path'] = './assets/berkas/riwayatpendidikan';
                     $config['allowed_types'] = 'jpg|jpeg|JPG|JPEG|pdf|PNG|png';
+                    $config['file_name'] =  $id_pegawai; 
                     $this->load->library('upload', $config);
                     if ($this->upload->do_upload("berkas"))
                     {
@@ -626,6 +673,7 @@ class Kepegawaian extends CI_Controller {
                 $id_riwayatpendidikan = $this->input->post("id_riwayatpendidikan");
                 $config['upload_path'] = './assets/berkas/riwayatpendidikan';
                 $config['allowed_types'] = 'jpg|jpeg|JPG|JPEG|pdf|PNG|png';
+                $config['file_name'] =  $id_pegawai; 
                 $this->load->library('upload', $config);
                 if ($this->upload->do_upload("berkas"))
                 {

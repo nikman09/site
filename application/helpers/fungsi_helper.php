@@ -4,7 +4,7 @@
 	
 	if ( ! function_exists('pesan_get'))
 	{
-		function pesan_get($variabel,$pesansukses, $pesangagal = NULL, $pesangagal2 = NULL)
+		function pesan_get($variabel,$pesansukses, $pesangagal = NULL, $pesangagal2 = NULL, $pesangagal3 = NULL)
 		{
 			 
 			 if (isset($_GET[$variabel])) {
@@ -31,6 +31,13 @@
 						<i class='fa fa-info-circle'></i>
 						".$pesangagal2."
 					</div> ";
+				 }  else if ($var=='3' && $pesangagal3!= NULL) {
+					echo "
+					<div class='alert alert-danger'>
+						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button>
+						<i class='fa fa-info-circle'></i>
+						".$pesangagal3."
+					</div> ";
 				 }
 			} else if (isset($_POST[$variabel])) {
 				$ci = &get_instance();
@@ -56,6 +63,13 @@
 						<i class='fa fa-info-circle'></i>
 						".$pesangagal2."
 					</div> ";
+				 }  else if ($var=='3' && $pesangagal3!= NULL) {
+					echo "
+					<div class='alert alert-danger'>
+						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button>
+						<i class='fa fa-info-circle'></i>
+						".$pesangagal3."
+					</div> ";
 				 }
 			}
 		
@@ -64,7 +78,7 @@
 
 	if ( ! function_exists('pesanvar'))
 	{
-		function pesanvar($variabel,$pesansukses, $pesangagal = NULL, $pesangagal2 = NULL)
+		function pesanvar($variabel,$pesansukses, $pesangagal = NULL, $pesangagal2 = NULL, $pesangagal3 = NULL)
 		{
 			 
 				$ci = &get_instance();
@@ -89,6 +103,13 @@
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button>
 						<i class='fa fa-info-circle'></i>
 						".$pesangagal2."
+					</div> ";
+				 } else if ($var=='3' && $pesangagal3!= NULL) {
+					echo "
+					<div class='alert alert-danger'>
+						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button>
+						<i class='fa fa-info-circle'></i>
+						".$pesangagal3."
 					</div> ";
 				 }
 	

@@ -48,70 +48,7 @@ jQuery( document ).ready( function( $ ) {
                 email: {
                     email: true
                 },
-                tempat_lahir: {
-                    required: true
-                },  
-                tanggal_lahir: {
-                    required: true
-                },  
-                jk: {
-                    required: true
-                }, 
-                agama: {
-               
-                },
-               
-                status: {
-           
-                }, 
-                goldar: {
-				
-				},
-                alamat: {
-				
-				},
-                nohp: {
-				
-				},
-                kodepos: {
-				},
-                alamat: {
-					
-				},
-                statuspegawai: {
-				
-				},
-                jenis: {
-					
-				},
-                jabatan: {
-					
-				},
-                kedudukan: {
-				
-				},
-                ktp: {
-				
-				},
-                
-                bpjs: {
-				
-				},
-                
-                karis: {
-					
-				},
-                
-                karpeg: {
-				
-				},
-                
-                taspen: {
-				
-				},
-                npwp: {
-					
-				},
+        
 
                 
             },
@@ -119,69 +56,7 @@ jQuery( document ).ready( function( $ ) {
                 email: {
                     email: "Format Email Salah"
                 },
-                tempat_lahir: {
-                    required: "Tanggal Lahir harus diisi"
-                }, 
-                tanggal_lahir: {
-                    required: "Tanggal Lahir harus diisi"
-                },  
-                jk: {
-                    required: "Jenis Kelamin harus diisi"
-                }, 
-                agama: {
-                    required:"Agama harus diisi"
-                },
-                jabatan: {
-                    required: "Jabatan harus diisi"
-                },
-                status: {
-                    required: "Status Kepegawaian harus diisi"
-                }, 
-                goldar: {
-					required: "Golongan Darah harus diisi"
-				},
-                alamat: {
-					required: "Alamat harus diisi"
-				},
-                nohp: {
-					required: "Telepon harus diisi"
-				},
-                kodepos: {
-				},
-                statuspegawai: {
-					required: "Status Kepegawaian harus diisi"
-				},
-                jenis: {
-					required: "Jenis Kepegawaian harus diisi"
-				},
-                jabatan: {
-					required: "Jenis Jabatan harus diisi"
-				},
-                kedudukan: {
-					required: "Kedudukan Pegawai harus diisi"
-				},
-                ktp: {
-				
-				},
-                
-                bpjs: {
-				
-				},
-                
-                karis: {
-					
-				},
-                
-                karpeg: {
-				
-				},
-                
-                taspen: {
-				
-				},
-                npwp: {
-					
-				},
+               
             }
         });
 

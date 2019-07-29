@@ -3,34 +3,34 @@
 
 
 <div class="row">
-			<div class="col-sm-4 col-xs-6">
+			<div class="col-sm-4 col-xs-12">
 		
 				<div class="tile-stats tile-red">
 					<div class="icon"><i class="entypo-users"></i></div>
 					<div class="num" data-start="0" data-end="<?php echo $jumlahpegawai ?>" data-postfix="" data-duration="500" data-delay="0">0</div>
 		
-					<h3>Jumlah Pegawai</h3>
+					<h3>Total Pegawai</h3>
 					<p>Dinas Perindustrian Pemprov Kalsel.</p>
 				</div>
 			</div>
-			<div class="col-sm-4 col-xs-6">
+			<div class="col-sm-4 col-xs-12">
 		
 				<div class="tile-stats tile-green">
 					<div class="icon"><i class="entypo-users"></i></div>
 					<div class="num" data-start="0" data-end="<?php echo $jumlahpegawailk ?>" data-postfix="" data-duration="500" data-delay="0">0</div>
 		
-					<h3>Jumlah Pegawai Laki-laki</h3>
+					<h3>Pegawai Laki-laki</h3>
 					<p>Dinas Perindustrian Pemprov Kalsel.</p>
 					</div>
 			</div>
 			
 			<div class="clear visible-xs"></div>
-			<div class="col-sm-4 col-xs-6">
+			<div class="col-sm-4 col-xs-12">
 				<div class="tile-stats tile-aqua">
 					<div class="icon"><i class="entypo-users"></i></div>
 					<div class="num" data-start="0" data-end="<?php echo $jumlahpegawaipr ?>" data-postfix="" data-duration="500" data-delay="0">0</div>
 
-					<h3>Jumlah Pegawai Perempuan</h3>
+					<h3>Pegawai Perempuan</h3>
 					<p>Dinas Perindustrian Pemprov Kalsel.</p>
 				</div>
 			</div>
@@ -247,7 +247,7 @@
 
 	&copy;
 	<?php echo date('Y') ?>
-	<strong>DISPERIN</strong> Aplikasi Kepegawaian
+	<strong>SIDAWAIPRIN</strong>km  (Sistem Informasi Data Pegawai Dinas Perindustrian)
 
 </footer>
 

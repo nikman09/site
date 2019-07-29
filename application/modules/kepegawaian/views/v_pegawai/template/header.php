@@ -110,7 +110,7 @@
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 					
 							<img src="<?php if ($foto =="") echo base_url()."assets/images/foto/default.png"; else echo base_url()."assets/images/foto/".$foto; ?>" alt="" class="img-circle" width="44" />
-							<?php ?>
+	
 							
 							<span style="float:right;margin-top:10px">
 							<?php echo $nama ?> <br/>

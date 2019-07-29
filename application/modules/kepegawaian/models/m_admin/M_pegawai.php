@@ -12,7 +12,8 @@ class M_pegawai extends CI_Model
         ->join("tb_jabatan","tb_pegawai.id_jabatan=tb_jabatan.id_jabatan","left")
         ->join("tb_subjabatan","tb_pegawai.id_subjabatan=tb_subjabatan.id_subjabatan","left")
         ->join("tb_pangkat","tb_pegawai.id_pangkat=tb_pangkat.id_pangkat","left")
-        ->join("tb_pendidikan","tb_pegawai.id_pendidikan=tb_pendidikan.id_pendidikan","left");
+        ->join("tb_pendidikan","tb_pegawai.id_pendidikan=tb_pendidikan.id_pendidikan","left")
+        ->order_by("tb_pangkat.id_pangkat","desc");
         return $this->db->get('tb_pegawai');
     }
    

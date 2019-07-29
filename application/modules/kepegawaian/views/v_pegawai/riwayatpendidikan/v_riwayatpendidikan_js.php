@@ -17,9 +17,51 @@ jQuery( document ).ready( function( $ ) {
         minimumResultsForSearch: -1
     });
 
-    
 
+    
 } );
+
+$.validator.addMethod('filesize', function (value, element, param) {
+        return this.optional(element) || (element.files[0].size <= param)
+    }, 'File size must be less than {0}');
+
+    $('#form').validate({ // initialize plugin
+        highlight: function (label) {
+            $(label).closest('.form-group').removeClass('has-success').addClass('has-error');
+            //$('.error').css({'font-size':'9px','margin-bottom':'0px'});
+            $('#status-error').css({'font-size':'9px'});
+        },
+        success: function (label) {
+            $(label).closest('.form-group').removeClass('has-error');
+            label.remove();
+        },
+        errorPlacement: function (error, element) {
+            var placement = element.closest('.input-group');
+            if (!placement.get(0)) {
+                placement = element;
+            }
+            if (error.text() !== '') {
+                placement.after(error);
+            }
+        },
+
+        rules: {
+            nama: {
+                required: true,
+            },
+            berkas : {
+                filesize: 5000000,
+            }
+            
+        
+        },
+        messages: {
+            berkas: {
+                filesize: "Maksimal Berkas 5MB",
+            },
+            
+        }
+    });
  
 
    $(".hapus").click(function (e) {

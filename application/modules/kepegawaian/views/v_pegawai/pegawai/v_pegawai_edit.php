@@ -58,7 +58,7 @@
 						<div class="col-lg-8">
 							<div class="input-group">
 								<input type="text" class="form-control datepicker" data-format="dd-mm-yyyy" value="<?php $tgllhr = (set_value('tanggal_lahir')) ? set_value('tanggal_lahir') :  $data['tanggal_lahir'];  if ($tgllhr=="0000-00-00") echo date('d-m-Y'); else echo tanggal($tgllhr); ?>"
-								readonly data-validate="required" data-message-required="Tanggal tanggal_lahir " name="tanggal_lahir" style="background-color:#fff"  placeholder="dd/mm/yyyy">
+								data-mask="date" data-validate="required" data-message-required="Tanggal tanggal_lahir " name="tanggal_lahir" style="background-color:#fff"  placeholder="dd/mm/yyyy">
 								<div class="input-group-addon" style="background-color:#fff">
 									<a href="#">
 										<i class="entypo-calendar"></i>
@@ -232,7 +232,7 @@
 						<div class="col-lg-8">
 							<div class="input-group">
 								<input type="text" class="form-control datepicker" data-format="dd-mm-yyyy" value="<?php  if ($data['tmkerja']=="0000-00-00") echo date('d-m-Y'); else echo tanggal($data['tmkerja']); ?>"
-								readonly data-validate="required" data-message-required="Tanggal tmkerja " name="tmkerja" style="background-color:#fff"  placeholder="dd/mm/yyyy">
+								data-mask="date" data-validate="required" data-message-required="Tanggal tmkerja " name="tmkerja" style="background-color:#fff"  placeholder="dd/mm/yyyy">
 								<div class="input-group-addon" style="background-color:#fff">
 									<a href="#">
 										<i class="entypo-calendar"></i>

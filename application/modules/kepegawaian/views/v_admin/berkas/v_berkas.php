@@ -13,7 +13,7 @@
 
 <h3>Berkas Pegawai "<?php echo $pegawai['nama'] ?>" </h3>
 <div class="table-responsive">
-	<?php pesan_get('msg',"Berhasil Mengupload Data Berkas Pegawai","Gagal Mengupload Data Berkas Pegawai","Berhasil Mengganti Password") ?>
+	<?php pesan_get('msg',"Berhasil Mengupload Data Berkas Pegawai","","","Gagal Mengupload Data Berkas Pegawai (Max 5MB)"); ?>
 	<a style="margin-bottom:20px" href="<?php echo base_url('kepegawaian/admin/pegawailihat?id='.$data['id_pegawai'].'') ?>" class="btn btn-default btn-s-xs">
 				<i class="fa fa-arrow-left"></i> Kembali</a>
 		

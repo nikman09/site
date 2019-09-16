@@ -92,7 +92,7 @@
 					</div> ";
 				 } else if ($var=='0' && $pesangagal!= NULL) {
 					echo "
-					<div class='alert alert-warning'>
+					<div class='alert alert-defaults'>
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button>
 						<i class='fa fa-info-circle'></i>
 						".$pesangagal."
@@ -125,7 +125,7 @@
 			$menu = $ci->router->fetch_class();
 			$submenu = $ci->router->fetch_method();
 			if($ci->session->userdata('statuslogin') != "login") {
-				redirect(base_url("kepegawaian/login?m=".$submenu.""));
+				redirect(base_url("administrator/login?m=".$submenu.""));
 			}
 		}
 	}

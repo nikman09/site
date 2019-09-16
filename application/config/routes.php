@@ -49,7 +49,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['default_controller'] = 'kepegawaian';
+$route['default_controller'] = 'web';
 $route['404_override'] = 'Costumerror';
 $route['translate_uri_dashes'] = FALSE;
 //$route['(:any)?/(:any)?'] = "$1/$2/$2";

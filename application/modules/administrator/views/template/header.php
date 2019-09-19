@@ -110,19 +110,19 @@
 							<li class="caret"></li>
 							<!-- Profile sub-links -->
 							<li>
-								<a href="<?php echo base_url(); ?>kepegawaian/admin/profil">
+								<a href="<?php echo base_url(); ?>admin/profil">
 									<i class="entypo-user"></i>
 									 Profile
 								</a>
 							</li>
 							<li>
-								<a href="<?php echo base_url(); ?>kepegawaian/admin/password">
+								<a href="<?php echo base_url(); ?>admin/password">
 									<i class="entypo-key"></i>
 									 Ganti Password
 								</a>
 							</li>
 							<li>
-								<a href="<?php echo base_url() ?>kepegawaian/login/logoutadministrator">
+								<a href="<?php echo base_url() ?>login/logoutadministrator">
 									<i class="entypo-logout"></i>
 									Log Out
 								</a>
@@ -141,7 +141,7 @@
 					<!-- Language Selector -->
 					<li class="sep"></li>
 					<li>
-						<a href="<?php echo base_url() ?>kepegawaian/login/logoutadministrator">
+						<a href="<?php echo base_url() ?>administrator/login/logout">
 							Log Out <i class="entypo-logout right"></i>
 						</a>
 					</li>

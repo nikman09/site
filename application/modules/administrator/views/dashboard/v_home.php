@@ -3,13 +3,13 @@
 
 
 <div class="row">
-	</dvi>
+	</div>
 <!-- Footer -->
 <footer class="main">
 
 	&copy;
 	<?php echo date('Y') ?>
-	<strong>SIDAWAIPRIN</strong>km  (Sistem Informasi Data Pegawai Dinas Perindustrian)
+	<strong> Administrator</strong>  Website Dinas Perindustrian
 
 </footer>
 

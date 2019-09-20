@@ -10,10 +10,8 @@ class Web extends CI_Controller {
     // Dashboard
     public function index()
     {   
-       
-        echo "aa";
-      
-    }
+        $this->load->view('home/v_home');
+    }   
    
 
 }

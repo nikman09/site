@@ -11,11 +11,40 @@
 					<span class="title">Beranda </span>
 				</a>
 			</li>
-			<li  class="<?= ($submenu == "berita" || $submenu == "beritalihat"  || $submenu == "beritatambah" || $submenu == "beritaedit") ? "active root-level" : ""; ?> ">
-				<a href="<?php echo base_url() ?>administrator/berita">
-					<i class="fa fa-newspaper-o"></i>
-					<span class="title">Berita</span>
-				</a>
+
+			<li class="<?= ($submenu == "jabatan" || $submenu == "rincian"  ) ? "opened active root-level" : ""; ?> has-sub ">
+					<a href="">
+						<i class="fa fa-list"></i>
+						<span class="title">Master Data</span>
+					</a>
+					<ul>
+						<li  class="<?= ($submenu == "jabatan" || $submenu == "rincian") ? " active" : ""; ?>">
+							<a href="<?php echo base_url() ?>kepegawaian/admin/jabatan">
+								<span class="title">Jabatan</span>
+							</a>
+						</li>
+						
+					</ul>
+				</li>
+
+			<li  class="<?= ($submenu == "berita" || $submenu == "beritalihat"  || $submenu == "beritatambah" || $submenu == "beritaedit" || $submenu == "beritakategori" || $submenu == "beritakategori" ) ? "opened active root-level" : ""; ?> has-sub">
+					<a href="">
+						<i class="fa fa-newspaper-o"></i>
+						<span class="title">Berita</span>
+					</a>
+					<ul>
+						<li  class="<?= ($submenu == "berita" || $submenu == "beritalihat") ? " active" : ""; ?>">
+							<a href="<?php echo base_url() ?>admnistrator/berita">
+								<span class="title">Daftar Berita</span>
+							</a>
+						</li>
+						<li  class="<?= ($submenu == "beritakategori" || $submenu == "beritakategoritambah") ? " active" : ""; ?>">
+							<a href="<?php echo base_url() ?>administrator/beritakategori">
+								<span class="title">Kategori</span>
+							</a>
+						</li>
+						
+					</ul>
 			</li>
 			
 		</ul>

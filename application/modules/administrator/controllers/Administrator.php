@@ -18,6 +18,12 @@ class Administrator extends CI_Controller {
         $variabel = "";
         $this->layout->render('berita/v_berita',$variabel,'berita/v_berita_js');
     }
+
+    public function beritakategori()
+    {   
+        $variabel = "";
+        $this->layout->render('berita/beritakategori/v_beritakategori',$variabel,'berita/beritakategori/v_beritakategori_js');
+    }
 	
 	
 

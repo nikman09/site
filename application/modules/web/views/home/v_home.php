@@ -132,7 +132,7 @@
 						</div>
 					</div>
 						
-					<div class="header-nav-bar bg-primary" data-sticky-header-style="{'minResolution': 991}" data-sticky-header-style-active="{'background-color': 'transparent'}" data-sticky-header-style-deactive="{'background-color': '#0088cc'}"  style="background-image : url(bahan/123.png); background-repeat: repeat;">
+					<div class="header-nav-bar bg-primary" data-sticky-header-style="{'minResolution': 991}" data-sticky-header-style-active="{'background-color': 'transparent'}" data-sticky-header-style-deactive="{'background-color': '#0088cc'}"  style="background-image : url(<?php echo base_url() ?>assets/front-end/web2/bahan/123.png); background-repeat: repeat;">
 						<div class="container">
 							<div class="header-row">
 								<div class="header-column">
@@ -142,7 +142,7 @@
 												<nav class="collapse">
 													<ul class="nav nav-pills" id="mainNav">
 														<li class="dropdown dropdown-full-color dropdown-light">
-															<a class="dropdown-item dropdown-toggle active" href="index.html">
+															<a class="dropdown-item dropdown-toggle active" href="<?php echo base_url() ?>">
 																Beranda
 															</a>
 														</li>
@@ -485,7 +485,7 @@
 					</div>
 					</div>
 				</div>
-				<section class="section section-height-3 bg-primary border-0 m-0 appear-animation" data-appear-animation="fadeIn" style="background-image : url(bahan/321.png); background-repeat: repeat;">
+				<section class="section section-height-3 bg-primary border-0 m-0 appear-animation" data-appear-animation="fadeIn" style="background-image : url(<?php echo base_url() ?>assets/front-end/web2/bahan/321.png); background-repeat: repeat;">
 					<div class="container">
 						<div class="row">
 							<div class="col appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200">

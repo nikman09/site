@@ -40,6 +40,11 @@
 	<link rel="stylesheet" href="<?php echo base_url() ?>assets/back-end/css/neon-forms.css">
 	<link rel="stylesheet" href="<?php echo base_url() ?>assets/back-end/js/confirm/jquery-confirm.min.css">
 	<link rel="stylesheet" href="<?php echo base_url() ?>assets/back-end/css/custom.css">
+	<style>
+		.error {
+			font-size: 10px
+		}
+	</style>
 	<script src="<?php echo base_url() ?>assets/back-end/js/jquery-1.11.3.min.js"></script>
 	<!--[if lt IE 9]><script src="assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->

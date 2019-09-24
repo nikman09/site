@@ -149,7 +149,7 @@
 														
 														<li class="dropdown dropdown-full-color dropdown-light">
 															<a class="dropdown-item dropdown-toggle" href="#">
-																Berita dan Informasi
+																Berita
 															</a>
 														</li>
 														<li class="dropdown dropdown-full-color dropdown-light">
@@ -412,7 +412,7 @@
 								<p class="pr-5 mr-5">Dinas Perindustrian Provinsi Kalimantan Selatan beralamat di Jl. Dharma Praja Komplek Perkantoran Provinsi Kalimantan Selatan, Banjarbaru. Dinas Perindustrian Provinsi Kalimantan Selatan memiliki 1 Unit Pelaksana Teknis (UPT), yaitu UPT Balai Diklat Industri Kayu & Logam yang beralamatkan di Amuntai & Nagara. <br/>
 
 </p>
-								<a href="#" class="btn btn-dark font-weight-semibold btn-px-4 btn-py-2 text-2">Tugas dan Fungsi</a>
+								<a href="#" class="btn btn-dark font-weight-semibold btn-px-4 btn-py-2 text-2">Stuktur Organisasi</a>
 							</div>
 							<div class="col-sm-8 col-md-6 col-lg-4 offset-sm-4 offset-md-4 offset-lg-2 mt-sm-5" style="top: 1.7rem;">
 								<img src="<?php echo base_url() ?>assets/front-end/web2/bahan/1.jpg" class="img-fluid position-absolute d-none d-sm-block appear-animation" data-appear-animation="expandIn" data-appear-animation-delay="300" style="top: 10%; left: -50%;" alt="" />
@@ -422,12 +422,69 @@
 						</div>
 					</div>
 				</section>
-				
 				<div class="container" >
 					<div class="row py-2 my-2">
 					
-						<div class="col-md-6 order-1 order-md-2 text-center text-md-left mb-5 mb-md-0 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="200">
-							<h2 class="text-color-dark font-weight-normal text-6 mb-2">Visi dan Misi <strong class="font-weight-extra-bold">Dinas Perindustrian</strong></h2>
+						
+						
+						<div class="col-lg-8 appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="200">
+								<div class="row">
+						<div class="col">
+						
+							<h4>Tugas dan Fungsi</h4>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="tabs">
+								<ul class="nav nav-tabs nav-justified flex-column flex-md-row">
+									<li class="nav-item ">
+										<a class="nav-link" href="#popular10" data-toggle="tab" class="text-center">Tugas</a>
+									</li>
+									<li class="nav-item active">
+										<a class="nav-link" href="#recent10" data-toggle="tab" class="text-center">Fungsi</a>
+									</li>
+								</ul>
+								<div class="tab-content">
+									<div id="popular10" class="tab-pane ">
+									<p style="text-align:justify">Dinas Perindustrian mempunyai tugas melaksanakan urusan Pemerintahan Daerah dibidang Perindustrian sesuai dengan azas desentralisasi, dekonsentralisasi dan tugas pembantuan, sebagai berikut : &ldquo;Merumuskan dan menetapkan kebijakan teknis dibidang Perindustrian sesuai dengan kebijakan yang ditetapkanoleh Gubernur Kalimantan Selatan&ldquo;antara lain :</p>
+										<ul>
+	<li style="text-align:justify">Merumuskan dan menetapkan kebijakan teknis di bidang perindustrian sesuai dengan kebijakan yang ditetapkan Gubernur;</li>
+	<li style="text-align:justify">Menyelenggarakan urusan pemerintahan dan pelayanan umum di bidangperindustrian;</li>
+	<li style="text-align:justify">Merumuskan dan menetapkan kebijakan operasional, membina, mengatur, memberikan pelayanan informasi perizinan, fasilitasi dan mengkoordinasikan pelaksanaan kegiatan pembinaan dan pengembangan Industri Logam, Mesin, Elektronika, dan Alat Transportasi;</li>
+	<li style="text-align:justify">Merumuskan dan menetapkan kebijakan operasional, membina, mengatur,memberikan pelayanan informasi perizinan, fasilitasi dan mengkoordinasikan pelaksanaan kegiatan pembinaan dan pengembangan Industri Agro;</li>
+	<li style="text-align:justify">Merumuskan dan menetapkan kebijakan operasional, membina, mengatur,memberikan pelayanan informasi perizinan, fasilitasi dan mengkoordinasikan pelaksanaan kegiatan pembinaan dan pengembangan Industri Kimia, Tekstil, dan Aneka;</li>
+	<li style="text-align:justify">Membina, mengawasi dan mengendalikan kegiatan unit pelaksana teknis;</li>
+	<li style="text-align:justify">Mengelola kegiatan kesekretariatan; dan</li>
+	<li style="text-align:justify">Melaksanakan tugas-tugas lain yang diberikan oleh Gubernur sesuai dengan bidang tugas dan tanggung jawabnya</li>
+</ul>
+									</div>
+									<div id="recent10" class="tab-pane active">
+									<p>Untuk melaksanakan tugas sebagaimana dimaksud Dinas Perindustrian mempunyai fungsi :</p>
+
+<ul>
+	<li>Perumusan kebijakan teknis dibidang Perindustrian sesuai dengan kebijakan yang ditetapkan oleh Gubernur berdasarkan peraturan perundang-undangan yang berlaku;</li>
+	<li>Penyelenggaraan urusan pemerintahan dan pelayanan umum dibidang Perindustrian;</li>
+	<li>Perumusan kebijakan operasional, pembinaan, pengaturan dan fasilitasi pengembangan Industri Logam, Mesin, Elektronika, dan Alat Transportasi;</li>
+	<li>Perumusan kebijakan operasional, pembinaan, pengaturan dan fasilitasi pengembangan Industri Agro;</li>
+	<li>Perumusan kebijakan operasional, pembinaan, pengaturan dan fasilitasi pengembangan Industri Kimia, Tekstil dan Aneka;</li>
+	<li>Pembinaan, pengawasan,dan pengendalian unit pelaksana teknis; dan.</li>
+	<li>Pengelolaan kegiatan kesekretariatan</li>
+</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						
+					</div>
+
+
+					</div>
+
+					<div class="col-md-4 order-1 order-md-2 text-center text-md-left mb-5 mb-md-0 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="200">
+							<h2 class="text-color-dark font-weight-normal text-6 mb-1" style="line-height:30px;">Visi dan Misi <br/> <strong class="font-weight-extra-bold">Dinas Perindustrian</strong></h2>
 							<p class="lead"><b>Visi</b>
 							<br/>Industri Daerah Yang Berdaya Saing Dengan Berbasis Sumber Daya Lokal Berkontribusi Menuju KALSEL MAPAN..</p>
 							<p class="lead" style="margin-bottom:1px"><b>Misi</b></p>
@@ -439,50 +496,7 @@
 							</ul>
 							
 						</div>
-						
-						<div class="col-lg-6 appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="200">
-								<div class="owl-carousel owl-theme nav-style-1 stage-margin" data-plugin-options="{'responsive': {'576': {'items': 1}, '768': {'items': 1}, '992': {'items': 1}, '1200': {'items': 1}}, 'loop': true, 'nav': true, 'dots': false, 'stagePadding': 40, 'autoplay': true, 'autoplayTimeout': 6000}">
-									<div>
-										<div class="testimonial testimonial-style-2 testimonial-with-quotes testimonial-quotes-dark testimonial-remove-right-quote pl-md-4 mb-0">
-											<div class="testimonial-author">
-												<img src="<?php echo base_url() ?>assets/front-end/web2/bahan/Paman-Birin.png" class="img-fluid rounded-circle mb-0" alt="">
-											</div>
-											<blockquote>
-												<p class="text-color-dark text-4 line-height-5 mb-0">Susunlah rencana pembangunan yang memberikan dampak positif bagi peningkatan SDM, peningkatan daya saing ekonomi, pencapaian tata kelola pemerintahan yang baik. Dan lebih utama dari itu, hadirkanlah program dan kegiatan pembangunan yang berorientasi pada kemakmuran dan kesejahteraan bagi masyarakat."</p>
-											</blockquote>
-											<div class="testimonial-author">
-												<p><strong class="font-weight-extra-bold text-2">H. Sahbirin Noor,S.Sos, M.H.</strong><span>Gubernur Kalimantan Selatan</span></p>
-											</div>
-										</div>
-									</div>
-									<div>
-										<div class="testimonial testimonial-style-2 testimonial-with-quotes testimonial-quotes-dark testimonial-remove-right-quote pl-md-4 mb-0">
-											<div class="testimonial-author">
-											<?php echo base_url() ?>assets/front-end/web2/bahan/Rudi-Resnawan.jpg" class="img-fluid rounded-circle mb-0" alt="">
-											</div>
-											<blockquote>
-												<p class="text-color-dark text-4 line-height-5 mb-0">Saya yakin, keberhasilan pembangunan kunci utamanya adalah kebersamaan kegotongroyongan yang merupakan satu nilai budaya yang ada di Indonesia. Sebab, tanpa kebersamaan dan tanpa sinergi yang baik antar sesama penyelenggara pemerintahan, mustahil kemajuan dapat diraih..</p>
-											</blockquote>
-											<div class="testimonial-author">
-												<p><strong class="font-weight-extra-bold text-2">Drs. H. Rudy Resnawan, M.B.A</strong><span>Wakil Gubernur Kalimantan Selatan</span></p>
-											</div>
-										</div>
-									</div>
-									<div>
-										<div class="testimonial testimonial-style-2 testimonial-with-quotes testimonial-quotes-dark testimonial-remove-right-quote pl-md-4 mb-0">
-											<div class="testimonial-author">
-												<img src="<?php echo base_url() ?>assets/front-end/web2/bahan/kadis.png" class="img-fluid rounded-circle mb-0" alt="">
-											</div>
-											<blockquote>
-												<p class="text-color-dark text-4 line-height-5 mb-0">Tugas pokok Dinas Perindustrian Provinsi Kalimantan Selatan adalah melaksanakan urusan pemerintahan yang menjadi kewenangan daerah dan tugas pembantuan bidang perindustrian.</p>
-											</blockquote>
-											<div class="testimonial-author">
-												<p><strong class="font-weight-extra-bold text-2">H. Mahyuni, M.T.</strong><span>Kepala Dinas Perindustrian Kalimantan Selatan</span></p>
-											</div>
-										</div>
-									</div>
-								</div>
-					</div>
+
 					</div>
 				</div>
 				<section class="section section-height-3 bg-primary border-0 m-0 appear-animation" data-appear-animation="fadeIn" style="background-image : url(<?php echo base_url() ?>assets/front-end/web2/bahan/321.png); background-repeat: repeat;">

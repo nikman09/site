@@ -34,7 +34,7 @@
 					</a>
 					<ul>
 						<li  class="<?= ($submenu == "berita" || $submenu == "beritalihat") ? " active" : ""; ?>">
-							<a href="<?php echo base_url() ?>admnistrator/berita">
+							<a href="<?php echo base_url() ?>administrator/berita">
 								<span class="title">Daftar Berita</span>
 							</a>
 						</li>

@@ -1,32 +1,46 @@
 <ol class="breadcrumb bc-3">
-	<li>
-		<a href="<?php echo base_url() ?>administrator">
-			<i class="fa fa-newspaper-o"></i>Administrator</a>
-	</li>
-	<li class="active">
-		<strong>Berita</strong>
-	</li>
+    <li>
+        <a href="<?php echo base_url() ?>administrator">
+            <i class="fa fa-newspaper-o"></i>Administrator</a>
+    </li>
+    <li class="active">
+        <strong>Berita</strong>
+    </li>
 </ol>
 
 <h3>Berita</h3>
-<div class="panel panel-primary" data-collapsed="0">
-	<div class="panel-heading">
-		<div class="panel-title">
-			Berita
-		</div>
-		<div class="panel-options">
-			<a href="#" data-rel="collapse">
-				<i class="entypo-down-open"></i>
-			</a>
-		</div>
-	</div>
-	
-		<div class="panel-body">
-			
-		</div>
-		<footer class="panel-footer text-left bg-light lter">
-		
-			&nbsp
-		</footer>
-	</form>
+<div class="row">
+    <div class="col-md-12">
+        <?php pesan_get('msg',"Berhasil Menambah Berita","Berhasil Mengedit Berita","Berhasil Menghapus Berita") ?>
+            <a href="<?php echo base_url() ?>administrator/beritatambah" style="margin: 5px 0 10px 0px" class="btn  btn-primary tambah">
+                <i class="fa fa-plus"></i> Tambah Berita</a>
+            <table class="table table-bordered datatable" id="table-1" style="font-size:12px">
+                <thead>
+                    <tr>
+                        <th width="50px">Aksi</th>
+						<th>Tanggal</th>
+                        <th>Kategori</th>
+						<th>Judul</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+					foreach($data->result_array() as $row){
+						echo "
+							<tr>
+								<td>
+								<div>
+									<a href='#' class='btn btn-primary btn-xs edit' title='Edit' data-toggle='modal' id='".$row['id_berita']."' data-target='#myModal2'><i class='fa fa-edit' id='".$row['id_berita']."'  ></i></a>
+									<a href='#' class='btn btn-danger btn-xs hapus' title='Hapus' id='".$row['id_berita']."'><i class='fa fa-trash-o'></i></a>
+								</div>
+								</td>
+								<td>".$row['kategori']."</td>
+
+							</tr>
+						";
+					}
+				?>
+                </tbody>
+            </table>
+    </div>
 </div>

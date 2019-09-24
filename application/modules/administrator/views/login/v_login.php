@@ -44,7 +44,7 @@
 						pesanvar($gagal,"Username / password yang dimasukkan salah"," Username atau password  salah","Klik CAPTCHA untuk verifikasi login") ?>
 
 					<div class="wrap-input100 validate-input" data-validate = "Masukkan Username" >
-						<input class="input100" type="text" name="username" id="username"  placeholder="User name"  value="<?php echo set_value('password'); ?>">
+						<input class="input100" type="text" name="username" id="username"  placeholder="User name"  value="<?php echo set_value('username'); ?>">
 						<span class="focus-input100" data-placeholder="&#xe82a;"></span>
 					</div>
 

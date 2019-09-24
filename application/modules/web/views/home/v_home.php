@@ -146,35 +146,103 @@
 																Beranda
 															</a>
 														</li>
-														
 														<li class="dropdown dropdown-full-color dropdown-light">
 															<a class="dropdown-item dropdown-toggle" href="#">
-																Berita
-															</a>
-														</li>
-														<li class="dropdown dropdown-full-color dropdown-light">
-															<a class="dropdown-item dropdown-toggle" href="#">
-																Kegiatan
-															</a>
-														</li>
-														<li class="dropdown dropdown-full-color dropdown-light">
-															<a class="dropdown-item dropdown-toggle" href="#">
-																Galeri
+																Profil
 															</a>
 															<ul class="dropdown-menu">
 																
-																<li><a class="dropdown-item" href="page-custom-header.html">Foto</a></li>
-																<li><a class="dropdown-item" href="page-careers.html">Video</a></li>
+																<li><a class="dropdown-item" href="#">Visi dan Misi</a></li>
+																<li><a class="dropdown-item" href="#">Tugas dan Fungsi</a></li>
+																<li><a class="dropdown-item" href="#">Struktur Organisasi</a></li>
+																<li><a class="dropdown-item" href="#">Program Kegiatan & Anggaran</a></li>
+																<li class="dropdown-submenu">
+																	<a class="dropdown-item" href="#">Realisasi Fisik dan Anggaran</a>
+																	<ul class="dropdown-menu">
+																	<li><a class="dropdown-item" href="#">DPA Tahun 2019</a></li>
+																	</ul>
+																</li>
+															
+															</ul>
+														</li>
+													
+														
+														<li class="dropdown dropdown-full-color dropdown-light">
+															<a class="dropdown-item dropdown-toggle" href="#">
+																Bidang & Kegiatan
+															</a>
+															<ul class="dropdown-menu">
+															<li class="dropdown-submenu">
+																	<a class="dropdown-item" href="#">Sekretariat</a>
+																	<ul class="dropdown-menu">
+																	<li><a class="dropdown-item" href="#">Tugas Sekretariat</a></li>
+																<li><a class="dropdown-item" href="#">Kegiatan Sekretariat</a></li>
+																	</ul>
+																</li>
+																<li class="dropdown-submenu">
+																	<a class="dropdown-item" href="#">Bidang AGRO</a>
+																	<ul class="dropdown-menu">
+																		<li><a class="dropdown-item" href="#">Tugas Bidang AGRO</a></li>
+																		<li><a class="dropdown-item" href="#">Kegiatan Bidang AGRO</a></li>
+																	</ul>
+																</li>
+																<li class="dropdown-submenu">
+																	<a class="dropdown-item" href="#">Bidang ILMEAT</a>
+																	<ul class="dropdown-menu">
+																		<li><a class="dropdown-item" href="#">Tugas Bidang ILMEAT</a></li>
+																		<li><a class="dropdown-item" href="#">Kegiatan Bidang ILMEAT</a></li>
+																	</ul>
+																</li>
+																<li class="dropdown-submenu">
+																	<a class="dropdown-item" href="#">Bidang IKTA</a>
+																	<ul class="dropdown-menu">
+																		<li><a class="dropdown-item" href="#">Tugas Bidang IKTA</a></li>
+																		<li><a class="dropdown-item" href="#">Kegiatan Bidang IKTA</a></li>
+																	</ul>
+																</li>
+																<li class="dropdown-submenu">
+																	<a class="dropdown-item" href="#">UPTBD Industri Kayu & Logam</a>
+																	<ul class="dropdown-menu">
+																		<li><a class="dropdown-item" href="#">Tugas UPTBD Diklat Industri Kayu & Logam</a></li>
+																		<li><a class="dropdown-item" href="#">Kegiatan UPTBD Diklat Industri Kayu & Logam</a></li>
+																	</ul>
+																</li>
+																
 															</ul>
 														</li>
 														<li class="dropdown dropdown-full-color dropdown-light">
 															<a class="dropdown-item dropdown-toggle" href="#">
-																Sistem Informasi
+																Jadwal
 															</a>
 															<ul class="dropdown-menu">
 																
-																<li><a class="dropdown-item" href="page-custom-header.html">SIIKALSEL</a></li>
-																<li><a class="dropdown-item" href="page-careers.html">SIDAWAIPRIN</a></li>
+																<li><a class="dropdown-item" href="#">Pelatihan</a></li>
+																<li><a class="dropdown-item" href="#">Pameran</a></li>
+																<li><a class="dropdown-item" href="#">Agenda Dinas</a></li>
+																
+															</ul>
+														</li>
+														
+														<li class="dropdown dropdown-full-color dropdown-light">
+															<a class="dropdown-item dropdown-toggle" href="#">
+																SI & WEB
+															</a>
+															<ul class="dropdown-menu">
+															<li class="dropdown-submenu">
+																	<a class="dropdown-item" href="#">Sistem Informasi</a>
+																	<ul class="dropdown-menu">
+																		<li><a class="dropdown-item" href="shop-3-columns-full-width.html">SIIKALSEL</a></li>
+																		<li><a class="dropdown-item" href="shop-3-columns-sidebar-left.html">SIDAWAIPRIN</a></li>
+																	</ul>
+																</li>
+																<li class="dropdown-submenu">
+																	<a class="dropdown-item" href="#">Web</a>
+																	<ul class="dropdown-menu">
+																		<li><a class="dropdown-item" href="shop-3-columns-full-width.html">Klinik IKM</a></li>
+																		<li><a class="dropdown-item" href="shop-3-columns-sidebar-left.html">Dekranasda</a></li>
+																		<li><a class="dropdown-item" href="shop-3-columns-sidebar-left.html">Promosi Produk IKM</a></li>
+																	</ul>
+																</li>
 																
 															</ul>
 														</li>
@@ -197,9 +265,31 @@
 														</li>
 														<li class="dropdown dropdown-full-color dropdown-light">
 															<a class="dropdown-item dropdown-toggle" href="#">
-																Klinik IKM
+																Berita
 															</a>
 														</li>
+														<li class="dropdown dropdown-full-color dropdown-light">
+															<a class="dropdown-item dropdown-toggle" href="#">
+																Galeri
+															</a>
+															<ul class="dropdown-menu">
+																
+																<li><a class="dropdown-item" href="page-custom-header.html">Foto</a></li>
+																<li><a class="dropdown-item" href="page-careers.html">Video</a></li>
+															</ul>
+														</li>
+														<li class="dropdown dropdown-full-color dropdown-light">
+															<a class="dropdown-item dropdown-toggle" href="#">
+																Unduh
+															</a>
+															<ul class="dropdown-menu">
+																
+																<li><a class="dropdown-item" href="page-custom-header.html">Kebijakan</a></li>
+																<li><a class="dropdown-item" href="page-custom-header.html">Lainnya</a></li>
+																
+															</ul>
+														</li>
+														
 													
 															
 															
@@ -364,13 +454,13 @@
 				
 				
 				
-				<section class="section bg-color-light border-0 m-0">
+				<section class="section bg-color-light border-0 m-0" style="padding-top:10px;padding-bottom:10px;">
 					<div class="container">
 						<div class="row text-center text-md-left mt-4">
 							<div class="col-md-4 mb-4 mb-md-0 appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="200">
 								<div class="row justify-content-center justify-content-md-start">
 									<div class="col-4">
-										<img class="img-fluid mb-4" src="bahan/simbol2.png" alt="">
+										<img class="img-fluid mb-4" src="<?php echo base_url() ?>assets/front-end/web2/bahan/simbol2.png" alt="">
 									</div>
 									<div class="col-lg-8">
 										<h2 class="font-weight-bold text-5 line-height-5 mb-1">Data Industri</h2>
@@ -381,7 +471,7 @@
 							<div class="col-md-4 mb-4 mb-md-0 appear-animation" data-appear-animation="fadeIn">
 								<div class="row justify-content-center justify-content-md-start">
 									<div class="col-4">
-										<img class="img-fluid mb-4" src="bahan/simbol.png" alt="">
+										<img class="img-fluid mb-4" src="<?php echo base_url() ?>assets/front-end/web2/bahan/simbol.png" alt="">
 									</div>
 									<div class="col-lg-8">
 										<h2 class="font-weight-bold text-5 line-height-5 mb-1">Kebijakan Industri</h2>
@@ -392,7 +482,7 @@
 							<div class="col-md-4 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="200">
 								<div class="row justify-content-center justify-content-md-start">
 									<div class="col-4">
-										<img class="img-fluid mb-4" src="bahan/simbol1.png" alt="">
+										<img class="img-fluid mb-4" src="<?php echo base_url() ?>assets/front-end/web2/bahan/simbol1.png" alt="">
 									</div>
 									<div class="col-lg-8">
 										<h2 class="font-weight-bold text-5 line-height-5 mb-1">Pelayanan Publik</h2>
@@ -426,29 +516,18 @@
 					<div class="row py-2 my-2">
 					
 						
-						
-						<div class="col-lg-8 appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="200">
-								<div class="row">
-						<div class="col">
-						
-							<h4>Tugas dan Fungsi</h4>
-						</div>
-					</div>
 
-					<div class="row">
-						<div class="col-lg-12">
-							<div class="tabs">
-								<ul class="nav nav-tabs nav-justified flex-column flex-md-row">
-									<li class="nav-item ">
-										<a class="nav-link" href="#popular10" data-toggle="tab" class="text-center">Tugas</a>
-									</li>
-									<li class="nav-item active">
-										<a class="nav-link" href="#recent10" data-toggle="tab" class="text-center">Fungsi</a>
-									</li>
-								</ul>
-								<div class="tab-content">
-									<div id="popular10" class="tab-pane ">
-									<p style="text-align:justify">Dinas Perindustrian mempunyai tugas melaksanakan urusan Pemerintahan Daerah dibidang Perindustrian sesuai dengan azas desentralisasi, dekonsentralisasi dan tugas pembantuan, sebagai berikut : &ldquo;Merumuskan dan menetapkan kebijakan teknis dibidang Perindustrian sesuai dengan kebijakan yang ditetapkanoleh Gubernur Kalimantan Selatan&ldquo;antara lain :</p>
+					<div class="col-lg-8 appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="200">
+
+<hr class="d-lg-none tall" />
+
+<h4>Tugas & Fungsi</h4>
+
+<div class="toggle toggle-primary" data-plugin-toggle data-plugin-options="{ 'isAccordion': true }">
+	<section class="toggle">
+		<label>Tugas</label>
+		<div class="toggle-content">
+		<p style="text-align:justify">Dinas Perindustrian mempunyai tugas melaksanakan urusan Pemerintahan Daerah dibidang Perindustrian sesuai dengan azas desentralisasi, dekonsentralisasi dan tugas pembantuan, sebagai berikut : &ldquo;Merumuskan dan menetapkan kebijakan teknis dibidang Perindustrian sesuai dengan kebijakan yang ditetapkanoleh Gubernur Kalimantan Selatan&ldquo;antara lain :</p>
 										<ul>
 	<li style="text-align:justify">Merumuskan dan menetapkan kebijakan teknis di bidang perindustrian sesuai dengan kebijakan yang ditetapkan Gubernur;</li>
 	<li style="text-align:justify">Menyelenggarakan urusan pemerintahan dan pelayanan umum di bidangperindustrian;</li>
@@ -459,9 +538,12 @@
 	<li style="text-align:justify">Mengelola kegiatan kesekretariatan; dan</li>
 	<li style="text-align:justify">Melaksanakan tugas-tugas lain yang diberikan oleh Gubernur sesuai dengan bidang tugas dan tanggung jawabnya</li>
 </ul>
-									</div>
-									<div id="recent10" class="tab-pane active">
-									<p>Untuk melaksanakan tugas sebagaimana dimaksud Dinas Perindustrian mempunyai fungsi :</p>
+			</div>
+	</section>
+	<section class="toggle active">
+		<label>Fungsi</label>
+		<div class="toggle-content">
+		<p>Untuk melaksanakan tugas sebagaimana dimaksud Dinas Perindustrian mempunyai fungsi :</p>
 
 <ul>
 	<li>Perumusan kebijakan teknis dibidang Perindustrian sesuai dengan kebijakan yang ditetapkan oleh Gubernur berdasarkan peraturan perundang-undangan yang berlaku;</li>
@@ -472,16 +554,11 @@
 	<li>Pembinaan, pengawasan,dan pengendalian unit pelaksana teknis; dan.</li>
 	<li>Pengelolaan kegiatan kesekretariatan</li>
 </ul>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						
-					</div>
-
-
-					</div>
+				</div>
+	</section>
+	
+</div>
+</div>
 
 					<div class="col-md-4 order-1 order-md-2 text-center text-md-left mb-5 mb-md-0 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="200">
 							<h2 class="text-color-dark font-weight-normal text-6 mb-1" style="line-height:30px;">Visi dan Misi <br/> <strong class="font-weight-extra-bold">Dinas Perindustrian</strong></h2>
@@ -499,6 +576,248 @@
 
 					</div>
 				</div>
+				<div class="container" >
+					<div class="row py-2 my-2">
+					
+						
+						
+						<div class="col-lg-12 appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="200">
+								<div class="row">
+						<div class="col">
+						
+							<h4>Jadwal Kegiatan</h4>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="tabs">
+								<ul class="nav nav-tabs  flex-column flex-md-row">
+									<li class="nav-item ">
+										<a class="nav-link" href="#popular101" data-toggle="tab" class="text-center">Pelatihan</a>
+									</li>
+									<li class="nav-item active">
+										<a class="nav-link" href="#recent101" data-toggle="tab" class="text-center">Pameran</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="#recent102" data-toggle="tab" class="text-center">Dinas</a>
+									</li>
+								</ul>
+								<div class="tab-content">
+									<div id="popular101" class="tab-pane ">
+									<table class="table">
+										<thead>
+											<tr>
+												<th>
+													#
+												</th>
+												<th>
+													Nama Kegiatan
+												</th>
+												<th>
+													Waktu
+												</th>
+												<th>
+													Lampiran
+												</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>
+													1
+												</td>
+												<td>
+													Pelatihan Sasirangan Bahan Alami
+												</td>
+												<td>
+													10-10-2020
+												</td>
+												<td>
+													Unduh
+												</td>
+											</tr>
+											<tr>
+											<td>
+													1
+												</td>
+												<td>
+													Pelatihan Sasirangan Bahan Alami
+												</td>
+												<td>
+													10-10-2020
+												</td>
+												<td>
+													Unduh
+												</td>
+											</tr>
+											<tr>
+											<td>
+													1
+												</td>
+												<td>
+													Pelatihan Sasirangan Bahan Alami
+												</td>
+												<td>
+													10-10-2020
+												</td>
+												<td>
+													Unduh
+												</td>
+											</tr>
+										</tbody>
+									</table>
+
+
+
+												</div>
+									<div id="recent101" class="tab-pane active">
+									<table class="table">
+										<thead>
+											<tr>
+												<th>
+													#
+												</th>
+												<th>
+													Nama Pameran
+												</th>
+												<th>
+													Waktu
+												</th>
+												<th>
+													Lampiran
+												</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>
+													1
+												</td>
+												<td>
+													Pameran Sasirangan Bahan Alami
+												</td>
+												<td>
+													10-10-2020
+												</td>
+												<td>
+													Unduh
+												</td>
+											</tr>
+											<tr>
+											<td>
+													1
+												</td>
+												<td>
+												Pameran Sasirangan Bahan Alami
+												</td>
+												<td>
+													10-10-2020
+												</td>
+												<td>
+													Unduh
+												</td>
+											</tr>
+											<tr>
+											<td>
+													1
+												</td>
+												<td>
+												Pameran Sasirangan Bahan Alami
+												</td>
+												<td>
+													10-10-2020
+												</td>
+												<td>
+													Unduh
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									</div>
+									<div id="recent102" class="tab-pane">
+									<table class="table">
+										<thead>
+											<tr>
+												<th>
+													#
+												</th>
+												<th>
+													Nama Pameran
+												</th>
+												<th>
+													Waktu
+												</th>
+												<th>
+													Lampiran
+												</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>
+													1
+												</td>
+												<td>
+													Pameran Sasirangan Bahan Alami
+												</td>
+												<td>
+													10-10-2020
+												</td>
+												<td>
+													Unduh
+												</td>
+											</tr>
+											<tr>
+											<td>
+													1
+												</td>
+												<td>
+												Pameran Sasirangan Bahan Alami
+												</td>
+												<td>
+													10-10-2020
+												</td>
+												<td>
+													Unduh
+												</td>
+											</tr>
+											<tr>
+											<td>
+													1
+												</td>
+												<td>
+												Pameran Sasirangan Bahan Alami
+												</td>
+												<td>
+													10-10-2020
+												</td>
+												<td>
+													Unduh
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						
+					</div>
+
+
+					</div>
+
+					
+
+					</div>
+				</div>
+
+
+
+
+
 				<section class="section section-height-3 bg-primary border-0 m-0 appear-animation" data-appear-animation="fadeIn" style="background-image : url(<?php echo base_url() ?>assets/front-end/web2/bahan/321.png); background-repeat: repeat;">
 					<div class="container">
 						<div class="row">
@@ -696,10 +1015,10 @@
 				<div class="container my-4">
 					<div class="row py-5">
 						<div class="col-md-6 col-lg-3 mb-5 mb-lg-0">
-							<h5 class="text-5 text-transform-none font-weight-semibold text-color-light mb-4">Contact Details</h5>
-							<p class="text-4 mb-0">Porto Template 123</p>
-							<p class="text-4 mb-0">Porto Blvd, Suite</p>
-							<p class="text-4 mb-0">New York</p>
+							<h5 class="text-5 text-transform-none font-weight-semibold text-color-light mb-4">Kontak Kami</h5>
+							<p class="text-4 mb-0">Jl. Dharma Praja Komplek Perkantoran Provinsi Kalimantan Selatan </p>
+							<p class="text-4 mb-0">Banjarbaru.</p>
+							<p class="text-4 mb-0"></p>
 						</div>
 						<div class="col-md-6 col-lg-3 mb-5 mb-lg-0">
 							<h5 class="text-5 text-transform-none font-weight-semibold text-color-light mb-4">Opening Hours</h5>

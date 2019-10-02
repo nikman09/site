@@ -16,7 +16,9 @@ class M_berita extends CI_Model
 
     function lihatdata()
     {
-        $this->db->select("tb_berita.*");
+        $this->db->select("tb_berita.*,tb_beritakategori.* ")
+        ->join("tb_beritakategori","tb_beritakategori.id_beritakategori=tb_berita.id_beritakategori","left");
+
         return $this->db->get('tb_berita');
     }
     function cekdata($id_berita)

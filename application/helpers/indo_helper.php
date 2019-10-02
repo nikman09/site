@@ -280,7 +280,7 @@ if ( ! function_exists('tanggalmiring'))
 {
 	function tanggalmiring($tgl)
 	{
-		$tanggal = date("m/d/Y", strtotime($tgl));
+		$tanggal = date("d/m/Y", strtotime($tgl));
 		return $tanggal;
 	}
 }
@@ -289,6 +289,7 @@ if (!function_exists('tanggalawal'))
 {
 	function tanggalawal($tgl)
 	{
+		$tgl=str_replace('/', '-', $tgl);
 		$tanggal = date("Y-m-d", strtotime($tgl));
 		return $tanggal;
 	}

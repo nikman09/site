@@ -21,6 +21,7 @@
 						<th>Tanggal</th>
                         <th>Kategori</th>
 						<th>Judul</th>
+                        <th>Input</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -30,11 +31,14 @@
 							<tr>
 								<td>
 								<div>
-									<a href='#' class='btn btn-primary btn-xs edit' title='Edit' data-toggle='modal' id='".$row['id_berita']."' data-target='#myModal2'><i class='fa fa-edit' id='".$row['id_berita']."'  ></i></a>
+									<a href='".base_url("administrator/beritaedit?id=".$row['id_berita']."")."' class='btn btn-primary btn-xs' title='Edit/Lihat' id='".$row['id_berita']."'><i class='fa fa-edit' id='".$row['id_berita']."'  ></i></a>
 									<a href='#' class='btn btn-danger btn-xs hapus' title='Hapus' id='".$row['id_berita']."'><i class='fa fa-trash-o'></i></a>
 								</div>
 								</td>
-								<td>".$row['kategori']."</td>
+                                <td>".tanggal($row['tanggal'])."</td>
+                                <td>".$row['kategori']."</td>
+                                <td><strong>".$row['judul']."</strong></td>
+                                <td>".$row['timeinput']."</td>
 
 							</tr>
 						";

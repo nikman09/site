@@ -67,6 +67,11 @@ $('#form').validate({ // initialize plugin
         }
     });
 
+    <?php
+        if ($data['foto']!="") {
+            echo 'document.getElementById("image-preview").style.display = "block";';
+         }
+    ?>
     function previewImage() {
     document.getElementById("image-preview").style.display = "block";
     var oFReader = new FileReader();

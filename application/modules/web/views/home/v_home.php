@@ -482,7 +482,7 @@
 					<div class="container pb-2">
 						<div class="row">
 							<div class="col-lg-6 text-center text-md-left mb-5 mb-lg-0"  data-appear-animation="fadeInRightShorter">
-							<h2 class="text-color-dark font-weight-normal text-6 mb-2"> <strong class="">Profil</strong>Dinas Perindustrian</h2>
+							<h2 class="text-color-dark font-weight-normal text-6 mb-2"> <strong class="">Profil</strong> Dinas Perindustrian</h2>
 								<p class="lead">Tugas pokok Dinas Perindustrian Provinsi Kalimantan Selatan sesuai Pergub no 072 Tahun 2016 adalah melaksanakan urusan pemerintahan yang menjadi kewenangan daerah dan tugas pembantuan bidang perindustrian.</p>
 								<p class="pr-5 mr-5">Dinas Perindustrian Provinsi Kalimantan Selatan beralamat di Jl. Dharma Praja Komplek Perkantoran Provinsi Kalimantan Selatan, Banjarbaru. Dinas Perindustrian Provinsi Kalimantan Selatan memiliki 1 Unit Pelaksana Teknis (UPT), yaitu UPT Balai Diklat Industri Kayu & Logam yang beralamatkan di Amuntai & Nagara. <br/>
 

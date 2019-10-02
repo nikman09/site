@@ -7,6 +7,7 @@ class Administrator extends CI_Controller {
         ceklogin();
         $this->load->model("m_beritakategori");
         $this->load->model("m_berita");
+        $this->load->model("m_bidang");
     }
 
     // Dashboard
@@ -53,7 +54,7 @@ class Administrator extends CI_Controller {
        
     }
 
-    function beritahapus()
+    public function beritahapus()
     {
         $id_berita = $this->input->get("id");
         $query2 = $this->m_berita->lihatdatasatu($id_berita);
@@ -66,30 +67,6 @@ class Administrator extends CI_Controller {
         $exec = $this->m_berita->hapus($id_berita);
         redirect(base_url()."administrator/berita?msg=2");
     }
-
-    public function beritakategori()
-    {   
-        
-        $variabel['csrf'] = csrf();
-        $variabel['data'] = $this->m_beritakategori->lihatdata();
-        $this->layout->render('berita/beritakategori/v_beritakategori',$variabel,'berita/beritakategori/v_beritakategori_js');
-    }
-
-    public function beritakategoritambah()
-    {      
-        $variabel['csrf'] = csrf();
-        if ($this->input->post()) {
-            $array=array(
-                'kategori'=> $this->input->post('kategori')
-            );
-            $exec = $this->m_beritakategori->tambahdata($array);
-                if ($exec){
-                 redirect(base_url("administrator/beritakategori?msg=1"));
-                }
-      } else {
-      }
-    }
-
 
     public function beritaedit()
     {   
@@ -142,6 +119,32 @@ class Administrator extends CI_Controller {
       
     }
 
+
+    public function beritakategori()
+    {   
+        
+        $variabel['csrf'] = csrf();
+        $variabel['data'] = $this->m_beritakategori->lihatdata();
+        $this->layout->render('berita/beritakategori/v_beritakategori',$variabel,'berita/beritakategori/v_beritakategori_js');
+    }
+
+    public function beritakategoritambah()
+    {      
+        $variabel['csrf'] = csrf();
+        if ($this->input->post()) {
+            $array=array(
+                'kategori'=> $this->input->post('kategori')
+            );
+            $exec = $this->m_beritakategori->tambahdata($array);
+                if ($exec){
+                 redirect(base_url("administrator/beritakategori?msg=1"));
+                }
+      } else {
+      }
+    }
+
+
+    
     public function beritakategoriedit()
     {      
         $variabel['csrf'] = csrf();
@@ -166,12 +169,20 @@ class Administrator extends CI_Controller {
       }
     }
 
-    function beritakategorihapus()
+    public function beritakategorihapus()
     {
         $id_beritakategori = $this->input->get("id");
        
         $exec = $this->m_beritakategori->hapus($id_beritakategori);
         redirect(base_url()."administrator/beritakategori?msg=2");
+    }
+
+    public function bidang()
+    {   
+        $variabel['csrf'] = csrf();
+        $variabel['data'] = $this->m_bidang->lihatdata();
+        $this->layout->render('bidangkegiatan/bidang/v_bidang',$variabel,'bidangkegiatan/bidang/v_bidang_js');
+   
     }
 	
 }

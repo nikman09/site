@@ -22,7 +22,6 @@
 		<!-- Web Fonts  -->
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CShadows+Into+Light%7CPlayfair+Display:400" rel="stylesheet" type="text/css">
 
-		<!-- Vendor CSS -->
 		<link rel="stylesheet" href="<?php echo base_url() ?>assets/front-end/web2/vendor/bootstrap/css/bootstrap.min.css">
 		<link rel="stylesheet" href="<?php echo base_url() ?>assets/front-end/web2/vendor/fontawesome-free/css/all.min.css">
 		<link rel="stylesheet" href="<?php echo base_url() ?>assets/front-end/web2/vendor/animate/animate.min.css">
@@ -46,7 +45,7 @@
 
 
 		<!-- Skin CSS -->
-		<link rel="stylesheet" href="<?php echo base_url() ?>assets/front-end/web2/css/skins/skin-corporate-3.css"> 
+		<link rel="stylesheet" href="<?php echo base_url() ?>assets/front-end/web2/css/skins/skin-corporate-10.css"> 
 
 		<!-- Theme Custom CSS -->
 		<link rel="stylesheet" href="<?php echo base_url() ?>assets/front-end/web2/css/custom.css">
@@ -61,93 +60,31 @@
 	
 		<div class="body">
 		
-			<header id="header" style="height:300px" data-plugin-options="{'stickyEnabled': true, 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': true, 'stickyStartAt': 173, 'stickySetTop': '-173px', 'stickyChangeLogo': true}" >
-				<div class="header-body border-color-primary border-top-0 box-shadow-none">
-
-					<div class="header-top header-top-default border-bottom-0 border-top-0">
-						<div class="container">
-							
-							<div class="header-row py-2">
-								<div class="header-column justify-content-start">
-									<div class="header-row">
-										<nav class="header-nav-top">
-											<ul class="nav nav-pills text-uppercase text-2">
-												<li class="nav-item nav-item-anim-icon">
-													<a class="nav-link pl-0" href="about-us.html"><i class="fas fa-angle-right"></i> PROFIL</a>
-												</li>
-												<li class="nav-item nav-item-anim-icon">
-													<a class="nav-link" href="contact-us.html"><i class="fas fa-angle-right"></i> KONTAK</a>
-												</li>
-											</ul>
-										</nav>
-									</div>
-								</div>
-							
-								<div class="header-column justify-content-end">
-									<div class="header-row">
-										<ul class="header-social-icons social-icons  d-sm-block social-icons-clean">
-											<li class="social-icons-facebook"><a href="http://www.facebook.com/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
-											<li class="social-icons-twitter"><a href="http://www.twitter.com/" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a></li>
-											<li class="social-icons-instagram"><a href="http://www.instagram.com/" target="_blank" title="Linkedin"><i class="fab fa-instagram"></i></a></li>
-											<li class="social-icons-youtube"><a href="http://www.youtube.com/" target="_blank" title="Linkedin"><i class="fab fa-youtube"></i></a></li>
-											
-										</ul>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="header-container container z-index-2" style="height:110px">
-						<div class="header-row py-2" style="height:110px">
+		<header id="header" class="header-transparent header-effect-shrink" data-plugin-options="{'stickyEnabled': true, 'stickyEffect': 'shrink', 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': true, 'stickyChangeLogo': true, 'stickyStartAt': 30, 'stickyHeaderContainerHeight': 70}">
+				<div class="header-body border-top-0 bg-dark box-shadow-none">
+					<div class="header-container container container-xl">
+						<div class="header-row">
 							<div class="header-column">
 								<div class="header-row">
-									<div class="header-logo header-logo-sticky-change" >
+									<div class="header-logo">
 										<a href="index.html">
-											<img class="header-logo-sticky opacity-0" alt="Porto"  height="90px" data-sticky-height="50" data-sticky-top="120" src="<?php echo base_url() ?>assets/front-end/web2/img/kalsel2.png">
-											<!-- <div style="margin-left:75px">DINAS PERINDUSTRIN</div> -->
-											<img class="header-logo-non-sticky opacity-0" alt="Porto" height="90px"  src="<?php echo base_url() ?>assets/front-end/web2/img/kalsell.png" style="margin:0 auto"> 
-											
+											<img alt="Porto" width="175" height="58" src="<?php echo base_url() ?>assets/front-end/web2/img/kalsel2.png">
 										</a>
 									</div>
 								</div>
 							</div>
 							<div class="header-column justify-content-end">
 								<div class="header-row">
-									<ul class="header-extra-info d-flex align-items-center">
-										<li class="d-none d-md-inline-flex">
-											<div class="header-extra-info-text">
-												<label>Alamat E-mail</label>
-												<strong><a href="mailto:disperin.kalselprov@gmail.com">disperin.kalselprov@gmail.com</a></strong>
-											</div>
-										</li>
-										<li class="d-none d-sm-inline-flex">
-											<div class="header-extra-info-text">
-												<label>Telepon/Fax</label>
-												<strong><a href="tel:5915906">(0511) 5915906</a></strong>
-											</div>
-										</li>
-										
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-						
-					<div class="header-nav-bar bg-primary" data-sticky-header-style="{'minResolution': 991}" data-sticky-header-style-active="{'background-color': 'transparent'}" data-sticky-header-style-deactive="{'background-color': '#0088cc'}"  style="background-image : url(<?php echo base_url() ?>assets/front-end/web2/bahan/123.png); background-repeat: repeat;">
-						<div class="container">
-							<div class="header-row">
-								<div class="header-column">
-									<div class="header-row justify-content-end">
-										<div class="header-nav header-nav-force-light-text justify-content-start py-2 py-lg-3" data-sticky-header-style="{'minResolution': 991}" data-sticky-header-style-active="{'margin-left': '150px'}" data-sticky-header-style-deactive="{'margin-left': '0'}">
-											<div class="header-nav-main header-nav-main-effect-1 header-nav-main-sub-effect-1">
-												<nav class="collapse">
+									<div class="header-nav header-nav-links header-nav-dropdowns-dark header-nav-light-text order-2 order-lg-1">
+										<div class="header-nav-main header-nav-main-mobile-dark header-nav-main-square header-nav-main-dropdown-no-borders header-nav-main-effect-2 header-nav-main-sub-effect-1">
+										<nav class="collapse">
 													<ul class="nav nav-pills" id="mainNav">
-														<li class="dropdown dropdown-full-color dropdown-light">
+														<li class="dropdown">
 															<a class="dropdown-item dropdown-toggle active" href="<?php echo base_url() ?>">
-																Beranda
+																<i class="fa fa-home"></i>
 															</a>
 														</li>
-														<li class="dropdown dropdown-full-color dropdown-light">
+														<li class="dropdown">
 															<a class="dropdown-item dropdown-toggle" href="#">
 																Profil
 															</a>
@@ -163,12 +100,18 @@
 																	<li><a class="dropdown-item" href="#">DPA Tahun 2019</a></li>
 																	</ul>
 																</li>
-															
+																<li class="dropdown-submenu">
+																	<a class="dropdown-item" href="#">Galeri</a>
+																	<ul class="dropdown-menu">
+																	<li><a class="dropdown-item" href="#">Foto</a></li>
+																	<li><a class="dropdown-item" href="#">Video</a></li>
+																	</ul>
+																</li>
 															</ul>
 														</li>
 													
 														
-														<li class="dropdown dropdown-full-color dropdown-light">
+														<li class="dropdown">
 															<a class="dropdown-item dropdown-toggle" href="#">
 																Bidang & Kegiatan
 															</a>
@@ -211,7 +154,7 @@
 																
 															</ul>
 														</li>
-														<li class="dropdown dropdown-full-color dropdown-light">
+														<li class="dropdown">
 															<a class="dropdown-item dropdown-toggle" href="#">
 																Jadwal
 															</a>
@@ -224,16 +167,23 @@
 															</ul>
 														</li>
 														
-														<li class="dropdown dropdown-full-color dropdown-light">
+														<li class="dropdown">
 															<a class="dropdown-item dropdown-toggle" href="#">
-																SI & WEB
+																SI
 															</a>
 															<ul class="dropdown-menu">
 															<li class="dropdown-submenu">
-																	<a class="dropdown-item" href="#">Sistem Informasi</a>
+																	<a class="dropdown-item" href="#">SIIKALSEL</a>
 																	<ul class="dropdown-menu">
-																		<li><a class="dropdown-item" href="shop-3-columns-full-width.html">SIIKALSEL</a></li>
-																		<li><a class="dropdown-item" href="shop-3-columns-sidebar-left.html">SIDAWAIPRIN</a></li>
+																		<li><a class="dropdown-item" href="shop-3-columns-full-width.html">Data Perusahaan</a></li>
+																		<li><a class="dropdown-item" href="shop-3-columns-sidebar-left.html">Data Sentra</a></li>
+																		<li><a class="dropdown-item" href="shop-3-columns-sidebar-left.html">Data Potensi</a></li>
+																	</ul>
+																</li>
+																<li class="dropdown-submenu">
+																	<a class="dropdown-item" href="#">SIDAWAIPRIN</a>
+																	<ul class="dropdown-menu">
+																		<li><a class="dropdown-item" href="shop-3-columns-full-width.html">Data Pegawai</a></li>
 																	</ul>
 																</li>
 																<li class="dropdown-submenu">
@@ -248,38 +198,14 @@
 															</ul>
 														</li>
 														
-														<li class="dropdown dropdown-full-color dropdown-light">
-															<a class="dropdown-item dropdown-toggle" href="#">
-																Data
-															</a>
-															<ul class="dropdown-menu">
-																<li><a class="dropdown-item" href="shop-4-columns.html">Data Pegawai</a></li>
-																<li class="dropdown-submenu">
-																	<a class="dropdown-item" href="#">Data Industri</a>
-																	<ul class="dropdown-menu">
-																		<li><a class="dropdown-item" href="shop-3-columns-full-width.html">Data Perusahaan</a></li>
-																		<li><a class="dropdown-item" href="shop-3-columns-sidebar-left.html">Data Sentra</a></li>
-																		<li><a class="dropdown-item" href="shop-3-columns-sidebar-right.html">Data Potensi</a></li>
-																	</ul>
-																</li>
-															</ul>
-														</li>
-														<li class="dropdown dropdown-full-color dropdown-light">
+														
+														<li class="dropdown">
 															<a class="dropdown-item dropdown-toggle" href="#">
 																Berita
 															</a>
 														</li>
-														<li class="dropdown dropdown-full-color dropdown-light">
-															<a class="dropdown-item dropdown-toggle" href="#">
-																Galeri
-															</a>
-															<ul class="dropdown-menu">
-																
-																<li><a class="dropdown-item" href="page-custom-header.html">Foto</a></li>
-																<li><a class="dropdown-item" href="page-careers.html">Video</a></li>
-															</ul>
-														</li>
-														<li class="dropdown dropdown-full-color dropdown-light">
+														
+														<li class="dropdown">
 															<a class="dropdown-item dropdown-toggle" href="#">
 																Unduh
 															</a>
@@ -290,32 +216,101 @@
 																
 															</ul>
 														</li>
-														
+														<li class="dropdown">
+															<a class="dropdown-item dropdown-toggle" href="#">
+																Kontak
+															</a>
+														</li>
 													
 															
 															
 															
 													</ul>
 												</nav>
+												
+									</div>
+										<button class="btn header-btn-collapse-nav" data-toggle="collapse" data-target=".header-nav-main nav">
+											<i class="fas fa-bars"></i>
+										</button>
+									</div>
+									<div class="header-nav-features header-nav-features-light header-nav-features-no-border header-nav-features-lg-show-border order-1 order-lg-2">
+										<div class="header-nav-feature header-nav-features-search d-inline-flex">
+											<a href="#" class="header-nav-features-toggle" data-focus="headerSearch"><i class="fas fa-search header-nav-top-icon"></i></a>
+											<div class="header-nav-features-dropdown header-nav-features-dropdown-mobile-fixed" id="headerTopSearchDropdown">
+												<form role="search" action="page-search-results.html" method="get">
+													<div class="simple-search input-group">
+														<input class="form-control text-1" id="headerSearch" name="q" type="search" value="" placeholder="Search...">
+														<span class="input-group-append">
+															<button class="btn" type="submit">
+																<i class="fa fa-search header-nav-top-icon"></i>
+															</button>
+														</span>
+													</div>
+												</form>
 											</div>
-											<button class="btn header-btn-collapse-nav my-2" style="opacity: .70;background:#000000" data-toggle="collapse" data-target=".header-nav-main nav">
-												<i class="fas fa-bars"></i>
-											</button>
 										</div>
+										
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			
 			</header>
-
 			<div role="main" class="main">
 				
-				<div class="slider-container light rev_slider_wrapper" style="height: 650px;">
+				<div class="slider-container  rev_slider_wrapper curved-border" style="height: 650px;">
 					<div id="revolutionSlider" class="slider rev_slider" data-version="5.4.8" data-plugin-revolution-slider data-plugin-options="{'delay': 9000, 'gridwidth': 1170, 'gridheight': 650, 'disableProgressBar': 'on', 'responsiveLevels': [4096,1200,992,500], 'navigation' : {'arrows': { 'enable': true, 'style': 'arrows-style-1 arrows-big arrows-dark' }, 'bullets': {'enable': false, 'style': 'bullets-style-1 bullets-color-primary', 'h_align': 'center', 'v_align': 'bottom', 'space': 7, 'v_offset': 70, 'h_offset': 0}}}">
 						<ul>
+							
+							<li data-transition="fade">
+				
+								<img src="<?php echo base_url() ?>assets/front-end/web2/img/slides/tes13.jpg"  
+									alt=""
+									data-bgposition="right center"
+									data-bgpositionend="center center"
+									data-bgfit="cover" 
+									data-bgrepeat="no-repeat" 
+									data-kenburns="on"
+									data-duration="9000"
+									data-ease="Linear.easeNone"
+									data-scalestart="110"
+									data-scaleend="100"
+									data-rotatestart="0"
+									data-rotateend="0"
+									data-offsetstart="0 0"
+									data-offsetend="0 0"
+									data-bgparallax="0"
+									class="rev-slidebg">
+				
+								<div class="tp-caption font-weight-extra-bold negative-ls-2" style="color:#fff"
+									data-frames='[{"delay":1000,"speed":2000,"frame":"0","from":"sX:1.5;opacity:0;fb:20px;","to":"o:1;fb:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
+									data-x="center"
+									data-y="center" data-voffset="['-50','-50','-50','-75']"
+									data-fontsize="['50','50','50','90']"
+									data-lineheight="['55','55','55','95']">Dinas Perindustrian</div>
+				
+								<div class="tp-caption font-weight-light" style="color:#fff"
+									data-frames='[{"from":"opacity:0;","speed":300,"to":"o:1;","delay":2000,"split":"chars","splitdelay":0.05,"ease":"Power2.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
+									data-x="center"
+									data-y="center" 
+									data-fontsize="['18','18','18','50']"
+									data-lineheight="['20','20','20','55']"
+									style="color: #b5b5b5;">Provinsi Kalimantan Selatan.</div>
+				
+								<a class="tp-caption btn btn-primary font-weight-bold"
+									href="#"
+									data-frames='[{"delay":3000,"speed":2000,"frame":"0","from":"y:50%;opacity:0;","to":"y:0;o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
+									data-x="center" data-hoffset="0"
+									data-y="center" data-voffset="70"
+									data-paddingtop="['15','15','15','30']"
+									data-paddingbottom="['15','15','15','30']"
+									data-paddingleft="['40','40','40','57']"
+									data-paddingright="['40','40','40','57']"
+									data-fontsize="['13','13','13','25']"
+									data-lineheight="['20','20','20','25']">PROFIL <i class="fas fa-arrow-right ml-1"></i></a>
+				
+							</li>
 							<li data-transition="fade">
 								<img src="<?php echo base_url() ?>assets/front-end/web2/bahan/1231.jpg"  
 									alt=""
@@ -381,54 +376,8 @@
 								
 							</li>
 							
-							<li data-transition="fade">
-				
-								<img src="<?php echo base_url() ?>assets/front-end/web2/img/slides/tes1.jpg"  
-									alt=""
-									data-bgposition="right center"
-									data-bgpositionend="center center"
-									data-bgfit="cover" 
-									data-bgrepeat="no-repeat" 
-									data-kenburns="on"
-									data-duration="9000"
-									data-ease="Linear.easeNone"
-									data-scalestart="110"
-									data-scaleend="100"
-									data-rotatestart="0"
-									data-rotateend="0"
-									data-offsetstart="0 0"
-									data-offsetend="0 0"
-									data-bgparallax="0"
-									class="rev-slidebg">
-				
-								<div class="tp-caption font-weight-extra-bold negative-ls-2" style="color:#fff"
-									data-frames='[{"delay":1000,"speed":2000,"frame":"0","from":"sX:1.5;opacity:0;fb:20px;","to":"o:1;fb:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
-									data-x="center"
-									data-y="center" data-voffset="['-50','-50','-50','-75']"
-									data-fontsize="['50','50','50','90']"
-									data-lineheight="['55','55','55','95']">Dinas Perindustrian</div>
-				
-								<div class="tp-caption font-weight-light" style="color:#fff"
-									data-frames='[{"from":"opacity:0;","speed":300,"to":"o:1;","delay":2000,"split":"chars","splitdelay":0.05,"ease":"Power2.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
-									data-x="center"
-									data-y="center" 
-									data-fontsize="['18','18','18','50']"
-									data-lineheight="['20','20','20','55']"
-									style="color: #b5b5b5;">Provinsi Kalimantan Selatan.</div>
-				
-								<a class="tp-caption btn btn-primary font-weight-bold"
-									href="#"
-									data-frames='[{"delay":3000,"speed":2000,"frame":"0","from":"y:50%;opacity:0;","to":"y:0;o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
-									data-x="center" data-hoffset="0"
-									data-y="center" data-voffset="70"
-									data-paddingtop="['15','15','15','30']"
-									data-paddingbottom="['15','15','15','30']"
-									data-paddingleft="['40','40','40','57']"
-									data-paddingright="['40','40','40','57']"
-									data-fontsize="['13','13','13','25']"
-									data-lineheight="['20','20','20','25']">PROFIL <i class="fas fa-arrow-right ml-1"></i></a>
-				
-							</li>
+
+						
 						</ul>
 					</div>
 				</div>
@@ -449,7 +398,7 @@
 										<img class="img-fluid mb-4" src="<?php echo base_url() ?>assets/front-end/web2/bahan/simbol2.png" alt="">
 									</div>
 									<div class="col-lg-8">
-										<h2 class="font-weight-bold text-5 line-height-5 mb-1">Data Industri</h2>
+										<h2 class="font-weight-bold text-5 line-height-5 mb-1 text-color-primary">Data Industri</h2>
 										<p class="mb-0">Data dan Informasi Industri Kalimantan Selatan.</p>
 									</div>
 								</div>
@@ -460,7 +409,7 @@
 										<img class="img-fluid mb-4" src="<?php echo base_url() ?>assets/front-end/web2/bahan/simbol.png" alt="">
 									</div>
 									<div class="col-lg-8">
-										<h2 class="font-weight-bold text-5 line-height-5 mb-1">Kebijakan Industri</h2>
+										<h2 class="font-weight-bold text-5 line-height-5 mb-1 text-color-primary">Kebijakan Industri</h2>
 										<p class="mb-0">Kebijakan Industri Daerah Menuju KALSEL MAPAN.</p>
 									</div>
 								</div>
@@ -471,7 +420,7 @@
 										<img class="img-fluid mb-4" src="<?php echo base_url() ?>assets/front-end/web2/bahan/simbol1.png" alt="">
 									</div>
 									<div class="col-lg-8">
-										<h2 class="font-weight-bold text-5 line-height-5 mb-1">Pelayanan Publik</h2>
+										<h2 class="font-weight-bold text-5 line-height-5 mb-1 text-color-primary">Pelayanan Publik</h2>
 										<p class="mb-0">Penyelengaraan pelayanan publik bidang Industri di Kalimantan Selatan.</p>
 									</div>
 								</div>
@@ -479,7 +428,7 @@
 						</div>
 					</div>
 				</section>
-				<section class="section bg-color-grey-scale-1 section-height-3 border-0 m-0" style="padding-top: 20px;padding-bottom: 10px;">
+				<section class="section bg-color-light section-height-3 border-0 m-0" style="padding-top: 20px;padding-bottom: 10px;">
 					<div class="container pb-2">
 						<div class="row">
 							<div class="col-lg-6 text-center text-md-left mb-5 mb-lg-0"  data-appear-animation="fadeInRightShorter">
@@ -491,9 +440,9 @@
 								<a href="#" class="btn btn-dark font-weight-semibold btn-px-4 btn-py-2 text-2">Stuktur Organisasi</a>
 								
 							</div>
-							<div class="col-lg-6" data-appear-animation="fadeInLeftShorter" style="margin-top:20px" >
+							<div class="col-lg-6" data-appear-animation="fadeInLeftShorter" style="margin-top:30px" >
 							
-							<iframe width="535" height="330" src="https://www.youtube.com/embed/1p_UBv8igEE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+							<iframe width="535" height="300" src="https://www.youtube.com/embed/1p_UBv8igEE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 							
 							</div>
 						</div>
@@ -804,7 +753,7 @@
 
 
 
-				<section class="section section-height-3 bg-primary border-0 m-0 appear-animation" data-appear-animation="fadeIn" style="background-image : url(<?php echo base_url() ?>assets/front-end/web2/bahan/321.png); background-repeat: repeat;">
+				<section class="section section-height-3 bg-primary border-0 m-0 appear-animation" data-appear-animation="fadeIn" >
 					<div class="container">
 						<div class="row">
 							<div class="col appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200">
@@ -997,8 +946,9 @@
 			
 			
 			
-			<footer id="footer" class="mt-0">
-				<div class="container my-4">
+			<footer id="footer" class="mt-0 curved-border curved-border-top" style="border-top:0;">
+				
+				<div class="container my-4 " style="padding:50px">
 					<div class="row py-5">
 						<div class="col-md-6 col-lg-3 mb-5 mb-lg-0">
 							<h5 class="text-5 text-transform-none font-weight-semibold text-color-light mb-4">Kontak Kami</h5>

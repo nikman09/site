@@ -71,7 +71,15 @@
 					</div>
 				</div>
                             
+                
+
                 <div class="form-group">
+					<label class="col-lg-2 control-label">isi</label>
+					<div class="col-lg-10">
+                    <textarea class="form-control ckeditor" name="isi" id="isi"></textarea>
+					</div>
+				</div>
+				<div class="form-group">
 						<label class="col-sm-2 control-label">Foto Utama</label>
 						<div class="col-sm-4">
 							<div class="fileinput fileinput-new" data-provides="fileinput" style="margin-bottom:0;display:inline">
@@ -98,14 +106,6 @@
 					</div>
 				</div>
 
-
-                <div class="form-group">
-					<label class="col-lg-2 control-label">isi</label>
-					<div class="col-lg-10">
-                    <textarea class="form-control ckeditor" name="isi" id="isi"></textarea>
-					</div>
-				</div>
-				
 				
 				
 			

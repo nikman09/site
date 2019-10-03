@@ -21,7 +21,7 @@ jQuery( document ).ready( function( $ ) {
                 text: 'Hapus',
                 btnClass: 'btn-primary',
                 action: function(){
-                    window.location.assign("<?php echo base_url() ?>administrator/beritahapus?id="+v_id);
+                    window.location.assign("<?php echo base_url() ?>administrator/bidanghapus?id="+v_id);
                 }
             },
             batal: function () {

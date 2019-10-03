@@ -640,7 +640,7 @@ html .btn-primary {
 
 html .btn-primary:hover,
 html .btn-primary.hover {
-	background-color: #00a1f2;
+	background-color: #140000;
 	border-color: #1c0000;
 	color: #FFF;
 }
@@ -1467,7 +1467,7 @@ html .btn-with-arrow.btn-light.btn-outline:hover span {
 
 .btn-gradient:not(.btn-outline):hover,
 .btn-gradient:not(.btn-outline).hover {
-	background: linear-gradient(135deg, #00a1f2 0%, #e9807a 80%);
+	background: linear-gradient(135deg, #140000 0%, #e9807a 80%);
 	color: #FFF;
 }
 
@@ -1496,9 +1496,9 @@ html .btn-with-arrow.btn-light.btn-outline:hover span {
 
 .btn-gradient.btn-outline:hover,
 .btn-gradient.btn-outline.hover {
-	-o-border-image: linear-gradient(135deg, #00a1f2 0%, #e9807a 80%);
-	border-image: linear-gradient(135deg, #00a1f2 0%, #e9807a 80%);
-	color: #00a1f2;
+	-o-border-image: linear-gradient(135deg, #140000 0%, #e9807a 80%);
+	border-image: linear-gradient(135deg, #140000 0%, #e9807a 80%);
+	color: #140000;
 }
 
 .btn-gradient.btn-outline:focus,
@@ -1570,7 +1570,7 @@ body.dark .pagination > .active > a {
 body.dark .pagination > .active > a:hover,
 .pagination > .active > a.hover,
 body.dark .pagination > .active > a.hover {
-	background-color: #00a1f2;
+	background-color: #140000;
 	border-color: #360404 #360404 #1c0000;
 	color: #fff;
 }
@@ -2464,7 +2464,7 @@ html .inverted-light {
 
 .owl-carousel .owl-nav button[class*="owl-"]:hover,
 .owl-carousel .owl-nav button[class*="owl-"].hover {
-	background-color: #00a1f2;
+	background-color: #140000;
 	border-color: #360404 #360404 #1c0000;
 }
 
@@ -5548,7 +5548,7 @@ html .slide-overlay.slide-overlay-gradient .slotholder:after {
 .tparrows.tparrows-carousel.tp-rightarrow:hover,
 .tparrows.tparrows-carousel.tp-leftarrow.hover,
 .tparrows.tparrows-carousel.tp-rightarrow.hover {
-	background-color: #00a1f2;
+	background-color: #140000;
 	border-color: #360404 #360404 #1c0000;
 	color: #fff;
 }

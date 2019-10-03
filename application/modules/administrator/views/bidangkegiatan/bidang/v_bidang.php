@@ -32,10 +32,7 @@
 									<a href='#' class='btn btn-danger btn-xs hapus' title='Hapus' id='".$row['id_bidang']."'><i class='fa fa-trash-o'></i></a>
 								</div>
 								</td>
-                                <td>".tanggal($row['tanggal'])."</td>
-                                <td>".$row['kategori']."</td>
-                                <td><strong>".$row['judul']."</strong></td>
-                                <td>".$row['timeinput']."</td>
+                                <td>".$row['bidang']."</td>
 
 							</tr>
 						";

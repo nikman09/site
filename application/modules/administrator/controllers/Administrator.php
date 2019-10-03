@@ -184,5 +184,61 @@ class Administrator extends CI_Controller {
         $this->layout->render('bidangkegiatan/bidang/v_bidang',$variabel,'bidangkegiatan/bidang/v_bidang_js');
    
     }
+
+    public function bidangtambah()
+    {   
+        $variabel['csrf'] = csrf();
+        if ($this->input->post()){
+            $array=array(
+                'bidang'=> $this->input->post('bidang'),
+                'tugas'=> $this->input->post('tugas')
+                );
+            $exec = $this->m_bidang->tambahdata($array);
+            if ($exec) redirect(base_url("administrator/bidang?msg=1"));
+            else redirect(base_url("administrator/bidangtambah?msg=0"));
+        }
+        else {
+            $this->layout->render('bidangkegiatan/bidang/v_bidang_tambah',$variabel,'bidangkegiatan/bidang/v_bidang_tambah_js');
+        }
+       
+    }
+
+    function bidanghapus()
+    {
+        $id_bidang = $this->input->get("id");
+        $exec = $this->m_bidang->hapus($id_bidang);
+        redirect(base_url()."administrator/bidang?msg=2");
+    }
+
+
+    public function bidangedit()
+    {   
+
+        $variabel['csrf'] = csrf();
+        if ($this->input->post()) {
+            $id_bidang = $this->input->post('id_bidang');
+            $array=array(
+                'bidang'=> $this->input->post('bidang'), 
+                'tugas'=>$this->input->post('tugas'),
+            );
+            
+           
+            $exec = $this->m_bidang->editdata($id_bidang,$array);
+            if ($exec) redirect(base_url("administrator/bidangedit?id=".$id_bidang."&msg=1"));
+            else redirect(base_url("administrator/bidangedit?id=".$id_bidang."&msg=0"));
+
+        } else {
+            $id_bidang = $this->input->get("id");
+            $exec = $this->m_bidang->lihatdatasatu($id_bidang);
+            if ($exec->num_rows()>0){
+                $variabel['data'] = $exec ->row_array();
+                $this->layout->render('bidangkegiatan/bidang/v_bidang_edit',$variabel,'bidangkegiatan/bidang/v_bidang_edit_js');
+            } else {
+                redirect(base_url("administrator/bidang"));
+            }
+        }
+      
+    }
+
 	
 }

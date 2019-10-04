@@ -868,74 +868,31 @@
 						</div>
 					</div>
 					<div class="row recent-posts pb-4 mb-5 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="200">
+					<?php
+					foreach($berita->result_array() as $row){
+						?>
 						<div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
 							<article>
 								<div class="row">
 									<div class="col-auto pr-0">
 										<div class="date">
-											<span class="day text-color-dark font-weight-extra-bold">15</span>
-											<span class="month bg-color-primary font-weight-semibold text-color-light text-1">JAN</span>
+											<span class="day text-color-dark font-weight-extra-bold"><?php echo date('d',strtotime($row['tanggal'])); ?></span>
+											<span class="month bg-color-primary font-weight-semibold text-color-light text-1"><?php echo date('M',strtotime($row['tanggal'])); ?></span>
 										</div>
 									</div>
 									<div class="col pl-1">
-										<h4 class="line-height-3 text-4"><a href="blog-post.html" class="text-dark">Lorem ipsum dolor sit amet, consectetur</a></h4>
+										<h4 class="line-height-3 text-4"><a href="blog-post.html" class="text-dark"><?php echo $row['judul'] ?></a></h4>
 										<p class="line-height-5 pr-3 mb-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget risus porta.</p>
 										<a class="btn btn-light text-uppercase text-primary text-1 py-2 px-3 mb-1 mt-2" href="#"><strong>VIEW MORE</strong><i class="fas fa-chevron-right text-2 pl-2"></i></a>
 									</div>
 								</div>
 							</article>
 						</div>
-						<div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
-							<article>
-								<div class="row">
-									<div class="col-auto pr-0">
-										<div class="date">
-											<span class="day text-color-dark font-weight-extra-bold">14</span>
-											<span class="month bg-color-primary font-weight-semibold text-color-light text-1">JAN</span>
-										</div>
-									</div>
-									<div class="col pl-1">
-										<h4 class="line-height-3 text-4"><a href="blog-post.html" class="text-dark">Lorem ipsum dolor sit amet, consectetur</a></h4>
-										<p class="line-height-5 pr-3 mb-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget risus porta.</p>
-										<a class="btn btn-light text-uppercase text-primary text-1 py-2 px-3 mb-1 mt-2" href="#"><strong>VIEW MORE</strong><i class="fas fa-chevron-right text-2 pl-2"></i></a>
-									</div>
-								</div>
-							</article>
-						</div>
-						<div class="col-md-6 col-lg-3 mb-4 mb-md-0">
-							<article>
-								<div class="row">
-									<div class="col-auto pr-0">
-										<div class="date">
-											<span class="day text-color-dark font-weight-extra-bold">13</span>
-											<span class="month bg-color-primary font-weight-semibold text-color-light text-1">JAN</span>
-										</div>
-									</div>
-									<div class="col pl-1">
-										<h4 class="line-height-3 text-4"><a href="blog-post.html" class="text-dark">Lorem ipsum dolor sit amet, consectetur</a></h4>
-										<p class="line-height-5 pr-3 mb-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget risus porta.</p>
-										<a class="btn btn-light text-uppercase text-primary text-1 py-2 px-3 mb-1 mt-2" href="#"><strong>VIEW MORE</strong><i class="fas fa-chevron-right text-2 pl-2"></i></a>
-									</div>
-								</div>
-							</article>
-						</div>
-						<div class="col-md-6 col-lg-3">
-							<article>
-								<div class="row">
-									<div class="col-auto pr-0">
-										<div class="date">
-											<span class="day text-color-dark font-weight-extra-bold">12</span>
-											<span class="month bg-color-primary font-weight-semibold text-color-light text-1">JAN</span>
-										</div>
-									</div>
-									<div class="col pl-1">
-										<h4 class="line-height-3 text-4"><a href="blog-post.html" class="text-dark">Lorem ipsum dolor sit amet, consectetur</a></h4>
-										<p class="line-height-5 pr-3 mb-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget risus porta.</p>
-										<a class="btn btn-light text-uppercase text-primary text-1 py-2 px-3 mb-1 mt-2" href="#"><strong>VIEW MORE</strong><i class="fas fa-chevron-right text-2 pl-2"></i></a>
-									</div>
-								</div>
-							</article>
-						</div>
+
+						<?php
+					}
+						?>
+						
 					</div>
 				</div>
 				

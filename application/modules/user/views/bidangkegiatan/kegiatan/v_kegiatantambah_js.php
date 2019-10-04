@@ -49,9 +49,6 @@ $('#form').validate({ // initialize plugin
             },
             isi: {
                 required: true
-            },
-            bidang: {
-                required: true
             }
         },
         messages: {
@@ -66,18 +63,10 @@ $('#form').validate({ // initialize plugin
             },
             isi: {
                 required: "Isi tidak boleh kosong"
-            },
-            bidang: {
-                required: "Bidang tidak boleh kosong"
             }
         }
     });
 
-    <?php
-        if ($data['foto']!="") {
-            echo 'document.getElementById("image-preview").style.display = "block";';
-         }
-    ?>
     function previewImage() {
     document.getElementById("image-preview").style.display = "block";
     var oFReader = new FileReader();

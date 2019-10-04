@@ -14,12 +14,13 @@ class M_kegiatan extends CI_Model
         return $this->db->get('tb_kegiatan');
     }
 
-    function lihatdata()
+    function lihatdata($username)
     {
         $this->db->select("tb_kegiatan.*,tb_kegiatankategori.*,tb_bidang.*,tb_kegiatan.userinput as userinput")
         ->join("tb_kegiatankategori","tb_kegiatankategori.id_kegiatankategori=tb_kegiatan.id_kegiatankategori","left")
-        ->join("tb_bidang","tb_bidang.id_bidang=tb_kegiatan.id_bidang","left");
-        
+        ->join("tb_bidang","tb_bidang.id_bidang=tb_kegiatan.id_bidang","left")
+        ->where("tb_kegiatan.userinput",$username);
+
         return $this->db->get('tb_kegiatan');
     }
     function cekdata($id_kegiatan)

@@ -1,23 +1,23 @@
 <ol class="breadcrumb bc-3">
     <li>
-        <a href="<?php echo base_url() ?>administrator">
+        <a href="<?php echo base_url() ?>user">
             <i class="fa fa-newspaper-o"></i>Administrator</a>
     </li>
     <li>
-        <a href="<?php echo base_url() ?>administrator/kegiatan">
-            <i class="fa fa-newspaper-o"></i>Kegiatan</a>
+        <a href="<?php echo base_url() ?>user/berita">
+            <i class="fa fa-newspaper-o"></i>Berita</a>
     </li>
     <li class="active">
-        <strong>Edit Kegiatan</strong>
+        <strong>Edit Berita</strong>
     </li>
 </ol>
 
-<h3>Edit Kegiatan </h3>
+<h3>Edit Berita </h3>
 <div class="panel panel-primary" data-collapsed="0">
 			
 <div class="panel-heading">
 	<div class="panel-title">
-		Edit Kegiatan
+		Edit Berita
 	</div>
 	
 	<div class="panel-options">
@@ -26,8 +26,8 @@
 </div>
 
 <div class="panel-body">
-	<?php pesan_get('msg',"Berhasil Mengedit Kegiatan","Gagal Menambahkan Kegiatan") ?>
-	<form role="form" class="form-horizontal validate"  action="<?php echo base_url() ?>administrator/kegiatanedit"	method="post"  enctype="multipart/form-data" id="form"> 	
+	<?php pesan_get('msg',"Berhasil Mengedit Berita","Gagal Menambahkan Berita") ?>
+	<form role="form" class="form-horizontal validate"  action="<?php echo base_url() ?>user/beritaedit"	method="post"  enctype="multipart/form-data" id="form"> 	
 		<div class="row">
 			<div class="col-md-12">
 			<input type="hidden" name="<?=$csrf['name']?>" value="<?=$csrf['hash']?>">
@@ -36,7 +36,7 @@
 					<div class="col-lg-10">
 						<input type="text" class="form-control" name="judul" id="judul" value="<?php echo $data['judul']; ?>" 
 						/>
-                        <input type="hidden" class="form-control" name="id_kegiatan" id="id_kegiatan" value="<?php echo $data['id_kegiatan']; ?>" 
+                        <input type="hidden" class="form-control" name="id_berita" id="id_berita" value="<?php echo $data['id_berita']; ?>" 
 						/>
 						<span class="validate-has-error" style="color:#cc2424"><?php echo form_error('judul'); ?></span>
 					</div>
@@ -59,30 +59,14 @@
 				<div class="form-group">
 					<label class="col-lg-2 control-label">Kategori</label>
 					<div class="col-lg-10">
-                        <select class="form-control" name="kegiatankategori" id="kegiatankategori" >
+                        <select class="form-control" name="beritakategori" id="beritakategori" >
                             <option value="" disabled>.:Pilih Kategori:.</option>
                           
                             <?php
-                                foreach($kegiatankategori->result_array() as $row) {
+                                foreach($beritakategori->result_array() as $row) {
                                     
-                                    echo "<option value='".$row['id_kegiatankategori']."' ".($data['id_kegiatankategori']==$row['id_kegiatankategori']?"Selected":"").">";
+                                    echo "<option value='".$row['id_beritakategori']."' ".($data['id_beritakategori']==$row['id_beritakategori']?"Selected":"").">";
                                     echo "".$row['kategori']."</option>";
-                                }
-                            ?>
-                            </select>
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="col-lg-2 control-label">Bidang</label>
-					<div class="col-lg-10">
-                        <select class="form-control" name="bidang" id="bidang" >
-                            <option value="" disabled selected>.:Pilih Bidang:.</option>
-                          
-                            <?php
-                                foreach($bidang->result_array() as $row) {
-                                    
-                                    echo "<option value='".$row['id_bidang']."' ".($data['id_bidang']==$row['id_bidang']?"Selected":"").">";
-                                    echo "".$row['bidang']."</option>";
                                 }
                             ?>
                             </select>
@@ -119,7 +103,7 @@
                 <div class="form-group">
 						<label class="col-sm-2 control-label"></label>
 						<div class="col-sm-4">
-                           <img id="image-preview" src="<?php echo base_url()."assets/images/kegiatan/".$data['foto'] ?>" alt="image preview" width="100px" style="border:2px solid #dbdbdb"/>
+                           <img id="image-preview" src="<?php echo base_url()."assets/images/berita/".$data['foto'] ?>" alt="image preview" width="100px" style="border:2px solid #dbdbdb"/>
 
 					</div>
 				</div>
@@ -137,9 +121,9 @@
 	<button type="submit" class="btn btn-primary btn-s-xs">
 		<i class="fa fa-save"></i> Simpan</button>
 	&nbsp
-    <a href="<?php echo base_url('administrator/kegiatanedit?id='.$data['id_kegiatan'].'') ?>" class="btn btn-default btn-s-xs">
+    <a href="<?php echo base_url('user/beritaedit?id='.$data['id_berita'].'') ?>" class="btn btn-default btn-s-xs">
 		<i class="fa fa-refresh"></i> Reset</a>
-	<a href="<?php echo base_url('administrator/kegiatan') ?>" class="btn btn-default btn-s-xs">
+	<a href="<?php echo base_url('user/berita') ?>" class="btn btn-default btn-s-xs">
 		<i class="fa fa-times"></i> Kembali</a>
 
 		</form>	

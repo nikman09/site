@@ -1,23 +1,23 @@
 <ol class="breadcrumb bc-3">
     <li>
-        <a href="<?php echo base_url() ?>administrator">
+        <a href="<?php echo base_url() ?>user">
             <i class="fa fa-newspaper-o"></i>Administrator</a>
     </li>
     <li>
-        <a href="<?php echo base_url() ?>administrator/kegiatan">
-            <i class="fa fa-newspaper-o"></i>Kegiatan</a>
+        <a href="<?php echo base_url() ?>user/berita">
+            <i class="fa fa-newspaper-o"></i>Berita</a>
     </li>
     <li class="active">
-        <strong>Tambah Kegiatan</strong>
+        <strong>Tambah Berita</strong>
     </li>
 </ol>
 
-<h3>Tambah Kegiatan </h3>
+<h3>Tambah Berita </h3>
 <div class="panel panel-primary" data-collapsed="0">
 			
 <div class="panel-heading">
 	<div class="panel-title">
-		Tambah Kegiatan
+		Tambah Berita
 	</div>
 	
 	<div class="panel-options">
@@ -26,8 +26,8 @@
 </div>
 
 <div class="panel-body">
-	<?php pesan_get('msg',"Berhasil Menambahkan Kegiatan","Gagal Menambahkan Kegiatan") ?>
-	<form role="form" class="form-horizontal validate"  action="<?php echo base_url() ?>administrator/kegiatantambah"	method="post"  enctype="multipart/form-data" id="form"> 	
+	<?php pesan_get('msg',"Berhasil Menambahkan Berita","Gagal Menambahkan Berita") ?>
+	<form role="form" class="form-horizontal validate"  action="<?php echo base_url() ?>user/beritatambah"	method="post"  enctype="multipart/form-data" id="form"> 	
 		<div class="row">
 			<div class="col-md-12">
 			<input type="hidden" name="<?=$csrf['name']?>" value="<?=$csrf['hash']?>">
@@ -57,31 +57,14 @@
 				<div class="form-group">
 					<label class="col-lg-2 control-label">Kategori</label>
 					<div class="col-lg-10">
-                        <select class="form-control" name="kegiatankategori" id="kegiatankategori" >
+                        <select class="form-control" name="beritakategori" id="beritakategori" >
                             <option value="" disabled selected>.:Pilih Kategori:.</option>
                           
                             <?php
-                                foreach($kegiatankategori->result_array() as $row) {
+                                foreach($beritakategori->result_array() as $row) {
                                     
-                                    echo "<option value='".$row['id_kegiatankategori']."'>";
+                                    echo "<option value='".$row['id_beritakategori']."'>";
                                     echo "".$row['kategori']."</option>";
-                                }
-                            ?>
-                            </select>
-					</div>
-				</div>
-
-				<div class="form-group">
-					<label class="col-lg-2 control-label">Bidang</label>
-					<div class="col-lg-10">
-                        <select class="form-control" name="bidang" id="bidang" >
-                            <option value="" disabled selected>.:Pilih Bidang:.</option>
-                          
-                            <?php
-                                foreach($bidang->result_array() as $row) {
-                                    
-                                    echo "<option value='".$row['id_bidang']."'>";
-                                    echo "".$row['bidang']."</option>";
                                 }
                             ?>
                             </select>
@@ -137,7 +120,7 @@
 	<button type="submit" class="btn btn-primary btn-s-xs">
 		<i class="fa fa-save"></i> Simpan</button>
 	&nbsp
-	<a href="<?php echo base_url('administrator/kegiatan') ?>" class="btn btn-default btn-s-xs">
+	<a href="<?php echo base_url('user/berita') ?>" class="btn btn-default btn-s-xs">
 		<i class="fa fa-times"></i> Kembali</a>
 
 		</form>	

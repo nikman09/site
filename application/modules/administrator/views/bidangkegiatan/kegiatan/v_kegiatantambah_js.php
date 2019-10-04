@@ -49,6 +49,9 @@ $('#form').validate({ // initialize plugin
             },
             isi: {
                 required: true
+            },
+            bidang: {
+                required: true
             }
         },
         messages: {
@@ -63,6 +66,9 @@ $('#form').validate({ // initialize plugin
             },
             isi: {
                 required: "Isi tidak boleh kosong"
+            },
+            bidang: {
+                required: "Bidang tidak boleh kosong"
             }
         }
     });

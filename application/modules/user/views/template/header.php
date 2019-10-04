@@ -59,9 +59,9 @@
 
 </head>
 	<?php
-		$nama = $this->session->userdata("nama");
-		$foto = $this->session->userdata("foto");
-		$username = $this->session->userdata("username");
+		$nama = $this->session->userdata("user_nama");
+		$foto = $this->session->userdata("user_foto");
+		$username = $this->session->userdata("user_username");
 	?>
 <body class="page-body" style="font-size:12px;color:#666666">
 <div class="page-container"><!-- add class "sidebar-collapsed" to close sidebar by default, "chat-visible" to make chat appear always -->

@@ -150,7 +150,7 @@
 					<!-- Language Selector -->
 					<li class="sep"></li>
 					<li>
-						<a href="<?php echo base_url() ?>login/logout">
+						<a href="<?php echo base_url() ?>administrator/login/logout">
 							Log Out <i class="entypo-logout right"></i>
 						</a>
 					</li>

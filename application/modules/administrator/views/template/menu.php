@@ -33,7 +33,7 @@
 						
 					</ul>
 			</li>
-			<li  class="<?= ($submenu == "bidang" || $submenu == "bidanglihat"  || $submenu == "bidangtambah" || $submenu == "bidangedit" || $submenu == "kegiatan" || $submenu == "kegiatantambah"  || $submenu == "kegiatanedit") ? "opened active root-level" : ""; ?> has-sub">
+			<li  class="<?= ($submenu == "bidang" || $submenu == "bidanglihat"  || $submenu == "bidangtambah" || $submenu == "bidangedit" || $submenu == "kegiatan" || $submenu == "kegiatantambah"  || $submenu == "kegiatanedit" || $submenu == "kegiatankategori") ? "opened active root-level" : ""; ?> has-sub">
 					<a href="">
 						<i class="fa fa-history"></i>
 						<span class="title">Bidang & Kegiatan</span>
@@ -44,9 +44,14 @@
 								<span class="title">Bidang</span>
 							</a>
 						</li>
-						<li  class="<?= ($submenu == "kegiatan" || $submenu == "kegiatantambah" || $submenu == "kegiatantambah") ? " active" : ""; ?>">
+						<li  class="<?= ($submenu == "kegiatan" || $submenu == "kegiatantambah" || $submenu == "kegiatanedit") ? " active" : ""; ?>">
 							<a href="<?php echo base_url() ?>administrator/kegiatan">
 								<span class="title">Kegiatan</span>
+							</a>
+						</li>
+						<li  class="<?= ($submenu == "kegiatankategori" || $submenu == "kegiatankategoritambah" || $submenu == "kegiatankategoriedit") ? " active" : ""; ?>">
+							<a href="<?php echo base_url() ?>administrator/kegiatankategori">
+								<span class="title">Kategori</span>
 							</a>
 						</li>
 						

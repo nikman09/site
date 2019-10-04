@@ -8,6 +8,8 @@ class Administrator extends CI_Controller {
         $this->load->model("m_beritakategori");
         $this->load->model("m_berita");
         $this->load->model("m_bidang");
+        $this->load->model("m_kegiatan");
+        $this->load->model("m_kegiatankategori");
     }
 
     // Dashboard
@@ -131,9 +133,11 @@ class Administrator extends CI_Controller {
     public function beritakategoritambah()
     {      
         $variabel['csrf'] = csrf();
+        $username = $this->session->userdata("username");
         if ($this->input->post()) {
             $array=array(
-                'kategori'=> $this->input->post('kategori')
+                'kategori'=> $this->input->post('kategori'),
+                'userinput'=>  $username,
             );
             $exec = $this->m_beritakategori->tambahdata($array);
                 if ($exec){
@@ -235,6 +239,170 @@ class Administrator extends CI_Controller {
                 $this->layout->render('bidangkegiatan/bidang/v_bidang_edit',$variabel,'bidangkegiatan/bidang/v_bidang_edit_js');
             } else {
                 redirect(base_url("administrator/bidang"));
+            }
+        }
+      
+    }
+
+    public function kegiatankategori()
+    {   
+        
+        $variabel['csrf'] = csrf();
+        $variabel['data'] = $this->m_kegiatankategori->lihatdata();
+        $this->layout->render('bidangkegiatan/kegiatankategori/v_kegiatankategori',$variabel,'bidangkegiatan/kegiatankategori/v_kegiatankategori_js');
+    }
+
+    public function kegiatankategoritambah()
+    {      
+        $variabel['csrf'] = csrf();
+        $username = $this->session->userdata("username");
+        if ($this->input->post()) {
+            $array=array(
+                'kategori'=> $this->input->post('kategori'),
+                'userinput'=>   $username 
+            );
+            $exec = $this->m_kegiatankategori->tambahdata($array);
+                if ($exec){
+                 redirect(base_url("administrator/kegiatankategori?msg=1"));
+                }
+      } else {
+      }
+    }
+
+
+    
+    public function kegiatankategoriedit()
+    {      
+        $variabel['csrf'] = csrf();
+        $id_kegiatankategori = $this->input->post("id_kegiatankategori");
+        $variabel['data'] = $this->m_kegiatankategori->lihatdatasatu($id_kegiatankategori)->row_array();
+        $this->load->view("'bidangkegiatan/kegiatankategori/v_kegiatankategori_edit",$variabel);
+    }
+
+    public function kegiatankategorieditproses()
+    {      
+        $variabel['csrf'] = csrf();
+        if ($this->input->post()) {
+                 $array=array(
+                'kategori'=> $this->input->post('kategori'),
+                );
+                $id_kegiatankategori = $this->input->post("id_kegiatankategori");
+                $exec = $this->m_kegiatankategori->editdata($id_kegiatankategori,$array);
+                if ($exec){
+                 redirect(base_url("administrator/kegiatankategori?msg=0"));
+                }
+      } else {
+      }
+    }
+
+    public function kegiatankategorihapus()
+    {
+        $id_kegiatankategori = $this->input->get("id");
+       
+        $exec = $this->m_kegiatankategori->hapus($id_kegiatankategori);
+        redirect(base_url()."administrator/kegiatankategori?msg=2");
+    }
+
+
+    public function kegiatan()
+    {   
+        $variabel['csrf'] = csrf();
+        $variabel['data'] = $this->m_kegiatan->lihatdata();
+        $this->layout->render('kegiatan/v_kegiatan',$variabel,'kegiatan/v_kegiatan_js');
+   
+    }
+   
+    public function kegiatantambah()
+       
+    {   
+        $variabel['csrf'] = csrf();
+        $variabel['kegiatankategori'] = $this->m_kegiatankategori->lihatdata();
+        if ($this->input->post()){
+            $username = $this->session->userdata("username");
+            $array=array(
+                'id_kegiatankategori'=> $this->input->post('kegiatankategori'),
+                'judul'=> $this->input->post('judul'),
+                'tanggal'=>tanggalawal($this->input->post('tanggal')),
+                'isi'=>$this->input->post('isi'),
+                'userinput'=>$username
+                );
+                $config['upload_path'] = './assets/images/kegiatan';
+                $config['allowed_types'] = 'jpg|jpeg|JPG|JPEG|PNG|png';
+                $this->load->library('upload', $config);
+                $this->upload->do_upload("foto");
+                $upload = $this->upload->data();
+                $file = $upload["raw_name"].$upload["file_ext"];
+                $array['foto']=$file;
+                $exec = $this->m_kegiatan->tambahdata($array);
+                if ($exec) redirect(base_url("administrator/kegiatan?msg=1"));
+                else redirect(base_url("administrator/kegiatantambah?msg=0"));
+        }
+        else {
+            $this->layout->render('kegiatan/v_kegiatantambah',$variabel,'kegiatan/v_kegiatantambah_js');
+        }
+       
+    }
+
+    public function kegiatanhapus()
+    {
+        $id_kegiatan = $this->input->get("id");
+        $query2 = $this->m_kegiatan->lihatdatasatu($id_kegiatan);
+        $row2 = $query2->row();
+        $berkas1temp = $row2->foto;
+        $path1 ='./assets/images/kegiatan/'.$berkas1temp.'';
+        if(is_file($path1)) {
+            unlink($path1);
+        }
+        $exec = $this->m_kegiatan->hapus($id_kegiatan);
+        redirect(base_url()."administrator/kegiatan?msg=2");
+    }
+
+    public function kegiatanedit()
+    {   
+
+        $variabel['csrf'] = csrf();
+        $variabel['kegiatankategori'] = $this->m_kegiatankategori->lihatdata();
+        if ($this->input->post()) {
+            $username = $this->session->userdata("username");
+            $id_kegiatan = $this->input->post('id_kegiatan');
+            $array=array(
+                'id_kegiatankategori'=> $this->input->post('kegiatankategori'),
+                'judul'=> $this->input->post('judul'),
+                'tanggal'=>tanggalawal($this->input->post('tanggal')),
+                'isi'=>$this->input->post('isi'),
+                'userinput'=>$username
+            );
+            $config['upload_path'] = './assets/images/kegiatan';
+            $config['allowed_types'] = 'jpg|jpeg|JPG|JPEG|PNG|png';
+            $this->load->library('upload', $config);
+            if ($this->upload->do_upload("foto"))
+            {
+                $upload = $this->upload->data();
+                $foto = $upload["raw_name"].$upload["file_ext"];
+                $array['foto']=$foto;
+
+                $query2 = $this->m_kegiatan->lihatdatasatu($id_kegiatan);
+                $row2 = $query2->row();
+                $berkas1temp = $row2->foto;
+                $path1 ='./assets/images/kegiatan/'.$berkas1temp.'';
+                if(is_file($path1)) {
+                    unlink($path1); //menghapus gambar di folder kegiatan
+                }
+               
+            }
+           
+            $exec = $this->m_kegiatan->editdata($id_kegiatan,$array);
+            if ($exec) redirect(base_url("administrator/kegiatanedit?id=".$id_kegiatan."&msg=1"));
+            else redirect(base_url("administrator/kegiatanedit?id=".$id_kegiatan."&msg=0"));
+
+        } else {
+            $id_kegiatan = $this->input->get("id");
+            $exec = $this->m_kegiatan->lihatdatasatu($id_kegiatan);
+            if ($exec->num_rows()>0){
+                $variabel['data'] = $exec ->row_array();
+                $this->layout->render('kegiatan/v_kegiatan_edit',$variabel,'kegiatan/v_kegiatan_edit_js');
+            } else {
+                redirect(base_url("administrator/kegiatan"));
             }
         }
       

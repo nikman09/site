@@ -45,7 +45,7 @@
 
 
 		<!-- Skin CSS -->
-		<link rel="stylesheet" href="<?php echo base_url() ?>assets/front-end/web2/css/skins/skin-corporate-10.css"> 
+		<link rel="stylesheet" href="<?php echo base_url() ?>assets/front-end/web2/css/skins/skin-corporate-13.css"> 
 
 		<!-- Theme Custom CSS -->
 		<link rel="stylesheet" href="<?php echo base_url() ?>assets/front-end/web2/css/custom.css">
@@ -62,6 +62,7 @@
 		
 		<header id="header" class="header-transparent header-effect-shrink" data-plugin-options="{'stickyEnabled': true, 'stickyEffect': 'shrink', 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': true, 'stickyChangeLogo': true, 'stickyStartAt': 30, 'stickyHeaderContainerHeight': 70}">
 				<div class="header-body border-top-0 bg-dark box-shadow-none">
+				
 					<div class="header-container container container-xl">
 						<div class="header-row">
 							<div class="header-column">
@@ -259,13 +260,13 @@
 			</header>
 			<div role="main" class="main">
 				
-				<div class="slider-container  rev_slider_wrapper curved-border" style="height: 650px;">
+				<div class="slider-container  rev_slider_wrapper " style="height: 650px;">
 					<div id="revolutionSlider" class="slider rev_slider" data-version="5.4.8" data-plugin-revolution-slider data-plugin-options="{'delay': 9000, 'gridwidth': 1170, 'gridheight': 650, 'disableProgressBar': 'on', 'responsiveLevels': [4096,1200,992,500], 'navigation' : {'arrows': { 'enable': true, 'style': 'arrows-style-1 arrows-big arrows-dark' }, 'bullets': {'enable': false, 'style': 'bullets-style-1 bullets-color-primary', 'h_align': 'center', 'v_align': 'bottom', 'space': 7, 'v_offset': 70, 'h_offset': 0}}}">
 						<ul>
 							
 							<li data-transition="fade">
 				
-								<img src="<?php echo base_url() ?>assets/front-end/web2/img/slides/tes13.jpg"  
+								<img src="<?php echo base_url() ?>assets/front-end/web2/img/slides/tes122.jpg"  
 									alt=""
 									data-bgposition="right center"
 									data-bgpositionend="center center"
@@ -308,7 +309,7 @@
 									data-paddingleft="['40','40','40','57']"
 									data-paddingright="['40','40','40','57']"
 									data-fontsize="['13','13','13','25']"
-									data-lineheight="['20','20','20','25']">PROFIL <i class="fas fa-arrow-right ml-1"></i></a>
+									data-lineheight="['20','20','20','25']">PROFIL</i></a>
 				
 							</li>
 							<li data-transition="fade">
@@ -364,7 +365,7 @@
 									data-fontsize="['50','50','50','90']"
 									data-lineheight="['55','55','55','95']"
 									data-letterspacing="-1"
-									style="color: #b5b5b5;">Berinvestasi Untuk Kemajuan Kalsel</h1>
+									style="color: #b5b5b5;">Kawasan Industri Kalimantan Selatan</h1>
 				
 								<div class="tp-caption font-weight-light text-color-light"
 									data-frames='[{"from":"opacity:0;","speed":300,"to":"o:1;","delay":2000,"split":"chars","splitdelay":0.05,"ease":"Power2.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
@@ -434,7 +435,7 @@
 							<div class="col-lg-6 text-center text-md-left mb-5 mb-lg-0"  data-appear-animation="fadeInRightShorter">
 							<h2 class="text-color-dark font-weight-normal text-6 mb-2"> <strong class="">Profil</strong> Dinas Perindustrian</h2>
 								<p class="lead">Tugas pokok Dinas Perindustrian Provinsi Kalimantan Selatan sesuai Pergub no 072 Tahun 2016 adalah melaksanakan urusan pemerintahan yang menjadi kewenangan daerah dan tugas pembantuan bidang perindustrian.</p>
-								<p class="pr-5 mr-5">Dinas Perindustrian Provinsi Kalimantan Selatan beralamat di Jl. Dharma Praja Komplek Perkantoran Provinsi Kalimantan Selatan, Banjarbaru. Dinas Perindustrian Provinsi Kalimantan Selatan memiliki 1 Unit Pelaksana Teknis (UPT), yaitu UPT Balai Diklat Industri Kayu & Logam yang beralamatkan di Amuntai & Nagara. <br/>
+								<p class="">Dinas Perindustrian Provinsi Kalimantan Selatan beralamat di Jl. Dharma Praja Komplek Perkantoran Provinsi Kalimantan Selatan, Banjarbaru. Dinas Perindustrian Provinsi Kalimantan Selatan memiliki 1 Unit Pelaksana Teknis (UPT), yaitu UPT Balai Diklat Industri Kayu & Logam yang beralamatkan di Amuntai & Nagara. <br/>
 
 </p>
 								<a href="#" class="btn btn-dark font-weight-semibold btn-px-4 btn-py-2 text-2">Stuktur Organisasi</a>
@@ -442,7 +443,7 @@
 							</div>
 							<div class="col-lg-6" data-appear-animation="fadeInLeftShorter" style="margin-top:30px" >
 							
-							<iframe width="535" height="300" src="https://www.youtube.com/embed/1p_UBv8igEE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+							<iframe width="100%" height="300" src="https://www.youtube.com/embed/1p_UBv8igEE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 							
 							</div>
 						</div>
@@ -896,35 +897,79 @@
 					</div>
 				</div>
 				
-				
+				<section class="section section-height-3 bg-light border border-bottom-0 m-0">
+					<div class="container">
+						<div class="row">
+							<div class="col">
+								<div class="owl-carousel owl-theme mb-0" data-plugin-options="{'responsive': {'0': {'items': 1}, '476': {'items': 1}, '768': {'items': 5}, '992': {'items': 7}, '1200': {'items': 7}}, 'autoplay': true, 'autoplayTimeout': 3000, 'dots': false}">
+									<div>
+										<img class="img-fluid opacity-2" src="<?php echo base_url() ?>assets/front-end/web2/img/logos/logo-1.png" alt="">
+									</div>
+									<div>
+										<img class="img-fluid opacity-2" src="<?php echo base_url() ?>assets/front-end/web2/img/logos/logo-2.png" alt="">
+									</div>
+									<div>
+										<img class="img-fluid opacity-2" src="<?php echo base_url() ?>assets/front-end/web2/img/logos/logo-3.png" alt="">
+									</div>
+									<div>
+										<img class="img-fluid opacity-2" src="<?php echo base_url() ?>assets/front-end/web2/img/logos/logo-4.png" alt="">
+									</div>
+									<div>
+										<img class="img-fluid opacity-2" src="<?php echo base_url() ?>assets/front-end/web2/img/logos/logo-5.png" alt="">
+									</div>
+									<div>
+										<img class="img-fluid opacity-2" src="<?php echo base_url() ?>assets/front-end/web2/img/logos/logo-6.png" alt="">
+									</div>
+									<div>
+										<img class="img-fluid opacity-2" src="<?php echo base_url() ?>assets/front-end/web2/img/logos/logo-4.png" alt="">
+									</div>
+									<div>
+										<img class="img-fluid opacity-2" src="<?php echo base_url() ?>assets/front-end/web2/img/logos/logo-2.png" alt="">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
 				
 				
 			</div>
 			
 			
 			
-			<footer id="footer" class="mt-0 curved-border curved-border-top" style="border-top:0;">
-				
-				<div class="container my-4 " style="padding:50px">
-					<div class="row py-5">
-						<div class="col-md-6 col-lg-3 mb-5 mb-lg-0">
-							<h5 class="text-5 text-transform-none font-weight-semibold text-color-light mb-4">Kontak Kami</h5>
-							<p class="text-4 mb-0">Jl. Dharma Praja Komplek Perkantoran Provinsi Kalimantan Selatan </p>
-							<p class="text-4 mb-0">Banjarbaru.</p>
-							<p class="text-4 mb-0"></p>
-						</div>
-						<div class="col-md-6 col-lg-3 mb-5 mb-lg-0">
-							<h5 class="text-5 text-transform-none font-weight-semibold text-color-light mb-4">Tautan Terkait</h5>
-						<a href="#">Kementerian Perindustrian Republik Indonesia</a> <br/>
-						<a href="#">Pemerintah Provinsi Kalimantan Selatan</a>
+			<footer id="footer">
+				<div class="container">
+					<div class="footer-ribbon">
+						<span>DISPERIN</span>
+					</div>
+					<div class="row py-5 my-4">
+						<div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
 							
+
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.4293027174585!2d114.82390741394637!3d-3.487558242969849!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2de686bc23e3a1bd%3A0x8c8a39bcb8ef553a!2sDinas%20Perindustrian%20Prov%20Kalsel!5e0!3m2!1sid!2sid!4v1570373343576!5m2!1sid!2sid" width="300" height="200" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+
+					</div>
+					<div class="col-md-6 col-lg-3 mb-4 mb-md-0">
+							<div class="contact-details">
+								<h5 class="text-3 mb-3">Kontak</h5>
+								<ul class="list list-icons list-icons-lg">
+									<li class="mb-1"><i class="far fa-dot-circle text-color-primary"></i><p class="m-0">Jl. Dharma Praja Komplek Perkantoran Provinsi Kalimantan Selatan
+
+Banjarbaru.</p></li>
+									<li class="mb-1"><i class="fab fa-whatsapp text-color-primary"></i><p class="m-0"><a href="tel:05115915906">(0511) 5915906</a></p></li>
+									<li class="mb-1"><i class="far fa-envelope text-color-primary"></i><p class="m-0"><a href="mailto:disperin.kalselprov@gmail.com">disperin.kalselprov@gmail.com</a></p></li>
+								</ul>
+							</div>
 						</div>
-						<div class="col-md-6 col-lg-3 mb-5 mb-lg-0">
-							<h5 class="text-5 text-transform-none font-weight-semibold text-color-light mb-4">Telepon/Fax</h5>
-							<p class="text-7 text-color-light font-weight-bold mb-2">(0511) 5915906</p>
+						<div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+						<h5 class="text-3 mb-3">Kontak</h5>
+						<a href="#">Kementerian Perindustrian RI</a> <br/>
+						<a href="#">Pemerintah Provinsi Kalimantan Selatan</a>
+						
 						</div>
-						<div class="col-md-6 col-lg-3">
-							<h5 class="text-5 text-transform-none font-weight-semibold text-color-light mb-4">Social Media</h5>
+					
+						<div class="col-md-6 col-lg-2">
+							<h5 class="text-3 mb-3">Sosial Media</h5>
 							<ul class="footer-social-icons social-icons m-0">
 								<li class="social-icons-facebook"><a href="http://www.facebook.com/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
 								<li class="social-icons-twitter"><a href="http://www.twitter.com/" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a></li>
@@ -934,18 +979,31 @@
 						</div>
 					</div>
 				</div>
-				<div class="container">
-					<div class="footer-copyright footer-copyright-style-2 pb-4">
-						<div class="py-2">
-							<div class="row py-4">
-								<div class="col d-flex align-items-center justify-content-center mb-4 mb-lg-0">
-									<p>© Copyright 2019. All Rights Reserved.</p>
-								</div>
+				<div class="footer-copyright">
+					<div class="container py-2">
+						<div class="row py-4">
+							<div class="col-lg-1 d-flex align-items-center justify-content-center justify-content-lg-start mb-2 mb-lg-0">
+								<!-- <a href="index.html" class="logo pr-0 pr-lg-3">
+									<img alt="Porto Website Template" src="img/logo-footer.png" class="opacity-5" height="33">
+								</a> -->
+							</div>
+							<div class="col-lg-7 d-flex align-items-center justify-content-center justify-content-lg-start mb-4 mb-lg-0">
+								<p>© Copyright 2019. All Rights Reserved.</p>
+							</div>
+							<div class="col-lg-4 d-flex align-items-center justify-content-center justify-content-lg-end">
+								<nav id="sub-menu">
+									<ul>
+										<li><i class="fas fa-angle-right"></i><a href="page-faq.html" class="ml-1 text-decoration-none"> FAQ's</a></li>
+										<li><i class="fas fa-angle-right"></i><a href="sitemap.html" class="ml-1 text-decoration-none"> Sitemap</a></li>
+										<li><i class="fas fa-angle-right"></i><a href="contact-us.html" class="ml-1 text-decoration-none"> Contact Us</a></li>
+									</ul>
+								</nav>
 							</div>
 						</div>
 					</div>
 				</div>
 			</footer>
+			
 		</div>
 
 		<!-- Vendor -->

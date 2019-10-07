@@ -38,38 +38,34 @@ $('#form').validate({ // initialize plugin
         },
 
         rules: {
-            judul: {
+            username: {
                 required: true
             },
-            tanggal: {
+            nama: {
                 required: true
             },
-            kegiatankategori: {
-                required: true
-            },
-            isi: {
-                required: true
+            email: {
+                email: true
             },
             bidang: {
-                required: true
-            }
+                required: true,
+            },
+           
         },
         messages: {
-            judul: {
-                required: "Judul tidak boleh kosong"
+            username: {
+                required: "Username tidak boleh kosong"
             },
-            tanggal: {
-                required: "Tanggal tidak boleh kosong"
+            nama: {
+                required: "Nama tidak boleh kosong"
             },
-            kegiatankategori: {
-                required: "Kategori tidak boleh kosong"
-            },
-            isi: {
-                required: "Isi tidak boleh kosong"
+            email: {
+                email: "Format Email Salah"
             },
             bidang: {
                 required: "Bidang tidak boleh kosong"
-            }
+            },
+           
         }
     });
 

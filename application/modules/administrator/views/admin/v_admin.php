@@ -32,7 +32,7 @@
 								<td  style='width:80px;'>
 								<div>
                                     <a href='".base_url("administrator/adminedit?id=".$row['username']."")."' class='btn btn-primary btn-xs' title='Edit/Lihat' id='".$row['username']."'><i class='fa fa-edit' id='".$row['username']."'  ></i></a>
-                                    <a href='#' class='btn btn-info btn-xs kunci' title='Password' data-toggle='modal' id='".$row['username']."' data-target='#myModal'><i class='fa fa-key' id='".$row['username']."'  ></i></a>]
+                                    <a href='#' class='btn btn-info btn-xs kunci' title='Password' data-toggle='modal' id='".$row['username']."' data-target='#myModal'><i class='fa fa-key' id='".$row['username']."'  ></i></a>
                                     
 									<a href='#' class='btn btn-danger btn-xs hapus' title='Hapus' id='".$row['username']."'><i class='fa fa-trash-o'></i></a>
 								</div>

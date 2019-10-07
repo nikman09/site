@@ -266,7 +266,7 @@
 							
 							<li data-transition="fade">
 				
-								<img src="<?php echo base_url() ?>assets/front-end/web2/img/slides/tes122.jpg"  
+								<img src="<?php echo base_url() ?>assets/front-end/web2/img/slides/tes13.jpg"  
 									alt=""
 									data-bgposition="right center"
 									data-bgpositionend="center center"
@@ -383,7 +383,19 @@
 					</div>
 				</div>
 				
+				<div class="home-intro" id="home-intro">
+					<div class="container">
 				
+						<div class="row align-items-center">
+							<div class="col text-center">
+								<p class="mb-0">
+								Industri Daerah Yang Berdaya Saing Dengan Berbasis Sumber Daya Lokal Berkontribusi Menuju <span class="highlighted-word highlighted-word-animation-1 text-color-primary font-weight-semibold text-5">KALSEL MAPAN.</span>
+								</p>
+							</div>
+						</div>
+				
+					</div>
+				</div>
 				
 				
 				
@@ -429,7 +441,7 @@
 						</div>
 					</div>
 				</section>
-				<section class="section bg-color-light section-height-3 border-0 m-0" style="padding-top: 20px;padding-bottom: 10px;">
+				<section class="section bg-color-grey-scale-1 section-height-3 border-0 m-0" style="padding-top: 20px;padding-bottom: 10px;">
 					<div class="container pb-2">
 						<div class="row">
 							<div class="col-lg-6 text-center text-md-left mb-5 mb-lg-0"  data-appear-animation="fadeInRightShorter">
@@ -512,12 +524,12 @@
 
 					</div>
 				</div>
-				<div class="container" >
+				<div class="container " >
 					<div class="row py-2 my-2">
 					
 						
 						
-						<div class="col-lg-12 appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="200">
+						<div class="col-lg-12 appear-animation " data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="200">
 								<div class="row">
 						<div class="col">
 						

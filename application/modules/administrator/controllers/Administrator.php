@@ -577,15 +577,15 @@ class Administrator extends CI_Controller {
 
  public function adminhapus()
  {
-     $id_admin = $this->input->get("id");
-     $query2 = $this->m_admin->lihatdatasatu($id_admin);
+     $username = $this->input->get("id");
+     $query2 = $this->m_admin->lihatdatasatu($username);
      $row2 = $query2->row();
      $berkas1temp = $row2->foto;
      $path1 ='./assets/images/admin/'.$berkas1temp.'';
      if(is_file($path1)) {
          unlink($path1);
      }
-     $exec = $this->m_admin->hapus($id_admin);
+     $exec = $this->m_admin->hapus($username);
      redirect(base_url()."administrator/admin?msg=2");
  }
 
@@ -593,48 +593,69 @@ class Administrator extends CI_Controller {
  {   
 
      $variabel['csrf'] = csrf();
-     $variabel['adminkategori'] = $this->m_adminkategori->lihatdata();
      $variabel['bidang'] = $this->m_bidang->lihatdata();
      if ($this->input->post()) {
-         $username = $this->session->userdata("username");
-         $id_admin = $this->input->post('id_admin');
-         $array=array(
-             'id_adminkategori'=> $this->input->post('adminkategori'),
-             'judul'=> $this->input->post('judul'),
-             'tanggal'=>tanggalawal($this->input->post('tanggal')),
-             'isi'=>$this->input->post('isi'),
-             'id_bidang'=>$this->input->post('bidang'),
-             'userinput'=>$username
-         );
-         $config['upload_path'] = './assets/images/admin';
-         $config['allowed_types'] = 'jpg|jpeg|JPG|JPEG|PNG|png';
-         $this->load->library('upload', $config);
-         if ($this->upload->do_upload("foto"))
-         {
-             $upload = $this->upload->data();
-             $foto = $upload["raw_name"].$upload["file_ext"];
-             $array['foto']=$foto;
-
-             $query2 = $this->m_admin->lihatdatasatu($id_admin);
-             $row2 = $query2->row();
-             $berkas1temp = $row2->foto;
-             $path1 ='./assets/images/admin/'.$berkas1temp.'';
-             if(is_file($path1)) {
-                 unlink($path1); //menghapus gambar di folder admin
-             }
-            
+        $username = $this->input->post('username');
+        $username2 = $this->input->post('username2');
+        if ( $username!= $username2) {
+            $is_unique =  '|is_unique[tb_administrator.username]';
+         } else {
+            $is_unique =  '';
          }
+         $this->form_validation->set_rules('username','Username','required|trim'. $is_unique.'');
+         if($this->form_validation->run() != false){
+          
+            $array=array(
+                'nama'=> $this->input->post('nama'),
+                'username'=> $this->input->post('username'),
+                'jk'=>$this->input->post('jk'),
+                'email'=>$this->input->post('email'),
+                'nohp'=>$this->input->post('nohp'),
+                'alamat'=>$this->input->post('alamat'),
+                'id_bidang'=>$this->input->post('bidang'),
+            );
+            $config['upload_path'] = './assets/images/admin';
+            $config['allowed_types'] = 'jpg|jpeg|JPG|JPEG|PNG|png';
+            $this->load->library('upload', $config);
+            if ($this->upload->do_upload("foto"))
+            {
+                $upload = $this->upload->data();
+                $foto = $upload["raw_name"].$upload["file_ext"];
+                $array['foto']=$foto;
+
+                $query2 = $this->m_admin->lihatdatasatu($username);
+                $row2 = $query2->row();
+                $berkas1temp = $row2->foto;
+                $path1 ='./assets/images/admin/'.$berkas1temp.'';
+                if(is_file($path1)) {
+                    unlink($path1); //menghapus gambar di folder admin
+                }
+                
+            }
+            
+            $exec = $this->m_admin->editdata($username,$array);
+            if ($exec) redirect(base_url("administrator/adminedit?id=".$username."&msg=1"));
+            else redirect(base_url("administrator/adminedit?id=".$username."&msg=0"));
+        } else  {
+            $username = $this->input->get("username");
+            $exec = $this->m_admin->lihatdatasatu($username);
+            $variabel['error'] = 0;
+            if ($exec->num_rows()>0){
+                $variabel['data'] = $exec ->row_array();
+                
+                $this->layout->renderadmin('admin/v_admin_edit',$variabel,'admin/v_padmin_edit_js');
+            } else {
+                redirect(base_url("administrator/admin"));
+            }
         
-         $exec = $this->m_admin->editdata($id_admin,$array);
-         if ($exec) redirect(base_url("administrator/adminedit?id=".$id_admin."&msg=1"));
-         else redirect(base_url("administrator/adminedit?id=".$id_admin."&msg=0"));
+    }   
 
      } else {
-         $id_admin = $this->input->get("id");
-         $exec = $this->m_admin->lihatdatasatu($id_admin);
+         $username = $this->input->get("id");
+         $exec = $this->m_admin->lihatdatasatu($username);
          if ($exec->num_rows()>0){
              $variabel['data'] = $exec ->row_array();
-             $this->layout->render('bidangadmin/admin/v_admin_edit',$variabel,'bidangadmin/admin/v_admin_edit_js');
+             $this->layout->render('admin/v_admin_edit',$variabel,'admin/v_admin_edit_js');
          } else {
              redirect(base_url("administrator/admin"));
          }

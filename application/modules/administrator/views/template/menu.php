@@ -11,7 +11,12 @@
 					<span class="title">Beranda </span>
 				</a>
 			</li>
-
+			<li  class="<?= ($submenu == "halaman" || $submenu == "halamanlihat"  || $submenu == "halamantambah" || $submenu == "halamanedit") ? "active root-level" : ""; ?> ">
+				<a href="<?php echo base_url() ?>administrator/halaman">
+					<i class="fa fa-file"></i>
+					<span class="title">Halaman </span>
+				</a>
+			</li>
 		
 
 			<li  class="<?= ($submenu == "berita" || $submenu == "beritalihat"  || $submenu == "beritatambah" || $submenu == "beritaedit" || $submenu == "beritakategori" || $submenu == "beritakategori" ) ? "opened active root-level" : ""; ?> has-sub">
@@ -56,6 +61,13 @@
 						</li>
 						
 					</ul>
+			</li>
+
+			<li  class="<?= ($submenu == "admin" || $submenu == "adminlihat"  || $submenu == "admintambah" || $submenu == "adminedit") ? "active root-level" : ""; ?> ">
+				<a href="<?php echo base_url() ?>administrator/admin">
+					<i class="fa fa-users"></i>
+					<span class="title">Admin </span>
+				</a>
 			</li>
 			
 		</ul>

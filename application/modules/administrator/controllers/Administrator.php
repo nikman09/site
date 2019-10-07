@@ -10,6 +10,8 @@ class Administrator extends CI_Controller {
         $this->load->model("m_bidang");
         $this->load->model("m_kegiatan");
         $this->load->model("m_kegiatankategori");
+        $this->load->model("m_halaman");
+        $this->load->model("m_admin");
     }
 
     // Dashboard
@@ -410,6 +412,242 @@ class Administrator extends CI_Controller {
             }
         }
       
+    }
+
+    public function halaman()
+    {   
+        $variabel['csrf'] = csrf();
+        $variabel['data'] = $this->m_halaman->lihatdata();
+        $this->layout->render('halaman/v_halaman',$variabel,'halaman/v_halaman_js');
+   
+    }
+   
+    public function halamantambah()
+    {   
+        $variabel['csrf'] = csrf();
+        if ($this->input->post()){
+            $username = $this->session->userdata("username");
+            $array=array(
+                'judul'=> $this->input->post('judul'),
+                'isi'=>$this->input->post('isi'),
+                'userinput'=>$username
+                );
+                $config['upload_path'] = './assets/images/halaman';
+                $config['allowed_types'] = 'jpg|jpeg|JPG|JPEG|PNG|png';
+                $this->load->library('upload', $config);
+                $this->upload->do_upload("foto");
+                $upload = $this->upload->data();
+                $file = $upload["raw_name"].$upload["file_ext"];
+                $array['foto']=$file;
+                $exec = $this->m_halaman->tambahdata($array);
+                if ($exec) redirect(base_url("administrator/halaman?msg=1"));
+                else redirect(base_url("administrator/halamantambah?msg=0"));
+        }
+        else {
+            $this->layout->render('halaman/v_halamantambah',$variabel,'halaman/v_halamantambah_js');
+        }
+       
+    }
+
+    public function halamanhapus()
+    {
+        $id_halaman = $this->input->get("id");
+        $query2 = $this->m_halaman->lihatdatasatu($id_halaman);
+        $row2 = $query2->row();
+        $berkas1temp = $row2->foto;
+        $path1 ='./assets/images/halaman/'.$berkas1temp.'';
+        if(is_file($path1)) {
+            unlink($path1);
+        }
+        $exec = $this->m_halaman->hapus($id_halaman);
+        redirect(base_url()."administrator/halaman?msg=2");
+    }
+
+    public function halamanedit()
+    {   
+
+        $variabel['csrf'] = csrf();
+        if ($this->input->post()) {
+            $username = $this->session->userdata("username");
+            $id_halaman = $this->input->post('id_halaman');
+            $array=array(
+                'judul'=> $this->input->post('judul'),
+                'isi'=>$this->input->post('isi'),
+                'userinput'=>$username
+            );
+            $config['upload_path'] = './assets/images/halaman';
+            $config['allowed_types'] = 'jpg|jpeg|JPG|JPEG|PNG|png';
+            $this->load->library('upload', $config);
+            if ($this->upload->do_upload("foto"))
+            {
+                $upload = $this->upload->data();
+                $foto = $upload["raw_name"].$upload["file_ext"];
+                $array['foto']=$foto;
+
+                $query2 = $this->m_halaman->lihatdatasatu($id_halaman);
+                $row2 = $query2->row();
+                $berkas1temp = $row2->foto;
+                $path1 ='./assets/images/halaman/'.$berkas1temp.'';
+                if(is_file($path1)) {
+                    unlink($path1); //menghapus gambar di folder halaman
+                }
+               
+            }
+            if ($this->input->post('hapusfoto')!=""){
+                $query2 = $this->m_halaman->lihatdatasatu($id_halaman);
+                $row2 = $query2->row();
+                $berkas1temp = $row2->foto;
+                $path1 ='./assets/images/halaman/'.$berkas1temp.'';
+                if(is_file($path1)) {
+                    unlink($path1); //menghapus gambar di folder halaman
+                }
+                $array['foto']="";
+            }
+           
+            $exec = $this->m_halaman->editdata($id_halaman,$array);
+            if ($exec) redirect(base_url("administrator/halamanedit?id=".$id_halaman."&msg=1"));
+            else redirect(base_url("administrator/halamanedit?id=".$id_halaman."&msg=0"));
+
+        } else {
+            $id_halaman = $this->input->get("id");
+            $exec = $this->m_halaman->lihatdatasatu($id_halaman);
+            if ($exec->num_rows()>0){
+                $variabel['data'] = $exec ->row_array();
+                $this->layout->render('halaman/v_halaman_edit',$variabel,'halaman/v_halaman_edit_js');
+            } else {
+                redirect(base_url("administrator/halaman"));
+            }
+        }
+      
+    }
+
+
+    
+ public function admin()
+ {   
+     $variabel['csrf'] = csrf();
+     $variabel['data'] = $this->m_admin->lihatdata();
+     $this->layout->render('admin/v_admin',$variabel,'admin/v_admin_js');
+
+ }
+
+ public function admintambah()
+    
+ {   
+     $variabel['csrf'] = csrf();
+     $variabel['bidang'] = $this->m_bidang->lihatdata();
+     if ($this->input->post()){
+         $username = $this->session->userdata("username");
+
+         $this->form_validation->set_rules('username','Username','required|trim|is_unique[tb_administrator.username]');
+         if($this->form_validation->run() != false){
+             $array=array(
+                 'nama'=> $this->input->post('nama'),
+                 'username'=> $this->input->post('username'),
+                 'jk'=>$this->input->post('jk'),
+                 'email'=>$this->input->post('email'),
+                 'nohp'=>$this->input->post('nohp'),
+                 'alamat'=>$this->input->post('alamat'),
+                 'password'=>md5($this->input->post('password')),
+                 'rule'=>"user",
+                 'status'=>"Aktif",
+                 'id_bidang'=>$this->input->post('bidang'),
+                 );
+                
+             $config['upload_path'] = './assets/images/admin';
+             $config['allowed_types'] = 'jpg|jpeg|JPG|JPEG|PNG|png';
+             $this->load->library('upload', $config);
+             $this->upload->do_upload("foto");
+             $upload = $this->upload->data();
+             $file = $upload["raw_name"].$upload["file_ext"];
+             $array['foto']=$file;
+             $exec = $this->m_admin->tambahdata($array);
+                if ($exec) redirect(base_url("administrator/admin?msg=1"));
+                else redirect(base_url("administrator/admintambah?msg=0"));
+         }else{
+            $this->layout->render('admin/v_admintambah',$variabel,'admin/v_admintambah_js');
+          }
+
+     }
+     else {
+         $this->layout->render('admin/v_admintambah',$variabel,'admin/v_admintambah_js');
+     }
+    
+ }
+
+ public function adminhapus()
+ {
+     $id_admin = $this->input->get("id");
+     $query2 = $this->m_admin->lihatdatasatu($id_admin);
+     $row2 = $query2->row();
+     $berkas1temp = $row2->foto;
+     $path1 ='./assets/images/admin/'.$berkas1temp.'';
+     if(is_file($path1)) {
+         unlink($path1);
+     }
+     $exec = $this->m_admin->hapus($id_admin);
+     redirect(base_url()."administrator/admin?msg=2");
+ }
+
+ public function adminedit()
+ {   
+
+     $variabel['csrf'] = csrf();
+     $variabel['adminkategori'] = $this->m_adminkategori->lihatdata();
+     $variabel['bidang'] = $this->m_bidang->lihatdata();
+     if ($this->input->post()) {
+         $username = $this->session->userdata("username");
+         $id_admin = $this->input->post('id_admin');
+         $array=array(
+             'id_adminkategori'=> $this->input->post('adminkategori'),
+             'judul'=> $this->input->post('judul'),
+             'tanggal'=>tanggalawal($this->input->post('tanggal')),
+             'isi'=>$this->input->post('isi'),
+             'id_bidang'=>$this->input->post('bidang'),
+             'userinput'=>$username
+         );
+         $config['upload_path'] = './assets/images/admin';
+         $config['allowed_types'] = 'jpg|jpeg|JPG|JPEG|PNG|png';
+         $this->load->library('upload', $config);
+         if ($this->upload->do_upload("foto"))
+         {
+             $upload = $this->upload->data();
+             $foto = $upload["raw_name"].$upload["file_ext"];
+             $array['foto']=$foto;
+
+             $query2 = $this->m_admin->lihatdatasatu($id_admin);
+             $row2 = $query2->row();
+             $berkas1temp = $row2->foto;
+             $path1 ='./assets/images/admin/'.$berkas1temp.'';
+             if(is_file($path1)) {
+                 unlink($path1); //menghapus gambar di folder admin
+             }
+            
+         }
+        
+         $exec = $this->m_admin->editdata($id_admin,$array);
+         if ($exec) redirect(base_url("administrator/adminedit?id=".$id_admin."&msg=1"));
+         else redirect(base_url("administrator/adminedit?id=".$id_admin."&msg=0"));
+
+     } else {
+         $id_admin = $this->input->get("id");
+         $exec = $this->m_admin->lihatdatasatu($id_admin);
+         if ($exec->num_rows()>0){
+             $variabel['data'] = $exec ->row_array();
+             $this->layout->render('bidangadmin/admin/v_admin_edit',$variabel,'bidangadmin/admin/v_admin_edit_js');
+         } else {
+             redirect(base_url("administrator/admin"));
+         }
+     }
+   
+ }
+
+ function gantipassword()
+    {
+        $username = $this->input->post("username");
+        $variabel['csrf'] = csrf();
+        $variabel['data'] = $this->m_admin->lihatdatasatu($username)->row_array();
+        $this->load->view("admin/v_password",$variabel);
     }
 
 	

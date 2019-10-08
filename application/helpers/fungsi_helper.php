@@ -130,6 +130,18 @@
 		}
 	}
 
+	if (!function_exists('cekloginadmin'))
+	{
+		function cekloginadmin()
+		{	
+			$ci = &get_instance();
+			$menu = $ci->router->fetch_class();
+			$submenu = $ci->router->fetch_method();
+			if($ci->session->userdata('admin_statuslogin') != "login") {
+				redirect(base_url("kepegawaian/login/administrator?m=".$submenu.""));
+			}
+		}
+	}
 	if (!function_exists('cekloginuser'))
 	{
 		function cekloginuser()

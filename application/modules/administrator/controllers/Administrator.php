@@ -311,7 +311,6 @@ class Administrator extends CI_Controller {
         $variabel['csrf'] = csrf();
         $variabel['data'] = $this->m_kegiatan->lihatdata();
         $this->layout->render('bidangkegiatan/kegiatan/v_kegiatan',$variabel,'bidangkegiatan/kegiatan/v_kegiatan_js');
-   
     }
    
     public function kegiatantambah()

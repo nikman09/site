@@ -58,7 +58,7 @@
 
 
 		<!-- Skin CSS -->
-		<link rel="stylesheet" href="<?php echo base_url() ?>assets/front-end/web2/css/skins/default.css"> 
+		<link rel="stylesheet" href="<?php echo base_url() ?>assets/front-end/web2/css/skins/skin-law-firm.css"> 
 
 		<!-- Theme Custom CSS -->
 		<link rel="stylesheet" href="<?php echo base_url() ?>assets/front-end/web2/css/custom.css">
@@ -330,9 +330,72 @@
 					</div>
 				</section>
 				
-			
+				<!-- <div class="container" >
+					<div class="row py-2 my-2">
+					
+						
 
-				<div class="container container-md">
+					<div class="col-lg-8 appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="200">
+
+<hr class="d-lg-none tall" />
+
+<div class="toggle toggle-primary" data-plugin-toggle data-plugin-options="{ 'isAccordion': false }">
+	<section class="toggle">
+		<label>Tugas</label>
+		<div class="toggle-content">
+		<p style="text-align:justify">Dinas Perindustrian mempunyai tugas melaksanakan urusan Pemerintahan Daerah dibidang Perindustrian sesuai dengan azas desentralisasi, dekonsentralisasi dan tugas pembantuan, sebagai berikut : &ldquo;Merumuskan dan menetapkan kebijakan teknis dibidang Perindustrian sesuai dengan kebijakan yang ditetapkanoleh Gubernur Kalimantan Selatan&ldquo;antara lain :</p>
+										<ul>
+	<li style="text-align:justify">Merumuskan dan menetapkan kebijakan teknis di bidang perindustrian sesuai dengan kebijakan yang ditetapkan Gubernur;</li>
+	<li style="text-align:justify">Menyelenggarakan urusan pemerintahan dan pelayanan umum di bidangperindustrian;</li>
+	<li style="text-align:justify">Merumuskan dan menetapkan kebijakan operasional, membina, mengatur, memberikan pelayanan informasi perizinan, fasilitasi dan mengkoordinasikan pelaksanaan kegiatan pembinaan dan pengembangan Industri Logam, Mesin, Elektronika, dan Alat Transportasi;</li>
+	<li style="text-align:justify">Merumuskan dan menetapkan kebijakan operasional, membina, mengatur,memberikan pelayanan informasi perizinan, fasilitasi dan mengkoordinasikan pelaksanaan kegiatan pembinaan dan pengembangan Industri Agro;</li>
+	<li style="text-align:justify">Merumuskan dan menetapkan kebijakan operasional, membina, mengatur,memberikan pelayanan informasi perizinan, fasilitasi dan mengkoordinasikan pelaksanaan kegiatan pembinaan dan pengembangan Industri Kimia, Tekstil, dan Aneka;</li>
+	<li style="text-align:justify">Membina, mengawasi dan mengendalikan kegiatan unit pelaksana teknis;</li>
+	<li style="text-align:justify">Mengelola kegiatan kesekretariatan; dan</li>
+	<li style="text-align:justify">Melaksanakan tugas-tugas lain yang diberikan oleh Gubernur sesuai dengan bidang tugas dan tanggung jawabnya</li>
+</ul>
+			</div>
+	</section>
+	<section class="toggle active">
+		<label>Fungsi</label>
+		<div class="toggle-content">
+		<p>Untuk melaksanakan tugas sebagaimana dimaksud Dinas Perindustrian mempunyai fungsi :</p>
+
+<ul>
+	<li>Perumusan kebijakan teknis dibidang Perindustrian sesuai dengan kebijakan yang ditetapkan oleh Gubernur berdasarkan peraturan perundang-undangan yang berlaku;</li>
+	<li>Penyelenggaraan urusan pemerintahan dan pelayanan umum dibidang Perindustrian;</li>
+	<li>Perumusan kebijakan operasional, pembinaan, pengaturan dan fasilitasi pengembangan Industri Logam, Mesin, Elektronika, dan Alat Transportasi;</li>
+	<li>Perumusan kebijakan operasional, pembinaan, pengaturan dan fasilitasi pengembangan Industri Agro;</li>
+	<li>Perumusan kebijakan operasional, pembinaan, pengaturan dan fasilitasi pengembangan Industri Kimia, Tekstil dan Aneka;</li>
+	<li>Pembinaan, pengawasan,dan pengendalian unit pelaksana teknis; dan.</li>
+	<li>Pengelolaan kegiatan kesekretariatan</li>
+</ul>
+				</div>
+	</section>
+	
+</div>
+</div>
+
+					<div class="col-md-4 order-1 order-md-2 text-center text-md-left mb-5 mb-md-0 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="200">
+							
+							<p class="lead" style="margin-top:8px"><b>Visi</b>
+							<br/>Industri Daerah Yang Berdaya Saing Dengan Berbasis Sumber Daya Lokal Berkontribusi Menuju KALSEL MAPAN..</p>
+							<p class="lead" style="margin-bottom:1px"><b>Misi</b></p>
+							<ul type="square">
+								<li>Mengembangkan industri kecil dan menengah</li>
+								<li>Menumbuhkan dan mengembangkan sentra-sentra industri baru dan sentra industri terpadu</li>
+								<li>Meningkatkan daya saing industri melalui penguatan teknologi dan inovasi</li>
+								<li>Mempercepat pertumbuhan industri melalui pembangunan kawasan industri</li>
+							</ul>
+							
+						</div>
+
+					</div>
+				</div> -->
+
+
+
+				<div class="container container-lg">
 					<div class="row py-5">
 						<div class="col-md-6 col-lg-4">
 
@@ -534,13 +597,16 @@
 				</div>
 
 
-				<div class="container ">
-					<div class="row " >
+				<div class="container " style="">
+					<div class="row py-2 my-2">
 					
 						
 						
 						<div class="col-lg-12 appear-animation " data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="200">
+								<div class="row">
 						
+					</div>
+
 					<div class="row">
 						<div class="col-lg-6">
 						<h3 class="font-weight-bold text-3 mb-0 mt-4 mt-md-0" style="padding-bottom:10px">Agenda</h3>
@@ -756,65 +822,56 @@
 							</div>
 						</div>
 						<div class="col-lg-6">
-							<h4 class="font-weight-normal ">Bidang <strong class="font-weight-extra-bold">Dinas Perindustrian</strong></h4>
-							<div class="row">
-								<div class="col-sm-6">
-									<div class="feature-box feature-box-style-2">
-										<div class="feature-box-icon">
-											<i class="icons icon-support text-color-primary"></i>
-										</div>
-										<div class="feature-box-info">
-											<h4 class="font-weight-bold text-4 mb-0">Sekretariat</h4>
-											<p class="mb-4">Sistem Informasi Industri Kalsel</p>
-										</div>
-									</div>
-									
-									<div class="feature-box feature-box-style-2">
-										<div class="feature-box-icon">
-											<i class="icons icon-user text-color-primary"></i>
-										</div>
-										<div class="feature-box-info">
-											<h4 class="font-weight-bold text-4 mb-0">ILMEAT</h4>
-											<p class="mb-4">Sistem Informasi Data Pegawai Dinas Perindustrian</p>
-										</div>
-										
-									</div>
-									<div class="feature-box feature-box-style-2">
-										<div class="feature-box-icon">
-											<i class="icons icon-user text-color-primary"></i>
-										</div>
-										<div class="feature-box-info">
-											<h4 class="font-weight-bold text-4 mb-0">ILMEAT</h4>
-											<p class="mb-4">Sistem Informasi Data Pegawai Dinas Perindustrian</p>
-										</div>
-										
-									</div>
+
+<h3 class="font-weight-bold text-3 mb-0 mt-4 mt-md-0" style="padding-bottom:10px" >Banner</h3>
+<div class="owl-carousel owl-theme" data-plugin-options="{'items': 1, 'margin': 10, 'loop': true, 'nav': false, 'dots': false, 'autoplay': true, 'autoplayTimeout': 5000}">
+<div>
+									<a href="blog-post.html">
+										<article>
+											<div class="thumb-info thumb-info-no-borders thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-bottom-info-show-more thumb-info-no-zoom border-radius-0">
+												<div class="thumb-info-wrapper thumb-info-wrapper-opacity-3">
+													<img src="<?php echo base_url() ?>assets/front-end/web2/Bahan/gambar.jpeg" class="img-fluid" alt="Main Reasons To Stop Texting And Driving" style="height:200px">
+													<div class="thumb-info-title bg-transparent p-4">
+													
+														<div class="thumb-info-inner mt-1">
+															<h2 class="text-color-light line-height-2 text-4 font-weight-bold mb-0">Pekan Kerja Nyata</h2>
+														</div>
+														<div class="thumb-info-show-more-content">
+															<p class="mb-0 text-1 line-height-9 mb-1 mt-2 text-light opacity-5">Lorem ipsum dolor sit amet, consectetur adip...</p>
+														</div>
+													</div>
+												</div>
+											</div>
+										</article>
+									</a>
 								</div>
-								<div class="col-sm-6">
-									<div class="feature-box feature-box-style-2">
-										<div class="feature-box-icon">
-											<i class="icons icon-layers text-color-primary"></i>
-										</div>
-										<div class="feature-box-info">
-											<h4 class="font-weight-bold text-4 mb-0">Klinik IKM</h4>
-											<p class="mb-4">Website Klinik IKM</p>
-										</div>
-									</div>
-									<div class="feature-box feature-box-style-2">
-										<div class="feature-box-icon">
-											<i class="icons icon-user text-color-primary"></i>
-										</div>
-										<div class="feature-box-info">
-											<h4 class="font-weight-bold text-4 mb-0">Icons</h4>
-											<p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa</p>
-										</div>
-									</div>
-									<div class="feature-box feature-box-style-2">
-									
+								<div>
+									<a href="blog-post.html">
+										<article>
+											<div class="thumb-info thumb-info-no-borders thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-bottom-info-show-more thumb-info-no-zoom border-radius-0">
+												<div class="thumb-info-wrapper thumb-info-wrapper-opacity-3">
+													<img src="<?php echo base_url() ?>assets/front-end/web2/Bahan/gambar2.jpeg" class="img-fluid" alt="Main Reasons To Stop Texting And Driving" style="height:200px">
+													<div class="thumb-info-title bg-transparent p-4">
+													
+														<div class="thumb-info-inner mt-1">
+															<h2 class="text-color-light line-height-2 text-4 font-weight-bold mb-0">Rekor Muri Karate</h2>
+														</div>
+														<div class="thumb-info-show-more-content">
+															<p class="mb-0 text-1 line-height-9 mb-1 mt-2 text-light opacity-5">Lorem ipsum dolor sit amet, consectetur adip...</p>
+														</div>
+													</div>
+												</div>
+											</div>
+										</article>
+									</a>
 								</div>
-							</div>
-						</div>
-						
+	
+
+</div>
+
+
+
+</div>
 						
 					</div>
 
@@ -827,10 +884,121 @@
 				</div> 
 
 
-				<div class="container" style="margin-bottom:20px">
+
+
+<!-- 
+				<section class="section section-height-3 bg-primary border-0 m-0 appear-animation" data-appear-animation="fadeIn" >
+					<div class="container">
+						<div class="row">
+							<div class="col appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200">
+								<h2 class="font-weight-bold text-color-light text-6 mb-4">Kegiatan</h2>
+							</div>
+						</div>
+						<div class="row recent-posts appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200">
+							<div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+								<article>
+									<div class="row">
+										<div class="col">
+											<a href="blog-post.html" class="text-decoration-none">
+												<img src="<?php echo base_url() ?>assets/front-end/web2/img/blog/blog-corporate-3-1.jpg" class="img-fluid hover-effect-2 mb-3" alt="" />
+											</a>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-auto pr-0">
+											<div class="date">
+												<span class="day bg-color-light text-color-dark font-weight-extra-bold">15</span>
+												<span class="month bg-color-light font-weight-semibold text-color-primary text-1">JAN</span>
+											</div>
+										</div>
+										<div class="col pl-1">
+											<h4 class="line-height-3 text-4"><a href="blog-post.html" class="text-light">Lorem ipsum dolor sit amet, consectetur</a></h4>
+											<p class="text-color-light line-height-5 opacity-6 pr-4 mb-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+											<a href="/" class="read-more text-color-light font-weight-semibold text-2">read more <i class="fas fa-chevron-right text-1 ml-1"></i></a>
+										</div>
+									</div>
+								</article>
+							</div>
+							<div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+								<article>
+									<div class="row">
+										<div class="col">
+											<a href="blog-post.html" class="text-decoration-none">
+												<img src="<?php echo base_url() ?>assets/front-end/web2/img/blog/blog-corporate-3-2.jpg" class="img-fluid hover-effect-2 mb-3" alt="" />
+											</a>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-auto pr-0">
+											<div class="date">
+												<span class="day bg-color-light text-color-dark font-weight-extra-bold">14</span>
+												<span class="month bg-color-light font-weight-semibold text-color-primary text-1">JAN</span>
+											</div>
+										</div>
+										<div class="col pl-1">
+											<h4 class="line-height-3 text-4"><a href="blog-post.html" class="text-light">Lorem ipsum dolor sit amet, consectetur</a></h4>
+											<p class="text-color-light line-height-5 opacity-6 pr-4 mb-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+											<a href="/" class="read-more text-color-light font-weight-semibold text-2">read more <i class="fas fa-chevron-right text-1 ml-1"></i></a>
+										</div>
+									</div>
+								</article>
+							</div>
+							<div class="col-md-6 col-lg-3 mb-4 mb-md-0">
+								<article>
+									<div class="row">
+										<div class="col">
+											<a href="blog-post.html" class="text-decoration-none">
+												<img src="<?php echo base_url() ?>assets/front-end/web2/img/blog/blog-corporate-3-3.jpg" class="img-fluid hover-effect-2 mb-3" alt="" />
+											</a>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-auto pr-0">
+											<div class="date">
+												<span class="day bg-color-light text-color-dark font-weight-extra-bold">13</span>
+												<span class="month bg-color-light font-weight-semibold text-color-primary text-1">JAN</span>
+											</div>
+										</div>
+										<div class="col pl-1">
+											<h4 class="line-height-3 text-4"><a href="blog-post.html" class="text-light">Lorem ipsum dolor sit amet, consectetur</a></h4>
+											<p class="text-color-light line-height-5 opacity-6 pr-4 mb-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+											<a href="/" class="read-more text-color-light font-weight-semibold text-2">read more <i class="fas fa-chevron-right text-1 ml-1"></i></a>
+										</div>
+									</div>
+								</article>
+							</div>
+							<div class="col-md-6 col-lg-3">
+								<article>
+									<div class="row">
+										<div class="col">
+											<a href="blog-post.html" class="text-decoration-none">
+												<img src="<?php echo base_url() ?>assets/front-end/web2/img/blog/blog-corporate-3-4.jpg" class="img-fluid hover-effect-2 mb-3" alt="" />
+											</a>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-auto pr-0">
+											<div class="date">
+												<span class="day bg-color-light text-color-dark font-weight-extra-bold">12</span>
+												<span class="month bg-color-light font-weight-semibold text-color-primary text-1">JAN</span>
+											</div>
+										</div>
+										<div class="col pl-1">
+											<h4 class="line-height-3 text-4"><a href="blog-post.html" class="text-light">Lorem ipsum dolor sit amet, consectetur</a></h4>
+											<p class="text-color-light line-height-5 opacity-6 pr-4 mb-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+											<a href="/" class="read-more text-color-light font-weight-semibold text-2">read more <i class="fas fa-chevron-right text-1 ml-1"></i></a>
+										</div>
+									</div>
+								</article>
+							</div>
+						</div>
+					</div>
+				</section> -->
+				
+				<div class="container">
 					<div class="row">
 						<div class="col-lg-12 text-center appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="400">
-							<h2 class="font-weight-normal text-6">Kegiatan <strong class="font-weight-extra-bold"></strong></h2>
+							<h2 class="font-weight-normal text-6 mt-3 mb-5">Kegiatan <strong class="font-weight-extra-bold">Bidang</strong></h2>
 						</div>
 					</div>
 					<div class="row recent-posts pb-4 mb-5 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="200" style="

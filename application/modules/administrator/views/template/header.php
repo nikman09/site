@@ -10,7 +10,7 @@
 	<meta name="description" content="SIDAWAIPRIN" />
 	<meta name="author" content="" />
 
-	<!-- <link rel="apple-touch-icon" sizes="57x57" href="<?php echo base_url() ?>assets/images/favicon/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="57x57" href="<?php echo base_url() ?>assets/images/favicon/apple-icon-57x57.png">
 	<link rel="apple-touch-icon" sizes="60x60" href="<?php echo base_url() ?>assets/images/favicon/apple-icon-60x60.png">
 	<link rel="apple-touch-icon" sizes="72x72" href="<?php echo base_url() ?>assets/images/favicon/apple-icon-72x72.png">
 	<link rel="apple-touch-icon" sizes="76x76" href="<?php echo base_url() ?>assets/images/favicon/apple-icon-76x76.png">
@@ -26,7 +26,7 @@
 	<link rel="manifest" href="<?php echo base_url() ?>assets/images/favicon/manifest.json">
 	<meta name="msapplication-TileColor" content="#ffffff">
 	<meta name="msapplication-TileImage" content="<?php echo base_url() ?>assets/images/favicon/ms-icon-144x144.png">
-	<meta name="theme-color" content="#ffffff"> -->
+	<meta name="theme-color" content="#ffffff">
 
 	<title>Dinas Perindustrian</title>
 	<link rel="stylesheet" href="<?php echo base_url() ?>assets/back-end/js/jquery-ui/css/no-theme/jquery-ui-1.10.3.custom.min.css">

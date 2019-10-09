@@ -46,6 +46,17 @@ class Administrator extends CI_Controller {
                 $this->load->library('upload', $config);
                 $this->upload->do_upload("foto");
                 $upload = $this->upload->data();
+
+                $config['image_library'] = 'gd2';
+                $config['source_image'] = './assets/images/berita/'.$upload["raw_name"].$upload["file_ext"];
+                $config['create_thumb'] = TRUE;
+                $config['maintain_ratio'] = TRUE;
+                $config['width']         = 75;
+                $config['height']       = 50;
+                $config['new_image'] = './assets/images/berita/thumb/'.$upload["raw_name"].$upload["file_ext"];
+                $this->load->library('image_lib', $config);
+                $this->image_lib->resize();
+
                 $file = $upload["raw_name"].$upload["file_ext"];
                 $array['foto']=$file;
                 $exec = $this->m_berita->tambahdata($array);

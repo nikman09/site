@@ -124,7 +124,7 @@
 														
 														
 														<li class="dropdown">
-															<a class="dropdown-item dropdown-toggle" href="#">
+															<a class="dropdown-item dropdown-toggle" href="<?php echo base_url() ?>web/berita">
 																Berita
 															</a>
 														</li>

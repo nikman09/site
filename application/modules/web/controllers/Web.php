@@ -16,7 +16,8 @@ class Web extends CI_Controller {
     {   
 
         
-
+        $variabel['beritaterkini'] = $this->m_berita->lihatdata2(3, 0);           
+ 
         $variabel['berita'] = $this->m_berita->lihatdatalimit();
         
         $this->load->view('home/v_home',$variabel);
@@ -56,7 +57,7 @@ class Web extends CI_Controller {
         $config["num_links"] = 3;
  
         // Membuat Style pagination untuk BootStrap v4
-         $config['first_link']       = '<i class="fas fa-angle-double-left"></i>';
+        $config['first_link']       = '<i class="fas fa-angle-double-left"></i>';
         $config['last_link']        = '<i class="fas fa-angle-double-right"></i>';
         $config['next_link']        = '<i class="fas fa-angle-right"></i>';
         $config['prev_link']        = '<i class="fas fa-angle-left"></i>';

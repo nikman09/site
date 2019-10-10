@@ -156,15 +156,17 @@
 									data-frames='[{"delay":1000,"speed":2000,"frame":"0","from":"sX:1.5;opacity:0;fb:20px;","to":"o:1;fb:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
 									data-x="center"
 									data-y="center" data-voffset="['-50','-50','-50','-75']"
-									data-fontsize="['50','50','50','90']"
-									data-lineheight="['55','55','55','95']">Dinas Perindustrian</div>
+									data-paddingtop="['15','15','15','100']"
+									data-fontsize="['50','50','50','70']"
+									data-lineheight="['55','55','55','55']">Dinas Perindustrian</div>
 				
 								<div class="tp-caption font-weight-light" style="color:#fff"
 									data-frames='[{"from":"opacity:0;","speed":300,"to":"o:1;","delay":2000,"split":"chars","splitdelay":0.05,"ease":"Power2.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
 									data-x="center"
 									data-y="center" 
-									data-fontsize="['18','18','18','50']"
-									data-lineheight="['20','20','20','55']"
+									data-fontsize="['18','18','18','30']"
+									data-paddingtop="['15','15','15','100']"
+									data-lineheight="['20','20','20','20']"
 									style="color: #b5b5b5;">Provinsi Kalimantan Selatan.</div>
 				
 								<a class="tp-caption btn  btn-outline btn-rounded btn-primary  btn-with-arrow font-weight-bold"
@@ -172,8 +174,8 @@
 									data-frames='[{"delay":3000,"speed":2000,"frame":"0","from":"y:50%;opacity:0;","to":"y:0;o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
 									data-x="center" data-hoffset="0"
 									data-y="center" data-voffset="70"
-									data-paddingtop="['15','15','15','30']"
-									data-paddingbottom="['15','15','15','30']"
+									data-paddingtop="['15','15','15','20']"
+									data-paddingbottom="['15','15','15','15']"
 									data-paddingleft="['40','40','40','57']"
 									data-paddingright="['40','40','40','57']"
 									data-fontsize="['13','13','13','25']"
@@ -212,7 +214,7 @@
 									data-start="700"
 									data-fontsize="['22','22','22','40']"
 									data-lineheight="['25','25','25','45']"
-									data-transform_in="y:[-50%];opacity:0;s:500;" style="color: #b5b5b5;">Kawasan Industri</div>
+									data-transform_in="y:[-50%];opacity:0;s:500;" style="color: #b5b5b5;">Kalimantan Selatan</div>
 				
 								<div class="tp-caption d-none d-md-block"
 									data-frames='[{"delay":3800,"speed":500,"frame":"0","from":"opacity:0;x:10%;","to":"opacity:1;x:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
@@ -233,13 +235,13 @@
 									data-fontsize="['50','50','50','90']"
 									data-lineheight="['55','55','55','95']"
 									data-letterspacing="-1"
-									style="color: #b5b5b5;">Kawasan Industri Kalimantan Selatan</h1>
+									style="color: #b5b5b5;">Kawasan Industri</h1>
 				
 								<div class="tp-caption font-weight-light text-color-light"
 									data-frames='[{"from":"opacity:0;","speed":300,"to":"o:1;","delay":2000,"split":"chars","splitdelay":0.05,"ease":"Power2.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
 									data-x="['left','left','center','center']" data-hoffset="['166','166','0','0']"
 									data-y="center" data-voffset="['40','40','40','80']"
-									data-fontsize="['18','18','18','50']"
+									data-fontsize="['18','18','18','20']"
 									data-lineheight="['20','20','20','55']"
 									style="color: #b5b5b5;">Kawasan Industri Batulicin dan Kawasan Industri Jorong</div>
 								
@@ -251,7 +253,7 @@
 					</div>
 				</div>
 				
-				<div class="home-intro" id="home-intro" style="margin-bottom:10px">
+				<div class="home-intro" id="home-intro" style="margin-bottom:0px">
 					<div class="container">
 				
 						<div class="row align-items-center">
@@ -269,6 +271,28 @@
 				
 				
 				
+				
+				
+				<section class="section bg-color-grey-scale-1 section-height-3 border-0 m-0" style="padding-top: 20px;padding-bottom: 10px;">
+					<div class="container pb-2">
+						<div class="row">
+							<div class="col-lg-6 text-center text-md-left mb-5 mb-lg-0"  data-appear-animation="fadeInRightShorter">
+							<h2 class="text-color-dark font-weight-normal text-6 mb-2"> <strong class="">Profil</strong> Dinas Perindustrian</h2>
+								<p class="lead">Tugas pokok Dinas Perindustrian Provinsi Kalimantan Selatan sesuai Pergub no 072 Tahun 2016 adalah melaksanakan urusan pemerintahan yang menjadi kewenangan daerah dan tugas pembantuan bidang perindustrian.</p>
+								<p class="">Dinas Perindustrian Provinsi Kalimantan Selatan beralamat di Jl. Dharma Praja Komplek Perkantoran Provinsi Kalimantan Selatan, Banjarbaru. Dinas Perindustrian Provinsi Kalimantan Selatan memiliki 1 Unit Pelaksana Teknis (UPT), yaitu UPT Balai Diklat Industri Kayu & Logam yang beralamatkan di Amuntai & Nagara. <br/>
+
+</p>
+								<a href="#" class="btn btn-dark font-weight-semibold btn-px-4 btn-py-2 text-2">Tugas dan Fungsi</a>
+								
+							</div>
+							<div class="col-lg-6" data-appear-animation="fadeInLeftShorter" style="margin-top:30px" >
+							
+							<iframe width="100%" height="300" src="https://www.youtube.com/embed/1p_UBv8igEE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+							
+							</div>
+						</div>
+					</div>
+				</section>
 				
 				<section class="section bg-color-light border-0 m-0" style="padding-top:10px;padding-bottom:10px;">
 					<div class="container">
@@ -309,32 +333,10 @@
 						</div>
 					</div>
 				</section>
-				<section class="section bg-color-grey-scale-1 section-height-3 border-0 m-0" style="padding-top: 20px;padding-bottom: 10px;">
-					<div class="container pb-2">
-						<div class="row">
-							<div class="col-lg-6 text-center text-md-left mb-5 mb-lg-0"  data-appear-animation="fadeInRightShorter">
-							<h2 class="text-color-dark font-weight-normal text-6 mb-2"> <strong class="">Profil</strong> Dinas Perindustrian</h2>
-								<p class="lead">Tugas pokok Dinas Perindustrian Provinsi Kalimantan Selatan sesuai Pergub no 072 Tahun 2016 adalah melaksanakan urusan pemerintahan yang menjadi kewenangan daerah dan tugas pembantuan bidang perindustrian.</p>
-								<p class="">Dinas Perindustrian Provinsi Kalimantan Selatan beralamat di Jl. Dharma Praja Komplek Perkantoran Provinsi Kalimantan Selatan, Banjarbaru. Dinas Perindustrian Provinsi Kalimantan Selatan memiliki 1 Unit Pelaksana Teknis (UPT), yaitu UPT Balai Diklat Industri Kayu & Logam yang beralamatkan di Amuntai & Nagara. <br/>
-
-</p>
-								<a href="#" class="btn btn-dark font-weight-semibold btn-px-4 btn-py-2 text-2">Tugas dan Fungsi</a>
-								
-							</div>
-							<div class="col-lg-6" data-appear-animation="fadeInLeftShorter" style="margin-top:30px" >
-							
-							<iframe width="100%" height="300" src="https://www.youtube.com/embed/1p_UBv8igEE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-							
-							</div>
-						</div>
-					</div>
-				</section>
-				
-			
 
 				<div class="container container-md">
-					<div class="row py-5">
-						<div class="col-md-6 col-lg-4">
+					<div class="row py-2">
+						<div class="col-md-6 col-lg-4 appear-animation" data-appear-animation="fadeInDownShorter" data-appear-animation-delay="200">
 
 							<h3 class="font-weight-bold text-3 mb-0">Pengumuman</h3>
 
@@ -398,67 +400,40 @@
 							</ul>
 
 						</div>
-						<div class="col-md-6 col-lg-4">
+						<div class="col-md-6 col-lg-4 appear-animation" data-appear-animation="fadeInDownShorter" data-appear-animation-delay="400">
 
 							<h3 class="font-weight-bold text-3 mb-0 mt-4 mt-md-0">Berita Terkini</h3>
 
 							<ul class="simple-post-list">
-
-								<li>
-									<div class="post-image">
-										<div class="img-thumbnail img-thumbnail-no-borders d-block">
-											<a href="blog-post.html">
-												<img src="<?php echo base_url() ?>assets/front-end/web2/img/blog/square/blog-65.jpg" class="border-radius-0" width="50" height="50" alt="Main Reasons To Stop Texting And Driving">
-											</a>
-										</div>
-									</div>
-									<div class="post-info">
-										<h4 class="font-weight-normal text-3 line-height-4 mb-0"><a href="blog-post.html" class="text-dark">Main Reasons To Stop Texting And Driving</a></h4>
-										<div class="post-meta">
-											January 12, 2019
-										</div>
-									</div>
-								</li>
-
-								<li>
-									<div class="post-image">
-										<div class="img-thumbnail img-thumbnail-no-borders d-block">
-											<a href="blog-post.html">
-												<img src="<?php echo base_url() ?>assets/front-end/web2/img/blog/square/blog-66.jpg" class="border-radius-0" width="50" height="50" alt="Tips to Help You Quickly Prepare your Lunch">
-											</a>
-										</div>
-									</div>
-									<div class="post-info">
-										<h4 class="font-weight-normal text-3 line-height-4 mb-0"><a href="blog-post.html" class="text-dark">Tips to Help You Quickly Prepare your Lunch</a></h4>
-										<div class="post-meta">
-											January 12, 2019
-										</div>
-									</div>
-								</li>
-
-								<li>
-									<div class="post-image">
-										<div class="img-thumbnail img-thumbnail-no-borders d-block">
-											<a href="blog-post.html">
-												<img src="<?php echo base_url() ?>assets/front-end/web2/img/blog/square/blog-67.jpg" class="border-radius-0" width="50" height="50" alt="Why should I buy a smartwatch?">
-											</a>
-										</div>
-									</div>
-									<div class="post-info">
-										<h4 class="font-weight-normal text-3 line-height-4 mb-0"><a href="blog-post.html" class="text-dark">Why should I buy a smartwatch?</a></h4>
-										<div class="post-meta">
-											January 12, 2019
-										</div>
-									</div>
-								</li>
-
-						
+							<?php
+							foreach($beritaterkini->result_array() as $row){
+								?>
+										<li>
+											<div class="post-image">
+												<div class="img-thumbnail img-thumbnail-no-borders d-block">
+													<a href="blog-post.html">
+														<img src="<?php echo base_url() ?>assets/images/berita/thumb/<?php echo $row['foto'] ?>" class="border-radius-0" width="50" height="50" alt="<?php echo  $row['judul'] ?>">
+													</a>
+												</div>
+											</div>
+											<div class="post-info">
+												<h4 class="font-weight-normal text-3 line-height-4 mb-0"><a href="blog-post.html" class="text-dark"><?php echo  $row['judul'] ?></a></h4>
+												<div class="post-meta">
+												<?php echo  tgl_indo($row['tanggal']); ?>
+												</div>
+											</div>
+										</li>
+								
+							<?php
+										}
+											?>	
+								
 
 								
 							</ul>
 
 						</div>
-						<div class="col-lg-4">
+						<div class="col-lg-4 appear-animation" data-appear-animation="fadeInDownShorter" data-appear-animation-delay="600">
 
 							<h3 class="font-weight-bold text-3 mb-0 mt-4 mt-md-0" style="padding-bottom:10px">Dinas</h3>
 							<div class="owl-carousel owl-theme" data-plugin-options="{'items': 1, 'margin': 10, 'loop': true, 'nav': false, 'dots': false, 'autoplay': true, 'autoplayTimeout': 5000}">
@@ -756,7 +731,7 @@
 							</div>
 						</div>
 						<div class="col-lg-6">
-							<h4 class="font-weight-normal ">Bidang <strong class="font-weight-extra-bold">Dinas Perindustrian</strong></h4>
+							<h4 class="font-weight-normal ">Bidang & UPT</strong></h4>
 							<div class="row">
 								<div class="col-sm-6">
 									<div class="feature-box feature-box-style-2">
@@ -765,48 +740,49 @@
 										</div>
 										<div class="feature-box-info">
 											<h4 class="font-weight-bold text-4 mb-0">Sekretariat</h4>
-											<p class="mb-4">Sistem Informasi Industri Kalsel</p>
+											<p class="mb-4">Sekretariat Dinas Perindustrian</p>
 										</div>
 									</div>
 									
 									<div class="feature-box feature-box-style-2">
 										<div class="feature-box-icon">
-											<i class="icons icon-user text-color-primary"></i>
+											<i class="fa fa-cogs text-color-primary"></i>
 										</div>
 										<div class="feature-box-info">
 											<h4 class="font-weight-bold text-4 mb-0">ILMEAT</h4>
-											<p class="mb-4">Sistem Informasi Data Pegawai Dinas Perindustrian</p>
+											<p class="mb-4">Industri Logam, Mesin, Elektronika dan IT</p>
 										</div>
 										
 									</div>
 									<div class="feature-box feature-box-style-2">
 										<div class="feature-box-icon">
-											<i class="icons icon-user text-color-primary"></i>
+											<i class="fas fa-leaf text-color-primary"></i>
 										</div>
 										<div class="feature-box-info">
-											<h4 class="font-weight-bold text-4 mb-0">ILMEAT</h4>
-											<p class="mb-4">Sistem Informasi Data Pegawai Dinas Perindustrian</p>
+											<h4 class="font-weight-bold text-4 mb-0">Agro</h4>
+											<p class="mb-4">Industri Agro</p>
 										</div>
-										
 									</div>
+									
 								</div>
 								<div class="col-sm-6">
-									<div class="feature-box feature-box-style-2">
+								<div class="feature-box feature-box-style-2">
 										<div class="feature-box-icon">
-											<i class="icons icon-layers text-color-primary"></i>
+											<i class="fas fa-flask text-color-primary"></i>
 										</div>
 										<div class="feature-box-info">
-											<h4 class="font-weight-bold text-4 mb-0">Klinik IKM</h4>
-											<p class="mb-4">Website Klinik IKM</p>
+											<h4 class="font-weight-bold text-4 mb-0">IKTA</h4>
+											<p class="mb-4">Industri Kimia Tekstil dan Aneka</p>
 										</div>
+										
 									</div>
 									<div class="feature-box feature-box-style-2">
 										<div class="feature-box-icon">
-											<i class="icons icon-user text-color-primary"></i>
+											<i class="fas fa-industry text-color-primary"></i>
 										</div>
 										<div class="feature-box-info">
-											<h4 class="font-weight-bold text-4 mb-0">Icons</h4>
-											<p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa</p>
+											<h4 class="font-weight-bold text-4 mb-0">UPTBD Industri Kayu dan Logam </h4>
+											<p class="mb-4">UPT Balai Diklat Industri Kayu dan Logam</p>
 										</div>
 									</div>
 									<div class="feature-box feature-box-style-2">
@@ -885,13 +861,13 @@
 					
 
 
-				<section class="section section-height-3 bg-light border border-bottom-0 m-0" style="
+				<section  style="
     padding-top: 30px;
     padding-bottom: 30px">
 					<div class="container">
 						<div class="row">
 							<div class="col">
-								<div class="owl-carousel owl-theme mb-0" data-plugin-options="{'responsive': {'0': {'items': 1}, '476': {'items': 1}, '768': {'items': 5}, '992': {'items': 7}, '1200': {'items': 7}}, 'autoplay': true, 'autoplayTimeout': 3000, 'dots': false}">
+								<div class="owl-carousel mb-0" data-plugin-options="{'responsive': {'0': {'items': 1}, '476': {'items': 1}, '768': {'items': 5}, '992': {'items': 7}, '1200': {'items': 7}}, 'autoplay': true, 'autoplayTimeout': 3000, 'dots': false}">
 									<div>
 										<img class="img-fluid opacity-2" src="https://drive.google.com/uc?id=1of5jv0GrJ43HO7C6wPkmXJxZFOMWZlnd" alt="">
 									</div>

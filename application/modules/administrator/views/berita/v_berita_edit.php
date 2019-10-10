@@ -83,7 +83,7 @@
 				</div>
 				<div class="form-group">
 						<label class="col-sm-2 control-label">Foto Utama</label>
-						<div class="col-sm-4">
+						<div class="col-sm-10">
 							<div class="fileinput fileinput-new" data-provides="fileinput" style="margin-bottom:0;display:inline">
 								<div class="input-group">
 									<div class="form-control uneditable-input" data-trigger="fileinput">

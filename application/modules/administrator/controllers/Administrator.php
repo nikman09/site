@@ -49,10 +49,10 @@ class Administrator extends CI_Controller {
 
                 $config['image_library'] = 'gd2';
                 $config['source_image'] = './assets/images/berita/'.$upload["raw_name"].$upload["file_ext"];
-                $config['create_thumb'] = TRUE;
+                $config['create_thumb'] = FALSE;
                 $config['maintain_ratio'] = TRUE;
-                $config['width']         = 75;
-                $config['height']       = 50;
+                $config['width']         = 300;
+                $config['height']       = 200;
                 $config['new_image'] = './assets/images/berita/thumb/'.$upload["raw_name"].$upload["file_ext"];
                 $this->load->library('image_lib', $config);
                 $this->image_lib->resize();
@@ -107,12 +107,24 @@ class Administrator extends CI_Controller {
                 $foto = $upload["raw_name"].$upload["file_ext"];
                 $array['foto']=$foto;
 
+                $config['image_library'] = 'gd2';
+                $config['source_image'] = './assets/images/berita/'.$upload["raw_name"].$upload["file_ext"];
+                $config['create_thumb'] = FALSE;
+                $config['maintain_ratio'] = TRUE;
+                $config['width']         = 300;
+                $config['height']       = 200;
+                $config['new_image'] = './assets/images/berita/thumb/'.$upload["raw_name"].$upload["file_ext"];
+                $this->load->library('image_lib', $config);
+                $this->image_lib->resize();
+
                 $query2 = $this->m_berita->lihatdatasatu($id_berita);
                 $row2 = $query2->row();
                 $berkas1temp = $row2->foto;
                 $path1 ='./assets/images/berita/'.$berkas1temp.'';
+                $path2 ='./assets/images/berita//thumb/'.$berkas1temp.'';
                 if(is_file($path1)) {
                     unlink($path1); //menghapus gambar di folder berita
+                    unlink($path2); //menghapus gambar di folder berita
                 }
                
             }

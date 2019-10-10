@@ -124,7 +124,7 @@
 														
 														
 														<li class="dropdown">
-															<a class="dropdown-item dropdown-toggle" href="<?php echo base_url() ?>web/berita">
+															<a class="dropdown-item dropdown-toggle <?= ($submenu == "berita") ? " active" : ""; ?>" href="<?php echo base_url() ?>web/berita">
 																Berita
 															</a>
 														</li>

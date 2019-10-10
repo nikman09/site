@@ -34,7 +34,7 @@
 												<div class="" >
 													<div>
 														<div class="img-thumbnail img-thumbnail-no-borders d-block">
-															<img style="height:200px; width:300px; border:1px solid #555" class="img-fluid" src="<?php echo base_url() ?>assets/images/berita/<?php echo $row['foto'] ?>" alt="">
+															<img style="height:200px; width:350px;" class="img-fluid" src="<?php echo base_url() ?>assets/images/berita/thumb/<?php echo $row['foto'] ?>" alt="">
 														</div>
 													</div>
 												</div>
@@ -45,7 +45,7 @@
 											<div class="post-content">
 
 												<h2><a href="blog-post.html"><?php  echo $row['judul']; ?></a></h2>
-												<p> <?php echo substr($row['isi'] , 0, 300)?>  [...]</p>
+												<p> <?php echo substr($row['isi'] , 0, 200)?>  [...]</p>
 
 											</div>
 										</div>

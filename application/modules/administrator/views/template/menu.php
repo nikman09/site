@@ -11,14 +11,26 @@
 					<span class="title">Beranda </span>
 				</a>
 			</li>
-			<li  class="<?= ($submenu == "halaman" || $submenu == "halamanlihat"  || $submenu == "halamantambah" || $submenu == "halamanedit") ? "active root-level" : ""; ?> ">
-				<a href="<?php echo base_url() ?>administrator/halaman">
-					<i class="fa fa-file"></i>
-					<span class="title">Halaman </span>
-				</a>
-			</li>
 		
-
+			<li  class="<?= ($submenu == "halaman" || $submenu == "halamanlihat"  || $submenu == "halamantambah" || $submenu == "halamanedit") ? "opened active root-level" : ""; ?> has-sub">
+					<a href="">
+						<i class="fa fa-file-o"></i>
+						<span class="title">Halaman</span>
+					</a>
+					<ul>
+						<li  class="<?= ($submenu == "halaman" || $submenu == "halamanlihat" || $submenu == "halamantambah" || $submenu == "halamanedit") ? " active" : ""; ?>">
+							<a href="<?php echo base_url() ?>administrator/halaman">
+								<span class="title">Laman</span>
+							</a>
+						</li>
+						<li  class="<?= ($submenu == "dokumen" || $submenu == "dokumenlihat" || $submenu == "dokumentambah" || $submenu == "dokumenedit") ? " active" : ""; ?>">
+							<a href="<?php echo base_url() ?>administrator/dokumen">
+								<span class="title">Dokumen</span>
+							</a>
+						</li>
+						
+					</ul>
+			</li>
 			<li  class="<?= ($submenu == "berita" || $submenu == "beritalihat"  || $submenu == "beritatambah" || $submenu == "beritaedit" || $submenu == "beritakategori" || $submenu == "beritakategori" ) ? "opened active root-level" : ""; ?> has-sub">
 					<a href="">
 						<i class="fa fa-newspaper-o"></i>

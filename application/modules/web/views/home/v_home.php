@@ -170,7 +170,7 @@
 									style="color: #b5b5b5;">Provinsi Kalimantan Selatan.</div>
 				
 								<a class="tp-caption btn  btn-outline btn-rounded btn-primary  btn-with-arrow font-weight-bold"
-									href="#"
+									href="<?php echo base_url() ?>web/page?p=1"
 									data-frames='[{"delay":3000,"speed":2000,"frame":"0","from":"y:50%;opacity:0;","to":"y:0;o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
 									data-x="center" data-hoffset="0"
 									data-y="center" data-voffset="70"
@@ -247,7 +247,70 @@
 								
 							</li>
 							
-
+							<!-- <li data-transition="fade">
+								<img src="<?php echo base_url() ?>assets/front-end/web2/bahan/ikmdigitall.JPG"  
+									alt=""
+								data-bgposition="left center"
+									data-bgpositionend="center center"
+									data-bgfit="cover" 
+									data-bgrepeat="no-repeat" 
+									data-kenburns="on"
+									data-duration="9000"
+									data-ease="Linear.easeNone"
+									data-scalestart="110"
+									data-scaleend="100"
+									data-rotatestart="0"
+									data-rotateend="0"
+									data-offsetstart="0 0"
+									data-offsetend="0 0"
+									data-bgparallax="0"
+									class="rev-slidebg">
+				
+								<div class="tp-caption"
+									data-x="['left','left','center','center']" data-hoffset="['145','145','-150','-240']"
+									data-y="center" data-voffset="['-50','-50','-50','-75']"
+									data-start="1000"
+									data-transform_in="x:[-300%];opacity:0;s:500;"
+									data-transform_idle="opacity:0.5;s:500;"><img src="<?php echo base_url() ?>assets/front-end/web2/img/slides/slide-title-border-light.png" alt=""></div>
+				
+								<div class="tp-caption text-color-light font-weight-normal"
+									data-x="['left','left','center','center']" data-hoffset="['200','200','0','0']"
+									data-y="center" data-voffset="['-50','-50','-50','-75']"
+									data-start="700"
+									data-fontsize="['22','22','22','40']"
+									data-lineheight="['25','25','25','45']"
+									data-transform_in="y:[-50%];opacity:0;s:500;" style="color: #b5b5b5;">Kalimantan Selatan</div>
+				
+								<div class="tp-caption d-none d-md-block"
+									data-frames='[{"delay":3800,"speed":500,"frame":"0","from":"opacity:0;x:10%;","to":"opacity:1;x:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
+									data-x="['left','left','center','center']" data-hoffset="['365','365','80','135']"
+									data-y="center" data-voffset="['-33','-33','-33','-55']"><img src="<?php echo base_url() ?>assets/front-end/web2/img/slides/slide-blue-line.png" alt=""></div>
+				
+								<div class="tp-caption"
+									data-x="['left','left','center','center']" data-hoffset="['440','440','150','240']"
+									data-y="center" data-voffset="['-50','-50','-50','-75']"
+									data-start="1000"
+									data-transform_in="x:[300%];opacity:0;s:500;"
+									data-transform_idle="opacity:0.5;s:500;"><img src="<?php echo base_url() ?>assets/front-end/web2/img/slides/slide-title-border-light.png" alt=""></div>
+				
+								<h1 class="tp-caption font-weight-extra-bold text-color-light negative-ls-2"
+									data-frames='[{"delay":1000,"speed":2000,"frame":"0","from":"sX:1.5;opacity:0;fb:20px;","to":"o:1;fb:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
+									data-x="['left','left','center','center']" data-hoffset="['152','152','0','0']"
+									data-y="center"
+									data-fontsize="['50','50','50','90']"
+									data-lineheight="['55','55','55','95']"
+									data-letterspacing="-1"
+									style="color: #b5b5b5;">IKM KALSEL GO DIGITAL</h1>
+				
+								<div class="tp-caption font-weight-light text-color-light"
+									data-frames='[{"from":"opacity:0;","speed":300,"to":"o:1;","delay":2000,"split":"chars","splitdelay":0.05,"ease":"Power2.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
+									data-x="['left','left','center','center']" data-hoffset="['166','166','0','0']"
+									data-y="center" data-voffset="['40','40','40','80']"
+									data-fontsize="['18','18','18','20']"
+									data-lineheight="['20','20','20','55']"
+									style="color: #b5b5b5;">SMARTI IKM</div>
+								
+							</li> -->
 						
 						</ul>
 					</div>
@@ -435,22 +498,22 @@
 						</div>
 						<div class="col-lg-4 appear-animation" data-appear-animation="fadeInDownShorter" data-appear-animation-delay="600">
 
-							<h3 class="font-weight-bold text-3 mb-0 mt-4 mt-md-0" style="padding-bottom:10px">Dinas</h3>
+							<!-- <h3 class="font-weight-bold text-3 mb-0 mt-4 mt-md-0" style="padding-bottom:10px">Dinas</h3> -->
 							<div class="owl-carousel owl-theme" data-plugin-options="{'items': 1, 'margin': 10, 'loop': true, 'nav': false, 'dots': false, 'autoplay': true, 'autoplayTimeout': 5000}">
 
 								<div>
 									<a href="blog-post.html">
 										<article>
 											<div class="thumb-info thumb-info-no-borders thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-bottom-info-show-more thumb-info-no-zoom border-radius-0">
-												<div class="thumb-info-wrapper thumb-info-wrapper-opacity-6">
-													<img src="<?php echo base_url() ?>assets/front-end/web2/img/blog/wide/blog-65.jpg" class="img-fluid" alt="Main Reasons To Stop Texting And Driving" style="height:200px">
+												<div class="thumb-info-wrapper thumb-info-wrapper-opacity-2">
+													<img src="<?php echo base_url() ?>assets/images/dinas/2.jpg" class="img-fluid" alt="Main Reasons To Stop Texting And Driving" style="height:270px">
 													<div class="thumb-info-title bg-transparent p-4">
 													
 														<div class="thumb-info-inner mt-1">
-															<h2 class="text-color-light line-height-2 text-4 font-weight-bold mb-0">Main Reasons To Stop Texting And Driving</h2>
+															<h2 class="text-color-light line-height-2 text-4 font-weight-bold mb-0">Pameran INACRAFT</h2>
 														</div>
 														<div class="thumb-info-show-more-content">
-															<p class="mb-0 text-1 line-height-9 mb-1 mt-2 text-light opacity-5">Lorem ipsum dolor sit amet, consectetur adip...</p>
+															<p class="mb-0 text-1 line-height-9 mb-1 mt-2 text-light opacity-5">Dinas Perindustrian.</p>
 														</div>
 													</div>
 												</div>
@@ -463,15 +526,15 @@
 									<a href="blog-post.html">
 										<article>
 											<div class="thumb-info thumb-info-no-borders thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-bottom-info-show-more thumb-info-no-zoom border-radius-0">
-												<div class="thumb-info-wrapper thumb-info-wrapper-opacity-6">
-													<img src="<?php echo base_url() ?>assets/front-end/web2/img/blog/wide/blog-66.jpg" class="img-fluid" alt="Tips to Help You Quickly Prepare your Lunch" style="height:200px">
+												<div class="thumb-info-wrapper thumb-info-wrapper-opacity-2">
+													<img src="<?php echo base_url() ?>assets/images/dinas/1.jpg" class="img-fluid" alt="Tips to Help You Quickly Prepare your Lunch" style="height:270px">
 													<div class="thumb-info-title bg-transparent p-4">
 														
 														<div class="thumb-info-inner mt-1">
-															<h2 class="text-color-light line-height-2 text-4 font-weight-bold mb-0">Tips to Help You Quickly Prepare your Lunch</h2>
+															<h2 class="text-color-light line-height-2 text-4 font-weight-bold mb-0">Smart IKM</h2>
 														</div>
 														<div class="thumb-info-show-more-content">
-															<p class="mb-0 text-1 line-height-9 mb-1 mt-2 text-light opacity-5">Lorem ipsum dolor sit amet, consectetur adip...</p>
+															<p class="mb-0 text-1 line-height-9 mb-1 mt-2 text-light opacity-5">LIKM Go Digital</p>
 														</div>
 													</div>
 												</div>
@@ -480,26 +543,7 @@
 									</a>
 								</div>
 
-								<div>
-									<a href="blog-post.html">
-										<article>
-											<div class="thumb-info thumb-info-no-borders thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-bottom-info-show-more thumb-info-no-zoom border-radius-0">
-												<div class="thumb-info-wrapper thumb-info-wrapper-opacity-6">
-													<img src="<?php echo base_url() ?>assets/front-end/web2/img/blog/wide/blog-67.jpg" class="img-fluid" alt="Why should I buy a smartwatch?" style="height:200px">
-													<div class="thumb-info-title bg-transparent p-4">
-														
-														<div class="thumb-info-inner mt-1">
-															<h2 class="text-color-light line-height-2 text-4 font-weight-bold mb-0">Why should I buy a smartwatch?</h2>
-														</div>
-														<div class="thumb-info-show-more-content">
-															<p class="mb-0 text-1 line-height-9 mb-1 mt-2 text-light opacity-5">Lorem ipsum dolor sit amet, consectetur adip...</p>
-														</div>
-													</div>
-												</div>
-											</div>
-										</article>
-									</a>
-								</div>
+								
 							</div>
 
 							
@@ -546,7 +590,7 @@
 													Waktu
 												</th>
 												<th>
-													Lampiran
+													
 												</th>
 											</tr>
 										</thead>
@@ -562,7 +606,7 @@
 													10-10-2020
 												</td>
 												<td>
-													Unduh
+													
 												</td>
 											</tr>
 											<tr>
@@ -576,7 +620,7 @@
 													10-10-2020
 												</td>
 												<td>
-													Unduh
+													<li class="fa fa-download"></li>
 												</td>
 											</tr>
 											<tr>
@@ -590,7 +634,7 @@
 													10-10-2020
 												</td>
 												<td>
-													Unduh
+													
 												</td>
 											</tr>
 										</tbody>

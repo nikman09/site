@@ -12,6 +12,8 @@ class Administrator extends CI_Controller {
         $this->load->model("m_kegiatankategori");
         $this->load->model("m_halaman");
         $this->load->model("m_admin");
+        $this->load->model("m_dokumen");
+        $this->load->model("m_dokumendetail");
     }
 
     // Dashboard
@@ -692,6 +694,89 @@ class Administrator extends CI_Controller {
         $variabel['data'] = $this->m_admin->lihatdatasatu($username)->row_array();
         $this->load->view("admin/v_password",$variabel);
     }
+
+    
+    public function dokumen()
+    {   
+        $variabel['csrf'] = csrf();
+        $variabel['data'] = $this->m_dokumen->lihatdata();
+        $this->layout->render('dokumen/v_dokumen',$variabel,'dokumen/v_dokumen_js');
+   
+    }
+    
+    public function dokumentambah()
+    {      
+        $variabel['csrf'] = csrf();
+        if ($this->input->post()) {
+            $array=array(
+                'judul'=> $this->input->post('judul'),
+                'keterangan'=> $this->input->post('keterangan') 
+            );
+            $exec = $this->m_dokumen->tambahdata($array);
+                if ($exec){
+                 redirect(base_url("administrator/dokumen?msg=1"));
+                }
+      } else {
+      }
+    }
+
+
+    
+    public function dokumenedit()
+    {      
+        $variabel['csrf'] = csrf();
+        $id_dokumen = $this->input->post("id_dokumen");
+        $variabel['data'] = $this->m_dokumen->lihatdatasatu($id_dokumen)->row_array();
+        $this->load->view("dokumen/v_dokumen_edit",$variabel);
+    }
+
+    public function dokumeneditproses()
+    {      
+        $variabel['csrf'] = csrf();
+        if ($this->input->post()) {
+            $array=array(
+            'judul'=> $this->input->post('judul'),
+            'keterangan'=> $this->input->post('keterangan') 
+            );
+            $id_dokumen = $this->input->post("id_dokumen");
+            $exec = $this->m_dokumen->editdata($id_dokumen,$array);
+            if ($exec){
+                redirect(base_url("administrator/dokumen?msg=0"));
+            }
+      } else {
+      }
+    }
+
+    public function dokumenhapus()
+    {
+        $id_dokumen = $this->input->get("id");
+       
+        $exec = $this->m_dokumen->hapus($id_dokumen);
+        redirect(base_url()."administrator/dokumen?msg=2");
+    }
+
+    public function dokumendetail()
+    {   
+        $variabel['csrf'] = csrf();
+        $id_dokumen = $this->input->get("id");
+        $exec = $this->m_dokumen->lihatdatasatu($id_dokumen);
+        if ($exec->num_rows()>0){
+            $variabel['data'] = $exec ->row_array();
+            $exec2 = $this->m_dokumendetail->lihatdatadokumen($id_dokumen);
+            $variabel['data2'] = $exec2;
+            $this->layout->render('dokumen/dokumendetail/v_dokumendetail',$variabel,'dokumen/dokumendetail/v_dokumendetail_js');
+        } else {
+            redirect(base_url("administrator/dokumen"));
+        }
+        
+    }
+
+
+
+
+
+
+
 
 	
 }

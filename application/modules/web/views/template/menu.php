@@ -17,13 +17,32 @@
 																<li><a class="dropdown-item" href="<?php echo base_url() ?>web/page?p=7">Visi dan Misi</a></li>
 																<li><a class="dropdown-item" href="<?php echo base_url() ?>web/page?p=2">Tugas dan Fungsi</a></li>
 																<li><a class="dropdown-item" href="<?php echo base_url() ?>web/page?p=3">Struktur Organisasi</a></li>
-																<li><a class="dropdown-item" href="<?php echo base_url() ?>web/page?p=4">Program Kegiatan & Anggaran</a></li>
+																<li><a class="dropdown-item" href="<?php echo base_url() ?>web/page?p=4">Program, Kegiatan dan Anggaran</a></li>
 																<li class="dropdown-submenu">
-																	<a class="dropdown-item" href="<?php echo base_url() ?>web/page?p=5">Realisasi Fisik dan Anggaran</a>
+																	<a class="dropdown-item" href="<?php echo base_url() ?>web/page?p=5">Realisasi Fisik dan Keuangan</a>
 																	<ul class="dropdown-menu">
-																	<li><a class="dropdown-item" href="<?php echo base_url() ?>web/page?p=6">DPA Tahun 2019</a></li>
+																	<li><a class="dropdown-item" href="<?php echo base_url() ?>web/page?p=6">Tahun Anggaran 2019</a></li>
 																	</ul>
 																</li>
+																<li class="dropdown-submenu">
+																	<a class="dropdown-item" href="<?php echo base_url() ?>web/page?p=5">Dokumen</a>
+																	<ul class="dropdown-menu">
+																	<li><a class="dropdown-item" href="<?php echo base_url() ?>web/page?p=4">RENSTRA</a></li>
+																		<li><a class="dropdown-item" href="<?php echo base_url() ?>web/page?p=4">RENJA</a></li>
+																		<li><a class="dropdown-item" href="<?php echo base_url() ?>web/page?p=4">Perjanjian Kinerja</a></li>
+																		<li><a class="dropdown-item" href="<?php echo base_url() ?>web/page?p=4">IKU</a></li>
+																		<li><a class="dropdown-item" href="<?php echo base_url() ?>web/page?p=4">SOP</a></li>
+																		<li><a class="dropdown-item" href="<?php echo base_url() ?>web/page?p=4">RPIP</a></li>
+																		<li class="dropdown-submenu">
+																			<a class="dropdown-item" href="<?php echo base_url() ?>web/page?p=5">RPIK</a>
+																			<ul class="dropdown-menu">
+																			<li><a class="dropdown-item" href="<?php echo base_url() ?>web/page?p=6">Kab/Kota</a></li>
+																			</ul>
+																		</li>
+																	</ul>
+																</li>
+																
+																
 																<li class="dropdown-submenu">
 																	<a class="dropdown-item" href="#">Galeri</a>
 																	<ul class="dropdown-menu">
@@ -37,63 +56,60 @@
 														
 														<li class="dropdown">
 															<a class="dropdown-item dropdown-toggle" href="#">
-																Bidang & Kegiatan
+																Kegiatan Bidang
 															</a>
 															<ul class="dropdown-menu">
-															<li class="dropdown-submenu">
+																<li class="dropdown-submenu">
+																	<a class="dropdown-item" href="#">Jadwal</a>
+																	<ul class="dropdown-menu">
+																		<li><a class="dropdown-item" href="#">Pelatihan</a></li>
+																		<li><a class="dropdown-item" href="#">Pameran</a></li>
+																		<li><a class="dropdown-item" href="#">Kegiatan Dinas</a></li>
+																	</ul>
+																</li>
+																<li class="dropdown-submenu">
 																	<a class="dropdown-item" href="#">Sekretariat</a>
 																	<ul class="dropdown-menu">
-																	<li><a class="dropdown-item" href="#">Tugas Sekretariat</a></li>
-																<li><a class="dropdown-item" href="#">Kegiatan Sekretariat</a></li>
+																	<li><a class="dropdown-item" href="<?php echo base_url(); ?>web/bidang?p=1">Profil Sekretariat</a></li>
+																<li><a class="dropdown-item" href="<?php echo base_url(); ?>web/kegiatan/1">Kegiatan Sekretariat</a></li>
 																	</ul>
 																</li>
 																<li class="dropdown-submenu">
 																	<a class="dropdown-item" href="#">Bidang AGRO</a>
 																	<ul class="dropdown-menu">
-																		<li><a class="dropdown-item" href="#">Tugas Bidang AGRO</a></li>
-																		<li><a class="dropdown-item" href="#">Kegiatan Bidang AGRO</a></li>
+																		<li><a class="dropdown-item" href="<?php echo base_url(); ?>web/bidang?p=5">Tugas Bidang AGRO</a></li>
+																		<li><a class="dropdown-item" href="<?php echo base_url(); ?>web/kegiatan/5">Kegiatan Bidang AGRO</a></li>
 																	</ul>
 																</li>
 																<li class="dropdown-submenu">
 																	<a class="dropdown-item" href="#">Bidang ILMEAT</a>
 																	<ul class="dropdown-menu">
-																		<li><a class="dropdown-item" href="#">Tugas Bidang ILMEAT</a></li>
-																		<li><a class="dropdown-item" href="#">Kegiatan Bidang ILMEAT</a></li>
+																		<li><a class="dropdown-item" href="<?php echo base_url(); ?>web/bidang?p=2">Tugas Bidang ILMEAT</a></li>
+																		<li><a class="dropdown-item" href="<?php echo base_url(); ?>web/kegiatan/2">Kegiatan Bidang ILMEAT</a></li>
 																	</ul>
 																</li>
 																<li class="dropdown-submenu">
 																	<a class="dropdown-item" href="#">Bidang IKTA</a>
 																	<ul class="dropdown-menu">
-																		<li><a class="dropdown-item" href="#">Tugas Bidang IKTA</a></li>
-																		<li><a class="dropdown-item" href="#">Kegiatan Bidang IKTA</a></li>
+																		<li><a class="dropdown-item" href="<?php echo base_url(); ?>web/bidang?p=4">Tugas Bidang IKTA</a></li>
+																		<li><a class="dropdown-item" href="<?php echo base_url(); ?>web/kegiatan/4">Kegiatan Bidang IKTA</a></li>
 																	</ul>
 																</li>
 																<li class="dropdown-submenu">
 																	<a class="dropdown-item" href="#">UPTBD Industri Kayu & Logam</a>
 																	<ul class="dropdown-menu">
-																		<li><a class="dropdown-item" href="#">Tugas UPTBD Diklat Industri Kayu & Logam</a></li>
-																		<li><a class="dropdown-item" href="#">Kegiatan UPTBD Diklat Industri Kayu & Logam</a></li>
+																		<li><a class="dropdown-item" href="<?php echo base_url(); ?>web/bidang?p=6">Tugas UPTBD Diklat Industri Kayu & Logam</a></li>
+																		<li><a class="dropdown-item" href="<?php echo base_url(); ?>web/kegiatan/6">Kegiatan UPTBD Diklat Industri Kayu & Logam</a></li>
 																	</ul>
 																</li>
 																
 															</ul>
 														</li>
-														<li class="dropdown">
-															<a class="dropdown-item dropdown-toggle" href="#">
-																Jadwal
-															</a>
-															<ul class="dropdown-menu">
-																
-																<li><a class="dropdown-item" href="#">Pelatihan</a></li>
-																<li><a class="dropdown-item" href="#">Pameran</a></li>
-																<li><a class="dropdown-item" href="#">Agenda Dinas</a></li>
-																
-															</ul>
-														</li>
+														
 														
 														<li class="dropdown">
 															<a class="dropdown-item dropdown-toggle" href="#">
-																SI
+																Aplikasi
 															</a>
 															<ul class="dropdown-menu">
 															<li class="dropdown-submenu">
@@ -124,17 +140,45 @@
 														
 														
 														<li class="dropdown">
-															<a class="dropdown-item dropdown-toggle <?= ($submenu == "berita") ? " active" : ""; ?>" href="<?php echo base_url() ?>web/berita">
-																Berita
+															<a class="dropdown-item dropdown-toggle" href="#">
+															Informasi
 															</a>
+															<ul class="dropdown-menu">
+															
+																<li><a class="dropdown-item" href="<?php echo base_url(); ?>web/berita">Berita</a></li>
+																<li><a class="dropdown-item" href="page-custom-header.html">Artikel</a></li>
+																<li><a class="dropdown-item" href="page-custom-header.html">Jurnal</a></li>
+																<li><a class="dropdown-item" href="page-custom-header.html">E-learning</a></li>
+																<li><a class="dropdown-item" href="http://jdih.kemenperin.go.id/">Pengumuman</a></li>
+																
+															</ul>
 														</li>
-														
+														<li class="dropdown">
+															<a class="dropdown-item dropdown-toggle" href="#">
+															Industri
+															</a>
+															<ul class="dropdown-menu">
+															
+															<li class="dropdown-submenu">
+																	<a class="dropdown-item" href="#">Kawasan Industri</a>
+																	<ul class="dropdown-menu">
+																		<li><a class="dropdown-item" href="shop-3-columns-sidebar-left.html">Kawasan Industri Batulicin</a></li>
+		
+																		<li><a class="dropdown-item" href="shop-3-columns-full-width.html">Kawasan Industri Jorong</a></li>
+																		
+																	</ul>
+																</li>
+																
+																<li><a class="dropdown-item" href="page-custom-header.html">Sentra Industri </a></li>
+															
+															</ul>
+														</li>
 														<li class="dropdown">
 															<a class="dropdown-item dropdown-toggle" href="#">
 																Unduh
 															</a>
 															<ul class="dropdown-menu">
-																
+															<li><a class="dropdown-item" href="http://jdih.kemenperin.go.id/">Peraturan</a></li>
 																<li><a class="dropdown-item" href="page-custom-header.html">Kebijakan</a></li>
 																<li><a class="dropdown-item" href="page-custom-header.html">Lainnya</a></li>
 																
@@ -142,9 +186,19 @@
 														</li>
 														<li class="dropdown">
 															<a class="dropdown-item dropdown-toggle" href="#">
-																Kontak
+															Kontak Kami
 															</a>
+															<ul class="dropdown-menu">
+															
+																<li><a class="dropdown-item" href="page-custom-header.html">Kritik & Saran</a></li>
+																
+																<li><a class="dropdown-item" href="page-custom-header.html">Pertanyaan Terbanyak (FAQ) </a></li>
+																<li><a class="dropdown-item" href="page-custom-header.html">Pojok Konsultasi</a></li>
+																<li><a class="dropdown-item" href="page-custom-header.html">Survei Pengunjung</a></li>
+																
+															</ul>
 														</li>
+														
 													
 															
 															

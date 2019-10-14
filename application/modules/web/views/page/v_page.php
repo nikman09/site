@@ -4,7 +4,7 @@
 						<div class="row mt-5">
 							<div class="col-md-12 align-self-center p-static order-2 text-center">
 								<h1 class="text-9 font-weight-bold"><?php echo $halaman['judul'] ?></h1>
-								<span class="sub-title">Dinas Perindustrian</span>
+								<span class="sub-title">Dinas Perindustrian Kalimantan Selatan</span>
 							</div>
 							<div class="col-md-12 align-self-center order-1">
 								<ul class="breadcrumb breadcrumb-light d-block text-center">

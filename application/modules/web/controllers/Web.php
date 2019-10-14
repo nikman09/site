@@ -5,9 +5,11 @@ class Web extends CI_Controller {
     {
         parent::__construct();
         $this->load->model("m_berita");
+        $this->load->model("m_bidang");
         $this->load->model("m_halaman");
         $this->load->model("m_pegawai");
         $this->load->model("m_beritakategori");
+        $this->load->model("m_kegiatan");
         
     }
 
@@ -49,42 +51,16 @@ class Web extends CI_Controller {
 
     function berita()
     {
-        $config['base_url'] = site_url('web/berita'); //site url
-        $config['total_rows'] = $this->m_berita->jumlah_data(); //total row
-        $config['per_page'] = 5;  //show record per halaman
-        $config["uri_segment"] =3;  // uri parameter
-        $choice = $config["total_rows"] / $config["per_page"];
-        $config["num_links"] = 3;
- 
-        // Membuat Style pagination untuk BootStrap v4
-        $config['first_link']       = '<i class="fas fa-angle-double-left"></i>';
-        $config['last_link']        = '<i class="fas fa-angle-double-right"></i>';
-        $config['next_link']        = '<i class="fas fa-angle-right"></i>';
-        $config['prev_link']        = '<i class="fas fa-angle-left"></i>';
-        $config['full_tag_open']    = '<ul class="pagination float-right">';
-        $config['full_tag_close']   = '</ul>';
-        $config['num_tag_open']     = '<li class="page-item"><span class="page-link">';
-        $config['num_tag_close']    = '</span></li>';
-        $config['cur_tag_open']     = '<li class="page-item active"><span class="page-link">';
-        $config['cur_tag_close']    = '<span class="sr-only">(current)</span></span></li>';
-        $config['next_tag_open']    = '<li class="page-item"><span class="page-link">';
-        $config['next_tagl_close']  = '<span aria-hidden="true">&raquo;</span></span></li>';
-        $config['prev_tag_open']    = '<li class="page-item"><span class="page-link">';
-        $config['prev_tagl_close']  = '</span>Next</li>';
-        $config['first_tag_open']   = '<li class="page-item"><span class="page-link">';
-        $config['first_tagl_close'] = '</span></li>';
-        $config['last_tag_open']    = '<li class="page-item"><span class="page-link">';
-        $config['last_tagl_close']  = '</span></li>';
- 
-        $this->pagination->initialize($config);
+        $base_url = 'web/berita'; //site url
+        $total_rows = $this->m_berita->jumlah_data(); //total row
+        $per_page = 5;  //show record per halaman
+        $uri_segment=3;  // uri parameter
+        $num_links = 3;
+        
         $variabel['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
-       
-        //panggil function get_mahasiswa_list yang ada pada mmodel mahasiswa_model. 
-        $variabel['data'] = $this->m_berita->lihatdata2($config["per_page"], $variabel['page']);           
+        $variabel['data'] = $this->m_berita->lihatdata2($per_page, $variabel['page']); 
+        $variabel['pagination'] = $this->buathalaman->paging($base_url,$total_rows,$per_page,$uri_segment,$num_links);
  
-        $variabel['pagination'] = $this->pagination->create_links();
- 
-      
         $variabel['csrf'] = csrf();
         $variabel['kategori'] = $this->m_beritakategori->lihatdatajumlah();
         $variabel['datarecent'] = $this->m_berita->lihatdatarecent();
@@ -93,5 +69,66 @@ class Web extends CI_Controller {
       
     }
 
+
+    public function bidang()
+    {   
+
+        $variabel['csrf'] = csrf();
+        $id_halaman = $this->input->get("p");
+        $exec = $this->m_bidang->lihatdatasatu($id_halaman);
+        if ($exec->num_rows()>0){
+            $variabel['halaman'] = $exec ->row_array();
+            $this->layout->render('bidang/v_bidang',$variabel);
+        } else {
+            redirect(base_url("web"));
+        }
+     
+    }  
+
+    function kegiatan()
+    {
+        $variabel['csrf'] = csrf();
+        $id_halaman = $this->uri->segment(3);
+        if ($id_halaman!="") {
+           
+            if ($id_halaman=='all') {
+                $base_url = "web/kegiatan/$id_halaman/"; //site url
+                $total_rows = $this->m_kegiatan->jumlah_data(); //total row
+                $per_page = 6;  //show record per halaman
+                $uri_segment=4;  // uri parameter
+                $num_links = 3;
+                $variabel['page'] = ($this->uri->segment($uri_segment)) ? $this->uri->segment($uri_segment) : 0;
+                $variabel['data'] = $this->m_kegiatan->lihatdata($per_page, $variabel['page']); 
+                $variabel['pagination'] = $this->buathalaman->paging($base_url,$total_rows,$per_page,$uri_segment,$num_links);
+                $variabel['csrf'] = csrf();
+                $this->layout->render('kegiatan/v_kegiatanall',$variabel);
+            } else {
+                $base_url = "web/kegiatan/$id_halaman/"; //site url
+                $total_rows = $this->m_kegiatan->jumlah_databidang($id_halaman); //total row
+                $per_page = 6;  //show record per halaman
+                $uri_segment=4;  // uri parameter
+                $num_links = 3;
+                $exec = $this->m_bidang->lihatdatasatu($id_halaman);
+                if ($exec->num_rows()>0){
+                    $variabel['bidang'] = $exec ->row_array();
+                    $variabel['page'] = ($this->uri->segment($uri_segment)) ? $this->uri->segment($uri_segment) : 0;
+                    $variabel['data'] = $this->m_kegiatan->lihatdatabidang($id_halaman,$per_page, $variabel['page']); 
+                    $variabel['pagination'] = $this->buathalaman->paging($base_url,$total_rows,$per_page,$uri_segment,$num_links);
+            
+                    $variabel['csrf'] = csrf();
+                    $this->layout->render('kegiatan/v_kegiatan',$variabel);
+                 
+                }  else {
+    
+                }
+            }
+            
+           
+          
+        } else {
+            redirect(base_url()."web/kegiatan/all");
+           
+        }
+    }
     
 }

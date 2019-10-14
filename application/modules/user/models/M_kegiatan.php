@@ -13,7 +13,6 @@ class M_kegiatan extends CI_Model
         $this->db->where("tb_kegiatan.id_kegiatan",$id_kegiatan);
         return $this->db->get('tb_kegiatan');
     }
-
     function lihatdata($username)
     {
         $this->db->select("tb_kegiatan.*,tb_kegiatankategori.*,tb_bidang.*,tb_kegiatan.userinput as userinput")

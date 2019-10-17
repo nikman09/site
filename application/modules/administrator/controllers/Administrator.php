@@ -772,11 +772,58 @@ class Administrator extends CI_Controller {
     }
 
 
+    public function dokumendetailtambah()
+    {      
+        $variabel['csrf'] = csrf();
+        if ($this->input->post()) {
+            $id_dokumen = $this->input->post('id_dokumen');
+            $array=array(
+                'judul'=> $this->input->post('judul'),
+                'id_dokumen'=> $id_dokumen,
+                'keterangan'=> $this->input->post('keterangan'),
+            );
 
+            //asdad
+            $config['upload_path'] = './assets/dokumen';
+            $config['allowed_types'] = 'jpg|jpeg|JPG|JPEG|PNG|png|PDF|pdf|doc|DOC';
+            $this->load->library('upload', $config);
+            $this->upload->do_upload("dokumen");
+            $upload = $this->upload->data();
+            $file = $upload["raw_name"].$upload["file_ext"];
+            $array['dokumen']=$file;
+       
+            
+            //adasd
 
+            $exec = $this->m_dokumendetail->tambahdata($array);
+                if ($exec){
+                 redirect(base_url("administrator/dokumendetail?id=".$id_dokumen."&msg=1"));
+                }   else redirect(base_url("administrator/dokumendetailtamabah?msg=0"));
+      } else {
+      }
+    }
 
+    public function dokumendetailhapus()
+    {
+        $id_dokumendetail = $this->input->get("id");
+        $query2 = $this->m_dokumendetail->lihatdatasatu($id_dokumendetail);
+        $row2 = $query2->row();
+        $berkas1temp = $row2->dokumen;
+        $path1 ='./assets/dokumen/'.$berkas1temp.'';
+        if(is_file($path1)) {
+            unlink($path1);
+        }
+        $id_dokumen = $row2->id_dokumen;
+        $exec = $this->m_dokumendetail->hapus($id_dokumendetail);
+        redirect(base_url()."administrator/dokumendetail?msg=2&id=".$id_dokumen."");
+    }
 
-
-
+    public function dokumendetailedit()
+    {      
+        $variabel['csrf'] = csrf();
+        $id_dokumendetail = $this->input->post("id_dokumendetail");
+        $variabel['data'] = $this->m_dokumendetail->lihatdatasatu($id_dokumendetail)->row_array();
+        $this->load->view("dokumen/dokumendetail/v_dokumendetail_edit",$variabel);
+    }
 	
 }

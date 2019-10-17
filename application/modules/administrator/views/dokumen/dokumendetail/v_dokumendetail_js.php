@@ -20,53 +20,55 @@ jQuery( document ).ready( function( $ ) {
 
     $('.edit').click(function (e) {
        
-		var v_id_dokumen = this.id;
-        var v_url = "<?php echo base_url() ?>administrator/dokumenedit";
-    
+		var v_id_dokumendetail = this.id;
+        var v_url = "<?php echo base_url() ?>administrator/dokumendetailedit";
+        
 		$.ajax({
 			type: 'POST',
 			url: v_url,
 			data: {
-				id_dokumen: v_id_dokumen
+				id_dokumendetail: v_id_dokumendetail
 			},
 			beforeSend: function () {
             //	$("#loading").show();
+           
 			},
 			success: function (response) {
 			//	$("#loading").hide();
 				$('#modal-edit').html(response)
-                $('#form2').validate({ // initialize plugin
-                    highlight: function (label) {
-                        $(label).closest('.form-group').removeClass('has-success').addClass('has-error');
-                        //$('.error').css({'font-size':'9px','margin-bottom':'0px'});
-                        $('#status-error').css({'font-size':'9px'});
-                    },
-                    success: function (label) {
-                        $(label).closest('.form-group').removeClass('has-error');
-                        label.remove();
-                    },
-                    errorPlacement: function (error, element) {
-                        var placement = element.closest('.input-group');
-                        if (!placement.get(0)) {
-                            placement = element;
-                        }
-                        if (error.text() !== '') {
-                            placement.after(error);
-                        }
-                    },
+                // $('#form2').validate({ // initialize plugin
+                  
+                //     highlight: function (label) {
+                //         $(label).closest('.form-group').removeClass('has-success').addClass('has-error');
+                //         //$('.error').css({'font-size':'9px','margin-bottom':'0px'});
+                //         $('#status-error').css({'font-size':'9px'});
+                //     },
+                //     success: function (label) {
+                //         $(label).closest('.form-group').removeClass('has-error');
+                //         label.remove();
+                //     },
+                //     errorPlacement: function (error, element) {
+                //         var placement = element.closest('.input-group');
+                //         if (!placement.get(0)) {
+                //             placement = element;
+                //         }
+                //         if (error.text() !== '') {
+                //             placement.after(error);
+                //         }
+                //     },
 
-                    rules: {
-                        judul: {
-                            required: true
-                        }
-                    },
-                    messages: {
-                        judul: {
-                            required    : "Judul tidak boleh kosong"
-                        }
+                //     rules: {
+                //         judul: {
+                //             required: true
+                //         }
+                //     },
+                //     messages: {
+                //         judul: {
+                //             required    : "Judul tidak boleh kosong"
+                //         }
                         
-                    }
-                });
+                //     }
+                // });
                 
 			}
 		});
@@ -82,7 +84,7 @@ jQuery( document ).ready( function( $ ) {
                 text: 'Hapus',
                 btnClass: 'btn-primary',
                 action: function(){
-                    window.location.assign("<?php echo base_url() ?>administrator/dokumenhapus?id="+v_id);
+                    window.location.assign("<?php echo base_url() ?>administrator/dokumendetailhapus?id="+v_id);
                 }
             },
             batal: function () {

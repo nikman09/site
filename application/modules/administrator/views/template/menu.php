@@ -12,7 +12,7 @@
 				</a>
 			</li>
 		
-			<li  class="<?= ($submenu == "halaman" || $submenu == "halamanlihat"  || $submenu == "halamantambah" || $submenu == "halamanedit") ? "opened active root-level" : ""; ?> has-sub">
+			<li  class="<?= ($submenu == "halaman" || $submenu == "halamanlihat"  || $submenu == "halamantambah" || $submenu == "halamanedit" || $submenu == "dokumen" || $submenu == "dokumendetail") ? "opened active root-level" : ""; ?> has-sub">
 					<a href="">
 						<i class="fa fa-file-o"></i>
 						<span class="title">Halaman</span>
@@ -23,7 +23,7 @@
 								<span class="title">Laman</span>
 							</a>
 						</li>
-						<li  class="<?= ($submenu == "dokumen" || $submenu == "dokumenlihat" || $submenu == "dokumentambah" || $submenu == "dokumenedit") ? " active" : ""; ?>">
+						<li  class="<?= ($submenu == "dokumen" || $submenu == "dokumendetail") ? " active" : ""; ?>">
 							<a href="<?php echo base_url() ?>administrator/dokumen">
 								<span class="title">Dokumen</span>
 							</a>

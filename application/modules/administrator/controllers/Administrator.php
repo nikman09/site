@@ -41,6 +41,7 @@ class Administrator extends CI_Controller {
                 'judul'=> $this->input->post('judul'),
                 'tanggal'=>tanggalawal($this->input->post('tanggal')),
                 'isi'=>$this->input->post('isi'),
+                'status'=>$this->input->post('status'),
                 'userinput'=>$username
                 );
                 $config['upload_path'] = './assets/images/berita';
@@ -98,6 +99,7 @@ class Administrator extends CI_Controller {
                 'judul'=> $this->input->post('judul'),
                 'tanggal'=>tanggalawal($this->input->post('tanggal')),
                 'isi'=>$this->input->post('isi'),
+                'status'=>$this->input->post('status'),
                 'userinput'=>$username
             );
             $config['upload_path'] = './assets/images/berita';
@@ -105,6 +107,7 @@ class Administrator extends CI_Controller {
             $this->load->library('upload', $config);
             if ($this->upload->do_upload("foto"))
             {
+                
                 $upload = $this->upload->data();
                 $foto = $upload["raw_name"].$upload["file_ext"];
                 $array['foto']=$foto;
@@ -129,7 +132,21 @@ class Administrator extends CI_Controller {
                     unlink($path2); //menghapus gambar di folder berita
                 }
                
+            } 
+                else if ($this->input->post('foto')=="") 
+            {
+                $query2 = $this->m_berita->lihatdatasatu($id_berita);
+                $row2 = $query2->row();
+                $berkas1temp = $row2->foto;
+                $path1 ='./assets/images/berita/'.$berkas1temp.'';
+                $path2 ='./assets/images/berita//thumb/'.$berkas1temp.'';
+                if(is_file($path1)) {
+                    unlink($path1); //menghapus gambar di folder berita
+                    unlink($path2); //menghapus gambar di folder berita
+                }
+                $array['foto']="";
             }
+            
            
             $exec = $this->m_berita->editdata($id_berita,$array);
             if ($exec) redirect(base_url("administrator/beritaedit?id=".$id_berita."&msg=1"));
@@ -574,7 +591,6 @@ class Administrator extends CI_Controller {
                  'alamat'=>$this->input->post('alamat'),
                  'password'=>md5($this->input->post('password')),
                  'rule'=>"user",
-                 'status'=>"Aktif",
                  'id_bidang'=>$this->input->post('bidang'),
                  );
                 
@@ -824,6 +840,43 @@ class Administrator extends CI_Controller {
         $id_dokumendetail = $this->input->post("id_dokumendetail");
         $variabel['data'] = $this->m_dokumendetail->lihatdatasatu($id_dokumendetail)->row_array();
         $this->load->view("dokumen/dokumendetail/v_dokumendetail_edit",$variabel);
+    }
+
+    public function dokumendetaileditproses()
+    {      
+        $variabel['csrf'] = csrf();
+        if ($this->input->post()) {
+            $id_dokumen = $this->input->post('id_dokumen');
+            $array=array(
+                'judul'=> $this->input->post('judul'),
+                'id_dokumen'=> $id_dokumen,
+                'keterangan'=> $this->input->post('keterangan')
+            );
+            
+            $id_dokumendetail = $this->input->post("id_dokumendetail");
+            $config['upload_path'] = './assets/dokumen';
+            $config['allowed_types'] = 'jpg|jpeg|JPG|JPEG|PNG|png|PDF|pdf|doc|DO|docx|DOCX';
+            $this->load->library('upload', $config);
+            if ($this->upload->do_upload("dokumen"))    
+            {
+                $upload = $this->upload->data();
+                $dokumen = $upload["raw_name"].$upload["file_ext"];
+                $array['dokumen']=$dokumen;
+                $query2 = $this->m_dokumendetail->lihatdatasatu($id_dokumendetail);
+                $row2 = $query2->row();
+                $berkas1temp = $row2->dokumen;
+                $path1 ='./assets/dokumen/'.$berkas1temp.'';
+                if(is_file($path1)) {
+                    unlink($path1); //menghapus gambar di folder berita
+                }
+            }
+
+            $exec = $this->m_dokumendetail->editdata($id_dokumendetail,$array);
+            if ($exec){
+                redirect(base_url("administrator/dokumendetail?msg=0&id=".$id_dokumen.""));
+            }
+      } else {
+      }
     }
 	
 }

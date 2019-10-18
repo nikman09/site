@@ -21,7 +21,8 @@
 						<th>Tanggal</th>
                         <th>Kategori</th>
 						<th>Judul</th>
-                        <th>Input</th>
+                        <th>Penulis</th>
+                        <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -38,7 +39,8 @@
                                 <td>".tanggal($row['tanggal'])."</td>
                                 <td>".$row['kategori']."</td>
                                 <td><strong>".$row['judul']."</strong></td>
-                                <td>".$row['timeinput']."</td>
+                                <td>".$row['nama']."</td>
+                                <td>".$row['status']."</td>
 
 							</tr>
 						";

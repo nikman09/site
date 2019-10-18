@@ -16,9 +16,10 @@ class M_berita extends CI_Model
 
     function lihatdata()
     {
-        $this->db->select("tb_berita.*,tb_beritakategori.* ")
-        ->join("tb_beritakategori","tb_beritakategori.id_beritakategori=tb_berita.id_beritakategori","left");
-
+        $this->db->select("tb_berita.*,tb_beritakategori.*,tb_administrator.* ")
+        ->join("tb_beritakategori","tb_beritakategori.id_beritakategori=tb_berita.id_beritakategori","left")
+        ->join("tb_administrator","tb_administrator.username=tb_berita.userinput");
+        $this->db->order_by("tb_berita.tanggal","desc");
         return $this->db->get('tb_berita');
     }
     function cekdata($id_berita)

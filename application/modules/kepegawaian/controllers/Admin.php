@@ -56,7 +56,7 @@ class Admin extends CI_Controller {
     {
         $variabel['csrf'] = csrf();
         if ($this->input->post()){
-            $this->form_validation->set_rules('nip','NIP','required|trim|is_unique[tb_pegawai.nip]');
+            $this->form_validation->set_rules('nip','NIP','required|trim|is_unique[pg_pegawai.nip]');
             if($this->form_validation->run() != false){
                 $array=array(
                     'nama'=> $this->input->post('nama'),
@@ -108,7 +108,7 @@ class Admin extends CI_Controller {
             $nip = $this->input->post('nip');
             $nip2 = $this->input->post('nip2');
             if ( $nip!= $nip2) {
-                $is_unique =  '|is_unique[tb_pegawai.nip]';
+                $is_unique =  '|is_unique[pg_pegawai.nip]';
              } else {
                 $is_unique =  '';
              }
@@ -938,7 +938,6 @@ class Admin extends CI_Controller {
         $this->layout->renderadmin("v_admin/tentang/v_tentang",$variabel);
     }
 
-
     function profil()
     {
       
@@ -947,7 +946,7 @@ class Admin extends CI_Controller {
             $username = $this->input->post('username');
             $username2 = $this->input->post('username2');
             if ( $username!= $username2) {
-                $is_unique =  '|is_unique[tb_administrator.username]';
+                $is_unique =  '|is_unique[pg_administrator.username]';
              } else {
                 $is_unique =  '';
              }

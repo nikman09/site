@@ -98,34 +98,62 @@
 					</div>
 				</div>
 				<div class="form-group">
-						<label class="col-sm-2 control-label">Foto Utama</label>
-						<div class="col-sm-4">
-							<div class="fileinput fileinput-new" data-provides="fileinput" style="margin-bottom:0;display:inline">
-								<div class="input-group">
-									<div class="form-control uneditable-input" data-trigger="fileinput">
-										<i class="glyphicon glyphicon-file fileinput-exists"></i>
-										<span class="fileinput-filename"><?php echo $data["foto"] ?></span>
-									</div>
-									<span class="input-group-addon btn btn-default btn-file">
-										<span class="fileinput-new">Select file</span>
+					<label class="col-lg-2 control-label">Status</label>
+					<div class="col-lg-10">
+                        <select class="form-control" name="status" id="status" >
+                            <option value="" disabled>.:Pilih Status:.</option>
+							<option value="Publish" <?php echo $data['status']=="Publish"?"selected":""; ?>>Publish</option>
+							<option value="Draft" <?php echo $data['status']=="Draft"?"selected":""; ?>>Draft</option>
+                            </select>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-lg-2 control-label">Foto Utama</label>
+					<div class="col-lg-4">
+					
+					<div class="panel panel-primary" data-collapsed="0">
+				
+						<div class="panel-heading">
+							<div class="panel-title">
+								
+							</div>
+							
+							<div class="panel-options">
+								<a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
+							</div>
+						</div>
+						
+						<div class="panel-body">
+							
+							<div class="fileinput <?php  echo ($data['foto']=="") ? "fileinput-new":"fileinput-exists" ?> " data-provides="fileinput">
+							<input type="hidden" value="<?php echo $data['foto'] ?>" name="foto">
+								<div class="fileinput-new thumbnail" style="max-width: 310px; height: 160px;" data-trigger="fileinput">
+								<img src="http://placehold.it/320x160" alt="...">
+								</div>
+								<div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 310px; height: 160px;" data-trigger="fileinput">
+									<img src="<?php echo base_url()."assets/images/kegiatan/".$data['foto'] ?>" alt="...">
+								</div>
+								<div>
+									<span class="btn btn-white btn-file">
+										<span class="fileinput-new">Select image</span>
 										<span class="fileinput-exists">Change</span>
-										<input type="file" name="foto"    id="image-source"  onchange="previewImage();" >
+										<input type="file" name="foto" accept="image/*" >
 									</span>
-									<a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
+									<a href="#" class="btn btn-orange  	fileinput-exists" data-dismiss="fileinput">Remove</a>
 								</div>
 							</div>
+							
+						</div>
+					
+					</div>
+					
+		
 					</div>
 				</div>
-                <div class="form-group">
-						<label class="col-sm-2 control-label"></label>
-						<div class="col-sm-4">
-                           <img id="image-preview" src="<?php echo base_url()."assets/images/kegiatan/".$data['foto'] ?>" alt="image preview" width="100px" style="border:2px solid #dbdbdb"/>
 
-					</div>
-				</div>
-				
-				
-			
+
+
+              
 				
 			</div>
         </div>
@@ -134,12 +162,12 @@
 	
 </div>
 <footer class="panel-footer text-right bg-light lter">
-	<button type="submit" class="btn btn-primary btn-s-xs">
+	<button type="submit" class="btn btn-primary btn-s-xs  btn-icon icon-left">
 		<i class="fa fa-save"></i> Simpan</button>
 	&nbsp
-    <a href="<?php echo base_url('administrator/kegiatanedit?id='.$data['id_kegiatan'].'') ?>" class="btn btn-default btn-s-xs">
+    <a href="<?php echo base_url('administrator/kegiatanedit?id='.$data['id_kegiatan'].'') ?>" class="btn btn-default btn-s-xs  btn-icon icon-left">
 		<i class="fa fa-refresh"></i> Reset</a>
-	<a href="<?php echo base_url('administrator/kegiatan') ?>" class="btn btn-default btn-s-xs">
+	<a href="<?php echo base_url('administrator/kegiatan') ?>" class="btn btn-default btn-s-xs  btn-icon icon-left">
 		<i class="fa fa-times"></i> Kembali</a>
 
 		</form>	

@@ -125,6 +125,20 @@
 			$menu = $ci->router->fetch_class();
 			$submenu = $ci->router->fetch_method();
 			if($ci->session->userdata('statuslogin') != "login") {
+				redirect(base_url("kepegawaian/login?m=".$submenu.""));
+				
+			}
+		}
+	}
+
+	if (!function_exists('cekloginweb'))
+	{
+		function cekloginweb()
+		{	
+			$ci = &get_instance();
+			$menu = $ci->router->fetch_class();
+			$submenu = $ci->router->fetch_method();
+			if($ci->session->userdata('web_statuslogin') != "login") {
 				redirect(base_url("login?m=".$submenu.""));
 			}
 		}
@@ -150,7 +164,7 @@
 			$menu = $ci->router->fetch_class();
 			$submenu = $ci->router->fetch_method();
 			if($ci->session->userdata('user_statuslogin') != "login") {
-				redirect(base_url("administrator/login?m=".$submenu.""));
+				redirect(base_url("login?m=".$submenu.""));
 			}
 		}
 	}

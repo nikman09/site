@@ -9,36 +9,36 @@ class M_pendidikan extends CI_Model
     
     function lihatdatasatu($id_pendidikan)
     {
-        $this->db->select("tb_pendidikan.*");
-        $this->db->where("tb_pendidikan.id_pendidikan",$id_pendidikan);
-        return $this->db->get('tb_pendidikan');
+        $this->db->select("pg_pendidikan.*");
+        $this->db->where("pg_pendidikan.id_pendidikan",$id_pendidikan);
+        return $this->db->get('pg_pendidikan');
     }
 
     function lihatdata()
     {
-        $this->db->select("tb_pendidikan.*");
-        return $this->db->get('tb_pendidikan');
+        $this->db->select("pg_pendidikan.*");
+        return $this->db->get('pg_pendidikan');
     }
     function cekdata($id_pendidikan)
     {
         $this->db->where("id_pendidikan",$id_pendidikan);
-        return $this->db->get('tb_pendidikan')->num_rows();
+        return $this->db->get('pg_pendidikan')->num_rows();
     }
 
     function tambahdata($array)
     {
-        return $this->db->insert('tb_pendidikan',$array);
+        return $this->db->insert('pg_pendidikan',$array);
     }
 
     function editdata($id_pendidikan,$array)
     {
         $this->db->where("id_pendidikan",$id_pendidikan);
-        return $this->db->update('tb_pendidikan',$array);
+        return $this->db->update('pg_pendidikan',$array);
     }
     function hapus($id_pendidikan)
     {
         $this->db->where("id_pendidikan",$id_pendidikan);
-        return $this->db->delete('tb_pendidikan');
+        return $this->db->delete('pg_pendidikan');
     }
   
 }

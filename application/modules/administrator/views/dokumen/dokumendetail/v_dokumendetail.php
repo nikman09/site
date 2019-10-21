@@ -12,9 +12,9 @@
 <div class="row">
     <div class="col-md-12">
         <?php pesan_get('msg',"Berhasil Menambah Detail Dokumen","Berhasil Mengedit Dokumen","Berhasil Menghapus Detail Dokumen") ?>
-            <a href="#" style="margin: 5px 0 10px 0px" class="btn  btn-primary tambah" data-toggle="modal" data-target="#myModal">
+            <a href="#" style="margin: 5px 0 10px 0px" class="btn  btn-primary tambah   btn-icon icon-left" data-toggle="modal" data-target="#myModal">
                 <i class="fa fa-plus"></i> Tambah Detail Dokumen</a>
-                <a href="<?php echo base_url(); ?>administrator/dokumen" style="margin: 5px 0 10px 0px" class="btn  btn-default ">
+                <a href="<?php echo base_url(); ?>administrator/dokumen" style="margin: 5px 0 10px 0px" class="btn  btn-default   btn-icon icon-left">
                 <i class="fa fa-arrow-left"></i> Kembali</a>
             <table class="table table-bordered datatable" id="table-1" style="font-size:12px">
                 <thead>

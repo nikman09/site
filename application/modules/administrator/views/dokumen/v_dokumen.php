@@ -12,7 +12,7 @@
 <div class="row">
     <div class="col-md-12">
         <?php pesan_get('msg',"Berhasil Menambah Dokumen Kegiatan","Berhasil Mengedit Dokumen Kegiatan","Berhasil Menghapus Dokumen Kegiatan") ?>
-            <a href="#" style="margin: 5px 0 10px 0px" class="btn  btn-primary tambah" data-toggle="modal" data-target="#myModal">
+            <a href="#" style="margin: 5px 0 10px 0px" class="btn  btn-primary tambah   btn-icon icon-left" data-toggle="modal" data-target="#myModal">
                 <i class="fa fa-plus"></i> Tambah Dokumen</a>
             <table class="table table-bordered datatable" id="table-1" style="font-size:12px">
                 <thead>
@@ -36,7 +36,7 @@
 								</td>
                                 <td>".$row['judul']."</td>
                                 <td>".$row['keterangan']."</td>
-                                <td><a href='".base_url("administrator/dokumendetail?id=".$row['id_dokumen']."")."' class='btn btn-primary btn-xs' title='Detailt' id='".$row['id_dokumen']."'><i class='fa fa-list' id='".$row['id_dokumen']."'  ></i> Detail </a></td>
+                                <td><a href='".base_url("administrator/dokumendetail?id=".$row['id_dokumen']."")."' class='btn btn-primary btn-xs   btn-icon icon-left' title='Detailt' id='".$row['id_dokumen']."'><i class='fa fa-list' id='".$row['id_dokumen']."'  ></i> Detail </a></td>
 
 							</tr>
 						";

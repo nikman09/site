@@ -4,14 +4,9 @@ jQuery( document ).ready( function( $ ) {
     // Initialize DataTable
     $table1.DataTable( {
         "aLengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
-        "bStateSave": true
-    });
-    // Initalize Select Dropdown after DataTables is created
-    $table1.closest( '.dataTables_wrapper' ).find( 'select' ).select2( {
-        minimumResultsForSearch: -1
-    });
-
-    $(".hapus").click(function (e) {
+        "bStateSave": true,
+        "fnDrawCallback": function () {
+            $(".hapus").click(function (e) {
     var v_id = this.id;
     $.confirm({
         title: 'Hapus!',
@@ -31,6 +26,14 @@ jQuery( document ).ready( function( $ ) {
         }
         });
     });
+           },
+    });
+    // Initalize Select Dropdown after DataTables is created
+    $table1.closest( '.dataTables_wrapper' ).find( 'select' ).select2( {
+        minimumResultsForSearch: -1
+    });
+
+   
 
 } );
  

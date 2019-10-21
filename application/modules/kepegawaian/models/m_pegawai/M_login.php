@@ -11,6 +11,6 @@ class M_login extends CI_Model
     {
         $this->db->where("nip",$nip);
         $this->db->where("password",$password);
-        return $this->db->get('tb_pegawai');
+        return $this->db->get('pg_pegawai');
     }
 }

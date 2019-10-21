@@ -52,6 +52,9 @@ $('#form').validate({ // initialize plugin
             },
             bidang: {
                 required: true
+            },
+            status: {
+                required: true
             }
         },
         messages: {
@@ -62,25 +65,28 @@ $('#form').validate({ // initialize plugin
                 required: "Tanggal tidak boleh kosong"
             },
             kegiatankategori: {
-                required: "Kategori tidak boleh kosong"
+                required: "Kategori harus dipilih"
             },
             isi: {
                 required: "Isi tidak boleh kosong"
             },
             bidang: {
-                required: "Bidang tidak boleh kosong"
+                required: "Bidang harus dipilih"
+            },
+            status: {
+                required: "Status harus dipilih"
             }
         }
     });
 
-    function previewImage() {
-    document.getElementById("image-preview").style.display = "block";
-    var oFReader = new FileReader();
-     oFReader.readAsDataURL(document.getElementById("image-source").files[0]);
+//     function previewImage() {
+//     document.getElementById("image-preview").style.display = "block";
+//     var oFReader = new FileReader();
+//      oFReader.readAsDataURL(document.getElementById("image-source").files[0]);
  
-    oFReader.onload = function(oFREvent) {
-      document.getElementById("image-preview").src = oFREvent.target.result;
-    };
-  };
+//     oFReader.onload = function(oFREvent) {
+//       document.getElementById("image-preview").src = oFREvent.target.result;
+//     };
+//   };
 
 </script>

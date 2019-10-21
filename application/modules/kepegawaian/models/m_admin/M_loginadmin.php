@@ -11,6 +11,6 @@ class M_loginadmin extends CI_Model
     {
         $this->db->where("username",$username);
         $this->db->where("password",$password);
-        return $this->db->get('tb_administrator');
+        return $this->db->get('pg_administrator');
     }
 }

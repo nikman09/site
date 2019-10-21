@@ -12,7 +12,7 @@
 <div class="row">
     <div class="col-md-12">
         <?php pesan_get('msg',"Berhasil Menambah Halaman","Berhasil Mengedit Halaman","Berhasil Menghapus Halaman") ?>
-            <a href="<?php echo base_url() ?>administrator/halamantambah" style="margin: 5px 0 10px 0px" class="btn  btn-primary tambah">
+            <a href="<?php echo base_url() ?>administrator/halamantambah" style="margin: 5px 0 10px 0px" class="btn  btn-primary tambah   btn-icon icon-left">
                 <i class="fa fa-plus"></i> Tambah Halaman</a>
             <table class="table table-bordered datatable" id="table-1" style="font-size:12px">
                 <thead>

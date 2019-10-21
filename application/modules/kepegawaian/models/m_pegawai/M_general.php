@@ -11,14 +11,14 @@ class M_general extends CI_Model
       {
         $this->db->where('id_jabatan', $id_jabatan);
         $this->db->order_by("nama_subjabatan","ASC");
-        $hasil = $this->db->get('tb_subjabatan');
+        $hasil = $this->db->get('pg_subjabatan');
         return $hasil->result();
       }
 
       function ambilsubjabatan($id_jabatan){
         $this->db->where('id_jabatan', $id_jabatan);
         $this->db->order_by("nama_subjabatan","ASC");
-        return $this->db->get('tb_subjabatan');
+        return $this->db->get('pg_subjabatan');
       }
 
     

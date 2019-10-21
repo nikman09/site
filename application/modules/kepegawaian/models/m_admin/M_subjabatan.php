@@ -9,29 +9,29 @@ class M_subjabatan extends CI_Model
     function lihatdata($id_jabatan)
     {
         $this->db->where("id_jabatan",$id_jabatan);
-        return $this->db->get('tb_subjabatan');
+        return $this->db->get('pg_subjabatan');
     }
 
     function lihatdatasatu($id_subjabatan)
     {
         $this->db->where("id_subjabatan",$id_subjabatan);
-        return $this->db->get('tb_subjabatan');
+        return $this->db->get('pg_subjabatan');
     }
     function tambahdata($array)
     {
-        return $this->db->insert('tb_subjabatan',$array);
+        return $this->db->insert('pg_subjabatan',$array);
     }
    
     function hapus($id_subjabatan)
     {
         $this->db->where("id_subjabatan",$id_subjabatan);
-        return $this->db->delete('tb_subjabatan');
+        return $this->db->delete('pg_subjabatan');
     }
 
     function editdata($id_subjabatan,$array)
     {
         $this->db->where("id_subjabatan",$id_subjabatan);
-        return $this->db->update('tb_subjabatan',$array);
+        return $this->db->update('pg_subjabatan',$array);
     }
     
   

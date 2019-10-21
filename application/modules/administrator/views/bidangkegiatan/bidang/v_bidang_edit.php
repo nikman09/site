@@ -59,12 +59,12 @@
 	
 </div>
 <footer class="panel-footer text-right bg-light lter">
-	<button type="submit" class="btn btn-primary btn-s-xs">
+	<button type="submit" class="btn btn-primary btn-s-xs  btn-icon icon-left">
 		<i class="fa fa-save"></i> Simpan</button>
 	&nbsp
-    <a href="<?php echo base_url('administrator/bidangedit?id='.$data['id_bidang'].'') ?>" class="btn btn-default btn-s-xs">
+    <a href="<?php echo base_url('administrator/bidangedit?id='.$data['id_bidang'].'') ?>" class="btn btn-default btn-s-xs  btn-icon icon-left">
 		<i class="fa fa-refresh"></i> Reset</a>
-	<a href="<?php echo base_url('administrator/bidang') ?>" class="btn btn-default btn-s-xs">
+	<a href="<?php echo base_url('administrator/bidang') ?>" class="btn btn-default btn-s-xs  btn-icon icon-left">
 		<i class="fa fa-times"></i> Kembali</a>
 
 		</form>	

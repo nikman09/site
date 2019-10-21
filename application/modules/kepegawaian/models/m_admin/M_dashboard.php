@@ -10,7 +10,7 @@ class M_dashboard extends CI_Model
     function jumlahpegawai()
     {
         $this->db->select("COUNT(*) as jumlah");
-        $jumlah = $this->db->get('tb_pegawai')->row_array();
+        $jumlah = $this->db->get('pg_pegawai')->row_array();
         return $jumlah = $jumlah['jumlah'];
     }
 
@@ -18,23 +18,23 @@ class M_dashboard extends CI_Model
     {
         $this->db->select("COUNT(*) as jumlah");
         $this->db->where("jk","Laki-laki");
-        $jumlah = $this->db->get('tb_pegawai')->row_array();
+        $jumlah = $this->db->get('pg_pegawai')->row_array();
         return $jumlah = $jumlah['jumlah'];
     }
     function jumlahpegawaipr()
     {
         $this->db->select("COUNT(*) as jumlah");
         $this->db->where("jk","Perempuan");
-        $jumlah = $this->db->get('tb_pegawai')->row_array();
+        $jumlah = $this->db->get('pg_pegawai')->row_array();
         return $jumlah = $jumlah['jumlah'];
     }
 
     function jumlahgolongan($pangkat)
     {
         $this->db->select("COUNT(*) as jumlah");
-        $this->db->join("tb_pangkat","tb_pangkat.id_pangkat = tb_pegawai.id_pangkat","left");
-        $this->db->where("tb_pangkat.id_golongan ",$pangkat);
-        $jumlah = $this->db->get('tb_pegawai')->row_array();
+        $this->db->join("pg_pangkat","pg_pangkat.id_pangkat = pg_pegawai.id_pangkat","left");
+        $this->db->where("pg_pangkat.id_golongan ",$pangkat);
+        $jumlah = $this->db->get('pg_pegawai')->row_array();
         return $jumlah = $jumlah['jumlah'];
     }
 
@@ -42,13 +42,13 @@ class M_dashboard extends CI_Model
     {
         $this->db->select("COUNT(*) as jumlah");
         $this->db->where("id_jabatan",$jabatan);
-        $jumlah = $this->db->get('tb_pegawai')->row_array();
+        $jumlah = $this->db->get('pg_pegawai')->row_array();
         return $jumlah = $jumlah['jumlah'];
     }
 
     function pangkat()
     {
-         return $this->db->query("select pangkat , count(tb_pegawai.id_pegawai) as jumlah, golongan from tb_pangkat left join tb_pegawai on tb_pangkat.id_pangkat = tb_pegawai.id_pangkat left join tb_golongan on tb_golongan.id_golongan = tb_pangkat.id_golongan group by  tb_pangkat.id_pangkat order by tb_pangkat.id_pangkat asc ");
+         return $this->db->query("select pangkat , count(pg_pegawai.id_pegawai) as jumlah, golongan from pg_pangkat left join pg_pegawai on pg_pangkat.id_pangkat = pg_pegawai.id_pangkat left join pg_golongan on pg_golongan.id_golongan = pg_pangkat.id_golongan group by  pg_pangkat.id_pangkat order by pg_pangkat.id_pangkat asc ");
     }
 
 }

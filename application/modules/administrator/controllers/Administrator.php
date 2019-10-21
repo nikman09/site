@@ -4,7 +4,7 @@ class Administrator extends CI_Controller {
     public function __construct()
     {
         parent::__construct();
-        ceklogin();
+        cekloginweb();
         $this->load->model("m_beritakategori");
         $this->load->model("m_berita");
         $this->load->model("m_bidang");
@@ -35,7 +35,7 @@ class Administrator extends CI_Controller {
         $variabel['csrf'] = csrf();
         $variabel['beritakategori'] = $this->m_beritakategori->lihatdata();
         if ($this->input->post()){
-            $username = $this->session->userdata("username");
+            $username = $this->session->userdata("web_username");
             $array=array(
                 'id_beritakategori'=> $this->input->post('beritakategori'),
                 'judul'=> $this->input->post('judul'),
@@ -92,7 +92,7 @@ class Administrator extends CI_Controller {
         $variabel['csrf'] = csrf();
         $variabel['beritakategori'] = $this->m_beritakategori->lihatdata();
         if ($this->input->post()) {
-            $username = $this->session->userdata("username");
+            $username = $this->session->userdata("web_username");
             $id_berita = $this->input->post('id_berita');
             $array=array(
                 'id_beritakategori'=> $this->input->post('beritakategori'),
@@ -177,7 +177,7 @@ class Administrator extends CI_Controller {
     public function beritakategoritambah()
     {      
         $variabel['csrf'] = csrf();
-        $username = $this->session->userdata("username");
+        $username = $this->session->userdata("web_username");
         if ($this->input->post()) {
             $array=array(
                 'kategori'=> $this->input->post('kategori'),
@@ -299,7 +299,7 @@ class Administrator extends CI_Controller {
     public function kegiatankategoritambah()
     {      
         $variabel['csrf'] = csrf();
-        $username = $this->session->userdata("username");
+        $username = $this->session->userdata("web_username");
         if ($this->input->post()) {
             $array=array(
                 'kategori'=> $this->input->post('kategori'),
@@ -320,7 +320,7 @@ class Administrator extends CI_Controller {
         $variabel['csrf'] = csrf();
         $id_kegiatankategori = $this->input->post("id_kegiatankategori");
         $variabel['data'] = $this->m_kegiatankategori->lihatdatasatu($id_kegiatankategori)->row_array();
-        $this->load->view("'bidangkegiatan/kegiatankategori/v_kegiatankategori_edit",$variabel);
+        $this->load->view("bidangkegiatan/kegiatankategori/v_kegiatankategori_edit",$variabel);
     }
 
     public function kegiatankategorieditproses()
@@ -362,13 +362,14 @@ class Administrator extends CI_Controller {
         $variabel['kegiatankategori'] = $this->m_kegiatankategori->lihatdata();
         $variabel['bidang'] = $this->m_bidang->lihatdata();
         if ($this->input->post()){
-            $username = $this->session->userdata("username");
+            $username = $this->session->userdata("web_username");
             $array=array(
                 'id_kegiatankategori'=> $this->input->post('kegiatankategori'),
                 'judul'=> $this->input->post('judul'),
                 'tanggal'=>tanggalawal($this->input->post('tanggal')),
                 'isi'=>$this->input->post('isi'),
                 'id_bidang'=>$this->input->post('bidang'),
+                'status'=>$this->input->post('status'),
                 'userinput'=>$username
                 );
                 $config['upload_path'] = './assets/images/kegiatan';
@@ -376,6 +377,17 @@ class Administrator extends CI_Controller {
                 $this->load->library('upload', $config);
                 $this->upload->do_upload("foto");
                 $upload = $this->upload->data();
+
+                $config['image_library'] = 'gd2';
+                $config['source_image'] = './assets/images/kegiatan/'.$upload["raw_name"].$upload["file_ext"];
+                $config['create_thumb'] = FALSE;
+                $config['maintain_ratio'] = TRUE;
+                $config['width']         = 300;
+                $config['height']       = 200;
+                $config['new_image'] = './assets/images/kegiatan/thumb/'.$upload["raw_name"].$upload["file_ext"];
+                $this->load->library('image_lib', $config);
+                $this->image_lib->resize();
+
                 $file = $upload["raw_name"].$upload["file_ext"];
                 $array['foto']=$file;
                 $exec = $this->m_kegiatan->tambahdata($array);
@@ -409,7 +421,7 @@ class Administrator extends CI_Controller {
         $variabel['kegiatankategori'] = $this->m_kegiatankategori->lihatdata();
         $variabel['bidang'] = $this->m_bidang->lihatdata();
         if ($this->input->post()) {
-            $username = $this->session->userdata("username");
+            $username = $this->session->userdata("web_username");
             $id_kegiatan = $this->input->post('id_kegiatan');
             $array=array(
                 'id_kegiatankategori'=> $this->input->post('kegiatankategori'),
@@ -417,6 +429,7 @@ class Administrator extends CI_Controller {
                 'tanggal'=>tanggalawal($this->input->post('tanggal')),
                 'isi'=>$this->input->post('isi'),
                 'id_bidang'=>$this->input->post('bidang'),
+                'status'=>$this->input->post('status'),
                 'userinput'=>$username
             );
             $config['upload_path'] = './assets/images/kegiatan';
@@ -428,14 +441,41 @@ class Administrator extends CI_Controller {
                 $foto = $upload["raw_name"].$upload["file_ext"];
                 $array['foto']=$foto;
 
+                
+                $config['image_library'] = 'gd2';
+                $config['source_image'] = './assets/images/kegiatan/'.$upload["raw_name"].$upload["file_ext"];
+                $config['create_thumb'] = FALSE;
+                $config['maintain_ratio'] = TRUE;
+                $config['width']         = 300;
+                $config['height']       = 200;
+                $config['new_image'] = './assets/images/kegiatan/thumb/'.$upload["raw_name"].$upload["file_ext"];
+                $this->load->library('image_lib', $config);
+                $this->image_lib->resize();
+
                 $query2 = $this->m_kegiatan->lihatdatasatu($id_kegiatan);
                 $row2 = $query2->row();
                 $berkas1temp = $row2->foto;
                 $path1 ='./assets/images/kegiatan/'.$berkas1temp.'';
+                $path2 ='./assets/images/kegiatan/thumb/'.$berkas1temp.'';
                 if(is_file($path1)) {
-                    unlink($path1); //menghapus gambar di folder kegiatan
+                    unlink($path1);
+                    unlink($path2); 
                 }
+            
                
+            } 
+            else if ($this->input->post('foto')=="") 
+            {
+                $query2 = $this->m_kegiatan->lihatdatasatu($id_kegiatan);
+                $row2 = $query2->row();
+                $berkas1temp = $row2->foto;
+                $path1 ='./assets/images/kegiatan/'.$berkas1temp.'';
+                $path2 ='./assets/images/kegiatan//thumb/'.$berkas1temp.'';
+                if(is_file($path1)) {
+                    unlink($path1); 
+                    unlink($path2);
+                }
+                $array['foto']="";
             }
            
             $exec = $this->m_kegiatan->editdata($id_kegiatan,$array);
@@ -467,7 +507,7 @@ class Administrator extends CI_Controller {
     {   
         $variabel['csrf'] = csrf();
         if ($this->input->post()){
-            $username = $this->session->userdata("username");
+            $username = $this->session->userdata("web_username");
             $array=array(
                 'judul'=> $this->input->post('judul'),
                 'isi'=>$this->input->post('isi'),
@@ -509,7 +549,7 @@ class Administrator extends CI_Controller {
 
         $variabel['csrf'] = csrf();
         if ($this->input->post()) {
-            $username = $this->session->userdata("username");
+            $username = $this->session->userdata("web_username");
             $id_halaman = $this->input->post('id_halaman');
             $array=array(
                 'judul'=> $this->input->post('judul'),
@@ -533,8 +573,9 @@ class Administrator extends CI_Controller {
                     unlink($path1); //menghapus gambar di folder halaman
                 }
                
-            }
-            if ($this->input->post('hapusfoto')!=""){
+            } 
+            else if ($this->input->post('foto')=="") 
+            {
                 $query2 = $this->m_halaman->lihatdatasatu($id_halaman);
                 $row2 = $query2->row();
                 $berkas1temp = $row2->foto;
@@ -578,7 +619,7 @@ class Administrator extends CI_Controller {
      $variabel['csrf'] = csrf();
      $variabel['bidang'] = $this->m_bidang->lihatdata();
      if ($this->input->post()){
-         $username = $this->session->userdata("username");
+         $username = $this->session->userdata("web_username");
 
          $this->form_validation->set_rules('username','Username','required|trim|is_unique[tb_administrator.username]');
          if($this->form_validation->run() != false){
@@ -671,13 +712,24 @@ class Administrator extends CI_Controller {
                     unlink($path1); //menghapus gambar di folder admin
                 }
                 
+            }  else if ($this->input->post('foto')=="") 
+            {
+                $query2 = $this->m_admin->lihatdatasatu($username);
+                $row2 = $query2->row();
+                $berkas1temp = $row2->foto;
+                $path1 ='./assets/images/admin/'.$berkas1temp.'';
+                if(is_file($path1)) {
+                    unlink($path1); //menghapus gambar di folder halaman
+                }
+                echo   $path1;
+               $array['foto']="";
             }
             
             $exec = $this->m_admin->editdata($username,$array);
             if ($exec) redirect(base_url("administrator/adminedit?id=".$username."&msg=1"));
             else redirect(base_url("administrator/adminedit?id=".$username."&msg=0"));
         } else  {
-            $username = $this->input->get("username");
+            $username = $this->input->get("web_username");
             $exec = $this->m_admin->lihatdatasatu($username);
             $variabel['error'] = 0;
             if ($exec->num_rows()>0){
@@ -705,7 +757,7 @@ class Administrator extends CI_Controller {
 
  function gantipassword()
     {
-        $username = $this->input->post("username");
+        $username = $this->input->post("web_username");
         $variabel['csrf'] = csrf();
         $variabel['data'] = $this->m_admin->lihatdatasatu($username)->row_array();
         $this->load->view("admin/v_password",$variabel);

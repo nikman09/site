@@ -10,34 +10,30 @@ jQuery( document ).ready( function( $ ) {
     // Initialize DataTable
     $table1.DataTable( {
         "aLengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
-        "bStateSave": true
-    });
-    // Initalize Select Dropdown after DataTables is created
-    $table1.closest( '.dataTables_wrapper' ).find( 'select' ).select2( {
-        minimumResultsForSearch: -1
-    });
+        "bStateSave": true,
+        "fnDrawCallback": function () {
+            $(".hapus").click(function (e) {
+            var v_id = this.id;
+            $.confirm({
+                title: 'Hapus!',
+                content: 'Yakin ingin menghapus ?',
+                buttons: {
+                    hapus: {
+                        text: 'Hapus',
+                        btnClass: 'btn-primary',
+                        action: function(){
+                            window.location.assign("<?php echo base_url() ?>administrator/adminhapus?id="+v_id);
+                        }
+                    },
+                    batal: function () {
 
-    $(".hapus").click(function (e) {
-    var v_id = this.id;
-    $.confirm({
-        title: 'Hapus!',
-        content: 'Yakin ingin menghapus ?',
-        buttons: {
-            hapus: {
-                text: 'Hapus',
-                btnClass: 'btn-primary',
-                action: function(){
-                    window.location.assign("<?php echo base_url() ?>administrator/adminhapus?id="+v_id);
+                    }
+                    
                 }
-            },
-            batal: function () {
+                });
+            });
 
-            }
             
-        }
-        });
-    });
-
     $('.kunci').click(function (e) {
         
 		var v_username = this.id;
@@ -103,6 +99,15 @@ jQuery( document ).ready( function( $ ) {
 			}
 		});
 	});
+        },
+    });
+    // Initalize Select Dropdown after DataTables is created
+    $table1.closest( '.dataTables_wrapper' ).find( 'select' ).select2( {
+        minimumResultsForSearch: -1
+    });
+
+    
+
 
 
 } );

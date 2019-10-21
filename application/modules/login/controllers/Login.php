@@ -17,12 +17,12 @@ class Login extends CI_Controller {
                 $data = $exec->row_array();
                 if ($data['rule']=="administrator") {
                     $data_session = array(
-                        'username' => $data['username'],
-                        'statuslogin' => "login",
-                        'nama'=> $data['nama'],
-                        'foto'=> $data['foto'],
-                        'status'=> $data['status'],
-                        'rule'=> $data['rule']
+                        'web_username' => $data['username'],
+                        'web_statuslogin' => "login",
+                        'web_nama'=> $data['nama'],
+                        'web_foto'=> $data['foto'],
+                        'web_status'=> $data['status'],
+                        'web_rule'=> $data['rule']
                         );
                     $this->session->set_userdata($data_session);
                     if (isset($_GET['m'])) {

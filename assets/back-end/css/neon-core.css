@@ -8387,7 +8387,7 @@ body {
   perspective: 800px;
 }
 .datepicker.datepicker-dropdown {
-  z-index: 10000 !important;
+  z-index: 10000011 !important;
 }
 .top-dropdown-search .form-group {
   padding: 10px;

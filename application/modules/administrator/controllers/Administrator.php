@@ -14,6 +14,8 @@ class Administrator extends CI_Controller {
         $this->load->model("m_admin");
         $this->load->model("m_dokumen");
         $this->load->model("m_dokumendetail");
+        $this->load->model("m_jadwal");
+        $this->load->model("m_jadwaldetail");
     }
 
     // Dashboard
@@ -852,7 +854,7 @@ class Administrator extends CI_Controller {
             );
 
             //asdad
-            $config['upload_path'] = './assets/dokumen';
+            $config['upload_path'] = './assets/images/dokumen';
             $config['allowed_types'] = 'jpg|jpeg|JPG|JPEG|PNG|png|PDF|pdf|doc|DOC';
             $this->load->library('upload', $config);
             $this->upload->do_upload("dokumen");
@@ -877,7 +879,7 @@ class Administrator extends CI_Controller {
         $query2 = $this->m_dokumendetail->lihatdatasatu($id_dokumendetail);
         $row2 = $query2->row();
         $berkas1temp = $row2->dokumen;
-        $path1 ='./assets/dokumen/'.$berkas1temp.'';
+        $path1 ='./assets/images/dokumen/'.$berkas1temp.'';
         if(is_file($path1)) {
             unlink($path1);
         }
@@ -906,7 +908,7 @@ class Administrator extends CI_Controller {
             );
             
             $id_dokumendetail = $this->input->post("id_dokumendetail");
-            $config['upload_path'] = './assets/dokumen';
+            $config['upload_path'] = './assets/images/dokumen';
             $config['allowed_types'] = 'jpg|jpeg|JPG|JPEG|PNG|png|PDF|pdf|doc|DO|docx|DOCX';
             $this->load->library('upload', $config);
             if ($this->upload->do_upload("dokumen"))    
@@ -917,7 +919,7 @@ class Administrator extends CI_Controller {
                 $query2 = $this->m_dokumendetail->lihatdatasatu($id_dokumendetail);
                 $row2 = $query2->row();
                 $berkas1temp = $row2->dokumen;
-                $path1 ='./assets/dokumen/'.$berkas1temp.'';
+                $path1 ='./assets/images/dokumen/'.$berkas1temp.'';
                 if(is_file($path1)) {
                     unlink($path1); //menghapus gambar di folder berita
                 }
@@ -926,6 +928,172 @@ class Administrator extends CI_Controller {
             $exec = $this->m_dokumendetail->editdata($id_dokumendetail,$array);
             if ($exec){
                 redirect(base_url("administrator/dokumendetail?msg=0&id=".$id_dokumen.""));
+            }
+      } else {
+      }
+    }
+
+
+    public function jadwal()
+    {   
+        $variabel['csrf'] = csrf();
+        $variabel['data'] = $this->m_jadwal->lihatdata();
+        $this->layout->render('jadwal/v_jadwal',$variabel,'jadwal/v_jadwal_js');
+    }
+    
+    public function jadwaltambah()
+    {      
+        $variabel['csrf'] = csrf();
+        if ($this->input->post()) {
+            $array=array(
+                'nama'=> $this->input->post('nama'),
+                'keterangan'=> $this->input->post('keterangan') 
+            );
+            $exec = $this->m_jadwal->tambahdata($array);
+                if ($exec){
+                 redirect(base_url("administrator/jadwal?msg=1"));
+                }
+      } else {
+      }
+    }
+
+
+    
+    public function jadwaledit()
+    {      
+        $variabel['csrf'] = csrf();
+        $id_jadwal = $this->input->post("id_jadwal");
+        $variabel['data'] = $this->m_jadwal->lihatdatasatu($id_jadwal)->row_array();
+        $this->load->view("jadwal/v_jadwal_edit",$variabel);
+    }
+
+    public function jadwaleditproses()
+    {      
+        $variabel['csrf'] = csrf();
+        if ($this->input->post()) {
+            $array=array(
+            'nama'=> $this->input->post('nama'),
+            'keterangan'=> $this->input->post('keterangan') 
+            );
+            $id_jadwal = $this->input->post("id_jadwal");
+            $exec = $this->m_jadwal->editdata($id_jadwal,$array);
+            if ($exec){
+                redirect(base_url("administrator/jadwal?msg=0"));
+            }
+      } else {
+      }
+    }
+
+    public function jadwalhapus()
+    {
+        $id_jadwal = $this->input->get("id");
+       
+        $exec = $this->m_jadwal->hapus($id_jadwal);
+        redirect(base_url()."administrator/jadwal?msg=2");
+    }
+
+
+    public function jadwaldetail()
+    {   
+        $variabel['csrf'] = csrf();
+        $id_jadwal = $this->input->get("id");
+        $exec = $this->m_jadwal->lihatdatasatu($id_jadwal);
+        if ($exec->num_rows()>0){
+            $variabel['data'] = $exec ->row_array();
+            $exec2 = $this->m_jadwaldetail->lihatdatajadwal($id_jadwal);
+            $variabel['data2'] = $exec2;
+            $this->layout->render('jadwal/jadwaldetail/v_jadwaldetail',$variabel,'jadwal/jadwaldetail/v_jadwaldetail_js');
+        } else {
+            redirect(base_url("administrator/jadwal"));
+        }
+        
+    }
+
+
+    public function jadwaldetailtambah()
+    {      
+        $variabel['csrf'] = csrf();
+        if ($this->input->post()) {
+            $id_jadwal = $this->input->post('id_jadwal');
+            $array=array(
+                'nama'=> $this->input->post('nama'),
+                'id_jadwal'=> $id_jadwal,
+                'tanggal'=> $this->input->post('tanggal'),
+                'keterangan'=> $this->input->post('keterangan'),
+            );
+
+            //asdad
+            $config['upload_path'] = './assets/images/jadwal';
+            $config['allowed_types'] = 'jpg|jpeg|JPG|JPEG|PNG|png|PDF|pdf|doc|DOC';
+            $this->load->library('upload', $config);
+            $this->upload->do_upload("dokumen");
+            $upload = $this->upload->data();
+            $file = $upload["raw_name"].$upload["file_ext"];
+            $array['dokumen']=$file;
+            $exec = $this->m_jadwaldetail->tambahdata($array);
+                if ($exec){
+                 redirect(base_url("administrator/jadwaldetail?id=".$id_jadwal."&msg=1"));
+                }   else redirect(base_url("administrator/jadwaldetailtamabah?msg=0"));
+      } else {
+      }
+    }
+
+    public function jadwaldetailhapus()
+    {
+        $id_jadwaldetail = $this->input->get("id");
+        $query2 = $this->m_jadwaldetail->lihatdatasatu($id_jadwaldetail);
+        $row2 = $query2->row();
+        $berkas1temp = $row2->dokumen;
+        $path1 ='./assets/images/jadwal/'.$berkas1temp.'';
+        if(is_file($path1)) {
+            unlink($path1);
+        }
+        $id_jadwal = $row2->id_jadwal;
+        $exec = $this->m_jadwaldetail->hapus($id_jadwaldetail);
+        redirect(base_url()."administrator/jadwaldetail?msg=2&id=".$id_jadwal."");
+    }
+
+    public function jadwaldetailedit()
+    {      
+        $variabel['csrf'] = csrf();
+        $id_jadwaldetail = $this->input->post("id_jadwaldetail");
+        $variabel['data'] = $this->m_jadwaldetail->lihatdatasatu($id_jadwaldetail)->row_array();
+        $this->load->view("jadwal/jadwaldetail/v_jadwaldetail_edit",$variabel);
+    }
+
+    public function jadwaldetaileditproses()
+    {      
+        $variabel['csrf'] = csrf();
+        if ($this->input->post()) {
+            $id_jadwal = $this->input->post('id_jadwal');
+            $array=array(
+                'nama'=> $this->input->post('nama'),
+                'id_jadwal'=> $id_jadwal,
+                'tanggal'=> $this->input->post('tanggal'),
+                'keterangan'=> $this->input->post('keterangan')
+            );
+            
+            $id_jadwaldetail = $this->input->post("id_jadwaldetail");
+            $config['upload_path'] = './assets/images/jadwal';
+            $config['allowed_types'] = 'jpg|jpeg|JPG|JPEG|PNG|png|PDF|pdf|doc|DO|docx|DOCX';
+            $this->load->library('upload', $config);
+            if ($this->upload->do_upload("dokumen"))    
+            {
+                $upload = $this->upload->data();
+                $dokumen = $upload["raw_name"].$upload["file_ext"];
+                $array['dokumen']=$dokumen;
+                $query2 = $this->m_jadwaldetail->lihatdatasatu($id_jadwaldetail);
+                $row2 = $query2->row();
+                $berkas1temp = $row2->dokumen;
+                $path1 ='./assets/images/jadwal/'.$berkas1temp.'';
+                if(is_file($path1)) {
+                    unlink($path1); //menghapus gambar di folder berita
+                }
+            }
+
+            $exec = $this->m_jadwaldetail->editdata($id_jadwaldetail,$array);
+            if ($exec){
+                redirect(base_url("administrator/jadwaldetail?msg=0&id=".$id_jadwal.""));
             }
       } else {
       }

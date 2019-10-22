@@ -74,13 +74,19 @@
 						
 					</ul>
 			</li>
-
+			<li  class="<?= ($submenu == "jadwal" || $submenu == "jadwaldetail") ? "active root-level" : ""; ?> ">
+				<a href="<?php echo base_url() ?>administrator/jadwal">
+					<i class="fa fa-calendar"></i>
+					<span class="title">Jadwal </span>
+				</a>
+			</li>
 			<li  class="<?= ($submenu == "admin" || $submenu == "adminlihat"  || $submenu == "admintambah" || $submenu == "adminedit") ? "active root-level" : ""; ?> ">
 				<a href="<?php echo base_url() ?>administrator/admin">
 					<i class="fa fa-users"></i>
 					<span class="title">Admin </span>
 				</a>
 			</li>
+			
 			
 		</ul>
 	

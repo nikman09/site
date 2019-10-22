@@ -47,7 +47,10 @@
 		#image-preview{
 			display:none;
 			width : 150px;
-		}
+		}	
+		.modal-open .ui-datepicker{z-index: 2000!important}
+
+	
 	</style>
 	<script src="<?php echo base_url() ?>assets/back-end/js/jquery-1.11.3.min.js"></script>
 	<!--[if lt IE 9]><script src="assets/js/ie8-responsive-file-warning.js"></script><![endif]-->

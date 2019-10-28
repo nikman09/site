@@ -17,7 +17,7 @@
 																<li><a class="dropdown-item" href="<?php echo base_url() ?>web/page?p=7">Visi dan Misi</a></li>
 																<li><a class="dropdown-item" href="<?php echo base_url() ?>web/page?p=2">Tugas dan Fungsi</a></li>
 																<li><a class="dropdown-item" href="<?php echo base_url() ?>web/page?p=3">Struktur Organisasi</a></li>
-																<li><a class="dropdown-item" href="<?php echo base_url() ?>web/page?p=4">Program, Kegiatan dan Anggaran</a></li>
+																<!-- <li><a class="dropdown-item" href="<?php echo base_url() ?>web/page?p=4">Program, Kegiatan dan Anggaran</a></li>
 																<li class="dropdown-submenu">
 																	<a class="dropdown-item" href="<?php echo base_url() ?>web/page?p=5">Realisasi Fisik dan Keuangan</a>
 																	<ul class="dropdown-menu">
@@ -49,7 +49,7 @@
 																	<li><a class="dropdown-item" href="#">Foto</a></li>
 																	<li><a class="dropdown-item" href="#">Video</a></li>
 																	</ul>
-																</li>
+																</li> -->
 															</ul>
 														</li>
 													

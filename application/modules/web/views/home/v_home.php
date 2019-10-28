@@ -58,7 +58,7 @@
 
 
 		<!-- Skin CSS -->
-		<link rel="stylesheet" href="<?php echo base_url() ?>assets/front-end/web2/css/skins/default.css"> 
+		<link rel="stylesheet" href="<?php echo base_url() ?>assets/front-end/web2/css/skins/skin-church.css"> 
 
 		<!-- Theme Custom CSS -->
 		<link rel="stylesheet" href="<?php echo base_url() ?>assets/front-end/web2/css/custom.css">

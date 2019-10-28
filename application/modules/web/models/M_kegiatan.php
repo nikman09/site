@@ -16,7 +16,7 @@ class M_kegiatan extends CI_Model
 
     function lihatdata($limit, $start)
     {
-        $this->db->select("tb_kegiatan.*,tb_kegiatankategori.*,tb_bidang.*,tb_kegiatan.userinput as userinput")
+        $this->db->select("tb_kegiatan.*,tb_kegiatankategori.*,tb_bidang.*,tb_kegiatan.userinput as userinput,tb_kegiatan.foto as fotos")
         ->join("tb_kegiatankategori","tb_kegiatankategori.id_kegiatankategori=tb_kegiatan.id_kegiatankategori","left")
         ->join("tb_bidang","tb_bidang.id_bidang=tb_kegiatan.id_bidang","left");
         

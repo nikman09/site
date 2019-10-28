@@ -10,6 +10,7 @@ class Web extends CI_Controller {
         $this->load->model("m_pegawai");
         $this->load->model("m_beritakategori");
         $this->load->model("m_kegiatan");
+        $this->load->model("m_jadwaldetail");
         
     }
 
@@ -19,9 +20,12 @@ class Web extends CI_Controller {
 
         
         $variabel['beritaterkini'] = $this->m_berita->lihatdata2(3, 0);           
- 
+        $variabel['kegiatanterkini'] = $this->m_kegiatan->lihatdata(3, 0);  
+        $variabel['kegiatanterkini2'] = $this->m_kegiatan->lihatdata(4, 0);  
         $variabel['berita'] = $this->m_berita->lihatdatalimit();
-        
+        $variabel['jadwalpelatihan'] = $this->m_jadwaldetail->lihatdatajadwal(4,4, 0); 
+        $variabel['jadwalpameran'] = $this->m_jadwaldetail->lihatdatajadwal(3,4, 0); 
+        $variabel['jadwaldinas'] = $this->m_jadwaldetail->lihatdatajadwal(5,4, 0); 
         $this->load->view('home/v_home',$variabel);
     }   
    
@@ -122,9 +126,6 @@ class Web extends CI_Controller {
     
                 }
             }
-            
-           
-          
         } else {
             redirect(base_url()."web/kegiatan/all");
            

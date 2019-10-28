@@ -23,10 +23,14 @@ Banjarbaru.</p></li>
 							</div>
 						</div>
 						<div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
-						<h5 class="text-3 mb-3">Tautan</h5>
-						<a href="#">Kementerian Perindustrian RI</a> <br/>
-						<a href="#">Pemerintah Provinsi Kalimantan Selatan</a>
+					
+							<h5 class="text-3 mb-3">Tautan</h5>
+							
+					
 						
+						<a href="https://kemenperin.go.id/"><img width="100px" height="100px" src="https://doc-00-2o-docs.googleusercontent.com/docs/securesc/iasracd20i517a5u6kqfdb693tntmi6p/ug7f0np6nat5p29jea8tkk0q0pckc4od/1572264000000/04995702770821001048/16859199919012491055/1TMLMV_k6Jj613ldlUmd4tH2trFFC9cI8" style="margin:10px "/></a>
+								<a href="http://www.kalselprov.go.id"><img  width="80px" src="http://www.kalselprov.go.id/fr_assets/images/logo-kalsel.png"  style="margin:10px" /></a>
+					
 						</div>
 					
 						<div class="col-md-6 col-lg-2">
@@ -53,11 +57,11 @@ Banjarbaru.</p></li>
 							</div>
 							<div class="col-lg-4 d-flex align-items-center justify-content-center justify-content-lg-end">
 								<nav id="sub-menu">
-									<ul>
+									<!-- <ul>
 										<li><i class="fas fa-angle-right"></i><a href="page-faq.html" class="ml-1 text-decoration-none"> FAQ's</a></li>
 										<li><i class="fas fa-angle-right"></i><a href="sitemap.html" class="ml-1 text-decoration-none"> Sitemap</a></li>
 										<li><i class="fas fa-angle-right"></i><a href="contact-us.html" class="ml-1 text-decoration-none"> Contact Us</a></li>
-									</ul>
+									</ul> -->
 								</nav>
 							</div>
 						</div>

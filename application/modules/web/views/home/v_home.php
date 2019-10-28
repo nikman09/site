@@ -58,7 +58,7 @@
 
 
 		<!-- Skin CSS -->
-		<link rel="stylesheet" href="<?php echo base_url() ?>assets/front-end/web2/css/skins/skin-church.css"> 
+		<link rel="stylesheet" href="<?php echo base_url() ?>assets/front-end/web2/css/skins/default.css"> 
 
 		<!-- Theme Custom CSS -->
 		<link rel="stylesheet" href="<?php echo base_url() ?>assets/front-end/web2/css/custom.css">
@@ -71,11 +71,9 @@
 	
 <div>
 	
-		<div class="body">
-		
+	<div class="body">
 		<header id="header" class="header-transparent header-effect-shrink" data-plugin-options="{'stickyEnabled': true, 'stickyEffect': 'shrink', 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': true, 'stickyChangeLogo': true, 'stickyStartAt': 30, 'stickyHeaderContainerHeight': 70}">
 				<div class="header-body border-top-0 bg-dark box-shadow-none">
-				
 					<div class="header-container container container-xl">
 						<div class="header-row">
 							<div class="header-column">
@@ -134,7 +132,7 @@
 							
 							<li data-transition="fade">
 				
-								<img src="<?php echo base_url() ?>assets/front-end/web2/img/slides/tes1.jpg"  
+								<img src="<?php echo base_url() ?>assets/front-end/web2/img/slides/tes122.jpg"  
 									alt=""
 									data-bgposition="right center"
 									data-bgpositionend="center center"
@@ -345,7 +343,7 @@
 								<p class="">Dinas Perindustrian Provinsi Kalimantan Selatan beralamat di Jl. Dharma Praja Komplek Perkantoran Provinsi Kalimantan Selatan, Banjarbaru. Dinas Perindustrian Provinsi Kalimantan Selatan memiliki 1 Unit Pelaksana Teknis (UPT), yaitu UPT Balai Diklat Industri Kayu & Logam yang beralamatkan di Amuntai & Nagara. <br/>
 
 </p>
-								<a href="#" class="btn btn-dark font-weight-semibold btn-px-4 btn-py-2 text-2">Tugas dan Fungsi</a>
+								<a href="<?php echo base_url() ?>web/page?p=2" class="btn btn-dark font-weight-semibold btn-px-4 btn-py-2 text-2">Tugas dan Fungsi</a>
 								
 							</div>
 							<div class="col-lg-6" data-appear-animation="fadeInLeftShorter" style="margin-top:30px" >
@@ -399,67 +397,36 @@
 
 				<div class="container container-md">
 					<div class="row py-2">
-						<div class="col-md-6 col-lg-4 appear-animation" data-appear-animation="fadeInDownShorter" data-appear-animation-delay="200">
+					<div class="col-md-6 col-lg-4 appear-animation" data-appear-animation="fadeInDownShorter" data-appear-animation-delay="400">
 
-							<h3 class="font-weight-bold text-3 mb-0">Pengumuman</h3>
+							<h3 class="font-weight-bold text-3 mb-0 mt-4 mt-md-0">Kegiatan</h3>
 
 							<ul class="simple-post-list">
+							<?php
+							foreach($kegiatanterkini->result_array() as $row){
+								?>
+										<li>
+											<div class="post-image">
+												<div class="img-thumbnail img-thumbnail-no-borders d-block">
+													<a href="blog-post.html">
+														<img src="<?php echo base_url() ?>assets/images/kegiatan/thumb/<?php echo $row['fotos'] ?>" class="border-radius-0" width="50" height="50" alt="<?php echo  $row['judul'] ?>">
+													</a>
+												</div>
+											</div>
+											<div class="post-info">
+												<h4 class="font-weight-normal text-3 line-height-4 mb-0"><a href="blog-post.html" class="text-dark"><?php echo  $row['judul'] ?>  </a></h4>
+												<div class="post-meta">
+												<?php echo  tgl_indo($row['tanggal']); ?>
+												</div>
+											</div>
+										</li>
+								
+							<?php
+										}
+											?>	
+								
 
-								<li>
-									<article>
-										<div class="post-image">
-											<div class="img-thumbnail img-thumbnail-no-borders d-block">
-												<a href="blog-post.html">
-													<img src="<?php echo base_url() ?>assets/front-end/web2/img/blog/square/blog-55.jpg" class="border-radius-0" width="50" height="50" alt="Simple Ways to Have a Pretty Face">
-												</a>
-											</div>
-										</div>
-										<div class="post-info">
-											<h4 class="font-weight-normal text-3 line-height-4 mb-0"><a href="blog-post.html" class="text-dark">Simple Ways to Have a Pretty Face</a></h4>
-											<div class="post-meta">
-												January 12, 2019
-											</div>
-										</div>
-									</article>
-								</li>
-
-								<li>
-									<article>
-										<div class="post-image">
-											<div class="img-thumbnail img-thumbnail-no-borders d-block">
-												<a href="blog-post.html">
-													<img src="<?php echo base_url() ?>assets/front-end/web2/img/blog/square/blog-56.jpg" class="border-radius-0" width="50" height="50" alt="Ranking the greatest players in basketball">
-												</a>
-											</div>
-										</div>
-										<div class="post-info">
-											<h4 class="font-weight-normal text-3 line-height-4 mb-0"><a href="blog-post.html" class="text-dark">Ranking the greatest players in basketball</a></h4>
-											<div class="post-meta">
-												January 12, 2019
-											</div>
-										</div>
-									</article>
-								</li>
-
-								<li>
-									<article>
-										<div class="post-image">
-											<div class="img-thumbnail img-thumbnail-no-borders d-block">
-												<a href="blog-post.html">
-													<img src="<?php echo base_url() ?>assets/front-end/web2/img/blog/square/blog-57.jpg" class="border-radius-0" width="50" height="50" alt="4 Ways to Look Cool in Glasses">
-												</a>
-											</div>
-										</div>
-										<div class="post-info">
-											<h4 class="font-weight-normal text-3 line-height-4 mb-0"><a href="blog-post.html" class="text-dark">4 Ways to Look Cool in Glasses</a></h4>
-											<div class="post-meta">
-												January 12, 2019
-											</div>
-										</div>
-									</article>
-								</li>
-
-						
+								
 							</ul>
 
 						</div>
@@ -473,7 +440,7 @@
 								?>
 										<li>
 											<div class="post-image">
-												<div class="img-thumbnail img-thumbnail-no-borders d-block">
+												<div class="img-thumbnail img-thumbnail-no-borders d-block ">
 													<a href="blog-post.html">
 														<img src="<?php echo base_url() ?>assets/images/berita/thumb/<?php echo $row['foto'] ?>" class="border-radius-0" width="50" height="50" alt="<?php echo  $row['judul'] ?>">
 													</a>
@@ -500,20 +467,19 @@
 
 							<!-- <h3 class="font-weight-bold text-3 mb-0 mt-4 mt-md-0" style="padding-bottom:10px">Dinas</h3> -->
 							<div class="owl-carousel owl-theme" data-plugin-options="{'items': 1, 'margin': 10, 'loop': true, 'nav': false, 'dots': false, 'autoplay': true, 'autoplayTimeout': 5000}">
-
-								<div>
+							<div>
 									<a href="blog-post.html">
 										<article>
 											<div class="thumb-info thumb-info-no-borders thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-bottom-info-show-more thumb-info-no-zoom border-radius-0">
-												<div class="thumb-info-wrapper thumb-info-wrapper-opacity-2">
-													<img src="<?php echo base_url() ?>assets/images/dinas/2.jpg" class="img-fluid" alt="Main Reasons To Stop Texting And Driving" style="height:270px">
+												<div class="thumb-info-wrapper thumb-info-wrapper-opacity-3">
+													<img src="<?php echo base_url() ?>assets/images/galeri/karate.jpg" class="img-fluid" alt="Main Reasons To Stop Texting And Driving" style="height:270px">
 													<div class="thumb-info-title bg-transparent p-4">
 													
 														<div class="thumb-info-inner mt-1">
-															<h2 class="text-color-light line-height-2 text-4 font-weight-bold mb-0">Pameran INACRAFT</h2>
+															<h2 class="text-color-light line-height-2 text-4 font-weight-bold mb-0">HAORNAS 2019</h2>
 														</div>
 														<div class="thumb-info-show-more-content">
-															<p class="mb-0 text-1 line-height-9 mb-1 mt-2 text-light opacity-5">Dinas Perindustrian.</p>
+															<p class="mb-0 text-1 line-height-9 mb-1 mt-2 text-light opacity-5">Rekor MURI Karate Massal.</p>
 														</div>
 													</div>
 												</div>
@@ -521,6 +487,27 @@
 										</article>
 									</a>
 								</div>
+								<div>
+									<a href="blog-post.html">
+										<article>
+											<div class="thumb-info thumb-info-no-borders thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-bottom-info-show-more thumb-info-no-zoom border-radius-0">
+												<div class="thumb-info-wrapper thumb-info-wrapper-opacity-3">
+													<img src="<?php echo base_url() ?>assets/images/galeri/karhutla.jpg" class="img-fluid" alt="Main Reasons To Stop Texting And Driving" style="height:270px">
+													<div class="thumb-info-title bg-transparent p-4">
+													
+														<div class="thumb-info-inner mt-1">
+															<h2 class="text-color-light line-height-2 text-4 font-weight-bold mb-0">KARHUTLA</h2>
+														</div>
+														<div class="thumb-info-show-more-content">
+															<p class="mb-0 text-1 line-height-9 mb-1 mt-2 text-light opacity-5">Apel Bersama Karhutla.</p>
+														</div>
+													</div>
+												</div>
+											</div>
+										</article>
+									</a>
+								</div>
+							
 
 								<div>
 									<a href="blog-post.html">
@@ -534,7 +521,7 @@
 															<h2 class="text-color-light line-height-2 text-4 font-weight-bold mb-0">Smart IKM</h2>
 														</div>
 														<div class="thumb-info-show-more-content">
-															<p class="mb-0 text-1 line-height-9 mb-1 mt-2 text-light opacity-5">LIKM Go Digital</p>
+															<p class="mb-0 text-1 line-height-9 mb-1 mt-2 text-light opacity-5">IKM Go Digital</p>
 														</div>
 													</div>
 												</div>
@@ -584,7 +571,7 @@
 													#
 												</th>
 												<th>
-													Nama Kegiatan
+													Nama Pelatihan
 												</th>
 												<th>
 													Waktu
@@ -595,49 +582,23 @@
 											</tr>
 										</thead>
 										<tbody>
-											<tr>
-												<td>
-													1
-												</td>
-												<td>
-													Pelatihan Sasirangan Bahan Alami
-												</td>
-												<td>
-													10-10-2020
-												</td>
-												<td>
-													
-												</td>
-											</tr>
-											<tr>
-											<td>
-													1
-												</td>
-												<td>
-													Pelatihan Sasirangan Bahan Alami
-												</td>
-												<td>
-													10-10-2020
-												</td>
-												<td>
-													<li class="fa fa-download"></li>
-												</td>
-											</tr>
-											<tr>
-											<td>
-													1
-												</td>
-												<td>
-													Pelatihan Sasirangan Bahan Alami
-												</td>
-												<td>
-													10-10-2020
-												</td>
-												<td>
-													
-												</td>
-											</tr>
-										</tbody>
+										<?php
+										$i=0;
+										foreach($jadwalpelatihan->result_array() as $row){
+											$i++;
+											echo "
+												<tr>
+													<td>$i</td>
+													<td>".$row['nama']."</td>
+													<td>".$row['tanggal']."</td>
+													<td></td>
+												</tr>
+
+											";
+											
+										}
+											?>
+											</tbody>
 									</table>
 
 
@@ -657,53 +618,26 @@
 													Waktu
 												</th>
 												<th>
-													Lampiran
+													
 												</th>
 											</tr>
 										</thead>
 										<tbody>
-											<tr>
-												<td>
-													1
-												</td>
-												<td>
-													Pameran Sasirangan Bahan Alami
-												</td>
-												<td>
-													10-10-2020
-												</td>
-												<td>
-													Unduh
-												</td>
-											</tr>
-											<tr>
-											<td>
-													1
-												</td>
-												<td>
-												Pameran Sasirangan Bahan Alami
-												</td>
-												<td>
-													10-10-2020
-												</td>
-												<td>
-													Unduh
-												</td>
-											</tr>
-											<tr>
-											<td>
-													1
-												</td>
-												<td>
-												Pameran Sasirangan Bahan Alami
-												</td>
-												<td>
-													10-10-2020
-												</td>
-												<td>
-													Unduh
-												</td>
-											</tr>
+										<?php
+										$i=0;
+										foreach($jadwalpameran->result_array() as $row){
+											$i++;
+											echo "
+												<tr>
+													<td>$i</td>
+													<td>".$row['nama']."</td>
+													<td>".$row['tanggal']."</td>
+													<td></td>
+												</tr>
+											";
+											
+										}
+											?>
 										</tbody>
 									</table>
 									</div>
@@ -721,53 +655,26 @@
 													Waktu
 												</th>
 												<th>
-													Lampiran
 												</th>
 											</tr>
 										</thead>
 										<tbody>
-											<tr>
-												<td>
-													1
-												</td>
-												<td>
-													Pameran Sasirangan Bahan Alami
-												</td>
-												<td>
-													10-10-2020
-												</td>
-												<td>
-													Unduh
-												</td>
-											</tr>
-											<tr>
-											<td>
-													1
-												</td>
-												<td>
-												Pameran Sasirangan Bahan Alami
-												</td>
-												<td>
-													10-10-2020
-												</td>
-												<td>
-													Unduh
-												</td>
-											</tr>
-											<tr>
-											<td>
-													1
-												</td>
-												<td>
-												Pameran Sasirangan Bahan Alami
-												</td>
-												<td>
-													10-10-2020
-												</td>
-												<td>
-													Unduh
-												</td>
-											</tr>
+										<?php
+										$i=0;
+										foreach($jadwaldinas->result_array() as $row){
+											$i++;
+											echo "
+												<tr>
+													<td>$i</td>
+													<td>".$row['nama']."</td>
+													<td>".$row['tanggal']."</td>
+													<td></td>
+												</tr>
+
+											";
+											
+										}
+											?>
 										</tbody>
 									</table>
 									</div>
@@ -857,7 +764,7 @@
     margin-bottom: 0px !important;
     padding-bottom: 0px !important;">
 					<?php
-					foreach($berita->result_array() as $row){
+					foreach($kegiatanterkini2->result_array() as $row){
 						?>
 						<div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
 							<article>
@@ -870,8 +777,8 @@
 									</div>
 									<div class="col pl-1">
 										<h4 class="line-height-3 text-4"><a href="blog-post.html" class="text-dark"><?php echo $row['judul'] ?></a></h4>
-										<p class="line-height-5 pr-3 mb-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget risus porta.</p>
-										<a class="btn btn-light text-uppercase text-primary text-1 py-2 px-3 mb-1 mt-2" href="#"><strong>VIEW MORE</strong><i class="fas fa-chevron-right text-2 pl-2"></i></a>
+										<p class="line-height-5 pr-3 mb-1"><?php echo substr($row['isi'],0,100) ?>.</p>
+										<a class="btn btn-light text-uppercase text-primary text-1 py-2 px-3 mb-1 mt-2" href="<?php echo base_url("") ?>"><strong>Selanjutnya</strong><i class="fas fa-chevron-right text-2 pl-2"></i></a>
 									</div>
 								</div>
 							</article>
@@ -928,7 +835,7 @@
 										<img class="img-fluid opacity-2" src="https://drive.google.com/uc?id=1FaIUhoan4lNw0o_934z13V3tBrBEBlcN" alt="">
 									</div>
 									<div>
-										<img class="img-fluid opacity-2" src="https://kalselprov.go.id/storage/jfPq95PcKo4uWDk5hGskFbAj1d7n8MtKKPkpUyEl.png" alt="">
+										<img class="img-fluid opacity-2" src="https://doc-0o-2o-docs.googleusercontent.com/docs/securesc/iasracd20i517a5u6kqfdb693tntmi6p/k49npvg8tk3jp6r3m7p8euvcu5942jkt/1572264000000/04995702770821001048/16859199919012491055/1Yg3_9aEsOxME4-kR-9Z_ftTV47GLIXtF" alt="">
 									</div>
 									
 								</div>

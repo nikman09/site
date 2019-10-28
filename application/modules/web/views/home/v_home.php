@@ -134,7 +134,7 @@
 							
 							<li data-transition="fade">
 				
-								<img src="<?php echo base_url() ?>assets/front-end/web2/img/slides/tes122.jpg"  
+								<img src="<?php echo base_url() ?>assets/front-end/web2/img/slides/tes1.jpg"  
 									alt=""
 									data-bgposition="right center"
 									data-bgpositionend="center center"
@@ -247,8 +247,8 @@
 								
 							</li>
 							
-							<!-- <li data-transition="fade">
-								<img src="<?php echo base_url() ?>assets/front-end/web2/bahan/ikmdigitall.JPG"  
+							 <li data-transition="fade">
+								<img src="<?php echo base_url() ?>assets/front-end/web2/bahan/123.JPG"  
 									alt=""
 								data-bgposition="left center"
 									data-bgpositionend="center center"
@@ -308,9 +308,9 @@
 									data-y="center" data-voffset="['40','40','40','80']"
 									data-fontsize="['18','18','18','20']"
 									data-lineheight="['20','20','20','55']"
-									style="color: #b5b5b5;">SMARTI IKM</div>
+									style="color: #b5b5b5;">SMART IKM</div>
 								
-							</li> -->
+							</li> 
 						
 						</ul>
 					</div>

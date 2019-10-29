@@ -9,7 +9,8 @@ class M_berita extends CI_Model
     
     function lihatdatasatu($id_berita)
     {
-        $this->db->select("tb_berita.*");
+        $this->db->select("tb_berita.*,tb_beritakategori.* ")
+        ->join("tb_beritakategori","tb_beritakategori.id_beritakategori=tb_berita.id_beritakategori","left");
         $this->db->where("tb_berita.id_berita",$id_berita);
         return $this->db->get('tb_berita');
     }

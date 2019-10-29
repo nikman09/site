@@ -3,13 +3,14 @@
 					<div class="container">
 						<div class="row mt-5">
 							<div class="col-md-12 align-self-center p-static order-2 text-center">
-								<h1 class="text-9 font-weight-bold">Berita</h1>
-								<span class="sub-title">Dinas Perindustrian</span>
+								<h1 class="text-9 font-weight-bold"><?=$data['judul'];?></h1>
+								<span class="sub-title">Dinas Perindustrian Prov. Kalsel</span>
 							</div>
 							<div class="col-md-12 align-self-center order-1">
 								<ul class="breadcrumb breadcrumb-light d-block text-center">
 									<li><a href="<?php echo base_url() ?>">Beranda</a></li>
-									<li class="active">Berita</li>
+									<li><a href="<?php echo base_url("web/berita") ?>">Berita</a></li>
+									<li class="active">Detail</li>
 								</ul>
 							</div>
 						</div>
@@ -21,57 +22,35 @@
 
 					<div class="row">
 						<div class="col-lg-9">
-							<div class="blog-posts">
-							<?php
-								foreach($data->result_array() as $row){
-									
-							?>
-								<article class="post post-medium">
-									<div class="row">
-
-										<div class="col-lg-5">
-											<div class="post-image">
-												<div class="" >
-													<div>
-														<div class="img-thumbnail img-thumbnail-no-borders d-block">
-															<img style="height:200px; width:350px;" class="img-fluid" src="<?php echo base_url() ?>assets/images/berita/thumb/<?php echo $row['foto'] ?>" alt="">
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="col-lg-7">
-
-											<div class="post-content">
-
-												<h2><a href="<?php echo base_url("web/beritapost?ids=".$row['id_berita']."") ?>"><?php  echo $row['judul']; ?></a></h2>
-												<p> <?php echo substr($row['isi'] , 0, 200)?>  [...]</p>
-
-											</div>
-										</div>
-
+							<div class="blog-posts  single-post">
+							<article class="post post-large blog-single-post border-0 m-0 p-0">
+<div class="post-image ml-0">
+										<a href="<?php echo base_url("web/beritapost?ids=".$data['id_berita']."") ?>">
+											<img src="<?php echo base_url(); ?>assets/images/berita/<?php echo $data['foto'] ?>" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="" width="100%"/>
+										</a>
 									</div>
-									<div class="row">
-										<div class="col">
-											<div class="post-meta">
-												<span><i class="far fa-calendar-alt"></i><?php echo tgl_indo($row['tanggal']); ?> </span>
-												<span><i class="far fa-user"></i> Oleh <a href="#"><?php echo $row['userinput']; ?></a> </span>
-												<span><i class="far fa-folder"></i> <a href="#"><?php echo $row['kategori']; ?></a>,</span>
-												<span class="d-block d-md-inline-block float-md-right mt-3 mt-md-0"><a href="<?php echo base_url("web/beritapost?ids=".$row['id_berita']."") ?>" class="btn btn-xs btn-light text-1 text-uppercase">Baca Lebih Lanjut</a></span>
-											</div>
-										</div>
-									</div>
-
-								</article>
-								<?php
-									}
-									?>
-						
 							
-							<?php 
-								echo $pagination;  
-							  ?>
+									<div class="post-date ml-0">
+										<span class="day"><?php echo date('d',strtotime($data['tanggal'])); ?></span>
+										<span class="month"><?php echo date('M',strtotime($data['tanggal'])); ?></span>
+									</div>
+							
+									<div class="post-content ml-0">
+							
+										<h2 class="font-weight-bold"><a href="#"><?=$data['judul'];?></a></h2>
+							
+										<div class="post-meta">
+											<span><i class="far fa-user"></i> By <a href="#"><?=$data['userinput'];?></a> </span>
+											<span><i class="far fa-folder"></i> <a href="#"><?=$data['kategori'];?></a> </span>
+											<span><i class="far fa-calendar"></i> <a href="#"><?=tanggal($data['tanggal']);?></a> </span>
+										</div>
 
+									<?php
+										echo $data['isi'];
+									?>
+							
+									</div>
+								</article>
 							
 							</div>
 						</div>
@@ -106,6 +85,7 @@
 												foreach($datapopuler->result_array() as $row){
 													
 											?>
+										
 												<li>
 													<div class="post-image">
 														<div class="img-thumbnail img-thumbnail-no-borders d-block">
@@ -132,7 +112,6 @@
 											<ul class="simple-post-list">
 											<?php
 												foreach($datarecent->result_array() as $row){
-													
 											?>
 												<li>
 													<div class="post-image">
@@ -143,7 +122,8 @@
 														</div>
 													</div>
 													<div class="post-info">
-														<a href="<?php echo base_url("web/beritapost?ids=".$row['id_berita']."") ?>"> <?php echo $row['judul']; ?></a>
+														<a href="<?php echo base_url("web/beritapost?ids=".$row['id_berita']."") ?>"> <?php echo $row['judul']; ?> </a>
+														
 														<div class="post-meta" style="padding-left: 10px;">
 															 <?php echo tanggal($row['tanggal']); ?>
 														</div>

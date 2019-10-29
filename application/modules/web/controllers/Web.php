@@ -11,6 +11,8 @@ class Web extends CI_Controller {
         $this->load->model("m_beritakategori");
         $this->load->model("m_kegiatan");
         $this->load->model("m_jadwaldetail");
+        $this->load->model("m_jadwal");
+        $this->load->model("m_pesan");
         
     }
 
@@ -73,6 +75,25 @@ class Web extends CI_Controller {
       
     }
 
+    function beritapost()
+    {
+        $variabel['csrf'] = csrf();
+        $variabel['kategori'] = $this->m_beritakategori->lihatdatajumlah();
+        $variabel['datarecent'] = $this->m_berita->lihatdatarecent();
+        $variabel['datapopuler'] = $this->m_berita->lihatdatapopuler();
+        $id_berita = $this->input->get("ids");
+        $exec = $this->m_berita->lihatdatasatu($id_berita);
+        if ($exec->num_rows()>0){
+            $variabel['data'] = $exec ->row_array();
+            $this->layout->render('berita/v_beritapost',$variabel,'berita/v_berita_js');
+        } else {
+            redirect(base_url("web/berita"));
+        }
+      
+      
+      
+    }
+
 
     public function bidang()
     {   
@@ -131,5 +152,60 @@ class Web extends CI_Controller {
            
         }
     }
+    function kegiatanposts()
+    {
+        $variabel['csrf'] = csrf();
+        $id_kegiatan= $this->input->get("ids");
+        $exec = $this->m_kegiatan->lihatdatasatu($id_kegiatan);
+        if ($exec->num_rows()>0){
+            $variabel['data'] = $exec ->row_array();
+            $this->layout->render('kegiatan/v_kegiatanpost',$variabel);
+        } else {
+            redirect(base_url("web/kegiatan"));
+        }
+      
+      
+      
+    }
+
+    public function kontak()
+    {   
+        $variabel['csrf'] = csrf();
+        if ($this->input->post()){
+            $username = $this->session->userdata("web_username");
+            $array=array(
+                'nama'=> $this->input->post('nama'),
+                'email'=> $this->input->post('email'),
+                'judul'=>$this->input->post('judul'),
+                'pesan'=>$this->input->post('pesan'),
+                );
+              
+                $exec = $this->m_pesan->tambahdata($array);
+                if ($exec) redirect(base_url("web/kontak?msg=1"));
+                else redirect(base_url("web/kontak?msg=0"));
+        }
+        else {
+            $this->layout->render('kontak/v_kontak',$variabel,'kontak/v_kontak_js');
+        }
+       
+    }
+
+    function jadwal()
+    {
+        $variabel['csrf'] = csrf();
+        $idx = $this->input->get("idx");
+        $exec2 = $this->m_jadwal->lihatdatasatu($idx);
+        if ($exec2->num_rows()>0){
+            $variabel['data'] =  $this->m_jadwaldetail->lihatdatajadwal2($idx);
+            $variabel['datas'] = $exec2 ->row_array();
+            $this->layout->render('jadwal/v_jadwal',$variabel,'jadwal/v_jadwal_js');
+        } else {
+            redirect(base_url("web"));
+        }
+  
+        
+    }
+
+ 
     
 }

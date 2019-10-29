@@ -9,7 +9,9 @@ class M_kegiatan extends CI_Model
     
     function lihatdatasatu($id_kegiatan)
     {
-        $this->db->select("tb_kegiatan.*");
+        $this->db->select("tb_kegiatan.*,tb_kegiatankategori.*,tb_bidang.*,tb_kegiatan.userinput as userinput,tb_kegiatan.foto as fotos")
+        ->join("tb_kegiatankategori","tb_kegiatankategori.id_kegiatankategori=tb_kegiatan.id_kegiatankategori","left")
+        ->join("tb_bidang","tb_bidang.id_bidang=tb_kegiatan.id_bidang","left");
         $this->db->where("tb_kegiatan.id_kegiatan",$id_kegiatan);
         return $this->db->get('tb_kegiatan');
     }
@@ -32,7 +34,7 @@ class M_kegiatan extends CI_Model
 	}
     function lihatdatabidang($bidang,$limit, $start)
     {
-        $this->db->select("tb_kegiatan.*,tb_kegiatankategori.*,tb_bidang.*,tb_kegiatan.userinput as userinput")
+        $this->db->select("tb_kegiatan.*,tb_kegiatankategori.*,tb_bidang.*,tb_kegiatan.userinput as userinput,tb_kegiatan.foto as fotos")
         ->join("tb_kegiatankategori","tb_kegiatankategori.id_kegiatankategori=tb_kegiatan.id_kegiatankategori","left")
         ->join("tb_bidang","tb_bidang.id_bidang=tb_kegiatan.id_bidang","left")
         ->where("tb_kegiatan.id_bidang",$bidang);

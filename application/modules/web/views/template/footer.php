@@ -28,7 +28,7 @@ Banjarbaru.</p></li>
 							
 					
 						
-						<a href="https://kemenperin.go.id/"><img width="100px" height="100px" src="https://doc-00-2o-docs.googleusercontent.com/docs/securesc/iasracd20i517a5u6kqfdb693tntmi6p/ug7f0np6nat5p29jea8tkk0q0pckc4od/1572264000000/04995702770821001048/16859199919012491055/1TMLMV_k6Jj613ldlUmd4tH2trFFC9cI8" style="margin:10px "/></a>
+						<a href="https://kemenperin.go.id/"><img width="100px" height="100px" src="<?php echo base_url("assets/images/kemenperin.png") ?>" style="margin:10px "/></a>
 								<a href="http://www.kalselprov.go.id"><img  width="80px" src="http://www.kalselprov.go.id/fr_assets/images/logo-kalsel.png"  style="margin:10px" /></a>
 					
 						</div>
@@ -89,7 +89,7 @@ Banjarbaru.</p></li>
 		<script src="<?php echo base_url() ?>assets/front-end/web2/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
 		<script src="<?php echo base_url() ?>assets/front-end/web2/vendor/vide/jquery.vide.min.js"></script>
 		<script src="<?php echo base_url() ?>assets/front-end/web2/vendor/vivus/vivus.min.js"></script>
-		
+		<script src="<?php echo base_url() ?>assets/back-end/js/jquery.validate.min.js"></script>
 		<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 		<script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
 		

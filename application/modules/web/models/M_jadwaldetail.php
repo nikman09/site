@@ -21,6 +21,13 @@ class M_jadwaldetail extends CI_Model
         return $this->db->get('tb_jadwaldetail',$limit, $start);
     }
 
+    function lihatdatajadwal2($id_jadwal)
+    {
+        $this->db->select("tb_jadwaldetail.*");
+        $this->db->where("tb_jadwaldetail.id_jadwal",$id_jadwal);
+        return $this->db->get('tb_jadwaldetail');
+    }
+
     function lihatdata()
     {
         $this->db->select("tb_jadwaldetail.*");

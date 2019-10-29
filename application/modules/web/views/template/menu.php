@@ -55,18 +55,11 @@
 													
 														
 														<li class="dropdown">
-															<a class="dropdown-item dropdown-toggle" href="#">
+															<a class="dropdown-item dropdown-toggle" href="<?php echo base_url(); ?>web/kegiatan/all">
 																Kegiatan Bidang
 															</a>
 															<ul class="dropdown-menu">
-																<li class="dropdown-submenu">
-																	<a class="dropdown-item" href="#">Jadwal</a>
-																	<ul class="dropdown-menu">
-																		<li><a class="dropdown-item" href="#">Pelatihan</a></li>
-																		<li><a class="dropdown-item" href="#">Pameran</a></li>
-																		<li><a class="dropdown-item" href="#">Kegiatan Dinas</a></li>
-																	</ul>
-																</li>
+															
 																<li class="dropdown-submenu">
 																	<a class="dropdown-item" href="#">Sekretariat</a>
 																	<ul class="dropdown-menu">
@@ -77,32 +70,39 @@
 																<li class="dropdown-submenu">
 																	<a class="dropdown-item" href="#">Bidang AGRO</a>
 																	<ul class="dropdown-menu">
-																		<li><a class="dropdown-item" href="<?php echo base_url(); ?>web/bidang?p=5">Tugas Bidang AGRO</a></li>
+																		<li><a class="dropdown-item" href="<?php echo base_url(); ?>web/bidang?p=5">Profil Bidang AGRO</a></li>
 																		<li><a class="dropdown-item" href="<?php echo base_url(); ?>web/kegiatan/5">Kegiatan Bidang AGRO</a></li>
 																	</ul>
 																</li>
 																<li class="dropdown-submenu">
 																	<a class="dropdown-item" href="#">Bidang ILMEAT</a>
 																	<ul class="dropdown-menu">
-																		<li><a class="dropdown-item" href="<?php echo base_url(); ?>web/bidang?p=2">Tugas Bidang ILMEAT</a></li>
+																		<li><a class="dropdown-item" href="<?php echo base_url(); ?>web/bidang?p=2">Profil Bidang ILMEAT</a></li>
 																		<li><a class="dropdown-item" href="<?php echo base_url(); ?>web/kegiatan/2">Kegiatan Bidang ILMEAT</a></li>
 																	</ul>
 																</li>
 																<li class="dropdown-submenu">
 																	<a class="dropdown-item" href="#">Bidang IKTA</a>
 																	<ul class="dropdown-menu">
-																		<li><a class="dropdown-item" href="<?php echo base_url(); ?>web/bidang?p=4">Tugas Bidang IKTA</a></li>
+																		<li><a class="dropdown-item" href="<?php echo base_url(); ?>web/bidang?p=4">Profil Bidang IKTA</a></li>
 																		<li><a class="dropdown-item" href="<?php echo base_url(); ?>web/kegiatan/4">Kegiatan Bidang IKTA</a></li>
 																	</ul>
 																</li>
 																<li class="dropdown-submenu">
 																	<a class="dropdown-item" href="#">UPTBD Industri Kayu & Logam</a>
 																	<ul class="dropdown-menu">
-																		<li><a class="dropdown-item" href="<?php echo base_url(); ?>web/bidang?p=6">Tugas UPTBD Diklat Industri Kayu & Logam</a></li>
+																		<li><a class="dropdown-item" href="<?php echo base_url(); ?>web/bidang?p=6">Profil UPTBD Diklat Industri Kayu & Logam</a></li>
 																		<li><a class="dropdown-item" href="<?php echo base_url(); ?>web/kegiatan/6">Kegiatan UPTBD Diklat Industri Kayu & Logam</a></li>
 																	</ul>
 																</li>
-																
+																<li class="dropdown-submenu">
+																	<a class="dropdown-item" href="#">Jadwal</a>
+																	<ul class="dropdown-menu">
+																		<li><a class="dropdown-item" href="<?php echo base_url(); ?>web/jadwal?idx=4">Pelatihan</a></li>
+																		<li><a class="dropdown-item" href="<?php echo base_url(); ?>web/jadwal?idx=3">Pameran</a></li>
+																		<li><a class="dropdown-item" href="<?php echo base_url(); ?>web/jadwal?idx=5"> Dinas</a></li>
+																	</ul>
+																</li>
 															</ul>
 														</li>
 														
@@ -113,27 +113,27 @@
 															</a>
 															<ul class="dropdown-menu">
 															<li class="dropdown-submenu">
-																	<a class="dropdown-item" href="#">SIIKALSEL</a>
+																	<a class="dropdown-item"  target="_blank" href="http://siikalsel.disperin.kalselprov.go.id/">SIIKALSEL</a>
 																	<ul class="dropdown-menu">
-																		<li><a class="dropdown-item" href="shop-3-columns-full-width.html">Data Perusahaan</a></li>
-																		<li><a class="dropdown-item" href="shop-3-columns-sidebar-left.html">Data Sentra</a></li>
-																		<li><a class="dropdown-item" href="shop-3-columns-sidebar-left.html">Data Potensi</a></li>
+																		<li><a class="dropdown-item" target="_blank" href="http://siikalsel.disperin.kalselprov.go.id/report/perusahaan">Data Perusahaan</a></li>
+																		<li><a class="dropdown-item" target="_blank" href="http://siikalsel.disperin.kalselprov.go.id/report/sentra">Data Sentra</a></li>
+																		<li><a class="dropdown-item" target="_blank" href="http://siikalsel.disperin.kalselprov.go.id/report/potensi">Data Potensi</a></li>
 																	</ul>
 																</li>
 																<li class="dropdown-submenu">
-																	<a class="dropdown-item" href="#">SIDAWAIPRIN</a>
+																	<a class="dropdown-item"  target="_blank" href="<?php echo base_url() ?>kepegawaian">SIDAWAIPRIN</a>
 																	<ul class="dropdown-menu">
-																		<li><a class="dropdown-item" href="shop-3-columns-full-width.html">Data Pegawai</a></li>
+																		<li><a class="dropdown-item"  href="<?php echo base_url() ?>web/datapegawai">Data Pegawai</a></li>
 																	</ul>
 																</li>
-																<li class="dropdown-submenu">
+																<!-- <li class="dropdown-submenu">
 																	<a class="dropdown-item" href="#">Web</a>
 																	<ul class="dropdown-menu">
 																		<li><a class="dropdown-item" href="shop-3-columns-full-width.html">Klinik IKM</a></li>
 																		<li><a class="dropdown-item" href="shop-3-columns-sidebar-left.html">Dekranasda</a></li>
 																		<li><a class="dropdown-item" href="shop-3-columns-sidebar-left.html">Promosi Produk IKM</a></li>
 																	</ul>
-																</li>
+																</li> -->
 																
 															</ul>
 														</li>
@@ -146,14 +146,14 @@
 															<ul class="dropdown-menu">
 															
 																<li><a class="dropdown-item" href="<?php echo base_url(); ?>web/berita">Berita</a></li>
-																<li><a class="dropdown-item" href="page-custom-header.html">Artikel</a></li>
+																<!-- <li><a class="dropdown-item" href="page-custom-header.html">Artikel</a></li>
 																<li><a class="dropdown-item" href="page-custom-header.html">Jurnal</a></li>
 																<li><a class="dropdown-item" href="page-custom-header.html">E-learning</a></li>
-																<li><a class="dropdown-item" href="http://jdih.kemenperin.go.id/">Pengumuman</a></li>
+																<li><a class="dropdown-item" href="http://jdih.kemenperin.go.id/">Pengumuman</a></li> -->
 																
 															</ul>
 														</li>
-														<li class="dropdown">
+														<!-- <li class="dropdown">
 															<a class="dropdown-item dropdown-toggle" href="#">
 															Industri
 															</a>
@@ -172,8 +172,8 @@
 																<li><a class="dropdown-item" href="page-custom-header.html">Sentra Industri </a></li>
 															
 															</ul>
-														</li>
-														<li class="dropdown">
+														</li> -->
+														<!-- <li class="dropdown">
 															<a class="dropdown-item dropdown-toggle" href="#">
 																Unduh
 															</a>
@@ -183,12 +183,12 @@
 																<li><a class="dropdown-item" href="page-custom-header.html">Lainnya</a></li>
 																
 															</ul>
-														</li>
+														</li> -->
 														<li class="dropdown">
-															<a class="dropdown-item dropdown-toggle" href="#">
+															<a class="dropdown-item dropdown-toggle" href="<?php echo base_url() ?>web/kontak">
 															Kontak Kami
 															</a>
-															<ul class="dropdown-menu">
+															<!-- <ul class="dropdown-menu">
 															
 																<li><a class="dropdown-item" href="page-custom-header.html">Kritik & Saran</a></li>
 																
@@ -196,7 +196,7 @@
 																<li><a class="dropdown-item" href="page-custom-header.html">Pojok Konsultasi</a></li>
 																<li><a class="dropdown-item" href="page-custom-header.html">Survei Pengunjung</a></li>
 																
-															</ul>
+															</ul> -->
 														</li>
 														
 													

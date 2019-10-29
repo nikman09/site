@@ -31,7 +31,7 @@
 								<article class="post post-medium border-0 pb-0 mb-5">
 									<div class="post-image">
 										<a href="blog-post.html">
-											<img src="<?php echo base_url() ?>assets/images/berita/thumb/<?php echo $row['foto'] ?>" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="" />
+											<img src="<?php echo base_url() ?>assets/images/kegiatan/thumb/<?php echo $row['fotos'] ?>" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="" />
 										</a>
 									</div>
 

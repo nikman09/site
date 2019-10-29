@@ -130,56 +130,7 @@
 					<div id="revolutionSlider" class="slider rev_slider" data-version="5.4.8" data-plugin-revolution-slider data-plugin-options="{'delay': 9000, 'gridwidth': 1170, 'gridheight': 650, 'disableProgressBar': 'on', 'responsiveLevels': [4096,1200,992,500], 'navigation' : {'arrows': { 'enable': true, 'style': 'arrows-style-1 arrows-big arrows-dark' }, 'bullets': {'enable': false, 'style': 'bullets-style-1 bullets-color-primary', 'h_align': 'center', 'v_align': 'bottom', 'space': 7, 'v_offset': 70, 'h_offset': 0}}}">
 						<ul>
 							
-							<li data-transition="fade">
-				
-								<img src="<?php echo base_url() ?>assets/front-end/web2/img/slides/tes122.jpg"  
-									alt=""
-									data-bgposition="right center"
-									data-bgpositionend="center center"
-									data-bgfit="cover" 
-									data-bgrepeat="no-repeat" 
-									data-kenburns="on"
-									data-duration="9000"
-									data-ease="Linear.easeNone"
-									data-scalestart="110"
-									data-scaleend="100"
-									data-rotatestart="0"
-									data-rotateend="0"
-									data-offsetstart="0 0"
-									data-offsetend="0 0"
-									data-bgparallax="0"
-									class="rev-slidebg">
-				
-								<div class="tp-caption font-weight-extra-bold negative-ls-2" style="color:#fff"
-									data-frames='[{"delay":1000,"speed":2000,"frame":"0","from":"sX:1.5;opacity:0;fb:20px;","to":"o:1;fb:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
-									data-x="center"
-									data-y="center" data-voffset="['-50','-50','-50','-75']"
-									data-paddingtop="['15','15','15','100']"
-									data-fontsize="['50','50','50','70']"
-									data-lineheight="['55','55','55','55']">Dinas Perindustrian</div>
-				
-								<div class="tp-caption font-weight-light" style="color:#fff"
-									data-frames='[{"from":"opacity:0;","speed":300,"to":"o:1;","delay":2000,"split":"chars","splitdelay":0.05,"ease":"Power2.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
-									data-x="center"
-									data-y="center" 
-									data-fontsize="['18','18','18','30']"
-									data-paddingtop="['15','15','15','100']"
-									data-lineheight="['20','20','20','20']"
-									style="color: #b5b5b5;">Provinsi Kalimantan Selatan.</div>
-				
-								<a class="tp-caption btn  btn-outline btn-rounded btn-primary  btn-with-arrow font-weight-bold"
-									href="<?php echo base_url() ?>web/page?p=1"
-									data-frames='[{"delay":3000,"speed":2000,"frame":"0","from":"y:50%;opacity:0;","to":"y:0;o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
-									data-x="center" data-hoffset="0"
-									data-y="center" data-voffset="70"
-									data-paddingtop="['15','15','15','20']"
-									data-paddingbottom="['15','15','15','15']"
-									data-paddingleft="['40','40','40','57']"
-									data-paddingright="['40','40','40','57']"
-									data-fontsize="['13','13','13','25']"
-									data-lineheight="['20','20','20','25']">PROFIL</i></a>
-				
-							</li>
+						
 							<li data-transition="fade">
 								<img src="<?php echo base_url() ?>assets/front-end/web2/bahan/1231.jpg"  
 									alt=""
@@ -244,7 +195,56 @@
 									style="color: #b5b5b5;">Kawasan Industri Batulicin dan Kawasan Industri Jorong</div>
 								
 							</li>
-							
+							<li data-transition="fade">
+				
+				<img src="<?php echo base_url() ?>assets/front-end/web2/img/slides/tes122.jpg"  
+					alt=""
+					data-bgposition="right center"
+					data-bgpositionend="center center"
+					data-bgfit="cover" 
+					data-bgrepeat="no-repeat" 
+					data-kenburns="on"
+					data-duration="9000"
+					data-ease="Linear.easeNone"
+					data-scalestart="110"
+					data-scaleend="100"
+					data-rotatestart="0"
+					data-rotateend="0"
+					data-offsetstart="0 0"
+					data-offsetend="0 0"
+					data-bgparallax="0"
+					class="rev-slidebg">
+
+				<div class="tp-caption font-weight-extra-bold negative-ls-2" style="color:#fff"
+					data-frames='[{"delay":1000,"speed":2000,"frame":"0","from":"sX:1.5;opacity:0;fb:20px;","to":"o:1;fb:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
+					data-x="center"
+					data-y="center" data-voffset="['-50','-50','-50','-75']"
+					data-paddingtop="['15','15','15','100']"
+					data-fontsize="['50','50','50','70']"
+					data-lineheight="['55','55','55','55']">Dinas Perindustrian</div>
+
+				<div class="tp-caption font-weight-light" style="color:#fff"
+					data-frames='[{"from":"opacity:0;","speed":300,"to":"o:1;","delay":2000,"split":"chars","splitdelay":0.05,"ease":"Power2.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
+					data-x="center"
+					data-y="center" 
+					data-fontsize="['18','18','18','30']"
+					data-paddingtop="['15','15','15','100']"
+					data-lineheight="['20','20','20','20']"
+					style="color: #b5b5b5;">Provinsi Kalimantan Selatan.</div>
+
+				<a class="tp-caption btn  btn-outline btn-rounded btn-primary  btn-with-arrow font-weight-bold"
+					href="<?php echo base_url() ?>web/page?p=1"
+					data-frames='[{"delay":3000,"speed":2000,"frame":"0","from":"y:50%;opacity:0;","to":"y:0;o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
+					data-x="center" data-hoffset="0"
+					data-y="center" data-voffset="70"
+					data-paddingtop="['15','15','15','20']"
+					data-paddingbottom="['15','15','15','15']"
+					data-paddingleft="['40','40','40','57']"
+					data-paddingright="['40','40','40','57']"
+					data-fontsize="['13','13','13','25']"
+					data-lineheight="['20','20','20','25']">PROFIL</i></a>
+
+			</li>
 							 <li data-transition="fade">
 								<img src="<?php echo base_url() ?>assets/front-end/web2/bahan/123.JPG"  
 									alt=""
@@ -408,13 +408,13 @@
 										<li>
 											<div class="post-image">
 												<div class="img-thumbnail img-thumbnail-no-borders d-block">
-													<a href="blog-post.html">
+													<a href="<?php echo base_url("web/kegiatanposts?ids=".$row['id_kegiatan']."") ?>">
 														<img src="<?php echo base_url() ?>assets/images/kegiatan/thumb/<?php echo $row['fotos'] ?>" class="border-radius-0" width="50" height="50" alt="<?php echo  $row['judul'] ?>">
 													</a>
 												</div>
 											</div>
 											<div class="post-info">
-												<h4 class="font-weight-normal text-3 line-height-4 mb-0"><a href="blog-post.html" class="text-dark"><?php echo  $row['judul'] ?>  </a></h4>
+												<h4 class="font-weight-normal text-3 line-height-4 mb-0"><a href="<?php echo base_url("web/kegiatanposts?ids=".$row['id_kegiatan']."") ?>" class="text-dark"><?php echo  $row['judul'] ?>  </a></h4>
 												<div class="post-meta">
 												<?php echo  tgl_indo($row['tanggal']); ?>
 												</div>
@@ -441,13 +441,13 @@
 										<li>
 											<div class="post-image">
 												<div class="img-thumbnail img-thumbnail-no-borders d-block ">
-													<a href="blog-post.html">
+													<a href="<?php echo base_url("web/beritapost?ids=".$row['id_berita']."") ?>">
 														<img src="<?php echo base_url() ?>assets/images/berita/thumb/<?php echo $row['foto'] ?>" class="border-radius-0" width="50" height="50" alt="<?php echo  $row['judul'] ?>">
 													</a>
 												</div>
 											</div>
 											<div class="post-info">
-												<h4 class="font-weight-normal text-3 line-height-4 mb-0"><a href="blog-post.html" class="text-dark"><?php echo  $row['judul'] ?></a></h4>
+												<h4 class="font-weight-normal text-3 line-height-4 mb-0"><a href="<?php echo base_url("web/beritapost?ids=".$row['id_berita']."") ?>" class="text-dark"><?php echo  $row['judul'] ?></a></h4>
 												<div class="post-meta">
 												<?php echo  tgl_indo($row['tanggal']); ?>
 												</div>
@@ -468,7 +468,7 @@
 							<!-- <h3 class="font-weight-bold text-3 mb-0 mt-4 mt-md-0" style="padding-bottom:10px">Dinas</h3> -->
 							<div class="owl-carousel owl-theme" data-plugin-options="{'items': 1, 'margin': 10, 'loop': true, 'nav': false, 'dots': false, 'autoplay': true, 'autoplayTimeout': 5000}">
 							<div>
-									<a href="blog-post.html">
+									<a href="#">
 										<article>
 											<div class="thumb-info thumb-info-no-borders thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-bottom-info-show-more thumb-info-no-zoom border-radius-0">
 												<div class="thumb-info-wrapper thumb-info-wrapper-opacity-3">
@@ -488,7 +488,7 @@
 									</a>
 								</div>
 								<div>
-									<a href="blog-post.html">
+									<a href="#">
 										<article>
 											<div class="thumb-info thumb-info-no-borders thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-bottom-info-show-more thumb-info-no-zoom border-radius-0">
 												<div class="thumb-info-wrapper thumb-info-wrapper-opacity-3">
@@ -690,7 +690,7 @@
 											<i class="icons icon-support text-color-primary"></i>
 										</div>
 										<div class="feature-box-info">
-											<h4 class="font-weight-bold text-4 mb-0">Sekretariat</h4>
+											<h4 class="font-weight-bold text-4 mb-0"><a href="<?php echo base_url(); ?>web/bidang?p=1" >Sekretariat</a></h4>
 											<p class="mb-4">Sekretariat Dinas Perindustrian</p>
 										</div>
 									</div>
@@ -700,7 +700,7 @@
 											<i class="fa fa-cogs text-color-primary"></i>
 										</div>
 										<div class="feature-box-info">
-											<h4 class="font-weight-bold text-4 mb-0">ILMEAT</h4>
+											<h4 class="font-weight-bold text-4 mb-0"><a href="<?php echo base_url(); ?>web/bidang?p=2" >ILMEAT</a></h4>
 											<p class="mb-4">Industri Logam, Mesin, Elektronika dan IT</p>
 										</div>
 										
@@ -710,7 +710,7 @@
 											<i class="fas fa-leaf text-color-primary"></i>
 										</div>
 										<div class="feature-box-info">
-											<h4 class="font-weight-bold text-4 mb-0">Agro</h4>
+											<h4 class="font-weight-bold text-4 mb-0"><a href="<?php echo base_url(); ?>web/bidang?p=5" >Agro</a></h4>
 											<p class="mb-4">Industri Agro</p>
 										</div>
 									</div>
@@ -722,7 +722,7 @@
 											<i class="fas fa-flask text-color-primary"></i>
 										</div>
 										<div class="feature-box-info">
-											<h4 class="font-weight-bold text-4 mb-0">IKTA</h4>
+											<h4 class="font-weight-bold text-4 mb-0"><a href="<?php echo base_url(); ?>web/bidang?p=4" >IKTA</a></h4>
 											<p class="mb-4">Industri Kimia Tekstil dan Aneka</p>
 										</div>
 										
@@ -732,7 +732,7 @@
 											<i class="fas fa-industry text-color-primary"></i>
 										</div>
 										<div class="feature-box-info">
-											<h4 class="font-weight-bold text-4 mb-0">UPTBD Industri Kayu dan Logam </h4>
+											<h4 class="font-weight-bold text-4 mb-0"><a href="<?php echo base_url(); ?>web/bidang?p=6" >UPTBD Industri Kayu dan Logam</a> </h4>
 											<p class="mb-4">UPT Balai Diklat Industri Kayu dan Logam</p>
 										</div>
 									</div>
@@ -776,9 +776,9 @@
 										</div>
 									</div>
 									<div class="col pl-1">
-										<h4 class="line-height-3 text-4"><a href="blog-post.html" class="text-dark"><?php echo $row['judul'] ?></a></h4>
+										<h4 class="line-height-3 text-4"><a href="<?php echo base_url("web/kegiatanposts?ids=".$row['id_kegiatan']."") ?>" class="text-dark"><?php echo $row['judul'] ?></a></h4>
 										<p class="line-height-5 pr-3 mb-1"><?php echo substr($row['isi'],0,100) ?>.</p>
-										<a class="btn btn-light text-uppercase text-primary text-1 py-2 px-3 mb-1 mt-2" href="<?php echo base_url("") ?>"><strong>Selanjutnya</strong><i class="fas fa-chevron-right text-2 pl-2"></i></a>
+										<a class="btn btn-light text-uppercase text-primary text-1 py-2 px-3 mb-1 mt-2" href="<?php echo base_url("web/kegiatanposts?ids=".$row['id_kegiatan']."") ?>"><strong>Selanjutnya</strong><i class="fas fa-chevron-right text-2 pl-2"></i></a>
 									</div>
 								</div>
 							</article>
@@ -791,26 +791,6 @@
 					</div>
 				</div>
 				
-
-
-
-
-
-
-
-
-			
-
-
-
-
-
-
-
-
-
-					
-
 
 				<section  style="
     padding-top: 30px;
@@ -834,9 +814,9 @@
 									<div>
 										<img class="img-fluid opacity-2" src="https://drive.google.com/uc?id=1FaIUhoan4lNw0o_934z13V3tBrBEBlcN" alt="">
 									</div>
-									<div>
+									<!-- <div>
 										<img class="img-fluid opacity-2" src="https://doc-0o-2o-docs.googleusercontent.com/docs/securesc/iasracd20i517a5u6kqfdb693tntmi6p/k49npvg8tk3jp6r3m7p8euvcu5942jkt/1572264000000/04995702770821001048/16859199919012491055/1Yg3_9aEsOxME4-kR-9Z_ftTV47GLIXtF" alt="">
-									</div>
+									</div> -->
 									
 								</div>
 							</div>

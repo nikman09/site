@@ -58,7 +58,7 @@
 
 
 		<!-- Skin CSS -->
-		<link rel="stylesheet" href="<?php echo base_url() ?>assets/front-end/web2/css/skins/default.css"> 
+		<link rel="stylesheet" href="<?php echo base_url() ?>assets/front-end/web2/css/skins/skin-corporate-6.css"> 
 
 		<!-- Theme Custom CSS -->
 		<link rel="stylesheet" href="<?php echo base_url() ?>assets/front-end/web2/css/custom.css">
@@ -72,39 +72,72 @@
 <div>
 	
 	<div class="body">
-		<header id="header" class="header-transparent header-effect-shrink" data-plugin-options="{'stickyEnabled': true, 'stickyEffect': 'shrink', 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': true, 'stickyChangeLogo': true, 'stickyStartAt': 30, 'stickyHeaderContainerHeight': 70}">
-				<div class="header-body border-top-0 bg-dark box-shadow-none">
-					<div class="header-container container container-xl">
+	<header id="header" class="header-effect-shrink" data-plugin-options="{'stickyEnabled': true, 'stickyEffect': 'shrink', 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': true, 'stickyChangeLogo': true, 'stickyStartAt': 120, 'stickyHeaderContainerHeight': 70}">
+				<div class="header-body border-top-0 ">
+					<div class="header-top bg-dark">
+						<div class="container">
+							<div class="header-row py-2 ">
+								<div class="header-column justify-content-start ">
+									<div class="header-row ">
+										<nav class="header-nav-top ">
+											<ul class="nav nav-pills">
+												<li class="nav-item nav-item-left-border nav-item-left-border-remove nav-item-left-border-sm-show">
+													<a class="nav-link pl-0" href="<?php echo base_url() ?>web/page?p=1" style="color: #e0e0e0 !important"><i class="fas fa-angle-right"></i> Tentang</a>
+												</li>
+												<li class="nav-item nav-item-left-border nav-item-left-border-remove nav-item-left-border-sm-show">
+													<a class="nav-link" href="<?php echo base_url() ?>web/kontak" style="color: #e0e0e0 !important"><i class="fas fa-angle-right"></i> Kontak</a>
+												</li>
+											
+												<li class="nav-item nav-item-left-border nav-item-left-border-remove nav-item-left-border-sm-show">
+													<span class="ws-nowrap" style="color: #e0e0e0 !important"><i class="fas fa-phone"></i> (0511) 5915906</span>
+												</li>
+											</ul>
+										</nav>
+									</div>
+								</div>
+								<div class="header-column justify-content-end">
+									<div class="header-row">
+										<ul class="header-social-icons social-icons d-none d-sm-block social-icons-clean">
+											<li class="social-icons-facebook"><a href="http://www.facebook.com/" target="_blank" title="Facebook" style="color: #e0e0e0 !important"><i class="fab fa-facebook-f"></i></a></li>
+											<li class="social-icons-twitter" ><a href="http://www.twitter.com/" target="_blank" title="Twitter"  style="color: #e0e0e0 !important"><i class="fab fa-twitter"></i></a></li>
+											<li class="social-icons-instagram" ><a href="http://www.instagram.com/" target="_blank" title="instagram"  style="color: #e0e0e0 !important"><i class="fab fa-instagram"></i></a></li>
+											<li class="social-icons-youtube" ><a href="http://www.youtube.com/" target="_blank" title="youtube"  style="color: #e0e0e0 !important"><i class="fab fa-youtube"></i></a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="header-container container">
 						<div class="header-row">
 							<div class="header-column">
 								<div class="header-row">
 									<div class="header-logo">
 										<a href="index.html">
-											<img alt="Porto" width="175" height="58" src="<?php echo base_url() ?>assets/front-end/web2/img/kalsel2.png">
+											<img alt="Dinas Perindustrian Provinsi Kalimantan Selatan" width="175" height="58" data-sticky-width="120" data-sticky-height="40" src="<?php echo base_url() ?>assets/front-end/web2/img/kalsel3.png">
 										</a>
 									</div>
 								</div>
 							</div>
 							<div class="header-column justify-content-end">
 								<div class="header-row">
-									<div class="header-nav header-nav-links header-nav-dropdowns-dark header-nav-light-text order-2 order-lg-1">
-										<div class="header-nav-main header-nav-main-mobile-dark header-nav-main-square header-nav-main-dropdown-no-borders header-nav-main-effect-2 header-nav-main-sub-effect-1">
+									<div class="header-nav header-nav-line header-nav-top-line header-nav-top-line-with-border order-2 order-lg-1">
+										<div class="header-nav-main header-nav-main-square header-nav-main-effect-2 header-nav-main-sub-effect-1">
 										<nav class="collapse">
 										<?php
 												$this->load->view("template/menu");
 											?>
 												</nav>
-												
-									</div>
+										</div>
 										<button class="btn header-btn-collapse-nav" data-toggle="collapse" data-target=".header-nav-main nav">
 											<i class="fas fa-bars"></i>
 										</button>
 									</div>
-									<div class="header-nav-features header-nav-features-light header-nav-features-no-border header-nav-features-lg-show-border order-1 order-lg-2">
+									<div class="header-nav-features header-nav-features-no-border header-nav-features-lg-show-border order-1 order-lg-2">
 										<div class="header-nav-feature header-nav-features-search d-inline-flex">
 											<a href="#" class="header-nav-features-toggle" data-focus="headerSearch"><i class="fas fa-search header-nav-top-icon"></i></a>
-											<div class="header-nav-features-dropdown header-nav-features-dropdown-mobile-fixed" id="headerTopSearchDropdown">
-												<form role="search" action="page-search-results.html" method="get">
+											<div class="header-nav-features-dropdown" id="headerTopSearchDropdown">
+												<form role="search" action="#" method="get">
 													<div class="simple-search input-group">
 														<input class="form-control text-1" id="headerSearch" name="q" type="search" value="" placeholder="Search...">
 														<span class="input-group-append">
@@ -232,11 +265,11 @@
 					data-lineheight="['20','20','20','20']"
 					style="color: #b5b5b5;">Provinsi Kalimantan Selatan.</div>
 
-				<a class="tp-caption btn  btn-outline btn-rounded btn-primary  btn-with-arrow font-weight-bold"
+				<a class="tp-caption btn btn-light-2 btn-outline font-weight-semibold"
 					href="<?php echo base_url() ?>web/page?p=1"
 					data-frames='[{"delay":3000,"speed":2000,"frame":"0","from":"y:50%;opacity:0;","to":"y:0;o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
 					data-x="center" data-hoffset="0"
-					data-y="center" data-voffset="70"
+					data-y="center" data-voffset="150"
 					data-paddingtop="['15','15','15','20']"
 					data-paddingbottom="['15','15','15','15']"
 					data-paddingleft="['40','40','40','57']"
@@ -246,7 +279,7 @@
 
 			</li>
 							 <li data-transition="fade">
-								<img src="<?php echo base_url() ?>assets/front-end/web2/bahan/123.JPG"  
+								<img src="<?php echo base_url() ?>assets/front-end/web2/bahan/123.jpg"  
 									alt=""
 								data-bgposition="left center"
 									data-bgpositionend="center center"
@@ -317,6 +350,8 @@
 				<div class="home-intro" id="home-intro" style="margin-bottom:0px">
 					<div class="container">
 				
+					
+
 						<div class="row align-items-center">
 							<div class="col text-center">
 								<p class="mb-0">
@@ -329,12 +364,38 @@
 				</div>
 				
 				
+				<!-- <section class="section bg-color-grey-scale-1  section-no-border section-centerappear-animation my-0" data-appear-animation="fadeIn">
+				<div class="container">
+					<div class="row justify-content-center">
+						<div class="col-lg-10 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200">
+						
+							<div class="owl-carousel owl-theme nav-bottom rounded-nav mb-0" data-plugin-options="{'items': 1, 'loop': false, 'autoHeight': true}">
+								
+								<div>
+									<div class="col">
+										<div class="testimonial testimonial-style-2 testimonial-with-quotes testimonial-quotes-dark mb-0">
+											<div class="testimonial-author">
+												<img src="<?php echo base_url() ?>assets/front-end/web2/bahan/kadis.png" class="img-fluid rounded-circle" alt="">
+											</div>
+											<blockquote>
+												<p class="text-color-dark text-3 line-height-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget risus porta, tincidunt turpis at, interdum tortor. Suspendisse potenti. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce ante tellus, convallis non consectetur sed, pharetra nec ex.</p>
+											</blockquote>
+											<div class="testimonial-author">
+												<p><strong class="opacity-9 font-weight-extra-bold text-2">H. Mahyuni M.T - Kepala Dinas Perindustrian Provinsi Kalimantan Selatan</strong></p>
+											</div>
+										</div>
+									</div>
+								</div>
+							
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+				 -->
 				
 				
-				
-				
-				
-				<section class="section bg-color-grey-scale-1 section-height-3 border-0 m-0" style="padding-top: 20px;padding-bottom: 10px;">
+				<section class="" style="padding-top: 20px;padding-bottom: 10px;">
 					<div class="container pb-2">
 						<div class="row">
 							<div class="col-lg-6 text-center text-md-left mb-5 mb-lg-0"  data-appear-animation="fadeInRightShorter">
@@ -355,48 +416,57 @@
 					</div>
 				</section>
 				
-				<section class="section bg-color-light border-0 m-0" style="padding-top:10px;padding-bottom:10px;">
-					<div class="container">
-						<div class="row text-center text-md-left mt-4">
-							<div class="col-md-4 mb-4 mb-md-0 appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="200">
-								<div class="row justify-content-center justify-content-md-start">
-									<div class="col-4">
-										<img class="img-fluid mb-4" src="<?php echo base_url() ?>assets/front-end/web2/bahan/simbol2.png" alt="">
-									</div>
-									<div class="col-lg-8">
-										<h2 class="font-weight-bold text-5 line-height-5 mb-1 text-color-primary">Data Industri</h2>
-										<p class="mb-0">Data dan Informasi Industri Kalimantan Selatan.</p>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-4 mb-4 mb-md-0 appear-animation" data-appear-animation="fadeIn">
-								<div class="row justify-content-center justify-content-md-start">
-									<div class="col-4">
-										<img class="img-fluid mb-4" src="<?php echo base_url() ?>assets/front-end/web2/bahan/simbol.png" alt="">
-									</div>
-									<div class="col-lg-8">
-										<h2 class="font-weight-bold text-5 line-height-5 mb-1 text-color-primary">Kebijakan Industri</h2>
-										<p class="mb-0">Kebijakan Industri Daerah Menuju KALSEL MAPAN.</p>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-4 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="200">
-								<div class="row justify-content-center justify-content-md-start">
-									<div class="col-4">
-										<img class="img-fluid mb-4" src="<?php echo base_url() ?>assets/front-end/web2/bahan/simbol1.png" alt="">
-									</div>
-									<div class="col-lg-8">
-										<h2 class="font-weight-bold text-5 line-height-5 mb-1 text-color-primary">Pelayanan Publik</h2>
-										<p class="mb-0">Penyelengaraan pelayanan publik bidang Industri di Kalimantan Selatan.</p>
-									</div>
-								</div>
+				<section class="bg-dark border-0 m-0" >
+				<div class="container py-4 my-0">
+				
+				<div class="row featured-boxes featured-boxes-style-4">
+					<div class="col-md-6 col-lg-3">
+						<div class="featured-box featured-box-primary featured-box-effect-4 appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="200">
+							<div class="box-content px-4">
+								<i class="icon-featured  fa fa-database text-12"></i>
+								<h4 class="font-weight-bold text-color-light pb-1 mb-2">Data Industri</h4>
+								<p class="mb-0">Data dan Informasi Industri Kalimantan Selatan.</p>
 							</div>
 						</div>
 					</div>
-				</section>
-
-				<div class="container container-md">
-					<div class="row py-2">
+					<div class="col-md-6 col-lg-3">
+						<div class="featured-box featured-box-primary featured-box-effect-4 appear-animation" data-appear-animation="fadeIn">
+							<div class="box-content px-4">
+								<i class="icon-featured  fa fa-gavel text-12"></i>
+								<h4 class="font-weight-bold text-color-light pb-1 mb-2">Kebijakan Industri</h4>
+								<p class="mb-0">Kebijakan Industri Daerah Menuju KALSEL MAPAN.</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 col-lg-3">
+						<div class="featured-box featured-box-primary featured-box-effect-4 appear-animation" data-appear-animation="fadeIn">
+							<div class="box-content px-4">
+							<i class="icon-featured  fa fa-star text-12"></i>
+								<h4 class="font-weight-bold text-color-light pb-1 mb-2">Layanan Publik</h4>
+								<p class="mb-0">Penyelengaraan pelayanan publik bidang Industri di Kalimantan Selatan.</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 col-lg-3">
+						<div class="featured-box featured-box-primary featured-box-effect-4 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="200">
+							<div class="box-content px-4">
+							
+								<i class="icon-featured icon-screen-desktop icons text-12"></i>
+								<a href="https://kemenperin.go.id/gpr">
+								<h4 class="font-weight-bold text-color-light pb-1 mb-2">Infografis</h4>
+								</a>
+								<p class="mb-0">Sajian data dan informasi seputar kebijakan dan kegiatan.</p>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			</section>
+			
+				<section>
+				<div class="container container-md ">
+					<div class="row py-5 ">
 					<div class="col-md-6 col-lg-4 appear-animation" data-appear-animation="fadeInDownShorter" data-appear-animation-delay="400">
 
 							<h3 class="font-weight-bold text-3 mb-0 mt-4 mt-md-0">Kegiatan</h3>
@@ -496,7 +566,7 @@
 													<div class="thumb-info-title bg-transparent p-4">
 													
 														<div class="thumb-info-inner mt-1">
-															<h2 class="text-color-light line-height-2 text-4 font-weight-bold mb-0">KARHUTLA</h2>
+															<h2 class="text-color-light line-height-2 text-4 font-weight-bold mb-0">APEL KARHUTLA</h2>
 														</div>
 														<div class="thumb-info-show-more-content">
 															<p class="mb-0 text-1 line-height-9 mb-1 mt-2 text-light opacity-5">Apel Bersama Karhutla.</p>
@@ -538,8 +608,9 @@
 						</div>
 					</div>
 				</div>
+				</section>
 
-
+				<!-- <section>
 				<div class="container ">
 					<div class="row " >
 					
@@ -682,7 +753,7 @@
 							</div>
 						</div>
 						<div class="col-lg-6">
-							<h4 class="font-weight-normal ">Bidang & UPT</strong></h4>
+							<h4 class="font-weight-normal ">Bidang</strong></h4>
 							<div class="row">
 								<div class="col-sm-6">
 									<div class="feature-box feature-box-style-2">
@@ -752,12 +823,13 @@
 
 					</div>
 				</div> 
-
-
-				<div class="container" style="margin-bottom:20px">
-					<div class="row">
+				</section> -->
+										
+				<section class="section bg-color-grey-scale-1 section-height-3 border-0 m-0" style="padding-top: 50px;padding-bottom: 20px;">
+					<div class="container pb-2">
+						<div class="row">
 						<div class="col-lg-12 text-center appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="400">
-							<h2 class="font-weight-normal text-6">Kegiatan <strong class="font-weight-extra-bold"></strong></h2>
+							<h2 class="font-weight-normal text-6">Kegiatan  <strong class="font-weight-extra-bold">Dinas Perindustrian</strong></h2>
 						</div>
 					</div>
 					<div class="row recent-posts pb-4 mb-5 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="200" style="
@@ -778,7 +850,7 @@
 									<div class="col pl-1">
 										<h4 class="line-height-3 text-4"><a href="<?php echo base_url("web/kegiatanposts?ids=".$row['id_kegiatan']."") ?>" class="text-dark"><?php echo $row['judul'] ?></a></h4>
 										<p class="line-height-5 pr-3 mb-1"><?php echo substr($row['isi'],0,100) ?>.</p>
-										<a class="btn btn-light text-uppercase text-primary text-1 py-2 px-3 mb-1 mt-2" href="<?php echo base_url("web/kegiatanposts?ids=".$row['id_kegiatan']."") ?>"><strong>Selanjutnya</strong><i class="fas fa-chevron-right text-2 pl-2"></i></a>
+										<a class="read-more text-color-dark font-weight-bold text-2" href="<?php echo base_url("web/kegiatanposts?ids=".$row['id_kegiatan']."") ?>"><strong>Selanjutnya</strong><i class="fas fa-chevron-right text-2 pl-2"></i></a>
 									</div>
 								</div>
 							</article>
@@ -789,7 +861,13 @@
 						?>
 						
 					</div>
-				</div>
+					<div class="row mb-5" style="margin-top:40px">
+							<div class="col-lg-12 text-center">
+								<a href="<?php echo base_url("web/kegiatan/all") ?>" class="btn btn-dark btn-px-5 btn-py-2 font-weight-bold text-color-light rounded-0 text-2" style="">Lihat Kegiatan Lainnya</a>
+							</div>
+						</div>
+					</div>
+				</section>
 				
 
 				<section  style="

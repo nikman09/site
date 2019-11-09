@@ -65,50 +65,85 @@
 	<body>
 
 		<div class="body">
-			<header id="header" class="header-transparent header-effect-shrink" data-plugin-options="{'stickyEnabled': true, 'stickyEffect': 'shrink', 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': true, 'stickyChangeLogo': true, 'stickyStartAt': 30, 'stickyHeaderContainerHeight': 70}">
-				<div class="header-body border-top-0 bg-dark box-shadow-none">
+		<header id="header" class="header-effect-shrink" data-plugin-options="{'stickyEnabled': true, 'stickyEffect': 'shrink', 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': true, 'stickyChangeLogo': true, 'stickyStartAt': 120, 'stickyHeaderContainerHeight': 70}">
+				<div class="header-body border-top-0 ">
+					<div class="header-top bg-dark">
+						<div class="container">
+							<div class="header-row py-2 ">
+								<div class="header-column justify-content-start ">
+									<div class="header-row ">
+										<nav class="header-nav-top ">
+											<ul class="nav nav-pills">
+												<li class="nav-item nav-item-left-border nav-item-left-border-remove nav-item-left-border-sm-show">
+													<a class="nav-link pl-0" href="<?php echo base_url() ?>web/page?p=1" style="color: #e0e0e0 !important"><i class="fas fa-angle-right"></i> Tentang</a>
+												</li>
+												<li class="nav-item nav-item-left-border nav-item-left-border-remove nav-item-left-border-sm-show">
+													<a class="nav-link" href="<?php echo base_url() ?>web/kontak" style="color: #e0e0e0 !important"><i class="fas fa-angle-right"></i> Kontak</a>
+												</li>
+											
+												<li class="nav-item nav-item-left-border nav-item-left-border-remove nav-item-left-border-sm-show">
+													<span class="ws-nowrap" style="color: #e0e0e0 !important"><i class="fas fa-phone"></i> (0511) 5915906</span>
+												</li>
+											</ul>
+										</nav>
+									</div>
+								</div>
+								<div class="header-column justify-content-end">
+									<div class="header-row">
+										<ul class="header-social-icons social-icons d-none d-sm-block social-icons-clean">
+											<li class="social-icons-facebook"><a href="http://www.facebook.com/" target="_blank" title="Facebook" style="color: #e0e0e0 !important"><i class="fab fa-facebook-f"></i></a></li>
+											<li class="social-icons-twitter" ><a href="http://www.twitter.com/" target="_blank" title="Twitter"  style="color: #e0e0e0 !important"><i class="fab fa-twitter"></i></a></li>
+											<li class="social-icons-instagram" ><a href="http://www.instagram.com/" target="_blank" title="instagram"  style="color: #e0e0e0 !important"><i class="fab fa-instagram"></i></a></li>
+											<li class="social-icons-youtube" ><a href="http://www.youtube.com/" target="_blank" title="youtube"  style="color: #e0e0e0 !important"><i class="fab fa-youtube"></i></a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 					<div class="header-container container">
 						<div class="header-row">
 							<div class="header-column">
 								<div class="header-row">
 									<div class="header-logo">
 										<a href="index.html">
-										<img alt="Porto" width="175" height="58" src="<?php echo base_url() ?>assets/front-end/web2/img/kalsel2.png">	</a>
+											<img alt="Porto" width="175" height="58" data-sticky-width="120" data-sticky-height="40" src="<?php echo base_url() ?>assets/front-end/web2/img/kalsel3.png">
+										</a>
 									</div>
 								</div>
 							</div>
 							<div class="header-column justify-content-end">
 								<div class="header-row">
-									<div class="header-nav header-nav-links header-nav-dropdowns-dark header-nav-light-text order-2 order-lg-1">
-										<div class="header-nav-main header-nav-main-mobile-dark header-nav-main-square header-nav-main-dropdown-no-borders header-nav-main-effect-2 header-nav-main-sub-effect-1">
-											<nav class="collapse">
-											
-											<?php
+									<div class="header-nav header-nav-line header-nav-top-line header-nav-top-line-with-border order-2 order-lg-1">
+										<div class="header-nav-main header-nav-main-square header-nav-main-effect-2 header-nav-main-sub-effect-1">
+										<nav class="collapse">
+										<?php
 												$this->load->view("template/menu");
 											?>
-											</nav>
+												</nav>
 										</div>
 										<button class="btn header-btn-collapse-nav" data-toggle="collapse" data-target=".header-nav-main nav">
 											<i class="fas fa-bars"></i>
 										</button>
 									</div>
-									<!-- <div class="header-nav-features header-nav-features-light header-nav-features-no-border header-nav-features-lg-show-border order-1 order-lg-2">
+									<div class="header-nav-features header-nav-features-no-border header-nav-features-lg-show-border order-1 order-lg-2">
 										<div class="header-nav-feature header-nav-features-search d-inline-flex">
 											<a href="#" class="header-nav-features-toggle" data-focus="headerSearch"><i class="fas fa-search header-nav-top-icon"></i></a>
-											<div class="header-nav-features-dropdown header-nav-features-dropdown-mobile-fixed" id="headerTopSearchDropdown">
-												<form role="search" action="page-search-results.html" method="get">
+											<div class="header-nav-features-dropdown" id="headerTopSearchDropdown">
+												<form role="search" action="#" method="get">
 													<div class="simple-search input-group">
 														<input class="form-control text-1" id="headerSearch" name="q" type="search" value="" placeholder="Search...">
 														<span class="input-group-append">
 															<button class="btn" type="submit">
-																<i class="fa fa-search header-nav-top-icon text-color-dark"></i>
+																<i class="fa fa-search header-nav-top-icon"></i>
 															</button>
 														</span>
 													</div>
 												</form>
 											</div>
 										</div>
-									</div> -->
+										
+									</div>
 								</div>
 							</div>
 						</div>

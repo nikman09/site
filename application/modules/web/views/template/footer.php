@@ -53,7 +53,7 @@ Banjarbaru.</p></li>
 								</a> -->
 							</div>
 							<div class="col-lg-7 d-flex align-items-center justify-content-center justify-content-lg-start mb-4 mb-lg-0">
-								<p>© Copyright 2019. All Rights Reserved.</p>
+								<p>© Copyright <?php echo date("Y") ?>. Dinas perindustrian Provinsi Kalimantan Selatan</p>
 							</div>
 							<div class="col-lg-4 d-flex align-items-center justify-content-center justify-content-lg-end">
 								<nav id="sub-menu">

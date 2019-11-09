@@ -55,7 +55,7 @@
 													
 														
 														<li class="dropdown">
-															<a class="dropdown-item dropdown-toggle" href="<?php echo base_url(); ?>web/kegiatan/all">
+															<a class="dropdown-item dropdown-toggle  <?= ($submenu == "kegiatan") ? " active" : ""; ?>" href="<?php echo base_url(); ?>web/kegiatan/all">
 																Kegiatan Bidang
 															</a>
 															<ul class="dropdown-menu">
@@ -106,8 +106,22 @@
 															</ul>
 														</li>
 														
-														
 														<li class="dropdown">
+																	<a class="dropdown-item dropdown-toggle"  target="_blank" href="http://siikalsel.disperin.kalselprov.go.id/">SIIKALSEL</a>
+																	<ul class="dropdown-menu">
+																		<li><a class="dropdown-item" target="_blank" href="http://siikalsel.disperin.kalselprov.go.id/report/perusahaan">Data Perusahaan</a></li>
+																		<li><a class="dropdown-item" target="_blank" href="http://siikalsel.disperin.kalselprov.go.id/report/sentra">Data Sentra</a></li>
+																		<li><a class="dropdown-item" target="_blank" href="http://siikalsel.disperin.kalselprov.go.id/report/potensi">Data Potensi</a></li>
+																	</ul>
+														</li>
+
+														<li class="dropdown">
+																	<a class="dropdown-item dropdown-toggle"  target="_blank" href="<?php echo base_url() ?>kepegawaian">SIDAWAIPRIN</a>
+																	<ul class="dropdown-menu">
+																		<li><a class="dropdown-item"  href="<?php echo base_url() ?>web/datapegawai">Data Pegawai</a></li>
+																	</ul>
+																</li>
+														<!-- <li class="dropdown">
 															<a class="dropdown-item dropdown-toggle" href="#">
 																Aplikasi
 															</a>
@@ -126,17 +140,17 @@
 																		<li><a class="dropdown-item"  href="<?php echo base_url() ?>web/datapegawai">Data Pegawai</a></li>
 																	</ul>
 																</li>
-																<!-- <li class="dropdown-submenu">
+																 <li class="dropdown-submenu">
 																	<a class="dropdown-item" href="#">Web</a>
 																	<ul class="dropdown-menu">
 																		<li><a class="dropdown-item" href="shop-3-columns-full-width.html">Klinik IKM</a></li>
 																		<li><a class="dropdown-item" href="shop-3-columns-sidebar-left.html">Dekranasda</a></li>
 																		<li><a class="dropdown-item" href="shop-3-columns-sidebar-left.html">Promosi Produk IKM</a></li>
 																	</ul>
-																</li> -->
+																</li> 
 																
 															</ul>
-														</li>
+														</li> -->
 														
 														
 														<li class="dropdown">

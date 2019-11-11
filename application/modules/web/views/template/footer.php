@@ -1,16 +1,21 @@
 <footer id="footer">
 				<div class="container">
-					<div class="footer-ribbon">
+					<!-- <div class="footer-ribbon">
 						<span>DISPERIN</span>
 					</div>
+					 -->
 					<div class="row py-5 my-4">
-						<div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+					<div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+					
 							
+					
+						
+						<a href="https://kemenperin.go.id/"><img width="100px" height="100px" src="<?php echo base_url("assets/images/kemenperin.png") ?>" style="margin:10px "/></a>
+								<a href="http://www.kalselprov.go.id"><img  width="80px" src="http://www.kalselprov.go.id/fr_assets/images/logo-kalsel.png"  style="margin:10px" /></a>
+					
+						</div>
 
-						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.4293027174585!2d114.82390741394637!3d-3.487558242969849!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2de686bc23e3a1bd%3A0x8c8a39bcb8ef553a!2sDinas%20Perindustrian%20Prov%20Kalsel!5e0!3m2!1sid!2sid!4v1570373343576!5m2!1sid!2sid" width="300" height="200" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-
-					</div>
-					<div class="col-md-6 col-lg-3 mb-4 mb-md-0">
+						<div class="col-md-6 col-lg-3 mb-4 mb-md-0">
 							<div class="contact-details">
 								<h5 class="text-3 mb-3">Kontak</h5>
 								<ul class="list list-icons list-icons-lg">
@@ -22,16 +27,18 @@ Banjarbaru.</p></li>
 								</ul>
 							</div>
 						</div>
-						<div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+						<div class="col-md-6 col-lg-3 mb-4 mb-md-0">
+							<div class="contact-details">
+								<h5 class="text-3 mb-3">Tautan</h5>
+								<ul class="list list-icons list-icons-lg">
+									<li class="mb-1"><a href=""><i class="fa fa-link text-color-primary"></i>Pemerintah Provinsi Kalsel</a></li>
+									<li class="mb-1"><a href=""><i class="fa fa-link text-color-primary"></i>Kementerian Perindustrian RI</a></li>
+									</ul>
+							</div>
+						</div>
 					
-							<h5 class="text-3 mb-3">Tautan</h5>
-							
 					
 						
-						<a href="https://kemenperin.go.id/"><img width="100px" height="100px" src="<?php echo base_url("assets/images/kemenperin.png") ?>" style="margin:10px "/></a>
-								<a href="http://www.kalselprov.go.id"><img  width="80px" src="http://www.kalselprov.go.id/fr_assets/images/logo-kalsel.png"  style="margin:10px" /></a>
-					
-						</div>
 					
 						<div class="col-md-6 col-lg-2">
 							<h5 class="text-3 mb-3">Sosial Media</h5>

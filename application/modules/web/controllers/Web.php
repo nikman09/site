@@ -28,6 +28,7 @@ class Web extends CI_Controller {
         $variabel['jadwalpelatihan'] = $this->m_jadwaldetail->lihatdatajadwal(4,4, 0); 
         $variabel['jadwalpameran'] = $this->m_jadwaldetail->lihatdatajadwal(3,4, 0); 
         $variabel['jadwaldinas'] = $this->m_jadwaldetail->lihatdatajadwal(5,4, 0); 
+        $variabel['datapopuler'] = $this->m_berita->lihatdatapopuler();
         $this->load->view('home/v_home',$variabel);
     }   
    

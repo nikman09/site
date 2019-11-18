@@ -20,6 +20,7 @@ class M_berita extends CI_Model
        
         $this->db->select("tb_berita.*,tb_beritakategori.* ")
         ->join("tb_beritakategori","tb_beritakategori.id_beritakategori=tb_berita.id_beritakategori","left");
+        $this->db->order_by('tb_berita.tanggal', 'DESC');
         return $this->db->get('tb_berita');
     }
 

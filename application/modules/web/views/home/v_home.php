@@ -74,9 +74,9 @@
 	<div class="body">
 	<header id="header" class="header-transparent " data-plugin-options="{'stickyEnabled': true, 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': true, 'stickyChangeLogo': false, 'stickyStartAt': 53, 'stickySetTop': '-53px'}">
 				<div class="header-body border-top-0 bg-dark box-shadow-none">
-					<div class="header-top">
+					<div class="header-top  d-sm-inline-flex">
 						<div class="container">
-							<div class="header-row py-2 ">
+							<div class="header-row py-2" >
 								<div class="header-column justify-content-start ">
 									<div class="header-row ">
 										<nav class="header-nav-top ">
@@ -98,10 +98,10 @@
 								<div class="header-column justify-content-end">
 									<div class="header-row">
 										<ul class="header-social-icons social-icons d-none d-sm-block social-icons-clean">
-											<li class="social-icons-facebook"><a href="http://www.facebook.com/" target="_blank" title="Facebook" style="color: #e0e0e0 !important"><i class="fab fa-facebook-f"></i></a></li>
-											<li class="social-icons-twitter" ><a href="http://www.twitter.com/" target="_blank" title="Twitter"  style="color: #e0e0e0 !important"><i class="fab fa-twitter"></i></a></li>
-											<li class="social-icons-instagram" ><a href="http://www.instagram.com/" target="_blank" title="instagram"  style="color: #e0e0e0 !important"><i class="fab fa-instagram"></i></a></li>
-											<li class="social-icons-youtube" ><a href="http://www.youtube.com/" target="_blank" title="youtube"  style="color: #e0e0e0 !important"><i class="fab fa-youtube"></i></a></li>
+											<li class="social-icons-facebook"><a href="https://www.facebook.com/" target="_blank" title="Facebook" style="color: #e0e0e0 !important"><i class="fab fa-facebook-f"></i></a></li>
+											<li class="social-icons-twitter" ><a href="https://www.twitter.com/" target="_blank" title="Twitter"  style="color: #e0e0e0 !important"><i class="fab fa-twitter"></i></a></li>
+											<li class="social-icons-instagram" ><a href="https://www.instagram.com/" target="_blank" title="instagram"  style="color: #e0e0e0 !important"><i class="fab fa-instagram"></i></a></li>
+											<li class="social-icons-youtube" ><a href="https://www.youtube.com/" target="_blank" title="youtube"  style="color: #e0e0e0 !important"><i class="fab fa-youtube"></i></a></li>
 										</ul>
 									</div>
 								</div>
@@ -113,7 +113,7 @@
 							<div class="header-column">
 								<div class="header-row">
 									<div class="header-logo">
-										<a href="index.html">
+										<a href="<?php echo base_url(); ?>">
 											<img alt="Dinas Perindustrian Provinsi Kalimantan Selatan" width="175" height="58" data-sticky-width="120" data-sticky-height="40" src="<?php echo base_url() ?>assets/front-end/web2/img/kalsel2.png">
 										</a>
 									</div>
@@ -135,7 +135,7 @@
 									</div>
 									<div class="header-nav-features header-nav-features-no-border header-nav-features-lg-show-border order-1 order-lg-2">
 										<div class="header-nav-feature header-nav-features-search d-inline-flex">
-											<a href="#" class="header-nav-features-toggle" data-focus="headerSearch"><i class="fas fa-search header-nav-top-icon"></i></a>
+											<a href="#" class="header-nav-features-toggle" data-focus="headerSearch"><i class="fas fa-search header-nav-top-icon"  style="color:#fff"></i></a>
 											<div class="header-nav-features-dropdown" id="headerTopSearchDropdown">
 												<form role="search" action="#" method="get">
 													<div class="simple-search input-group">
@@ -181,7 +181,50 @@
 									data-offsetend="0 0"
 									data-bgparallax="0"
 									class="rev-slidebg">
+				        <div class="tp-caption"
+									data-x="['left','left','center','center']" data-hoffset="['145','145','-150','-240']"
+									data-y="center" data-voffset="['-50','-50','-50','-150']"
+									data-start="1000"
+									data-transform_in="x:[-300%];opacity:0;s:500;"
+									data-transform_idle="opacity:0.5;s:500;"><img src="<?php echo base_url() ?>assets/front-end/web2/img/slides/slide-title-border-light.png" alt=""></div>
 				
+								<div class="tp-caption text-color-light font-weight-normal"
+									data-x="['left','left','center','center']" data-hoffset="['200','200','0','0']"
+									data-y="center" data-voffset="['-50','-50','-50','30']"
+									data-start="700"
+									data-fontsize="['22','22','22','40']"
+									data-lineheight="['25','25','25','45']"
+									data-transform_in="y:[-50%];opacity:0;s:500;" style="color: #b5b5b5;">Kalimantan Selatan</div>
+				
+								<div class="tp-caption d-none d-md-block"
+									data-frames='[{"delay":3800,"speed":500,"frame":"0","from":"opacity:0;x:10%;","to":"opacity:1;x:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
+									data-x="['left','left','center','center']" data-hoffset="['365','365','80','135']"
+									data-y="center" data-voffset="['10','10','10','-10']">
+								    <img src="<?php echo base_url() ?>assets/front-end/web2/img/slides/slide-blue-line.png" alt=""></div>
+				
+								<div class="tp-caption"
+									data-x="['left','left','center','center']" data-hoffset="['440','440','150','240']"
+									data-y="center" data-voffset="['-50','-50','-50','-75']"
+									data-start="1000"
+									data-transform_in="x:[300%];opacity:0;s:500;"
+									data-transform_idle="opacity:0.5;s:500;"><img src="<?php echo base_url() ?>assets/front-end/web2/img/slides/slide-title-border-light.png" alt=""></div>
+				
+								<h1 class="tp-caption font-weight-extra-bold text-color-light negative-ls-2"
+									data-frames='[{"delay":1000,"speed":2000,"frame":"0","from":"sX:1.5;opacity:0;fb:20px;","to":"o:1;fb:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
+									data-x="['left','left','center','center']" data-hoffset="['152','152','0','0']"
+									data-y="center" data-voffset="['-15','-15','-15','80']"
+									data-fontsize="['50','50','50','60']"
+									data-lineheight="['55','55','55','50']"
+									data-letterspacing="-1"
+									style="color: #b5b5b5;">IKM KALSEL GO DIGITAL</h1>
+				
+								<div class="tp-caption font-weight-light text-color-light"
+									data-frames='[{"from":"opacity:0;","speed":300,"to":"o:1;","delay":2000,"split":"chars","splitdelay":0.05,"ease":"Power2.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
+									data-x="['left','left','center','center']" data-hoffset="['166','166','0','0']"
+									data-y="center" data-voffset="['40','40','40','120']"
+									data-fontsize="['18','18','18','20']"
+									data-lineheight="['20','20','20','55']"
+									style="color: #b5b5b5;">SMART IKM</div>
 							
 								
 							</li> 
@@ -203,7 +246,42 @@
 									data-offsetend="0 0"
 									data-bgparallax="0"
 									class="rev-slidebg">
+				                	<div class="tp-caption text-color-light font-weight-normal"
+									data-x="['left','left','center','center']" data-hoffset="['200','200','0','0']"
+									data-y="center" data-voffset="['-50','-50','-50','30']"
+									data-start="700"
+									data-fontsize="['22','22','22','40']"
+									data-lineheight="['25','25','25','45']"
+									data-transform_in="y:[-50%];opacity:0;s:500;" style="color: #b5b5b5;">Kawasan Industri</div>
 				
+								<div class="tp-caption d-none d-md-block"
+									data-frames='[{"delay":3800,"speed":500,"frame":"0","from":"opacity:0;x:10%;","to":"opacity:1;x:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
+									data-x="['left','left','center','center']" data-hoffset="['365','365','80','135']"
+									data-y="center" data-voffset="['-33','-33','-33','10']"><img src="<?php echo base_url() ?>assets/front-end/web2/img/slides/slide-blue-line.png" alt=""></div>
+				
+								<div class="tp-caption"
+									data-x="['left','left','center','center']" data-hoffset="['440','440','150','240']"
+									data-y="center" data-voffset="['-50','-50','-50','-75']"
+									data-start="1000"
+									data-transform_in="x:[300%];opacity:0;s:500;"
+									data-transform_idle="opacity:0.5;s:500;"><img src="<?php echo base_url() ?>assets/front-end/web2/img/slides/slide-title-border-light.png" alt=""></div>
+				
+								<h1 class="tp-caption font-weight-extra-bold text-color-light negative-ls-2"
+									data-frames='[{"delay":1000,"speed":2000,"frame":"0","from":"sX:1.5;opacity:0;fb:20px;","to":"o:1;fb:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
+									data-x="['left','left','center','center']" data-hoffset="['152','152','0','0']"
+									data-y="center" data-voffset="['-15','-15','-15','80']"
+									data-fontsize="['50','50','50','50']"
+									data-lineheight="['55','55','55','95']"
+									data-letterspacing="-1"
+									style="color: #b5b5b5;">Kawasan Industri Kalimantan Selatan</h1>
+				
+								<div class="tp-caption font-weight-light text-color-light"
+									data-frames='[{"from":"opacity:0;","speed":300,"to":"o:1;","delay":2000,"split":"chars","splitdelay":0.05,"ease":"Power2.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
+									data-x="['left','left','center','center']" data-hoffset="['166','166','0','0']"
+									data-y="center" data-voffset="['40','40','40','120']"
+									data-fontsize="['18','18','18','20']"
+									data-lineheight="['20','20','20','55']"
+									style="color: #b5b5b5;">Kawasan Industri Batulicin dan Kawasan Industri Jorong</div>
 								
 								
 							</li>
@@ -226,7 +304,20 @@
 					data-offsetend="0 0"
 					data-bgparallax="0"
 					class="rev-slidebg">
-
+                <div class="tp-caption font-weight-extra-bold negative-ls-2" style="color:#fff"
+									data-frames='[{"delay":1000,"speed":2000,"frame":"0","from":"sX:1.5;opacity:0;fb:20px;","to":"o:1;fb:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
+									data-x="center"
+									data-y="center" data-voffset="['-50','-50','-50','40']"
+									data-fontsize="['50','50','50','50']"
+									data-lineheight="['55','55','55','95']">Dinas Perindustrian</div>
+				
+								<div class="tp-caption font-weight-light" style="color:#fff"
+									data-frames='[{"from":"opacity:0;","speed":300,"to":"o:1;","delay":2000,"split":"chars","splitdelay":0.05,"ease":"Power2.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
+									data-x="center"
+									data-y="center" data-voffset="['-15','-15','-15','95']"
+									data-fontsize="['18','18','18','40']"
+									data-lineheight="['20','20','20','55']"
+									style="color: #b5b5b5;">Provinsi Kalimantan Selatan.</div>
 			
 			</li>
 							 
@@ -235,7 +326,7 @@
 					</div>
 				</div>
 				
-				<!-- <div class="home-intro" id="home-intro" style="margin-bottom:0px">
+				 <div class="home-intro" id="home-intro" style="margin-bottom:0px">
 					<div class="container">
 				
 					
@@ -249,8 +340,57 @@
 						</div>
 				
 					</div>
-				</div> -->
+				</div> 
+				<section class="border-0 m-0 bg-color-grey-scale-1 " >
+				<div class="container py-4 my-0">
 				
+				<div class="row featured-boxes featured-boxes-style-4">
+					<div class="col-md-6 col-lg-3">
+						<div class="featured-box featured-box-primary featured-box-effect-4 appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="200">
+							<div class="box-content px-4">
+							<a href="https://siikalsel.disperin.kalselprov.go.id/">
+								<img src="<?php echo base_url() ?>assets/images/pabrik.png" class="icon-featured">
+								<h4 class="font-weight-bold text-color-dark pb-1 mb-2">SIIKALSEL</h4>
+								<p class="mb-0">Sistem Informasi Industri
+Dinas Perindustian Provinsi Kalimantan Selatan.</p>
+							</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 col-lg-3">
+						<div class="featured-box featured-box-primary featured-box-effect-4 appear-animation" data-appear-animation="fadeIn">
+							<div class="box-content px-4">
+								<i class="icon-featured  fa fa-gavel text-12"></i>
+								<h4 class="font-weight-bold text-color-dark pb-1 mb-2">Kebijakan Industri</h4>
+								<p class="mb-0">Kebijakan Industri Daerah Menuju KALSEL MAPAN.</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 col-lg-3">
+						<div class="featured-box featured-box-primary featured-box-effect-4 appear-animation" data-appear-animation="fadeIn">
+							<div class="box-content px-4">
+							<i class="icon-featured  fa fa-star text-12"></i>
+								<h4 class="font-weight-bold text-color-dark pb-1 mb-2">Layanan Publik</h4>
+								<p class="mb-0">Penyelengaraan pelayanan publik bidang Industri di Kalimantan Selatan.</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 col-lg-3">
+						<div class="featured-box featured-box-primary featured-box-effect-4 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="200">
+							<div class="box-content px-4">
+							
+								<i class="icon-featured icon-screen-desktop icons text-12"></i>
+							
+								<h4 class="font-weight-bold text-color-dark pb-1 mb-2">Infografis</h4>
+								</a>
+								<p class="mb-0">Sajian data dan informasi seputar kebijakan dan kegiatan.</p>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			</section>
 				
 				<!-- <section class="section bg-color-grey-scale-1  section-no-border section-centerappear-animation my-0" data-appear-animation="fadeIn">
 				<div class="container">

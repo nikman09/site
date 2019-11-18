@@ -16,6 +16,7 @@ class Administrator extends CI_Controller {
         $this->load->model("m_dokumendetail");
         $this->load->model("m_jadwal");
         $this->load->model("m_jadwaldetail");
+        $this->load->model("m_pesan");
     }
 
     // Dashboard
@@ -1097,6 +1098,35 @@ class Administrator extends CI_Controller {
             }
       } else {
       }
+    }
+
+
+    public function pesan()
+    {   
+        $variabel['csrf'] = csrf();
+        $variabel['data'] = $this->m_pesan->lihatdata();
+        $this->layout->render('kontak/pesan/v_pesan',$variabel,'kontak/pesan/v_pesan_js');
+   
+    }
+
+    public function pesanlihat()
+    {   
+        $id_pesan = $this->input->get("id");
+        $exec = $this->m_pesan->lihatdatasatu($id_pesan);
+        if ($exec->num_rows()>0){
+            $variabel['data'] = $exec ->row_array();
+            $this->layout->render('kontak/pesan/v_pesanlihat',$variabel,'kontak/pesan/v_pesan_js');
+        } else {
+           // redirect(base_url("administrator"));
+        }
+
+    }
+
+    public function pesanhapus()
+    {
+        $id_pesan = $this->input->get("id");
+        $exec = $this->m_pesan->hapus($id_pesan);
+        redirect(base_url()."administrator/pesan?msg=2");
     }
 	
 }

@@ -107,11 +107,11 @@
 														</li>
 														
 														<li class="dropdown">
-																	<a class="dropdown-item dropdown-toggle"  target="_blank" href="http://siikalsel.disperin.kalselprov.go.id/">SIIKALSEL</a>
+																	<a class="dropdown-item dropdown-toggle"  target="_blank" href="https://siikalsel.disperin.kalselprov.go.id/">SIIKALSEL</a>
 																	<ul class="dropdown-menu">
-																		<li><a class="dropdown-item" target="_blank" href="http://siikalsel.disperin.kalselprov.go.id/report/perusahaan">Data Perusahaan</a></li>
-																		<li><a class="dropdown-item" target="_blank" href="http://siikalsel.disperin.kalselprov.go.id/report/sentra">Data Sentra</a></li>
-																		<li><a class="dropdown-item" target="_blank" href="http://siikalsel.disperin.kalselprov.go.id/report/potensi">Data Potensi</a></li>
+																		<li><a class="dropdown-item" target="_blank" href="https://siikalsel.disperin.kalselprov.go.id/report/perusahaan">Data Perusahaan</a></li>
+																		<li><a class="dropdown-item" target="_blank" href="https://siikalsel.disperin.kalselprov.go.id/report/sentra">Data Sentra</a></li>
+																		<li><a class="dropdown-item" target="_blank" href="https://siikalsel.disperin.kalselprov.go.id/report/potensi">Data Potensi</a></li>
 																	</ul>
 														</li>
 
@@ -127,11 +127,11 @@
 															</a>
 															<ul class="dropdown-menu">
 															<li class="dropdown-submenu">
-																	<a class="dropdown-item"  target="_blank" href="http://siikalsel.disperin.kalselprov.go.id/">SIIKALSEL</a>
+																	<a class="dropdown-item"  target="_blank" href="https://siikalsel.disperin.kalselprov.go.id/">SIIKALSEL</a>
 																	<ul class="dropdown-menu">
-																		<li><a class="dropdown-item" target="_blank" href="http://siikalsel.disperin.kalselprov.go.id/report/perusahaan">Data Perusahaan</a></li>
-																		<li><a class="dropdown-item" target="_blank" href="http://siikalsel.disperin.kalselprov.go.id/report/sentra">Data Sentra</a></li>
-																		<li><a class="dropdown-item" target="_blank" href="http://siikalsel.disperin.kalselprov.go.id/report/potensi">Data Potensi</a></li>
+																		<li><a class="dropdown-item" target="_blank" href="https://siikalsel.disperin.kalselprov.go.id/report/perusahaan">Data Perusahaan</a></li>
+																		<li><a class="dropdown-item" target="_blank" href="https://siikalsel.disperin.kalselprov.go.id/report/sentra">Data Sentra</a></li>
+																		<li><a class="dropdown-item" target="_blank" href="https://siikalsel.disperin.kalselprov.go.id/report/potensi">Data Potensi</a></li>
 																	</ul>
 																</li>
 																<li class="dropdown-submenu">
@@ -163,7 +163,7 @@
 																<!-- <li><a class="dropdown-item" href="page-custom-header.html">Artikel</a></li>
 																<li><a class="dropdown-item" href="page-custom-header.html">Jurnal</a></li>
 																<li><a class="dropdown-item" href="page-custom-header.html">E-learning</a></li>
-																<li><a class="dropdown-item" href="http://jdih.kemenperin.go.id/">Pengumuman</a></li> -->
+																<li><a class="dropdown-item" href="https://jdih.kemenperin.go.id/">Pengumuman</a></li> -->
 																
 															</ul>
 														</li>
@@ -192,7 +192,7 @@
 																Unduh
 															</a>
 															<ul class="dropdown-menu">
-															<li><a class="dropdown-item" href="http://jdih.kemenperin.go.id/">Peraturan</a></li>
+															<li><a class="dropdown-item" href="https://jdih.kemenperin.go.id/">Peraturan</a></li>
 																<li><a class="dropdown-item" href="page-custom-header.html">Kebijakan</a></li>
 																<li><a class="dropdown-item" href="page-custom-header.html">Lainnya</a></li>
 																

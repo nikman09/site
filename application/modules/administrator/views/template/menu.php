@@ -74,6 +74,21 @@
 						
 					</ul>
 			</li>
+			<li  class="<?= ($submenu == "pesan" || $submenu == "pesanihat"  || $submenu == "pesantambah" || $submenu == "pesanedit" ) ? "opened active root-level" : ""; ?> has-sub">
+					<a href="">
+						<i class="fa fa-envelope"></i>
+						<span class="title">Kontak</span>
+					</a>
+					<ul>
+						<li  class="<?= ($submenu == "pesan" || $submenu == "pesantambah" || $submenu == "pesanedit") ? " active" : ""; ?>">
+							<a href="<?php echo base_url() ?>administrator/pesan">
+								<span class="title">Pesan</span>
+							</a>
+						</li>
+					
+						
+					</ul>
+			</li>
 			<li  class="<?= ($submenu == "jadwal" || $submenu == "jadwaldetail") ? "active root-level" : ""; ?> ">
 				<a href="<?php echo base_url() ?>administrator/jadwal">
 					<i class="fa fa-calendar"></i>

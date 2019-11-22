@@ -1128,5 +1128,15 @@ class Administrator extends CI_Controller {
         $exec = $this->m_pesan->hapus($id_pesan);
         redirect(base_url()."administrator/pesan?msg=2");
     }
+
+
+    public function filemanager()
+    {
+        $data['title']      = 'Pustaka Media';
+        $data['subtitle']   = '';
+        $data['body']       = 'file/index';
+        $this->layout->render('filemanager/v_filemanager', $data);
+    }
+	
 	
 }

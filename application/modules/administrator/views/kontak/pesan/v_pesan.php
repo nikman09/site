@@ -21,6 +21,7 @@
                         <th>Email</th>
 						<th>Judul</th>
                         <th>Waktu</th>
+                        <th>#</th>
                     </tr>
                 </thead>
                 <tbody>

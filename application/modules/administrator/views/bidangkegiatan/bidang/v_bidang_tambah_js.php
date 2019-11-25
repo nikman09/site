@@ -17,6 +17,13 @@ jQuery( document ).ready( function( $ ) {
     
 } );
  
+
+CKEDITOR.replace( 'tugas' ,{
+	filebrowserBrowseUrl : "<?php echo base_url() ?>assets/back-end/filemanager/filemanager/dialog.php?type=2&editor=ckeditor&fldr=",
+	filebrowserUploadUrl : "<?php echo base_url() ?>assets/back-end/filemanager/filemanager/dialog.php?type=2&editor=ckeditor&fldr=",
+	filebrowserImageBrowseUrl : '<?php echo base_url() ?>assets/back-end/filemanager/filemanager/dialog.php?type=1&editor=ckeditor&fldr='
+});
+
 $('#form').validate({ // initialize plugin
         highlight: function (label) {
             $(label).closest('.form-group').removeClass('has-success').addClass('has-error');

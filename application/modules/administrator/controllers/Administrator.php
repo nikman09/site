@@ -17,6 +17,7 @@ class Administrator extends CI_Controller {
         $this->load->model("m_jadwal");
         $this->load->model("m_jadwaldetail");
         $this->load->model("m_pesan");
+        $this->load->model("m_navigasi");
     }
 
     // Dashboard
@@ -1138,5 +1139,25 @@ class Administrator extends CI_Controller {
         $this->layout->render('filemanager/v_filemanager', $data);
     }
 	
-	
+    
+    
+    public function navigasimenu()
+    {   
+        $data['title']      = 'Semua Menu Navigasi';
+        $data['subtitle']   = '';
+        $data['body']       = 'navigasi/index';
+        $data['record']     = $this->m_navigasi->get_all();
+		$data['page'] 		= $this->m_navigasi->get_nested();
+        $this->layout->render('menunavigasi/v_menunavigasi',$data,'menunavigasi/v_menunavigasi_js');
+   
+    }
+
+    public function order_save()
+	{
+		if(isset($_POST['sortable'])){
+			$this->navigasi_m->save_order($_POST['sortable']);
+		}
+		
+	}
+
 }

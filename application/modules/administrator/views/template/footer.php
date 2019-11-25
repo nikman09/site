@@ -33,6 +33,7 @@
 	<script src="<?php echo base_url() ?>assets/back-end/js/wysihtml5/wysihtml5-0.4.0pre.min.js"></script>
 	<!-- JavaScripts initializations and stuff -->
 	<!-- Imported scripts on this page -->
+	<script src="<?php echo base_url() ?>assets/back-end/js/jquery.nestable.js"></script>
 	<script src="<?php echo base_url() ?>assets/back-end/js/datatables/datatables.js"></script>
 	<script src="<?php echo base_url() ?>assets/back-end/js/select2/select2.min.js"></script>
 	<!-- <script src="<?php echo base_url() ?>assets/back-end/js/bootstrap-tagsinput.min.js"></script> -->
@@ -45,6 +46,7 @@
 	<script src="<?php echo base_url() ?>assets/back-end/js/daterangepicker/daterangepicker.js"></script>
 	<script src="<?php echo base_url() ?>assets/back-end/js/jquery.multi-select.js"></script>
 	<script src="<?php echo base_url() ?>assets/back-end/js/icheck/icheck.min.js"></script>
+	
 	<script src="<?php echo base_url() ?>assets/back-end/js/neon-chat.js"></script>
 	<script src="<?php echo base_url() ?>assets/back-end/js/jquery.validate.min.js"></script>
 	<script src="<?php echo base_url() ?>assets/back-end/js/fileinput.js"></script>

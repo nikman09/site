@@ -1143,21 +1143,137 @@ class Administrator extends CI_Controller {
     
     public function navigasimenu()
     {   
-        $data['title']      = 'Semua Menu Navigasi';
-        $data['subtitle']   = '';
-        $data['body']       = 'navigasi/index';
-        $data['record']     = $this->m_navigasi->get_all();
-		$data['page'] 		= $this->m_navigasi->get_nested();
+        $data['csrf'] = csrf();
+        $data['page'] 		= $this->m_navigasi->get_nested();
+        $data['data']        = $this->m_navigasi->lihatdata();
         $this->layout->render('menunavigasi/v_menunavigasi',$data,'menunavigasi/v_menunavigasi_js');
    
     }
 
     public function order_save()
 	{
+        $variabel['csrf'] = csrf();
 		if(isset($_POST['sortable'])){
-			$this->navigasi_m->save_order($_POST['sortable']);
+			$this->m_navigasi->save_order($_POST['sortable']);
 		}
 		
-	}
+    }
+    
+    public function modulnavigasiajax()
+	{
+     
+        $modul = $this->input->post("id_modul");
+        if ($modul=="Laman")
+        {
+            $data = $this->m_halaman->lihatdata();
+            echo '<label for="field-1" class="control-label">Laman</label>';
+            echo '<select id="detail"  name="detail" class="form-control">';
+            foreach($data->result_array() as $row){
+                echo "<option value=".$row['id_halaman'].">".$row['judul']."</option>";
+            }
+            echo '</select>';
+        } else if($modul=="Dokumen") {
+            $data = $this->m_dokumen->lihatdata();
+            echo '<label for="field-1" class="control-label">Dokumen</label>';
+            echo '<select id="detail"  name="detail" class="form-control">';
+            foreach($data->result_array() as $row){
+                echo "<option value=".$row['id_dokumen'].">".$row['judul']."</option>";
+            }
+            echo '</select>';
+        } else if($modul=="Kegiatan") {
+            $data = $this->m_bidang->lihatdata();
+            echo '<label for="field-1" class="control-label">Bidang</label>';
+            echo '<select id="detail"  name="detail" class="form-control">';
+            echo "<option value='all'>Semua Kegiatan</option>";
+            foreach($data->result_array() as $row){
+                echo "<option value=".$row['id_bidang'].">".$row['bidang']."</option>";
+            }
+            echo '</select>';
+        } else if($modul=="Bidang") {
+            $data = $this->m_bidang->lihatdata();
+            echo '<label for="field-1" class="control-label">Bidang</label>';
+            echo '<select id="detail"  name="detail" class="form-control">';
+            foreach($data->result_array() as $row){
+                echo "<option value=".$row['id_bidang'].">".$row['bidang']."</option>";
+            }
+            echo '</select>';
+        } else if($modul=="Jadwal") {
+            $data = $this->m_jadwal->lihatdata();
+            echo '<label for="field-1" class="control-label">Jadwal</label>';
+            echo '<select id="detail"  name="detail" class="form-control">';
+            foreach($data->result_array() as $row){
+                echo "<option value=".$row['id_jadwal'].">".$row['nama']."</option>";
+            }
+            echo '</select>';
+        }   else if($modul=="URL") {
+            echo '<label for="field-1" class="control-label">URL</label>';
+            echo '<input type="text" id="detail"  name="detail" class="form-control" placeholder="Masukkan URL" />';
+            echo "<br/>";
+            echo '<label for="field-1" class="control-label">Target</label>';
+            echo "<br/>";
+            echo '<select id="target"  name="target" class="form-control">';
+            echo '<option value="0">Default</option>';
+            echo '<option value="1">Blank</option>';
+            echo '</select>';
+        }
+      
+        // $variabel['csrf'] = csrf();
+		// if(isset($_POST['sortable'])){
+		// 	$this->m_navigasi->save_order($_POST['sortable']);
+		// }
+		
+    }
+    
+
+    public function modulparentajax()
+	{
+
+        $id_parent = $this->input->post("id_parent");
+        if($id_parent=="0") {
+            echo '<input type="hidden" id="parent2"  name="parent2" value="0" />';
+           
+        } else {
+            $data = $this->m_navigasi->lihatdataparent($id_parent);
+            if ($data->num_rows()>0) {
+                echo '<label for="field-1" class="control-label">Parent II</label>';
+                echo '<select id="parent2"  name="parent2" class="form-control">';
+                echo "<option value='0'>Tidak Ada Parent</option>";
+                foreach($data->result_array() as $row){
+                    echo "<option value=".$row['id_navigasi'].">".$row['judul']."</option>";
+                }
+                echo '</select>';
+            }
+        }
+      
+    }
+    
+
+    public function navigasitambah()
+	{
+
+        $variabel['csrf'] = csrf();
+        if ($this->input->post()) {
+            $array=array(
+                'judul'=> $this->input->post('judul'),
+                'parent_id'=> $this->input->post('parent') ,
+                'tipe'=> $this->input->post('modul'),
+                'detail'=> $this->input->post('detail'),
+              
+            );
+            if ( $this->input->post('modul')=="URL") {
+                $array['url'] = $this->input->post('detail');
+                $array['target']= $this->input->post('target') ;
+            }
+           
+            $exec = $this->m_navigasi->tambahdata($array);
+                if ($exec){
+                 redirect(base_url("administrator/navigasimenu?msg=1"));
+                }
+      } else {
+      }
+      
+    }
+    
+
 
 }

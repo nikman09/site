@@ -89,41 +89,6 @@
 </div>
 
 
-<div class="modal fade" id="myModal">
-    <div class="modal-dialog">
-        <div class="modal-content" id="modal-tambah">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">Tambah Dokumen</h4>
-            </div>
-            <form role="form" class="validate" action="<?php echo base_url() ?>administrator/dokumentambah" method="post" enctype="multipart/form-data" id="form">
-
-                <div class="modal-body">
-
-                    <div class="row">
-                        <div class="col-md-12">
-                            <input type="hidden" name="<?=$csrf['name']?>" value="<?=$csrf['hash']?>">
-                            <div class="form-group">
-                                <label for="field-1" class="control-label">Dokumen</label>
-                                <input type="text" class="form-control" id="dokumen" name="dokumen" placeholder="Dokumen Kegiatan">
-                            </div>
-
-                        </div>
-
-                      
-                    </div>
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
-                    <button type="submit" class="btn btn-primary">Simpan</button>
-                </div>
-
-            </form>
-
-        </div>
-    </div>
-</div>
 
 
 <div class="modal fade" id="myModal2">

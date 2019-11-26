@@ -95,6 +95,20 @@
 					<span class="title">Jadwal </span>
 				</a>
 			</li>
+			<li  class="<?= ($submenu == "navigasimenu") ? "opened active root-level" : ""; ?> has-sub">
+					<a href="">
+						<i class="fa fa-envelope"></i>
+						<span class="title">Extra</span>
+					</a>
+					<ul>
+						<li  class="<?= ($submenu == "navigasimenu") ? " active" : ""; ?>">
+							<a href="<?php echo base_url() ?>administrator/navigasimenu">
+								<span class="title">Navigasi</span>
+							</a>
+						</li>
+						
+					</ul>
+			</li>
 			<li  class="<?= ($submenu == "admin" || $submenu == "adminlihat"  || $submenu == "admintambah" || $submenu == "adminedit") ? "active root-level" : ""; ?> ">
 				<a href="<?php echo base_url() ?>administrator/admin">
 					<i class="fa fa-users"></i>

@@ -41,6 +41,29 @@ class M_navigasi extends CI_Model{
         }else{
             return FALSE;
         }
+	}
+	
+	function lihatdata()
+    {        
+        return $this->db->get('tb_navigasi');
+	}
+	
+	function lihatdatasatu($id_navigasi)
+    {
+        $this->db->select("tb_navigasi.*");
+        $this->db->where("tb_navigasi.id_navigasi",$id_navigasi);
+        return $this->db->get('tb_navigasi');
+	}
+	
+	function tambahdata($array)
+    {
+        return $this->db->insert('tb_navigasi',$array);
+    }
+	function lihatdataparent($id_parent)
+    {
+        $this->db->select("tb_navigasi.*");
+        $this->db->where("tb_navigasi.parent_id",$id_parent);
+        return $this->db->get('tb_navigasi');
     }
     
     public function get_by($id) {
@@ -114,11 +137,12 @@ class M_navigasi extends CI_Model{
 	{
 		if(count($navigation)){
 			foreach($navigation as $order => $nav ){
-				//var_dump($nav);
+				// var_dump($nav);
 				if($nav['item_id'] != ''){
+					
 					$data = array('parent_id'=>(int) $nav['parent_id'], 'order_id' => $order );
-					$this->db->set($data)->where('id', $nav['item_id'])->update('tb_navigasi');
-					//echo '<pre>'.$this->db->last_query().'</pre>';
+					$this->db->set($data)->where('id_navigasi', $nav['item_id'])->update('tb_navigasi');
+					echo '<pre>'.$this->db->last_query().'</pre>';
 				}
 			}
 		}

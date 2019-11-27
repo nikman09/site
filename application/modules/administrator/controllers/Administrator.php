@@ -1150,6 +1150,12 @@ class Administrator extends CI_Controller {
    
     }
 
+    public function navigasimenu2()
+    {   
+       $array=  $this->m_navigasi->get_nested();  
+       echo '<pre>'; print_r($array); echo '</pre>';
+    }
+
     public function order_save()
 	{
         $variabel['csrf'] = csrf();
@@ -1158,6 +1164,8 @@ class Administrator extends CI_Controller {
 		}
 		
     }
+
+    
     
     public function modulnavigasiajax()
 	{
@@ -1207,7 +1215,7 @@ class Administrator extends CI_Controller {
             echo '</select>';
         }   else if($modul=="URL") {
             echo '<label for="field-1" class="control-label">URL</label>';
-            echo '<input type="text" id="detail"  name="detail" class="form-control" placeholder="Masukkan URL" />';
+            echo '<input type="text" id="url"  name="url" class="form-control" placeholder="Masukkan URL" />';
             echo "<br/>";
             echo '<label for="field-1" class="control-label">Target</label>';
             echo "<br/>";
@@ -1256,24 +1264,64 @@ class Administrator extends CI_Controller {
             $array=array(
                 'judul'=> $this->input->post('judul'),
                 'parent_id'=> $this->input->post('parent') ,
-                'tipe'=> $this->input->post('modul'),
-                'detail'=> $this->input->post('detail'),
-              
+                'tipe'=> $this->input->post('modul')
             );
-            if ( $this->input->post('modul')=="URL") {
-                $array['url'] = $this->input->post('detail');
-                $array['target']= $this->input->post('target') ;
-            }
+        $parent =  $this->input->post('parent');
+        $modul = $this->input->post('modul');
+
+        if ($parent!=0){
+            $datas = $this->m_navigasi->lihatdatasatu($parent)->row_array();
+            $array['order_id']= $datas['order_id']+1;
+        } else {
+            $last = $this->m_navigasi->id_terakhir();
+            $array['order_id']= $last->order_id+1;
+        }
+
+        if ($this->input->post('parent2')) {
+            $array['parent_id'] =$this->input->post('parent2') ;
+        }
+
+        if ($modul=="Laman") {
+            $array['url'] = "";
+            $array['detail'] = $this->input->post('detail');
+        } else if($modul=="Dokumen") {
+            $array['url'] = "";
+            $array['detail'] = $this->input->post('detail');
+        } else if($modul=="Kegiatan") {
+            $array['url'] = "";
+            $array['detail'] = $this->input->post('detail');
+        } else if($modul=="Bidang") {
+            $array['url'] = "";
+            $array['detail'] = $this->input->post('detail');
+        } else if($modul=="Jadwal") {
+            $array['url'] = "";
+            $array['detail'] = $this->input->post('detail');
+        } else if($modul=="URL") {
+            $array['url'] = $this->input->post('url');
+            $array['target']= $this->input->post('target') ;
+            $array['detail'] = "";
+        }
+
            
-            $exec = $this->m_navigasi->tambahdata($array);
-                if ($exec){
-                 redirect(base_url("administrator/navigasimenu?msg=1"));
-                }
+        $exec = $this->m_navigasi->tambahdata($array);
+            if ($exec){
+                redirect(base_url("administrator/navigasimenu?msg=1"));
+            }
       } else {
       }
       
     }
     
+    public function navigasihapus()
+    {
+        $id_navigasi = $this->input->get("id");
+        $exec = $this->m_navigasi->delete($id_navigasi);
+        $datas = $this->m_navigasi->lihatdatasatuparent($id_navigasi)->row_array();
+        $exec = $this->m_navigasi->deleteparent($id_navigasi);
+        $datas2 = $this->m_navigasi->lihatdatasatuparent($datas['id_navigasi'])->row_array();
+        $exec = $this->m_navigasi->deleteparent($datas['id_navigasi']);
+        redirect(base_url()."administrator/navigasimenu?msg=2");
+    }
 
 
 }

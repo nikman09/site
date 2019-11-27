@@ -42,6 +42,12 @@ class M_navigasi extends CI_Model{
             return FALSE;
         }
 	}
+
+	public function id_terakhir()
+	{
+
+		return $this->db->select('order_id')->order_by('order_id',"desc")->limit(1)->get('tb_navigasi')->row();;
+	}
 	
 	function lihatdata()
     {        
@@ -52,6 +58,13 @@ class M_navigasi extends CI_Model{
     {
         $this->db->select("tb_navigasi.*");
         $this->db->where("tb_navigasi.id_navigasi",$id_navigasi);
+        return $this->db->get('tb_navigasi');
+	}
+
+	function lihatdatasatuparent($parent_id)
+    {
+        $this->db->select("tb_navigasi.*");
+        $this->db->where("tb_navigasi.parent_id",$parent_id);
         return $this->db->get('tb_navigasi');
 	}
 	
@@ -129,9 +142,16 @@ class M_navigasi extends CI_Model{
 	
 	public function delete($id)
 	{
-		$this->db->where('id', $id);
+		$this->db->where('id_navigasi', $id);
 		return $this->db->delete('tb_navigasi');
 	}
+
+	public function deleteparent($id)
+	{
+		$this->db->where('parent_id', $id);
+		return $this->db->delete('tb_navigasi');
+	}
+	
 	
 	public function save_order($navigation)
 	{
@@ -150,18 +170,34 @@ class M_navigasi extends CI_Model{
 	
 	public function get_nested()
 	{
-		$this->db->order_by('parent_id','asc');
-		$this->db->order_by('order_id','asc');
-		$navigation = $this->db->get('tb_navigasi')->result_array();
 		
+		$this->db->order_by('order_id','asc');
+		$this->db->order_by('parent_id','asc');
+		$navigation = $this->db->get('tb_navigasi')->result_array();
+		$parent_id = '0';
 		$array = array();
+		$tua = 0;
+		$id_navigasi =0 ;
 		foreach ($navigation as $nav){
 			if(!$nav['parent_id']){
 				$array[$nav['id_navigasi']] = $nav;
-			}else{
-				$array[$nav['parent_id']]['children'][] = $nav;
+			
+			}else {
+					$data = $this->lihatdatasatu($nav['parent_id'])->row_array();
+					if ($data['parent_id']==0) {
+						$array[$nav['parent_id']]['children'][$nav['id_navigasi']] = $nav;
+					} else {
+						$array[$data['parent_id']]['children'][$nav['parent_id']]['children'][$nav['id_navigasi']] = $nav;
+						echo $data['parent_id'];
+					}
+				
+					
 			}
+		
+			
 		}
+		//$array[$tua]['children'][$nav['parent_id']]['children'][$nav['id_navigasi']] = $nav;
+		// $array[5]['children'][14]['a'][] = $nav;
 		return $array;
 	}
     

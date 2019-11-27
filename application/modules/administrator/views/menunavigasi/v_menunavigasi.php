@@ -23,7 +23,7 @@
         handle: 'div',
         items: 'li',
         toleranceElement: '> div',
-        maxLevels : 2
+        maxLevels : 3
 
       });
 
@@ -94,7 +94,7 @@ function get_ol($array, $child = FALSE)
         $str .= $child == FALSE ? '</li>': '';
         foreach($array as $item){
             $str .= '<li id="item_'.$item['id_navigasi'].'" class="dd-item">';
-            $str .= '<div  class="dd-handle">'. $item['judul'] .'&nbsp&nbsp&nbsp&nbsp&nbsp<a class="btn btn-info btn-xs btn-flat" title="Edit" href="'.site_url('admin/navigasi/edit').'/'.$item['id_navigasi'].'"><i class="fa fa-edit"></i></a>&nbsp<a title="delete" class="btn btn-danger btn-xs btn-flat" href="'.site_url('admin/navigasi/delete').'/'.$item['id_navigasi'].'" class="btn btn-info btn-sm"><i class="fa fa-trash"></i></a></div>';
+            $str .= '<div  class="dd-handle">'. $item['judul'] .'&nbsp&nbsp&nbsp&nbsp&nbsp<a class="btn btn-info btn-xs btn-flat" title="Edit" href="'.site_url('admin/navigasi/edit').'/'.$item['id_navigasi'].'"><i class="fa fa-edit"></i></a>&nbsp<a title="delete" class="btn btn-danger btn-xs btn-flat" href="'.site_url('administrator/navigasihapus').'?id='.$item['id_navigasi'].'" class="btn btn-info btn-sm"><i class="fa fa-trash"></i></a></div>';
             
             if(isset($item['children']) && count($item['children'])){
                 $str .= get_ol($item['children'], TRUE);

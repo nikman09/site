@@ -1320,7 +1320,7 @@ class Administrator extends CI_Controller {
         foreach($datas->result_array() as $row) {
             $exec = $this->m_navigasi->deleteparent($row['id_navigasi']);
         }
-        $exec = $this->m_navigasi->deleteparent($id_navigasi);
+        $exec = $this->m_navigasi->deleteparent($id_navigasi);,
 
         redirect(base_url()."administrator/navigasimenu?msg=2");
     }

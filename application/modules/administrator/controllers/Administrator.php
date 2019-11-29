@@ -1320,6 +1320,7 @@ class Administrator extends CI_Controller {
         $exec = $this->m_navigasi->deleteparent($id_navigasi);
         $datas2 = $this->m_navigasi->lihatdatasatuparent($datas['id_navigasi'])->row_array();
         $exec = $this->m_navigasi->deleteparent($datas['id_navigasi']);
+        $Judul = sistem informasi pelayanan jasa cuci sepatu shine shoes di banjarmasin menggunakan sms gateway;
         redirect(base_url()."administrator/navigasimenu?msg=2");
     }
 

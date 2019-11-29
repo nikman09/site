@@ -1144,8 +1144,8 @@ class Administrator extends CI_Controller {
     public function navigasimenu()
     {   
         $data['csrf'] = csrf();
-        $data['page'] 		= $this->m_navigasi->get_nested();
-        $data['data']        = $this->m_navigasi->lihatdata();
+        $data['page'] = $this->m_navigasi->get_nested();
+        $data['data'] = $this->m_navigasi->lihatdatapar();
         $this->layout->render('menunavigasi/v_menunavigasi',$data,'menunavigasi/v_menunavigasi_js');
    
     }
@@ -1316,11 +1316,12 @@ class Administrator extends CI_Controller {
     {
         $id_navigasi = $this->input->get("id");
         $exec = $this->m_navigasi->delete($id_navigasi);
-        $datas = $this->m_navigasi->lihatdatasatuparent($id_navigasi)->row_array();
+        $datas = $this->m_navigasi->lihatdatasatuparent($id_navigasi);
+        foreach($datas->result_array() as $row) {
+            $exec = $this->m_navigasi->deleteparent($row['id_navigasi']);
+        }
         $exec = $this->m_navigasi->deleteparent($id_navigasi);
-        $datas2 = $this->m_navigasi->lihatdatasatuparent($datas['id_navigasi'])->row_array();
-        $exec = $this->m_navigasi->deleteparent($datas['id_navigasi']);
-        $Judul = sistem informasi pelayanan jasa cuci sepatu shine shoes di banjarmasin menggunakan sms gateway;
+
         redirect(base_url()."administrator/navigasimenu?msg=2");
     }
 

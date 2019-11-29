@@ -1,9 +1,27 @@
 <!DOCTYPE html>
 <html lang="zxx">
 <head>
-  <title>Home</title>
+  <title>Dinas Perindustrian</title>
   <meta charset="UTF-8">
-  <link rel="shortcut icon" href="img/logos/logo-shortcut.png"/>
+  
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="<?php echo base_url() ?>assets/images/favicon/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="<?php echo base_url() ?>assets/images/favicon/apple-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="<?php echo base_url() ?>assets/images/favicon/apple-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="<?php echo base_url() ?>assets/images/favicon/apple-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="<?php echo base_url() ?>assets/images/favicon/apple-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="<?php echo base_url() ?>assets/images/favicon/apple-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="<?php echo base_url() ?>assets/images/favicon/apple-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="<?php echo base_url() ?>assets/images/favicon/apple-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="<?php echo base_url() ?>assets/images/favicon/apple-icon-180x180.png">
+		<link rel="shortcut icon" href="<?php echo base_url() ?>assets/images/favicon/favicon-32x32.png" type="image/x-icon" />
+ 		<link rel="icon" type="image/png" sizes="192x192"  href="<?php echo base_url() ?>assets/images/favicon/android-icon-192x192.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="<?php echo base_url() ?>assets/images/favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="<?php echo base_url() ?>assets/images/favicon/favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="<?php echo base_url() ?>assets/images/favicon/favicon-16x16.png">
+		<link rel="manifest" href="<?php echo base_url() ?>assets/images/favicon/manifest.json">
+	
+
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   <!-- Bootstrap CSS-->
@@ -55,14 +73,14 @@
       <div class="col-md-9 col-12">
         <div class="top-bar-welcome">
           <ul>
-            <li>Welcome to Professional Consulting Agency</li>
+            <li>Informasi & Pertanyaan? </li>
           </ul>
         </div>
         <div class="top-bar-info">
           <ul>
-            <li><i class="fa fa-phone"></i>(+123) 456 7890
+            <li><i class="fa fa-phone"></i> (0511) 5915906
             <li>
-            <li><i class="fa fa-envelope"></i>example@gmail.com
+            <li><i class="fa fa-envelope"></i>dinasperindustrian@kalselprov.go.id
             <li>
           </ul>
         </div>
@@ -72,13 +90,44 @@
           <li><a href="#"><i class="fa fa-facebook"></i></a></li>
           <li><a href="#"><i class="fa fa-twitter"></i></a></li>
           <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-          <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+          <li><a href="#"><i class="fa fa-youtube"></i></a></li>
         </ul>
       </div>
     </div>
   </div>
 </div>
 <!-- Top-Bar END -->
+
+<?php
+  function get_ol($array, $child = FALSE)
+  {
+      $str = '';
+      
+      if(count($array)){
+          $str .= $child == FALSE ? '<li><a href="#">Home</a></li>' :'';
+          foreach($array as $item){
+              $str .= '<li>';
+              $str .= '<a  href="#">'. $item['judul'] .'</a> ';
+              
+
+              if(isset($item['children']) && count($item['children'])){
+                  $str .= ' <ul class="nav-dropdown">';
+                  $str .= get_ol($item['children'], TRUE);
+                  $str .= ' </ul>';
+              }
+              
+              $str .= '</li>' . PHP_EOL;
+          }
+          
+      }else{
+          $str .= $child == FALSE ? '<li><a href="#">Home</a></li>' :'';
+    
+      }
+      
+      return $str;
+  }
+  
+  ?>
 
 
 <!-- Navbar START -->
@@ -92,113 +141,16 @@
     </div>
     <div class="nav-menus-wrapper">
       <ul class="nav-menu align-to-right">
-        <li><a href="#">Home</a>
-          <div class="megamenu-panel">
-            <div class="megamenu-lists">
-              <ul class="megamenu-list list-col-4">
-                <li class="megamenu-list-title"><a href="#">Multi Purpose 01</a></li>
-                <li><a href="index.html">Home Page 01</a></li>
-                <li><a href="home-2.html">Home Page 02</a></li>
-                <li><a href="home-3.html">Home Page 03</a></li>
-              </ul>
-              <ul class="megamenu-list list-col-4">
-                <li class="megamenu-list-title"><a href="#">Multi Purpose 02</a></li>
-                <li><a href="home-4.html">Home Page 04</a></li>
-                <li><a href="home-5.html">Home Page 05</a></li>
-                <li><a href="home-6.html">Home Page 06</a></li>
-              </ul>
-              <ul class="megamenu-list list-col-4">
-                <li class="megamenu-list-title"><a href="#">Multi Purpose 03</a></li>
-                <li><a href="home-7.html">Home Page 07</a></li>
-                <li><a href="home-8.html">Home Page 08</a></li>
-                <li><a href="home-9.html">Home Page 09</a></li>
-              </ul>
-              <ul class="megamenu-list list-col-4">
-                <li class="megamenu-list-title"><a href="#">Multi Purpose 04</a></li>
-                <li><a href="home-10.html">Home Page 10 <span class="menu-tag">NEW</span><span class="menu-tag">HOT</span></a></li>
-                <li><a href="home-11.html">Home Page 11 <span class="menu-tag">NEW</span></a></li>
-                <li><a href="home-12.html">Home Page 12 <span class="menu-tag">NEW</span></a></li>
-              </ul>
-            </div>
-          </div>
-        </li>
-        <li><a href="#">About</a>
+       <?php echo get_ol($page); ?> 
+       <li><a href="#">About</a>
           <ul class="nav-dropdown">
             <li><a href="about.html">About Us 01</a></li>
             <li><a href="about-2.html">About Us 02</a></li>
             <li><a href="team.html">Our Team 01</a></li>
             <li><a href="team-2.html">Our Team 02</a></li>
             <li><a href="team-3.html">Our Team 03</a></li>
-            <li><a href="team-single.html">Team Single</a></li>
-            <li><a href="partners.html">Our Partners</a></li>
-          </ul>
-        </li>
-        <li><a href="#">Services</a>
-          <ul class="nav-dropdown">
-            <li><a href="services.html">Services 01</a></li>
-            <li><a href="services-2.html">Services 02</a></li>
-            <li><a href="services-3.html">Services 03</a></li>
-            <li><a href="service-detail.html">Service Detail</a></li>
-            <li><a href="cases.html">Cases</a></li>
-          </ul>
-        </li>
-        <li><a href="#">Projects</a>
-          <ul class="nav-dropdown">
-            <li><a href="projects-grid.html">Grid Style</a></li>
-            <li><a href="projects-masonry-3-column.html">Masonry Style 01</a></li>
-            <li><a href="projects-masonry-4-column.html">Masonry Style 02</a></li>
-            <li><a href="project-detail.html">Projects Detail 01</a></li>
-            <li><a href="project-detail-2.html">Projects Detail 02</a></li>
-          </ul>
-        </li>
-        <li><a href="#">Blog</a>
-          <ul class="nav-dropdown">
-            <li><a href="blog-grid.html">Blog Grid</a></li>
-            <li><a href="blog-grid-classic.html">Blog Grid Classic</a></li>
-            <li><a href="blog-grid-sidebar.html">Blog Grid Sidebar</a></li>
-            <li><a href="blog-list.html">Blog List</a></li>
-            <li><a href="blog-list-sidebar.html">Blog List Sidebar</a></li>
-            <li><a href="blog-post.html">Blog Post</a></li>
-          </ul>
-        </li>
-        <li><a href="#">Shop</a>
-          <ul class="nav-dropdown">
-            <li><a href="shop-grid.html">Grid Style 3 Col</a></li>
-            <li><a href="shop-grid-4-col.html">Grid Style 4 Col</a></li>
-            <li><a href="shop-grid-classic.html">Classic Style 3 Col</a></li>
-            <li><a href="shop-grid-classic-4-col.html">Classic Style 4 Col</a></li>
-            <li><a href="shop-single.html">Shop Single</a></li>
-            <li><a href="shopping-cart.html">Shopping Cart</a></li>
-          </ul>
-        </li>
-        <li><a href="#">Pages</a>
-          <ul class="nav-dropdown">
-            <li><a href="faq.html">FAQ 01</a></li>
-            <li><a href="faq-2.html">FAQ 02</a></li>
-            <li><a href="404.html">Error 404</a></li>
-            <li><a href="under-construction.html">Under Construction</a></li>
-          </ul>
-        </li>
-        <li><a href="#">Elements</a>
-          <ul class="nav-dropdown">
-            <li><a href="feature-boxes.html">Feature Boxes</a></li>
-            <li><a href="pricing-lists.html">Pricing Lists</a></li>
-            <li><a href="testmonials.html">Testmonials</a></li>
-            <li><a href="progress-bars.html">Progress Bars</a></li>
-            <li><a href="accordions.html">Accordions</a></li>
-            <li><a href="animated-tabs.html">Animated Tabs</a></li>
-            <li><a href="countups.html">Countups</a></li>
-            <li><a href="responsive-videos.html">Responsive Videos</a></li>
-          </ul>
-        </li>
-        <li><a href="#">Contact</a>
-          <ul class="nav-dropdown">
-            <li><a href="contact.html">Contact Us 01</a></li>
-            <li><a href="contact-2.html">Contact Us 02</a></li>
-            <li><a href="contact-3.html">Contact Us 03</a></li>
-            <li><a href="contact-4.html">Contact Us 04</a></li>
-          </ul>
-        </li>
+            </ul>
+          </li>
       </ul>
     </div>
   </nav>
@@ -216,20 +168,18 @@
       <div class="container">
         <div class="slider-content left-holder">
           <h2 class="animated fadeInDown">
-            Creative Consulting Agency <br> For Smart Solutions.
+           Industri Kain <br> Sasirangan.
           </h2>
           <div class="row">
             <div class="col-md-6 col-sm-12 col-12">
               <p class="animated fadeInDown">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.
+                Kain (Batik) Sasirangan yang merupakan kain tradisional khas suku Banjar
               </p>
             </div>
           </div>
-          <div class="animated fadeInUp mt-30">
+          <!-- <div class="animated fadeInUp mt-30">
             <a href="#contact" class="dark-button button-md">Contact us</a>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -240,20 +190,18 @@
       <div class="container">
         <div class="slider-content left-holder">
           <h2 class="animated fadeInDown">
-            We will help to improve<br> your business
+            Industri Kecil Menengah <br> (IKM)
           </h2>
           <div class="row">
             <div class="col-md-6 col-sm-12 col-12">
               <p class="animated fadeInDown">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.
+             Dinas Perindustrian sebagai fasilitator  Pengembangan Industri Kecil Menengah  di Kalimantan Selatan
               </p>
             </div>
           </div>
-          <div class="animated fadeInUp mt-25">
+          <!-- <div class="animated fadeInUp mt-25">
             <a href="#contact" class="dark-button button-md">Contact us</a>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -264,20 +212,18 @@
       <div class="container">
         <div class="slider-content left-holder">
           <h2 class="animated fadeInDown">
-            Building a Succesfull Business
+            Kawasan Industri
           </h2>
           <div class="row">
             <div class="col-md-6 col-sm-12 col-12">
               <p class="animated fadeInDown">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.
+                Kawasan Industri Batu Licin dan Jorong.
               </p>
             </div>
           </div>
-          <div class="animated fadeInUp mt-30">
+          <!-- <div class="animated fadeInUp mt-30">
             <a href="#contact" class="dark-button button-md">Contact us</a>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>

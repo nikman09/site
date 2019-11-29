@@ -19,7 +19,7 @@
           data: csfrData
       });
 
-			$('.sortable').nestedSortable({
+    $('.sortable').nestedSortable({
         handle: 'div',
         items: 'li',
         toleranceElement: '> div',

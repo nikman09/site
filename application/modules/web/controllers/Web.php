@@ -13,14 +13,14 @@ class Web extends CI_Controller {
         $this->load->model("m_jadwaldetail");
         $this->load->model("m_jadwal");
         $this->load->model("m_pesan");
-        
+        $this->load->model("m_navigasi");
     }
 
     // Dashboard
     public function index()
     {   
 
-        
+        $variabel['page'] 		= $this->m_navigasi->get_nested();
         $variabel['beritaterkini'] = $this->m_berita->lihatdata2(3, 0);           
         $variabel['kegiatanterkini'] = $this->m_kegiatan->lihatdata(3, 0);  
         $variabel['kegiatanterkini2'] = $this->m_kegiatan->lihatdata(4, 0);  

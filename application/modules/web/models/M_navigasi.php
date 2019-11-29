@@ -53,12 +53,6 @@ class M_navigasi extends CI_Model{
     {        
         return $this->db->get('tb_navigasi');
 	}
-	function lihatdatapar()
-    {        
-		$this->db->where("tb_navigasi.parent_id",0);
-		return $this->db->get('tb_navigasi');
-	
-	}
 	
 	function lihatdatasatu($id_navigasi)
     {
@@ -194,7 +188,7 @@ class M_navigasi extends CI_Model{
 						$array[$nav['parent_id']]['children'][$nav['id_navigasi']] = $nav;
 					} else {
 						$array[$data['parent_id']]['children'][$nav['parent_id']]['children'][$nav['id_navigasi']] = $nav;
-						echo $data['parent_id'];
+						//echo $data['parent_id'];
 					}
 				
 					

@@ -95,15 +95,20 @@
 					<span class="title">Jadwal </span>
 				</a>
 			</li>
-			<li  class="<?= ($submenu == "navigasimenu") ? "opened active root-level" : ""; ?> has-sub">
+			<li  class="<?= ($submenu == "navigasimenu"  || $submenu == "filemanager") ? "opened active root-level" : ""; ?> has-sub">
 					<a href="">
-						<i class="fa fa-envelope"></i>
+						<i class="fa fa-star"></i>
 						<span class="title">Extra</span>
 					</a>
 					<ul>
 						<li  class="<?= ($submenu == "navigasimenu") ? " active" : ""; ?>">
 							<a href="<?php echo base_url() ?>administrator/navigasimenu">
 								<span class="title">Navigasi</span>
+							</a>
+						</li>
+						<li  class="<?= ($submenu == "filemanager") ? " active" : ""; ?>">
+							<a href="<?php echo base_url() ?>administrator/filemanager">
+								<span class="title">File Manager</span>
 							</a>
 						</li>
 						

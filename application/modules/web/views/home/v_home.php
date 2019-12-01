@@ -229,7 +229,7 @@
 								
 							</li> 
 							<li data-transition="fade">
-								<img src="<?php echo base_url() ?>assets/front-end/web2/bahan/1231.jpg"  
+								<img src="<?php echo base_url() ?>assets/images/22.jpg"  
 									alt=""
 								data-bgposition="left center"
 									data-bgpositionend="center center"

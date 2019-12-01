@@ -198,4 +198,30 @@
 	}
 
 
-	
+	if (!function_exists('menus'))
+	{
+		function menus($modul,$detail,$urll,$target,$judul)
+		{	
+
+				$blank = ($target==1?"target='_blank'":" ");
+				if ($modul=="Laman") {
+					$link = "<a href='".base_url()."web/page?p=".$detail."' $blank >$judul</a>";
+				} else if($modul=="Dokumen") {
+					$link= "<a href='".base_url()."web/page?p=".$detail."' $blank >$judul</a>";
+				} else if($modul=="Kegiatan") {
+					$link = "<a href='".base_url()."web/kegiatan/".$detail."' $blank >$judul</a>";
+				} else if($modul=="Bidang") {
+					$link = "<a href='".base_url()."web/bidang?p=".$detail."' $blank >$judul</a>";
+				} else if($modul=="Jadwal") {
+					$link = "<a href='".base_url()."web/jadwal?idx=".$detail."' $blank >$judul</a>";
+				} else if($modul=="Berita") {
+					$link = "<a href='".base_url()."web/berita' $blank >$judul</a>";
+				} else if($modul=="Kontak") {
+					$link = "<a href='".base_url()."web/kontak' $blank >$judul</a>";
+				}
+				 else if($modul=="URL") {
+					$link = "<a href='".$urll."'>$judul</a>";
+				}
+			return $link;
+		}
+	}

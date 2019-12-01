@@ -53,7 +53,7 @@
 
 
 		<!-- Skin CSS -->
-		<link rel="stylesheet" href="<?php echo base_url() ?>assets/front-end/web2/css/skins/default.css"> 
+		<link rel="stylesheet" href="<?php echo base_url() ?>assets/front-end/web2/css/skins/skin-law-firm.css"> 
 
 		<!-- Theme Custom CSS -->
 		<link rel="stylesheet" href="<?php echo base_url() ?>assets/front-end/web2/css/custom.css">
@@ -106,7 +106,7 @@
 							<div class="header-column">
 								<div class="header-row">
 									<div class="header-logo">
-										<a href="index.html">
+										<a href="<?php echo base_url() ?>">
 											<img alt="Porto" width="175" height="58" data-sticky-width="120" data-sticky-height="40" src="<?php echo base_url() ?>assets/front-end/web2/img/kalsel3.png">
 										</a>
 									</div>

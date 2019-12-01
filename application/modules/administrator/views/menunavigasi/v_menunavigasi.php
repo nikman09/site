@@ -94,7 +94,7 @@ function get_ol($array, $child = FALSE)
         $str .= $child == FALSE ? '</li>': '';
         foreach($array as $item){
             $str .= '<li id="item_'.$item['id_navigasi'].'" class="dd-item">';
-            $str .= '<div  class="dd-handle">'. $item['judul'] .'&nbsp&nbsp&nbsp&nbsp&nbsp<a class="btn btn-info btn-xs btn-flat" title="Edit" href="'.site_url('admin/navigasi/edit').'/'.$item['id_navigasi'].'"><i class="fa fa-edit"></i></a>&nbsp<a title="delete" class="btn btn-danger btn-xs btn-flat" href="'.site_url('administrator/navigasihapus').'?id='.$item['id_navigasi'].'" class="btn btn-info btn-sm"><i class="fa fa-trash"></i></a></div>';
+            $str .= '<div  class="dd-handle">'. $item['judul'] .'&nbsp&nbsp&nbsp&nbsp&nbsp<a class="btn btn-info btn-xs btn-flat edit" title="Edit" data-toggle="modal" data-target="#myModal2"  href="#" id="'.$item['id_navigasi'].'"><i class="fa fa-edit"></i></a>&nbsp<a title="delete" class="btn btn-danger btn-xs btn-flat hapus" href="#"  id="'.$item['id_navigasi'].'"><i class="fa fa-trash"></i></a></div>';
             
             if(isset($item['children']) && count($item['children'])){
                 $str .= get_ol($item['children'], TRUE);
@@ -124,7 +124,7 @@ function get_ol($array, $child = FALSE)
         <div class="modal-content" id="modal-tambah">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">Tambah Dokumen</h4>
+                <h4 class="modal-title">Tambah Menu</h4>
             </div>
             <form role="form" class="validate" action="<?php echo base_url() ?>administrator/navigasitambah" method="post" enctype="multipart/form-data" id="form">
 
@@ -161,6 +161,8 @@ function get_ol($array, $child = FALSE)
                                   <option value="Kegiatan">Kegiatan</option>
                                   <option value="Bidang">Bidang</option>
                                   <option value="Jadwal">Jadwal</option>
+                                  <option value="Berita">Berita</option>
+                                  <option value="Kontak">Kontak</option>
                                   <option value="URL">URL</option>
                                 </select>
                             </div>
@@ -181,6 +183,18 @@ function get_ol($array, $child = FALSE)
 
             </form>
 
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="modal fade" id="myModal2">
+    <div class="modal-dialog">
+        <div class="modal-content" id="modal-edit">
+          
+         
         </div>
     </div>
 </div>

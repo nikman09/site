@@ -77,6 +77,12 @@ class M_navigasi extends CI_Model{
 	function tambahdata($array)
     {
         return $this->db->insert('tb_navigasi',$array);
+	}
+	
+	function editdata($id_navigasi,$array)
+    {
+        $this->db->where("id_navigasi",$id_navigasi);
+        return $this->db->update('tb_navigasi',$array);
     }
 	function lihatdataparent($id_parent)
     {
@@ -194,7 +200,7 @@ class M_navigasi extends CI_Model{
 						$array[$nav['parent_id']]['children'][$nav['id_navigasi']] = $nav;
 					} else {
 						$array[$data['parent_id']]['children'][$nav['parent_id']]['children'][$nav['id_navigasi']] = $nav;
-						echo $data['parent_id'];
+					
 					}
 				
 					

@@ -12,7 +12,7 @@ jQuery( document ).ready( function( $ ) {
         "bStateSave": false,
         "order": [[ 1, "desc" ]],
         "fnDrawCallback": function () {
-            $('.edit').click(function (e) {
+    $('.edit').click(function (e) {
        
        var v_id_dokumen = this.id;
        var v_url = "<?php echo base_url() ?>administrator/dokumenedit";

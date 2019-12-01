@@ -277,20 +277,22 @@ $(document).ready(function () {
     autoplayHoverPause: false,
     responsive: {
       0: {
-        items: 2,
-        margin: 50,
+        items: 1,
+        margin: 15,
       },
       600: {
-        items: 3,
-        margin: 30,
+        items: 2,
+        margin: 15,
       },
       1000: {
-        items: 6,
-        margin: 40,
+        items: 3,
+        margin: 15,
       }
     }
   })
 
+
+  
 
   /*---------------------
   Project Single carousel

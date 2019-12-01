@@ -1269,13 +1269,9 @@ class Administrator extends CI_Controller {
         $parent =  $this->input->post('parent');
         $modul = $this->input->post('modul');
 
-        if ($parent!=0){
-            $datas = $this->m_navigasi->lihatdatasatu($parent)->row_array();
-            $array['order_id']= $datas['order_id']+1;
-        } else {
-            $last = $this->m_navigasi->id_terakhir();
-            $array['order_id']= $last->order_id+1;
-        }
+
+        $last = $this->m_navigasi->id_terakhir();
+        $array['order_id']= $last->order_id+1;
 
         if ($this->input->post('parent2')) {
             $array['parent_id'] =$this->input->post('parent2') ;
@@ -1296,6 +1292,12 @@ class Administrator extends CI_Controller {
         } else if($modul=="Jadwal") {
             $array['url'] = "";
             $array['detail'] = $this->input->post('detail');
+        } else if($modul=="Berita") {
+            $array['url'] = "";
+            $array['detail'] = "";
+        } else if($modul=="Kontak") {
+            $array['url'] = "";
+            $array['detail'] = "";
         } else if($modul=="URL") {
             $array['url'] = $this->input->post('url');
             $array['target']= $this->input->post('target') ;
@@ -1323,6 +1325,73 @@ class Administrator extends CI_Controller {
         $exec = $this->m_navigasi->deleteparent($id_navigasi);
 
         redirect(base_url()."administrator/navigasimenu?msg=2");
+    }
+
+
+    public function navigasiedit()
+    {      
+
+       
+        $variabel['csrf'] = csrf();
+        $id_navigasi = $this->input->post("id_navigasi");
+        $variabel['item'] = $this->m_navigasi->lihatdatasatu($id_navigasi)->row_array();
+        $variabel['data'] = $this->m_navigasi->lihatdatapar();
+        
+        $this->load->view("menunavigasi/v_menunavigasi_edit",$variabel);
+    }
+
+    public function navigasieditproses()
+    {      
+        $variabel['csrf'] = csrf();
+        $id_navigasi = $this->input->post('id_navigasi');
+        if ($this->input->post()) {
+            if ($this->input->post()) {
+                $array=array(
+                    'judul'=> $this->input->post('judul'),
+                    'tipe'=> $this->input->post('modul')
+                );
+            $parent =  $this->input->post('parent');
+            $modul = $this->input->post('modul');
+    
+
+    
+            if ($modul=="Laman") {
+                $array['url'] = "";
+                $array['detail'] = $this->input->post('detail');
+            } else if($modul=="Dokumen") {
+                $array['url'] = "";
+                $array['detail'] = $this->input->post('detail');
+            } else if($modul=="Kegiatan") {
+                $array['url'] = "";
+                $array['detail'] = $this->input->post('detail');
+            } else if($modul=="Bidang") {
+                $array['url'] = "";
+                $array['detail'] = $this->input->post('detail');
+            } else if($modul=="Jadwal") {
+                $array['url'] = "";
+                $array['detail'] = $this->input->post('detail');
+            } else if($modul=="Berita") {
+                $array['url'] = "";
+                $array['target']= "" ;
+                $array['detail'] = "";
+            } else if($modul=="Kontak") {
+                $array['url'] = "";
+                $array['detail'] = "";
+            } else if($modul=="URL") {
+                $array['url'] = $this->input->post('url');
+                $array['target']= $this->input->post('target') ;
+                $array['detail'] = "";
+            }
+    
+               
+            $exec = $this->m_navigasi->editdata($id_navigasi,$array);
+                if ($exec){
+                    redirect(base_url("administrator/navigasimenu?msg=0"));
+                }
+          } else {
+          }
+      } else {
+      }
     }
 
 

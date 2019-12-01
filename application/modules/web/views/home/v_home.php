@@ -1,11 +1,19 @@
 <!DOCTYPE html>
-<html lang="zxx">
-<head>
-  <title>Dinas Perindustrian</title>
-  <meta charset="UTF-8">
-  
-  <!-- Favicon -->
-  <link rel="apple-touch-icon" sizes="57x57" href="<?php echo base_url() ?>assets/images/favicon/apple-icon-57x57.png">
+<html>
+	<head>
+
+		<!-- Basic -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">	
+
+		<title>Dinas Perindustrian Kalsel</title>	
+
+		<meta name="keywords" content="HTML5 Template" />
+		<meta name="description" content="Porto - Responsive HTML5 Template">
+		<meta name="author" content="okler.net">
+
+		<!-- Favicon -->
+		<link rel="apple-touch-icon" sizes="57x57" href="<?php echo base_url() ?>assets/images/favicon/apple-icon-57x57.png">
 		<link rel="apple-touch-icon" sizes="60x60" href="<?php echo base_url() ?>assets/images/favicon/apple-icon-60x60.png">
 		<link rel="apple-touch-icon" sizes="72x72" href="<?php echo base_url() ?>assets/images/favicon/apple-icon-72x72.png">
 		<link rel="apple-touch-icon" sizes="76x76" href="<?php echo base_url() ?>assets/images/favicon/apple-icon-76x76.png">
@@ -21,1031 +29,828 @@
 		<link rel="icon" type="image/png" sizes="16x16" href="<?php echo base_url() ?>assets/images/favicon/favicon-16x16.png">
 		<link rel="manifest" href="<?php echo base_url() ?>assets/images/favicon/manifest.json">
 	
+		<!-- Mobile Metas -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<!-- Web Fonts  -->
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CShadows+Into+Light%7CPlayfair+Display:400" rel="stylesheet" type="text/css">
 
-  <!-- Bootstrap CSS-->
-  <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/front-end/web3/css/bootstrap.min.css">
+		<link rel="stylesheet" href="<?php echo base_url() ?>assets/front-end/web2/vendor/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="<?php echo base_url() ?>assets/front-end/web2/vendor/fontawesome-free/css/all.min.css">
+		<link rel="stylesheet" href="<?php echo base_url() ?>assets/front-end/web2/vendor/animate/animate.min.css">
+		<link rel="stylesheet" href="<?php echo base_url() ?>assets/front-end/web2/vendor/simple-line-icons/css/simple-line-icons.min.css">
+		<link rel="stylesheet" href="<?php echo base_url() ?>assets/front-end/web2/vendor/owl.carousel/assets/owl.carousel.min.css">
+		<link rel="stylesheet" href="<?php echo base_url() ?>assets/front-end/web2/vendor/owl.carousel/assets/owl.theme.default.min.css">
+		<link rel="stylesheet" href="<?php echo base_url() ?>assets/front-end/web2/vendor/magnific-popup/magnific-popup.min.css">
 
-  <!-- Font-Awesome -->
-  <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/front-end/web3/css/font-awesome.css">
+		<!-- Theme CSS -->
+		<link rel="stylesheet" href="<?php echo base_url() ?>assets/front-end/web2/css/theme.css">
+		<link rel="stylesheet" href="<?php echo base_url() ?>assets/front-end/web2/css/theme-elements.css">
+		<link rel="stylesheet" href="<?php echo base_url() ?>assets/front-end/web2/css/theme-blog.css">
+		<link rel="stylesheet" href="<?php echo base_url() ?>assets/front-end/web2/css/theme-shop.css">
 
-  <!-- Icomoon -->
-  <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/front-end/web3/css/icomoon.css">
-
-  <!-- Slider -->
-  <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/front-end/web3/css/swiper.min.css">
-  <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/front-end/web3/css/slider.css">
-
-  <!-- Animate.css -->
-  <link rel="stylesheet" href="<?php echo base_url() ?>assets/front-end/web3/css/animate.css">
-
-  <!-- Color Switcher -->
-  <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/front-end/web3/css/switcher.css">
-
-  <!-- Owl Carousel  -->
-  <link rel="stylesheet" href="<?php echo base_url() ?>assets/front-end/web3/css/owl.carousel.css">
-
-  <!-- Main Styles -->
-  <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/front-end/web3/css/default.css">
-  <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/front-end/web3/css/styles.css" id="colors">
-
-  <!-- Fonts Google -->
-  <link href="https://fonts.googleapis.com/css?family=Fira+Sans:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-
-</head>
-<body>
+		<!-- Current Page CSS -->
+		<link rel="stylesheet" href="<?php echo base_url() ?>assets/front-end/web2/vendor/rs-plugin/css/settings.css">
+		<link rel="stylesheet" href="<?php echo base_url() ?>assets/front-end/web2/vendor/rs-plugin/css/layers.css">
+		<link rel="stylesheet" href="<?php echo base_url() ?>assets/front-end/web2/vendor/rs-plugin/css/navigation.css">
+		
+		<!-- Demo CSS -->
 
 
-<!-- Preloader Start-->
-<div id="preloader">
-  <div class="row loader">
-    <div class="loader-icon"></div>
-  </div>
-</div>
-<!-- Preloader End -->
+		<!-- Skin CSS -->
+		<link rel="stylesheet" href="<?php echo base_url() ?>assets/front-end/web2/css/skins/skin-law-firm.css"> 
 
+		<!-- Theme Custom CSS -->
+		<link rel="stylesheet" href="<?php echo base_url() ?>assets/front-end/web2/css/custom.css">
 
-<!-- Top-Bar START -->
-<div id="top-bar" class="hidden-sm-down">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-9 col-12">
-        <div class="top-bar-welcome">
-          <ul>
-            <li>Informasi & Pertanyaan? </li>
-          </ul>
-        </div>
-        <div class="top-bar-info">
-          <ul>
-            <li><i class="fa fa-phone"></i> (0511) 5915906
-            <li>
-            <li><i class="fa fa-envelope"></i>dinasperindustrian@kalselprov.go.id
-            <li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-md-3 col-12">
-        <ul class="social-icons hidden-md-down">
-          <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-          <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-          <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-          <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- Top-Bar END -->
+		<!-- Head Libs -->
+		<script src="<?php echo base_url() ?>assets/front-end/web2/vendor/modernizr/modernizr.min.js"></script>
 
-<?php
-  function get_ol($array, $child = FALSE)
-  {
-      $str = '';
-      
-      if(count($array)){
-          $str .= $child == FALSE ? '<li><a href="#">Home</a></li>' :'';
-          foreach($array as $item){
-              $str .= '<li>';
-              $str .= '<a  href="#">'. $item['judul'] .'</a> ';
-              
-
-              if(isset($item['children']) && count($item['children'])){
-                  $str .= ' <ul class="nav-dropdown">';
-                  $str .= get_ol($item['children'], TRUE);
-                  $str .= ' </ul>';
-              }
-              
-              $str .= '</li>' . PHP_EOL;
-          }
-          
-      }else{
-          $str .= $child == FALSE ? '<li><a href="#">Home</a></li>' :'';
-    
-      }
-      
-      return $str;
-  }
-  
-  ?>
-
-
-<!-- Navbar START -->
-<header>
-  <nav id="navigation4" class="container navigation">
-    <div class="nav-header">
-      <a class="nav-brand" href="index.html">
-        <img src="<?php echo base_url() ?>assets/front-end/web3/img/logos/go.png" class="main-logo" alt="logo" id="main_logo" width="250px">
-      </a>
-      <div class="nav-toggle"></div>
-    </div>
-    <div class="nav-menus-wrapper">
-      <ul class="nav-menu align-to-right">
-       <?php echo get_ol($page); ?> 
-       <li><a href="#">About</a>
-          <ul class="nav-dropdown">
-            <li><a href="about.html">About Us 01</a></li>
-            <li><a href="about-2.html">About Us 02</a></li>
-            <li><a href="team.html">Our Team 01</a></li>
-            <li><a href="team-2.html">Our Team 02</a></li>
-            <li><a href="team-3.html">Our Team 03</a></li>
-            </ul>
-          </li>
-      </ul>
-    </div>
-  </nav>
-</header>
-<!-- Navbar END -->
-
-
-<!-- Slider START -->
-<div class="swiper-main-slider-fade swiper-container">
-  <div class="swiper-wrapper">
-
-    <!-- Slide 1 Start -->
-    <div class="swiper-slide" style="background-image:url(<?php echo base_url() ?>assets/front-end/web3/img/11.jpg);">
-      <!-- <div class="medium-overlay"></div> -->
-      <div class="container">
-        <div class="slider-content left-holder">
-          <h2 class="animated fadeInDown">
-           Industri Kain <br> Sasirangan.
-          </h2>
-          <div class="row">
-            <div class="col-md-6 col-sm-12 col-12">
-              <p class="animated fadeInDown">
-                Kain (Batik) Sasirangan yang merupakan kain tradisional khas suku Banjar
-              </p>
-            </div>
-          </div>
-          <!-- <div class="animated fadeInUp mt-30">
-            <a href="#contact" class="dark-button button-md">Contact us</a>
-          </div> -->
-        </div>
-      </div>
-    </div>
-    <!-- Slide 1 End -->
-
-    <!-- Slide 2 Start -->
-    <div class="swiper-slide" style="background-image:url(<?php echo base_url() ?>assets/front-end/web3/img/23.jpg);">
-      <div class="container">
-        <div class="slider-content left-holder">
-          <h2 class="animated fadeInDown">
-            Industri Kecil Menengah <br> (IKM)
-          </h2>
-          <div class="row">
-            <div class="col-md-6 col-sm-12 col-12">
-              <p class="animated fadeInDown">
-             Dinas Perindustrian sebagai fasilitator  Pengembangan Industri Kecil Menengah  di Kalimantan Selatan
-              </p>
-            </div>
-          </div>
-          <!-- <div class="animated fadeInUp mt-25">
-            <a href="#contact" class="dark-button button-md">Contact us</a>
-          </div> -->
-        </div>
-      </div>
-    </div>
-    <!-- Slide 2 End -->
-
-    <!-- Slide 3 Start -->
-    <div class="swiper-slide" style="background-image:url(<?php echo base_url() ?>assets/front-end/web3/img/121.jpg);">
-      <div class="container">
-        <div class="slider-content left-holder">
-          <h2 class="animated fadeInDown">
-            Kawasan Industri
-          </h2>
-          <div class="row">
-            <div class="col-md-6 col-sm-12 col-12">
-              <p class="animated fadeInDown">
-                Kawasan Industri Batu Licin dan Jorong.
-              </p>
-            </div>
-          </div>
-          <!-- <div class="animated fadeInUp mt-30">
-            <a href="#contact" class="dark-button button-md">Contact us</a>
-          </div> -->
-        </div>
-      </div>
-    </div>
-    <!-- Slide 3 End -->
-
-  </div>
-  <!-- Add Arrows -->
-  <div class="swiper-button-next"></div>
-  <div class="swiper-button-prev"></div>
-  <!-- Add Pagination -->
-  <div class="swiper-pagination"></div>
-</div>
-<!-- Slider END -->
-
-<!-- Number Boxes START -->
-<div class="section-block" style="padding-top:50px;padding-bottom:10px">
-  <div class="container">
-    <div class="section-heading center-holder">
-      <h4 style="margin-bottom:0px">Berita Terbaru</h4>
-      <div style="margin-top:0px" class="section-heading-line"></div>
-      <p style="padding-top:0px">Tetap terhubung dengan berita dan informasi terbaru tentang Industri Kalimantan Selatan.</p>
-    </div>
-    <!-- <div class="row mt-50">
-      <div class="col-md-3 col-sm-6 col-12">
-        <div class="number-box">
-          <h3>01</h3>
-          <div class="number-box-line"></div>
-          <h4>Professional Consulting</h4>
-          <p>Lorem ipsum dolor sit amet, te ridens gloriatur temporibus per enim veritus.</p>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6 col-12">
-        <div class="number-box">
-          <h3>02</h3>
-          <div class="number-box-line"></div>
-          <h4>Online Reputation</h4>
-          <p>Lorem ipsum dolor sit amet, te ridens gloriatur temporibus per enim veritus.</p>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6 col-12">
-        <div class="number-box">
-          <h3>03</h3>
-          <div class="number-box-line"></div>
-          <h4>Market Research</h4>
-          <p>Lorem ipsum dolor sit amet, te ridens gloriatur temporibus per enim veritus.</p>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6 col-12">
-        <div class="number-box">
-          <h3>04</h3>
-          <div class="number-box-line"></div>
-          <h4>Budget Friendly</h4>
-          <p>Lorem ipsum dolor sit amet, te ridens gloriatur temporibus per enim veritus.</p>
-        </div>
-      </div>
-    </div> -->
-  </div>
-</div>
-<!-- Number Boxes END -->
-
-
-<div class="section-block-grey" style="padding-top:0px;padding-bottom:0px">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4 col-sm-4 col-12">
-        <div class="blog-grid">
-          <div class="blog-grid-img">
-            <img src="http://via.placeholder.com/250x220" alt="img">
-            <div class="data-box-grid">
-              <h4>07</h4>
-              <p>Feb</p>
-            </div>
-          </div>
-          <div class="blog-grid-text">
-            <span>Business</span>
-            <h4>Advices for young designers</h4>
-            <ul>
-              <li><i class="fa fa-calendar"></i>Feb 19, 2018</li>
-              <li><i class="fa fa-list-ul"></i>Business</li>
-            </ul>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.</p>
-
-            <div class="mt-20 left-holder">
-              <a href="#" class="primary-button button-sm">Read More</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4 col-sm-4 col-12">
-        <div class="blog-grid">
-          <div class="blog-grid-img">
-            <img src="http://via.placeholder.com/250x220" alt="img">
-            <div class="data-box-grid">
-              <h4>08</h4>
-              <p>Feb</p>
-            </div>
-          </div>
-          <div class="blog-grid-text">
-            <span>Finance</span>
-            <h4>What Planning Process Needs?</h4>
-            <ul>
-              <li><i class="fa fa-calendar"></i>Feb 19, 2018</li>
-              <li><i class="fa fa-list-ul"></i>Finance</li>
-            </ul>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.</p>
-
-            <div class="mt-20 left-holder">
-              <a href="#" class="primary-button button-sm">Read More</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4 col-sm-4 col-12">
-        <div class="blog-grid">
-          <div class="blog-grid-img">
-            <img src="http://via.placeholder.com/250x220" alt="img">
-            <div class="data-box-grid">
-              <h4>09</h4>
-              <p>Feb</p>
-            </div>
-          </div>
-          <div class="blog-grid-text">
-            <span>Consulting</span>
-            <h4>Leverage Customer Analytics</h4>
-            <ul>
-              <li><i class="fa fa-calendar"></i>Feb 19, 2018</li>
-              <li><i class="fa fa-list-ul"></i>Consulting</li>
-            </ul>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.</p>
-
-            <div class="mt-20 left-holder">
-              <a href="#" class="primary-button button-sm">Read More</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      
-	</div>
-	</div>
-</div>
-
-<!-- Info Section START -->
-<div class="section-block-grey">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-sm-6 col-12">
-        <div class="pr-30-md">
-          <div class="section-heading">
-            <h4>Profil Dinas Perindustrian</h4>
-          </div>
-          <div class="section-heading-line-left"></div>
-          <div class="text-content-big mt-20">
-			<p>
-			Dinas Perindustrian Provinsi Kalimantan Selatan beralamat di Jl. Dharma Praja Komplek Perkantoran Provinsi Kalimantan Selatan, Banjarbaru. Dinas Perindustrian Provinsi Kalimantan Selatan memiliki 1 Unit Pelaksana Teknis (UPT), yaitu UPT Balai Diklat Industri Kayu & Logam yang beralamatkan di Amuntai & Nagara.
-			</p>
-          </div>
-		  <div class="mt-20">
-            <p>Tugas pokok Dinas Perindustrian Provinsi Kalimantan Selatan sesuai Pergub no 072 Tahun 2016 adalah melaksanakan urusan pemerintahan yang menjadi kewenangan daerah dan tugas pembantuan bidang perindustrian.</p>
-			
-          </div>
-         
-          <div class="mt-25">
-            <a href="#" class="primary-button button-sm mb-15-xs">Tugas & Fungsi</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6 col-sm-6 col-12">
-	  <iframe width="100%" height="305" src="https://www.youtube.com/embed/1p_UBv8igEE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"class="rounded-border shadow-primary"  allowfullscreen></iframe>
+	</head>
+	<body>
+	
+<div>
+	
+	<div class="body">
+	<header id="header" class="header-transparent " data-plugin-options="{'stickyEnabled': true, 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': true, 'stickyChangeLogo': false, 'stickyStartAt': 53, 'stickySetTop': '-53px'}">
+				<div class="header-body border-top-0 bg-dark box-shadow-none">
+					<div class="header-top  d-sm-inline-flex">
+						<div class="container">
+							<div class="header-row py-2" >
+								<div class="header-column justify-content-start ">
+									<div class="header-row ">
+										<nav class="header-nav-top ">
+											<ul class="nav nav-pills">
+												<li class="nav-item nav-item-left-border nav-item-left-border-remove nav-item-left-border-sm-show">
+													<a class="nav-link pl-0" href="<?php echo base_url() ?>web/page?p=1" style="color: #e0e0e0 !important"><i class="fas fa-angle-right"></i> Tentang</a>
+												</li>
+												<li class="nav-item nav-item-left-border nav-item-left-border-remove nav-item-left-border-sm-show">
+													<a class="nav-link" href="<?php echo base_url() ?>web/kontak" style="color: #e0e0e0 !important"><i class="fas fa-angle-right"></i> Kontak</a>
+												</li>
+											
+												<li class="nav-item nav-item-left-border nav-item-left-border-remove nav-item-left-border-sm-show">
+													<span class="ws-nowrap" style="color: #e0e0e0 !important"><i class="fas fa-phone"></i> (0511) 5915906</span>
+												</li>
+											</ul>
+										</nav>
+									</div>
+								</div>
+								<div class="header-column justify-content-end">
+									<div class="header-row">
+										<ul class="header-social-icons social-icons d-none d-sm-block social-icons-clean">
+											<li class="social-icons-facebook"><a href="https://www.facebook.com/" target="_blank" title="Facebook" style="color: #e0e0e0 !important"><i class="fab fa-facebook-f"></i></a></li>
+											<li class="social-icons-twitter" ><a href="https://www.twitter.com/" target="_blank" title="Twitter"  style="color: #e0e0e0 !important"><i class="fab fa-twitter"></i></a></li>
+											<li class="social-icons-instagram" ><a href="https://www.instagram.com/" target="_blank" title="instagram"  style="color: #e0e0e0 !important"><i class="fab fa-instagram"></i></a></li>
+											<li class="social-icons-youtube" ><a href="https://www.youtube.com/" target="_blank" title="youtube"  style="color: #e0e0e0 !important"><i class="fab fa-youtube"></i></a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="header-container container">
+						<div class="header-row">
+							<div class="header-column">
+								<div class="header-row">
+									<div class="header-logo">
+										<a href="<?php echo base_url(); ?>">
+											<img alt="Dinas Perindustrian Provinsi Kalimantan Selatan" width="175" height="58" data-sticky-width="120" data-sticky-height="40" src="<?php echo base_url() ?>assets/front-end/web2/img/kalsel2.png">
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="header-column justify-content-end">
+								<div class="header-row">
+								<div class="header-nav header-nav-links header-nav-dropdowns-dark header-nav-light-text order-2 order-lg-1">
+										<div class="header-nav-main header-nav-main-square header-nav-main-effect-2 header-nav-main-sub-effect-1">
+										<nav class="collapse">
+										<?php
+												$this->load->view("template/menu");
+											?>
+												</nav>
+										</div>
+										<button class="btn header-btn-collapse-nav" data-toggle="collapse" data-target=".header-nav-main nav">
+											<i class="fas fa-bars"></i>
+										</button>
+									</div>
+									<div class="header-nav-features header-nav-features-no-border header-nav-features-lg-show-border order-1 order-lg-2">
+										<div class="header-nav-feature header-nav-features-search d-inline-flex">
+											<a href="#" class="header-nav-features-toggle" data-focus="headerSearch"><i class="fas fa-search header-nav-top-icon"  style="color:#fff"></i></a>
+											<div class="header-nav-features-dropdown" id="headerTopSearchDropdown">
+												<form role="search" action="#" method="get">
+													<div class="simple-search input-group">
+														<input class="form-control text-1" id="headerSearch" name="q" type="search" value="" placeholder="Search...">
+														<span class="input-group-append">
+															<button class="btn" type="submit">
+																<i class="fa fa-search header-nav-top-icon"></i>
+															</button>
+														</span>
+													</div>
+												</form>
+											</div>
+										</div>
+										
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+			<div role="main" class="main">
+				
+				<div class="slider-container  rev_slider_wrapper " style="height: 650px;">
+					<div id="revolutionSlider" class="slider rev_slider " data-version="5.4.8" data-plugin-revolution-slider data-plugin-options="{'delay': 9000, 'gridwidth': 1170, 'gridheight': 650, 'disableProgressBar': 'on', 'responsiveLevels': [4096,1200,992,500], 'navigation' : {'arrows': { 'enable': true, 'style': 'arrows-style-1 arrows-big arrows-dark' }, 'bullets': {'enable': false, 'style': 'bullets-style-1 bullets-color-primary', 'h_align': 'center', 'v_align': 'bottom', 'space': 7, 'v_offset': 70, 'h_offset': 0}}}">
+						<ul>
 							
-     </div>
-    </div>
-  </div>
-</div>
-<!-- Info Section END -->
-
-
-<!-- Services START -->
-<div class="section-block">
-  <div class="container">
-    <div class="section-heading center-holder">
-      <span>What We Offer</span>
-      <h3>We Provide All Kind Of Business Services</h3>
-      <div class="section-heading-line"></div>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor <br>incididunt ut labore et dolore magna aliqua.</p>
-    </div>
-    <div class="row mt-50">
-      <div class="col-md-3 col-sm-3 col-12">
-        <div class="service-simple">
-          <img src="http://via.placeholder.com/350x245" alt="img">
-          <div class="service-simple-inner">
-            <h4>Professional Advisor</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
-            <div class="service-simple-button">
-              <a href="#">Learn More</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-3 col-sm-3 col-12">
-        <div class="service-simple">
-          <img src="http://via.placeholder.com/350x245" alt="img">
-          <div class="service-simple-inner">
-            <h4>Financial Services Consulting</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
-            <div class="service-simple-button">
-              <a href="#">Learn More</a>
-            </div>
-          </div>
-        </div>
-      </div>
-	  <div class="col-md-3 col-sm-3 col-12">
-        <div class="service-simple">
-          <img src="http://via.placeholder.com/350x245" alt="img">
-          <div class="service-simple-inner">
-            <h4>Financial Services Consulting</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
-            <div class="service-simple-button">
-              <a href="#">Learn More</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-3 col-sm-3 col-12">
-        <div class="service-simple">
-          <img src="http://via.placeholder.com/350x245" alt="img">
-          <div class="service-simple-inner">
-            <h4>Consumer Product Consulting</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
-            <div class="service-simple-button">
-              <a href="#">Learn More</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- Services END -->
-
-
-<!-- Background Section START -->
-<div class="section-block-bg" style="background-image: url(http://via.placeholder.com/1730x400);">
-  <div class="container">
-    <div class="section-heading center-holder white-color">
-      <span>Gain a Success With Us!</span>
-      <h2><strong>Doing the right thing</strong></h2>
-      <h4>At the Right Time.</h4>
-      <a href="#" class="primary-button button-md mt-10">Become a Client</a>
-    </div>
-  </div>
-</div>
-<!-- Background Section END -->
-
-
-<!-- Clients Carousel START -->
-<div class="section-clients-grey">
-  <div class="container">
-    <div class="owl-carousel owl-theme clients" id="clients">
-      <div class="item">
-        <img src="http://via.placeholder.com/155x75" alt="partner-image">
-      </div>
-
-      <div class="item">
-        <img src="http://via.placeholder.com/155x75" alt="partner-image">
-      </div>
-
-      <div class="item">
-        <img src="http://via.placeholder.com/155x75" alt="partner-image">
-      </div>
-
-      <div class="item">
-        <img src="http://via.placeholder.com/155x75" alt="partner-image">
-      </div>
-
-      <div class="item">
-        <img src="http://via.placeholder.com/155x75" alt="partner-image">
-      </div>
-
-      <div class="item">
-        <img src="http://via.placeholder.com/155x75" alt="partner-image">
-      </div>
-    </div>
-  </div>
-</div>
-<!-- Clients Carousel END -->
-
-
-<!-- Map Info Section START -->
-<div class="section-block">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-sm-6 col-12">
-        <img src="http://via.placeholder.com/540x270" class="mb-15-xs" alt="map">
-      </div>
-      <div class="col-md-5 col-sm-6 col-12 offset-md-1">
-        <div class="section-heading">
-          <h5>We are Available Worldwide</h5>
-          <div class="section-heading-line-left"></div>
-        </div>
-        <div class="text-content mt-25">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        </div>
-        <div class="mt-25">
-          <a href="#" class="primary-button button-sm">Contact Us</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- Map Info Section END -->
-
-
-<!-- Testmonials START -->
-<div class="section-block-bg" style="background-image: url(http://via.placeholder.com/1730x630);">
-  <div class="container">
-    <div class="section-heading center-holder">
-      <span>Testmonials</span>
-      <h3>What People Say</h3>
-      <div class="section-heading-line"></div>
-    </div>
-    <div class="owl-carousel owl-theme" id="testmonials-carousel">
-      <div class="testmonial-single">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        <h4>John Doe</h4>
-        <h6>Consultant</h6>
-      </div>
-
-      <div class="testmonial-single">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        <h4>Mary Kay</h4>
-        <h6>Design Lead</h6>
-      </div>
-
-      <div class="testmonial-single">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        <h4>Jakob Nielsen</h4>
-        <h6>Networking Lead</h6>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- Testmonials END -->
-
-
-<!-- Pricing Section START -->
-<div class="section-block">
-  <div class="container">
-    <div class="section-heading center-holder">
-      <span>Our Packages</span>
-      <h3>Pick The Best Plan For You</h3>
-      <div class="section-heading-line"></div>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor <br>incididunt ut labore et dolore magna aliqua.</p>
-    </div>
-    <div class="row mt-50">
-      <div class="col-md-4 col-sm-4 col-12">
-        <div class="pricing-list">
-          <h4>Classic</h4>
-          <div class="pricing-list-price">
-            <h2><sup>$</sup>37</h2>
-            <span>/week</span>
-          </div>
-          <ul>
-            <li>Express, Support</li>
-            <li>Business Analyzing</li>
-            <li>Swift Management</li>
-          </ul>
-          <div class="pricing-list-button">
-            <a href="#">Buy Now</a>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="col-md-4 col-sm-4 col-12">
-        <div class="pricing-list">
-          <strong>New</strong>
-          <h4>Popular</h4>
-          <div class="pricing-list-price">
-            <h2><sup>$</sup>79</h2>
-            <span>/month</span>
-          </div>
-          <ul>
-            <li>Express, Support</li>
-            <li>Business Analyzing</li>
-            <li>Swift Management</li>
-          </ul>
-          <div class="pricing-list-button">
-            <a href="#">Buy Now</a>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="col-md-4 col-sm-4 col-12">
-        <div class="pricing-list">
-          <h4>Premium</h4>
-          <div class="pricing-list-price">
-            <h2><sup>$</sup>99</h2>
-            <span>/month</span>
-          </div>
-          <ul>
-            <li>Express, Support</li>
-            <li>Business Analyzing</li>
-            <li>Swift Management</li>
-          </ul>
-          <div class="pricing-list-button">
-            <a href="#">Buy Now</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- Pricing Section END -->
-
-
-<!-- Newsletter START -->
-<div class="section-block-parallax" style="background-image: url(http://via.placeholder.com/1730x6400);">
-  <div class="container">
-    <div class="section-heading center-holder white-color">
-      <h2>Stay <strong>informed</strong></h2>
-      <div class="section-heading-line"></div>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor<br> incididunt ut labore et dolore magna aliqua.</p>
-    </div>
-    <div class="mt-30 center-holder">
-      <!-- Newsletter Form START -->
-      <form class="newsletter-form" method="post" action="#">
-        <input type="email" name="email" placeholder="Enter Your Email adress">
-        <button type="submit">Subscribe</button>
-      </form>
-      <!-- Newsletter Form END -->
-    </div>
-  </div>
-</div>
-<!-- Newsletter END -->
-
-
-<!-- Progress Bars Section START -->
-<div class="section-block">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-sm-6 col-12">
-        <div class="section-heading">
-          <span>Our mission</span>
-          <h4>Our Mission is to Turn Your Ideas Into Businesses.</h4>
-        </div>
-        <div class="text-content">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        </div>
-      </div>
-
-      <div class="col-md-5 col-sm-6 col-12 offset-md-1">
-        <!-- PROGRESS BARS Start -->
-        <div class="mt-35">
-          <!-- Progress Bar Start -->
-          <div class="progress-text">
-            <div class="row">
-              <div class="col-md-6 col-sm-6 col-6">
-                Market Research
-              </div>
-              <div class="col-md-6 col-sm-6 col-6 text-right">
-                10%
-              </div>
-            </div>
-          </div>
-          <div class="progress custom-progress">
-            <div class="progress-bar custom-bar wow slideInLeft animated" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"
-                 style="width:10%">
-            </div>
-          </div>
-          <!-- Progress Bar End -->
-
-          <!-- Progress Bar Start -->
-          <div class="progress-text">
-            <div class="row">
-              <div class="col-md-6 col-sm-6 col-6">
-                Sales Services
-              </div>
-              <div class="col-md-6 col-sm-6 col-6 text-right">
-                25%
-              </div>
-            </div>
-          </div>
-          <div class="progress custom-progress">
-            <div class="progress-bar custom-bar wow slideInLeft animated" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"
-                 style="width:25%">
-            </div>
-          </div>
-          <!-- Progress Bar End -->
-
-          <!-- Progress Bar Start -->
-          <div class="progress-text">
-            <div class="row">
-              <div class="col-md-6 col-sm-6 col-6">
-                Online Reputation
-              </div>
-              <div class="col-md-6 col-sm-6 col-6 text-right">
-                50%
-              </div>
-            </div>
-          </div>
-          <div class="progress custom-progress">
-            <div class="progress-bar custom-bar wow slideInLeft animated" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"
-                 style="width:50%">
-            </div>
-          </div>
-          <!-- Progress Bar End -->
-
-          <!-- Progress Bar Start -->
-          <div class="progress-text">
-            <div class="row">
-              <div class="col-md-6 col-sm-6 col-6">
-                Strategic Consulting
-              </div>
-              <div class="col-md-6 col-sm-6 col-6 text-right">
-                75%
-              </div>
-            </div>
-          </div>
-          <div class="progress custom-progress">
-            <div class="progress-bar custom-bar wow slideInLeft animated" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"
-                 style="width:75%">
-            </div>
-          </div>
-          <!-- Progress Bar End -->
-        </div>
-        <!-- PROGRESS BARS End -->
-      </div>
-    </div>
-  </div>
-</div>
-<!-- Progress Bars Section END -->
-
-
-<!-- Cases START -->
-<div class="section-block-grey border-top">
-  <div class="container">
-    <div class="section-heading">
-      <h5>Featured Cases</h5>
-      <div class="section-heading-line-left"></div>
-    </div>
-    <div class="row mt-40">
-      <!-- Project Block Start -->
-      <div class="col-md-6 col-sm-12 col-12">
-        <div class="case-block">
-          <div class="row">
-            <div class="col-md-6 col-sm-6 col-12 pr-0">
-              <img src="http://via.placeholder.com/270x215" alt="case">
-            </div>
-            <div class="col-md-6 col-sm-6 col-12">
-              <div class="case-block-inner">
-                <h4>Social Media Marketting</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
-                <a href="#">Learn More</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Project Block End -->
-
-      <!-- Project Block Start -->
-      <div class="col-md-6 col-sm-12 col-12">
-        <div class="case-block">
-          <div class="row">
-            <div class="col-md-6 col-sm-6 col-12 pr-0">
-              <img src="http://via.placeholder.com/270x215" alt="case">
-            </div>
-            <div class="col-md-6 col-sm-6 col-12">
-              <div class="case-block-inner">
-                <h4>Sensitivity Analysis</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
-                <a href="#">Learn More</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Project Block End -->
-
-      <!-- Project Block Start -->
-      <div class="col-md-6 col-sm-12 col-12">
-        <div class="case-block">
-          <div class="row">
-            <div class="col-md-6 col-sm-6 col-12 pr-0">
-              <img src="http://via.placeholder.com/270x215" alt="case">
-            </div>
-            <div class="col-md-6 col-sm-6 col-12">
-              <div class="case-block-inner">
-                <h4>Project Governances</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
-                <a href="#">Learn More</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Project Block End -->
-
-      <!-- Project Block Start -->
-      <div class="col-md-6 col-sm-12 col-12">
-        <div class="case-block">
-          <div class="row">
-            <div class="col-md-6 col-sm-6 col-12 pr-0">
-              <img src="http://via.placeholder.com/270x215" alt="case">
-            </div>
-            <div class="col-md-6 col-sm-6 col-12">
-              <div class="case-block-inner">
-                <h4>Market Assessment</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
-                <a href="#">Learn More</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Project Block End -->
-    </div>
-  </div>
-</div>
-<!-- Cases END -->
-
-
-<!-- Notice Section START -->
-<div class="notice-section notice-section-sm border-top">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-8 col-sm-8 col-12">
-        <div class="mt-5">
-          <h6>Looking for Professional Approach and Quality Services ?</h6>
-          <div class="section-heading-line-left"></div>
-        </div>
-      </div>
-      <div class="col-md-4 col-sm-4 col-12">
-        <div class="mt-10 right-holder-md">
-          <a href="#" class="primary-button button-sm mt-15-xs">Contact Us Today</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- Notice Section END -->
-
-
-<!-- Footer START -->
-<footer>
-  <div class="container">
-    <div class="row">
-      <!-- Column 1 Start -->
-      <div class="col-md-4 col-sm-6 col-12">
-        <h3>About Us</h3>
-        <div class="mt-25">
-          <img src="<?php echo base_url() ?>assets/front-end/web3/img/logos/logo-footer.png" alt="footer-logo">
-          <p class="mt-25">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam.</p>
-          <div class="footer-social-icons mt-25">
-            <ul>
-              <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
-              <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-              <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-              <li><a href="#"><i class="fa fa-skype"></i></a></li>
-              <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <!-- Column 1 End -->
-
-      <!-- Column 2 Start -->
-      <div class="col-md-3 col-sm-6 col-12">
-        <h3>Quick Links</h3>
-        <ul class="footer-list">
-          <li><a href="#">Strategic Consulting</a></li>
-          <li><a href="#">Sales Services</a></li>
-          <li><a href="#">Market Research</a></li>
-          <li><a href="#">Online Reputation</a></li>
-          <li><a href="#">Strategic Consulting</a></li>
-          <li><a href="#">Sales Services</a></li>
-          <li><a href="#">Market Research</a></li>
-        </ul>
-      </div>
-      <!-- Column 2 End -->
-
-      <!-- Column 3 Start -->
-      <div class="col-md-3 col-sm-6 col-12">
-        <h3>Recent Posts</h3>
-        <div class="mt-25">
-          <!-- Post Start -->
-          <div class="footer-recent-post clearfix">
-            <div class="footer-recent-post-thumb">
-              <img src="http://via.placeholder.com/65x65" alt="img">
-            </div>
-            <div class="footer-recent-post-content">
-              <span>February 7, 2018</span>
-              <a href="#">Advices for young designers</a>
-            </div>
-          </div>
-          <!-- Post End -->
-          <!-- Post Start -->
-          <div class="footer-recent-post clearfix">
-            <div class="footer-recent-post-thumb">
-              <img src="http://via.placeholder.com/65x65" alt="img">
-            </div>
-            <div class="footer-recent-post-content">
-              <span>February 7, 2018</span>
-              <a href="#">What Planning Process Needs?</a>
-            </div>
-          </div>
-          <!-- Post End -->
-          <!-- Post Start -->
-          <div class="footer-recent-post clearfix">
-            <div class="footer-recent-post-thumb">
-              <img src="http://via.placeholder.com/65x65" alt="img">
-            </div>
-            <div class="footer-recent-post-content">
-              <span>February 7, 2018</span>
-              <a href="#">Lorem ipsum dolor sit amet.</a>
-            </div>
-          </div>
-          <!-- Post End -->
-        </div>
-      </div>
-      <!-- Column 3 End -->
-
-      <!-- Column 4 Start -->
-      <div class="col-md-2 col-sm-6 col-12">
-        <h3>Tags</h3>
-        <div class="footer-tags mt-25">
-          <a href="#">Business</a>
-          <a href="#">Conusltant</a>
-          <a href="#">Coach</a>
-          <a href="#">UX</a>
-          <a href="#">API</a>
-          <a href="#">Reputation</a>
-          <a href="#">Research</a>
-          <a href="#">Sale</a>
-          <a href="#">Service</a>
-          <a href="#">UI</a>
-          <a href="#">Web</a>
-          <a href="#">WebDesign</a>
-        </div>
-      </div>
-      <!-- Column 4 End -->
-    </div>
-
-    <!-- Footer Bar Start -->
-    <div class="footer-bar">
-      <p><span class="primary-color">SpecThemes</span> © 2018. All Rights Reserved.</p>
-    </div>
-    <!-- Footer Bar End -->
-  </div>
-</footer>
-<!-- Footer END -->
-
-<!-- Scroll to top button Start -->
-<a href="#" class="scroll-to-top"><i class="fa fa-angle-up" aria-hidden="true"></i></a>
-<!-- Scroll to top button End -->
-
-
-<!-- Jquery -->
-<script src="<?php echo base_url() ?>assets/front-end/web3/js/jquery.min.js"></script>
-
-<!--Popper JS-->
-<script src="<?php echo base_url() ?>assets/front-end/web3/js/popper.min.js"></script>
-
-<!--Popper JS-->
-<script src="<?php echo base_url() ?>assets/front-end/web3/js/popper.min.js"></script>
-
-<!-- Bootstrap JS-->
-<script src="<?php echo base_url() ?>assets/front-end/web3/js/bootstrap.min.js"></script>
-
-<!-- Owl Carousel-->
-<script src="<?php echo base_url() ?>assets/front-end/web3/js/owl.carousel.js"></script>
-
-<!-- Navbar JS -->
-<script src="<?php echo base_url() ?>assets/front-end/web3/js/navigation.js"></script>
-<script src="<?php echo base_url() ?>assets/front-end/web3/js/navigation.fixed.js"></script>
-
-<!-- Wow JS -->
-<script src="<?php echo base_url() ?>assets/front-end/web3/js/wow.min.js"></script>
-
-<!-- Countup -->
-<script src="<?php echo base_url() ?>assets/front-end/web3/js/jquery.counterup.min.js"></script>
-<script src="<?php echo base_url() ?>assets/front-end/web3/js/waypoints.min.js"></script>
-
-<!-- Tabs -->
-<script src="<?php echo base_url() ?>assets/front-end/web3/js/tabs.min.js"></script>
-
-<!-- Yotube Video Player -->
-<script src="<?php echo base_url() ?>assets/front-end/web3/js/jquery.mb.YTPlayer.min.js"></script>
-
-<!-- Swiper Slider -->
-<script src="<?php echo base_url() ?>assets/front-end/web3/js/swiper.min.js"></script>
-
-<!-- Isotop -->
-<script src="<?php echo base_url() ?>assets/front-end/web3/js/isotope.pkgd.min.js"></script>
-
-<!-- Switcher JS -->
-<script src="<?php echo base_url() ?>assets/front-end/web3/js/switcher.js"></script>
-
-<!-- Modernizr -->
-<script src="<?php echo base_url() ?>assets/front-end/web3/js/modernizr.js"></script>
-
-<!-- Google Map -->
-<script src="<?php echo base_url() ?>assets/front-end/web3/js/map.js"></script>
-
-<!-- Main JS -->
-<script src="<?php echo base_url() ?>assets/front-end/web3/js/main.js"></script>
-
-</body>
+						<li data-transition="fade">
+								<img src="<?php echo base_url() ?>assets/front-end/web2/bahan/123.jpg"  
+									alt=""
+								data-bgposition="left center"
+									data-bgpositionend="center center"
+									data-bgfit="cover" 
+									data-bgrepeat="no-repeat" 
+									data-kenburns="on"
+									data-duration="9000"
+									data-ease="Linear.easeNone"
+									data-scalestart="110"
+									data-scaleend="100"
+									data-rotatestart="0"
+									data-rotateend="0"
+									data-offsetstart="0 0"
+									data-offsetend="0 0"
+									data-bgparallax="0"
+									class="rev-slidebg">
+				        <div class="tp-caption"
+									data-x="['left','left','center','center']" data-hoffset="['145','145','-150','-240']"
+									data-y="center" data-voffset="['-50','-50','-50','-150']"
+									data-start="1000"
+									data-transform_in="x:[-300%];opacity:0;s:500;"
+									data-transform_idle="opacity:0.5;s:500;"><img src="<?php echo base_url() ?>assets/front-end/web2/img/slides/slide-title-border-light.png" alt=""></div>
+				
+								<div class="tp-caption text-color-light font-weight-normal"
+									data-x="['left','left','center','center']" data-hoffset="['200','200','0','0']"
+									data-y="center" data-voffset="['-50','-50','-50','30']"
+									data-start="700"
+									data-fontsize="['22','22','22','40']"
+									data-lineheight="['25','25','25','45']"
+									data-transform_in="y:[-50%];opacity:0;s:500;" style="color: #b5b5b5;">Kalimantan Selatan</div>
+				
+								<div class="tp-caption d-none d-md-block"
+									data-frames='[{"delay":3800,"speed":500,"frame":"0","from":"opacity:0;x:10%;","to":"opacity:1;x:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
+									data-x="['left','left','center','center']" data-hoffset="['365','365','80','135']"
+									data-y="center" data-voffset="['10','10','10','-10']">
+								    <img src="<?php echo base_url() ?>assets/front-end/web2/img/slides/slide-blue-line.png" alt=""></div>
+				
+								<div class="tp-caption"
+									data-x="['left','left','center','center']" data-hoffset="['440','440','150','240']"
+									data-y="center" data-voffset="['-50','-50','-50','-75']"
+									data-start="1000"
+									data-transform_in="x:[300%];opacity:0;s:500;"
+									data-transform_idle="opacity:0.5;s:500;"><img src="<?php echo base_url() ?>assets/front-end/web2/img/slides/slide-title-border-light.png" alt=""></div>
+				
+								<h1 class="tp-caption font-weight-extra-bold text-color-light negative-ls-2"
+									data-frames='[{"delay":1000,"speed":2000,"frame":"0","from":"sX:1.5;opacity:0;fb:20px;","to":"o:1;fb:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
+									data-x="['left','left','center','center']" data-hoffset="['152','152','0','0']"
+									data-y="center" data-voffset="['-15','-15','-15','80']"
+									data-fontsize="['50','50','50','60']"
+									data-lineheight="['55','55','55','50']"
+									data-letterspacing="-1"
+									style="color: #b5b5b5;">IKM KALSEL GO DIGITAL</h1>
+				
+								<div class="tp-caption font-weight-light text-color-light"
+									data-frames='[{"from":"opacity:0;","speed":300,"to":"o:1;","delay":2000,"split":"chars","splitdelay":0.05,"ease":"Power2.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
+									data-x="['left','left','center','center']" data-hoffset="['166','166','0','0']"
+									data-y="center" data-voffset="['40','40','40','120']"
+									data-fontsize="['18','18','18','20']"
+									data-lineheight="['20','20','20','55']"
+									style="color: #b5b5b5;">SMART IKM</div>
+							
+								
+							</li> 
+							<li data-transition="fade">
+								<img src="<?php echo base_url() ?>assets/front-end/web2/bahan/1231.jpg"  
+									alt=""
+								data-bgposition="left center"
+									data-bgpositionend="center center"
+									data-bgfit="cover" 
+									data-bgrepeat="no-repeat" 
+									data-kenburns="on"
+									data-duration="9000"
+									data-ease="Linear.easeNone"
+									data-scalestart="110"
+									data-scaleend="100"
+									data-rotatestart="0"
+									data-rotateend="0"
+									data-offsetstart="0 0"
+									data-offsetend="0 0"
+									data-bgparallax="0"
+									class="rev-slidebg">
+				                	<div class="tp-caption text-color-light font-weight-normal"
+									data-x="['left','left','center','center']" data-hoffset="['200','200','0','0']"
+									data-y="center" data-voffset="['-50','-50','-50','30']"
+									data-start="700"
+									data-fontsize="['22','22','22','40']"
+									data-lineheight="['25','25','25','45']"
+									data-transform_in="y:[-50%];opacity:0;s:500;" style="color: #b5b5b5;">Kawasan Industri</div>
+				
+								<div class="tp-caption d-none d-md-block"
+									data-frames='[{"delay":3800,"speed":500,"frame":"0","from":"opacity:0;x:10%;","to":"opacity:1;x:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
+									data-x="['left','left','center','center']" data-hoffset="['365','365','80','135']"
+									data-y="center" data-voffset="['-33','-33','-33','10']"><img src="<?php echo base_url() ?>assets/front-end/web2/img/slides/slide-blue-line.png" alt=""></div>
+				
+								<div class="tp-caption"
+									data-x="['left','left','center','center']" data-hoffset="['440','440','150','240']"
+									data-y="center" data-voffset="['-50','-50','-50','-75']"
+									data-start="1000"
+									data-transform_in="x:[300%];opacity:0;s:500;"
+									data-transform_idle="opacity:0.5;s:500;"><img src="<?php echo base_url() ?>assets/front-end/web2/img/slides/slide-title-border-light.png" alt=""></div>
+				
+								<h1 class="tp-caption font-weight-extra-bold text-color-light negative-ls-2"
+									data-frames='[{"delay":1000,"speed":2000,"frame":"0","from":"sX:1.5;opacity:0;fb:20px;","to":"o:1;fb:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
+									data-x="['left','left','center','center']" data-hoffset="['152','152','0','0']"
+									data-y="center" data-voffset="['-15','-15','-15','80']"
+									data-fontsize="['50','50','50','50']"
+									data-lineheight="['55','55','55','95']"
+									data-letterspacing="-1"
+									style="color: #b5b5b5;">Kawasan Industri Kalimantan Selatan</h1>
+				
+								<div class="tp-caption font-weight-light text-color-light"
+									data-frames='[{"from":"opacity:0;","speed":300,"to":"o:1;","delay":2000,"split":"chars","splitdelay":0.05,"ease":"Power2.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
+									data-x="['left','left','center','center']" data-hoffset="['166','166','0','0']"
+									data-y="center" data-voffset="['40','40','40','120']"
+									data-fontsize="['18','18','18','20']"
+									data-lineheight="['20','20','20','55']"
+									style="color: #b5b5b5;">Kawasan Industri Batulicin dan Kawasan Industri Jorong</div>
+								
+								
+							</li>
+							<li data-transition="fade">
+				
+				<img src="<?php echo base_url() ?>assets/front-end/web2/img/slides/tes122.jpg"  
+					alt=""
+					data-bgposition="right center"
+					data-bgpositionend="center center"
+					data-bgfit="cover" 
+					data-bgrepeat="no-repeat" 
+					data-kenburns="on"
+					data-duration="9000"
+					data-ease="Linear.easeNone"
+					data-scalestart="110"
+					data-scaleend="100"
+					data-rotatestart="0"
+					data-rotateend="0"
+					data-offsetstart="0 0"
+					data-offsetend="0 0"
+					data-bgparallax="0"
+					class="rev-slidebg">
+                <div class="tp-caption font-weight-extra-bold negative-ls-2" style="color:#fff"
+									data-frames='[{"delay":1000,"speed":2000,"frame":"0","from":"sX:1.5;opacity:0;fb:20px;","to":"o:1;fb:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
+									data-x="center"
+									data-y="center" data-voffset="['-50','-50','-50','40']"
+									data-fontsize="['50','50','50','50']"
+									data-lineheight="['55','55','55','95']">Dinas Perindustrian</div>
+				
+								<div class="tp-caption font-weight-light" style="color:#fff"
+									data-frames='[{"from":"opacity:0;","speed":300,"to":"o:1;","delay":2000,"split":"chars","splitdelay":0.05,"ease":"Power2.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
+									data-x="center"
+									data-y="center" data-voffset="['-15','-15','-15','95']"
+									data-fontsize="['18','18','18','40']"
+									data-lineheight="['20','20','20','55']"
+									style="color: #b5b5b5;">Provinsi Kalimantan Selatan.</div>
+			
+			</li>
+							 
+						
+						</ul>
+					</div>
+				</div>
+				
+				 <div class="home-intro" id="home-intro" style="margin-bottom:0px">
+					<div class="container">
+				
+					
+
+						<div class="row align-items-center">
+							<div class="col text-center">
+								<p class="mb-0">
+								Industri Daerah Yang Berdaya Saing Dengan Berbasis Sumber Daya Lokal Berkontribusi Menuju <span class="highlighted-word highlighted-word-animation-1 text-color-primary font-weight-semibold text-5">KALSEL MAPAN.</span>
+								</p>
+							</div>
+						</div>
+				
+					</div>
+				</div> 
+				<section class="border-0 m-0 bg-color-grey-scale-1 " >
+				<div class="container py-4 my-0">
+				
+				<div class="row featured-boxes featured-boxes-style-4">
+					<div class="col-md-6 col-lg-3">
+						<div class="featured-box featured-box-primary featured-box-effect-4 appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="200">
+							<div class="box-content px-4">
+							<a href="https://siikalsel.disperin.kalselprov.go.id/">
+								<img src="<?php echo base_url() ?>assets/images/pabrik.png" class="icon-featured">
+								<h4 class="font-weight-bold text-color-dark pb-1 mb-2">SIIKALSEL</h4>
+								<p class="mb-0">Sistem Informasi Industri
+Dinas Perindustian Provinsi Kalimantan Selatan.</p>
+							</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 col-lg-3">
+						<div class="featured-box featured-box-primary featured-box-effect-4 appear-animation" data-appear-animation="fadeIn">
+							<div class="box-content px-4">
+								<i class="icon-featured  fa fa-gavel text-12"></i>
+								<h4 class="font-weight-bold text-color-dark pb-1 mb-2">Kebijakan Industri</h4>
+								<p class="mb-0">Kebijakan Industri Daerah Menuju KALSEL MAPAN.</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 col-lg-3">
+						<div class="featured-box featured-box-primary featured-box-effect-4 appear-animation" data-appear-animation="fadeIn">
+							<div class="box-content px-4">
+							<i class="icon-featured  fa fa-star text-12"></i>
+								<h4 class="font-weight-bold text-color-dark pb-1 mb-2">Layanan Publik</h4>
+								<p class="mb-0">Penyelengaraan pelayanan publik bidang Industri di Kalimantan Selatan.</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 col-lg-3">
+						<div class="featured-box featured-box-primary featured-box-effect-4 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="200">
+							<div class="box-content px-4">
+							
+								<i class="icon-featured icon-screen-desktop icons text-12"></i>
+							
+								<h4 class="font-weight-bold text-color-dark pb-1 mb-2">Infografis</h4>
+								</a>
+								<p class="mb-0">Sajian data dan informasi seputar kebijakan dan kegiatan.</p>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			</section>
+				
+				<!-- <section class="section bg-color-grey-scale-1  section-no-border section-centerappear-animation my-0" data-appear-animation="fadeIn">
+				<div class="container">
+					<div class="row justify-content-center">
+						<div class="col-lg-10 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200">
+						
+							<div class="owl-carousel owl-theme nav-bottom rounded-nav mb-0" data-plugin-options="{'items': 1, 'loop': false, 'autoHeight': true}">
+								
+								<div>
+									<div class="col">
+										<div class="testimonial testimonial-style-2 testimonial-with-quotes testimonial-quotes-dark mb-0">
+											<div class="testimonial-author">
+												<img src="<?php echo base_url() ?>assets/front-end/web2/bahan/kadis.png" class="img-fluid rounded-circle" alt="">
+											</div>
+											<blockquote>
+												<p class="text-color-dark text-3 line-height-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget risus porta, tincidunt turpis at, interdum tortor. Suspendisse potenti. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce ante tellus, convallis non consectetur sed, pharetra nec ex.</p>
+											</blockquote>
+											<div class="testimonial-author">
+												<p><strong class="opacity-9 font-weight-extra-bold text-2">H. Mahyuni M.T - Kepala Dinas Perindustrian Provinsi Kalimantan Selatan</strong></p>
+											</div>
+										</div>
+									</div>
+								</div>
+							
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+				 -->
+					
+				<section class="bg-dark" style="padding-top: 20px;padding-bottom: 10px;">
+					<div class="container pb-2">
+						<div class="row">
+							<div class="col-lg-6 text-center text-md-left mb-5 mb-lg-0"  data-appear-animation="fadeInRightShorter">
+							<h2 class="text-color-light font-weight-normal text-6 mb-2"> <strong class="">Profil</strong> Dinas Perindustrian</h2>
+								<p class="lead">Tugas pokok Dinas Perindustrian Provinsi Kalimantan Selatan sesuai Pergub no 072 Tahun 2016 adalah melaksanakan urusan pemerintahan yang menjadi kewenangan daerah dan tugas pembantuan bidang perindustrian.</p>
+								<p class="">Dinas Perindustrian Provinsi Kalimantan Selatan beralamat di Jl. Dharma Praja Komplek Perkantoran Provinsi Kalimantan Selatan, Banjarbaru. Dinas Perindustrian Provinsi Kalimantan Selatan memiliki 1 Unit Pelaksana Teknis (UPT), yaitu UPT Balai Diklat Industri Kayu & Logam yang beralamatkan di Amuntai & Nagara. <br/>
+
+</p>
+								<a href="<?php echo base_url() ?>web/page?p=2" class="btn btn-dark font-weight-semibold btn-px-4 btn-py-2 text-2">Tugas dan Fungsi</a>
+								
+							</div>
+							<div class="col-lg-6" data-appear-animation="fadeInLeftShorter" style="margin-top:30px" >
+							
+							<iframe width="100%" height="300" src="https://www.youtube.com/embed/1p_UBv8igEE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+							
+							</div>
+						</div>
+					</div>
+				</section>
+				
+			
+			
+				<section>
+				<div class="container container-md ">
+					<div class="row py-5 ">
+					<div class="col-md-6 col-lg-4 appear-animation" data-appear-animation="fadeInDownShorter" data-appear-animation-delay="400">
+
+							<h3 class="font-weight-bold text-3 mb-0 mt-4 mt-md-0">Kegiatan</h3>
+
+							<ul class="simple-post-list">
+							<?php
+							foreach($kegiatanterkini->result_array() as $row){
+								?>
+										<li>
+											<div class="post-image">
+												<div class="img-thumbnail img-thumbnail-no-borders d-block">
+													<a href="<?php echo base_url("web/kegiatanposts?ids=".$row['id_kegiatan']."") ?>">
+														<img src="<?php echo base_url() ?>assets/images/kegiatan/thumb/<?php echo $row['fotos'] ?>" class="border-radius-0" width="50" height="50" alt="<?php echo  $row['judul'] ?>">
+													</a>
+												</div>
+											</div>
+											<div class="post-info">
+												<h4 class="font-weight-normal text-3 line-height-4 mb-0"><a href="<?php echo base_url("web/kegiatanposts?ids=".$row['id_kegiatan']."") ?>" class="text-dark"><?php echo  $row['judul'] ?>  </a></h4>
+												<div class="post-meta">
+												<?php echo  tgl_indo($row['tanggal']); ?>
+												</div>
+											</div>
+										</li>
+								
+							<?php
+										}
+											?>	
+								
+
+								
+							</ul>
+
+						</div>
+						<div class="col-md-6 col-lg-4 appear-animation" data-appear-animation="fadeInDownShorter" data-appear-animation-delay="400">
+
+							<h3 class="font-weight-bold text-3 mb-0 mt-4 mt-md-0">Berita Terkini</h3>
+
+							<ul class="simple-post-list">
+							<?php
+							foreach($beritaterkini->result_array() as $row){
+								?>
+										<li>
+											<div class="post-image">
+												<div class="img-thumbnail img-thumbnail-no-borders d-block ">
+													<a href="<?php echo base_url("web/beritapost?ids=".$row['id_berita']."") ?>">
+														<img src="<?php echo base_url() ?>assets/images/berita/thumb/<?php echo $row['foto'] ?>" class="border-radius-0" width="50" height="50" alt="<?php echo  $row['judul'] ?>">
+													</a>
+												</div>
+											</div>
+											<div class="post-info">
+												<h4 class="font-weight-normal text-3 line-height-4 mb-0"><a href="<?php echo base_url("web/beritapost?ids=".$row['id_berita']."") ?>" class="text-dark"><?php echo  $row['judul'] ?></a></h4>
+												<div class="post-meta">
+												<?php echo  tgl_indo($row['tanggal']); ?>
+												</div>
+											</div>
+										</li>
+								
+							<?php
+										}
+											?>	
+								
+
+								
+							</ul>
+
+						</div>
+						<div class="col-md-6 col-lg-4 appear-animation" data-appear-animation="fadeInDownShorter" data-appear-animation-delay="400">
+
+							<h3 class="font-weight-bold text-3 mb-0 mt-4 mt-md-0">Berita Populer</h3>
+
+							<ul class="simple-post-list">
+							<?php
+							foreach($datapopuler->result_array() as $row){
+								?>
+										<li>
+											<div class="post-image">
+												<div class="img-thumbnail img-thumbnail-no-borders d-block ">
+													<a href="<?php echo base_url("web/beritapost?ids=".$row['id_berita']."") ?>">
+														<img src="<?php echo base_url() ?>assets/images/berita/thumb/<?php echo $row['foto'] ?>" class="border-radius-0" width="50" height="50" alt="<?php echo  $row['judul'] ?>">
+													</a>
+												</div>
+											</div>
+											<div class="post-info">
+												<h4 class="font-weight-normal text-3 line-height-4 mb-0"><a href="<?php echo base_url("web/beritapost?ids=".$row['id_berita']."") ?>" class="text-dark"><?php echo  $row['judul'] ?></a></h4>
+												<div class="post-meta">
+												<?php echo  tgl_indo($row['tanggal']); ?>
+												</div>
+											</div>
+										</li>
+								
+							<?php
+										}
+											?>	
+								
+
+								
+							</ul>
+
+						</div>
+					</div>
+				</div>
+				</section>
+
+				<!-- <section>
+				<div class="container ">
+					<div class="row " >
+					
+						
+						
+						<div class="col-lg-12 appear-animation " data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="200">
+						
+					<div class="row">
+						<div class="col-lg-6">
+						<h3 class="font-weight-bold text-3 mb-0 mt-4 mt-md-0" style="padding-bottom:10px">Agenda</h3>
+							<div class="tabs">
+								<ul class="nav nav-tabs  flex-column flex-md-row">
+									<li class="nav-item ">
+										<a class="nav-link" href="#popular101" data-toggle="tab" class="text-center">Pelatihan</a>
+									</li>
+									<li class="nav-item active">
+										<a class="nav-link" href="#recent101" data-toggle="tab" class="text-center">Pameran</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="#recent102" data-toggle="tab" class="text-center">Dinas</a>
+									</li>
+								</ul>
+								<div class="tab-content">
+									<div id="popular101" class="tab-pane ">
+									<table class="table">
+										<thead>
+											<tr>
+												<th>
+													#
+												</th>
+												<th>
+													Nama Pelatihan
+												</th>
+												<th>
+													Waktu
+												</th>
+												<th>
+													
+												</th>
+											</tr>
+										</thead>
+										<tbody>
+										<?php
+										$i=0;
+										foreach($jadwalpelatihan->result_array() as $row){
+											$i++;
+											echo "
+												<tr>
+													<td>$i</td>
+													<td>".$row['nama']."</td>
+													<td>".$row['tanggal']."</td>
+													<td></td>
+												</tr>
+
+											";
+											
+										}
+											?>
+											</tbody>
+									</table>
+
+
+
+												</div>
+									<div id="recent101" class="tab-pane active">
+									<table class="table">
+										<thead>
+											<tr>
+												<th>
+													#
+												</th>
+												<th>
+													Nama Pameran
+												</th>
+												<th>
+													Waktu
+												</th>
+												<th>
+													
+												</th>
+											</tr>
+										</thead>
+										<tbody>
+										<?php
+										$i=0;
+										foreach($jadwalpameran->result_array() as $row){
+											$i++;
+											echo "
+												<tr>
+													<td>$i</td>
+													<td>".$row['nama']."</td>
+													<td>".$row['tanggal']."</td>
+													<td></td>
+												</tr>
+											";
+											
+										}
+											?>
+										</tbody>
+									</table>
+									</div>
+									<div id="recent102" class="tab-pane">
+									<table class="table">
+										<thead>
+											<tr>
+												<th>
+													#
+												</th>
+												<th>
+													Nama Pameran
+												</th>
+												<th>
+													Waktu
+												</th>
+												<th>
+												</th>
+											</tr>
+										</thead>
+										<tbody>
+										<?php
+										$i=0;
+										foreach($jadwaldinas->result_array() as $row){
+											$i++;
+											echo "
+												<tr>
+													<td>$i</td>
+													<td>".$row['nama']."</td>
+													<td>".$row['tanggal']."</td>
+													<td></td>
+												</tr>
+
+											";
+											
+										}
+											?>
+										</tbody>
+									</table>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<h4 class="font-weight-normal ">Bidang</strong></h4>
+							<div class="row">
+								<div class="col-sm-6">
+									<div class="feature-box feature-box-style-2">
+										<div class="feature-box-icon">
+											<i class="icons icon-support text-color-primary"></i>
+										</div>
+										<div class="feature-box-info">
+											<h4 class="font-weight-bold text-4 mb-0"><a href="<?php echo base_url(); ?>web/bidang?p=1" >Sekretariat</a></h4>
+											<p class="mb-4">Sekretariat Dinas Perindustrian</p>
+										</div>
+									</div>
+									
+									<div class="feature-box feature-box-style-2">
+										<div class="feature-box-icon">
+											<i class="fa fa-cogs text-color-primary"></i>
+										</div>
+										<div class="feature-box-info">
+											<h4 class="font-weight-bold text-4 mb-0"><a href="<?php echo base_url(); ?>web/bidang?p=2" >ILMEAT</a></h4>
+											<p class="mb-4">Industri Logam, Mesin, Elektronika dan IT</p>
+										</div>
+										
+									</div>
+									<div class="feature-box feature-box-style-2">
+										<div class="feature-box-icon">
+											<i class="fas fa-leaf text-color-primary"></i>
+										</div>
+										<div class="feature-box-info">
+											<h4 class="font-weight-bold text-4 mb-0"><a href="<?php echo base_url(); ?>web/bidang?p=5" >Agro</a></h4>
+											<p class="mb-4">Industri Agro</p>
+										</div>
+									</div>
+									
+								</div>
+								<div class="col-sm-6">
+								<div class="feature-box feature-box-style-2">
+										<div class="feature-box-icon">
+											<i class="fas fa-flask text-color-primary"></i>
+										</div>
+										<div class="feature-box-info">
+											<h4 class="font-weight-bold text-4 mb-0"><a href="<?php echo base_url(); ?>web/bidang?p=4" >IKTA</a></h4>
+											<p class="mb-4">Industri Kimia Tekstil dan Aneka</p>
+										</div>
+										
+									</div>
+									<div class="feature-box feature-box-style-2">
+										<div class="feature-box-icon">
+											<i class="fas fa-industry text-color-primary"></i>
+										</div>
+										<div class="feature-box-info">
+											<h4 class="font-weight-bold text-4 mb-0"><a href="<?php echo base_url(); ?>web/bidang?p=6" >UPTBD Industri Kayu dan Logam</a> </h4>
+											<p class="mb-4">UPT Balai Diklat Industri Kayu dan Logam</p>
+										</div>
+									</div>
+									<div class="feature-box feature-box-style-2">
+									
+								</div>
+							</div>
+						</div>
+						
+						
+					</div>
+
+
+					</div>
+
+					
+
+					</div>
+				</div> 
+				</section> -->
+
+
+
+
+										
+				<section class="section bg-color-grey-scale-1 section-height-3 border-0 m-0" style="padding-top: 50px;padding-bottom: 20px;">
+					<div class="container pb-2">
+						
+					<div class="row recent-posts pb-4 mb-5 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="200" style="
+    margin-bottom: 0px !important;
+    padding-bottom: 0px !important;">
+					<?php
+					foreach($kegiatanterkini2->result_array() as $row){
+						?>
+						<div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+							<article>
+								<div class="row">
+									<div class="col-auto pr-0">
+										<div class="date">
+											<span class="day text-color-dark font-weight-extra-bold"><?php echo date('d',strtotime($row['tanggal'])); ?></span>
+											<span class="month bg-color-light font-weight-semibold text-color-dark text-1"><?php echo date('M',strtotime($row['tanggal'])); ?></span>
+										</div>
+									</div>
+									<div class="col pl-1">
+										<h4 class="line-height-3 text-4"><a href="<?php echo base_url("web/kegiatanposts?ids=".$row['id_kegiatan']."") ?>" class="text-dark"><?php echo $row['judul'] ?></a></h4>
+										<p class="line-height-5 pr-3 mb-1"><?php echo substr($row['isi'],0,100) ?>.</p>
+										<a class="read-more text-color-dark font-weight-bold text-2" href="<?php echo base_url("web/kegiatanposts?ids=".$row['id_kegiatan']."") ?>"><strong>Selanjutnya</strong><i class="fas fa-chevron-right text-2 pl-2"></i></a>
+									</div>
+								</div>
+							</article>
+						</div>
+
+						<?php
+					}
+						?>
+						
+					</div>
+					<div class="row mb-5" style="margin-top:40px">
+							<div class="col-lg-12 text-center">
+								<a href="<?php echo base_url("web/kegiatan/all") ?>" class="btn btn-dark btn-px-5 btn-py-2 font-weight-bold text-color-light rounded-0 text-2" style="">Lihat Kegiatan Lainnya</a>
+							</div>
+						</div>
+					</div>
+				</section>
+				
+
+				<section  style="
+    padding-top: 30px;
+    padding-bottom: 30px">
+					<div class="container">
+						<div class="row">
+							<div class="col">
+								<div class="owl-carousel mb-0" data-plugin-options="{'responsive': {'0': {'items': 1}, '476': {'items': 1}, '768': {'items': 5}, '992': {'items': 7}, '1200': {'items': 7}}, 'autoplay': true, 'autoplayTimeout': 3000, 'dots': false}">
+									<div>
+										<img class="img-fluid opacity-2" src="https://drive.google.com/uc?id=1of5jv0GrJ43HO7C6wPkmXJxZFOMWZlnd" alt="">
+									</div>
+									<div>
+										<img class="img-fluid opacity-2" src="https://drive.google.com/uc?id=1vR_wKqig5azPt13ixV9f7NIWbpCtJaFL" alt="">
+									</div>
+									<div>
+										<img class="img-fluid opacity-2" src="https://drive.google.com/uc?id=1TeKNzeapu8z4-H6BrKmh8FQYJmNqX-IB" alt="">
+									</div>
+									<div>
+										<img class="img-fluid opacity-2" src="https://drive.google.com/uc?id=1JRet1Bxf2uIzCN4SfGISfiJAvaETqJj0" alt="">
+									</div>
+									<div>
+										<img class="img-fluid opacity-2" src="https://drive.google.com/uc?id=1FaIUhoan4lNw0o_934z13V3tBrBEBlcN" alt="">
+									</div>
+									<!-- <div>
+										<img class="img-fluid opacity-2" src="https://doc-0o-2o-docs.googleusercontent.com/docs/securesc/iasracd20i517a5u6kqfdb693tntmi6p/k49npvg8tk3jp6r3m7p8euvcu5942jkt/1572264000000/04995702770821001048/16859199919012491055/1Yg3_9aEsOxME4-kR-9Z_ftTV47GLIXtF" alt="">
+									</div> -->
+									
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				
+				
+			</div>
+			
+			
+			
+			<?php
+				$this->load->view("template/footer");
+			?>
+
+	</body>
 </html>

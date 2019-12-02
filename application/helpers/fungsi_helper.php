@@ -197,6 +197,33 @@
 		}
 	}
 
+	if (!function_exists('akses'))
+	{
+		function akses($rule = null,$rule1 = null,$rule2 = null)
+		{	
+			$ci = &get_instance();
+			if($rule!=null && $rule1==null && $rule2==null) {
+				if($rule==$ci->session->userdata('pelatihan_admin_rule')) {
+					
+				} else {
+					redirect(base_url("pelatihan/admin/akses"));
+				}
+			} else if($rule!=null && $rule1!=null && $rule2==null) {
+				if($rule==$ci->session->userdata('pelatihan_admin_rule') || $rule1==$ci->session->userdata('pelatihan_admin_rule')) {
+					
+				} else {
+					redirect(base_url("pelatihan/admin/akses"));
+				}
+			} else if($rule!=null && $rule1!=null && $rule2!=null) {
+				if($rule==$ci->session->userdata('pelatihan_admin_rule') || $rule1==$ci->session->userdata('pelatihan_admin_rule') || $rule2==$ci->session->userdata('pelatihan_admin_rule')) {
+					
+				} else {
+					redirect(base_url("pelatihan/admin/akses"));
+				}
+			}
+		}
+	}
+
 
 	if (!function_exists('menus'))
 	{
@@ -224,4 +251,19 @@
 				}
 			return $link;
 		}
+
+
+		if (!function_exists('cekloginadminpelatihan'))
+	{
+		function cekloginadminpelatihan()
+		{	
+			$ci = &get_instance();
+			$menu = $ci->router->fetch_class();
+			$submenu = $ci->router->fetch_method();
+			if($ci->session->userdata('pelatihan_admin_login') != "login") {
+				redirect(base_url("pelatihan/admin/login?m=".$submenu.""));
+			}
+		}
+	}
+
 	}

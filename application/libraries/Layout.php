@@ -34,4 +34,19 @@ class Layout {
         $this->ci->load->view($this->endhtmladmin);
     }
 
+    public $headerpel ='v_pelatihan/template/header';
+	//public $menu = 'template/menu';
+    public $footerpel = 'v_pelatihan/template/footer';
+    public $endhtmlpel = 'v_pelatihan/template/endhtml';
+        
+    function renderpel($view,$data = null,$js = null){
+        $this->ci->load->view($this->headerpel);
+        $this->ci->load->view($view,$data);
+        $this->ci->load->view($this->footerpel);
+        if ($js!=NULL) {
+            $this->ci->load->view($js,$data);
+        }
+        $this->ci->load->view($this->endhtmlpel);
+    }
+
 }

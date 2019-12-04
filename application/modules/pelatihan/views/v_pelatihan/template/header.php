@@ -51,9 +51,13 @@
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
 	<style>
+	
+		span p {
+			color : #cc2424
+		}
 		p  {
 			color : #474747
-		}
+		},
 	</style>
 </head>
 <body class=" skin-red">
@@ -71,7 +75,7 @@
 					</a>
 				</section>
 				<?php 
-				 if ($this->session->userdata('status_user') != "login") {
+				 if ($this->session->userdata('pelatihan_status') != "login") {
 					include("menunologin.php");
 				 } else {
 					include("menu.php");

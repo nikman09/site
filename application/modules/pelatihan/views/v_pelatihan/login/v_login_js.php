@@ -29,37 +29,19 @@ jQuery(function ($) {
                     required: true,
                     email: true
                 },
-                nama: {
-                    required: true
-                },  
-                
                 password: {
                     required: true,
-                    minlength   : 6
-                },
-                konfirmasipassword: {
-                    required: true,
-                    equalTo: password,
                 },
                 
                
             },
             messages: {
                 email: {
-                    required: "Email harus diisi",
+                    required: "Email tidak boleh kosong",
                     email: "Format Email salah"
                 },
-                nama: {
-                    required: "Nama harus diisi"
-                },  
-                
                 password: {
-                    required: "Password harus diisi",
-                    minlength   :  "minimal 6 karakter"
-                },
-                konfirmasipassword: {
-                    required: "Konfirmasi Password harus diisi",
-                    equalTo: "Konfirmasi Password harus sama dengan password",
+                    required: "Password tidak boleh kosong",
                 },
                 
             }

@@ -35,7 +35,7 @@
 								
 								<td>".$row['tempat']."</td>
 
-								<td><a href='#' class='btn btn-default  btn-icon icon-left'><i class='fa fa-file'></i>Lihat Persyaratan </a></td>
+								<td><a href='".base_url()."pelatihan/persyaratan?i=".$row['id_pelatihan']."' class='btn btn-default  btn-icon icon-left'><i class='fa fa-file'></i>Lihat Persyaratan </a></td>
 								"; 
 									if (date("Y-m-d")>=$row['mulaipendaftaran'] && date("Y-m-d")<=$row['akhirpendaftaran']) {
 										echo "

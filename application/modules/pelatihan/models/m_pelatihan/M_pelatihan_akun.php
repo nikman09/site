@@ -42,5 +42,12 @@ class M_pelatihan_akun extends CI_Model
         $this->db->where("id_akun",$id_akun);
         return $this->db->delete('pl_akun');
     }
+
+    function ceklogin($email,$password)
+    {
+        $this->db->where("email",$email);
+        $this->db->where("password",$password);
+        return $this->db->get('pl_akun');
+    }
   
 }

@@ -10,7 +10,7 @@
 								<span>Beranda</span>
 							</a>
 						</li>
-						<li class="<?= ($submenu == "informasi") ? "active root-level" : ""; ?>">
+						<li class="<?= ($submenu == "informasi" || $submenu == "persyaratan") ? "active root-level" : ""; ?>">
 							<a href="<?php echo base_url() ?>pelatihan/informasi">
 								<span>Informasi Pelatihan</span>
 							</a>
@@ -21,8 +21,8 @@
 							</a>
 						</li>
 						
-						<li>
-							<a href="<?php echo base_url() ?>flashsale/login">
+						<li class="<?= ($submenu == "login") ? "active root-level" : ""; ?>">
+							<a href="<?php echo base_url() ?>pelatihan/login">
 								<span>Login</span>
 							</a>
 						</li>

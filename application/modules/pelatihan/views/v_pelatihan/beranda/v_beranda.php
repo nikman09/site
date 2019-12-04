@@ -102,7 +102,7 @@
 				<div class="feature-block">
 					<h3>
 						<i class="entypo-key"></i>
-						Pendaftaran
+						Pendaftaran Pelatihan
 					</h3>
 					
 					<p>
@@ -173,7 +173,7 @@
 								
 								<td>".$row['tempat']."</td>
 
-								<td><a href='#' class='btn btn-default  btn-icon icon-left'><i class='fa fa-file'></i>Lihat Persyaratan </a></td>
+								<td><a href='".base_url()."pelatihan/persyaratan?i=".$row['id_pelatihan']."' class='btn btn-default  btn-icon icon-left'><i class='fa fa-file'></i>Lihat Persyaratan </a></td>
 								"; 
 									if (date("Y-m-d")>=$row['mulaipendaftaran'] && date("Y-m-d")<=$row['akhirpendaftaran']) {
 										echo "
@@ -197,6 +197,10 @@
 </div>
 </div>
 
+<?php 
+	if ($this->session->userdata('pelatihan_status') != "login") {
+	
+?>
 <div class="container">
 	<div class="row vspace">
 		<div class="col-md-12">
@@ -213,3 +217,26 @@
 		</div>
 	</div>
 </div>
+<?php 
+	} else {
+?>
+<div class="container">
+	<div class="row vspace">
+		<div class="col-md-12">
+			
+			<div class="callout-action">
+				<h2>Lihat Status Pendaftaran Pelatihan Terakhir </h2>
+				
+				<div class="callout-button">
+					<a href="index.html" class="btn btn-secondary">Lihat Status</a>
+				</div>
+				
+			</div>
+			
+		</div>
+	</div>
+</div>
+<?php 
+	}
+?>
+

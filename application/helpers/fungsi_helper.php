@@ -76,6 +76,80 @@
 		}
 	}
 
+	if ( ! function_exists('pesan_get2'))
+	{
+		function pesan_get2($variabel,$pesansukses, $pesangagal = NULL, $pesangagal2 = NULL, $pesangagal3 = NULL)
+		{
+			 
+			 if (isset($_GET[$variabel])) {
+				$ci = &get_instance();
+				$var = $ci->input->get($variabel,TRUE);
+				if ($var=='1' && $pesansukses!= NULL) { 
+					echo "
+					<div class='alert alert-success'>
+						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button>
+						<i class='fa fa-info-circle'></i>
+						".$pesansukses."
+					</div> ";
+				 } else if ($var=='0' && $pesangagal!= NULL) {
+					echo "
+					<div class='alert alert-default	'>
+						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button>
+						<i class='fa fa-info-circle'></i>
+						".$pesangagal."
+					</div> ";
+				 } else if ($var=='2' && $pesangagal2!= NULL) {
+					echo "
+					<div class='alert alert-warning'>
+						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button>
+						<i class='fa fa-info-circle'></i>
+						".$pesangagal2."
+					</div> ";
+				 }  else if ($var=='3' && $pesangagal3!= NULL) {
+					echo "
+					<div class='alert alert-danger'>
+						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button>
+						<i class='fa fa-info-circle'></i>
+						".$pesangagal3."
+					</div> ";
+				 }
+			} else if (isset($_POST[$variabel])) {
+				$ci = &get_instance();
+				$var = $ci->input->post($variabel,TRUE);
+				if ($var=='1' && $pesansukses!= NULL) { 
+					echo "
+					<div class='alert alert-default'>
+						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button>
+						<i class='fa fa-info-circle'></i>
+						".$pesansukses."
+					</div> ";
+				 } else if ($var=='0' && $pesangagal!= NULL) {
+					echo "
+					<div class='alert alert-danger'>
+						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button>
+						<i class='fa fa-info-circle'></i>
+						".$pesangagal."
+					</div> ";
+				 } else if ($var=='2' && $pesangagal2!= NULL) {
+					echo "
+					<div class='alert alert-warning'>
+						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button>
+						<i class='fa fa-info-circle'></i>
+						".$pesangagal2."
+					</div> ";
+				 }  else if ($var=='3' && $pesangagal3!= NULL) {
+					echo "
+					<div class='alert alert-danger'>
+						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button>
+						<i class='fa fa-info-circle'></i>
+						".$pesangagal3."
+					</div> ";
+				 }
+			}
+		
+		}
+	}
+
 	if ( ! function_exists('pesanvar'))
 	{
 		function pesanvar($variabel,$pesansukses, $pesangagal = NULL, $pesangagal2 = NULL, $pesangagal3 = NULL)
@@ -116,6 +190,49 @@
 		
 		}
 	}
+
+
+	if ( ! function_exists('pesanvar2'))
+	{
+		function pesanvar2($variabel,$pesansukses, $pesangagal = NULL, $pesangagal2 = NULL, $pesangagal3 = NULL)
+		{
+			 
+				$ci = &get_instance();
+				$var = $variabel;
+				if ($var=='1' && $pesansukses!= NULL) { 
+					echo "
+					<div class='alert alert-danger'>
+						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button>
+						<i class='fa fa-info-circle'></i>
+						".$pesansukses."
+					</div> ";
+				 } else if ($var=='0' && $pesangagal!= NULL) {
+					echo "
+					<div class='alert alert-danger'>
+						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button>
+						<i class='fa fa-info-circle'></i>
+						".$pesangagal."
+					</div> ";
+				 } else if ($var=='2' && $pesangagal2!= NULL) {
+					echo "
+					<div class='alert alert-default'>
+						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button>
+						<i class='fa fa-info-circle'></i>
+						".$pesangagal2."
+					</div> ";
+				 } else if ($var=='3' && $pesangagal3!= NULL) {
+					echo "
+					<div class='alert alert-danger'>
+						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button>
+						<i class='fa fa-info-circle'></i>
+						".$pesangagal3."
+					</div> ";
+				 }
+	
+		
+		}
+	}
+
 
 	if (!function_exists('ceklogin'))
 	{

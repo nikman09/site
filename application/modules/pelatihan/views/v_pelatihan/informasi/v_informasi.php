@@ -21,7 +21,7 @@
 				<th>Persyaratan</th>
 				<th>Daftar</th>
 			</tr>
-		</thead>
+		</thead>8
 		<tbody>
 		
 			<?php

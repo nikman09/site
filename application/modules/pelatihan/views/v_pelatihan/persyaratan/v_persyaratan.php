@@ -8,11 +8,11 @@
 <div class="container">
 	<div class="row vspace">
 		<div class="col-md-12">
-		<h3 align="center"><?= $data['nama'] ?></h3>
+		<h3 align="center">Pendaftaran <?= $data['nama'] ?></h3>
 		 <table style=" border-spacing: 10px;
     border-collapse: separate;">
 			<tr>
-				<td>
+				<td width="120px">
 				  Nama Pelatihan
 				</td>
 				<td>
@@ -78,9 +78,10 @@
 			<p style="padding:10px">
 			<?= $data['persyaratan'] ?>
 			</p>
-
-			<a href="#" class="btn btn-primary btn-icon icon-left" style="margin:10px;margin-right:0px"><i class="fa fa-list"></i>Daftar</a> &nbsp
-			<a href="<?php base_url() ?>pelatihan/informasi" class="btn btn-default btn-icon icon-left" style="margin:10px"><i class="fa fa-info"></i>Lihat Informasi Pelatihan</a>
+			<p align="right">
+			<a href="<?php base_url() ?>pelatihan/informasi" class="btn btn-default btn-icon icon-left" style="margin:10px;margin-right:0px"><i class="fa fa-times"></i>Batal</a>
+			<a href="<?php echo base_url() ?>pelatihan/pelatihandaftar?i=<?= $data['id_pelatihan'] ?>" class="btn btn-primary btn-icon icon-left" style="margin:10px;"><i class="fa fa-list"></i>Daftar </a> &nbsp
+			</p>
 	</div>
 </div>
 </div>

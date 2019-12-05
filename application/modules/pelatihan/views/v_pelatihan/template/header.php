@@ -41,6 +41,7 @@
 	<link rel="stylesheet" href="<?php echo base_url() ?>assets/back-end/js/selectboxit/jquery.selectBoxIt.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/css/bootstrap-select.min.css">
 	<link rel="stylesheet" href="<?php echo base_url() ?>assets/front-end/web/css/custom.css">
+	<link rel="stylesheet" href="<?php echo base_url() ?>assets/back-end/js/confirm/jquery-confirm.min.css">
 	<link rel="stylesheet" href="<?php echo base_url() ?>assets/back-end/css/neon-theme.css">
 	
 	<!--[if lt IE 9]><script src="assets/js/ie8-responsive-file-warning.js"></script><![endif]-->

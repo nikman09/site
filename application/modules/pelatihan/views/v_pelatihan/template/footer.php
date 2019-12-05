@@ -101,6 +101,7 @@
 	<script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
 	<script src="<?php echo base_url() ?>assets/back-end/js/select2/select2.min.js"></script>
 	<script src="<?php echo base_url() ?>assets/back-end/js/jquery.multi-select.js"></script>
+	<script src="<?php echo base_url() ?>assets/back-end/js/confirm/jquery-confirm.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/js/bootstrap-select.min.js"></script>
 

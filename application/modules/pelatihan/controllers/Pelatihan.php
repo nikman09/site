@@ -44,8 +44,7 @@ class Pelatihan extends CI_Controller {
     
 
     public function akun()
-    
-  {   
+    {   
       $this->load->model("m_pelatihan/m_pelatihan_akun");
       $variabel['csrf'] = csrf();
       if ($this->input->post()){
@@ -69,45 +68,78 @@ class Pelatihan extends CI_Controller {
         $this->layout->renderpel("v_pelatihan/akun/v_akun",$variabel,"v_pelatihan/akun/v_akun_js");
       }
     
- }
+    }
 
-
- public function login()
- {
-   $this->load->model("m_pelatihan/m_pelatihan_akun");
-     $variabel['csrf'] = csrf();
-     if ($this->input->post()){
-     $email = $this->input->post('email');
-         $password = md5($this->input->post('password'));
+    public function pelatihandaftar()
+    {   
+      $this->load->model("m_pelatihan/m_pelatihan_akun");
+      $variabel['csrf'] = csrf();
+      if ($this->input->get("i")){
+        
+        $array=array(
+            'id_pelatihan'=> $this->input->get("i"),
+            'id_akun'=> $this->session->userdata("pelatihan_idakun");,
+            'status'=> "Belum Diverifikasi",
+            'konfirmasi'=> "",
+        );
+            
+        $exec = $this->m_pelatihan_akun->tambahdata($array);
+        if ($exec) redirect(base_url("pelatihan/login?msg=1"));
+          else redirect(base_url("pelatihan/akun?msg=0"));
+      }
+      else {
+        $this->layout->renderpel("v_pelatihan/akun/v_akun",$variabel,"v_pelatihan/akun/v_akun_js");
+      }
     
-         $exec = $this->m_pelatihan_akun->ceklogin($email,$password);
-         if ($exec->num_rows()>0) {
-             $data = $exec->row_array();
-             $data_session = array(
-                 'pelatihan_email' => $data['email'],
-                 'pelatihan_status' => "login",
-                 'pelatihan_nama'=> $data['nama']
-                 );
-             $this->session->set_userdata($data_session);
-             if (isset($_GET['m'])) {
-                 redirect(base_url("pelatihan/".$_GET['m'].""));
-             } else {
-                 redirect(base_url("pelatihan"));
-             }
-         } else {
-             $variabel['gagal'] = '0';
-             $variabel['bug'] =  $email;
-             $this->layout->renderpel("v_pelatihan/login/v_login",$variabel,"v_pelatihan/login/v_login_js");
-         }
-     } else {
-        $this->layout->renderpel("v_pelatihan/login/v_login",$variabel,"v_pelatihan/login/v_login_js");
-     }
- }
+    } 
 
- function logout() {
-  $this->session->sess_destroy();
-   redirect(base_url('pelatihan/login'));
-}
+    public function syarat()
+    {      
+        $this->load->model("m_pelatihan/m_pelatihan_pelatihan");
+        $variabel['csrf'] = csrf();
+        $id_pelatihan = $this->input->post("id_pelatihan");
+        $variabel['data'] = $this->m_pelatihan_pelatihan->lihatdatasatu($id_pelatihan)->row_array();
+        $this->load->view("v_pelatihan/beranda/v_syarat",$variabel);
+    }
+
+
+    public function login()
+    {
+      $this->load->model("m_pelatihan/m_pelatihan_akun");
+        $variabel['csrf'] = csrf();
+        if ($this->input->post()){
+        $email = $this->input->post('email');
+            $password = md5($this->input->post('password'));
+        
+            $exec = $this->m_pelatihan_akun->ceklogin($email,$password);
+            if ($exec->num_rows()>0) {
+                $data = $exec->row_array();
+                $data_session = array(
+                    'pelatihan_email' => $data['email'],
+                    'pelatihan_status' => "login",
+                    'pelatihan_idakun' => $data['id_akun'],
+                    'pelatihan_nama'=> $data['nama']
+                    );
+                $this->session->set_userdata($data_session);
+                if (isset($_GET['m'])) {
+                    redirect(base_url("pelatihan/".$_GET['m'].""));
+                } else {
+                    redirect(base_url("pelatihan"));
+                }
+            } else {
+                $variabel['gagal'] = '0';
+                $variabel['bug'] =  $email;
+                $this->layout->renderpel("v_pelatihan/login/v_login",$variabel,"v_pelatihan/login/v_login_js");
+            }
+        } else {
+            $this->layout->renderpel("v_pelatihan/login/v_login",$variabel,"v_pelatihan/login/v_login_js");
+        }
+    }
+
+    function logout() {
+      $this->session->sess_destroy();
+      redirect(base_url('pelatihan/login'));
+    }
    
    
 

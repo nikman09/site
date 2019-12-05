@@ -76,6 +76,15 @@
 	
 </section>
 
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+		<?php pesanvar2("0","","Biodata Belum Lengkap Diisi ! <a href=''>Lengkapi Biodata disini</a>") ?>
+		</div>
+	</div>	
+</div>
+
+
 <section class="features-blocks">
 	
 	<div class="container">
@@ -147,7 +156,7 @@
 	<div class="row vspace">
 		<div class="col-md-12">
 		<h3 align="center">Informasi Pelatihan</h3>
-		<table class="table  table-strip datable nowrap" id="table-1" style="font-size:12px;width:100%" >
+		<table class="table  table-strip datable" id="table-1" style="font-size:12px;width:100%" >
 		<thead>
 			<tr>
 
@@ -172,12 +181,13 @@
 								<td>".tgl_indo($row['mulaipelatihan'])." - ".tgl_indo($row['akhirpelatihan'])."</td>
 								
 								<td>".$row['tempat']."</td>
-
-								<td><a href='".base_url()."pelatihan/persyaratan?i=".$row['id_pelatihan']."' class='btn btn-default  btn-icon icon-left'><i class='fa fa-file'></i>Lihat Persyaratan </a></td>
+							
+								<td>
+								<a href='#' id='".$row['id_pelatihan']."'  class='btn btn-default syarat' data-toggle='modal'   data-target='#myModal2'>Persyaratan </a></td>
 								"; 
 									if (date("Y-m-d")>=$row['mulaipendaftaran'] && date("Y-m-d")<=$row['akhirpendaftaran']) {
 										echo "
-										<td><a href='#' class='btn btn-primary  btn-icon icon-left'><i class='fa fa-list'></i> Mendaftar</a></td>";
+										<td><a href='".base_url()."pelatihan/persyaratan?i=".$row['id_pelatihan']."' class='btn btn-primary  btn-icon icon-left  daftar'><i class='fa fa-list'></i> Daftar</a></td>";
 									} else if (date("Y-m-d")<$row['mulaipendaftaran']) {
 										echo "
 										<td><a href='#' class='btn btn-default  btn-icon icon-left' disabled><i class='fa fa-list'></i> Belum Dibuka</a></td>";
@@ -240,3 +250,13 @@
 	}
 ?>
 
+
+
+<div class="modal fade" id="myModal2">
+    <div class="modal-dialog">
+        <div class="modal-content" id="modal-edit">
+          
+         
+        </div>
+    </div>
+</div>

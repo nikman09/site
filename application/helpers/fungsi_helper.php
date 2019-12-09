@@ -93,7 +93,7 @@
 					</div> ";
 				 } else if ($var=='0' && $pesangagal!= NULL) {
 					echo "
-					<div class='alert alert-default	'>
+					<div class='alert alert-info	'>
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button>
 						<i class='fa fa-info-circle'></i>
 						".$pesangagal."
@@ -287,6 +287,18 @@
 	}
 
 
+	if (!function_exists('cekloginpelatihan'))
+	{
+		function cekloginpelatihan()
+		{	
+			$ci = &get_instance();
+			$menu = $ci->router->fetch_class();
+			$submenu = $ci->router->fetch_method();
+			if($ci->session->userdata('pelatihan_status') != "login") {
+				redirect(base_url("pelatihan/login"));
+			}
+		}
+	}
 	if (!function_exists('hakakses'))
 	{
 		function hakakses($rule = null,$rule1 = null,$rule2 = null)

@@ -78,7 +78,10 @@
 			<p style="padding:10px">
 			<?= $data['persyaratan'] ?>
 			</p>
+<!-- 		
+			<input type="checkbox" value="setuju"/> Setuju dengan Persyaratan dan Ketentuan yang berlaku -->
 			<p align="right">
+			
 			<a href="<?php base_url() ?>pelatihan/informasi" class="btn btn-default btn-icon icon-left" style="margin:10px;margin-right:0px"><i class="fa fa-times"></i>Batal</a>
 			<a href="<?php echo base_url() ?>pelatihan/pelatihandaftar?i=<?= $data['id_pelatihan'] ?>" class="btn btn-primary btn-icon icon-left" style="margin:10px;"><i class="fa fa-list"></i>Daftar </a> &nbsp
 			</p>

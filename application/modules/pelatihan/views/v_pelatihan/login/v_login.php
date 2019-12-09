@@ -10,7 +10,7 @@
 	<div class="row vspace">
 		<div class="col-md-12">
 	
-		<?php pesan_get2('msg',"Berhasil Membuat Akun,  Silahkan Login !","Gagal Menambahkan Akun") ?>
+		<?php pesan_get2('msg',"Berhasil Membuat Akun,  Silahkan Login !"," Silahkan Login Terlebih Dahulu Untuk melakukan Pendaftaran Pelatihan !") ?>
                     <div class="row">
 					
 					<div class="col-md-6">

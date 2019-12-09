@@ -179,21 +179,43 @@
 								<td>".$row['kategori']."</td>
 								<td>".tgl_indo($row['mulaipendaftaran'])." - ".tgl_indo($row['akhirpendaftaran'])."</td>
 								<td>".tgl_indo($row['mulaipelatihan'])." - ".tgl_indo($row['akhirpelatihan'])."</td>
-								
 								<td>".$row['tempat']."</td>
-							
 								<td>
 								<a href='#' id='".$row['id_pelatihan']."'  class='btn btn-default syarat' data-toggle='modal'   data-target='#myModal2'>Persyaratan </a></td>
 								"; 
 									if (date("Y-m-d")>=$row['mulaipendaftaran'] && date("Y-m-d")<=$row['akhirpendaftaran']) {
-										echo "
-										<td><a href='".base_url()."pelatihan/persyaratan?i=".$row['id_pelatihan']."' class='btn btn-primary  btn-icon icon-left  daftar'><i class='fa fa-list'></i> Daftar</a></td>";
+										if ($stat=="login") {
+											if ($ada==1) {
+												if ($item["status"]=="Menunggu Hasil Seleksi") {
+													echo "
+													<td><a href='".base_url()."pelatihan/status?msg=0' class='btn btn-primary  btn-icon icon-left  daftar' disabled><i class='fa fa-list'></i> Daftar</a></td>";
+												} else if ($item["status"]=="Tidak Lulus Seleksi"){
+													echo "
+													<td><a href='".base_url()."pelatihan/persyaratan?i=".$row['id_pelatihan']."' class='btn btn-primary  btn-icon icon-left  daftar'><i class='fa fa-list'></i> Daftar</a></td>";
+													
+												} else if ($item["status"]=="Lulus Seleksi" && $item["id_pelatihan"]!=$row['id_pelatihan']){
+													echo "
+													<td><a href='".base_url()."pelatihan/persyaratan?i=".$row['id_pelatihan']."' class='btn btn-primary  btn-icon icon-left  daftar'><i class='fa fa-list'></i> Daftar</a></td>";
+													
+												}else {
+													echo "
+													<td><a href='".base_url()."pelatihan/persyaratan?i=".$row['id_pelatihan']."' class='btn btn-primary  btn-icon icon-left  daftar'><i class='fa fa-list'></i> Daftar</a></td>";
+												}
+											} else {
+												echo "
+												<td><a href='".base_url()."pelatihan/persyaratan?i=".$row['id_pelatihan']."' class='btn btn-primary  btn-icon icon-left  daftar'><i class='fa fa-list'></i> Daftar</a></td>";
+											}
+										} else {
+											echo "
+												<td><a href='".base_url()."pelatihan/login?msg=0' class='btn btn-primary  btn-icon icon-left  daftar'><i class='fa fa-list'></i> Daftar</a></td>";
+										}
+									
 									} else if (date("Y-m-d")<$row['mulaipendaftaran']) {
 										echo "
-										<td><a href='#' class='btn btn-default  btn-icon icon-left' disabled><i class='fa fa-list'></i> Belum Dibuka</a></td>";
+										<td><a  class='btn btn-default  btn-icon icon-left' disabled><i class='fa fa-list'></i> Belum Dibuka</a></td>";
 									} else {
 										echo "
-										<td><a href='#' class='btn btn-default  btn-icon icon-left' disabled><i class='fa fa-list'></i> Sudah Tutup</a></td>";
+										<td><a class='btn btn-default  btn-icon icon-left' disabled><i class='fa fa-list'></i> Sudah Tutup</a></td>";
 									};
 							
 						echo "
@@ -238,7 +260,7 @@
 				<h2>Lihat Status Pendaftaran Pelatihan Terakhir </h2>
 				
 				<div class="callout-button">
-					<a href="index.html" class="btn btn-secondary">Lihat Status</a>
+					<a href="<?php echo base_url() ?>pelatihan/status" class="btn btn-secondary">Lihat Status</a>
 				</div>
 				
 			</div>

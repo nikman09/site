@@ -12,8 +12,27 @@ class Pelatihan extends CI_Controller {
     public function index()
     {   
       $this->load->model("m_pelatihan/m_pelatihan_pelatihan");
+      $this->load->model("m_pelatihan/m_pelatihan_pelatihandaftar");
       $variabel['csrf'] = csrf();
       $variabel['data'] = $this->m_pelatihan_pelatihan->lihatdata();
+
+      if ($this->session->userdata('pelatihan_status') == "login") {
+        $id_akun = $this->session->userdata("pelatihan_idakun");
+        $exec = $this->m_pelatihan_pelatihandaftar->lihatdatasatuakun($id_akun);
+        if ($exec->num_rows()>0) {
+          $variabel['ada'] = 1;
+          $variabel['item'] = $exec->row_array();
+        } else {
+          $variabel['ada'] = 0;
+        }
+       $variabel['stat'] = "login";
+
+      } else { 
+        $variabel['stat'] = "";
+      }
+     
+
+
       $this->layout->renderpel("v_pelatihan/beranda/v_beranda",$variabel,"v_pelatihan/beranda/v_beranda_js");
     }
 
@@ -33,7 +52,7 @@ class Pelatihan extends CI_Controller {
     
       $exec = $this->m_pelatihan_pelatihan->lihatdatasatu($id_pelatihan);
       if ($exec->num_rows()>0) {
-          $variabel['data'] = $this->m_pelatihan_pelatihan->lihatdata()->row_array();
+          $variabel['data'] = $exec->row_array();
           $this->layout->renderpel("v_pelatihan/persyaratan/v_persyaratan",$variabel,"v_pelatihan/persyaratan/v_persyaratan_js");
       } else {
           redirect(base_url("pelatihan"));
@@ -72,25 +91,91 @@ class Pelatihan extends CI_Controller {
 
     public function pelatihandaftar()
     {   
-      $this->load->model("m_pelatihan/m_pelatihan_akun");
+      cekloginpelatihan();
+      $this->load->model("m_pelatihan/m_pelatihan_pelatihandaftar");
+      $this->load->model("m_pelatihan/m_pelatihan_pelatihan");
       $variabel['csrf'] = csrf();
-      if ($this->input->get("i")){
-        
-        $array=array(
-            'id_pelatihan'=> $this->input->get("i"),
-            'id_akun'=> $this->session->userdata("pelatihan_idakun");,
-            'status'=> "Belum Diverifikasi",
-            'konfirmasi'=> "",
-        );
+
+      
+      $exec = $this->m_pelatihan_pelatihan->lihatdatasatu($this->input->get("i"));
+      if ($exec->num_rows()>0) {
+        $row = $exec->row_array();
+        if (date("Y-m-d")>=$row['mulaipendaftaran'] && date("Y-m-d")<=$row['akhirpendaftaran']) {
+            $id_akun = $this->session->userdata("pelatihan_idakun");
+            $exec = $this->m_pelatihan_pelatihandaftar->lihatdatasatuakun($id_akun);
+            if ($exec->num_rows()>0) {
+              $item= $exec->row_array();
+              if ($item["status"]=="Menunggu Hasil Seleksi") {
+                redirect(base_url("pelatihan"));
+              } else {
+                if ($this->input->get("i")){
             
-        $exec = $this->m_pelatihan_akun->tambahdata($array);
-        if ($exec) redirect(base_url("pelatihan/login?msg=1"));
-          else redirect(base_url("pelatihan/akun?msg=0"));
+                  $array=array(
+                      'id_pelatihan'=> $this->input->get("i"),
+                      'id_akun'=> $this->session->userdata("pelatihan_idakun"),
+                      'status'=> "Menunggu Hasil Seleksi",
+                      'konfirmasi'=> "",
+                  );
+                  
+                  $exec = $this->m_pelatihan_pelatihandaftar->tambahdata($array);
+                  if ($exec) redirect(base_url("pelatihan/status?msg=1"));
+                    else redirect(base_url("pelatihan/status?msg=0"));
+                }
+                else {
+                  redirect(base_url("pelatihan"));
+                }
+              }
+            } else {
+              if ($this->input->get("i")){
+            
+                  $array=array(
+                      'id_pelatihan'=> $this->input->get("i"),
+                      'id_akun'=> $this->session->userdata("pelatihan_idakun"),
+                      'status'=> "Menunggu Hasil Seleksi",
+                      'konfirmasi'=> "",
+                  );
+                      
+                  $exec = $this->m_pelatihan_pelatihandaftar->tambahdata($array);
+                  if ($exec) redirect(base_url("pelatihan/status?msg=1"));
+                    else redirect(base_url("pelatihan/status?msg=0"));
+                }
+                else {
+                  redirect(base_url("pelatihan"));
+                }
+            }
+       } else {
+        redirect(base_url("pelatihan"));
+       }
+      } else {
+        redirect(base_url("pelatihan"));
       }
-      else {
-        $this->layout->renderpel("v_pelatihan/akun/v_akun",$variabel,"v_pelatihan/akun/v_akun_js");
-      }
+       
     
+
+
+     
+
+      
+    
+    }
+    
+    
+
+    public function status()
+    {   
+      $this->load->model("m_pelatihan/m_pelatihan_pelatihandaftar");
+      $variabel['csrf'] = csrf();
+      $id_akun = $this->session->userdata("pelatihan_idakun");
+      $exec = $this->m_pelatihan_pelatihandaftar->lihatdatasatuakun($id_akun);
+      if ($exec->num_rows()>0){
+        $variabel["data"] = $exec->row_array();
+        $this->layout->renderpel("v_pelatihan/status/v_status",$variabel,"v_pelatihan/status/v_status_js");
+      
+      } else {
+        $variabel["data"] = $exec->row_array();
+        $this->layout->renderpel("v_pelatihan/status/v_statusno",$variabel,"v_pelatihan/status/v_status_js");
+      }
+     
     } 
 
     public function syarat()

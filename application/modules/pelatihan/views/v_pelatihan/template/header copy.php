@@ -45,25 +45,6 @@
 	<link rel="stylesheet" href="<?php echo base_url() ?>assets/back-end/js/daterangepicker/daterangepicker-bs3.css">
 	<link rel="stylesheet" href="<?php echo base_url() ?>assets/back-end/css/neon-theme.css">
 	
-
-	<link rel="stylesheet" href="<?php echo base_url() ?>assets/back-end/js/uikit/css/uikit.min.css">
-	<link rel="stylesheet" href="<?php echo base_url() ?>assets/back-end/css/neon-core.css">
-	<link rel="stylesheet" href="<?php echo base_url() ?>assets/back-end/css/neon-forms.css">
-
-	<style>
-		.error {
-			font-size: 10px
-		}
-		#image-preview{
-			display:none;
-			width : 150px;
-		}	
-		.modal-open .ui-datepicker{z-index: 2000!important}
-
-	
-	</style>
-	<script src="<?php echo base_url() ?>assets/back-end/js/jquery-1.11.3.min.js"></script>
-
 	
 	<!--[if lt IE 9]><script src="assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 	

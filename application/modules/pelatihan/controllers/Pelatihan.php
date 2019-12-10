@@ -225,6 +225,89 @@ class Pelatihan extends CI_Controller {
       $this->session->sess_destroy();
       redirect(base_url('pelatihan/login'));
     }
+
+
+
+    public function biodata()
+    {   
+
+        $variabel['csrf'] = csrf();
+        $this->load->model("m_pelatihan/m_pelatihan_akun");
+        if ($this->input->post()) {
+            $id_akun = $this->session->userdata("pelatihan_idakun");
+            $array=array(
+                'nik'=> $this->input->post('nik'),
+                'nama'=> $this->input->post('nama'),
+                'jk'=>$this->input->post('jk'),
+                'tempatlahir'=>$this->input->post('tempatlahir'),
+                'tanggallahir'=>tanggalawal($this->input->post('tanggallahir')),
+                'alamat'=>$this->input->post('alamat'),
+                'kota'=>$this->input->post('kota'),
+                'nohp'=>$this->input->post('nohp'),
+            );
+            $config['upload_path'] = './assets/images/pelatihan/biodata';
+            $config['allowed_types'] = 'jpg|jpeg|JPG|JPEG|PNG|png';
+            $this->load->library('upload', $config);
+            if ($this->upload->do_upload("foto"))
+            {
+                
+                $upload = $this->upload->data();
+                $foto = $upload["raw_name"].$upload["file_ext"];
+                $array['foto']=$foto;
+
+                $config['image_library'] = 'gd2';
+                $config['source_image'] = './assets/images/pelatihan/biodata/'.$upload["raw_name"].$upload["file_ext"];
+                $config['create_thumb'] = FALSE;
+                $config['maintain_ratio'] = TRUE;
+                $config['width']         = 300;
+                $config['height']       = 200;
+                $config['new_image'] = './assets/images/pelatihan/biodata/thumb/'.$upload["raw_name"].$upload["file_ext"];
+                $this->load->library('image_lib', $config);
+                $this->image_lib->resize();
+
+                $query2 = $this->m_pelatihan_akun->lihatdatasatu($id_akun);
+                $row2 = $query2->row();
+                $berkas1temp = $row2->foto;
+                $path1 ='./assets/images/pelatihan/biodata/'.$berkas1temp.'';
+                $path2 ='./assets/images/pelatihan/biodata/thumb/'.$berkas1temp.'';
+                if(is_file($path1)) {
+                    unlink($path1); //menghapus gambar di folder berita
+                    unlink($path2); //menghapus gambar di folder berita
+                }
+               
+            } 
+                else if ($this->input->post('foto')=="") 
+            {
+                $query2 = $this->m_pelatihan_akun->lihatdatasatu($id_akun);
+                $row2 = $query2->row();
+                $berkas1temp = $row2->foto;
+                $path1 ='./assets/images/pelatihan/biodata/'.$berkas1temp.'';
+                $path2 ='./assets/images/pelatihan/biodata/thumb/'.$berkas1temp.'';
+                if(is_file($path1)) {
+                    unlink($path1); //menghapus gambar di folder berita
+                    unlink($path2); //menghapus gambar di folder berita
+                }
+                $array['foto']="";
+            }
+            
+           
+            $exec = $this->m_pelatihan_akun->editdata($id_akun,$array);
+            if ($exec) redirect(base_url("pelatihan/biodata?msg=1"));
+            else redirect(base_url("pelatihan/biodata?msg=0"));
+
+        } else {
+            $id_akun = $this->session->userdata("pelatihan_idakun");
+            $exec = $this->m_pelatihan_akun->lihatdatasatu($id_akun);
+            if ($exec->num_rows()>0){
+                $variabel['data'] = $exec ->row_array();
+                $this->layout->renderpel('v_pelatihan/biodata/v_biodata',$variabel,'v_pelatihan/biodata/v_biodata_js');
+            } else {
+                redirect(base_url("pelatihan/biodata"));
+            }
+        }
+      
+    }
+
    
    
 

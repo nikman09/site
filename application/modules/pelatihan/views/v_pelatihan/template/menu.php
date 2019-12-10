@@ -28,7 +28,7 @@
 							
 							<ul>
 								<li>
-									<a href="<?php echo base_url() ?>flashsale/biodata">
+									<a href="<?php echo base_url() ?>pelatihan/biodata">
 										<span>Biodata</span>
 									</a>
 								</li>

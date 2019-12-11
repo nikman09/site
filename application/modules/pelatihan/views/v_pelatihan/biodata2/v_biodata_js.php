@@ -1,13 +1,13 @@
 
 <script type="text/javascript">
 jQuery(function ($) {
+
+
     $('.datepicker').datepicker({
-    format: 'dd/mm/yyyy'
+    format: 'mm/dd/yyyy'
 });
 
- $('.datepicker').inputmask("date", { "clearIncomplete": true });
-
-  $('#form').validate({ // initialize plugin
+$('#form').validate({ // initialize plugin
             highlight: function (label) {
                 $(label).closest('.form-group').removeClass('has-success').addClass('has-error');
                 $('.error').css({'font-size':'9px','margin-bottom':'0px'});
@@ -28,28 +28,26 @@ jQuery(function ($) {
             },
 
             rules: {
-                email: {
-                    required: true,
-                    email: true
-                },
-                nama: {
+                
+                nik: {
                     required: true
                 },  
                
-                
                
             },
             messages: {
-                email: {
-                    required: "Email harus diisi",
-                    email: "Format Email salah"
-                },
-                nama: {
+                
+                nik: {
                     required: "Nama harus diisi"
                 },  
                 
-           
+              
+               
+                
             }
         });
+   
+
+
     });
 </script>

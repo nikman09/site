@@ -10,7 +10,7 @@
 
 	<div class="row vspace" style="padding:10px">
 	<?php pesan_get2('msg',"Berhasil Melakukan Pendaftaran Pelatihan !","Gagal Melakukan Pendaftaran, Hanya Bisa Melakukan Satu Kali Pendaftaran Pelatihan Hingga Seleksi Pendaftaran Selesai !") ?>
-		<div class="col-md-12" style="border: 1px solid #000;border-radius:10px;">
+		<div class="col-md-12" style="border: 0px solid #000;border-radius:10px;">
 		
 		<h3 align="center">Status Pendaftaran Pelatihan</h3>
 		 <table style=" border-spacing: 10px;
@@ -85,15 +85,16 @@
 				<td width="120px"  valign="top">
 				  Biodata
 				</td>
+				
 				<td  valign="top">
 				   : 
 				</td>
 				<td  valign="top">
-				<a href="<?php base_url() ?>pelatihan/biodata" class="btn btn-info btn-icon icon-left" ><i class="fa fa-user"></i>Isi Biodata</a>
-				<br/>	<span>Belum Lengkap </span>
+				<a href="<?php base_url() ?>pelatihan/biodata" class="btn <?=$persen<100?"btn-danger":"btn-success" ?> btn-icon icon-left" ><i class="fa fa-user"></i>Pengisian Biodata &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a>
+				<br/>	<span style="color:#ba0c00;font-size:10px"><?=$persen<100?"Belum Lengkap":"" ?></span>
 				</td>
 			</tr>
-			<tr>
+			<!-- <tr>
 				<td  valign="top">
 				  Berkas
 				</td>
@@ -101,11 +102,10 @@
 				   : 
 				</td>
 				<td  valign="top">
-					<a href="<?php base_url() ?>pelatihan/biodata" class="btn btn-info btn-icon icon-left" ><i class="fa fa-file"></i>Upload Berkas</a>
-					<br/><span>Berkas Belum Lengkap</span>
+					<a href="<?php base_url() ?>pelatihan/biodata" class="btn btn-success	 btn-icon icon-left" ><i class="fa fa-file-o"></i>Upload Dokumen Pendukung</a>
 				</td>
 			</tr>
-			
+			 -->
 			<tr>
 				<td>
 				  Status Pendaftaran
@@ -114,9 +114,15 @@
 				   : 
 				</td>
 				<td>
-				<span style="color:#e61305;font-size:16px">
+				<span style="font-size:16px">
 				  <strong> <?php
-				   	 echo $data['status']; 
+						if ($data["status"]=="Menunggu Hasil Seleksi") {
+							echo "<span style='color:#076767'>".$data["status"]."</span>";
+						} else if ($data["status"]=="Tidak Lulus Seleksi"){
+							echo "<span style='color:#e61305'>".$data["status"]."</span>";
+						} else if ($data["status"]=="Lulus Seleksi") {
+							echo "<span style='color:#007203'>".$data["status"]."</span>";
+						}
 				   ?>
 				   </strong>
 				   <span>
@@ -125,9 +131,11 @@
 		
 		 </table>
 			<p align="right">
-			<a href="<?php base_url() ?>pelatihan/informasi" class="btn btn-default btn-icon icon-left" style="margin:10px;margin-right:0px"><i class="fa fa-times"></i>Batal</a>
-			<a href="<?php echo base_url() ?>pelatihan/pelatihandaftar?i=<?= $data['id_pelatihan'] ?>" class="btn btn-primary btn-icon icon-left" style="margin:10px;"><i class="fa fa-list"></i>Daftar </a> &nbsp
+			<!-- <a href="<?php base_url() ?>pelatihan/informasi" class="btn btn-default btn-icon icon-left" style="margin:10px;margin-right:0px"><i class="fa fa-times"></i>Batal</a> -->
+		  
 			</p>
+
+			
 	</div>
 </div>
 </div>

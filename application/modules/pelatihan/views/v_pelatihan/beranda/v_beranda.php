@@ -14,7 +14,7 @@
 						<div class="slide-content">
 							<h2>
 								<small>E-Pelatihan</small>
-								Informasi Pelatihan Industri
+								<span style="color:#fff">Informasi Pelatihan Industri</span>
 							</h2>
 							
 							<small>
@@ -44,7 +44,7 @@
 						<div class="slide-content text-right">
 							<h2>
 								<small>E-Pelatihan</small>
-								Pendaftaran Pelatihan Industri
+								<span style="color:#fff">Pendaftaran Pelatihan Industri</span>
 							</h2>
 							
 							<small>
@@ -76,14 +76,23 @@
 	
 </section>
 
+
+<?php 
+	if ($this->session->userdata('pelatihan_status') == "login") {
+		if ($persen<100) {
+?>
 <div class="container">
 	<div class="row">
 		<div class="col-md-12">
-		<?php pesanvar2("0","","Biodata Belum Lengkap Diisi ! <a href=''>Lengkapi Biodata disini</a>") ?>
+		<?php pesanvar2("0","","Biodata Belum Lengkap Diisi ! <a href='".base_url()."/pelatihan/biodata'>Lengkapi Biodata disini</a>") ?>
 		</div>
 	</div>	
 </div>
 
+<?php
+		}
+	}
+?>
 
 <section class="features-blocks">
 	

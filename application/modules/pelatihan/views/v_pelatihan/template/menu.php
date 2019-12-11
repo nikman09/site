@@ -11,6 +11,11 @@
 								<span>Beranda</span>
 							</a>
 						</li>
+						<li class="<?= ($submenu == "pengumuman") ? "active root-level" : ""; ?>">
+							<a href="<?php echo base_url() ?>pelatihan/pengumuman">
+								<span>Pengumuman</span>
+							</a>
+						</li>
 						<li class="<?= ($submenu == "informasi") ? "active root-level" : ""; ?>">
 							<a href="<?php echo base_url() ?>pelatihan/informasi">
 								<span>Informasi Pelatihan</span>

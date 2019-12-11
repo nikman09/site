@@ -13,11 +13,30 @@ class Pelatihan extends CI_Controller {
     {   
       $this->load->model("m_pelatihan/m_pelatihan_pelatihan");
       $this->load->model("m_pelatihan/m_pelatihan_pelatihandaftar");
+      $this->load->model("m_pelatihan/m_pelatihan_akun");
       $variabel['csrf'] = csrf();
       $variabel['data'] = $this->m_pelatihan_pelatihan->lihatdata();
 
       if ($this->session->userdata('pelatihan_status') == "login") {
+       
+        // Mencari Biodata Lengkap
         $id_akun = $this->session->userdata("pelatihan_idakun");
+        $biodata= $this->m_pelatihan_akun->lihatdatasatu($id_akun)->row_array();
+        $lengkap = 0;
+        $lengkap += $biodata["email"]!="" || $biodata["email"]!=null ? 1 : 0 ;
+        $lengkap += $biodata["password"]!="" || $biodata["password"]!=null ? 1 : 0 ;
+        $lengkap += $biodata["nik"]!="" || $biodata["nik"]!=null ? 1 : 0 ;
+        $lengkap += $biodata["nama"]!="" || $biodata["nama"]!=null ? 1 : 0 ;
+        $lengkap += $biodata["jk"]!="" || $biodata["jk"]!=null ? 1 : 0 ;
+        $lengkap += $biodata["tempatlahir"]!="" || $biodata["tempatlahir"]!=null ? 1 : 0 ;
+        $lengkap += $biodata["tanggallahir"]!="0000-00-00" || $biodata["tanggallahir"]!=null ? 1 : 0 ;
+        $lengkap += $biodata["alamat"]!="" || $biodata["alamat"]!=null ? 1 : 0 ;
+        $lengkap += $biodata["kota"]!="" || $biodata["kota"]!=null ? 1 : 0 ;
+        $lengkap += $biodata["nohp"]!="" || $biodata["nohp"]!=null ? 1 : 0 ;
+        $lengkap += $biodata["foto"]!="" || $biodata["foto"]!=null ? 1 : 0 ;
+        $variabel['persen'] = $lengkap/11*100;
+        // Akhir Biodata Lengkap
+
         $exec = $this->m_pelatihan_pelatihandaftar->lihatdatasatuakun($id_akun);
         if ($exec->num_rows()>0) {
           $variabel['ada'] = 1;
@@ -25,11 +44,10 @@ class Pelatihan extends CI_Controller {
         } else {
           $variabel['ada'] = 0;
         }
-       $variabel['stat'] = "login";
-
-      } else { 
-        $variabel['stat'] = "";
-      }
+          $variabel['stat'] = "login";
+        } else { 
+          $variabel['stat'] = "";
+        }
      
 
 
@@ -39,8 +57,44 @@ class Pelatihan extends CI_Controller {
     public function Informasi()
     {   
       $this->load->model("m_pelatihan/m_pelatihan_pelatihan");
+      $this->load->model("m_pelatihan/m_pelatihan_akun");
+      $this->load->model("m_pelatihan/m_pelatihan_pelatihandaftar");
       $variabel['csrf'] = csrf();
+      
       $variabel['data'] = $this->m_pelatihan_pelatihan->lihatdata();
+
+      if ($this->session->userdata('pelatihan_status') == "login") {
+       
+        // Mencari Biodata Lengkap
+        $id_akun = $this->session->userdata("pelatihan_idakun");
+        $biodata= $this->m_pelatihan_akun->lihatdatasatu($id_akun)->row_array();
+        $lengkap = 0;
+        $lengkap += $biodata["email"]!="" || $biodata["email"]!=null ? 1 : 0 ;
+        $lengkap += $biodata["password"]!="" || $biodata["password"]!=null ? 1 : 0 ;
+        $lengkap += $biodata["nik"]!="" || $biodata["nik"]!=null ? 1 : 0 ;
+        $lengkap += $biodata["nama"]!="" || $biodata["nama"]!=null ? 1 : 0 ;
+        $lengkap += $biodata["jk"]!="" || $biodata["jk"]!=null ? 1 : 0 ;
+        $lengkap += $biodata["tempatlahir"]!="" || $biodata["tempatlahir"]!=null ? 1 : 0 ;
+        $lengkap += $biodata["tanggallahir"]!="0000-00-00" || $biodata["tanggallahir"]!=null ? 1 : 0 ;
+        $lengkap += $biodata["alamat"]!="" || $biodata["alamat"]!=null ? 1 : 0 ;
+        $lengkap += $biodata["kota"]!="" || $biodata["kota"]!=null ? 1 : 0 ;
+        $lengkap += $biodata["nohp"]!="" || $biodata["nohp"]!=null ? 1 : 0 ;
+        $lengkap += $biodata["foto"]!="" || $biodata["foto"]!=null ? 1 : 0 ;
+        $variabel['persen'] = $lengkap/11*100;
+        // Akhir Biodata Lengkap
+
+        $exec = $this->m_pelatihan_pelatihandaftar->lihatdatasatuakun($id_akun);
+        if ($exec->num_rows()>0) {
+          $variabel['ada'] = 1;
+          $variabel['item'] = $exec->row_array();
+        } else {
+          $variabel['ada'] = 0;
+        }
+          $variabel['stat'] = "login";
+        } else { 
+          $variabel['stat'] = "";
+        }
+
       $this->layout->renderpel("v_pelatihan/informasi/v_informasi",$variabel,"v_pelatihan/informasi/v_informasi_js");
     }
 
@@ -73,6 +127,7 @@ class Pelatihan extends CI_Controller {
                   'email'=> $this->input->post('email'),
                   'nama'=> $this->input->post('nama'),
                   'password'=>md5($this->input->post('password')),
+                  'tanggallahir'=>date("Y-m-d"),
               );
                   
               $exec = $this->m_pelatihan_akun->tambahdata($array);
@@ -164,11 +219,29 @@ class Pelatihan extends CI_Controller {
     public function status()
     {   
       $this->load->model("m_pelatihan/m_pelatihan_pelatihandaftar");
+      $this->load->model("m_pelatihan/m_pelatihan_akun");
       $variabel['csrf'] = csrf();
       $id_akun = $this->session->userdata("pelatihan_idakun");
       $exec = $this->m_pelatihan_pelatihandaftar->lihatdatasatuakun($id_akun);
       if ($exec->num_rows()>0){
-        $variabel["data"] = $exec->row_array();
+         $variabel["data"] = $exec->row_array();
+          // Mencari Biodata Lengkap
+          $id_akun = $this->session->userdata("pelatihan_idakun");
+          $biodata= $this->m_pelatihan_akun->lihatdatasatu($id_akun)->row_array();
+          $lengkap = 0;
+          $lengkap += $biodata["email"]!="" || $biodata["email"]!=null ? 1 : 0 ;
+          $lengkap += $biodata["password"]!="" || $biodata["password"]!=null ? 1 : 0 ;
+          $lengkap += $biodata["nik"]!="" || $biodata["nik"]!=null ? 1 : 0 ;
+          $lengkap += $biodata["nama"]!="" || $biodata["nama"]!=null ? 1 : 0 ;
+          $lengkap += $biodata["jk"]!="" || $biodata["jk"]!=null ? 1 : 0 ;
+          $lengkap += $biodata["tempatlahir"]!="" || $biodata["tempatlahir"]!=null ? 1 : 0 ;
+          $lengkap += $biodata["tanggallahir"]!="0000-00-00" || $biodata["tanggallahir"]!=null ? 1 : 0 ;
+          $lengkap += $biodata["alamat"]!="" || $biodata["alamat"]!=null ? 1 : 0 ;
+          $lengkap += $biodata["kota"]!="" || $biodata["kota"]!=null ? 1 : 0 ;
+          $lengkap += $biodata["nohp"]!="" || $biodata["nohp"]!=null ? 1 : 0 ;
+          $lengkap += $biodata["foto"]!="" || $biodata["foto"]!=null ? 1 : 0 ;
+          $variabel['persen'] = $lengkap/11*100;
+          // Akhir Biodata Lengkap
         $this->layout->renderpel("v_pelatihan/status/v_status",$variabel,"v_pelatihan/status/v_status_js");
       
       } else {
@@ -250,6 +323,7 @@ class Pelatihan extends CI_Controller {
             $this->load->library('upload', $config);
             if ($this->upload->do_upload("foto"))
             {
+             
                 
                 $upload = $this->upload->data();
                 $foto = $upload["raw_name"].$upload["file_ext"];
@@ -278,6 +352,7 @@ class Pelatihan extends CI_Controller {
             } 
                 else if ($this->input->post('foto')=="") 
             {
+              
                 $query2 = $this->m_pelatihan_akun->lihatdatasatu($id_akun);
                 $row2 = $query2->row();
                 $berkas1temp = $row2->foto;
@@ -308,7 +383,24 @@ class Pelatihan extends CI_Controller {
       
     }
 
-   
-   
+    public function pengumuman()
+    { 
+      $this->load->model("m_pelatihan/m_pelatihan_pengumuman");
+      $variabel['csrf'] = csrf();
+      $base_url = 'pelatihan/pengumuman'; //site url
+      $total_rows = $this->m_pelatihan_pengumuman->jumlah_data(); //total row
+      $per_page = 5;  //show record per halaman
+      $uri_segment=3;  // uri parameter
+      $num_links = 3;
+      
+      $variabel['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+      $variabel['data'] = $this->m_pelatihan_pengumuman->lihatdata2($per_page, $variabel['page']); 
+      $variabel['pagination'] = $this->buathalaman->paging($base_url,$total_rows,$per_page,$uri_segment,$num_links);
+
+      
+      $this->layout->renderpel('v_pelatihan/pengumuman/v_pengumuman',$variabel,'v_pelatihan/pengumuman/v_pengumuman_js');
+    }
+
+
 
 }

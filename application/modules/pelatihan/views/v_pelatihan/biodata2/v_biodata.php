@@ -9,12 +9,10 @@
 <div class="container">
 	<div class="row vspace">
 		<div class="col-md-12">
-		<form id="form" role="form" class="validate"  action="<?php echo base_url() ?>pelatihan/biodata" method="post"  enctype="multipart/form-data" >
-		
+	
+  
                     <div class="row">
-		<div class="row">
 					<div class="col-md-12">
-					<?php pesan_get2('msg',"Berhasil Menyimpan Biodata !") ?>
 						<h3>Biodata</h3>
 						<hr/>
 							<form id="form" role="form" class="validate" action="<?php echo base_url() ?>pelatihan/biodata" method="post"  enctype="multipart/form-data">
@@ -33,11 +31,11 @@
 								</div>	
 								<div class="form-group">
 									<label for="field-1" class="control-label">NIK</label>
-									<input type="text" class="form-control" id="nik" name="nik" placeholder="Masukkan NIK KTP"  value="<?php echo $data['nik']; ?>">
+									<input type="text" class="form-control" id="nik" name="nik" placeholder="Masukkan Nama"  value="<?php echo $data['nik']; ?>">
 								</div>	
 								<div class="form-group">
 									<label for="field-1" class="control-label">Nama</label>
-									<input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan Nama Lengkap"  value="<?php echo $data['nama']; ?>">
+									<input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan Nama"  value="<?php echo $data['nama']; ?>">
 								</div>
 								<div class="form-group">
 									<label for="field-1" class="control-label">Jenis Kelamin</label>
@@ -143,7 +141,8 @@
 						<button type="submit" class="btn btn-primary  btn-icon icon-left  daftar" style="float:right"><i class='fa fa-save'></i>Simpan</button>
 							</form>
 					</div>
+					</div>
 		</div>
 	</div>
 </div>
-</div>
+

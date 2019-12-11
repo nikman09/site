@@ -15,10 +15,10 @@ class Buathalaman {
         $config["num_links"] = $num_links;
     
         // Membuat Style pagination untuk BootStrap v4
-        $config['first_link']       = '<i class="fas fa-angle-double-left"></i>';
-        $config['last_link']        = '<i class="fas fa-angle-double-right"></i>';
-        $config['next_link']        = '<i class="fas fa-angle-right"></i>';
-        $config['prev_link']        = '<i class="fas fa-angle-left"></i>';
+        $config['first_link']       = '<i class="fa fa-angle-double-left"></i>';
+        $config['last_link']        = '<i class="fa fa-angle-double-right"></i>';
+        $config['next_link']        = '<i class="fa fa-angle-right"></i>';
+        $config['prev_link']        = '<i class="fa fa-angle-left"></i>';
         $config['full_tag_open']    = '<ul class="pagination float-right">';
         $config['full_tag_close']   = '</ul>';
         $config['num_tag_open']     = '<li class="page-item"><span class="page-link">';

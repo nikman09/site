@@ -15,6 +15,11 @@
 								<span>Informasi Pelatihan</span>
 							</a>
 						</li>
+						<li class="<?= ($submenu == "pengumuman" || $submenu == "pengumumandetail") ? "active root-level" : ""; ?>">
+							<a href="<?php echo base_url() ?>pelatihan/pengumuman">
+								<span>Pengumuman</span>
+							</a>
+						</li>
 						<li  class="<?= ($submenu == "akun") ? "active root-level" : ""; ?>">
 							<a href="<?php echo base_url() ?>pelatihan/akun">
 								<span>Buat Akun</span>

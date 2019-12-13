@@ -72,12 +72,51 @@
 				   ?>
 				</td>
 			</tr>
+			<tr>
+				<td>
+				  Contact Person
+				</td>
+				<td>
+				   : 
+				</td>
+				<td>
+				   <?php
+				   	 echo $data['cp']; 
+				   ?>
+				</td>
+			</tr>
+			
+					 <?php 
+					 	if  ($data['file']!="") {
+					 ?>
+						 <tr>
+							<td>
+							Lampiran
+							</td>
+							<td>
+							: 
+							</td>
+							<td>
+						<a href="<?php echo base_url() ?>assets/images/pelatihan/lampiran/<?php echo $data['file'] ?>" target="_blank"><i class="fa fa-download"></i> unduh </a>
+						
+								</td>
+							</tr>
+					 <?php 
+						 }
+				     ?>
+
 		 </table>
 		 <hr/>
 		 	<h4  style="padding:10px">Persyaratan</h4>
-			<p style="padding:10px">
+			<div style="padding:10px">
 			<?= $data['persyaratan'] ?>
+			<br/>
+			<p style="color:#a10000">
+						 * Setelah melakukan pendaftaran pelatihan maka tidak akan bisa mendaftar pelatihan yang lain  sampai pendaftaran pelatihan yang didaftar sudah selesai atau dinyatakan tidak lulus seleksi. <br/>
+						 * dengan melakukan pendaftaran maka peserta menyetujui  ketentuan dan persyaratan seleksi pendaftaran pelatihan.
 			</p>
+			</div>
+		
 <!-- 		
 			<input type="checkbox" value="setuju"/> Setuju dengan Persyaratan dan Ketentuan yang berlaku -->
 			<p align="right">

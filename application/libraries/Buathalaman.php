@@ -32,7 +32,7 @@ class Buathalaman {
         $config['first_tag_open']   = '<li class="page-item"><span class="page-link">';
         $config['first_tagl_close'] = '</span></li>';
         $config['last_tag_open']    = '<li class="page-item"><span class="page-link">';
-        $config['last_tagl_close']  = '</span></li>';
+        $config['last_tagl_close']  = '</span></li>';   
     
         $this->ci->load->pagination->initialize($config);
         return  $this->ci->pagination->create_links();

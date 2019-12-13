@@ -82,3 +82,12 @@
 </div>
 </div>
 
+
+<div class="modal fade" id="myModal2">
+    <div class="modal-dialog">
+        <div class="modal-content" id="modal-edit">
+          
+         
+        </div>
+    </div>
+</div>

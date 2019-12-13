@@ -127,7 +127,57 @@
 				   </strong>
 				   <span>
 				</td>
+				
 			</tr>
+
+			<?php
+				 if ($data["status"]=="Tidak Lulus Seleksi"){
+			?>
+			<tr>
+				<td>
+				  Keterangan
+				</td>
+				<td>
+				   : 
+				</td>
+				<td>
+				   <?php
+				   	 echo $data['keterangan']; 
+				   ?>
+				</td>
+			</tr>
+			<?php
+				} else if ($data["status"]=="Lulus Seleksi") {
+			?>
+			<tr>
+				<td>
+				  Konfirmasi
+				</td>
+				<td>
+				   : 
+				</td>
+				<td>
+				   <?php
+				   	 echo $data['konfirmasi']; 
+				   ?> 
+				</td>
+			</tr>
+			<tr>
+				<td>
+				
+				</td>
+				<td>
+				   
+				</td>
+				<td>
+				    	<a href="#" class="btn btn-default btn-icon icon-left konfirmasi" data-toggle="modal"   data-target="#myModal" ><i class="fa fa-check"></i>Konfirmasi</a>
+
+				</td>
+			</tr>
+			<?php 
+				}
+			?>
+			
 		
 		 </table>
 			<p align="right">
@@ -140,3 +190,12 @@
 </div>
 </div>
 
+
+<div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content" id="modal-edit">
+          
+         
+        </div>
+    </div>
+</div>

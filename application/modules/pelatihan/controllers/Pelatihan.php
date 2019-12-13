@@ -218,6 +218,7 @@ class Pelatihan extends CI_Controller {
 
     public function status()
     {   
+      cekloginpelatihan();
       $this->load->model("m_pelatihan/m_pelatihan_pelatihandaftar");
       $this->load->model("m_pelatihan/m_pelatihan_akun");
       $variabel['csrf'] = csrf();
@@ -303,7 +304,7 @@ class Pelatihan extends CI_Controller {
 
     public function biodata()
     {   
-
+        cekloginpelatihan();
         $variabel['csrf'] = csrf();
         $this->load->model("m_pelatihan/m_pelatihan_akun");
         if ($this->input->post()) {
@@ -402,5 +403,31 @@ class Pelatihan extends CI_Controller {
     }
 
 
+    function pengumumandetail()
+    {
+        $variabel['csrf'] = csrf();
+        $this->load->model("m_pelatihan/m_pelatihan_pengumuman");
+        $id_akun = $this->input->get("ids");
+        $exec = $this->m_pelatihan_pengumuman->lihatdatasatu($id_akun);
+        if ($exec->num_rows()>0){
+            $variabel['data'] = $exec->row_array();
+            $this->layout->renderpel('v_pelatihan/pengumumandetail/v_pengumumandetail',$variabel,'v_pelatihan/pengumumandetail/v_pengumumandetail_js');
+        } else {
+            redirect(base_url("web/berita"));
+        }
+    }
+
+    public function riwayat()
+    {   
+      cekloginpelatihan();
+      $this->load->model("m_pelatihan/m_pelatihan_pelatihan");
+      $this->load->model("m_pelatihan/m_pelatihan_akun");
+      $this->load->model("m_pelatihan/m_pelatihan_pelatihandaftar");
+      $variabel['csrf'] = csrf();
+      $id_akun = $this->session->userdata("pelatihan_idakun");
+      $variabel['data'] = $this->m_pelatihan_pelatihandaftar->lihatdatapelatihan($id_akun);
+      
+      $this->layout->renderpel("v_pelatihan/riwayat/v_riwayat",$variabel,"v_pelatihan/riwayat/v_riwayat_js");
+    }
 
 }

@@ -26,6 +26,11 @@
 									<span>Pengumuman</span>
 								</a>
 								</li>
+								<li class="<?= ($submenu == "kontak") ? "active root-level" : ""; ?>">
+								<a href="<?php echo base_url() ?>pelatihan/kontak">
+									<span>Kontak</span>
+								</a>
+								</li>
 								
 							</ul>
 						</li>

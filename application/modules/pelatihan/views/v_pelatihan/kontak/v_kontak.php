@@ -1,50 +1,128 @@
-<div class="container">
-	<div class="row">
-		<div class="col-md-12">
-			<hr class="no-top-margin" />
-		</div>
-	</div>	
-</div>
+<section class="contact-map" id="map">
+<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d26790.55185829955!2d114.81488961738617!3d-3.4851830830792414!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2de686bc23e3a1bd%3A0x8c8a39bcb8ef553a!2sDinas%20Perindustrian%20Prov%20Kalsel!5e0!3m2!1sid!2sid!4v1576471520195!5m2!1sid!2sid" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+</section>
+
 
 <div class="container">
 	<div class="row vspace">
 		<div class="col-md-12">
-	
-  
-                    <div class="row">
-					
-					<div class="col-md-6">
-					<h3>Kirim Pesan</h3>
-					<hr/>
-						<form id="form" role="form" class="validate" action="<?php echo base_url() ?>pelatihan/akun" method="post" >
-							<input type="hidden" name="<?=$csrf['name']?>" value="<?=$csrf['hash']?>">
-								<div class="form-group">
-									<label for="field-1" class="control-label">E-mail</label>
-									<input type="text" class="form-control" id="email" name="email" placeholder="Masukkan Email" value="<?php echo set_value('email'); ?>">
-									<span class="validate-has-error" style="color:#cc2424"><?php echo form_error('email'); ?></span>
-								</div>	
-								<div class="form-group">
-									<label for="field-1" class="control-label">Nama</label>
-									<input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan Nama"  value="<?php echo set_value('nama'); ?>">
-								</div>	
-								<div class="form-group">
-									<label for="field-1" class="control-label">Password</label>
-									<input type="password" class="form-control" id="password" name="password" placeholder="Masukkan Password"  value="<?php echo set_value('password'); ?>">
-								</div>
-								<div class="form-group">
-									<label for="field-1" class="control-label">Konfirmasi Password</label>
-									<input type="password" class="form-control" id="konfirmasipassword" name="konfirmasipassword" placeholder="Masukkan Konfirmasi Password"  value="<?php echo set_value('konfirmasipassword'); ?>">
-								</div>	
-							<button type="submit" class="btn btn-info">Daftar Akun</button> <a href="<?php echo base_url(); ?>pelatihan/login" style="float:right"> Sudah Punya Akun ? <span style="color:#21a9e1">Login !</span></a>
-							</form>
-						</div>
-						<div class="col-md-6">
-						<p align="center">
-							<img src="<?php echo base_url() ?>assets/images/daftar.png" class="img-responsive"  width="400px" margin="0 auto" />
-						</p>
-						</div>
-                    </div>
-		</div>
+		<h3 align="center">Daftar Kontak Pelatihan</h3>
+		<table class="table  datable" id="table-1" style="font-size:12px;width:100%" >
+		<thead>
+			<tr>
+
+				<th>Pelatihan</th>
+			
+				<th>Kontak</th>
+			</tr>
+		</thead>
+		<tbody>
+		
+			<?php
+				foreach($data->result_array() as $row){
+					echo "
+						<tr>
+							<td>".$row['nama']."</td>
+							<td>".$row['cp']."</td>
+						</tr>";
+				}
+				?>
+		</tbody>
+	</table>
 	</div>
 </div>
+</div>
+<section class="contact-container" style="margin-top:0px">
+	
+	<div class="container">
+		
+		<div class="row">
+			
+			<div class="col-sm-7 sep">
+			<?php pesan_get2('msg',"Berhasil Mengirim Pesan","Berhasil Mengirim Pesan","Berhasil Menghapus Berita") ?>
+								
+				<h4>Kirim Pesan </h4>
+				
+				
+				<form id="form" class="validate" action="<?php echo base_url() ?>pelatihan/kontak" method="POST">
+							<input type="hidden" name="<?=$csrf['name']?>" value="<?=$csrf['hash']?>">
+					
+					<div class="form-group">
+						<input type="text" name="nama" name="nama"  class="form-control" placeholder="Masukkan Nama" />
+					</div>
+					
+					<div class="form-group">
+						<input type="text" name="email" id="email"  class="form-control" placeholder="Masukkan E-mail" />
+					</div>
+					<div class="form-group">
+						<input type="text" name="judul" name="judul"  class="form-control" placeholder="Masukkan Judul" />
+					</div>
+					<div class="form-group">
+						<textarea class="form-control" id="pesan"  name="pesan" placeholder="Masukkan Pesan" rows="6"></textarea>
+					</div>
+					
+					<div class="form-group text-right">
+						<button class="btn btn-primary" name="send">Kirim</button>
+					</div>
+					
+				</form>
+				
+			</div>
+			
+			<div class="col-sm-offset-1 col-sm-4">
+				
+				<div class="info-entry">
+					
+					<h4>Alamat</h4>
+					
+					<p>
+					Jl. Dharma Praja  <br /> 
+					Komplek Perkantoran Provinsi Kalimantan Selatan  <br />
+					Banjarbaru.
+						
+						<br />
+						<br />
+						
+						
+					</p>
+					
+				</div>
+				
+				<div class="info-entry">
+					
+					<h4>Kontak</h4>
+					
+					<p>
+						Phone: (0511) 5915906<br />
+						disperin.kalselprov@gmail.com
+					</p>
+					
+					<!-- <ul class="social-networks">
+						<li>
+							<a href="#">
+								<i class="entypo-instagram"></i>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<i class="entypo-twitter"></i>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<i class="entypo-facebook"></i>
+							</a>
+						</li>
+					</ul> -->
+				
+				</div>
+				
+			</div>
+			
+		</div>
+		
+	</div>
+	
+</section>	
+
 

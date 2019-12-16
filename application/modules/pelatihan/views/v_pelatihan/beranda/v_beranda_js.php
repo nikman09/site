@@ -4,7 +4,7 @@
     $.ajaxSetup({
         data: csfrData
     });
-var $table1 = jQuery( '#table-1' );            
+	var $table1 = jQuery( '#table-1' );            
     // Initialize DataTable
     $table1.DataTable( {
 		

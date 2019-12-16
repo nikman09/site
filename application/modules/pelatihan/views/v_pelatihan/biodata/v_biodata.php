@@ -23,21 +23,12 @@
 					<div class="row">
 					<div class="col-md-3">
 					<div class="form-group">
-					<label for="field-1" class="control-label">Pas Foto</label>
+					<label for="field-1" class="control-label">	Pas Foto</label>
 		
 					
-					<div class="panel panel-primary" data-collapsed="0">
+					<div class="panel panel-default" data-collapsed="0">
 				
-						<div class="panel-heading">
-							<div class="panel-title">
-								
-							</div>
-							
-							<div class="panel-options">
-								<a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
-							</div>
-						</div>
-						
+					
 						<div class="panel-body">
 							
 							<div class="fileinput <?php  echo ($data['foto']=="") ? "fileinput-new":"fileinput-exists" ?> " data-provides="fileinput">

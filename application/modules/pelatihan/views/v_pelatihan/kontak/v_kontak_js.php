@@ -1,9 +1,15 @@
 
 <script type="text/javascript">
 jQuery(function ($) {
-  $('#asd').click(function() {
-      alert("sad");
-  });
+  
+
+    var $table1 = jQuery( '#table-1' );            
+    // Initialize DataTable
+    $table1.DataTable( {
+        "searching": false,
+        "lengthChange": false,
+	});
+
   $('#form').validate({ // initialize plugin
             highlight: function (label) {
                 $(label).closest('.form-group').removeClass('has-success').addClass('has-error');
@@ -31,16 +37,13 @@ jQuery(function ($) {
                 },
                 nama: {
                     required: true
-                },  
-                
-                password: {
-                    required: true,
-                    minlength   : 6
                 },
-                konfirmasipassword: {
-                    required: true,
-                    equalTo: password,
+                pesan: {
+                    required: true
                 },
+                judul: {
+                    required: true
+                }
                 
                
             },
@@ -52,15 +55,12 @@ jQuery(function ($) {
                 nama: {
                     required: "Nama harus diisi"
                 },  
-                
-                password: {
-                    required: "Password harus diisi",
-                    minlength   :  "minimal 6 karakter"
-                },
-                konfirmasipassword: {
-                    required: "Konfirmasi Password harus diisi",
-                    equalTo: "Konfirmasi Password harus sama dengan password",
-                },
+                pesan: {
+                    required: "Pesan harus diisi"
+                },  
+                pesan: {
+                    required: "Judul harus diisi"
+                }
                 
             }
         });

@@ -548,6 +548,8 @@ class Pelatihan extends CI_Controller {
     {   
         $variabel['csrf'] = csrf();
         $this->load->model("m_pelatihan/m_pelatihan_pesan");
+        $this->load->model("m_pelatihan/m_pelatihan_pelatihan");
+        $variabel['data'] = $this->m_pelatihan_pelatihan->lihatdata();
         if ($this->input->post()){
             $array=array(
                 'nama'=> $this->input->post('nama'),
@@ -556,7 +558,7 @@ class Pelatihan extends CI_Controller {
                 'pesan'=>$this->input->post('pesan'),
                 );
               
-                $exec = $this->m_pesan->tambahdata($array);
+                $exec = $this->m_pelatihan_pesan->tambahdata($array);
                 if ($exec) redirect(base_url("pelatihan/kontak?msg=1"));
                 else redirect(base_url("pelatihan/kontak?msg=0"));
         }

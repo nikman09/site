@@ -11,19 +11,29 @@
 								<span>Beranda</span>
 							</a>
 						</li>
-						<li class="<?= ($submenu == "pengumuman" || $submenu == "pengumumandetail") ? "active root-level" : ""; ?>">
-							<a href="<?php echo base_url() ?>pelatihan/pengumuman">
-								<span>Pengumuman</span>
+						<li class="<?= ($submenu == "pengumuman" || $submenu == "pengumumandetail" || $submenu == "informasi") ? "active root-level" : ""; ?>" >
+							<a>
+								<span>Informasi</span>
 							</a>
+							
+							<ul>
+							<li class="<?= ($submenu == "informasi") ? "active root-level" : ""; ?>">
+									<a href="<?php echo base_url() ?>pelatihan/informasi">
+										<span>Informasi Pelatihan</span>
+									</a>
+								</li>
+								<li class="<?= ($submenu == "pengumuman" || $submenu == "pengumumandetail") ? "active root-level" : ""; ?>">
+								<a href="<?php echo base_url() ?>pelatihan/pengumuman">
+									<span>Pengumuman</span>
+								</a>
+								</li>
+								
+							</ul>
 						</li>
-						<li class="<?= ($submenu == "informasi") ? "active root-level" : ""; ?>">
-							<a href="<?php echo base_url() ?>pelatihan/informasi">
-								<span>Informasi Pelatihan</span>
-							</a>
-						</li>
+						
 						<li class="<?= ($submenu == "status") ? "active root-level" : ""; ?>">
 							<a href="<?php echo base_url() ?>pelatihan/status">
-								<span>Status Pendaftaran</span>
+								<span>Status</span>
 							</a>
 						</li>
 						<li>

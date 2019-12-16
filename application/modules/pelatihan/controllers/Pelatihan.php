@@ -163,21 +163,26 @@ class Pelatihan extends CI_Controller {
               if ($item["status"]=="Menunggu Hasil Seleksi") {
                 redirect(base_url("pelatihan"));
               } else {
-                if ($this->input->get("i")){
-            
-                  $array=array(
-                      'id_pelatihan'=> $this->input->get("i"),
-                      'id_akun'=> $this->session->userdata("pelatihan_idakun"),
-                      'status'=> "Menunggu Hasil Seleksi",
-                      'konfirmasi'=> "",
-                  );
-                  
-                  $exec = $this->m_pelatihan_pelatihandaftar->tambahdata($array);
-                  if ($exec) redirect(base_url("pelatihan/status?msg=1"));
-                    else redirect(base_url("pelatihan/status?msg=0"));
-                }
-                else {
-                  redirect(base_url("pelatihan"));
+                $exec2 = $this->m_pelatihan_pelatihandaftar->lihatdatasatupelatihan($this->input->get("i"));
+                if ($exec2->num_rows()>0) {
+                  redirect(base_url("pelatihan/ket"));
+
+                } else {
+                  if ($this->input->get("i")){
+                    $array=array(
+                        'id_pelatihan'=> $this->input->get("i"),
+                        'id_akun'=> $this->session->userdata("pelatihan_idakun"),
+                        'status'=> "Menunggu Hasil Seleksi",
+                        'konfirmasi'=> "Belum Konfirmasi",
+                    );
+                    
+                    $exec = $this->m_pelatihan_pelatihandaftar->tambahdata($array);
+                    if ($exec) redirect(base_url("pelatihan/status?msg=1"));
+                      else redirect(base_url("pelatihan/status?msg=0"));
+                  }
+                  else {
+                    redirect(base_url("pelatihan"));
+                  }
                 }
               }
             } else {
@@ -187,7 +192,7 @@ class Pelatihan extends CI_Controller {
                       'id_pelatihan'=> $this->input->get("i"),
                       'id_akun'=> $this->session->userdata("pelatihan_idakun"),
                       'status'=> "Menunggu Hasil Seleksi",
-                      'konfirmasi'=> "",
+                      'konfirmasi'=> "Belum Konfirmasi",
                   );
                       
                   $exec = $this->m_pelatihan_pelatihandaftar->tambahdata($array);
@@ -223,6 +228,17 @@ class Pelatihan extends CI_Controller {
       $this->load->model("m_pelatihan/m_pelatihan_akun");
       $variabel['csrf'] = csrf();
       $id_akun = $this->session->userdata("pelatihan_idakun");
+      $id_pelatihandaftar =  $this->input->post('id_pelatihandaftar');
+      if ($this->input->post()) {
+      $array=array(
+          'konfirmasi'=> $this->input->post('konfirmasi'),
+          'alasan'=> $this->input->post('alasan')
+      );
+      $exec = $this->m_pelatihan_pelatihandaftar->editdata($id_pelatihandaftar,$array);
+      if ($exec) redirect(base_url("pelatihan/status?msg=2"));
+      else redirect(base_url("pelatihan/status?msg=0"));
+
+    } else {
       $exec = $this->m_pelatihan_pelatihandaftar->lihatdatasatuakun($id_akun);
       if ($exec->num_rows()>0){
          $variabel["data"] = $exec->row_array();
@@ -249,6 +265,9 @@ class Pelatihan extends CI_Controller {
         $variabel["data"] = $exec->row_array();
         $this->layout->renderpel("v_pelatihan/status/v_statusno",$variabel,"v_pelatihan/status/v_status_js");
       }
+    }
+
+     
      
     } 
 
@@ -413,7 +432,7 @@ class Pelatihan extends CI_Controller {
             $variabel['data'] = $exec->row_array();
             $this->layout->renderpel('v_pelatihan/pengumumandetail/v_pengumumandetail',$variabel,'v_pelatihan/pengumumandetail/v_pengumumandetail_js');
         } else {
-            redirect(base_url("web/berita"));
+            redirect(base_url("pelatihan"));
         }
     }
 
@@ -428,6 +447,123 @@ class Pelatihan extends CI_Controller {
       $variabel['data'] = $this->m_pelatihan_pelatihandaftar->lihatdatapelatihan($id_akun);
       
       $this->layout->renderpel("v_pelatihan/riwayat/v_riwayat",$variabel,"v_pelatihan/riwayat/v_riwayat_js");
+    }
+
+
+    public function riwayatstatus()
+    {   
+      cekloginpelatihan();
+      $this->load->model("m_pelatihan/m_pelatihan_pelatihandaftar");
+      $this->load->model("m_pelatihan/m_pelatihan_akun");
+      $variabel['csrf'] = csrf();
+      $id_akun = $this->session->userdata("pelatihan_idakun");
+      $id_pelatihandaftar =  $this->input->post('id_pelatihandaftar');
+      if ($this->input->get("id")) {
+        $id = $this->input->get("id");
+        $exec = $this->m_pelatihan_pelatihandaftar->lihatdatasatu($id);
+      
+        if ($exec->num_rows()>0){
+            $variabel["data"] = $exec->row_array();
+            if ($id_akun==$variabel["data"]["id_akun"]) {
+              // Mencari Biodata Lengkap
+              $id_akun = $this->session->userdata("pelatihan_idakun");
+              $biodata= $this->m_pelatihan_akun->lihatdatasatu($id_akun)->row_array();
+              $lengkap = 0;
+              $lengkap += $biodata["email"]!="" || $biodata["email"]!=null ? 1 : 0 ;
+              $lengkap += $biodata["password"]!="" || $biodata["password"]!=null ? 1 : 0 ;
+              $lengkap += $biodata["nik"]!="" || $biodata["nik"]!=null ? 1 : 0 ;
+              $lengkap += $biodata["nama"]!="" || $biodata["nama"]!=null ? 1 : 0 ;
+              $lengkap += $biodata["jk"]!="" || $biodata["jk"]!=null ? 1 : 0 ;
+              $lengkap += $biodata["tempatlahir"]!="" || $biodata["tempatlahir"]!=null ? 1 : 0 ;
+              $lengkap += $biodata["tanggallahir"]!="0000-00-00" || $biodata["tanggallahir"]!=null ? 1 : 0 ;
+              $lengkap += $biodata["alamat"]!="" || $biodata["alamat"]!=null ? 1 : 0 ;
+              $lengkap += $biodata["kota"]!="" || $biodata["kota"]!=null ? 1 : 0 ;
+              $lengkap += $biodata["nohp"]!="" || $biodata["nohp"]!=null ? 1 : 0 ;
+              $lengkap += $biodata["foto"]!="" || $biodata["foto"]!=null ? 1 : 0 ;
+              $variabel['persen'] = $lengkap/11*100;
+              // Akhir Biodata Lengkap
+              $this->layout->renderpel("v_pelatihan/status/v_status",$variabel,"v_pelatihan/status/v_status_js");
+            } else {
+              redirect(base_url("pelatihan"));
+            }
+          } else {
+           redirect(base_url("pelatihan"));
+        }
+
+
+      } else {
+       
+     }
+
+     
+     
+    }
+
+    public function ket()
+    {   
+      cekloginpelatihan();
+      $this->layout->renderpel("v_pelatihan/ket/v_ket");     
+    } 
+
+    public function password()
+    {   
+        cekloginpelatihan();
+        $variabel['csrf'] = csrf();
+        $this->load->model("m_pelatihan/m_pelatihan_akun");
+        if ($this->input->post()) {
+            $id_akun = $this->session->userdata("pelatihan_idakun");
+            $exec = $this->m_pelatihan_akun->lihatdatasatu($id_akun);
+            if ($exec->num_rows()>0){
+              $data = $exec ->row_array();
+                if ($data["password"]==md5($this->input->post('passwordlama'))) {
+                  $array=array(
+                    'password'=> md5($this->input->post('passwordbaru'))
+                  );  
+                  $exec = $this->m_pelatihan_akun->editdata($id_akun,$array);
+                  if ($exec) redirect(base_url("pelatihan/password?msg=1"));
+                  else redirect(base_url("pelatihan/password?msg=0"));
+
+                } else {
+                  $variabel['gagal'] = "1";
+                  $this->layout->renderpel('v_pelatihan/password/v_password',$variabel,'v_pelatihan/password/v_password_js');
+
+                }
+            } else {
+              redirect(base_url("pelatihan"));
+            }
+        } else {
+            $id_akun = $this->session->userdata("pelatihan_idakun");
+            $exec = $this->m_pelatihan_akun->lihatdatasatu($id_akun);
+            if ($exec->num_rows()>0){
+                $variabel['data'] = $exec ->row_array();
+                $this->layout->renderpel('v_pelatihan/password/v_password',$variabel,'v_pelatihan/password/v_password_js');
+            } else {
+                redirect(base_url("pelatihan"));
+            }
+        }
+      
+    }
+
+    public function kontak()
+    {   
+        $variabel['csrf'] = csrf();
+        $this->load->model("m_pelatihan/m_pelatihan_pesan");
+        if ($this->input->post()){
+            $array=array(
+                'nama'=> $this->input->post('nama'),
+                'email'=> $this->input->post('email'),
+                'judul'=>$this->input->post('judul'),
+                'pesan'=>$this->input->post('pesan'),
+                );
+              
+                $exec = $this->m_pesan->tambahdata($array);
+                if ($exec) redirect(base_url("pelatihan/kontak?msg=1"));
+                else redirect(base_url("pelatihan/kontak?msg=0"));
+        }
+        else {
+            $this->layout->renderpel('v_pelatihan/kontak/v_kontak',$variabel,'v_pelatihan/kontak/v_kontak_js');
+        }
+       
     }
 
 }

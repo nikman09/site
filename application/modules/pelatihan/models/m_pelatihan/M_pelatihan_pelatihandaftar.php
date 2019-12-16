@@ -9,8 +9,18 @@ class M_pelatihan_pelatihandaftar extends CI_Model
     
     function lihatdatasatu($id_pelatihandaftar)
     {
-        $this->db->select("pl_pelatihandaftar.*");
+        $this->db->select("pl_pelatihandaftar.*,pl_akun.*,pl_pelatihan  .*") 
+        ->join("pl_pelatihan","pl_pelatihan.id_pelatihan=pl_pelatihandaftar.id_pelatihan")
+        ->join("pl_akun","pl_akun.id_akun=pl_pelatihandaftar.id_akun")
+        ->order_by("pl_pelatihandaftar.id_pelatihandaftar","desc");
         $this->db->where("pl_pelatihandaftar.id_pelatihandaftar",$id_pelatihandaftar);
+        return $this->db->get('pl_pelatihandaftar');
+    }
+
+    function lihatdatasatupelatihan($id_pelatihan)
+    {
+        $this->db->select("pl_pelatihandaftar.*");
+        $this->db->where("pl_pelatihandaftar.id_pelatihan",$id_pelatihan);
         return $this->db->get('pl_pelatihandaftar');
     }
 

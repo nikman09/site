@@ -135,7 +135,6 @@ class Administrator extends CI_Controller {
                     unlink($path1); //menghapus gambar di folder berita
                     unlink($path2); //menghapus gambar di folder berita
                 }
-               
             } 
                 else if ($this->input->post('foto')=="") 
             {

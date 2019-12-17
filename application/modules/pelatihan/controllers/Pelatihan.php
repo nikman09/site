@@ -174,11 +174,24 @@ class Pelatihan extends CI_Controller {
                         'id_akun'=> $this->session->userdata("pelatihan_idakun"),
                         'status'=> "Menunggu Hasil Seleksi",
                         'konfirmasi'=> "Belum Konfirmasi",
+                        
                     );
-                    
+                    $id_pelatihan =$this->input->get("i");
                     $exec = $this->m_pelatihan_pelatihandaftar->tambahdata($array);
-                    if ($exec) redirect(base_url("pelatihan/status?msg=1"));
-                      else redirect(base_url("pelatihan/status?msg=0"));
+                    if ($exec) {
+                      $iddaftar = $this->db->insert_id();
+                      $nodaf1 = sprintf("%03d", $iddaftar);
+                      $nodaf2 = sprintf("%03d", $id_pelatihan);
+                      $array=array(
+                        'nodaf'=> $nodaf1.$nodaf2,
+                        
+                    );
+                    $exec = $this->m_pelatihan_pelatihandaftar->editdata($iddaftar,$array);
+                      redirect(base_url("pelatihan/status?msg=1"));
+                    } 
+                      else {
+                        redirect(base_url("pelatihan/status?msg=0"));
+                      }
                   }
                   else {
                     redirect(base_url("pelatihan"));
@@ -195,9 +208,22 @@ class Pelatihan extends CI_Controller {
                       'konfirmasi'=> "Belum Konfirmasi",
                   );
                       
+                  $id_pelatihan =$this->input->get("i");
                   $exec = $this->m_pelatihan_pelatihandaftar->tambahdata($array);
-                  if ($exec) redirect(base_url("pelatihan/status?msg=1"));
-                    else redirect(base_url("pelatihan/status?msg=0"));
+                  if ($exec) {
+                    $iddaftar = $this->db->insert_id();
+                    $nodaf1 = sprintf("%03d", $id_pelatihan);
+                    $nodaf2 = sprintf("%03d", $iddaftar);
+                    $array=array(
+                      'nodaf'=> $nodaf1.$nodaf2,
+                      
+                  );
+                  $exec = $this->m_pelatihan_pelatihandaftar->editdata($iddaftar,$array);
+                    redirect(base_url("pelatihan/status?msg=1"));
+                  } 
+                    else {
+                      redirect(base_url("pelatihan/status?msg=0"));
+                    }
                 }
                 else {
                   redirect(base_url("pelatihan"));
@@ -337,6 +363,10 @@ class Pelatihan extends CI_Controller {
                 'alamat'=>$this->input->post('alamat'),
                 'kota'=>$this->input->post('kota'),
                 'nohp'=>$this->input->post('nohp'),
+                'pendidikan'=>$this->input->post('pendidikan'),
+                'namapendidikan'=>$this->input->post('namapendidikan'),
+                'jurusan'=>$this->input->post('jurusan'),
+                'nilai'=>$this->input->post('nilai'),
             );
             $config['upload_path'] = './assets/images/pelatihan/biodata';
             $config['allowed_types'] = 'jpg|jpeg|JPG|JPEG|PNG|png';
@@ -568,4 +598,22 @@ class Pelatihan extends CI_Controller {
        
     }
 
+    public function cetak()
+    {   
+      cekloginpelatihan();
+      $this->load->model("m_pelatihan/m_pelatihan_pelatihandaftar");
+      $this->load->model("m_pelatihan/m_pelatihan_akun");
+      $variabel['csrf'] = csrf();
+      $id_akun = $this->session->userdata("pelatihan_idakun");
+      $id_pelatihandaftar =  $this->input->post('id_pelatihandaftar');
+      $exec = $this->m_pelatihan_pelatihandaftar->lihatdatasatuakun($id_akun);
+      if ($exec->num_rows()>0){
+         $variabel["data"] = $exec->row_array();
+         $this->load->view('v_pelatihan/cetak/v_cetak_pdf', $variabel);
+      
+      } else {
+        redirect(base_url("pelatihan"));
+      }
+     
+    } 
 }

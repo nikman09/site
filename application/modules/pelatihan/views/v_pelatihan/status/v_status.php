@@ -15,6 +15,17 @@
 		<h3 align="center">Status Pendaftaran Pelatihan</h3>
 		 <table style=" border-spacing: 10px;
     border-collapse: separate;">
+	<tr>
+				<td width="150px" valign="top">
+				  Nomor Pendaftaran
+				</td>
+				<td  valign="top">
+				   : 
+				</td>
+				<td  valign="top">
+				<strong><?php echo  $data['nodaf'] ?></strong>
+				</td>
+			</tr>
 			<tr>
 				<td width="150px" valign="top">
 				  Nama Pelatihan
@@ -160,6 +171,18 @@
 			<?php
 				} else if ($data["status"]=="Lulus Seleksi") {
 			?>
+			<tr>
+				<td>
+				  Kartu Pendaftaran
+				</td>
+				<td>
+				   : 
+				</td>
+				<td>
+				<a href="<?php echo base_url(); ?>pelatihan/cetak" target="_blank" class="btn btn-info btn-icon icon-left" ><i class="fa fa-print"></i>Cetak Kartu</a>
+
+				</td>
+			</tr>
 			<tr>
 				<td>
 				  Konfirmasi Kehadiran

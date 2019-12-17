@@ -65,6 +65,8 @@
 
 
 						<div class="col-md-4">
+						<h4>Data Diri</h4>
+							<hr/>
 						<div class="form-group">
 									<label for="field-1" class="control-label">E-mail</label>
 									<input type="text" class="form-control" id="email" name="email" placeholder="Masukkan Email" value="<?php echo $data['email']; ?>" disabled>
@@ -91,8 +93,8 @@
 									<input type="text" class="form-control" id="tempatlahir" name="tempatlahir" placeholder="Masukkan Tempat Lahir"  value="<?php echo $data['tempatlahir']; ?>">
 								</div>
 
-								<div class="form-group">
-						<label for="field-1" class="control-label">Tanggal Lahir</label>
+							<div class="form-group">
+								<label for="field-1" class="control-label">Tanggal Lahir</label>
 					
 							<div class="input-group">
 								<input type="text" value="<?php echo tanggalmiring($data['tanggallahir']) ?>" class="form-control datepicker" data-format="dd-mm-yyyy" name="tanggallahir" style="background-color:#fff"  placeholder="dd/mm/yyyy" id="tanggallahir"  data-mask="date">
@@ -105,12 +107,6 @@
 					
 							</div>
 
-
-					
-					
-						</div>
-
-						<div class="col-md-4">
 							<div class="form-group">
 								<label for="field-1" class="control-label">Alamat</label>
 								<textarea class="form-control" id="alamat" name="alamat" placeholder="Masukkan Tempat Lahir"><?php echo $data['tempatlahir']; ?></textarea>
@@ -122,6 +118,39 @@
 							<div class="form-group">
 								<label for="field-1" class="control-label">Nomor HP</label>
 								<input type="text" class="form-control" id="nohp" name="nohp" placeholder="Masukkan Nomor HP"  value="<?php echo $data['nohp']; ?>">
+							</div>
+					
+					
+						</div>
+
+						<div class="col-md-4">
+							<h4>Data Pendidikan</h4>
+							<hr/>
+							<div class="form-group">
+								<label for="field-1" class="control-label">Pendidikan Terakhir</label>
+								<select class="form-control" id="pendidikan" name="pendidikan" >
+									<option value="">.:Pilih Pendidikan:.</option>
+									<option value="SD/Sederajat" <?= $data['pendidikan']=="SD/Sederajat"?"selected":"" ?>>SD/Sederajat</option>
+									<option value="SMP/Sederajat" <?= $data['pendidikan']=="SMP/Sederajat"?"selected":"" ?>>SMP/Sederajat</option>
+									<option value="SMA/Sederajat" <?= $data['pendidikan']=="SMA/Sederajat"?"selected":"" ?>>SMA/Sederajat</option>
+									<option value="Strata-1" <?= $data['pendidikan']=="Strata-1"?"selected":"" ?>>Strata-1</option>
+									<option value="Strata-2" <?= $data['pendidikan']=="Strata-2"?"selected":"" ?>>Strata-2</option>
+									<option value="Strata-3" <?= $data['pendidikan']=="Strata-3t"?"selected":"" ?>>Strata-3</option>
+								</select>
+								</textarea>
+							</div>
+							<div class="form-group">
+								<label for="field-1" class="control-label">Nama Sekolah/PT</label>
+								<input type="text" class="form-control" id="namapendidikan" name="namapendidikan" placeholder="Masukkan Nama Sekolah/PT"  value="<?php echo $data['namapendidikan']; ?>">
+							</div>
+							<div class="form-group">
+								<label for="field-1" class="control-label">Jurusan</label>
+								<input type="text" class="form-control" id="jurusan" name="jurusan" placeholder="Masukkan Jurusan"  value="<?php echo $data['jurusan']; ?>">
+							</div>
+							<div class="form-group">
+								<label for="field-1" class="control-label">Nilai/IPK</label>
+								<input type="text" class="form-control" id="nilai" name="nilai" placeholder="Masukkan Nilai/IPK (Koma"  value="<?php echo $data['nilai']; ?>" data-mask="number">
+								<span style="font-size:12px">*Koma dengan titik</span>
 							</div>
 						
 

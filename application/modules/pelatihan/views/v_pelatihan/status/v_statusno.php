@@ -14,7 +14,7 @@
 		
 		<h3 align="center">Status Pendaftaran Pelatihan</h3>
 		
-		 	<P align="center"> Belum Pernah Melakukan Pendaftaran Pelatihan, Silahkan Pilih Pendaftaran Pelatihan <a href="<?php echo base_url() ?>/pelatihan/informasi">di sini !</a> </p>
+		 	<P align="center"> Belum Pernah Melakukan Pendaftaran Pelatihan, Silahkan Pilih Pendaftaran Pelatihan <a href="<?php echo base_url() ?>pelatihan/informasi">di sini !</a> </p>
 			<p align="right">
 			&nbsp
 			</p>

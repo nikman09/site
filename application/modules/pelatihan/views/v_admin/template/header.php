@@ -56,7 +56,7 @@
 				<div class="logo">
 				<a href="<?php echo base_url()."pelatihan/admin"; ?>">
 						<!-- <img src="<?php echo base_url() ?>assets/images/provinsi.png" width="25" style="margin-right:5px" alt="" /> -->
-						<span style="font-weight:bold;color:#fff;font-size:18px;">SIPI</span><span style="font-size:14px;"> DIPSERIN</span>
+						<span style="font-weight:bold;color:#fff;font-size:18px;">SIPI</span><span style="font-size:14px;"> DISPERIN</span>
 					</a>
 				</div>
 				<!-- logo collapse icon -->

@@ -43,7 +43,7 @@ $style = array(
     'stretchtext' => 4
 );
 $pdf->Cell(0, 0, 'CODE 128 AUTO', 0, 1);
-$pdf->write1DBarcode('22233s111', 'C128', '', '', '', 18, 0.4, $style, 'N');
+$pdf->write2DBarcode('22233s111', 'C128', '', '', '', 18, 0.4, $style, 'N');
 
 $pdf->lastPage();
 

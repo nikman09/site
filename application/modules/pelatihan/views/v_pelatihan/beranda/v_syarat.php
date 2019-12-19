@@ -11,7 +11,7 @@
                             <table style=" border-spacing: 10px;
         border-collapse: separate;">
                 <tr>
-                    <td width="120px">
+                    <td width="150px">
                     Nama Pelatihan
                     </td>
                     <td>
@@ -34,7 +34,7 @@
                 </tr>
                 <tr>
                     <td>
-                    Waktu Pendaftaran
+                    Tanggal Pendaftaran
                     </td>
                     <td>
                     : 
@@ -45,9 +45,23 @@
                     ?>
                     </td>
                 </tr>
+
                 <tr>
                     <td>
-                    Waktu Pelatihan
+                    Tanggal Pengumuman Seleksi
+                    </td>
+                    <td>
+                    : 
+                    </td>
+                    <td>
+                    <?php
+                        echo $data['pengumuman']; 
+                    ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    Tanggal Pelatihan
                     </td>
                     <td>
                     : 
@@ -68,6 +82,19 @@
                     <td>
                     <?php
                         echo $data['tempat']; 
+                    ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    Kuota Peserta
+                    </td>
+                    <td>
+                    : 
+                    </td>
+                    <td>
+                    <?php
+                        echo $data['kuota']; 
                     ?>
                     </td>
                 </tr>

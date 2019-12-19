@@ -12,7 +12,7 @@
 		 <table style=" border-spacing: 10px;
     border-collapse: separate;">
 			<tr>
-				<td width="120px">
+				<td width="160px">
 				  Nama Pelatihan
 				</td>
 				<td>
@@ -34,44 +34,71 @@
 				</td>
 			</tr>
 			<tr>
-				<td>
-				 Waktu Pendaftaran
-				</td>
-				<td>
-				   : 
-				</td>
-				<td>
-				   <?php
-				   	 echo tgl_indo($data['mulaipendaftaran'])." s.d ".tgl_indo($data['akhirpendaftaran']).""; 
-				   ?>
-				</td>
-			</tr>
-			<tr>
-				<td>
-				  Waktu Pelatihan
-				</td>
-				<td>
-				   : 
-				</td>
-				<td>
-				   <?php
-				   	 echo tgl_indo($data['mulaipelatihan'])." s.d ".tgl_indo($data['akhirpelatihan']).""; 
-				   ?>
-				</td>
-			</tr>
-			<tr>
-				<td>
-				  Tempat Pelatihan
-				</td>
-				<td>
-				   : 
-				</td>
-				<td>
-				   <?php
-				   	 echo $data['tempat']; 
-				   ?>
-				</td>
-			</tr>
+                    <td>
+                    Tanggal Pendaftaran
+                    </td>
+                    <td>
+                    : 
+                    </td>
+                    <td>
+                    <?php
+                        echo tgl_indo($data['mulaipendaftaran'])." s.d ".tgl_indo($data['akhirpendaftaran']).""; 
+                    ?>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                    Tanggal Pengumuman Seleksi
+                    </td>
+                    <td>
+                    : 
+                    </td>
+                    <td>
+                    <?php
+                        echo $data['pengumuman']; 
+                    ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    Tanggal Pelatihan
+                    </td>
+                    <td>
+                    : 
+                    </td>
+                    <td>
+                    <?php
+                        echo tgl_indo($data['mulaipelatihan'])." s.d ".tgl_indo($data['akhirpelatihan']).""; 
+                    ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    Tempat Pelatihan
+                    </td>
+                    <td>
+                    : 
+                    </td>
+                    <td>
+                    <?php
+                        echo $data['tempat']; 
+                    ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    Kuota Peserta
+                    </td>
+                    <td>
+                    : 
+                    </td>
+                    <td>
+                    <?php
+                        echo $data['kuota']; 
+                    ?>
+                    </td>
+                </tr>
 			<tr>
 				<td>
 				  Contact Person

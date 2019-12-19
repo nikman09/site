@@ -112,7 +112,20 @@
 				   : 
 				</td>
 				<td  valign="top">
-				<a href="<?php base_url() ?>pelatihan/biodata" class="btn <?=$persen<100?"btn-danger":"btn-success" ?> btn-icon icon-left" ><i class="fa fa-user"></i>Pengisian Biodata </a>
+				<a href="<?php base_url() ?>biodata" class="btn <?=$persen<100?"btn-danger":"btn-success" ?> btn-icon icon-left" ><i class="fa fa-user"></i>Pengisian Biodata  &nbsp &nbsp &nbsp&nbsp</a>
+				<br/>	<span style="color:#ba0c00;font-size:10px"><?=$persen<100?"Belum Lengkap":"" ?></span>
+				</td>
+			</tr>
+			<tr>
+				<td width="150px"  valign="top">
+				  Data Usaha
+				</td>
+				
+				<td  valign="top">
+				   : 
+				</td>
+				<td  valign="top">
+				<a href="<?php base_url() ?>datausaha" class="btn <?=$persen<100?"btn-danger":"btn-success" ?> btn-icon icon-left" ><i class="fa fa-shopping-cart"></i>Pengisian Data Usaha </a>
 				<br/>	<span style="color:#ba0c00;font-size:10px"><?=$persen<100?"Belum Lengkap":"" ?></span>
 				</td>
 			</tr>

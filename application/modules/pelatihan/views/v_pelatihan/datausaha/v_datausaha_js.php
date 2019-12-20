@@ -4,9 +4,7 @@ jQuery(function ($) {
     $('.datepicker').datepicker({
     format: 'dd/mm/yyyy'
 });
-
- $('.datepicker').inputmask("date", { "clearIncomplete": true });
- $('.nilai').inputmask('Regex', {regex: "^[0-9]{1,6}(\\.\\d{1,2})?$"});
+$('.nilai').inputmask('Regex', {regex: "^[0-9]{1,6}(\\.\\d{1,2})?$"});
   $('#form').validate({ // initialize plugin
             highlight: function (label) {
                 $(label).closest('.form-group').removeClass('has-success').addClass('has-error');
@@ -28,27 +26,43 @@ jQuery(function ($) {
             },
 
             rules: {
-                email: {
+                unama: {
                     required: true,
-                    email: true
                 },
-                nama: {
-                    required: true
-                },  
-                
+
+                uinvestasi: {
+                    number: true,
+                },
+                ujumlahproduksi: {
+                    number: true,
+                },
+                unilaiproduksi: {
+                    number: true,
+                },
+                unilaibahanbaku: {
+                    number: true,
+                }
                
                 
                
             },
             messages: {
-                email: {
-                    required: "Email harus diisi",
-                    email: "Format Email salah"
-                },
-                nama: {
-                    required: "Nama harus diisi"
-                },  
+                unama: {
+                    required: "Nama Usaha harus diisi",
+                }, 
                 
+                uinvestasi: {
+                    number: "Format hanya angka",
+                },
+                ujumlahproduksi: {
+                    number: "Format hanya angka",
+                },
+                unilaiproduksi: {
+                    number: "Format hanya angka",
+                },
+                unilaibahanbaku: {
+                    number: "Format hanya angka",
+                }
            
             }
         });

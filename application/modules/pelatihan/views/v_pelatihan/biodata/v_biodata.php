@@ -21,47 +21,7 @@
 					</div>
 					</div>
 					<div class="row">
-					<div class="col-md-3">
-					<div class="form-group">
-					<label for="field-1" class="control-label">	Pas Foto</label>
-		
 					
-					<div class="panel panel-default" data-collapsed="0">
-				
-					
-						<div class="panel-body">
-							
-							<div class="fileinput <?php  echo ($data['foto']=="") ? "fileinput-new":"fileinput-exists" ?> " data-provides="fileinput">
-							<input type="hidden" value="<?php echo $data['foto'] ?>" name="foto">
-								<div class="fileinput-new thumbnail" style="max-width: 310px; height: 250px;" data-trigger="fileinput">
-								<img src="http://placehold.it/300x400" alt="...">
-								</div>
-								<div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 310px; height: 160px;" data-trigger="fileinput">
-									<img src="<?php echo base_url()."assets/images/pelatihan/biodata/".$data['foto'] ?>" alt="...">
-								</div>
-								<div>
-									<span class="btn btn-white btn-file">
-										<span class="fileinput-new">Select image</span>
-										<span class="fileinput-exists">Change</span>
-										<input type="file" name="foto" accept="image/*" >
-									</span>
-									<a href="#" class="btn btn-orange  	fileinput-exists" data-dismiss="fileinput">Remove</a>
-								</div>
-							</div>
-							<br/>
-							<span>*Max 1 mb</span>
-						</div>	
-										
-					</div>
-					
-				</div>
-					
-						
-							<input type="hidden" name="<?=$csrf['name']?>" value="<?=$csrf['hash']?>">
-								
-						
-							
-						</div>
 
 
 						<div class="col-md-4">
@@ -149,13 +109,54 @@
 							</div>
 							<div class="form-group">
 								<label for="field-1" class="control-label">Nilai/IPK</label>
-								<input type="text" class="form-control" id="nilai" name="nilai" placeholder="Masukkan Nilai/IPK (Koma"  value="<?php echo $data['nilai']; ?>" data-mask="number">
+								<input type="text" class="form-control nilai" id="nilai" name="nilai" placeholder="Masukkan Nilai/IPK "  value="<?php echo $data['nilai']; ?>" data-mask="number">
 								<span style="font-size:12px">*Koma dengan titik</span>
 							</div>
 						
 
 					
 					
+						</div>
+						<div class="col-md-3">
+					<div class="form-group">
+					<label for="field-1" class="control-label">	Pas Foto</label>
+		
+					
+					<div class="panel panel-default" data-collapsed="0">
+				
+					
+						<div class="panel-body">
+							
+							<div class="fileinput <?php  echo ($data['foto']=="") ? "fileinput-new":"fileinput-exists" ?> " data-provides="fileinput">
+							<input type="hidden" value="<?php echo $data['foto'] ?>" name="foto">
+								<div class="fileinput-new thumbnail" style="max-width: 310px; height: 250px;" data-trigger="fileinput">
+								<img src="http://placehold.it/300x400" alt="...">
+								</div>
+								<div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 310px; height: 160px;" data-trigger="fileinput">
+									<img src="<?php echo base_url()."assets/images/pelatihan/biodata/".$data['foto'] ?>" alt="...">
+								</div>
+								<div>
+									<span class="btn btn-white btn-file">
+										<span class="fileinput-new">Select image</span>
+										<span class="fileinput-exists">Change</span>
+										<input type="file" name="foto" accept="image/*" >
+									</span>
+									<a href="#" class="btn btn-orange  	fileinput-exists" data-dismiss="fileinput">Remove</a>
+								</div>
+							</div>
+							<br/>
+							<span>*Max 1 mb</span>
+						</div>	
+										
+					</div>
+					
+				</div>
+					
+						
+							<input type="hidden" name="<?=$csrf['name']?>" value="<?=$csrf['hash']?>">
+								
+						
+							
 						</div>
                     </div>
 

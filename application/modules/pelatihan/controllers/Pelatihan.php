@@ -591,4 +591,94 @@ class Pelatihan extends CI_Controller {
       }
      
     } 
+
+
+    public function datausaha()
+    {   
+        cekloginpelatihan();
+        $variabel['csrf'] = csrf();
+        $this->load->model("m_pelatihan/m_pelatihan_akun");
+        if ($this->input->post()) {
+            $id_akun = $this->session->userdata("pelatihan_idakun");
+            $array=array(
+                'unama'=> $this->input->post('unama'),
+                'upemilik'=> $this->input->post('upemilik'),
+                'ujalan'=>$this->input->post('ujalan'),
+                'udesa'=>$this->input->post('udesa'),
+                'ukecamatan'=>$this->input->post('ukecamatan'),
+                'ukabkota'=>$this->input->post('ukabkota'),
+                'utelp'=>$this->input->post('utelp'),
+                'ubentuk'=>$this->input->post('ubentuk'),
+                'utenagakerja'=>$this->input->post('utenagakerja'),
+                'uproduk'=>$this->input->post('uproduk'),
+                'umerek'=>$this->input->post('umerek'),
+                'uinvestasi'=>$this->input->post('uinvestasi'),
+                'ujumlahproduksi'=>$this->input->post('ujumlahproduksi'),
+                'usatuanproduksi'=>$this->input->post('usatuanproduksi'),
+                'unilaiproduksi'=>$this->input->post('unilaiproduksi'),
+                'unilaibahanbaku'=>$this->input->post('unilaibahanbaku'),
+                'upemasaran'=>$this->input->post('upemasaran'),
+                'ufotoproduk'=>$this->input->post('ufotoproduk')
+            );
+            $config['upload_path'] = './assets/images/pelatihan/produk';
+            $config['allowed_types'] = 'jpg|jpeg|JPG|JPEG|PNG|png';
+            $this->load->library('upload', $config);
+            if ($this->upload->do_upload("ufotoproduk"))
+            {
+                $upload = $this->upload->data();
+                $ufotoproduk = $upload["raw_name"].$upload["file_ext"];
+                $array['ufotoproduk']=$ufotoproduk;
+                $config['image_library'] = 'gd2';
+                $config['source_image'] = './assets/images/pelatihan/produk/'.$upload["raw_name"].$upload["file_ext"];
+                $config['create_thumb'] = FALSE;
+                $config['maintain_ratio'] = TRUE;
+                $config['width']         = 300;
+                $config['height']       = 200;
+                $config['new_image'] = './assets/images/pelatihan/produk/thumb/'.$upload["raw_name"].$upload["file_ext"];
+                $this->load->library('image_lib', $config);
+                $this->image_lib->resize();
+
+                $query2 = $this->m_pelatihan_akun->lihatdatasatu($id_akun);
+                $row2 = $query2->row();
+                $berkas1temp = $row2->ufotoproduk;
+                $path1 ='./assets/images/pelatihan/produk/'.$berkas1temp.'';
+                $path2 ='./assets/images/pelatihan/produk/thumb/'.$berkas1temp.'';
+                if(is_file($path1)) {
+                    unlink($path1);
+                    unlink($path2); 
+                }
+               
+            } 
+                else if ($this->input->post('ufotoproduk')=="") 
+            {
+              
+                $query2 = $this->m_pelatihan_akun->lihatdatasatu($id_akun);
+                $row2 = $query2->row();
+                $berkas1temp = $row2->ufotoproduk;
+                $path1 ='./assets/images/pelatihan/produk/'.$berkas1temp.'';
+                $path2 ='./assets/images/pelatihan/produk/thumb/'.$berkas1temp.'';
+                if(is_file($path1)) {
+                    unlink($path1); 
+                    unlink($path2); 
+                }
+                $array['ufotoproduk']="";
+            }
+            
+           
+            $exec = $this->m_pelatihan_akun->editdata($id_akun,$array);
+            if ($exec) redirect(base_url("pelatihan/datausaha?msg=1"));
+            else redirect(base_url("pelatihan/datausaha?msg=0"));
+
+        } else {
+            $id_akun = $this->session->userdata("pelatihan_idakun");
+            $exec = $this->m_pelatihan_akun->lihatdatasatu($id_akun);
+            if ($exec->num_rows()>0){
+                $variabel['data'] = $exec ->row_array();
+                $this->layout->renderpel('v_pelatihan/datausaha/v_datausaha',$variabel,'v_pelatihan/datausaha/v_datausaha_js');
+            } else {
+                redirect(base_url("pelatihan/datausaha"));
+            }
+        }
+      
+    }
 }

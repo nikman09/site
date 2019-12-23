@@ -113,7 +113,7 @@
 				</td>
 				<td  valign="top">
 				<a href="<?php base_url() ?>biodata" class="btn <?=$persen<100?"btn-danger":"btn-success" ?> btn-icon icon-left" ><i class="fa fa-user"></i>Pengisian Biodata  &nbsp &nbsp &nbsp&nbsp</a>
-				<br/>	<span style="color:#ba0c00;font-size:10px"><?=$persen<100?"Belum Lengkap":"" ?></span>
+				<br/>	<span style="color:#ba0c00;font-size:11px"><?=$persen<100?"Belum Lengkap":"" ?></span>
 				</td>
 			</tr>
 			<tr>
@@ -125,8 +125,8 @@
 				   : 
 				</td>
 				<td  valign="top">
-				<a href="<?php base_url() ?>datausaha" class="btn <?=$persen<100?"btn-danger":"btn-success" ?> btn-icon icon-left" ><i class="fa fa-shopping-cart"></i>Pengisian Data Usaha </a>
-				<br/>	<span style="color:#ba0c00;font-size:10px"><?=$persen<100?"Belum Lengkap":"" ?></span>
+				<a href="<?php base_url() ?>datausaha" class="btn <?=$persenusaha<100?"btn-danger":"btn-success" ?> btn-icon icon-left" ><i class="fa fa-shopping-cart"></i>Pengisian Data Usaha </a>
+				<br/>	<span style="<?=$persenusaha<100?"color:#ba0c00;":"color:#000;" ?>font-size:11px"><?=$persenusaha<100?"Belum Lengkap (Untuk Kategori Pelaku Industri Harus Melengkapi Data Usaha)":"*Untuk Kategori Pelaku Industri Harus Melengkapi Data Usaha" ?></span>
 				</td>
 			</tr>
 			<!-- <tr>
@@ -196,6 +196,7 @@
 
 				</td>
 			</tr>
+			
 			<tr>
 				<td>
 				  Konfirmasi Kehadiran

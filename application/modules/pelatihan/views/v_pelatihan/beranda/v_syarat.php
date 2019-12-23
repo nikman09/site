@@ -55,7 +55,7 @@
                     </td>
                     <td>
                     <?php
-                        echo $data['pengumuman']; 
+                        echo tgl_indo($data['pengumuman']); 
                     ?>
                     </td>
                 </tr>

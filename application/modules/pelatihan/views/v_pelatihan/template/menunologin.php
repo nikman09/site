@@ -10,7 +10,7 @@
 								<span>Beranda</span>
 							</a>
 						</li>
-						<li class="<?= ($submenu == "pengumuman" || $submenu == "pengumumandetail" || $submenu == "informasi") ? "active root-level" : ""; ?>" >
+						<li class="<?= ($submenu == "pengumuman" || $submenu == "pengumumandetail" || $submenu == "informasi"  || $submenu == "faq") ? "active root-level" : ""; ?>" >
 							<a>
 								<span>Informasi</span>
 							</a>
@@ -29,6 +29,11 @@
 								<li class="<?= ($submenu == "kontak") ? "active root-level" : ""; ?>">
 								<a href="<?php echo base_url() ?>pelatihan/kontak">
 									<span>Kontak</span>
+								</a>
+								</li>
+								<li class="<?= ($submenu == "faq") ? "active root-level" : ""; ?>">
+								<a href="<?php echo base_url() ?>pelatihan/faq">
+									<span>FAQ</span>
 								</a>
 								</li>
 								

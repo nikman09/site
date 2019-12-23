@@ -13,7 +13,7 @@
 					
 						<div class="slide-content">
 							<h2>
-								<small>E-Pelatihan</small>
+								<small>E-SIPI</small>
 								<span style="color:#fff">Informasi Pelatihan Industri</span>
 							</h2>
 							
@@ -43,7 +43,7 @@
 					
 						<div class="slide-content text-right">
 							<h2>
-								<small>E-Pelatihan</small>
+								<small>E-SIPI</small>
 								<span style="color:#fff">Pendaftaran Pelatihan Industri</span>
 							</h2>
 							
@@ -109,7 +109,7 @@
 					</h3>
 					
 					<p>
-					Calon Peserta pelatihan harus membaca dan memahami tata cara Pendaftaran pelatihan yang dapat dilihat di <a href="#">sini</a>.
+					Calon Peserta pelatihan harus membaca dan memahami tata cara Pendaftaran pelatihan yang dapat dilihat di <a href="<?=base_url() ?>assets/images/pelatihan/panduan/panduan.pdf" target="_blank">sini</a>.
 					</p>
 				</div>
 				

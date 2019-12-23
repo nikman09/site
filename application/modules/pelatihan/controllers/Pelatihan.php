@@ -65,6 +65,34 @@ class Pelatihan extends CI_Controller {
        
     }
 
+
+    public function usaha($biodata)
+    {   
+     
+        $lengkap = 0;
+        $lengkap += $biodata["unama"]!="" || $biodata["unama"]!=null ? 1 : 0 ;
+        $lengkap += $biodata["upemilik"]!="" || $biodata["upemilik"]!=null ? 1 : 0 ;
+        $lengkap += $biodata["ujalan"]!="" || $biodata["ujalan"]!=null ? 1 : 0 ;
+        $lengkap += $biodata["udesa"]!="" || $biodata["udesa"]!=null ? 1 : 0 ;
+        $lengkap += $biodata["ukecamatan"]!="" || $biodata["ukecamatan"]!=null ? 1 : 0 ;
+        $lengkap += $biodata["ukabkota"]!="" || $biodata["ukabkota"]!=null ? 1 : 0 ;
+        $lengkap += $biodata["utelp"]!="" || $biodata["utelp"]!=null ? 1 : 0 ;
+        $lengkap += $biodata["ubentuk"]!="" || $biodata["ubentuk"]!=null ? 1 : 0 ;
+        $lengkap += $biodata["utenagakerja"]!="" || $biodata["utenagakerja"]!=null ? 1 : 0 ;
+        $lengkap += $biodata["uproduk"]!="" || $biodata["uproduk"]!=null ? 1 : 0 ;
+        $lengkap += $biodata["umerek"]!="" || $biodata["umerek"]!=null ? 1 : 0 ;
+        $lengkap += $biodata["uinvestasi"]!="" || $biodata["uinvestasi"]!=null ? 1 : 0 ;
+        $lengkap += $biodata["ujumlahproduksi"]!="" || $biodata["ujumlahproduksi"]!=null ? 1 : 0 ;
+        $lengkap += $biodata["usatuanproduksi"]!="" || $biodata["usatuanproduksi"]!=null ? 1 : 0 ;
+        $lengkap += $biodata["unilaiproduksi"]!="" || $biodata["unilaiproduksi"]!=null ? 1 : 0 ;
+        $lengkap += $biodata["unilaibahanbaku"]!="" || $biodata["unilaibahanbaku"]!=null ? 1 : 0 ;
+        $lengkap += $biodata["upemasaran"]!="" || $biodata["upemasaran"]!=null ? 1 : 0 ;
+        $lengkap += $biodata["ufotoproduk"]!="" || $biodata["ufotoproduk"]!=null ? 1 : 0 ;
+        return $persen = $lengkap/18*100;
+       
+    }
+
+
     public function Informasi()
     {   
       $this->load->model("m_pelatihan/m_pelatihan_pelatihan");
@@ -271,6 +299,7 @@ class Pelatihan extends CI_Controller {
           $id_akun = $this->session->userdata("pelatihan_idakun");
           $biodata= $this->m_pelatihan_akun->lihatdatasatu($id_akun)->row_array();
           $variabel['persen']= $this->lengkap($biodata);
+          $variabel['persenusaha']= $this->usaha($biodata);
           // Akhir Biodata Lengkap
         $this->layout->renderpel("v_pelatihan/status/v_status",$variabel,"v_pelatihan/status/v_status_js");
       
@@ -680,5 +709,14 @@ class Pelatihan extends CI_Controller {
             }
         }
       
+    }
+
+    public function faq()
+    {   
+        $variabel['csrf'] = csrf();
+      
+            $this->layout->renderpel('v_pelatihan/faq/v_faq');
+    
+       
     }
 }

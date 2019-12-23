@@ -26,7 +26,7 @@ class M_pelatihan_pelatihandaftar extends CI_Model
 
     function lihatdatasatuakun($id_akun)
     {
-        $this->db->select("pl_pelatihandaftar.*,pl_akun.*,pl_pelatihan  .*") 
+        $this->db->select("pl_pelatihandaftar.*,pl_akun.*,pl_akun.nama as namalengkap, pl_pelatihan  .*") 
         ->join("pl_pelatihan","pl_pelatihan.id_pelatihan=pl_pelatihandaftar.id_pelatihan")
         ->join("pl_akun","pl_akun.id_akun=pl_pelatihandaftar.id_akun");
         $this->db->order_by("pl_pelatihandaftar.id_pelatihandaftar","desc");

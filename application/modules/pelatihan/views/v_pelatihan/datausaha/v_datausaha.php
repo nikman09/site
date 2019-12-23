@@ -67,16 +67,17 @@
 								</select>
 								</textarea>
 							</div>
+							<div class="form-group">
+								<label for="field-1" class="control-label">Nama Produk</label>
+								<input type="text" class="form-control" id="uproduk" name="uproduk" placeholder="Masukkan Nama Produk"  value="<?php echo $data['uproduk']; ?>">
+							</div>
 					
 						</div>
 
 						<div class="col-md-4">
 					
 							
-							<div class="form-group">
-								<label for="field-1" class="control-label">Nama Produk</label>
-								<input type="text" class="form-control" id="uproduk" name="uproduk" placeholder="Masukkan Nama Produk"  value="<?php echo $data['uproduk']; ?>">
-							</div>
+							
 							<div class="form-group">
 								<label for="field-1" class="control-label">Merek</label>
 								<input type="text" class="form-control" id="umerek" name="umerek" placeholder="Masukkan Merek"  value="<?php echo $data['umerek']; ?>">
@@ -103,7 +104,10 @@
 								<label for="field-1" class="control-label">Nilai Bahan Baku & Bahan Penolong</label>
 								<input type="text" class="form-control nilai" id="unilaibahanbaku" name="unilaibahanbaku" placeholder="Masukkan Nilai Bahan Baku & Bahan Penolong"  value="<?php echo $data['unilaibahanbaku']; ?>">
 							</div>
-					
+							<div class="form-group">
+								<label for="field-1" class="control-label">Daerah Pemasaran</label>
+								<input type="text" class="form-control" id="upemasaran" name="upemasaran" placeholder="Masukkan Daerah Pemasaran"  value="<?php echo $data['upemasaran']; ?>">
+							</div>
 						</div>
 						<div class="col-md-3">
 					<div class="form-group">

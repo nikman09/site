@@ -59,5 +59,15 @@ class Admin extends CI_Controller {
        akses("admin");
        $this->load->view("v_admin/dashboard/v_home");
      }
+
+     public function pelatihan()
+    {   
+        $variabel['csrf'] = csrf();
+        $this->load->model("m_admin/m_admin_pelatihan");
+        $username = $this->session->userdata("pelatihan_admin_username");
+        $variabel['data'] = $this->m_admin_pelatihan->lihatdatauser($username);
+        $this->layout->renderadmin('v_admin/pelatihan/v_pelatihan',$variabel,'v_admin/pelatihan/v_pelatihan_js');
+   
+    }
  
 }

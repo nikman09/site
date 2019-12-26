@@ -18,7 +18,7 @@
 				</a>
 			</li>
 			<li  class="<?= ($submenu == "pelatihandaftar" || $submenu == "pelatihantambah"  || $submenu == "pelatihanedit" ) ? "active root-level" : ""; ?> ">
-				<a href="<?php echo base_url() ?>pelatihan/admin/pelatihandaftar">
+				<a href="<?php echo base_url() ?>pelatihan/admin/pelatihan">
 					<i class="fa fa-train"></i>
 					<span class="title">Pelatihan</span>
 				</a>

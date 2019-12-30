@@ -15,7 +15,7 @@ class Pelatihan extends CI_Controller {
       $this->load->model("m_pelatihan/m_pelatihan_pelatihandaftar");
       $this->load->model("m_pelatihan/m_pelatihan_akun");
       $variabel['csrf'] = csrf();
-      $variabel['data'] = $this->m_pelatihan_pelatihan->lihatdata();
+      $variabel['data'] = $this->m_pelatihan_pelatihan->lihatdatap();
 
       if ($this->session->userdata('pelatihan_status') == "login") {
        
@@ -100,7 +100,7 @@ class Pelatihan extends CI_Controller {
       $this->load->model("m_pelatihan/m_pelatihan_pelatihandaftar");
       $variabel['csrf'] = csrf();
       
-      $variabel['data'] = $this->m_pelatihan_pelatihan->lihatdata();
+      $variabel['data'] = $this->m_pelatihan_pelatihan->lihatdatap();
 
       if ($this->session->userdata('pelatihan_status') == "login") {
        
@@ -383,6 +383,8 @@ class Pelatihan extends CI_Controller {
                 'namapendidikan'=>$this->input->post('namapendidikan'),
                 'jurusan'=>$this->input->post('jurusan'),
                 'nilai'=>$this->input->post('nilai'),
+                'daftarpelatihan'=>$this->input->post('daftarpelatihan'),
+                'daftarkeahlian'=>$this->input->post('daftarkeahlian'),
             );
             $config['upload_path'] = './assets/images/pelatihan/biodata';
             $config['allowed_types'] = 'jpg|jpeg|JPG|JPEG|PNG|png';

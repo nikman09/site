@@ -112,6 +112,15 @@
 								<input type="text" class="form-control nilai" id="nilai" name="nilai" placeholder="Masukkan Nilai/IPK "  value="<?php echo $data['nilai']; ?>" data-mask="number">
 								<span style="font-size:12px">*Koma dengan titik</span>
 							</div>
+							<hr/>
+							<div class="form-group">
+								<label for="field-1" class="control-label">Pelatihan/Seminar/Sertifikasi Yang Pernah diikuti</label>
+								<textarea class="form-control" id="daftarpelatihan " name="daftarpelatihan" placeholder="Sebutkan Daftar Pelatihan/Seminar/Sertifikasi"><?php echo $data['daftarpelatihan']; ?></textarea>
+							</div>
+							<div class="form-group">
+								<label for="field-1" class="control-label">Keahlian yang dimiliki</label>
+								<textarea class="form-control" id="daftarkeahlian " name="daftarkeahlian" placeholder="Sebutkan Daftar Keahlian yang dimiliki"><?php echo $data['daftarkeahlian']; ?></textarea>
+							</div>
 						
 
 					
@@ -123,10 +132,7 @@
 		
 					
 					<div class="panel panel-default" data-collapsed="0">
-				
-					
 						<div class="panel-body">
-							
 							<div class="fileinput <?php  echo ($data['foto']=="") ? "fileinput-new":"fileinput-exists" ?> " data-provides="fileinput">
 							<input type="hidden" value="<?php echo $data['foto'] ?>" name="foto">
 								<div class="fileinput-new thumbnail" style="max-width: 310px; height: 250px;" data-trigger="fileinput">
@@ -152,7 +158,6 @@
 					
 				</div>
 					
-						
 							<input type="hidden" name="<?=$csrf['name']?>" value="<?=$csrf['hash']?>">
 								
 						
@@ -167,5 +172,6 @@
 					</div>
 		</div>
 	</div>
+</div>
 </div>
 </div>

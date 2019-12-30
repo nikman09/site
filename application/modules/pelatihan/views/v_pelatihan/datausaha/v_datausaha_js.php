@@ -41,6 +41,9 @@ $('.nilai').inputmask('Regex', {regex: "^[0-9]{1,6}(\\.\\d{1,2})?$"});
                 },
                 unilaibahanbaku: {
                     number: true,
+                },
+                utenagakerja: {
+                    number: true,
                 }
                
                 
@@ -61,6 +64,9 @@ $('.nilai').inputmask('Regex', {regex: "^[0-9]{1,6}(\\.\\d{1,2})?$"});
                     number: "Format hanya angka",
                 },
                 unilaibahanbaku: {
+                    number: "Format hanya angka",
+                },
+                utenagakerja: {
                     number: "Format hanya angka",
                 }
            

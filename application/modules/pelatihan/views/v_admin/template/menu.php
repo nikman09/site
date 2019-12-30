@@ -11,19 +11,19 @@
 					<span class="title">Beranda </span>
 				</a>
 			</li>
-			<li  class="<?= ($submenu == "pelatihandaftar" || $submenu == "pelatihantambah"  || $submenu == "pelatihanedit" ) ? "active root-level" : ""; ?> ">
+			<li  class="<?= ($submenu == "" || $submenu == ""  || $submenu == "" ) ? "active root-level" : ""; ?> ">
 				<a href="<?php echo base_url() ?>pelatihan/admin/pelatihandaftar">
 					<i class="fa fa-trophy"></i>
 					<span class="title">Seleksi Pendaftaran</span>
 				</a>
 			</li>
-			<li  class="<?= ($submenu == "pelatihandaftar" || $submenu == "pelatihantambah"  || $submenu == "pelatihanedit" ) ? "active root-level" : ""; ?> ">
+			<li  class="<?= ($submenu == "pelatihan" || $submenu == "pelatihantambah"  || $submenu == "pelatihanedit" ) ? "active root-level" : ""; ?> ">
 				<a href="<?php echo base_url() ?>pelatihan/admin/pelatihan">
 					<i class="fa fa-train"></i>
 					<span class="title">Pelatihan</span>
 				</a>
 			</li>
-			<li  class="<?= ($submenu == "pelatihandaftar" || $submenu == "pelatihantambah"  || $submenu == "pelatihanedit" ) ? "active root-level" : ""; ?> ">
+			<li  class="<?= ($submenu == "" || $submenu == ""  || $submenu == "" ) ? "active root-level" : ""; ?> ">
 				<a href="<?php echo base_url() ?>pelatihan/admin/pelatihandaftar">
 					<i class="fa fa-info-circle"></i>
 					<span class="title">Pengumuman</span>

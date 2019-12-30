@@ -17,7 +17,15 @@ class M_pelatihan_pelatihan extends CI_Model
     function lihatdata()
     {
         $this->db->select("pl_pelatihan.*");
-        $this->db->order_by("pl_pelatihan.mulaipendaftaran","desc");
+        $this->db->order_by("pl_pelatihan.mulaipendaftaran","asc");
+        return $this->db->get('pl_pelatihan');
+    }
+
+    function lihatdatap()
+    {
+        $this->db->select("pl_pelatihan.*");
+        $this->db->order_by("pl_pelatihan.mulaipendaftaran","asc");
+        $this->db->where("publish","Publish");
         return $this->db->get('pl_pelatihan');
     }
     function cekdata($id_pelatihan)

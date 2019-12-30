@@ -9,7 +9,7 @@
 <div class="container">
 	<div class="row vspace" style="margin:5px;">
 		<div class="col-md-12">
-		<form id="form" role="form" class="validate"  action="<?php echo base_url() ?>pelatihan/datausaha" method="post"  enctype="multipart/form-data" >
+		<form id="form" role="form"  action="<?php echo base_url() ?>pelatihan/datausaha" method="post"  enctype="multipart/form-data" >
 		
                     <div class="row">
 		<div class="row">
@@ -57,6 +57,22 @@
 								<input type="text" class="form-control" id="utelp" name="utelp" placeholder="Masukkan Nomor Telepon"  value="<?php echo $data['utelp']; ?>">
 							</div>
 							<div class="form-group">
+								<label for="field-1" class="control-label">Jenis Komoditi </label>
+								<select class="form-control" id="ukomoditi" name="ukomoditi" >
+									<option value="">.:Pilih Jenis Komiditi:.</option>
+										<option value="Makanan dan Minuman">Makanan dan Minuman</option>
+										<option value="Logam">Logam</option>
+										<option value="Perhiasan">Perhiasan</option>
+										<option value="Herbal">Herbal</option>
+										<option value="Kosmetik">Kosmetik</option>
+										<option value="Fashion">Fashion</option>
+										<option value="Industri Kreatif">Industri Kreatif</option>
+										<option value="Kerajinan">Kerajinan</option>
+										<option value="Furniture">Furniture</option>
+								</select>
+								</textarea>
+							</div>
+							<div class="form-group">
 								<label for="field-1" class="control-label">Bentuk Badan Usaha</label>
 								<select class="form-control" id="ubentuk" name="ubentuk" >
 									<option value="">.:Pilih Bentuk Usaha:.</option>
@@ -68,16 +84,17 @@
 								</textarea>
 							</div>
 							<div class="form-group">
-								<label for="field-1" class="control-label">Nama Produk</label>
-								<input type="text" class="form-control" id="uproduk" name="uproduk" placeholder="Masukkan Nama Produk"  value="<?php echo $data['uproduk']; ?>">
+								<label for="field-1" class="control-label">Jumlah Tenaga Kerja</label>
+								<input type="text" class="form-control nilai" id="utenagakerja" name="utenagakerja" placeholder="Masukkan Jumlah Tenaga Kerja"  value="<?php echo $data['utenagakerja']; ?>">
 							</div>
 					
 						</div>
-
+						
 						<div class="col-md-4">
-					
-							
-							
+								<div class="form-group">
+								<label for="field-1" class="control-label">Nama Produk</label>
+								<input type="text" class="form-control" id="uproduk" name="uproduk" placeholder="Masukkan Nama Produk"  value="<?php echo $data['uproduk']; ?>">
+							</div>
 							<div class="form-group">
 								<label for="field-1" class="control-label">Merek</label>
 								<input type="text" class="form-control" id="umerek" name="umerek" placeholder="Masukkan Merek"  value="<?php echo $data['umerek']; ?>">
@@ -141,7 +158,6 @@
 					
 				</div>
 					
-						
 							<input type="hidden" name="<?=$csrf['name']?>" value="<?=$csrf['hash']?>">
 								
 						

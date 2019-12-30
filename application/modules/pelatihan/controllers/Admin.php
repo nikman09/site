@@ -69,5 +69,134 @@ class Admin extends CI_Controller {
         $this->layout->renderadmin('v_admin/pelatihan/v_pelatihan',$variabel,'v_admin/pelatihan/v_pelatihan_js');
    
     }
+
+    public function pelatihantambah()
+    {   
+        $variabel['csrf'] = csrf();
+        $this->load->model("m_admin/m_admin_pelatihan");
+        if ($this->input->post()){
+            $username = $this->session->userdata("pelatihan_admin_username");
+            $mulaipendaftaran = substr($this->input->post('tanggalpendaftaran'),0  ,10);
+            $akhirpendaftaran = substr($this->input->post('tanggalpendaftaran'),13  ,10);
+            $mulaipelatihan = substr($this->input->post('tanggalpelatihan'),0  ,10);
+            $akhirpelatihan = substr($this->input->post('tanggalpelatihan'),13  ,10);
+            $array=array(
+                'nama'=> $this->input->post('nama'),
+                'kategori'=> $this->input->post('kategori'),
+                'mulaipendaftaran'=>tanggalawal($mulaipendaftaran),
+                'akhirpendaftaran'=>tanggalawal($akhirpendaftaran),
+                'pengumuman'=>tanggalawal($this->input->post('tanggalpengumuman')),
+                'mulaipelatihan'=>tanggalawal($mulaipelatihan),
+                'akhirpelatihan'=>tanggalawal($akhirpelatihan),
+                'kuota'=>$this->input->post('kuota'),
+                'persyaratan'=>$this->input->post('persyaratan'),
+                'tempat'=>$this->input->post('tempat'),
+                'cp'=>$this->input->post('cp'),
+                'publish'=>$this->input->post('publish'),
+                'username'=>$username
+            );
+            $config['upload_path'] = './assets/images/pelatihan/lampiran';
+            $config['allowed_types'] = 'jpg|jpeg|JPG|JPEG|PNG|png|PDF|pdf|doc|docx';
+            $this->load->library('upload', $config);
+            $this->upload->do_upload("file");
+            $upload = $this->upload->data();
+            $file = $upload["raw_name"].$upload["file_ext"];
+            $array['file']=$file;
+            $exec = $this->m_admin_pelatihan->tambahdata($array);
+            if ($exec) redirect(base_url("pelatihan/admin/pelatihantambah?msg=1"));
+            else redirect(base_url("pelatihan/admin/pelatihantambah?msg=0"));
+        }
+        else {
+            $this->layout->renderadmin('v_admin/pelatihan/v_pelatihantambah',$variabel,'v_admin/pelatihan/v_pelatihantambah_js');
+        }
+    }
+
+    public function pelatihanhapus()
+    {
+        $this->load->model("m_admin/m_admin_pelatihan");
+        $id_pelatihan = $this->input->get("id");
+        $query2 = $this->m_admin_pelatihan->lihatdatasatu($id_pelatihan);
+        $row2 = $query2->row();
+        $berkas1temp = $row2->file;
+        $path1 ='./assets/images/pelatihan/lampiran/'.$berkas1temp.'';
+        if(is_file($path1)) {
+            unlink($path1);
+        }
+        $exec = $this->m_admin_pelatihan->hapus($id_pelatihan);
+        redirect(base_url()."pelatihan/admin/pelatihan?msg=2");
+    }
+
+    public function pelatihanedit()
+    {   
+        $this->load->model("m_admin/m_admin_pelatihan");
+        $variabel['csrf'] = csrf();
+        if ($this->input->post()) {
+            $username = $this->session->userdata("pelatihan_admin_username");
+            $mulaipendaftaran = substr($this->input->post('tanggalpendaftaran'),0  ,10);
+            $akhirpendaftaran = substr($this->input->post('tanggalpendaftaran'),13  ,10);
+            $mulaipelatihan = substr($this->input->post('tanggalpelatihan'),0  ,10);
+            $akhirpelatihan = substr($this->input->post('tanggalpelatihan'),13  ,10);
+            $id_pelatihan = $this->input->post('id_pelatihan');
+            $array=array(
+                'nama'=> $this->input->post('nama'),
+                'kategori'=> $this->input->post('kategori'),
+                'mulaipendaftaran'=>tanggalawal($mulaipendaftaran),
+                'akhirpendaftaran'=>tanggalawal($akhirpendaftaran),
+                'pengumuman'=>tanggalawal($this->input->post('tanggalpengumuman')),
+                'mulaipelatihan'=>tanggalawal($mulaipelatihan),
+                'akhirpelatihan'=>tanggalawal($akhirpelatihan),
+                'kuota'=>$this->input->post('kuota'),
+                'persyaratan'=>$this->input->post('persyaratan'),
+                'tempat'=>$this->input->post('tempat'),
+                'publish'=>$this->input->post('publish'),
+                'cp'=>$this->input->post('cp'),
+            );
+            $config['upload_path'] = './assets/images/pelatihan/lampiran';
+            $config['allowed_types'] = 'jpg|jpeg|JPG|JPEG|PNG|png|PDF|pdf|doc|docx';
+            $this->load->library('upload', $config);
+            if ($this->upload->do_upload("file"))
+            {
+                
+                $upload = $this->upload->data();
+                $file = $upload["raw_name"].$upload["file_ext"];
+                $array['file']=$file;
+                $query2 = $this->m_admin_pelatihan->lihatdatasatu($id_pelatihan);
+                $row2 = $query2->row();
+                $berkas1temp = $row2->file;
+                $path1 ='./assets/images/pelatihan/'.$berkas1temp.'';
+                if(is_file($path1)) {
+                    unlink($path1); //menghapus gambar di folder pelatihan
+                }
+            } 
+                else if ($this->input->post('file')=="") 
+            {
+                $query2 = $this->m_admin_pelatihan->lihatdatasatu($id_pelatihan);
+                $row2 = $query2->row();
+                $berkas1temp = $row2->file;
+                $path1 ='./assets/images/pelatihan/'.$berkas1temp.'';
+                if(is_file($path1)) {
+                    unlink($path1); //menghapus gambar di folder pelatihan
+                }
+                $array['file']="";
+            }
+            
+           
+            $exec = $this->m_admin_pelatihan->editdata($id_pelatihan,$array);
+            if ($exec) redirect(base_url("pelatihan/admin/pelatihanedit?id=".$id_pelatihan."&msg=1"));
+            else redirect(base_url("pelatihan/admin/pelatihanedit?id=".$id_pelatihan."&msg=0"));
+
+        } else {
+            $id_pelatihan = $this->input->get("id");
+            $exec = $this->m_admin_pelatihan->lihatdatasatu($id_pelatihan);
+            if ($exec->num_rows()>0){
+                $variabel['data'] = $exec ->row_array();
+                $this->layout->renderadmin('v_admin/pelatihan/v_pelatihan_edit',$variabel,'v_admin/pelatihan/v_pelatihan_edit_js');
+            } else {
+                redirect(base_url("pelatihan/admin/pelatihan"));
+            }
+        }
+      
+    }
  
+
 }

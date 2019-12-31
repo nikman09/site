@@ -11,8 +11,8 @@
 					<span class="title">Beranda </span>
 				</a>
 			</li>
-			<li  class="<?= ($submenu == "" || $submenu == ""  || $submenu == "" ) ? "active root-level" : ""; ?> ">
-				<a href="<?php echo base_url() ?>pelatihan/admin/pelatihandaftar">
+			<li  class="<?= ($submenu == "seleksipendaftaran" || $submenu == ""  || $submenu == "" ) ? "active root-level" : ""; ?> ">
+				<a href="<?php echo base_url() ?>pelatihan/admin/seleksipendaftaran">
 					<i class="fa fa-trophy"></i>
 					<span class="title">Seleksi Pendaftaran</span>
 				</a>

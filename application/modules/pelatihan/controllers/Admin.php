@@ -53,15 +53,11 @@ class Admin extends CI_Controller {
          redirect(base_url('pelatihan/admin/logout'));
      }
 
-     public function pelatihandaftar()
-     {   
-       cekloginadminpelatihan();
-       akses("admin");
-       $this->load->view("v_admin/dashboard/v_home");
-     }
+    
 
      public function pelatihan()
-    {   
+    { 
+        cekloginadminpelatihan();  
         $variabel['csrf'] = csrf();
         $this->load->model("m_admin/m_admin_pelatihan");
         $username = $this->session->userdata("pelatihan_admin_username");
@@ -72,6 +68,7 @@ class Admin extends CI_Controller {
 
     public function pelatihantambah()
     {   
+        cekloginadminpelatihan();
         $variabel['csrf'] = csrf();
         $this->load->model("m_admin/m_admin_pelatihan");
         if ($this->input->post()){
@@ -113,6 +110,7 @@ class Admin extends CI_Controller {
 
     public function pelatihanhapus()
     {
+        cekloginadminpelatihan();
         $this->load->model("m_admin/m_admin_pelatihan");
         $id_pelatihan = $this->input->get("id");
         $query2 = $this->m_admin_pelatihan->lihatdatasatu($id_pelatihan);
@@ -128,6 +126,7 @@ class Admin extends CI_Controller {
 
     public function pelatihanedit()
     {   
+        cekloginadminpelatihan();
         $this->load->model("m_admin/m_admin_pelatihan");
         $variabel['csrf'] = csrf();
         if ($this->input->post()) {
@@ -196,6 +195,18 @@ class Admin extends CI_Controller {
             }
         }
       
+    }
+
+    public function seleksipendaftaran()
+    {   
+        cekloginadminpelatihan();
+        $variabel['csrf'] = csrf();
+        $this->load->model("m_admin/m_admin_pelatihan");
+        $this->load->model("m_admin/m_admin_pelatihandaftar");
+        $username = $this->session->userdata("pelatihan_admin_username");
+        $variabel['data'] = $this->m_admin_pelatihandaftar->lihatdatapelatihandaftar($username);
+
+          $this->layout->renderadmin('v_admin/seleksipendaftaran/v_seleksipendaftaran',$variabel,'v_admin/seleksipendaftaran/v_seleksipendaftaran_js');
     }
  
 

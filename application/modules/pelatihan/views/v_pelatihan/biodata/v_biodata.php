@@ -69,7 +69,7 @@
 
 							<div class="form-group">
 								<label for="field-1" class="control-label">Alamat Sekarang</label>
-								<textarea class="form-control" id="alamat" name="alamat" placeholder="Masukkan Tempat Lahir"><?php echo $data['tempatlahir']; ?></textarea>
+								<textarea class="form-control" id="alamat" name="alamat" placeholder="Masukkan Tempat Lahir"><?php echo $data['alamat']; ?></textarea>
 							</div>
 							<div class="form-group">
 								<label for="field-1" class="control-label">Kota</label>

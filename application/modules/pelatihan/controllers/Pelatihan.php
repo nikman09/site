@@ -639,6 +639,7 @@ class Pelatihan extends CI_Controller {
                 'ukecamatan'=>$this->input->post('ukecamatan'),
                 'ukabkota'=>$this->input->post('ukabkota'),
                 'utelp'=>$this->input->post('utelp'),
+                'ukomoditi'=>$this->input->post('ukomoditi'),
                 'ubentuk'=>$this->input->post('ubentuk'),
                 'utenagakerja'=>$this->input->post('utenagakerja'),
                 'uproduk'=>$this->input->post('uproduk'),

@@ -60,15 +60,15 @@
 								<label for="field-1" class="control-label">Jenis Komoditi </label>
 								<select class="form-control" id="ukomoditi" name="ukomoditi" >
 									<option value="">.:Pilih Jenis Komiditi:.</option>
-										<option value="Makanan dan Minuman">Makanan dan Minuman</option>
-										<option value="Logam">Logam</option>
-										<option value="Perhiasan">Perhiasan</option>
-										<option value="Herbal">Herbal</option>
-										<option value="Kosmetik">Kosmetik</option>
-										<option value="Fashion">Fashion</option>
-										<option value="Industri Kreatif">Industri Kreatif</option>
-										<option value="Kerajinan">Kerajinan</option>
-										<option value="Furniture">Furniture</option>
+										<option value="Makanan dan Minuman" <?= $data['ukomoditi']=="Makanan dan Minuman"?"selected":"" ?>>Makanan dan Minuman</option>
+										<option value="Logam" <?= $data['ukomoditi']=="Logam"?"selected":"" ?>>Logam</option>
+										<option value="Perhiasan" <?= $data['ukomoditi']=="Perhiasan"?"selected":"" ?>>Perhiasan</option>
+										<option value="Herbal" <?= $data['ukomoditi']=="Herbal"?"selected":"" ?>>Herbal</option>
+										<option value="Kosmetik" <?= $data['ukomoditi']=="Kosmetik"?"selected":"" ?>>Kosmetik</option>
+										<option value="Fashion" <?= $data['ukomoditi']=="Fashion"?"selected":"" ?>>Fashion</option>
+										<option value="Industri Kreatif" <?= $data['ukomoditi']=="Industri Kreatif"?"selected":"" ?>>Industri Kreatif</option>
+										<option value="Kerajinan" <?= $data['ukomoditi']=="Kerajinan"?"selected":"" ?>>Kerajinan</option>
+										<option value="Furniture" <?= $data['ukomoditi']=="Furniture"?"selected":"" ?>>Furniture</option>
 								</select>
 								</textarea>
 							</div>

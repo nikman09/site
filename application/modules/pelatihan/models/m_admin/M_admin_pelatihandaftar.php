@@ -62,6 +62,16 @@ class M_admin_pelatihandaftar extends CI_Model
         return $this->db->get('pl_pelatihandaftar');
     }
 
+    function lihatdatapelatihandaftaraktif($id_pelatihan)
+    {
+        $this->db->select("pl_pelatihandaftar.*,pl_pelatihan  .*,pl_akun.*")
+        ->join("pl_pelatihan","pl_pelatihan.id_pelatihan=pl_pelatihandaftar.id_pelatihan")
+        ->join("pl_akun","pl_akun.id_akun=pl_pelatihandaftar.id_akun");
+        $this->db->order_by("pl_pelatihandaftar.id_pelatihandaftar","desc");
+        $this->db->where("pl_pelatihandaftar.id_pelatihan",$id_pelatihan);  
+        return $this->db->get('pl_pelatihandaftar');
+    }
+
     function cekdata($id_pelatihandaftar)
     {
         $this->db->where("id_pelatihandaftar",$id_pelatihandaftar);

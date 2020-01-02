@@ -30,6 +30,7 @@ class Admin extends CI_Controller {
                     'pelatihan_admin_nama'=> $data['nama'],
                     'pelatihan_admin_foto'=> $data['foto'],
                     'pelatihan_admin_bidang'=> $data['bidang'],
+                    'pelatihan_admin_pelatihanaktif'=> $data['pelatihanaktif'],
                     'pelatihan_admin_rule'=> $data['rule']
                     );
                 $this->session->set_userdata($data_session);
@@ -50,7 +51,7 @@ class Admin extends CI_Controller {
 
     function logout() {
         $this->session->sess_destroy();
-         redirect(base_url('pelatihan/admin/logout'));
+         redirect(base_url('pelatihan/admin/login'));
      }
 
     
@@ -204,9 +205,62 @@ class Admin extends CI_Controller {
         $this->load->model("m_admin/m_admin_pelatihan");
         $this->load->model("m_admin/m_admin_pelatihandaftar");
         $username = $this->session->userdata("pelatihan_admin_username");
-        $variabel['data'] = $this->m_admin_pelatihandaftar->lihatdatapelatihandaftar($username);
+        $pelatihanaktif = $this->session->userdata("pelatihan_admin_pelatihanaktif");
+        
+        $variabel['data'] = $this->m_admin_pelatihandaftar->lihatdatapelatihandaftaraktif($pelatihanaktif);
 
           $this->layout->renderadmin('v_admin/seleksipendaftaran/v_seleksipendaftaran',$variabel,'v_admin/seleksipendaftaran/v_seleksipendaftaran_js');
+    }
+
+    public function biodatatampil()
+    {      
+        cekloginadminpelatihan();
+        $variabel['csrf'] = csrf();
+        $this->load->model("m_admin/m_admin_akun");
+        $id_akun = $this->input->post("id_akun");
+        $variabel['data'] = $this->m_admin_akun->lihatdatasatu($id_akun)->row_array();
+        $this->load->view("v_admin/seleksipendaftaran/v_biodata",$variabel);
+    }
+
+    public function usahatampil()
+    {      
+        cekloginadminpelatihan();
+        $variabel['csrf'] = csrf();
+        $this->load->model("m_admin/m_admin_akun");
+        $id_akun = $this->input->post("id_akun");
+        $variabel['data'] = $this->m_admin_akun->lihatdatasatu($id_akun)->row_array();
+        $this->load->view("v_admin/seleksipendaftaran/v_usaha",$variabel);
+    }
+
+    public function seleksitampil()
+    {      
+        cekloginadminpelatihan();
+        $variabel['csrf'] = csrf();
+        $this->load->model("m_admin/m_admin_akun");
+        $this->load->model("m_admin/m_admin_pelatihandaftar");
+        $id_pelatihandaftar = $this->input->post("id_pelatihandaftar");
+        $variabel['data'] = $this->m_admin_pelatihandaftar->lihatdatasatu($id_pelatihandaftar)->row_array();
+        $this->load->view("v_admin/seleksipendaftaran/v_seleksi",$variabel);
+    }
+
+    public function seleksiedit()
+    {      
+        $variabel['csrf'] = csrf();
+        $this->load->model("m_admin/m_admin_pelatihandaftar");
+     
+        if ($this->input->post()) {
+            $array=array(
+                 'status'=> $this->input->post('status'),
+                );
+                $id_pelatihandaftar = $this->input->post("id_pelatihandaftar");
+                $exec = $this->m_admin_pelatihandaftar->editdata($id_pelatihandaftar,$array);
+                if ($exec){
+                 redirect(base_url("pelatihan/admin/seleksipendaftaran?msg=0"));
+                }
+      } else {
+      }
+
+     
     }
  
 

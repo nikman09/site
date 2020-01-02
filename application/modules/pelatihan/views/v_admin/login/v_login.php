@@ -92,7 +92,6 @@
 								<input type="text" class="form-control" name="username" id="username"  placeholder="Username" autocomplete="off" value="<?php echo set_value('username'); ?>"
 								/>
 							</div>
-							
 						</div>
 						<div class="form-group">
 							<div class="input-group">

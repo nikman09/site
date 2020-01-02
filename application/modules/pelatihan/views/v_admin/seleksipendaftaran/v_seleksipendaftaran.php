@@ -85,11 +85,11 @@
 			</div>
 		</div>
        
-        <?php pesan_get('msg',"Berhasil Menambah Pelatihan","Berhasil Mengedit Pelatihan","Berhasil Menghapus Pelatihan") ?>
+        <?php pesan_get('msg',"Berhasil Menambah Pelatihan","Berhasil Mengedit Status Seleksi","Berhasil Menghapus Pelatihan") ?>
            
            
-
-            <table class="table table-bordered datatable"  id="table-1" style="font-size:12px">
+        <div class="table-responsive">
+            <table class="table table-bordered datatable "  id="table-1" style="font-size:12px">
                 <thead>
                     <tr>
                         <th width="50px">Aksi</th>
@@ -121,14 +121,14 @@
 								<td>".$row['kota']."</td>
                                 <td>".$row['nohp']."</td>
                                 <td>".$row['pendidikan']."</td>
-                                <td><a href='".base_url("pelatihan/admin/pelatihanedit?id=".$row['id_pelatihan']."")."' class='btn btn-primary btn-sm btn-icon icon-left' title='Edit/Lihat' id='".$row['id_pelatihan']."'><i class='fa fa-user' id='".$row['id_pelatihan']."'  ></i> 90 %</a> </td>
-                                <td><a href='".base_url("pelatihan/admin/pelatihanedit?id=".$row['id_pelatihan']."")."' class='btn btn-primary btn-sm btn-icon icon-left' title='Edit/Lihat' id='".$row['id_pelatihan']."'><i class='fa fa-industry' id='".$row['id_pelatihan']."'  ></i>50 %</a></td>
-                                <td><a href='".base_url("pelatihan/admin/pelatihanedit?id=".$row['id_pelatihan']."")."' class='btn ";
+                                <td><a href='#' class='btn btn-primary btn-sm btn-icon icon-left biodata' title='Lihat Biodata'  data-toggle='modal' id='".$row['id_akun']."' data-target='#myModal2'><i class='fa fa-user' ></i> 90 %</a> </td>
+                                <td><a href='#' class='btn btn-primary btn-sm btn-icon icon-left usaha' title='Usaha'  data-toggle='modal' id='".$row['id_akun']."' data-target='#myModal3'><i class='fa fa-industry'></i>50 %</a></td>
+                                <td><a href='#' class='btn ";
                                 if ($row['status']=='Menunggu Hasil Seleksi')  echo 'btn-default';
                                 else if ($row['status']=='Lulus Seleksi')  echo 'btn-success';
                                 else if ($row['status']=='Tidak Lulus Seleksi')  echo 'btn-danger';
                                     
-                                echo " btn-sm btn-icon icon-left' title='Edit/Lihat' id='".$row['id_pelatihan']."'><i class='fa fa-edit'></i> ".$row['status']."</a>";
+                                echo " btn-sm btn-icon icon-left seleksi' title='Edit/Lihat' id='".$row['id_pelatihandaftar']."' data-target='#myModal4'  data-toggle='modal' ><i class='fa fa-edit'></i> ".$row['status']."</a>";
                                 
 						echo "
 							</tr>
@@ -137,13 +137,32 @@
 				?>
                 </tbody>
             </table>
+        </div>
     </div>
 </div>
 
 
 <div class="modal fade" id="myModal2">
-    <div class="modal-dialog">
-        <div class="modal-content" id="modal-edit">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content" id="modal-biodata">
+
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="myModal3">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content" id="modal-usaha">
+
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="myModal4">
+    <div class="modal-dialog ">
+        <div class="modal-content" id="modal-seleksi">
 
         </div>
     </div>

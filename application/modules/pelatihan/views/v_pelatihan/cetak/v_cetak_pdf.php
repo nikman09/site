@@ -2,7 +2,7 @@
     $pdf = new Pdf('P', 'mm', 'A4', true, 'UTF-8', false);
     $pdf->setPrintHeader(false);
     $pdf->setPrintFooter(false);
-    $pdf->SetTitle('SKUM -');
+    $pdf->SetTitle('Kartu Pendaftaran');
     $pdf->SetMargins(10, 10, 10, true);
     $pdf->SetAutoPageBreak(true);
     $pdf->SetAuthor('Author');
@@ -31,6 +31,9 @@
     $pdf->SetX(150);
     $pdf->write1DBarcode($data['nodaf'], 'C128', '', '', '', 8, 0.4, $style, 'N');
     $pdf->ln(10);
+
+  
+
     $pdf->SetFont('helvetica', 'B', 12);
     $pdf->Cell(0, 0, 'KARTU PENDAFTARAN PELATIHAN INDUSTRI', 0, false, 'C', 0, '', 0, false, 'M', 'M');
     $pdf->ln(3);
@@ -45,6 +48,9 @@
     </div>';
     $pdf->writeHTML($asd, false, true, false, false, '');
     $pdf->SetFont('helvetica', '', 10);
+   
+    $pdf->Image(''.base_url().'assets/images/pelatihan/biodata/'.$data['foto'].'', 140, 40, 50, '', '', 'http://disperin.kalselprov.go.id/', '', false, 300);
+ 
     $asd = '
     <h4><u>Data Diri</u></h4>
     <br/>

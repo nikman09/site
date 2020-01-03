@@ -56,6 +56,8 @@ class Admin extends CI_Controller {
 
     
 
+    
+
      public function pelatihan()
     { 
         cekloginadminpelatihan();  
@@ -201,15 +203,26 @@ class Admin extends CI_Controller {
     public function seleksipendaftaran()
     {   
         cekloginadminpelatihan();
+        
         $variabel['csrf'] = csrf();
         $this->load->model("m_admin/m_admin_pelatihan");
         $this->load->model("m_admin/m_admin_pelatihandaftar");
+        $this->load->model("m_admin/m_admin_akun");
         $username = $this->session->userdata("pelatihan_admin_username");
         $pelatihanaktif = $this->session->userdata("pelatihan_admin_pelatihanaktif");
-        
-        $variabel['data'] = $this->m_admin_pelatihandaftar->lihatdatapelatihandaftaraktif($pelatihanaktif);
-
-          $this->layout->renderadmin('v_admin/seleksipendaftaran/v_seleksipendaftaran',$variabel,'v_admin/seleksipendaftaran/v_seleksipendaftaran_js');
+        $variabel['pelatihan'] = $this->m_admin_pelatihan->lihatdatauser($username);
+        $exec = $this->m_admin_pelatihan->lihatdatasatu($pelatihanaktif);
+        if ($exec->num_rows()>0){
+            $variabel['detail'] = $exec ->row_array();
+            $variabel['data'] = $this->m_admin_pelatihandaftar->lihatdatapelatihandaftaraktif($pelatihanaktif);
+            $variabel['totalpendaftar'] = $this->m_admin_pelatihandaftar->totalpendaftar($pelatihanaktif);
+            $variabel['menungguhasil'] = $this->m_admin_pelatihandaftar->menungguhasil($pelatihanaktif);
+            $variabel['lulusseleksi'] = $this->m_admin_pelatihandaftar->lulusseleksi($pelatihanaktif);
+            $variabel['tidaklulus'] = $this->m_admin_pelatihandaftar->tidaklulus($pelatihanaktif);
+            $this->layout->renderadmin('v_admin/seleksipendaftaran/v_seleksipendaftaran',$variabel,'v_admin/seleksipendaftaran/v_seleksipendaftaran_js');
+        } else {
+            $this->layout->renderadmin('v_admin/seleksipendaftaran/v_seleksipendaftarantidak',$variabel,'v_admin/seleksipendaftaran/v_seleksipendaftarantidak_js');
+        }
     }
 
     public function biodatatampil()
@@ -241,6 +254,7 @@ class Admin extends CI_Controller {
         $id_pelatihandaftar = $this->input->post("id_pelatihandaftar");
         $variabel['data'] = $this->m_admin_pelatihandaftar->lihatdatasatu($id_pelatihandaftar)->row_array();
         $this->load->view("v_admin/seleksipendaftaran/v_seleksi",$variabel);
+        
     }
 
     public function seleksiedit()

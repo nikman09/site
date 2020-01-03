@@ -93,5 +93,40 @@ class M_admin_pelatihandaftar extends CI_Model
         $this->db->where("id_pelatihandaftar",$id_pelatihandaftar);
         return $this->db->delete('pl_pelatihandaftar');
     }
+
+    function totalpendaftar($id_pelatihan)
+    {
+        $this->db->select("count(id_pelatihandaftar) as totalpendaftar");
+        $this->db->where("pl_pelatihandaftar.id_pelatihan",$id_pelatihan);  
+        $data = $this->db->get('pl_pelatihandaftar')->row_array();
+        return $data["totalpendaftar"];
+    }
+
+    function menungguhasil($id_pelatihan)
+    {
+        $this->db->select("count(id_pelatihandaftar) as totalpendaftar");
+        $this->db->where("pl_pelatihandaftar.id_pelatihan",$id_pelatihan);  
+        $this->db->where("pl_pelatihandaftar.status","Menunggu Hasil Seleksi");  
+        $data = $this->db->get('pl_pelatihandaftar')->row_array();
+        return $data["totalpendaftar"];
+    }
+
+    function lulusseleksi($id_pelatihan)
+    {
+        $this->db->select("count(id_pelatihandaftar) as totalpendaftar");
+        $this->db->where("pl_pelatihandaftar.id_pelatihan",$id_pelatihan);  
+        $this->db->where("pl_pelatihandaftar.status","Lulus Seleksi");  
+        $data = $this->db->get('pl_pelatihandaftar')->row_array();
+        return $data["totalpendaftar"];
+    }
+
+    function tidaklulus($id_pelatihan)
+    {
+        $this->db->select("count(id_pelatihandaftar) as totalpendaftar");
+        $this->db->where("pl_pelatihandaftar.id_pelatihan",$id_pelatihan);  
+        $this->db->where("pl_pelatihandaftar.status","Tidak Lulus Seleksi");  
+        $data = $this->db->get('pl_pelatihandaftar')->row_array();
+        return $data["totalpendaftar"];
+    }
   
 }

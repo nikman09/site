@@ -22,7 +22,7 @@ class Pelatihan extends CI_Controller {
         // Mencari Biodata Lengkap
         $id_akun = $this->session->userdata("pelatihan_idakun");
         $biodata= $this->m_pelatihan_akun->lihatdatasatu($id_akun)->row_array();
-        $variabel['persen']= $this->lengkap($biodata);
+        $variabel['persen']= lengkap($biodata);
         // Akhir Biodata Lengkap
        
         $exec = $this->m_pelatihan_pelatihandaftar->lihatdatasatuakun($id_akun);
@@ -42,55 +42,6 @@ class Pelatihan extends CI_Controller {
       $this->layout->renderpel("v_pelatihan/beranda/v_beranda",$variabel,"v_pelatihan/beranda/v_beranda_js");
     }
 
-    public function lengkap($biodata)
-    {   
-     
-        $lengkap = 0;
-        $lengkap += $biodata["email"]!="" || $biodata["email"]!=null ? 1 : 0 ;
-        $lengkap += $biodata["password"]!="" || $biodata["password"]!=null ? 1 : 0 ;
-        $lengkap += $biodata["nik"]!="" || $biodata["nik"]!=null ? 1 : 0 ;
-        $lengkap += $biodata["nama"]!="" || $biodata["nama"]!=null ? 1 : 0 ;
-        $lengkap += $biodata["jk"]!="" || $biodata["jk"]!=null ? 1 : 0 ;
-        $lengkap += $biodata["tempatlahir"]!="" || $biodata["tempatlahir"]!=null ? 1 : 0 ;
-        $lengkap += $biodata["tanggallahir"]!="0000-00-00" || $biodata["tanggallahir"]!=null ? 1 : 0 ;
-        $lengkap += $biodata["alamat"]!="" || $biodata["alamat"]!=null ? 1 : 0 ;
-        $lengkap += $biodata["kota"]!="" || $biodata["kota"]!=null ? 1 : 0 ;
-        $lengkap += $biodata["nohp"]!="" || $biodata["nohp"]!=null ? 1 : 0 ;
-        $lengkap += $biodata["foto"]!="" || $biodata["foto"]!=null ? 1 : 0 ;
-        $lengkap += $biodata["pendidikan"]!="" || $biodata["pendidikan"]!=null ? 1 : 0 ;
-        $lengkap += $biodata["namapendidikan"]!="" || $biodata["namapendidikan"]!=null ? 1 : 0 ;
-        $lengkap += $biodata["jurusan"]!="" || $biodata["jurusan"]!=null ? 1 : 0 ;
-        $lengkap += $biodata["nilai"]!="" || $biodata["nilai"]!=null ? 1 : 0 ;
-        return $persen = $lengkap/15*100;
-       
-    }
-
-
-    public function usaha($biodata)
-    {   
-     
-        $lengkap = 0;
-        $lengkap += $biodata["unama"]!="" || $biodata["unama"]!=null ? 1 : 0 ;
-        $lengkap += $biodata["upemilik"]!="" || $biodata["upemilik"]!=null ? 1 : 0 ;
-        $lengkap += $biodata["ujalan"]!="" || $biodata["ujalan"]!=null ? 1 : 0 ;
-        $lengkap += $biodata["udesa"]!="" || $biodata["udesa"]!=null ? 1 : 0 ;
-        $lengkap += $biodata["ukecamatan"]!="" || $biodata["ukecamatan"]!=null ? 1 : 0 ;
-        $lengkap += $biodata["ukabkota"]!="" || $biodata["ukabkota"]!=null ? 1 : 0 ;
-        $lengkap += $biodata["utelp"]!="" || $biodata["utelp"]!=null ? 1 : 0 ;
-        $lengkap += $biodata["ubentuk"]!="" || $biodata["ubentuk"]!=null ? 1 : 0 ;
-        $lengkap += $biodata["utenagakerja"]!="" || $biodata["utenagakerja"]!=null ? 1 : 0 ;
-        $lengkap += $biodata["uproduk"]!="" || $biodata["uproduk"]!=null ? 1 : 0 ;
-        $lengkap += $biodata["umerek"]!="" || $biodata["umerek"]!=null ? 1 : 0 ;
-        $lengkap += $biodata["uinvestasi"]!="" || $biodata["uinvestasi"]!=null ? 1 : 0 ;
-        $lengkap += $biodata["ujumlahproduksi"]!="" || $biodata["ujumlahproduksi"]!=null ? 1 : 0 ;
-        $lengkap += $biodata["usatuanproduksi"]!="" || $biodata["usatuanproduksi"]!=null ? 1 : 0 ;
-        $lengkap += $biodata["unilaiproduksi"]!="" || $biodata["unilaiproduksi"]!=null ? 1 : 0 ;
-        $lengkap += $biodata["unilaibahanbaku"]!="" || $biodata["unilaibahanbaku"]!=null ? 1 : 0 ;
-        $lengkap += $biodata["upemasaran"]!="" || $biodata["upemasaran"]!=null ? 1 : 0 ;
-        $lengkap += $biodata["ufotoproduk"]!="" || $biodata["ufotoproduk"]!=null ? 1 : 0 ;
-        return $persen = $lengkap/18*100;
-       
-    }
 
 
     public function Informasi()
@@ -107,7 +58,7 @@ class Pelatihan extends CI_Controller {
         // Mencari Biodata Lengkap
         $id_akun = $this->session->userdata("pelatihan_idakun");
         $biodata= $this->m_pelatihan_akun->lihatdatasatu($id_akun)->row_array();
-        $variabel['persen']= $this->lengkap($biodata);
+        $variabel['persen']= lengkap($biodata);
         // Akhir Biodata Lengkap
 
         $exec = $this->m_pelatihan_pelatihandaftar->lihatdatasatuakun($id_akun);
@@ -298,11 +249,10 @@ class Pelatihan extends CI_Controller {
           // Mencari Biodata Lengkap
           $id_akun = $this->session->userdata("pelatihan_idakun");
           $biodata= $this->m_pelatihan_akun->lihatdatasatu($id_akun)->row_array();
-          $variabel['persen']= $this->lengkap($biodata);
-          $variabel['persenusaha']= $this->usaha($biodata);
+          $variabel['persen']= lengkap($biodata);
+          $variabel['persenusaha']= usaha($biodata);
           // Akhir Biodata Lengkap
         $this->layout->renderpel("v_pelatihan/status/v_status",$variabel,"v_pelatihan/status/v_status_js");
-      
       } else {
         $variabel["data"] = $exec->row_array();
         $this->layout->renderpel("v_pelatihan/status/v_statusno",$variabel,"v_pelatihan/status/v_status_js");
@@ -516,7 +466,7 @@ class Pelatihan extends CI_Controller {
               // Mencari Biodata Lengkap
               $id_akun = $this->session->userdata("pelatihan_idakun");
               $biodata= $this->m_pelatihan_akun->lihatdatasatu($id_akun)->row_array();
-              $variabel['persen']= $this->lengkap($biodata);
+              $variabel['persen']= lengkap($biodata);
               // Akhir Biodata Lengkap
               $this->layout->renderpel("v_pelatihan/status/v_status",$variabel,"v_pelatihan/status/v_status_js");
             } else {

@@ -14,24 +14,68 @@
     <div class="row">
         <form role="form" class="form-horizontal"  action="<?php echo base_url() ?>app/tambahtransaksi"	method="post"  id="form"> 	
            
-                <div class="col-md-12">    
+        <div class="col-md-12">    
                 <input type="hidden" name="<?=$csrf['name']?>" value="<?=$csrf['hash']?>">
-                
                     <div class="form-group">
-                        <label class="col-sm-2 control-label" style="margin-top:5px">Pelatihan</label>
-                        <div class="col-sm-6" style="margin-top:5px">
-                        <select type="hidden" id="antarjemput"  class="form-control" name="antarjemput"  data-rule-required="true"> 
-							<option value="Tidak">Tidak</option>
-							<option value="Iya">Iya</option>
+                        <label class="col-sm-2 control-label " style="margin-top:5px;">Pelatihan yang Aktif</label>
+                        <div class="col-sm-8" style="margin-top:5px">
+                        <select  id="id_pelatihan"  class="form-control" name="id_pelatihan"  data-rule-required="true"> 
+                        <?php 
+                                foreach($pelatihan->result_array() as $row ){
+                                    echo "<option >".$row["nama"]."</<option>";
+
+                                }
+                        ?>
+							
 						</select>
                          </div>
-                         <div class="col-sm-2"  style="margin-top:5px">
-                            <a class="btn  btn-default btn-icon icon-left"  id="tambahpelanggan" data-toggle="modal" data-target="#myModal3" style=""><i class="fa fa-check" ></i> Pilih</a>
+                         <div class="col-sm-2 text-right"  style="margin-top:5px">
+                            <a class="btn  btn-default btn-icon icon-left"  id="tambahpelanggan" data-toggle="modal" data-target="#myModal3" style=""><i class="fa fa-check" ></i> Pilih Pelatihan</a>
                            
                         </div>
                     </div>
+                    
 						
                    
+                                 
+                </div>
+                <div class="col-md-6">    
+                <input type="hidden" name="<?=$csrf['name']?>" value="<?=$csrf['hash']?>">
+                
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label" style="margin-top:5px">Kategori</label>
+                        <div class="col-sm-8" style="margin-top:5px">
+                             <input type="text" value="<?php echo $detail["kategori"] ?>"  id="id_pelatihan"  class="form-control" name="id_pelatihan"  readonly /> 
+                         </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label" style="margin-top:5px">Tanggal Pendaftaran</label>
+                        <div class="col-sm-8" style="margin-top:5px">
+                             <input type="text" value="<?php echo tgl_indo($row['mulaipendaftaran'])." - ".tgl_indo($row['akhirpendaftaran']) ?>"  id="id_pelatihan"  class="form-control" name="id_pelatihan"  readonly /> 
+                         </div>
+                    </div>
+						
+                   
+                                 
+                </div>
+
+                <div class="col-md-6">    
+                     <div class="form-group">
+                        <label class="col-sm-4 control-label" style="margin-top:5px">Tanggal Pengumuman</label>
+                        <div class="col-sm-8" style="margin-top:5px">
+                             <input type="text" value="<?php echo tgl_indo($detail["pengumuman"]) ?>"  id="id_pelatihan"  class="form-control" name="id_pelatihan"  readonly /> 
+                         </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label" style="margin-top:5px">Tanggal Pelatihan</label>
+                        <div class="col-sm-8" style="margin-top:5px">
+                             <input type="text" value="<?php echo tgl_indo($row['mulaipelatihan'])." - ".tgl_indo($row['akhirpelatihan']) ?>"  id="id_pelatihan"  class="form-control" name="id_pelatihan"  readonly /> 
+                         </div>
+                    </div>
+                    <div class="text-right"  style="margin-top:5px">
+                            <a class="btn  btn-primary btn-icon icon-left syarat"  id="<?= $detail["id_pelatihan"] ?>" data-toggle="modal" data-target="#myModal5" style=""><i class="fa fa-list" ></i> Persyaratan</a>
+                           
+                        </div>
                                  
                 </div>
                 
@@ -47,7 +91,7 @@
 		
 				<div class="tile-stats tile-default">
 					<div class="icon"><i class="entypo-users"></i></div>
-					<div class="num" data-start="0" data-end="10" data-postfix="" data-duration="500" data-delay="0">0</div>
+					<div class="num" data-start="0" data-end="<?= $totalpendaftar ?>" data-postfix="" data-duration="500" data-delay="0">0</div>
 		
 					<h3>Total Pendaftar</h3>
 					<p></p>
@@ -57,7 +101,7 @@
 		
 				<div class="tile-stats tile-white">
 					<div class="icon"><i class="entypo-users"></i></div>
-					<div class="num" data-start="0" data-end="10" data-postfix="" data-duration="500" data-delay="0">0</div>
+					<div class="num" data-start="0" data-end="<?= $menungguhasil ?>" data-postfix="" data-duration="500" data-delay="0">0</div>
 		
 					<h3>Menunggu Hasil Seleksi</h3>
 					<p></p>
@@ -68,7 +112,7 @@
 			<div class="col-sm-3 col-xs-12">
 				<div class="tile-stats tile-green">
 					<div class="icon"><i class="entypo-users"></i></div>
-					<div class="num" data-start="0" data-end="10" data-postfix="" data-duration="500" data-delay="0">0</div>
+					<div class="num" data-start="0" data-end="<?= $lulusseleksi ?>" data-postfix="" data-duration="500" data-delay="0">0</div>
 
 					<h3>Lulus Seleksi</h3>
 					<p></p>
@@ -77,7 +121,7 @@
             <div class="col-sm-3 col-xs-12">
 				<div class="tile-stats tile-red">
 					<div class="icon"><i class="entypo-users"></i></div>
-					<div class="num" data-start="0" data-end="10" data-postfix="" data-duration="500" data-delay="0">0</div>
+					<div class="num" data-start="0" data-end="<?= $tidaklulus ?>" data-postfix="" data-duration="500" data-delay="0">0</div>
 
 					<h3>Tidak Lulus Seleksi</h3>
 					<p></p>
@@ -87,7 +131,10 @@
        
         <?php pesan_get('msg',"Berhasil Menambah Pelatihan","Berhasil Mengedit Status Seleksi","Berhasil Menghapus Pelatihan") ?>
            
-           
+        <div class="text-right"  style="margin-top:5px;margin-bottom:5px">
+                            <a class="btn  btn-success btn-icon icon-left syarat"  id="<?= $detail["id_pelatihan"] ?>" style=""><i class="fa fa-file-excel-o" ></i> Export to Excel</a>
+                           
+                        </div>
         <div class="table-responsive">
             <table class="table table-bordered datatable "  id="table-1" style="font-size:12px">
                 <thead>
@@ -107,6 +154,8 @@
                 <tbody>
                 <?php
 					foreach($data->result_array() as $row){
+                        $biodata = $this->m_admin_akun->lihatdatasatu($row["id_akun"])->row_array();
+                        
 						echo "
                             <tr>
                                 <td>
@@ -121,8 +170,8 @@
 								<td>".$row['kota']."</td>
                                 <td>".$row['nohp']."</td>
                                 <td>".$row['pendidikan']."</td>
-                                <td><a href='#' class='btn btn-primary btn-sm btn-icon icon-left biodata' title='Lihat Biodata'  data-toggle='modal' id='".$row['id_akun']."' data-target='#myModal2'><i class='fa fa-user' ></i> 90 %</a> </td>
-                                <td><a href='#' class='btn btn-primary btn-sm btn-icon icon-left usaha' title='Usaha'  data-toggle='modal' id='".$row['id_akun']."' data-target='#myModal3'><i class='fa fa-industry'></i>50 %</a></td>
+                                <td><a href='#' class='btn btn-primary btn-sm btn-icon icon-left biodata' title='Lihat Biodata'  data-toggle='modal' id='".$row['id_akun']."' data-target='#myModal2'><i class='fa fa-user' ></i> ".lengkap($biodata)." %</a> </td>
+                                <td><a href='#' class='btn btn-primary btn-sm btn-icon icon-left usaha' title='Usaha'  data-toggle='modal' id='".$row['id_akun']."' data-target='#myModal3'><i class='fa fa-industry'></i> ".usaha($biodata)." %</a></td>
                                 <td><a href='#' class='btn ";
                                 if ($row['status']=='Menunggu Hasil Seleksi')  echo 'btn-default';
                                 else if ($row['status']=='Lulus Seleksi')  echo 'btn-success';
@@ -163,6 +212,14 @@
 <div class="modal fade" id="myModal4">
     <div class="modal-dialog ">
         <div class="modal-content" id="modal-seleksi">
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="myModal5">
+    <div class="modal-dialog ">
+        <div class="modal-content" id="modal-edit">
 
         </div>
     </div>

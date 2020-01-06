@@ -215,12 +215,6 @@ class Pelatihan extends CI_Controller {
       }
        
     
-
-
-     
-
-      
-    
     }
     
     
@@ -259,8 +253,6 @@ class Pelatihan extends CI_Controller {
       }
     }
 
-     
-     
     } 
 
     public function syarat()

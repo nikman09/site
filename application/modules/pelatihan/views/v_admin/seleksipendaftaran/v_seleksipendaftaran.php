@@ -12,17 +12,20 @@
 <div class="row">
     <div class="col-md-12">
     <div class="row">
-        <form role="form" class="form-horizontal"  action="<?php echo base_url() ?>app/tambahtransaksi"	method="post"  id="form"> 	
+        <form role="form" class="form-horizontal"  action="<?php echo base_url() ?>pelatihan/admin/seleksipendaftaran"	method="post"  id="form"> 	
            
         <div class="col-md-12">    
+        
+        <?php pesan_get('msg',"Berhasil Mengubah Pelatihan Yang Aktif","Berhasil Mengedit Status Seleksi","Berhasil Menghapus Pelatihan") ?>
+           
                 <input type="hidden" name="<?=$csrf['name']?>" value="<?=$csrf['hash']?>">
                     <div class="form-group">
                         <label class="col-sm-2 control-label " style="margin-top:5px;">Pelatihan yang Aktif</label>
                         <div class="col-sm-8" style="margin-top:5px">
-                        <select  id="id_pelatihan"  class="form-control" name="id_pelatihan"  data-rule-required="true"> 
+                        <select  id="pelatihanaktif"  class="form-control" name="pelatihanaktif"  data-rule-required="true"> 
                         <?php 
                                 foreach($pelatihan->result_array() as $row ){
-                                    echo "<option >".$row["nama"]."</<option>";
+                                    echo "<option value='".$row["id_pelatihan"]."' ".($pelatihanaktif==$row["id_pelatihan"]?"selected":"").">".$row["nama"]."</<option>";
 
                                 }
                         ?>
@@ -30,7 +33,7 @@
 						</select>
                          </div>
                          <div class="col-sm-2 text-right"  style="margin-top:5px">
-                            <a class="btn  btn-default btn-icon icon-left"  id="tambahpelanggan" data-toggle="modal" data-target="#myModal3" style=""><i class="fa fa-check" ></i> Pilih Pelatihan</a>
+                            <button type="submit" class="btn  btn-default btn-icon icon-left"  id="tambahpelanggan"  style=""><i class="fa fa-check" ></i> Pilih Pelatihan</button>
                            
                         </div>
                     </div>
@@ -129,8 +132,6 @@
 			</div>
 		</div>
        
-        <?php pesan_get('msg',"Berhasil Menambah Pelatihan","Berhasil Mengedit Status Seleksi","Berhasil Menghapus Pelatihan") ?>
-           
         <div class="text-right"  style="margin-top:5px;margin-bottom:5px">
                             <a class="btn  btn-success btn-icon icon-left syarat"  id="<?= $detail["id_pelatihan"] ?>" style=""><i class="fa fa-file-excel-o" ></i> Export to Excel</a>
                            
@@ -161,7 +162,7 @@
                                 <td>
                                 <div>
 									<a href='".base_url("pelatihan/admin/pelatihanedit?id=".$row['id_pelatihan']."")."' class='btn btn-primary btn-xs' title='Edit/Lihat' id='".$row['id_pelatihan']."'><i class='fa fa-eye' id='".$row['id_pelatihan']."'  ></i></a>
-									<a href='#' class='btn btn-danger btn-xs hapus' title='Hapus' id='".$row['id_pelatihan']."'><i class='fa fa-file-pdf-o'></i></a>
+									<a href='#' class='btn btn-danger btn-xs hapus' title='Export PDF' id='".$row['id_pelatihan']."'><i class='fa fa-file-pdf-o'></i></a>
                                 </div>
                                 </td>
 								<td>".$row['nama']."</td>

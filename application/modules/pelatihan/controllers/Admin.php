@@ -81,20 +81,20 @@ class Admin extends CI_Controller {
             $mulaipelatihan = substr($this->input->post('tanggalpelatihan'),0  ,10);
             $akhirpelatihan = substr($this->input->post('tanggalpelatihan'),13  ,10);
             $array=array(
-                'nama'=> $this->input->post('nama'),
-                'kategori'=> $this->input->post('kategori'),
-                'mulaipendaftaran'=>tanggalawal($mulaipendaftaran),
-                'akhirpendaftaran'=>tanggalawal($akhirpendaftaran),
-                'pengumuman'=>tanggalawal($this->input->post('tanggalpengumuman')),
-                'mulaipelatihan'=>tanggalawal($mulaipelatihan),
-                'akhirpelatihan'=>tanggalawal($akhirpelatihan),
-                'kuota'=>$this->input->post('kuota'),
-                'persyaratan'=>$this->input->post('persyaratan'),
-                'tempat'=>$this->input->post('tempat'),
-                'cp'=>$this->input->post('cp'),
-                'publish'=>$this->input->post('publish'),
-                'username'=>$username
-            );
+                    'nama'=> $this->input->post('nama'),
+                    'kategori'=> $this->input->post('kategori'),
+                    'mulaipendaftaran'=>tanggalawal($mulaipendaftaran),
+                    'akhirpendaftaran'=>tanggalawal($akhirpendaftaran),
+                    'pengumuman'=>tanggalawal($this->input->post('tanggalpengumuman')),
+                    'mulaipelatihan'=>tanggalawal($mulaipelatihan),
+                    'akhirpelatihan'=>tanggalawal($akhirpelatihan),
+                    'kuota'=>$this->input->post('kuota'),
+                    'persyaratan'=>$this->input->post('persyaratan'),
+                    'tempat'=>$this->input->post('tempat'),
+                    'cp'=>$this->input->post('cp'),
+                    'publish'=>$this->input->post('publish'),
+                    'username'=>$username
+                 );
             $config['upload_path'] = './assets/images/pelatihan/lampiran';
             $config['allowed_types'] = 'jpg|jpeg|JPG|JPEG|PNG|png|PDF|pdf|doc|docx';
             $this->load->library('upload', $config);
@@ -208,21 +208,37 @@ class Admin extends CI_Controller {
         $this->load->model("m_admin/m_admin_pelatihan");
         $this->load->model("m_admin/m_admin_pelatihandaftar");
         $this->load->model("m_admin/m_admin_akun");
+        $this->load->model("m_admin/m_admin_admin");
         $username = $this->session->userdata("pelatihan_admin_username");
         $pelatihanaktif = $this->session->userdata("pelatihan_admin_pelatihanaktif");
-        $variabel['pelatihan'] = $this->m_admin_pelatihan->lihatdatauser($username);
-        $exec = $this->m_admin_pelatihan->lihatdatasatu($pelatihanaktif);
-        if ($exec->num_rows()>0){
-            $variabel['detail'] = $exec ->row_array();
-            $variabel['data'] = $this->m_admin_pelatihandaftar->lihatdatapelatihandaftaraktif($pelatihanaktif);
-            $variabel['totalpendaftar'] = $this->m_admin_pelatihandaftar->totalpendaftar($pelatihanaktif);
-            $variabel['menungguhasil'] = $this->m_admin_pelatihandaftar->menungguhasil($pelatihanaktif);
-            $variabel['lulusseleksi'] = $this->m_admin_pelatihandaftar->lulusseleksi($pelatihanaktif);
-            $variabel['tidaklulus'] = $this->m_admin_pelatihandaftar->tidaklulus($pelatihanaktif);
-            $this->layout->renderadmin('v_admin/seleksipendaftaran/v_seleksipendaftaran',$variabel,'v_admin/seleksipendaftaran/v_seleksipendaftaran_js');
+        if ($this->input->post()) {
+            $array=array(
+                'pelatihanaktif'=> $this->input->post('pelatihanaktif')
+            );
+            $exec = $this->m_admin_admin->editdata($username,$array);
+            $data_session = array(
+                'pelatihan_admin_pelatihanaktif'=> $this->input->post('pelatihanaktif')
+                );
+            $this->session->set_userdata($data_session);
+            if ($exec) redirect(base_url("pelatihan/admin/seleksipendaftaran?msg=1"));
+            else redirect(base_url("pelatihan/admin/seleksipendaftaran?msg=0"));
         } else {
-            $this->layout->renderadmin('v_admin/seleksipendaftaran/v_seleksipendaftarantidak',$variabel,'v_admin/seleksipendaftaran/v_seleksipendaftarantidak_js');
+            $variabel['pelatihan'] = $this->m_admin_pelatihan->lihatdatauser($username);
+            $exec = $this->m_admin_pelatihan->lihatdatasatu($pelatihanaktif);
+            if ($exec->num_rows()>0){
+                $variabel['detail'] = $exec ->row_array();
+                $variabel['pelatihanaktif'] = $pelatihanaktif;
+                $variabel['data'] = $this->m_admin_pelatihandaftar->lihatdatapelatihandaftaraktif($pelatihanaktif);
+                $variabel['totalpendaftar'] = $this->m_admin_pelatihandaftar->totalpendaftar($pelatihanaktif);
+                $variabel['menungguhasil'] = $this->m_admin_pelatihandaftar->menungguhasil($pelatihanaktif);
+                $variabel['lulusseleksi'] = $this->m_admin_pelatihandaftar->lulusseleksi($pelatihanaktif);
+                $variabel['tidaklulus'] = $this->m_admin_pelatihandaftar->tidaklulus($pelatihanaktif);
+                $this->layout->renderadmin('v_admin/seleksipendaftaran/v_seleksipendaftaran',$variabel,'v_admin/seleksipendaftaran/v_seleksipendaftaran_js');
+            } else {
+                $this->layout->renderadmin('v_admin/seleksipendaftaran/v_seleksipendaftarantidak',$variabel,'v_admin/seleksipendaftaran/v_seleksipendaftarantidak_js');
+            }
         }
+        
     }
 
     public function biodatatampil()

@@ -1,23 +1,23 @@
 <ol class="breadcrumb bc-3">
     <li>
         <a href="<?php echo base_url() ?>administrator">
-            <i class="fa fa-newspaper-o"></i>Administrator</a>
+            <i class="fa fa-newspaper-o"></i>Admin</a>
     </li>
     <li>
-        <a href="<?php echo base_url() ?>administrator/berita">
-            <i class="fa fa-newspaper-o"></i>Berita</a>
+        <a href="<?php echo base_url() ?>pelatihan/admin/pelatihan">
+            <i class="fa fa-newspaper-o"></i>Pelatihan</a>
     </li>
     <li class="active">
-        <strong>Tambah Berita</strong>
+        <strong>Tambah Pelatihan</strong>
     </li>
 </ol>
 
-<h3>Tambah Berita </h3>
+<h3>Tambah Pelatihan </h3>
 <div class="panel panel-primary" data-collapsed="0">
 			
 <div class="panel-heading">
 	<div class="panel-title">
-		Tambah Berita
+		Tambah Pelatihan
 	</div>
 	
 	<div class="panel-options">

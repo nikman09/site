@@ -57,7 +57,7 @@
 								<input type="text" class="form-control" id="utelp" name="utelp" placeholder="Masukkan Nomor Telepon"  value="<?php echo $data['utelp']; ?>">
 							</div>
 							<div class="form-group">
-								<label for="field-1" class="control-label">Jenis Komoditi </label>
+								<label for="field-1" class="control-label">Jenis Produk </label>
 								<select class="form-control" id="ukomoditi" name="ukomoditi" >
 									<option value="">.:Pilih Jenis Komiditi:.</option>
 										<option value="Makanan dan Minuman" <?= $data['ukomoditi']=="Makanan dan Minuman"?"selected":"" ?>>Makanan dan Minuman</option>

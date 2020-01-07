@@ -694,4 +694,16 @@ class Pelatihan extends CI_Controller {
     
        
     }
+
+    public function pendukung()
+    {   
+        $variabel['csrf'] = csrf();
+        $this->load->model("m_pelatihan/m_pelatihan_berkas");
+        $id_akun = $this->session->userdata("pelatihan_idakun");
+        $exec = $this->m_pelatihan_berkas->lihatdataakun($id_akun);
+        $variabel['data'] = $exec;
+        $this->layout->renderpel('v_pelatihan/pendukung/v_pendukung',$variabel,'v_pelatihan/pendukung/v_pendukung_js');
+    
+        
+    }
 }

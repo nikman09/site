@@ -157,6 +157,37 @@
 					</div>
 					
 				</div>
+
+				<div class="form-group">
+					<label for="field-1" class="control-label">	Foto KTP</label>
+		
+					
+					<div class="panel panel-default" data-collapsed="0">
+						<div class="panel-body">
+							<div class="fileinput <?php  echo ($data['ktp']=="") ? "fileinput-new":"fileinput-exists" ?> " data-provides="fileinput">
+							<input type="hidden" value="<?php echo $data['ktp'] ?>" name="ktp">
+								<div class="fileinput-new thumbnail" style="max-width: 310px; height: 150px;" data-trigger="fileinput">
+								<img src="http://placehold.it/400x300" alt="...">
+								</div>
+								<div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 310px; height: 100px;" data-trigger="fileinput">
+									<img src="<?php echo base_url()."assets/images/pelatihan/biodata/".$data['ktp'] ?>" alt="...">
+								</div>
+								<div>
+									<span class="btn btn-white btn-file">
+										<span class="fileinput-new">Select image</span>
+										<span class="fileinput-exists">Change</span>
+										<input type="file" name="ktp" accept="image/*" >
+									</span>
+									<a href="#" class="btn btn-orange  	fileinput-exists" data-dismiss="fileinput">Remove</a>
+								</div>
+							</div>
+							<br/>
+							<span>*Max 1 mb</span>
+						</div>	
+										
+					</div>
+					
+				</div>
 					
 							<input type="hidden" name="<?=$csrf['name']?>" value="<?=$csrf['hash']?>">
 								

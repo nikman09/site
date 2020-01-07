@@ -9,7 +9,7 @@
 
 	&copy;
 	<?php echo date('Y') ?>
-	<strong> User</strong>  Pelatihan Dinas Perindustrian
+	<strong> SIPI</strong> (Sistem Informasi Pendaftaran Pelatihan Industri)
 
 </footer>
 

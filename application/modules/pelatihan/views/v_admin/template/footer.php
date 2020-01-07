@@ -2,7 +2,7 @@
 
 &copy;
 <?php echo date('Y') ?>
-<strong> SIDAWAIPRIN</strong>(Sistem Informasi Data Pegawai Dinas Perindustrian)
+<strong> SIPI</strong> (Sistem Informasi Pendaftaran Pelatihan Industri)
 
 
 	

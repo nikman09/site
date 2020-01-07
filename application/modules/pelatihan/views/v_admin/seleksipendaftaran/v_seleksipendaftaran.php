@@ -78,15 +78,9 @@
                     <div class="text-right"  style="margin-top:5px">
                             <a class="btn  btn-primary btn-icon icon-left syarat"  id="<?= $detail["id_pelatihan"] ?>" data-toggle="modal" data-target="#myModal5" style=""><i class="fa fa-list" ></i> Persyaratan</a>
                            
-                        </div>
-                                 
+                        </div>           
                 </div>
-                
-                
             </form>
-
-
-
 		</div>
         <hr/>
     <div class="row">
@@ -136,6 +130,7 @@
                             <a class="btn  btn-success btn-icon icon-left syarat"  id="<?= $detail["id_pelatihan"] ?>" style=""><i class="fa fa-file-excel-o" ></i> Export to Excel</a>
                            
                         </div>
+                        <br/>
         <div class="table-responsive">
             <table class="table table-bordered datatable "  id="table-1" style="font-size:12px">
                 <thead>
@@ -161,8 +156,8 @@
                             <tr>
                                 <td>
                                 <div>
-									<a href='".base_url("pelatihan/admin/pelatihanedit?id=".$row['id_pelatihan']."")."' class='btn btn-primary btn-xs' title='Edit/Lihat' id='".$row['id_pelatihan']."'><i class='fa fa-eye' id='".$row['id_pelatihan']."'  ></i></a>
-									<a href='#' class='btn btn-danger btn-xs hapus' title='Export PDF' id='".$row['id_pelatihan']."'><i class='fa fa-file-pdf-o'></i></a>
+									<a href='#' class='btn btn-primary btn-xs' title='Edit/Lihat' id='".$row['id_pelatihan']."' disabled><i class='fa fa-eye' id='".$row['id_pelatihan']."'  ></i></a>
+									<a href='#' class='btn btn-danger btn-xs hapus' title='Export PDF' id='".$row['id_pelatihan']."' disabled><i class='fa fa-file-pdf-o'></i></a>
                                 </div>
                                 </td>
 								<td>".$row['nama']."</td>
@@ -171,8 +166,8 @@
 								<td>".$row['kota']."</td>
                                 <td>".$row['nohp']."</td>
                                 <td>".$row['pendidikan']."</td>
-                                <td><a href='#' class='btn btn-primary btn-sm btn-icon icon-left biodata' title='Lihat Biodata'  data-toggle='modal' id='".$row['id_akun']."' data-target='#myModal2'><i class='fa fa-user' ></i> ".lengkap($biodata)." %</a> </td>
-                                <td><a href='#' class='btn btn-primary btn-sm btn-icon icon-left usaha' title='Usaha'  data-toggle='modal' id='".$row['id_akun']."' data-target='#myModal3'><i class='fa fa-industry'></i> ".usaha($biodata)." %</a></td>
+                                <td><a href='#' class='btn ".(lengkap($biodata)>=100?"btn-primary ":"btn-danger")." btn-sm btn-icon icon-left biodata' title='Lihat Biodata'  data-toggle='modal' id='".$row['id_akun']."' data-target='#myModal2'><i class='fa fa-user' ></i> ".lengkap($biodata)." %</a> </td>
+                                <td><a href='#' class='btn ".(usaha($biodata)>=100?"btn-primary ":"btn-danger")." btn-sm btn-icon icon-left usaha' title='Usaha'  data-toggle='modal' id='".$row['id_akun']."' data-target='#myModal3'><i class='fa fa-industry'></i> ".usaha($biodata)." %</a></td>
                                 <td><a href='#' class='btn ";
                                 if ($row['status']=='Menunggu Hasil Seleksi')  echo 'btn-default';
                                 else if ($row['status']=='Lulus Seleksi')  echo 'btn-success';

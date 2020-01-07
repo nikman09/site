@@ -235,7 +235,7 @@ class Admin extends CI_Controller {
                 $variabel['tidaklulus'] = $this->m_admin_pelatihandaftar->tidaklulus($pelatihanaktif);
                 $this->layout->renderadmin('v_admin/seleksipendaftaran/v_seleksipendaftaran',$variabel,'v_admin/seleksipendaftaran/v_seleksipendaftaran_js');
             } else {
-                $this->layout->renderadmin('v_admin/seleksipendaftaran/v_seleksipendaftarantidak',$variabel,'v_admin/seleksipendaftaran/v_seleksipendaftarantidak_js');
+                $this->layout->renderadmin('v_admin/seleksipendaftaran/v_seleksipendaftaranno',$variabel,'v_admin/seleksipendaftaran/v_seleksipendaftaran_js');
             }
         }
         
@@ -281,6 +281,7 @@ class Admin extends CI_Controller {
         if ($this->input->post()) {
             $array=array(
                  'status'=> $this->input->post('status'),
+                 'keterangan'=> $this->input->post('keterangan'),
                 );
                 $id_pelatihandaftar = $this->input->post("id_pelatihandaftar");
                 $exec = $this->m_admin_pelatihandaftar->editdata($id_pelatihandaftar,$array);
@@ -292,6 +293,173 @@ class Admin extends CI_Controller {
 
      
     }
+
+    
+    public function pengumuman()
+    {   
+        $this->load->model("m_admin/m_admin_pengumuman");
+        $variabel['csrf'] = csrf();
+        $username = $this->session->userdata("pelatihan_admin_username");
+        $variabel['data'] = $this->m_admin_pengumuman->lihatdatausername($username);
+      
+        $this->layout->renderadmin('v_admin/pengumuman/v_pengumuman',$variabel,'v_admin/pengumuman/v_pengumuman_js');
+    }
+   
+    public function pengumumantambah()
+    {   
+        $variabel['csrf'] = csrf();
+        $this->load->model("m_admin/m_admin_pengumuman");
+        if ($this->input->post()){
+            $username = $this->session->userdata("pelatihan_admin_username");
+            $array=array(
+                'kategori'=> $this->input->post('kategori'),
+                'judul'=> $this->input->post('judul'),
+                'tanggal'=>tanggalawal($this->input->post('tanggal')),
+                'isi'=>$this->input->post('isi'),
+                'status'=>$this->input->post('status'),
+                'username'=>$username
+                );
+              
+
+                $config['upload_path'] = './assets/images/pelatihan/pengumuman';
+                $config['allowed_types'] = 'jpg|jpeg|JPG|JPEG|PNG|png|PDF|pdf|doc|docx';
+                $this->load->library('upload', $config);
+                $this->upload->do_upload("file");
+                $upload = $this->upload->data();
+                $file = $upload["raw_name"].$upload["file_ext"];
+                $array['file']=$file;
+
+                $config['upload_path'] = './assets/images/pelatihan/pengumuman';
+                $config['allowed_types'] = 'jpg|jpeg|JPG|JPEG|PNG|png';
+                $this->load->library('upload', $config);
+                $this->upload->do_upload("foto");
+                $upload = $this->upload->data();
+                $file = $upload["raw_name"].$upload["file_ext"];
+                $array['foto']=$file;
+
+                $exec = $this->m_admin_pengumuman->tambahdata($array);
+                if ($exec) redirect(base_url("pelatihan/admin/pengumuman?msg=1"));
+                else redirect(base_url("pelatihan/admin/pengumumantambah?msg=0"));
+        }
+        else {
+            $this->layout->renderadmin('v_admin/pengumuman/v_pengumumantambah',$variabel,'v_admin/pengumuman/v_pengumumantambah_js');
+        }
+       
+    }
+
+    public function pengumumanhapus()
+    {
+        $id_pengumuman = $this->input->get("id");
+        $this->load->model("m_admin/m_admin_pengumuman");
+        $query2 = $this->m_admin_pengumuman->lihatdatasatu($id_pengumuman);
+        $row2 = $query2->row();
+        $berkas1temp = $row2->foto;
+        $berkas2temp = $row2->file;
+        $path1 ='./assets/images/pelatihan/pengumuman/'.$berkas1temp.'';
+        $path2 ='./assets/images/pelatihan/pengumuman/'.$berkas2temp.'';
+        if(is_file($path1) || is_file($path2)) {
+            unlink($path1);
+            unlink($path2);
+        }
+        $exec = $this->m_admin_pengumuman->hapus($id_pengumuman);
+        redirect(base_url()."pelatihan/admin/pengumuman?msg=2");
+    }
+
+    public function pengumumanedit()
+    {   
+
+        $variabel['csrf'] = csrf();
+        $this->load->model("m_admin/m_admin_pengumuman");   
+        $username = $this->session->userdata("pelatihan_admin_username");
+        if ($this->input->post()) {
+            $username = $this->session->userdata("pelatihan_admin_username");
+            $id_pengumuman = $this->input->post('id_pengumuman');
+            $array=array(
+                'kategori'=> $this->input->post('kategori'),
+                'judul'=> $this->input->post('judul'),
+                'tanggal'=>tanggalawal($this->input->post('tanggal')),
+                'isi'=>$this->input->post('isi'),
+                'status'=>$this->input->post('status'),
+                'username'=>$username
+            );
+            $config['upload_path'] = './assets/images/pelatihan/pengumuman';
+            $config['allowed_types'] = 'jpg|jpeg|JPG|JPEG|PNG|png|PDF|pdf|doc|docx';
+            $this->load->library('upload', $config);
+            if ($this->upload->do_upload("file"))
+            {
+                
+                $upload = $this->upload->data();
+                $file = $upload["raw_name"].$upload["file_ext"];
+                $array['file']=$file;
+
+                $query2 = $this->m_admin_pengumuman->lihatdatasatu($id_pengumuman);
+                $row2 = $query2->row();
+                $berkas1temp = $row2->file;
+                $path1 ='./assets/images/pelatihan/pengumuman/'.$berkas1temp.'';
+                if(is_file($path1)) {
+                    unlink($path1); //menghapus gambar di folder pengumuman
+                }
+            } 
+                else if ($this->input->post('file')=="") 
+            {
+                $query2 = $this->m_admin_pengumuman->lihatdatasatu($id_pengumuman);
+                $row2 = $query2->row();
+                $berkas1temp = $row2->file;
+                $path1 ='./assets/images/pelatihan/pengumuman/'.$berkas1temp.'';
+                if(is_file($path1)) {
+                    unlink($path1); //menghapus gambar di folder pengumuman
+                }
+                $array['file']="";
+            }
+
+            $config['upload_path'] = './assets/images/pelatihan/pengumuman';
+            $config['allowed_types'] = 'jpg|jpeg|JPG|JPEG|PNG|png';
+            $this->load->library('upload', $config);
+            if ($this->upload->do_upload("foto"))
+            {
+                
+                $upload = $this->upload->data();
+                $foto = $upload["raw_name"].$upload["file_ext"];
+                $array['foto']=$foto;
+
+                $query2 = $this->m_admin_pengumuman->lihatdatasatu($id_pengumuman);
+                $row2 = $query2->row();
+                $berkas1temp = $row2->foto;
+                $path1 ='./assets/images/pelatihan/pengumuman/'.$berkas1temp.'';
+                if(is_file($path1)) {
+                    unlink($path1); //menghapus gambar di folder pengumuman
+                }
+            } 
+                else if ($this->input->post('foto')=="") 
+            {
+                $query2 = $this->m_admin_pengumuman->lihatdatasatu($id_pengumuman);
+                $row2 = $query2->row();
+                $berkas1temp = $row2->foto;
+                $path1 ='./assets/images/pelatihan/pengumuman/'.$berkas1temp.'';
+                if(is_file($path1)) {
+                    unlink($path1); //menghapus gambar di folder pengumuman
+                }
+                $array['foto']="";
+            }
+            
+           
+            $exec = $this->m_admin_pengumuman->editdata($id_pengumuman,$array);
+            if ($exec) redirect(base_url("pelatihan/admin/pengumumanedit?id=".$id_pengumuman."&msg=1"));
+            else redirect(base_url("pelatihan/admin/pengumumanedit?id=".$id_pengumuman."&msg=0"));
+
+        } else {
+            $id_pengumuman = $this->input->get("id");
+            $exec = $this->m_admin_pengumuman->lihatdatasatu($id_pengumuman);
+            if ($exec->num_rows()>0){
+                $variabel['data'] = $exec ->row_array();
+                $this->layout->renderadmin('v_admin/pengumuman/v_pengumuman_edit',$variabel,'v_admin/pengumuman/v_pengumuman_edit_js');
+            } else {
+                redirect(base_url("pelatihan/admin/pengumuman"));
+            }
+        }
+      
+    }
+ 
  
 
 }

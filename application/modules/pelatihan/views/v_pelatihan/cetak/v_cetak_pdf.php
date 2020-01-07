@@ -48,8 +48,10 @@
     </div>';
     $pdf->writeHTML($asd, false, true, false, false, '');
     $pdf->SetFont('helvetica', '', 10);
-   
+   if ($data['foto']!="") {
     $pdf->Image(''.base_url().'assets/images/pelatihan/biodata/'.$data['foto'].'', 140, 40, 50, '', '', 'http://disperin.kalselprov.go.id/', '', false, 300);
+   }
+  
  
     $asd = '
     <h4><u>Data Diri</u></h4>

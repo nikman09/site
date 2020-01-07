@@ -60,7 +60,7 @@ $('#form').validate({ // initialize plugin
             persyaratan: {
                 required: true
             },
-            status: {
+            publish: {
                 required: true
             },
 
@@ -94,7 +94,7 @@ $('#form').validate({ // initialize plugin
             persyaratan: {
                 required: "Persyaratan tidak boleh kosong"
             },
-            status: {
+            publish: {
                 required: "Status harus dipilih"
             },
         }

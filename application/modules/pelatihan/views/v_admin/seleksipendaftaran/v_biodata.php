@@ -52,9 +52,18 @@
                     <div class="form-group row">
                         <label for="" class="col-md-4 control-label">Foto</label>
                         <span class="col-md-8">
+                            <?php if($data['foto']!="") { ?>
                             <img src="<?php echo base_url()."assets/images/pelatihan/biodata/".$data['foto'] ?>" alt="..." width="100px">
+                            <?php
+                            } else {
+                            ?>
+
+                            <?php
+                            }
+                            ?>
                         </span>
                     </div>
+                   
                     </div>
                     
 
@@ -85,6 +94,20 @@
                             <label for="" class="col-md-4 control-label">Keahlian yang dimiliki</label>
                             <span class="col-md-8"> : <?php echo $data['daftarkeahlian']; ?> </span>
                       </div>
+                      <div class="form-group row">
+                        <label for="" class="col-md-4 control-label">KTP</label>
+                        <span class="col-md-8">
+                            <?php if($data['ktp']!="") { ?>
+                            <img src="<?php echo base_url()."assets/images/pelatihan/biodata/".$data['ktp'] ?>" alt="..." width="100px">
+                            <?php
+                            } else {
+                            ?>
+
+                            <?php
+                            }
+                            ?>
+                        </span>
+                    </div>
 		 
                 
 

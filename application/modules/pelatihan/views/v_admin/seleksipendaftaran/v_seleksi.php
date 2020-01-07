@@ -16,6 +16,10 @@
                         <option value="Tidak Lulus Seleksi" <?= ($data['status']=="Tidak Lulus Seleksi"?"selected":"") ?>>Tidak Lulus Seleksi</option>
                     </select>
                 </div>
+                <div class="form-group">
+                    <label for="field-1" class="control-label">Keterangan (Jika Tidak Lulus Seleksi)</label>
+                    <textarea  class="form-control" id="keterangan" name="keterangan" ></textarea>
+                </div>
             </div>
         </div>
     </div>

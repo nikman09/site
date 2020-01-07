@@ -14,6 +14,7 @@
 			{ responsivePriority: 2, targets: 5 },
 			{ responsivePriority: 3, targets: 6 },
    		 ]	,
+			"order": [[ 6, "desc" ]],
 			"searching": false,
 			"lengthChange": false,
 			"fnDrawCallback": function () {

@@ -23,8 +23,8 @@
 					<span class="title">Pelatihan</span>
 				</a>
 			</li>
-			<li  class="<?= ($submenu == "" || $submenu == ""  || $submenu == "" ) ? "active root-level" : ""; ?> ">
-				<a href="<?php echo base_url() ?>pelatihan/admin/pelatihandaftar">
+			<li  class="<?= ($submenu == "pengumuman" || $submenu == "pengumumantambah"  || $submenu == "pengumumanedit" ) ? "active root-level" : ""; ?> ">
+				<a href="<?php echo base_url() ?>pelatihan/admin/pengumuman">
 					<i class="fa fa-info-circle"></i>
 					<span class="title">Pengumuman</span>
 				</a>

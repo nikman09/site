@@ -9,10 +9,10 @@
 				<div class="blog-post-single">
 					
 					<?php if ( $data['foto']!="")  { ?>
-					<a href="<?php echo base_url(); ?>assets/images/berita/<?php echo $data['foto'] ?>" class="image">
+					<a href="<?php echo base_url(); ?>assets/images/pelatihan/pengumuman/<?php echo $data['foto'] ?>" class="image">
 				
 
-						<img src="<?php echo base_url(); ?>assets/images/berita/<?php echo $data['foto'] ?>" class="img-responsive img-rounded" />
+						<img src="<?php echo base_url(); ?>assets/images/pelatihan/pengumuman/<?php echo $data['foto'] ?>" class="img-responsive img-rounded" />
 					</a>
 					<?php } ?>
 											

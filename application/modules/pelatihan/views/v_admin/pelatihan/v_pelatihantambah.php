@@ -143,7 +143,7 @@
 							<div class="form-group">
 					<label class="col-lg-2 control-label">Status</label>
 					<div class="col-lg-2">
-                        <select class="form-control" name="status" id="status" >
+                        <select class="form-control" name="publish" id="publish" >
                             <option value="" disabled selected>.:Pilih Status:.</option>
 							<option value="Publish" >Publish</option>
 							<option value="Draft" >Draft</option>

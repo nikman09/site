@@ -103,19 +103,19 @@
 							<li class="caret"></li>
 							<!-- Profile sub-links -->
 							<li>
-								<a href="<?php echo base_url(); ?>pelatihan/admin/profil">
+								<a href="#">
 									<i class="entypo-user"></i>
 									 Profile
 								</a>
 							</li>
 							<li>
-								<a href="<?php echo base_url(); ?>pelatihan/admin/password">
+								<a href="#">
 									<i class="entypo-key"></i>
 									 Ganti Password
 								</a>
 							</li>
 							<li>
-								<a href="<?php echo base_url() ?>pelatihan/admin/logout">
+								<a href="#">
 									<i class="entypo-logout"></i>
 									Log Out
 								</a>

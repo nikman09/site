@@ -359,7 +359,7 @@ class Pelatihan extends CI_Controller {
                     unlink($path2); //menghapus gambar di folder berita
                 }
                
-            } 
+             } 
                 else if ($this->input->post('foto')=="") 
             {
               
@@ -373,6 +373,36 @@ class Pelatihan extends CI_Controller {
                     unlink($path2); //menghapus gambar di folder berita
                 }
                 $array['foto']="";
+            }
+
+            if ($this->upload->do_upload("ktp"))
+            {
+             
+                
+                $upload = $this->upload->data();
+                $ktp = $upload["raw_name"].$upload["file_ext"];
+                $array['ktp']=$ktp;
+
+                $query2 = $this->m_pelatihan_akun->lihatdatasatu($id_akun);
+                $row2 = $query2->row();
+                $berkas1temp = $row2->ktp;
+                $path1 ='./assets/images/pelatihan/biodata/'.$berkas1temp.'';
+                if(is_file($path1)) {
+                    unlink($path1); //menghapus gambar di folder berita
+                }
+               
+            } 
+                else if ($this->input->post('ktp')=="") 
+            {
+              
+                $query2 = $this->m_pelatihan_akun->lihatdatasatu($id_akun);
+                $row2 = $query2->row();
+                $berkas1temp = $row2->ktp;
+                $path1 ='./assets/images/pelatihan/biodata/'.$berkas1temp.'';
+                if(is_file($path1)) {
+                    unlink($path1); //menghapus gambar di folder berita
+                }
+                $array['ktp']="";
             }
             
            

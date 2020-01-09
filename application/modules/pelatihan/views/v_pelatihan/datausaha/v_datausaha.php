@@ -59,7 +59,7 @@
 							<div class="form-group">
 								<label for="field-1" class="control-label">Jenis Produk </label>
 								<select class="form-control" id="ukomoditi" name="ukomoditi" >
-									<option value="">.:Pilih Jenis Komiditi:.</option>
+									<option value="">.:Pilih Jenis Produk:.</option>
 										<option value="Makanan dan Minuman" <?= $data['ukomoditi']=="Makanan dan Minuman"?"selected":"" ?>>Makanan dan Minuman</option>
 										<option value="Logam" <?= $data['ukomoditi']=="Logam"?"selected":"" ?>>Logam</option>
 										<option value="Perhiasan" <?= $data['ukomoditi']=="Perhiasan"?"selected":"" ?>>Perhiasan</option>

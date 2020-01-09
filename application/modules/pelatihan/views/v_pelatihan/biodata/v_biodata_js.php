@@ -7,7 +7,7 @@ jQuery(function ($) {
 
  $('.datepicker').inputmask("date", { "clearIncomplete": true });
  $('.nilai').inputmask('Regex', {regex: "^[0-9]{1,6}(\\.\\d{1,2})?$"});
-  $('#form').validate({ // initialize plugin
+ $('#form').validate({ // initialize plugin
             highlight: function (label) {
                 $(label).closest('.form-group').removeClass('has-success').addClass('has-error');
                 $('.error').css({'font-size':'9px','margin-bottom':'0px'});
@@ -36,9 +36,6 @@ jQuery(function ($) {
                     required: true
                 },  
                 
-               
-                
-               
             },
             messages: {
                 email: {

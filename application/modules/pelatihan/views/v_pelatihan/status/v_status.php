@@ -95,7 +95,7 @@
 				   : 
 				</td>
 				<td>
-					<a href="#" id="<?= $data['id_pelatihan'] ?>"  class="btn btn-default btn-icon icon-left syarat" data-toggle="modal"   data-target="#myModal2"><i class="fa fa-list"></i>Persyaratan </a>
+					<a href="#" id="<?= $data['id_pelatihan'] ?>"  class="btn btn-primary btn-icon icon-left syarat" data-toggle="modal"   data-target="#myModal2"><i class="fa fa-list"></i>Persyaratan  &nbsp&nbsp &nbsp&nbsp &nbsp&nbsp &nbsp&nbsp &nbsp&nbsp &nbsp&nbsp &nbsp&nbsp &nbsp&nbsp</a>
 				</td>
 			</tr>
 		 </table>
@@ -112,7 +112,7 @@
 				   : 
 				</td>
 				<td  valign="top">
-				<a href="<?php base_url() ?>biodata" class="btn <?=$persen<100?"btn-danger":"btn-success" ?> btn-icon icon-left" ><i class="fa fa-user"></i>Pengisian Biodata  &nbsp &nbsp &nbsp&nbsp</a>
+				<a href="<?php base_url() ?>biodata" class="btn <?=$persen<100?"btn-primary":"btn-primary" ?> btn-icon icon-left" ><i class="fa fa-user"></i>Pengisian Biodata  &nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp&nbsp</a>
 				<br/>	<span style="color:#ba0c00;font-size:11px"><?=$persen<100?"Belum Lengkap":"" ?></span>
 				</td>
 			</tr>
@@ -125,8 +125,21 @@
 				   : 
 				</td>
 				<td  valign="top">
-				<a href="<?php base_url() ?>datausaha" class="btn <?=$persenusaha<100?"btn-danger":"btn-success" ?> btn-icon icon-left" ><i class="fa fa-shopping-cart"></i>Pengisian Data Usaha </a>
+				<a href="<?php base_url() ?>datausaha" class="btn <?=$persenusaha<100?"btn-primary":"btn-primary" ?> btn-icon icon-left" ><i class="fa fa-shopping-cart"></i>Pengisian Data Usaha  &nbsp&nbsp &nbsp&nbsp</a>
 				<br/>	<span style="<?=$persenusaha<100?"color:#ba0c00;":"color:#000;" ?>font-size:11px"><?=$persenusaha<100?"Belum Lengkap (Untuk Kategori Pelaku Industri Harus Melengkapi Data Usaha)":"*Untuk Kategori Pelaku Industri Harus Melengkapi Data Usaha" ?></span>
+				</td>
+			</tr>
+			<tr>
+				<td width="150px"  valign="top">
+				  Data Pendukung
+				</td>
+				
+				<td  valign="top">
+				   : 
+				</td>
+				<td  valign="top">
+				<a href="<?php base_url() ?>pelatihan/pendukung" class="btn btn-primary btn-icon icon-left" ><i class="fa fa-upload"></i>Upload Data Pendukung </a>
+				<br/>	
 				</td>
 			</tr>
 			<!-- <tr>
@@ -192,12 +205,12 @@
 				   : 
 				</td>
 				<td>
-				<a href="<?php echo base_url(); ?>pelatihan/cetak" target="_blank" class="btn btn-info btn-icon icon-left" ><i class="fa fa-print"></i>Cetak Kartu</a>
+				<a href="<?php echo base_url(); ?>pelatihan/cetak" target="_blank" class="btn btn-info btn-icon icon-left" ><i class="fa fa-print"></i>Cetak Kartu &nbsp&nbsp &nbsp&nbsp &nbsp&nbsp &nbsp&nbsp &nbsp&nbsp &nbsp&nbsp &nbsp&nbsp &nbsp&nbsp</a>
 
 				</td>
 			</tr>
 			
-			<tr>
+			<!-- <tr> 
 				<td>
 				  Konfirmasi Kehadiran
 				</td>
@@ -227,7 +240,7 @@
 					<?php 
 				}
 					?>
-				</td>
+				</td>-->
 			</tr>
 			<?php 
 				}

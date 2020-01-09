@@ -40,6 +40,30 @@
 								
 							</ul>
 						</li>
+						<li class="<?= ($submenu == "biodata" || $submenu == "datausaha" || $submenu == "pendukung" ) ? "active root-level" : ""; ?>" >
+							<a>
+								<span>Formulir</span>
+							</a>
+							
+							<ul>
+							<li class="<?= ($submenu == "biodata") ? "active" : ""; ?>">
+							<a href="<?php echo base_url() ?>pelatihan/biodata">
+									<span>Biodata</span>
+								</a>
+							</li>
+							<li class="<?= ($submenu == "datausaha") ? "active" : ""; ?>">
+								<a href="<?php echo base_url() ?>pelatihan/datausaha">
+									<span>Data Usaha</span>
+								</a>
+							</li>
+							<li  class="<?= ($submenu == "pendukung") ? "active" : ""; ?>">
+								<a href="<?php echo base_url() ?>pelatihan/pendukung">
+									<span>Data Pendukung</span>
+								</a>
+								</li>
+								
+							</ul>
+						</li>
 						
 						<li class="<?= ($submenu == "status") ? "active root-level" : ""; ?>">
 							<a href="<?php echo base_url() ?>pelatihan/status">
@@ -52,16 +76,7 @@
 							</a>
 							
 							<ul>
-								<li>
-									<a href="<?php echo base_url() ?>pelatihan/biodata">
-										<span>Biodata</span>
-									</a>
-								</li>
-								<li>
-									<a href="<?php echo base_url() ?>pelatihan/datausaha">
-										<span>Data Usaha</span>
-									</a>
-								</li>
+								
 								<li>
 									<a href="<?php echo base_url() ?>pelatihan/riwayat">
 										<span>Riwayat Pendaftaran</span>

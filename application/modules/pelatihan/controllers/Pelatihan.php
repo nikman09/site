@@ -107,9 +107,33 @@ class Pelatihan extends CI_Controller {
                   'password'=>md5($this->input->post('password')),
                   'tanggallahir'=>date("Y-m-d"),
               );
+              $email =  $this->input->post('email');
+              $nama = $this->input->post('nama');
                   
               $exec = $this->m_pelatihan_akun->tambahdata($array);
-              if ($exec) redirect(base_url("pelatihan/login?msg=1"));
+              if ($exec){
+
+                $config = [
+                  'mailtype'  => 'html',
+                  'charset'   => 'utf-8',
+                  'protocol'  => 'smtp',
+                  'smtp_host' => 'smtp.gmail.com',
+                  'smtp_user' => 'simanis.kalsel@gmail.com',  // Email gmail
+                  'smtp_pass'   => 'simanis123',  // Password gmail
+                  'smtp_crypto' => 'ssl',
+                  'smtp_port'   => 465,
+                  'crlf'    => "\r\n",
+                  'newline' => "\r\n"
+                 ];
+                $this->load->library('email', $config);
+                $this->email->from('no-replay@simaniskalsel.go.id', 'SIMANIS KALSEL');
+                $this->email->to($email );
+                $this->email->subject('Pendaftaran Akun SIMANIS Kalsel');
+                $this->email->message("Hi ".$nama." <br/> Selamat Telah Mendaftarkan Akun Di SIMANIS KALSEL(Sistem Informasi  Pendaftaran Mandiri Pelatihan Industri Kalimantan Selatan). Silahkan Lengkapi Formulir dan Pilih Pelatihan yang Tersedia. <br/>Terima Kasih  ");
+                $this->email->send();
+                  
+                redirect(base_url("pelatihan/login?msg=1"));
+              }
                 else redirect(base_url("pelatihan/akun?msg=0"));
           }else{
             $this->layout->renderpel("v_pelatihan/akun/v_akun",$variabel,"v_pelatihan/akun/v_akun_js");
@@ -700,10 +724,136 @@ class Pelatihan extends CI_Controller {
         $variabel['csrf'] = csrf();
         $this->load->model("m_pelatihan/m_pelatihan_berkas");
         $id_akun = $this->session->userdata("pelatihan_idakun");
-        $exec = $this->m_pelatihan_berkas->lihatdataakun($id_akun);
-        $variabel['data'] = $exec;
-        $this->layout->renderpel('v_pelatihan/pendukung/v_pendukung',$variabel,'v_pelatihan/pendukung/v_pendukung_js');
+        if ($this->input->post()) {
+          $id_akun = $this->session->userdata("pelatihan_idakun");
+            $array=array(
+                'nama'=> $this->input->post('nama'),
+                'id_akun'=> $id_akun,
+            );
+
+            //asdad
+            $config['upload_path'] = './assets/images/pelatihan/pendukung';
+            $config['allowed_types'] = 'jpg|jpeg|JPG|JPEG|PNG|png|PDF|pdf|doc|DOC';
+            $this->load->library('upload', $config);
+            $this->upload->do_upload("dokumen");
+            $upload = $this->upload->data();
+            $file = $upload["raw_name"].$upload["file_ext"];
+            $array['file']=$file;
     
-        
+            //adasd
+            $exec = $this->m_pelatihan_berkas->tambahdata($array);
+                if ($exec){
+                 redirect(base_url("pelatihan/pendukung?id=".$id_dokumen."&msg=1"));
+                }   else redirect(base_url("pelatihan/pendukung?msg=0"));
+              } else {
+                $exec = $this->m_pelatihan_berkas->lihatdataakun($id_akun);
+                $variabel['data'] = $exec;
+                $this->layout->renderpel('v_pelatihan/pendukung/v_pendukung',$variabel,'v_pelatihan/pendukung/v_pendukung_js');
+            
+              }
     }
+
+    
+    public function pendukunghapus()
+    {
+      $this->load->model("m_pelatihan/m_pelatihan_berkas");
+        $id_berkas = $this->input->get("id");
+        $query2 = $this->m_pelatihan_berkas->lihatdatasatu($id_berkas);
+        $row2 = $query2->row();
+        $berkas1temp = $row2->file;
+        $path1 ='./assets/images/pelatihan/pendukung/'.$berkas1temp.'';
+        if(is_file($path1)) {
+            unlink($path1);
+        }
+        $exec = $this->m_pelatihan_berkas->hapus($id_berkas);
+        redirect(base_url()."pelatihan/pendukung?msg=2");
+    }
+
+    public function pendukungedit()
+    {      
+        $variabel['csrf'] = csrf();
+        $this->load->model("m_pelatihan/m_pelatihan_berkas");
+        $id_berkas = $this->input->post("id_berkas");
+        $variabel['data'] = $this->m_pelatihan_berkas->lihatdatasatu($id_berkas)->row_array();
+        $this->load->view("v_pelatihan/pendukung/v_pendukung_edit",$variabel);
+    }
+
+    public function pendukungeditproses()
+    {      
+        $variabel['csrf'] = csrf();
+        $this->load->model("m_pelatihan/m_pelatihan_berkas");
+        if ($this->input->post()) {
+            $id_akun = $this->session->userdata("pelatihan_idakun");
+            $array=array(
+                'nama'=> $this->input->post('nama'),
+                'id_akun'=> $id_akun,
+            );
+              
+            $id_berkas = $this->input->post("id_berkas");
+            $config['upload_path'] = './assets/images/pelatihan/pendukung/';
+            $config['allowed_types'] = 'jpg|jpeg|JPG|JPEG|PNG|png|PDF|pdf|doc|DO|docx|DOCX';
+            $this->load->library('upload', $config);
+            if ($this->upload->do_upload("file"))    
+            {
+                $upload = $this->upload->data();
+                $file = $upload["raw_name"].$upload["file_ext"];
+                $array['file']=$file;
+                $query2 = $this->m_pelatihan_berkas->lihatdatasatu($id_berkas);
+                $row2 = $query2->row();
+                $berkas1temp = $row2->file;
+                $path1 ='./assets/images/pelatihan/pendukung/'.$berkas1temp.'';
+                if(is_file($path1)) {
+                    unlink($path1); //menghapus gambar di folder berita
+                }
+            }
+
+            $exec = $this->m_pelatihan_berkas->editdata($id_berkas,$array);
+            if ($exec){
+                redirect(base_url("pelatihan/pendukung?msg=0"));
+            }
+      } else {
+      }
+    }
+
+    public function tesemail()
+    {      
+       // Konfigurasi email
+          $config = [
+            'mailtype'  => 'html',
+            'charset'   => 'utf-8',
+            'protocol'  => 'smtp',
+            'smtp_host' => 'smtp.gmail.com',
+            'smtp_user' => 'simanis.kalsel@gmail.com',  // Email gmail
+            'smtp_pass'   => 'simanis123',  // Password gmail
+            'smtp_crypto' => 'ssl',
+            'smtp_port'   => 465,
+            'crlf'    => "\r\n",
+            'newline' => "\r\n"
+           ];
+
+          // Load library email dan konfigurasinya
+          $this->load->library('email', $config);
+
+          // Email dan nama pengirim
+          $this->email->from('no-replay@disperinkalselprov.go.id', 'disperin.kalselprov.go.id/simanis');
+
+          // Email penerima
+          $this->email->to('nikman.mnn@gmail.com'); // Ganti dengan email tujuan
+
+          // Lampiran email, isi dengan url/path file
+       
+          // Subject email
+          $this->email->subject('Pendaftaran Akun SIMANIS ');
+
+          // Isi email
+          $this->email->message("Selamat ");
+
+          // Tampilkan pesan sukses atau error
+          if ($this->email->send()) {
+              echo 'Sukses! email berhasil dikirim.';
+          } else {
+              echo 'Error! email tidak dapat dikirim.';
+          }
+    }
+
 }

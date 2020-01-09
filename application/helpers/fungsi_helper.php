@@ -18,8 +18,8 @@
 						".$pesansukses."
 					</div> ";
 				 } else if ($var=='0' && $pesangagal!= NULL) {
-					echo "
-					<div class='alert alert-default	'>
+					echo "default
+					<div class='alert alert-primary	'>
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button>
 						<i class='fa fa-info-circle'></i>
 						".$pesangagal."
@@ -44,7 +44,7 @@
 				$var = $ci->input->post($variabel,TRUE);
 				if ($var=='1' && $pesansukses!= NULL) { 
 					echo "
-					<div class='alert alert-default'>
+					<div class='alert alert-primary'>
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button>
 						<i class='fa fa-info-circle'></i>
 						".$pesansukses."

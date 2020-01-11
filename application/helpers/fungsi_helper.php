@@ -295,7 +295,7 @@
 			$menu = $ci->router->fetch_class();
 			$submenu = $ci->router->fetch_method();
 			if($ci->session->userdata('pelatihan_status') != "login") {
-				redirect(base_url("pelatihan/login"));
+				redirect(base_url("simanis/login"));
 			}
 		}
 	}
@@ -390,7 +390,7 @@
 			$menu = $ci->router->fetch_class();
 			$submenu = $ci->router->fetch_method();
 			if($ci->session->userdata('pelatihan_admin_login') != "login") {
-				redirect(base_url("pelatihan/admin/login?m=".$submenu.""));
+				redirect(base_url("simanis/admin/login?m=".$submenu.""));
 			}
 		}
 	}
@@ -456,6 +456,31 @@
 		$persen = $lengkap/18*100;
         return number_format((float)$persen, 2, '.', ''); 
        
+	}
+	
+	function kirimemail($email,$subject,$isi)
+    {   
+		$ci = &get_instance();
+		$config = [
+			'mailtype'  => 'html',
+			'charset'   => 'utf-8',
+			'protocol'  => 'smtp',
+			'smtp_host' => 'smtp.gmail.com',
+			'smtp_user' => 'simanis.kalsel@gmail.com',  // Email gmail
+			'smtp_pass'   => 'simanis123',  // Password gmail
+			'smtp_crypto' => 'ssl',
+			'smtp_port'   => 465,
+			'crlf'    => "\r\n",
+			'newline' => "\r\n"
+		   ];
+		  $ci->load->library('email', $config);
+		  $ci->email->from('no-replay@simaniskalsel.go.id', 'SIMANIS KALSEL');
+		  $ci->email->to($email );
+		  $ci->email->subject($subject);
+		  $ci->email->message($isi);
+		  return  $ci->email->send();
+       
     }
+
 
 	}

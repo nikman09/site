@@ -34,7 +34,7 @@
 								<td>".$row['kategori']."</td>
 								<td>".tgl_indo($row['mulaipendaftaran'])." - ".tgl_indo($row['akhirpendaftaran'])."</td>
 								<td>".$row['status']."</td>
-								<td><a href='".base_url()."pelatihan/riwayatstatus?id=".$row['id_pelatihandaftar']."' class='btn btn-success  btn-icon icon-left btn-xs' ><i class='fa fa-info'></i>status</td>
+								<td><a href='".base_url()."simanis/riwayatstatus?id=".$row['id_pelatihandaftar']."' class='btn btn-success  btn-icon icon-left btn-xs' ><i class='fa fa-info'></i>status</td>
 							</tr>
 								";
 							

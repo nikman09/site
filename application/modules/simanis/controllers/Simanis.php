@@ -113,25 +113,11 @@ class Simanis extends CI_Controller {
                   
               $exec = $this->m_pelatihan_akun->tambahdata($array);
               if ($exec){
-
-                $config = [
-                  'mailtype'  => 'html',
-                  'charset'   => 'utf-8',
-                  'protocol'  => 'smtp',
-                  'smtp_host' => 'smtp.gmail.com',
-                  'smtp_user' => 'simanis.kalsel@gmail.com',  // Email gmail
-                  'smtp_pass'   => 'simanis123',  // Password gmail
-                  'smtp_crypto' => 'ssl',
-                  'smtp_port'   => 465,
-                  'crlf'    => "\r\n",
-                  'newline' => "\r\n"
-                 ];
-                $this->load->library('email', $config);
-                $this->email->from('no-replay@simaniskalsel.go.id', 'SIMANIS KALSEL');
-                $this->email->to($email );
-                $this->email->subject('Pendaftaran Akun SIMANIS Kalsel');
-                $this->email->message("Hi ".$nama." <br/> Selamat Telah Mendaftarkan Akun Di SIMANIS KALSEL(Sistem Informasi  Pendaftaran Mandiri Pelatihan Industri Kalimantan Selatan). Silahkan Lengkapi Formulir dan Pilih Pelatihan yang Tersedia. <br/>Terima Kasih  ");
-                $this->email->send();
+                
+               
+                $subject = 'Pendaftaran Akun SIMANIS Kalsel';
+                $pesan = "Hi ".$nama." <br/> Selamat Telah Mendaftarkan Akun Di SIMANIS KALSEL(Sistem Informasi  Pendaftaran Mandiri Pelatihan Industri Kalimantan Selatan). Silahkan Lengkapi Formulir dan Pilih Pelatihan yang Tersedia. <br/>Terima Kasih  ";
+                kirimemail($email,$subject,$pesan);
                   
                 redirect(base_url("simanis/login?msg=1"));
               }
@@ -914,17 +900,17 @@ class Simanis extends CI_Controller {
     {      
        // Konfigurasi email
           $config = [
-            'mailtype'  => 'html',
-            'charset'   => 'utf-8',
-            'protocol'  => 'smtp',
-            'smtp_host' => 'smtp.gmail.com',
-            'smtp_user' => 'simanis.kalsel@gmail.com',  // Email gmail
-            'smtp_pass'   => 'simanis123',  // Password gmail
-            'smtp_crypto' => 'ssl',
-            'smtp_port'   => 465,
-            'crlf'    => "\r\n",
-            'newline' => "\r\n"
-           ];
+                  'mailtype'  => 'html',
+                  'charset'   => 'utf-8',
+                  'protocol'  => 'smtp',
+                  'smtp_host' => 'smtp.gmail.com',
+                  'smtp_user' => 'simanis.kalsel@gmail.com',  // Email gmail
+                  'smtp_pass'   => 'simanis123',  // Password gmail
+                  'smtp_crypto' => 'ssl',
+                  'smtp_port'   => 465,
+                  'crlf'    => "\r\n",
+                  'newline' => "\r\n"
+                 ];
 
           // Load library email dan konfigurasinya
           $this->load->library('email', $config);

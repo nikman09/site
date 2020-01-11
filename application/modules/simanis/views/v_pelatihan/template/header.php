@@ -5,7 +5,7 @@
 
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<meta name="description" content="E-SIPI" />
+	<meta name="description" content="SIMANIS, Sistem Informasi Pelatihan Industri" />
 	<meta name="author" content="Muhammad Ni'man Nasir" />
 
 	<link rel="apple-touch-icon" sizes="57x57" href="<?php echo base_url() ?>assets/images/favicon/apple-icon-57x57.png">
@@ -26,7 +26,7 @@
 	<meta name="msapplication-TileImage" content="<?php echo base_url() ?>assets/images/favicon/ms-icon-144x144.png">
 	<meta name="theme-color" content="#ffffff">
 
-	<title>E-SIPI</title>
+	<title>SIMANIS KALSEL</title>
 
 	<link rel="stylesheet" href="<?php echo base_url() ?>assets/front-end/web/css/bootstrap.css">
 	<link rel="stylesheet" href="<?php echo base_url() ?>assets/front-end/web/css/font-icons/entypo/css/entypo.css">

@@ -7,12 +7,12 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<meta name="description" content="SIPI" />
+	<meta name="description" content="SIMANIS,(Sistem Informasi Pendaftaran Pelatihan Industri) KALSEL " />
 	<meta name="author" content="" />
 
 
 
-	<title>ADMIN SIPI</title>
+	<title>ADMIN SIMANIS</title>
 
 	<link rel="stylesheet" href="<?php echo base_url() ?>assets/back-end/js/jquery-ui/css/no-theme/jquery-ui-1.10.3.custom.min.css">
 	<link rel="stylesheet" href="<?php echo base_url() ?>assets/back-end/css/font-icons/entypo/css/entypo.css" media="screen">
@@ -56,7 +56,7 @@
 				<div class="logo">
 				<a href="<?php echo base_url()."pelatihan/admin"; ?>">
 						<!-- <img src="<?php echo base_url() ?>assets/images/provinsi.png" width="25" style="margin-right:5px" alt="" /> -->
-						<span style="font-weight:bold;color:#fff;font-size:18px;">SIPI</span><span style="font-size:14px;"> DISPERIN</span>
+						<span style="font-weight:bold;color:#fff;font-size:18px;">SIMANIS</span><span style="font-size:14px;"> KALSEL</span>
 					</a>
 				</div>
 				<!-- logo collapse icon -->

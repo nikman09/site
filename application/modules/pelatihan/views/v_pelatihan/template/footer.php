@@ -34,7 +34,7 @@
 				
 				<p>
 				<i class="fa fa-phone"></i> (0511) 5915906 <br/>
-				<i class="fa fa-envelope"></i> disperin.kalselprov@gmail.com
+				<i class="fa fa-envelope"></i> dinasperindustrian@kalselprov.go.id
 				</p>
 				
 			</div>

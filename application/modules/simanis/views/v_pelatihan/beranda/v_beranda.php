@@ -13,7 +13,7 @@
 					
 						<div class="slide-content">
 							<h2>
-								<small>E-SIPI</small>
+								<small>SIMANIS</small>
 								<span style="color:#fff">Informasi Pelatihan Industri</span>
 							</h2>
 							
@@ -43,7 +43,7 @@
 					
 						<div class="slide-content text-right">
 							<h2>
-								<small>E-SIPI</small>
+								<small>SIMANIS</small>
 								<span style="color:#fff">Pendaftaran Pelatihan Industri</span>
 							</h2>
 							

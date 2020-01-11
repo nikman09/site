@@ -12,7 +12,7 @@
 				
 				<p>
 					Dinas Perindustrian Provinsi Kalimantan Selatan. <br />
-					Sistem Informasi Pendaftaran Pelatihan Industri (E-SIPI).
+					Sistem Informasi Pendaftaran Pelatihan Industri (SIMANIS).
 				</p>
 				
 			</div>

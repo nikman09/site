@@ -2,7 +2,7 @@
 
 &copy;
 <?php echo date('Y') ?>
-<strong> SIPI</strong> (Sistem Informasi Pendaftaran Pelatihan Industri)
+<strong> SIMANIS</strong> (Sistem Informasi Pendaftaran Pelatihan Industri) KALSEL
 
 
 	

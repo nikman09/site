@@ -49,6 +49,7 @@
                             <option value="" disabled >.:Pilih Kategori:.</option>
 							<option value="Umum" <?php echo $data['kategori']=="Umum"?"selected":"" ?> >Umum</option>
 							<option value="Pelaku Industri" <?php echo $data['kategori']=="Pelaku Industri"?"selected":"" ?> >Pelaku Industri</option>
+							<option value="ASN"  <?php echo $data['kategori']=="ASN"?"selected":"" ?> >ASN</option>
 						</select>
 					</div>
 				</div>

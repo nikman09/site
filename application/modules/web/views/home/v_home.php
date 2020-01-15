@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
-	<head>
+	<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
 		<!-- Basic -->
-		<meta charset="utf-8">
+		
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">	
 
 		<title>Dinas Perindustrian Kalsel</title>	
@@ -98,10 +98,10 @@
 								<div class="header-column justify-content-end">
 									<div class="header-row">
 										<ul class="header-social-icons social-icons d-none d-sm-block social-icons-clean">
-											<li class="social-icons-facebook"><a href="https://www.facebook.com/" target="_blank" title="Facebook" style="color: #e0e0e0 !important"><i class="fab fa-facebook-f"></i></a></li>
-											<li class="social-icons-twitter" ><a href="https://www.twitter.com/" target="_blank" title="Twitter"  style="color: #e0e0e0 !important"><i class="fab fa-twitter"></i></a></li>
-											<li class="social-icons-instagram" ><a href="https://www.instagram.com/" target="_blank" title="instagram"  style="color: #e0e0e0 !important"><i class="fab fa-instagram"></i></a></li>
-											<li class="social-icons-youtube" ><a href="https://www.youtube.com/" target="_blank" title="youtube"  style="color: #e0e0e0 !important"><i class="fab fa-youtube"></i></a></li>
+											<li class="social-icons-facebook"><a href="http://www.facebook.com/" target="_blank" title="Facebook" style="color: #e0e0e0 !important"><i class="fab fa-facebook-f"></i></a></li>
+											<li class="social-icons-twitter" ><a href="http://www.twitter.com/" target="_blank" title="Twitter"  style="color: #e0e0e0 !important"><i class="fab fa-twitter"></i></a></li>
+											<li class="social-icons-instagram" ><a href="http://www.instagram.com/" target="_blank" title="instagram"  style="color: #e0e0e0 !important"><i class="fab fa-instagram"></i></a></li>
+											<li class="social-icons-youtube" ><a href="http://www.youtube.com/" target="_blank" title="youtube"  style="color: #e0e0e0 !important"><i class="fab fa-youtube"></i></a></li>
 										</ul>
 									</div>
 								</div>
@@ -164,7 +164,7 @@
 						<ul>
 							
 						<li data-transition="fade">
-								<img src="<?php echo base_url() ?>assets/front-end/web2/bahan/123.jpg"  
+								<img src="<?php echo base_url() ?>assets/front-end/web2/bahan/v1.jpg"  
 									alt=""
 								data-bgposition="left center"
 									data-bgpositionend="center center"
@@ -194,13 +194,9 @@
 									data-start="700"
 									data-fontsize="['22','22','22','40']"
 									data-lineheight="['25','25','25','45']"
-									data-transform_in="y:[-50%];opacity:0;s:500;" style="color: #b5b5b5;">Kalimantan Selatan</div>
+									data-transform_in="y:[-50%];opacity:0;s:500;" style="color: #b5b5b5;">IKM</div>
 				
-								<div class="tp-caption d-none d-md-block"
-									data-frames='[{"delay":3800,"speed":500,"frame":"0","from":"opacity:0;x:10%;","to":"opacity:1;x:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
-									data-x="['left','left','center','center']" data-hoffset="['365','365','80','135']"
-									data-y="center" data-voffset="['10','10','10','-10']">
-								    <img src="<?php echo base_url() ?>assets/front-end/web2/img/slides/slide-blue-line.png" alt=""></div>
+							
 				
 								<div class="tp-caption"
 									data-x="['left','left','center','center']" data-hoffset="['440','440','150','240']"
@@ -216,7 +212,7 @@
 									data-fontsize="['50','50','50','60']"
 									data-lineheight="['55','55','55','50']"
 									data-letterspacing="-1"
-									style="color: #b5b5b5;">IKM KALSEL GO DIGITAL</h1>
+									style="color: #b5b5b5;">Industri Kecil dan Menengah</h1>
 				
 								<div class="tp-caption font-weight-light text-color-light"
 									data-frames='[{"from":"opacity:0;","speed":300,"to":"o:1;","delay":2000,"split":"chars","splitdelay":0.05,"ease":"Power2.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
@@ -224,12 +220,12 @@
 									data-y="center" data-voffset="['40','40','40','120']"
 									data-fontsize="['18','18','18','20']"
 									data-lineheight="['20','20','20','55']"
-									style="color: #b5b5b5;">SMART IKM</div>
+									style="color: #b5b5b5;"> Dinas Perindustrian sebagai fasilitator  Pengembangan Industri Kecil Menengah  di Kalimantan Selatan</div>
 							
 								
 							</li> 
 							<li data-transition="fade">
-								<img src="<?php echo base_url() ?>assets/images/22.jpg"  
+								<img src="<?php echo base_url() ?>assets/front-end/web2/bahan/v2.jpg"  
 									alt=""
 								data-bgposition="left center"
 									data-bgpositionend="center center"
@@ -254,10 +250,7 @@
 									data-lineheight="['25','25','25','45']"
 									data-transform_in="y:[-50%];opacity:0;s:500;" style="color: #b5b5b5;">Kawasan Industri</div>
 				
-								<div class="tp-caption d-none d-md-block"
-									data-frames='[{"delay":3800,"speed":500,"frame":"0","from":"opacity:0;x:10%;","to":"opacity:1;x:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
-									data-x="['left','left','center','center']" data-hoffset="['365','365','80','135']"
-									data-y="center" data-voffset="['-33','-33','-33','10']"><img src="<?php echo base_url() ?>assets/front-end/web2/img/slides/slide-blue-line.png" alt=""></div>
+							
 				
 								<div class="tp-caption"
 									data-x="['left','left','center','center']" data-hoffset="['440','440','150','240']"
@@ -285,41 +278,41 @@
 								
 								
 							</li>
-							<li data-transition="fade">
+			<!--				<li data-transition="fade">-->
 				
-				<img src="<?php echo base_url() ?>assets/front-end/web2/img/slides/tes122.jpg"  
-					alt=""
-					data-bgposition="right center"
-					data-bgpositionend="center center"
-					data-bgfit="cover" 
-					data-bgrepeat="no-repeat" 
-					data-kenburns="on"
-					data-duration="9000"
-					data-ease="Linear.easeNone"
-					data-scalestart="110"
-					data-scaleend="100"
-					data-rotatestart="0"
-					data-rotateend="0"
-					data-offsetstart="0 0"
-					data-offsetend="0 0"
-					data-bgparallax="0"
-					class="rev-slidebg">
-                <div class="tp-caption font-weight-extra-bold negative-ls-2" style="color:#fff"
-									data-frames='[{"delay":1000,"speed":2000,"frame":"0","from":"sX:1.5;opacity:0;fb:20px;","to":"o:1;fb:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
-									data-x="center"
-									data-y="center" data-voffset="['-50','-50','-50','40']"
-									data-fontsize="['50','50','50','50']"
-									data-lineheight="['55','55','55','95']">Dinas Perindustrian</div>
+			<!--	<img src="<?php echo base_url() ?>assets/front-end/web2/img/slides/tes122.jpg"  -->
+			<!--		alt=""-->
+			<!--		data-bgposition="right center"-->
+			<!--		data-bgpositionend="center center"-->
+			<!--		data-bgfit="cover" -->
+			<!--		data-bgrepeat="no-repeat" -->
+			<!--		data-kenburns="on"-->
+			<!--		data-duration="9000"-->
+			<!--		data-ease="Linear.easeNone"-->
+			<!--		data-scalestart="110"-->
+			<!--		data-scaleend="100"-->
+			<!--		data-rotatestart="0"-->
+			<!--		data-rotateend="0"-->
+			<!--		data-offsetstart="0 0"-->
+			<!--		data-offsetend="0 0"-->
+			<!--		data-bgparallax="0"-->
+			<!--		class="rev-slidebg">-->
+   <!--             <div class="tp-caption font-weight-extra-bold negative-ls-2" style="color:#fff"-->
+			<!--						data-frames='[{"delay":1000,"speed":2000,"frame":"0","from":"sX:1.5;opacity:0;fb:20px;","to":"o:1;fb:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'-->
+			<!--						data-x="center"-->
+			<!--						data-y="center" data-voffset="['-50','-50','-50','40']"-->
+			<!--						data-fontsize="['50','50','50','50']"-->
+			<!--						data-lineheight="['55','55','55','95']">Dinas Perindustrian</div>-->
 				
-								<div class="tp-caption font-weight-light" style="color:#fff"
-									data-frames='[{"from":"opacity:0;","speed":300,"to":"o:1;","delay":2000,"split":"chars","splitdelay":0.05,"ease":"Power2.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
-									data-x="center"
-									data-y="center" data-voffset="['-15','-15','-15','95']"
-									data-fontsize="['18','18','18','40']"
-									data-lineheight="['20','20','20','55']"
-									style="color: #b5b5b5;">Provinsi Kalimantan Selatan.</div>
+			<!--					<div class="tp-caption font-weight-light" style="color:#fff"-->
+			<!--						data-frames='[{"from":"opacity:0;","speed":300,"to":"o:1;","delay":2000,"split":"chars","splitdelay":0.05,"ease":"Power2.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'-->
+			<!--						data-x="center"-->
+			<!--						data-y="center" data-voffset="['-15','-15','-15','95']"-->
+			<!--						data-fontsize="['18','18','18','40']"-->
+			<!--						data-lineheight="['20','20','20','55']"-->
+			<!--						style="color: #b5b5b5;">Provinsi Kalimantan Selatan.</div>-->
 			
-			</li>
+			<!--</li>-->
 							 
 						
 						</ul>
@@ -348,12 +341,9 @@
 					<div class="col-md-6 col-lg-3">
 						<div class="featured-box featured-box-primary featured-box-effect-4 appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="200">
 							<div class="box-content px-4">
-							<a href="https://siikalsel.disperin.kalselprov.go.id/">
-								<img src="<?php echo base_url() ?>assets/images/pabrik.png" class="icon-featured">
-								<h4 class="font-weight-bold text-color-dark pb-1 mb-2">SIIKALSEL</h4>
-								<p class="mb-0">Sistem Informasi Industri
-Dinas Perindustian Provinsi Kalimantan Selatan.</p>
-							</a>
+								<i class="icon-featured  fa fa-database text-12"></i>
+								<h4 class="font-weight-bold text-color-dark pb-1 mb-2">Data Industri</h4>
+								<p class="mb-0">Data dan Informasi Industri Kalimantan Selatan.</p>
 							</div>
 						</div>
 					</div>
@@ -380,7 +370,7 @@ Dinas Perindustian Provinsi Kalimantan Selatan.</p>
 							<div class="box-content px-4">
 							
 								<i class="icon-featured icon-screen-desktop icons text-12"></i>
-							
+								<a href="https://kemenperin.go.id/gpr">
 								<h4 class="font-weight-bold text-color-dark pb-1 mb-2">Infografis</h4>
 								</a>
 								<p class="mb-0">Sajian data dan informasi seputar kebijakan dan kegiatan.</p>
@@ -509,8 +499,6 @@ Dinas Perindustian Provinsi Kalimantan Selatan.</p>
 										}
 											?>	
 								
-
-								
 							</ul>
 
 						</div>
@@ -551,149 +539,73 @@ Dinas Perindustian Provinsi Kalimantan Selatan.</p>
 				</div>
 				</section>
 
-				<!-- <section>
-				<div class="container ">
-					<div class="row " >
+				<section>
+				<div class="container " >
+			
+				
+					<div class="row" style="padding-bottom:40px">
 					
-						
-						
-						<div class="col-lg-12 appear-animation " data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="200">
-						
-					<div class="row">
-						<div class="col-lg-6">
-						<h3 class="font-weight-bold text-3 mb-0 mt-4 mt-md-0" style="padding-bottom:10px">Agenda</h3>
-							<div class="tabs">
-								<ul class="nav nav-tabs  flex-column flex-md-row">
-									<li class="nav-item ">
-										<a class="nav-link" href="#popular101" data-toggle="tab" class="text-center">Pelatihan</a>
-									</li>
-									<li class="nav-item active">
-										<a class="nav-link" href="#recent101" data-toggle="tab" class="text-center">Pameran</a>
-									</li>
-									<li class="nav-item">
-										<a class="nav-link" href="#recent102" data-toggle="tab" class="text-center">Dinas</a>
-									</li>
-								</ul>
-								<div class="tab-content">
-									<div id="popular101" class="tab-pane ">
-									<table class="table">
-										<thead>
-											<tr>
-												<th>
-													#
-												</th>
-												<th>
-													Nama Pelatihan
-												</th>
-												<th>
-													Waktu
-												</th>
-												<th>
-													
-												</th>
-											</tr>
-										</thead>
-										<tbody>
-										<?php
-										$i=0;
-										foreach($jadwalpelatihan->result_array() as $row){
-											$i++;
-											echo "
-												<tr>
-													<td>$i</td>
-													<td>".$row['nama']."</td>
-													<td>".$row['tanggal']."</td>
-													<td></td>
-												</tr>
-
-											";
-											
-										}
-											?>
-											</tbody>
-									</table>
-
-
-
-												</div>
-									<div id="recent101" class="tab-pane active">
-									<table class="table">
-										<thead>
-											<tr>
-												<th>
-													#
-												</th>
-												<th>
-													Nama Pameran
-												</th>
-												<th>
-													Waktu
-												</th>
-												<th>
-													
-												</th>
-											</tr>
-										</thead>
-										<tbody>
-										<?php
-										$i=0;
-										foreach($jadwalpameran->result_array() as $row){
-											$i++;
-											echo "
-												<tr>
-													<td>$i</td>
-													<td>".$row['nama']."</td>
-													<td>".$row['tanggal']."</td>
-													<td></td>
-												</tr>
-											";
-											
-										}
-											?>
-										</tbody>
-									</table>
-									</div>
-									<div id="recent102" class="tab-pane">
-									<table class="table">
-										<thead>
-											<tr>
-												<th>
-													#
-												</th>
-												<th>
-													Nama Pameran
-												</th>
-												<th>
-													Waktu
-												</th>
-												<th>
-												</th>
-											</tr>
-										</thead>
-										<tbody>
-										<?php
-										$i=0;
-										foreach($jadwaldinas->result_array() as $row){
-											$i++;
-											echo "
-												<tr>
-													<td>$i</td>
-													<td>".$row['nama']."</td>
-													<td>".$row['tanggal']."</td>
-													<td></td>
-												</tr>
-
-											";
-											
-										}
-											?>
-										</tbody>
-									</table>
-									</div>
-								</div>
-							</div>
+						<div class="col-lg-8" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="200">
+						<h3 class="font-weight-bold text-3 mb-0 mt-4 mt-md-0" style="padding-bottom:10px">Informasi Pelatihan  Industri (SIMANIS)</h3>
+						<table class="table  table-sm"  id="table-1"  style="font-size:12px;width:100%" >
+		<thead>
+			<tr>
+				<th>Pelatihan</th>
+				<th>Kategori</th>
+				<th>Periode Pendaftaran</th>
+				<th>Tanggal Pelatihan</th>
+				<th>Tempat Pelatihan</th>
+				<th>Daftar</th>
+			</tr>
+		</thead>
+		<tbody>
+		
+			<?php
+					foreach($data->result_array() as $row){
+						echo "
+							<tr>
+								<td>".$row['nama']."</td>
+								<td>".$row['kategori']."</td>
+								<td>".tgl_indo($row['mulaipendaftaran'])." - ".tgl_indo($row['akhirpendaftaran'])."</td>
+								<td>".tgl_indo($row['mulaipelatihan'])." - ".tgl_indo($row['akhirpelatihan'])."</td>
+								<td>".$row['tempat']."</td>
+								<td><a href='".base_url("simanis/login")."' target='_blank' class='btn btn-primary  btn-sm'>Daftar</a></td>"; 
+									
+							
+						echo "
+							</tr>
+						";
+					}
+				?>
+		</tbody>
+	</table>
 						</div>
-						<div class="col-lg-6">
+						<div class=" col-lg-4 appear-animation" data-appear-animation="fadeInDownShorter" data-appear-animation-delay="400">
+
+							<h3 class="font-weight-bold text-3 mb-0 mt-4 mt-md-0">Pengumuman Pelatihan Industri</h3>
+
+							<ul class="simple-post-list">
+							<?php
+							foreach($ppelatihan->result_array() as $row){
+								?>
+										<li>
+											
+											<div class="post-info">
+												<h4 class="font-weight-normal text-3 line-height-4 mb-0"><a href="<?php echo base_url("simanis/pengumumandetail?ids=".$row['id_pengumuman']."") ?>" class="text-dark"><?php echo  $row['judul'] ?></a></h4>
+												<div class="post-meta">
+												<?php echo  tgl_indo($row['tanggal']); ?>
+												</div>
+											</div>
+										</li>
+								
+							<?php
+										}
+											?>	
+								
+							</ul>
+
+						</div>
+						<!-- <div class="col-lg-6">
 							<h4 class="font-weight-normal ">Bidang</strong></h4>
 							<div class="row">
 								<div class="col-sm-6">
@@ -755,22 +667,22 @@ Dinas Perindustian Provinsi Kalimantan Selatan.</p>
 						</div>
 						
 						
-					</div>
+					</div> -->
 
 
 					</div>
 
 					
 
-					</div>
-				</div> 
-				</section> -->
+				
+				
+				</section>
 
 
-
+ <!--bg-color-grey-scale-1-->
 
 										
-				<section class="section bg-color-grey-scale-1 section-height-3 border-0 m-0" style="padding-top: 50px;padding-bottom: 20px;">
+				<section class="section section-height-3 border-0 m-0" style="padding-top: 50px;padding-bottom: 20px;">
 					<div class="container pb-2">
 						
 					<div class="row recent-posts pb-4 mb-5 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="200" style="
@@ -811,37 +723,37 @@ Dinas Perindustian Provinsi Kalimantan Selatan.</p>
 				</section>
 				
 
-				<section  style="
-    padding-top: 30px;
-    padding-bottom: 30px">
-					<div class="container">
-						<div class="row">
-							<div class="col">
-								<div class="owl-carousel mb-0" data-plugin-options="{'responsive': {'0': {'items': 1}, '476': {'items': 1}, '768': {'items': 5}, '992': {'items': 7}, '1200': {'items': 7}}, 'autoplay': true, 'autoplayTimeout': 3000, 'dots': false}">
-									<div>
-										<img class="img-fluid opacity-2" src="https://drive.google.com/uc?id=1of5jv0GrJ43HO7C6wPkmXJxZFOMWZlnd" alt="">
-									</div>
-									<div>
-										<img class="img-fluid opacity-2" src="https://drive.google.com/uc?id=1vR_wKqig5azPt13ixV9f7NIWbpCtJaFL" alt="">
-									</div>
-									<div>
-										<img class="img-fluid opacity-2" src="https://drive.google.com/uc?id=1TeKNzeapu8z4-H6BrKmh8FQYJmNqX-IB" alt="">
-									</div>
-									<div>
-										<img class="img-fluid opacity-2" src="https://drive.google.com/uc?id=1JRet1Bxf2uIzCN4SfGISfiJAvaETqJj0" alt="">
-									</div>
-									<div>
-										<img class="img-fluid opacity-2" src="https://drive.google.com/uc?id=1FaIUhoan4lNw0o_934z13V3tBrBEBlcN" alt="">
-									</div>
+				<!-- <section  style="-->
+    <!--padding-top: 30px;-->
+    <!--padding-bottom: 30px">-->
+				<!--	<div class="container">-->
+				<!--		<div class="row">-->
+				<!--			<div class="col">-->
+				<!--				<div class="owl-carousel mb-0" data-plugin-options="{'responsive': {'0': {'items': 1}, '476': {'items': 1}, '768': {'items': 5}, '992': {'items': 7}, '1200': {'items': 7}}, 'autoplay': true, 'autoplayTimeout': 3000, 'dots': false}">-->
+				<!--					<div>-->
+				<!--						<img class="img-fluid opacity-2" src="https://drive.google.com/uc?id=1of5jv0GrJ43HO7C6wPkmXJxZFOMWZlnd" alt="">-->
+				<!--					</div>-->
+				<!--					<div>-->
+				<!--						<img class="img-fluid opacity-2" src="https://drive.google.com/uc?id=1vR_wKqig5azPt13ixV9f7NIWbpCtJaFL" alt="">-->
+				<!--					</div>-->
+				<!--					<div>-->
+				<!--						<img class="img-fluid opacity-2" src="https://drive.google.com/uc?id=1TeKNzeapu8z4-H6BrKmh8FQYJmNqX-IB" alt="">-->
+				<!--					</div>-->
+				<!--					<div>-->
+				<!--						<img class="img-fluid opacity-2" src="https://drive.google.com/uc?id=1JRet1Bxf2uIzCN4SfGISfiJAvaETqJj0" alt="">-->
+				<!--					</div>-->
+				<!--					<div>-->
+				<!--						<img class="img-fluid opacity-2" src="https://drive.google.com/uc?id=1FaIUhoan4lNw0o_934z13V3tBrBEBlcN" alt="">-->
+				<!--					</div>-->
 									<!-- <div>
 										<img class="img-fluid opacity-2" src="https://doc-0o-2o-docs.googleusercontent.com/docs/securesc/iasracd20i517a5u6kqfdb693tntmi6p/k49npvg8tk3jp6r3m7p8euvcu5942jkt/1572264000000/04995702770821001048/16859199919012491055/1Yg3_9aEsOxME4-kR-9Z_ftTV47GLIXtF" alt="">
 									</div> -->
 									
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
+				<!--				</div>-->
+				<!--			</div>-->
+				<!--		</div>-->
+				<!--	</div>-->
+				<!--</section> -->
 				
 				
 			</div>
@@ -851,6 +763,29 @@ Dinas Perindustian Provinsi Kalimantan Selatan.</p>
 			<?php
 				$this->load->view("template/footer");
 			?>
+			<script>
+			jQuery( document ).ready( function( $ ) {
+			
 
+				var $table1 = jQuery( '#table-1' );            
+				// Initialize DataTable
+				$table1.DataTable( {
+					responsive: true,
+					columnDefs: [
+						{ responsivePriority: 1, targets: 0 },
+						{ responsivePriority: 2, targets: 5 },
+					]	,
+					"order": [[ 5, "desc" ]],
+					"searching": false,
+					"lengthChange": false,
+					
+				});
+				// Initalize Select Dropdown after DataTables is created
+			
+					
+			} );
+			
+
+			</script>
 	</body>
 </html>

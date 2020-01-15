@@ -58,7 +58,7 @@
 															<a class="dropdown-item dropdown-toggle  <?= ($submenu == "kegiatan") ? " active" : ""; ?>" href="<?php echo base_url(); ?>web/kegiatan/all">
 																Kegiatan Bidang
 															</a>
-															<ul class="dropdown-menu">
+															<ul class="dropdown-menu"> 
 															
 																<li class="dropdown-submenu">
 																	<a class="dropdown-item" href="#">Sekretariat</a>

@@ -11,7 +11,7 @@
 					
 						
 						<a href="https://kemenperin.go.id/"><img width="100px" height="100px" src="<?php echo base_url("assets/images/kemenperin.png") ?>" style="margin:10px "/></a>
-								<a href="http://www.kalselprov.go.id"><img  width="80px" src="<?php echo base_url("assets/front-end/web2/Bahan/logo2.png") ?>"  style="margin:10px" /></a>
+								<a href="http://www.kalselprov.go.id"><img  width="80px" src="<?php echo base_url("assets/front-end/web2/bahan/logo2.png") ?>"  style="margin:10px" /></a>
 					
 						</div>
 
@@ -128,3 +128,10 @@ Banjarbaru.</p></li>
 			ga('send', 'pageview');
 		</script>
 		 -->
+
+		 <script>
+		 $(function() {
+			$('#mainNav a[href~="' + location.href + '"]').addClass('active');
+			$('#mainNav a[href~="' + location.href + '"]').parents('ul').siblings('a').addClass('active');
+		});
+		 </script>

@@ -356,27 +356,30 @@
 
 	if (!function_exists('menus'))
 	{
-		function menus($modul,$detail,$urll,$target,$judul)
+		function menus($modul,$detail,$urll,$target,$judul,$toogle = FALSE)
 		{	
 
+			
+				$too = ($toogle==FALSE?"":"dropdown-toggle");
 				$blank = ($target==1?"target='_blank'":" ");
+			
 				if ($modul=="Laman") {
-					$link = "<a href='".base_url()."web/page?p=".$detail."' $blank class='dropdown-item '>$judul</a>";
+					$link = "<a href='".base_url()."web/page?p=".$detail."' $blank class='dropdown-item $too '>$judul</a>";
 				} else if($modul=="Dokumen") {
-					$link= "<a href='".base_url()."web/page?p=".$detail."' $blank  class='dropdown-item '>$judul</a>";
+					$link= "<a href='".base_url()."web/page?p=".$detail."' $blank  class='dropdown-item $too '>$judul</a>";
 				} else if($modul=="Kegiatan") {
-					$link = "<a href='".base_url()."web/kegiatan/".$detail."' $blank  class='dropdown-item '>$judul</a>";
+					$link = "<a href='".base_url()."web/kegiatan/".$detail."' $blank  class='dropdown-item $too '>$judul</a>";
 				} else if($modul=="Bidang") {
-					$link = "<a href='".base_url()."web/bidang?p=".$detail."' $blank  class='dropdown-item '>$judul</a>";
+					$link = "<a href='".base_url()."web/bidang?p=".$detail."' $blank  class='dropdown-item $too '>$judul</a>";
 				} else if($modul=="Jadwal") {
-					$link = "<a href='".base_url()."web/jadwal?idx=".$detail."' $blank  class='dropdown-item '>$judul</a>";
+					$link = "<a href='".base_url()."web/jadwal?idx=".$detail."' $blank  class='dropdown-item $too '>$judul</a>";
 				} else if($modul=="Berita") {
-					$link = "<a href='".base_url()."web/berita' $blank  class='dropdown-item '>$judul</a>";
+					$link = "<a href='".base_url()."web/berita' $blank  class='dropdown-item $too '>$judul</a>";
 				} else if($modul=="Kontak") {
-					$link = "<a href='".base_url()."web/kontak' $blank  class='dropdown-item '>$judul</a>";
+					$link = "<a href='".base_url()."web/kontak' $blank  class='dropdown-item $too '>$judul</a>";
 				}
 				 else if($modul=="URL") {
-					$link = "<a href='".$urll."'>$judul</a>";
+					$link = "<a href='".$urll."'  $blank  class='dropdown-item $too '>$judul</a>";
 				}
 			return $link;
 		}

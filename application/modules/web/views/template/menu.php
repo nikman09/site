@@ -4,7 +4,7 @@
 ?>
 	<ul class="nav nav-pills" id="mainNav">
 	<?php 
-	    function get_ol($array, $child = FALSE)
+	    function get_ol($array, $child = FALSE, $awal = TRUE)
 		{
 			$str = '';
 			
@@ -13,16 +13,18 @@
 				foreach($array as $item){
 					if(isset($item['children']) && count($item['children'])){
 						$str .=  $child == FALSE ? '<li class="dropdown"> ' : '<li class="dropdown-submenu"> ' ;
+					
 					} else {
 						$str .=  $child == FALSE ? '<li class="dropdown"> ' : '<li> ' ;
+					
 					}
 				
-					$str .= menus($item['tipe'],$item['detail'],$item['url'],$item['target'],$item['judul']);
+					$str .= menus($item['tipe'],$item['detail'],$item['url'],$item['target'],$item['judul'],$awal);
 					
 	  
 					if(isset($item['children']) && count($item['children'])){
 						$str .= ' <ul class="dropdown-menu">';
-						$str .= get_ol($item['children'], TRUE);
+						$str .= get_ol($item['children'], TRUE,FALSE);
 						$str .= ' </ul>';
 					}
 					

@@ -336,6 +336,9 @@ class Simanis extends CI_Controller {
                 'namapendidikan'=>$this->input->post('namapendidikan'),
                 'jurusan'=>$this->input->post('jurusan'),
                 'nilai'=>$this->input->post('nilai'),
+                'pekerjaan'=>$this->input->post('pekerjaan'),
+                'tempatkerja'=>$this->input->post('tempatkerja'),
+                'posisi'=>$this->input->post('posisi'),
                 'daftarpelatihan'=>$this->input->post('daftarpelatihan'),
                 'daftarkeahlian'=>$this->input->post('daftarkeahlian'),
             );

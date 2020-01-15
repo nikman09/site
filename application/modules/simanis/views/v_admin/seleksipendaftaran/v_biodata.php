@@ -83,8 +83,20 @@
                             <span class="col-md-8"> : <?php echo $data['jurusan']; ?> </span>
                       </div>
                       <div class="form-group row">
-                            <label for="" class="col-md-4 control-label">Nilai/IPK</label>
+                            <label for="" class="col-md-4 control-label">Nilai UN/Rapor/IPK</label>
                             <span class="col-md-8"> : <?php echo $data['nilai']; ?> </span>
+                      </div>
+                      <div class="form-group row">
+                            <label for="" class="col-md-4 control-label">Pekerjaan</label>
+                            <span class="col-md-8"> : <?php echo $data['pekerjaan']; ?> </span>
+                      </div>
+                      <div class="form-group row">
+                            <label for="" class="col-md-4 control-label">Tempat Kerja/Instansi/Perusahaan</label>
+                            <span class="col-md-8"> : <?php echo $data['tempatkerja']; ?> </span>
+                      </div>
+                      <div class="form-group row">
+                            <label for="" class="col-md-4 control-label">Posisi/Jabatan dalam Pekerjaan</label>
+                            <span class="col-md-8"> : <?php echo $data['posisi']; ?> </span>
                       </div>
                       <div class="form-group row">
                             <label for="" class="col-md-4 control-label">Pelatihan/ Seminar/ Sertifikasi Yang Pernah diikuti</label>

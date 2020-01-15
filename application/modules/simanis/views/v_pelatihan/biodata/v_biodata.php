@@ -72,12 +72,34 @@
 								<textarea class="form-control" id="alamat" name="alamat" placeholder="Masukkan Tempat Lahir"><?php echo $data['alamat']; ?></textarea>
 							</div>
 							<div class="form-group">
-								<label for="field-1" class="control-label">Kota</label>
-								<input type="text" class="form-control" id="kota" name="kota" placeholder="Masukkan Kota"  value="<?php echo $data['kota']; ?>">
+								<label for="field-1" class="control-label">Kanupaten/Kota</label>
+								<select  class="form-control" id="kota" name="kota" >
+									<option value="">.:Pilih Kabupaten/Kota:.</option>
+									<option value="Kabupaten Banjar" <?= $data['kota']=="Kabupaten Banjar"?"selected":"" ?>>Kabupaten Banjar</option>
+									<option value="Kabupaten Balangan" <?= $data['kota']=="Kabupaten Balangan"?"selected":"" ?>>Kabupaten Balangan</option>
+									<option value="Kabupaten Banjar" <?= $data['kota']=="Kabupaten Banjar"?"selected":"" ?>>Kabupaten Banjar</option>
+									<option value="Kabupaten Barito Kuala" <?= $data['kota']=="Kabupaten Barito Kuala"?"selected":"" ?>>Kabupaten Barito Kuala</option>
+									<option value="Kabupaten Hulu Sungai Selatan" <?= $data['kota']=="Kabupaten Hulu Sungai Selatan"?"selected":"" ?>>Kabupaten Hulu Sungai Selatan</option>
+									<option value="Kabupaten Hulu Sungai Tengah" <?= $data['kota']=="Kabupaten Hulu Sungai Tengah"?"selected":"" ?>>Kabupaten Hulu Sungai Tengah</option>
+									<option value="Kabupaten Hulu Sungai Utara" <?= $data['kota']=="Kabupaten Hulu Sungai Utara"?"selected":"" ?>>Kabupaten Hulu Sungai Utara</option>
+									<option value="Kabupaten Kotabaru" <?= $data['kota']=="Kabupaten Kotabaru"?"selected":"" ?>>Kabupaten Kotabaru</option>
+									<option value="Kabupaten Tabalong" <?= $data['kota']=="Kabupaten Tabalong"?"selected":"" ?>>Kabupaten Tabalong</option>
+									<option value="Kabupaten Tanah Bumbu" <?= $data['kota']=="Kabupaten Tanah Bumbu"?"selected":"" ?>>Kabupaten Tanah Bumbu</option>
+									<option value="Kabupaten Tanah Laut" <?= $data['kota']=="Kabupaten Tanah Laut"?"selected":"" ?>>Kabupaten Tanah Laut</option>
+									<option value="Kabupaten Tapin" <?= $data['kota']=="Kabupaten Tapin"?"selected":"" ?>>Kabupaten Tapin</option>
+									<option value="Kota Banjarbaru" <?= $data['kota']=="Kota Banjarbaru"?"selected":"" ?>>Kota Banjarbaru</option>
+									<option value="Kota Banjarmasin" <?= $data['kota']=="Kota Banjarmasin"?"selected":"" ?>>Kota Banjarmasin</option>
+									
+
+								</select>
 							</div>
 							<div class="form-group">
 								<label for="field-1" class="control-label">Nomor HP</label>
 								<input type="text" class="form-control" id="nohp" name="nohp" placeholder="Masukkan Nomor HP"  value="<?php echo $data['nohp']; ?>">
+							</div>
+							<div class="form-group">
+								<label for="field-1" class="control-label">Pelatihan/Seminar/Sertifikasi Yang Pernah diikuti</label>
+								<textarea class="form-control" id="daftarpelatihan " name="daftarpelatihan" placeholder="Sebutkan Daftar Pelatihan/Seminar/Sertifikasi"><?php echo $data['daftarpelatihan']; ?></textarea>
 							</div>
 					
 					
@@ -112,11 +134,22 @@
 								<input type="text" class="form-control nilai" id="nilai" name="nilai" placeholder="Masukkan Nilai/IPK "  value="<?php echo $data['nilai']; ?>" data-mask="number">
 								<span style="font-size:12px">*Koma dengan titik</span>
 							</div>
-							<hr/>
+							<h5><u>Data Pekerjaan</u></h5>
+						
 							<div class="form-group">
-								<label for="field-1" class="control-label">Pelatihan/Seminar/Sertifikasi Yang Pernah diikuti</label>
-								<textarea class="form-control" id="daftarpelatihan " name="daftarpelatihan" placeholder="Sebutkan Daftar Pelatihan/Seminar/Sertifikasi"><?php echo $data['daftarpelatihan']; ?></textarea>
+                            <label for="" class="control-label">Pekerjaan</label>
+							<input type="text" class="form-control" id="pekerjaan" name="pekerjaan" placeholder="Masukkan Pekerjaan"  value="<?php echo $data['pekerjaan']; ?>">
 							</div>
+							<div class="form-group">
+									<label for="" class="control-label">Tempat Kerja/Instansi/Perusahaan</label>
+									<input type="text" class="form-control" id="tempatkerja" name="tempatkerja" placeholder="Masukkan Tempat Kerja"  value="<?php echo $data['tempatkerja']; ?>">
+							</div>
+							<div class="form-group">
+									<label for="" class="control-label">Posisi/Jabatan dalam Pekerjaan</label>
+									<input type="text" class="form-control" id="posisi" name="posisi" placeholder="Masukkan Posisi/Jabatan"  value="<?php echo $data['posisi']; ?>">
+							</div>
+							<hr/>
+							
 							<div class="form-group">
 								<label for="field-1" class="control-label">Keahlian yang dimiliki</label>
 								<textarea class="form-control" id="daftarkeahlian " name="daftarkeahlian" placeholder="Sebutkan Daftar Keahlian yang dimiliki"><?php echo $data['daftarkeahlian']; ?></textarea>

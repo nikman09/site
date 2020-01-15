@@ -14,13 +14,15 @@ class Web extends CI_Controller {
         $this->load->model("m_jadwal");
         $this->load->model("m_pesan");
         $this->load->model("m_navigasi");
+        $this->load->model("m_pelatihan_pelatihan");
+        $this->load->model("m_pelatihan_pengumuman");
     }
 
     // Dashboard
     public function index()
     {   
 
-      
+        $variabel['data'] = $this->m_pelatihan_pelatihan->lihatdatap();
         $variabel['beritaterkini'] = $this->m_berita->lihatdata2(3, 0);           
         $variabel['kegiatanterkini'] = $this->m_kegiatan->lihatdata(3, 0);  
         $variabel['kegiatanterkini2'] = $this->m_kegiatan->lihatdata(4, 0);  
@@ -29,6 +31,7 @@ class Web extends CI_Controller {
         $variabel['jadwalpameran'] = $this->m_jadwaldetail->lihatdatajadwal(3,4, 0); 
         $variabel['jadwaldinas'] = $this->m_jadwaldetail->lihatdatajadwal(5,4, 0); 
         $variabel['datapopuler'] = $this->m_berita->lihatdatapopuler();
+        $variabel['ppelatihan'] = $this->m_pelatihan_pengumuman->lihatdata2(5, 0); 
         $this->load->view('home/v_home',$variabel);
     }   
    
@@ -172,6 +175,7 @@ class Web extends CI_Controller {
     public function kontak()
     {   
         $variabel['csrf'] = csrf();
+       
         if ($this->input->post()){
             $username = $this->session->userdata("web_username");
             $array=array(

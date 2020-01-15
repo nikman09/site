@@ -46,6 +46,7 @@
                         <select class="form-control" name="kategori" id="kategori" >
                             <option value="" disabled selected>.:Pilih Kategori:.</option>
 							<option value="Umum">Umum</option>
+							<option value="ASN">ASN</option>
 							<option value="Pelaku Industri">Pelaku Industri</option>
 						</select>
 					</div>

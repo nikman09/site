@@ -61,6 +61,16 @@
 		<!-- Head Libs -->
 		<script src="<?php echo base_url() ?>assets/front-end/web2/vendor/modernizr/modernizr.min.js"></script>
 
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+			<script async src="https://www.googletagmanager.com/gtag/js?id=UA-156366074-1"></script>
+			<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'UA-156366074-1');
+			</script>
+
 	</head>
 	<body>
 

@@ -135,6 +135,7 @@ class Administrator extends CI_Controller {
                     unlink($path1); //menghapus gambar di folder berita
                     unlink($path2); //menghapus gambar di folder berita
                 }
+               
             } 
                 else if ($this->input->post('foto')=="") 
             {
@@ -370,7 +371,7 @@ class Administrator extends CI_Controller {
                 'id_kegiatankategori'=> $this->input->post('kegiatankategori'),
                 'judul'=> $this->input->post('judul'),
                 'tanggal'=>tanggalawal($this->input->post('tanggal')),
-                'isi'=>$this->input->post('isi'),
+                'isi'=>$this->input->post('isi',false),
                 'id_bidang'=>$this->input->post('bidang'),
                 'status'=>$this->input->post('status'),
                 'userinput'=>$username
@@ -430,7 +431,7 @@ class Administrator extends CI_Controller {
                 'id_kegiatankategori'=> $this->input->post('kegiatankategori'),
                 'judul'=> $this->input->post('judul'),
                 'tanggal'=>tanggalawal($this->input->post('tanggal')),
-                'isi'=>$this->input->post('isi'),
+                'isi'=>$this->input->post('isi',false),
                 'id_bidang'=>$this->input->post('bidang'),
                 'status'=>$this->input->post('status'),
                 'userinput'=>$username

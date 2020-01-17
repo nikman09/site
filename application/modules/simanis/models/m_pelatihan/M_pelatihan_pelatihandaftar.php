@@ -33,6 +33,17 @@ class M_pelatihan_pelatihandaftar extends CI_Model
         $this->db->where("pl_pelatihandaftar.id_akun",$id_akun);
         return $this->db->get('pl_pelatihandaftar',1,0);
     }
+
+    function lihatdatadaftar($id_akun,$id_daftar)
+    {
+        $this->db->select("pl_pelatihandaftar.*,pl_akun.*,pl_akun.nama as namalengkap, pl_pelatihan  .*") 
+        ->join("pl_pelatihan","pl_pelatihan.id_pelatihan=pl_pelatihandaftar.id_pelatihan")
+        ->join("pl_akun","pl_akun.id_akun=pl_pelatihandaftar.id_akun");
+        $this->db->order_by("pl_pelatihandaftar.id_pelatihandaftar","desc");
+        $this->db->where("pl_pelatihandaftar.id_akun",$id_akun);
+        $this->db->where("pl_pelatihandaftar.id_pelatihandaftar",$id_daftar);
+        return $this->db->get('pl_pelatihandaftar',1,0);
+    }
     
 
 

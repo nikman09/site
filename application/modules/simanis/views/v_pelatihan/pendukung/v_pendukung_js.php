@@ -9,7 +9,7 @@
        
        var v_id_pendukung = this.id;
        var v_url = "<?php echo base_url() ?>simanis/pendukungedit";
-       alert(v_id_pendukung);
+ 
        $.ajax({
            type: 'POST',
            url: v_url,

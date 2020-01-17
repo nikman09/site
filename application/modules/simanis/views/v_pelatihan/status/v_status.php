@@ -138,7 +138,7 @@
 				   : 
 				</td>
 				<td  valign="top">
-				<a href="<?php base_url() ?>pelatihan/pendukung" class="btn btn-primary btn-icon icon-left" ><i class="fa fa-upload"></i>Upload Data Pendukung </a>
+				<a href="<?php echo base_url() ?>simanis/pendukung" class="btn btn-primary btn-icon icon-left" ><i class="fa fa-upload"></i>Upload Data Pendukung </a>
 				<br/>	
 				</td>
 			</tr>

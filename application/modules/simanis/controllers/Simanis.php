@@ -501,10 +501,11 @@ class Simanis extends CI_Controller {
             if ($id_akun==$variabel["data"]["id_akun"]) {
               // Mencari Biodata Lengkap
               $id_akun = $this->session->userdata("pelatihan_idakun");
-              $biodata= $this->m_pelatihan_akun->lihatdatasatu($id_akun)->row_array();
-              $variabel['persen']= lengkap($biodata);
+            $biodata= $this->m_pelatihan_akun->lihatdatasatu($id_akun)->row_array();
+            $variabel['persen']= lengkap($biodata);
+            $variabel['persenusaha']= usaha($biodata);
               // Akhir Biodata Lengkap
-              $this->layout->renderpel("v_pelatihan/status/v_status",$variabel,"v_pelatihan/status/v_status_js");
+              $this->layout->renderpel("v_pelatihan/riwayatstatus/v_riwayatstatus",$variabel,"v_pelatihan/riwayatstatus/v_riwayatstatus_js");
             } else {
               redirect(base_url("simanis"));
             }
@@ -599,6 +600,25 @@ class Simanis extends CI_Controller {
       $id_akun = $this->session->userdata("pelatihan_idakun");
       $id_pelatihandaftar =  $this->input->post('id_pelatihandaftar');
       $exec = $this->m_pelatihan_pelatihandaftar->lihatdatasatuakun($id_akun);
+      if ($exec->num_rows()>0){
+         $variabel["data"] = $exec->row_array();
+         $this->load->view('v_pelatihan/cetak/v_cetak_pdf', $variabel);
+      
+      } else {
+        redirect(base_url("simanis"));
+      }
+     
+    } 
+
+    public function cetakriwayat()
+    {   
+      cekloginpelatihan();
+      $this->load->model("m_pelatihan/m_pelatihan_pelatihandaftar");
+      $this->load->model("m_pelatihan/m_pelatihan_akun");
+      $variabel['csrf'] = csrf();
+      $id_akun = $this->session->userdata("pelatihan_idakun");
+      $id_pelatihandaftar =  $this->input->get('id');
+      $exec = $this->m_pelatihan_pelatihandaftar->lihatdatadaftar($id_akun, $id_pelatihandaftar);
       if ($exec->num_rows()>0){
          $variabel["data"] = $exec->row_array();
          $this->load->view('v_pelatihan/cetak/v_cetak_pdf', $variabel);

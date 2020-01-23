@@ -10,7 +10,7 @@ class Admin extends CI_Controller {
     public function index()
     {   
       cekloginadminpelatihan();
-      akses("admin");
+      akses("admin","superadmin");
       $this->load->view("v_admin/dashboard/v_home");
     }
    
@@ -460,6 +460,45 @@ class Admin extends CI_Controller {
       
     }
  
+    public function akun()
+    { 
+        cekloginadminpelatihan();  
+        $variabel['csrf'] = csrf();
+        $this->load->model("m_admin/m_admin_akun");
+        $username = $this->session->userdata("pelatihan_admin_username");
+        $variabel['data'] = $this->m_admin_akun->lihatdata();
+        $variabel['totalakun'] = $this->m_admin_akun->totalakun();
+        $variabel['totalakunlakilaki'] = $this->m_admin_akun->totalakunlakilaki();
+        $variabel['totalakunperempuan'] = $this->m_admin_akun->totalakunperempuan();
+        $this->layout->renderadmin('v_admin/akun/v_akun',$variabel,'v_admin/akun/v_akun_js');
+   
+    }
+
+    function gantipassword()
+    {
+        $this->load->model("m_admin/m_admin_akun");
+        $id_akun = $this->input->post("id_akun");
+        $variabel['csrf'] = csrf();
+        $variabel['data'] = $this->m_admin_akun->lihatdatasatu($id_akun)->row_array();
+        $this->load->view("v_admin/akun/v_password",$variabel);
+    }
+    function gantipasswordproses()
+    {
+        $this->load->model("m_admin/m_admin_akun");
+        $variabel['csrf'] = csrf();
+        if ($this->input->post()) {
+            $array=array(
+                'password'=> md5($this->input->post('password')),
+                );
+                $id_akun = $this->input->post("id_akun");
+                $exec = $this->m_admin_akun->editdata($id_akun,$array);
+                if ($exec){
+                 redirect(base_url("simanis/admin/akun?msg=2"));
+                }
+      } else {
+      }
+
+    }
  
 
 }

@@ -17,7 +17,6 @@ class M_admin_akun extends CI_Model
     function lihatdata()
     {
         $this->db->select("pl_akun.*");
-        $this->db->where("rule","user");
         
         return $this->db->get('pl_akun');
     }
@@ -50,4 +49,23 @@ class M_admin_akun extends CI_Model
         return $this->db->get('pl_akun');
     }
   
+    function totalakun()
+    {
+        $this->db->select("pl_akun.*");
+        return $this->db->get('pl_akun')->num_rows();
+    }
+
+    function totalakunperempuan()
+    {
+        $this->db->select("pl_akun.*");
+        $this->db->where("jk","Perempuan");
+        return $this->db->get('pl_akun')->num_rows();
+    }
+
+    function totalakunlakilaki()
+    {
+        $this->db->select("pl_akun.*");
+        $this->db->where("jk","Laki-laki");
+        return $this->db->get('pl_akun')->num_rows();
+    }
 }

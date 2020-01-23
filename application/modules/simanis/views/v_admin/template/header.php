@@ -44,6 +44,7 @@
 		$nama = $this->session->userdata("pelatihan_admin_nama");
 		$foto = $this->session->userdata("pelatihan_admin_foto");
 		$username = $this->session->userdata("pelatihan_admin_username");
+		$rule = $this->session->userdata("pelatihan_admin_rule");
 
 		
 	?>
@@ -73,13 +74,13 @@
 				</div>
 			</header>
 			<?php 
-				// switch ($rule) {
-				// 	case "administrator" : $this->load->view("v_template/menuadministrator");
-				// 	break;
-				// 	case "user" : $this->load->view("v_template/menuuser");
-				// 	break;
-				// }
-				$this->load->view("v_admin/template/menu");
+				switch ($rule) {
+					case "admin" : 	$this->load->view("v_admin/template/menu");
+					break;
+					case "superadmin" :	$this->load->view("v_admin/template/supermenu");
+					break;
+				}
+			
 			?>
 	</div>
 </div>

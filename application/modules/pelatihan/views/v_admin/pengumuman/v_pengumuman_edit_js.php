@@ -16,12 +16,6 @@ jQuery( document ).ready( function( $ ) {
 
     
 } );
-
-CKEDITOR.replace( 'isi' ,{
-	filebrowserBrowseUrl : "<?php echo base_url() ?>assets/back-end/filemanager/filemanager/dialog.php?type=2&editor=ckeditor&fldr=",
-	filebrowserUploadUrl : "<?php echo base_url() ?>assets/back-end/filemanager/filemanager/dialog.php?type=2&editor=ckeditor&fldr=",
-	filebrowserImageBrowseUrl : '<?php echo base_url() ?>assets/back-end/filemanager/filemanager/dialog.php?type=1&editor=ckeditor&fldr='
-});
  
 $('#form').validate({ // initialize plugin
         highlight: function (label) {
@@ -50,13 +44,10 @@ $('#form').validate({ // initialize plugin
             tanggal: {
                 required: true
             },
-            kegiatankategori: {
+            beritakategori: {
                 required: true
             },
             isi: {
-                required: true
-            },
-            bidang: {
                 required: true
             }
         },
@@ -67,18 +58,28 @@ $('#form').validate({ // initialize plugin
             tanggal: {
                 required: "Tanggal tidak boleh kosong"
             },
-            kegiatankategori: {
+            beritakategori: {
                 required: "Kategori tidak boleh kosong"
             },
             isi: {
                 required: "Isi tidak boleh kosong"
-            },
-            bidang: {
-                required: "Bidang tidak boleh kosong"
             }
         }
     });
 
-    
+//     <?php
+//         if ($data['foto']!="") {
+//             echo 'document.getElementById("image-preview").style.display = "block";';
+//          }
+//     ?>
+//     function previewImage() {
+//     document.getElementById("image-preview").style.display = "block";
+//     var oFReader = new FileReader();
+//      oFReader.readAsDataURL(document.getElementById("image-source").files[0]);
+ 
+//     oFReader.onload = function(oFREvent) {
+//       document.getElementById("image-preview").src = oFREvent.target.result;
+//     };
+//   };
 
 </script>

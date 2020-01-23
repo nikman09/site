@@ -66,16 +66,15 @@
 		<!-- Head Libs -->
 		<script src="<?php echo base_url() ?>assets/front-end/web2/vendor/modernizr/modernizr.min.js"></script>
 
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-156366074-1"></script>
-		<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
+        	<!-- Global site tag (gtag.js) - Google Analytics -->
+			<script async src="https://www.googletagmanager.com/gtag/js?id=UA-156366074-1"></script>
+			<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
 
-		gtag('config', 'UA-156366074-1');
-		</script>
-
+			gtag('config', 'UA-156366074-1');
+			</script>
 	</head>
 	<body>
 	
@@ -129,10 +128,10 @@
 									</div>
 								</div>
 							</div>
-							<div class="header-column justify-content-end">
+						<div class="header-column justify-content-end">
 								<div class="header-row">
-								<div class="header-nav header-nav-links header-nav-dropdowns-dark header-nav-light-text order-2 order-lg-1">
-										<div class="header-nav-main header-nav-main-square header-nav-main-effect-2 header-nav-main-sub-effect-1">
+									<div class="header-nav header-nav-links header-nav-dropdowns-dark header-nav-light-text order-2 order-lg-1">
+										<div class="header-nav-main header-nav-main-mobile-dark header-nav-main-square header-nav-main-dropdown-no-borders header-nav-main-effect-2 header-nav-main-sub-effect-1">
 										<nav class="collapse">
 										<?php
 												$this->load->view("template/menu");
@@ -557,8 +556,7 @@
 					
 						<div class="col-lg-8" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="200">
 						<h3 class="font-weight-bold text-3 mb-0 mt-4 mt-md-0" style="padding-bottom:10px">Informasi Pelatihan  Industri (SIMANIS)</h3>
-						<div class="table-responsive-sm">
-						<table class="table  table-sm "  id="table-1"  style="font-size:12px;width:100%" >
+						<table class="table  table-sm"  id="table-1"  style="font-size:12px;width:100%" >
 		<thead>
 			<tr>
 				<th>Pelatihan</th>
@@ -590,7 +588,6 @@
 				?>
 		</tbody>
 	</table>
-	</div>
 						</div>
 						<div class=" col-lg-4 appear-animation" data-appear-animation="fadeInDownShorter" data-appear-animation-delay="400">
 
@@ -790,6 +787,7 @@
 					"order": [[ 5, "desc" ]],
 					"searching": false,
 					"lengthChange": false,
+					 "pageLength": 5
 					
 				});
 				// Initalize Select Dropdown after DataTables is created

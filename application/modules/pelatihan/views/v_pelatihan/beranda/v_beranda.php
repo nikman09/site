@@ -13,7 +13,7 @@
 					
 						<div class="slide-content">
 							<h2>
-								<small>SIMANIS</small>
+								<small>E-SIPI</small>
 								<span style="color:#fff">Informasi Pelatihan Industri</span>
 							</h2>
 							
@@ -43,7 +43,7 @@
 					
 						<div class="slide-content text-right">
 							<h2>
-								<small>SIMANIS</small>
+								<small>E-SIPI</small>
 								<span style="color:#fff">Pendaftaran Pelatihan Industri</span>
 							</h2>
 							
@@ -197,26 +197,26 @@
 											if ($ada==1) {
 												if ($item["status"]=="Menunggu Hasil Seleksi") {
 													echo "
-													<td><a href='".base_url()."simanis/status?msg=0' class='btn btn-primary  btn-icon icon-left  daftar' disabled><i class='fa fa-list'></i> Daftar</a></td>";
+													<td><a href='".base_url()."pelatihan/status?msg=0' class='btn btn-primary  btn-icon icon-left  daftar' disabled><i class='fa fa-list'></i> Daftar</a></td>";
 												} else if ($item["status"]=="Tidak Lulus Seleksi"){
 													echo "
-													<td><a href='".base_url()."simanis/persyaratan?i=".$row['id_pelatihan']."' class='btn btn-primary  btn-icon icon-left  daftar'><i class='fa fa-list'></i> Daftar</a></td>";
+													<td><a href='".base_url()."pelatihan/persyaratan?i=".$row['id_pelatihan']."' class='btn btn-primary  btn-icon icon-left  daftar'><i class='fa fa-list'></i> Daftar</a></td>";
 													
 												} else if ($item["status"]=="Lulus Seleksi" && $item["id_pelatihan"]!=$row['id_pelatihan']){
 													echo "
-													<td><a href='".base_url()."simanis/persyaratan?i=".$row['id_pelatihan']."' class='btn btn-primary  btn-icon icon-left  daftar'><i class='fa fa-list'></i> Daftar</a></td>";
+													<td><a href='".base_url()."pelatihan/persyaratan?i=".$row['id_pelatihan']."' class='btn btn-primary  btn-icon icon-left  daftar'><i class='fa fa-list'></i> Daftar</a></td>";
 													
 												}else {
 													echo "
-													<td><a href='".base_url()."simanis/persyaratan?i=".$row['id_pelatihan']."' class='btn btn-primary  btn-icon icon-left  daftar'><i class='fa fa-list'></i> Daftar</a></td>";
+													<td><a href='".base_url()."pelatihan/persyaratan?i=".$row['id_pelatihan']."' class='btn btn-primary  btn-icon icon-left  daftar'><i class='fa fa-list'></i> Daftar</a></td>";
 												}
 											} else {
 												echo "
-												<td><a href='".base_url()."simanis/persyaratan?i=".$row['id_pelatihan']."' class='btn btn-primary  btn-icon icon-left  daftar'><i class='fa fa-list'></i> Daftar</a></td>";
+												<td><a href='".base_url()."pelatihan/persyaratan?i=".$row['id_pelatihan']."' class='btn btn-primary  btn-icon icon-left  daftar'><i class='fa fa-list'></i> Daftar</a></td>";
 											}
 										} else {
 											echo "
-												<td><a href='".base_url()."simanis/login?msg=0' class='btn btn-primary  btn-icon icon-left  daftar'><i class='fa fa-list'></i> Daftar</a></td>";
+												<td><a href='".base_url()."pelatihan/login?msg=0' class='btn btn-primary  btn-icon icon-left  daftar'><i class='fa fa-list'></i> Daftar</a></td>";
 										}
 									
 									} else if (date("Y-m-d")<$row['mulaipendaftaran']) {
@@ -250,7 +250,7 @@
 				<h2>Belum Punya Akun Pendaftaran ?</h2>
 				
 				<div class="callout-button">
-					<a href="<?php echo base_url("simanis/akun") ?>" class="btn btn-secondary">Buat Akun</a>
+					<a href="index.html" class="btn btn-secondary">Buat Akun</a>
 				</div>
 				
 			</div>
@@ -269,7 +269,7 @@
 				<h2>Lihat Status Pendaftaran Pelatihan Terakhir </h2>
 				
 				<div class="callout-button">
-					<a href="<?php echo base_url() ?>simanis/status" class="btn btn-secondary">Lihat Status</a>
+					<a href="<?php echo base_url() ?>pelatihan/status" class="btn btn-secondary">Lihat Status</a>
 				</div>
 				
 			</div>

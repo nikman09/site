@@ -706,9 +706,9 @@ class Kepegawaian extends CI_Controller {
 
     function password()
     {
+      
         $variabel['csrf'] = csrf();
         if ($this->input->post()) {
-            
             $array=array(
                 'password'=> md5($this->input->post('password'))
                 );

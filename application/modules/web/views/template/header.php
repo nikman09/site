@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
-	<head>
+	<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
 		<!-- Basic -->
-		<meta charset="utf-8">
+		
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">	
 
 		<title>Dinas Perindustrian</title>	
@@ -60,8 +60,8 @@
 
 		<!-- Head Libs -->
 		<script src="<?php echo base_url() ?>assets/front-end/web2/vendor/modernizr/modernizr.min.js"></script>
-
-		<!-- Global site tag (gtag.js) - Google Analytics -->
+		
+			<!-- Global site tag (gtag.js) - Google Analytics -->
 			<script async src="https://www.googletagmanager.com/gtag/js?id=UA-156366074-1"></script>
 			<script>
 			window.dataLayer = window.dataLayer || [];

@@ -474,6 +474,8 @@ class Admin extends CI_Controller {
    
     }
 
+  
+
     function gantipassword()
     {
         $this->load->model("m_admin/m_admin_akun");
@@ -500,5 +502,65 @@ class Admin extends CI_Controller {
 
     }
  
+    public function resizee()
+    { 
+        $variabel['csrf'] = csrf();
+        $this->load->model("m_admin/m_admin_akun");
+        $username = $this->session->userdata("pelatihan_admin_username");
+        $data = $this->m_admin_akun->lihatdata();
+        $i=0;
+        $this->load->library('image_lib');
+        foreach($data->result_array() as $row){
+
+            if ($row["foto"]!="") {
+                echo  $path1 ='./assets/images/pelatihan/biodata/'.$row["foto"];
+    
+                $config['image_library'] = 'gd2';
+                $config['source_image'] =  $path1;
+                $config['create_thumb'] = FALSE;
+                $config['maintain_ratio'] = TRUE;
+                $config['width']         = 600;
+                $config['height']       = 400;
+            
+                $this->image_lib->clear();
+                $this->image_lib->initialize($config);
+                $this->image_lib->resize();
+                echo "<br/>";
+            }
+        }
+        
+      
+    }
+
+
+    public function resizee2()
+    { 
+        $variabel['csrf'] = csrf();
+        $this->load->model("m_admin/m_admin_akun");
+        $username = $this->session->userdata("pelatihan_admin_username");
+        $data = $this->m_admin_akun->lihatdata();
+        $i=0;
+        $this->load->library('image_lib');
+        foreach($data->result_array() as $row){
+
+            if ($row["foto"]!="") {
+                echo  $path1 ='./assets/images/pelatihan/biodata/'.$row["ktp"];
+    
+                $config['image_library'] = 'gd2';
+                $config['source_image'] =  $path1;
+                $config['create_thumb'] = FALSE;
+                $config['maintain_ratio'] = TRUE;
+                $config['width']         = 600;
+                $config['height']       = 400;
+            
+                $this->image_lib->clear();
+                $this->image_lib->initialize($config);
+                $this->image_lib->resize();
+                echo "<br/>";
+            }
+        }
+        
+      
+    }
 
 }

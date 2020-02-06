@@ -379,9 +379,9 @@ class Simanis extends CI_Controller {
                 $config['source_image'] = './assets/images/pelatihan/biodata/'.$upload["raw_name"].$upload["file_ext"];
                 $config['create_thumb'] = FALSE;
                 $config['maintain_ratio'] = TRUE;
-                $config['width']         = 300;
-                $config['height']       = 200;
-                $config['new_image'] = './assets/images/pelatihan/biodata/thumb/'.$upload["raw_name"].$upload["file_ext"];
+                $config['width']         = 600;
+                $config['height']       = 400;
+                $config['new_image'] = './assets/images/pelatihan/biodata/'.$upload["raw_name"].$upload["file_ext"];
                 $this->load->library('image_lib', $config);
                 $this->image_lib->resize();
 
@@ -389,10 +389,10 @@ class Simanis extends CI_Controller {
                 $row2 = $query2->row();
                 $berkas1temp = $row2->foto;
                 $path1 ='./assets/images/pelatihan/biodata/'.$berkas1temp.'';
-                $path2 ='./assets/images/pelatihan/biodata/thumb/'.$berkas1temp.'';
+              //  $path2 ='./assets/images/pelatihan/biodata/thumb/'.$berkas1temp.'';
                 if(is_file($path1)) {
                     unlink($path1); //menghapus gambar di folder berita
-                    unlink($path2); //menghapus gambar di folder berita
+                //    unlink($path2); //menghapus gambar di folder berita
                 }
                
              } 
@@ -403,10 +403,10 @@ class Simanis extends CI_Controller {
                 $row2 = $query2->row();
                 $berkas1temp = $row2->foto;
                 $path1 ='./assets/images/pelatihan/biodata/'.$berkas1temp.'';
-                $path2 ='./assets/images/pelatihan/biodata/thumb/'.$berkas1temp.'';
+               // $path2 ='./assets/images/pelatihan/biodata/thumb/'.$berkas1temp.'';
                 if(is_file($path1)) {
                     unlink($path1); //menghapus gambar di folder berita
-                    unlink($path2); //menghapus gambar di folder berita
+                 //   unlink($path2); //menghapus gambar di folder berita
                 }
                 $array['foto']="";
             }
@@ -418,6 +418,16 @@ class Simanis extends CI_Controller {
                 $upload = $this->upload->data();
                 $ktp = $upload["raw_name"].$upload["file_ext"];
                 $array['ktp']=$ktp;
+
+                $config['image_library'] = 'gd2';
+                $config['source_image'] = './assets/images/pelatihan/biodata/'.$upload["raw_name"].$upload["file_ext"];
+                $config['create_thumb'] = FALSE;
+                $config['maintain_ratio'] = TRUE;
+                $config['width']         = 900;
+                $config['height']       = 700;
+                $config['new_image'] = './assets/images/pelatihan/biodata/'.$upload["raw_name"].$upload["file_ext"];
+                $this->load->library('image_lib', $config);
+                $this->image_lib->resize();
 
                 $query2 = $this->m_pelatihan_akun->lihatdatasatu($id_akun);
                 $row2 = $query2->row();
@@ -692,9 +702,9 @@ class Simanis extends CI_Controller {
                 $config['source_image'] = './assets/images/pelatihan/produk/'.$upload["raw_name"].$upload["file_ext"];
                 $config['create_thumb'] = FALSE;
                 $config['maintain_ratio'] = TRUE;
-                $config['width']         = 300;
-                $config['height']       = 200;
-                $config['new_image'] = './assets/images/pelatihan/produk/thumb/'.$upload["raw_name"].$upload["file_ext"];
+                $config['width']         = 500;
+                $config['height']       = 400;
+                // $config['new_image'] = './assets/images/pelatihan/produk/'.$upload["raw_name"].$upload["file_ext"];
                 $this->load->library('image_lib', $config);
                 $this->image_lib->resize();
 
@@ -702,10 +712,10 @@ class Simanis extends CI_Controller {
                 $row2 = $query2->row();
                 $berkas1temp = $row2->ufotoproduk;
                 $path1 ='./assets/images/pelatihan/produk/'.$berkas1temp.'';
-                $path2 ='./assets/images/pelatihan/produk/thumb/'.$berkas1temp.'';
+                // $path2 ='./assets/images/pelatihan/produk/thumb/'.$berkas1temp.'';
                 if(is_file($path1)) {
                     unlink($path1);
-                    unlink($path2); 
+                    // unlink($path2); 
                 }
                
             } 
@@ -716,10 +726,10 @@ class Simanis extends CI_Controller {
                 $row2 = $query2->row();
                 $berkas1temp = $row2->ufotoproduk;
                 $path1 ='./assets/images/pelatihan/produk/'.$berkas1temp.'';
-                $path2 ='./assets/images/pelatihan/produk/thumb/'.$berkas1temp.'';
+                // $path2 ='./assets/images/pelatihan/produk/thumb/'.$berkas1temp.'';
                 if(is_file($path1)) {
                     unlink($path1); 
-                    unlink($path2); 
+                    // unlink($path2); 
                 }
                 $array['ufotoproduk']="";
             }

@@ -67,7 +67,7 @@ $config = array(
     | without final / (DON'T TOUCH)
     |
     */
-    'base_url' =>((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] && ! in_array(strtolower($_SERVER['HTTPS']), array( 'off', 'no' ))) ? 'https' : 'http') . '://' .$_SERVER['HTTP_HOST' ].'/site/assets/back-end/filemanager' ,
+    'base_url' =>((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] && ! in_array(strtolower($_SERVER['HTTPS']), array( 'off', 'no' ))) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'].'/assets/back-end/filemanager' ,
     /*
     |--------------------------------------------------------------------------
     | path from base_url to base of upload folder

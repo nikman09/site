@@ -470,7 +470,7 @@
 			'protocol'  => 'smtp',
 			'smtp_host' => 'smtp.gmail.com',
 			'smtp_user' => 'simanis.kalsel@gmail.com',  // Email gmail
-			'smtp_pass'   => 'Simanis123312',  // Password gmail
+			'smtp_pass'   => 'Simanis123321',  // Password gmail
 			'smtp_crypto' => 'ssl',
 			'smtp_port'   => 465,
 			'crlf'    => "\r\n",

@@ -37,8 +37,6 @@ class Simanis extends CI_Controller {
           $variabel['stat'] = "";
         }
      
-
-
       $this->layout->renderpel("v_pelatihan/beranda/v_beranda",$variabel,"v_pelatihan/beranda/v_beranda_js");
     }
 
@@ -232,49 +230,73 @@ class Simanis extends CI_Controller {
 
     public function status()
     {   
-      cekloginpelatihan();
-      $this->load->model("m_pelatihan/m_pelatihan_pelatihandaftar");
-      $this->load->model("m_pelatihan/m_pelatihan_akun");
-      $variabel['csrf'] = csrf();
-      $id_akun = $this->session->userdata("pelatihan_idakun");
-      $id_pelatihandaftar =  $this->input->post('id_pelatihandaftar');
-      if ($this->input->post()) {
-      $array=array(
-          'konfirmasi'=> $this->input->post('konfirmasi'),
-          'alasan'=> $this->input->post('alasan')
-      );
-      $exec = $this->m_pelatihan_pelatihandaftar->editdata($id_pelatihandaftar,$array);
-      if ($exec) redirect(base_url("simanis/status?msg=2"));
-      else redirect(base_url("simanis/status?msg=0"));
+        cekloginpelatihan();
+        $this->load->model("m_pelatihan/m_pelatihan_pelatihandaftar");
+        $this->load->model("m_pelatihan/m_pelatihan_akun");
+        $variabel['csrf'] = csrf();
+        $id_akun = $this->session->userdata("pelatihan_idakun");
+        $id_pelatihandaftar =  $this->input->post('id_pelatihandaftar');
+        if ($this->input->post()) {
+        $array=array(
+            'konfirmasi'=> $this->input->post('konfirmasi'),
+            'alasan'=> $this->input->post('alasan')
+        );
+        $exec = $this->m_pelatihan_pelatihandaftar->editdata($id_pelatihandaftar,$array);
+        if ($exec) redirect(base_url("simanis/status?msg=2"));
+        else redirect(base_url("simanis/status?msg=0"));
 
-    } else {
-      $exec = $this->m_pelatihan_pelatihandaftar->lihatdatasatuakun($id_akun);
-      if ($exec->num_rows()>0){
-         $variabel["data"] = $exec->row_array();
-          // Mencari Biodata Lengkap
-          $id_akun = $this->session->userdata("pelatihan_idakun");
-          $biodata= $this->m_pelatihan_akun->lihatdatasatu($id_akun)->row_array();
-          $variabel['persen']= lengkap($biodata);
-          $variabel['persenusaha']= usaha($biodata);
-          // Akhir Biodata Lengkap
-        $this->layout->renderpel("v_pelatihan/status/v_status",$variabel,"v_pelatihan/status/v_status_js");
       } else {
-        $variabel["data"] = $exec->row_array();
-        $this->layout->renderpel("v_pelatihan/status/v_statusno",$variabel,"v_pelatihan/status/v_status_js");
+        $exec = $this->m_pelatihan_pelatihandaftar->lihatdatasatuakun($id_akun);
+        if ($exec->num_rows()>0){
+          $variabel["data"] = $exec->row_array();
+            // Mencari Biodata Lengkap
+            $id_akun = $this->session->userdata("pelatihan_idakun");
+            $biodata= $this->m_pelatihan_akun->lihatdatasatu($id_akun)->row_array();
+            $variabel['persen']= lengkap($biodata);
+            $variabel['persenusaha']= usaha($biodata);
+            // Akhir Biodata Lengkap
+          $this->layout->renderpel("v_pelatihan/status/v_status",$variabel,"v_pelatihan/status/v_status_js");
+        } else {
+          $variabel["data"] = $exec->row_array();
+          $this->layout->renderpel("v_pelatihan/status/v_statusno",$variabel,"v_pelatihan/status/v_status_js");
+        }
       }
-    }
+
+      
 
     } 
 
     public function syarat()
     {      
         $this->load->model("m_pelatihan/m_pelatihan_pelatihan");
+        $this->load->model("m_pelatihan/m_pelatihan_akun");
+        $this->load->model("m_pelatihan/m_pelatihan_pelatihandaftar");
         $variabel['csrf'] = csrf();
         $id_pelatihan = $this->input->post("id_pelatihan");
         $variabel['data'] = $this->m_pelatihan_pelatihan->lihatdatasatu($id_pelatihan)->row_array();
+        if ($this->session->userdata('pelatihan_status') == "login") {
+       
+          // Mencari Biodata Lengkap
+          $id_akun = $this->session->userdata("pelatihan_idakun");
+          $biodata= $this->m_pelatihan_akun->lihatdatasatu($id_akun)->row_array();
+          $variabel['persen']= lengkap($biodata);
+          // Akhir Biodata Lengkap
+         
+          $exec = $this->m_pelatihan_pelatihandaftar->lihatdatasatuakun($id_akun);
+          if ($exec->num_rows()>0) {
+            $variabel['ada'] = 1;
+            $variabel['item'] = $exec->row_array();
+          } else {
+            $variabel['ada'] = 0;
+          }
+            $variabel['stat'] = "login";
+          } else { 
+            $variabel['stat'] = "";
+          }
+          
         $this->load->view("v_pelatihan/beranda/v_syarat",$variabel);
+        
     }
-
 
     public function login()
     {

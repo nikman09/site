@@ -115,9 +115,12 @@
 									<option value="SD/Sederajat" <?= $data['pendidikan']=="SD/Sederajat"?"selected":"" ?>>SD/Sederajat</option>
 									<option value="SMP/Sederajat" <?= $data['pendidikan']=="SMP/Sederajat"?"selected":"" ?>>SMP/Sederajat</option>
 									<option value="SMA/Sederajat" <?= $data['pendidikan']=="SMA/Sederajat"?"selected":"" ?>>SMA/Sederajat</option>
+									<option value="Diploma-1" <?= $data['pendidikan']=="Diploma-1"?"selected":"" ?>>Diploma-1</option>
+									<option value="Diploma-2" <?= $data['pendidikan']=="Diploma-2"?"selected":"" ?>>Diploma-2</option>
+									<option value="Diploma-3" <?= $data['pendidikan']=="Diploma-3"?"selected":"" ?>>Diploma-3</option>
 									<option value="Strata-1" <?= $data['pendidikan']=="Strata-1"?"selected":"" ?>>Strata-1</option>
 									<option value="Strata-2" <?= $data['pendidikan']=="Strata-2"?"selected":"" ?>>Strata-2</option>
-									<option value="Strata-3" <?= $data['pendidikan']=="Strata-3t"?"selected":"" ?>>Strata-3</option>
+									<option value="Strata-3" <?= $data['pendidikan']=="Strata-3"?"selected":"" ?>>Strata-3</option>
 								</select>
 								</textarea>
 							</div>

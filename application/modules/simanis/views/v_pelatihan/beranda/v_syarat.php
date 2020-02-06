@@ -143,6 +143,45 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+                    &nbsp
+                    <?php 
+                    if (date("Y-m-d")>=$data['mulaipendaftaran'] && date("Y-m-d")<=$data['akhirpendaftaran']) {
+                            
+                        
+                        	if ($stat=="login") {
+											if ($ada==1) {
+												if ($item["status"]=="Menunggu Hasil Seleksi") {
+													echo "
+													<a href='".base_url()."simanis/status?msg=0' class='btn btn-primary  btn-icon icon-left  daftar' disabled><i class='fa fa-list'></i> Daftar</a>";
+												} else if ($item["status"]=="Tidak Lulus Seleksi"){
+													echo "
+													<a href='".base_url()."simanis/persyaratan?i=".$data['id_pelatihan']."' class='btn btn-primary  btn-icon icon-left  daftar'><i class='fa fa-list'></i> Daftar</a>";
+													
+												} else if ($item["status"]=="Lulus Seleksi" && $item["id_pelatihan"]!=$data['id_pelatihan']){
+													echo "
+													<a href='".base_url()."simanis/persyaratan?i=".$data['id_pelatihan']."' class='btn btn-primary  btn-icon icon-left  daftar'><i class='fa fa-list'></i> Daftar</a>";
+													
+												}else {
+													echo "
+													<a href='".base_url()."simanis/persyaratan?i=".$data['id_pelatihan']."' class='btn btn-primary  btn-icon icon-left  daftar'><i class='fa fa-list'></i> Daftar</a>";
+												}
+											} else {
+												echo "
+												<a href='".base_url()."simanis/persyaratan?i=".$data['id_pelatihan']."' class='btn btn-primary  btn-icon icon-left  daftar'><i class='fa fa-list'></i> Daftar</a>";
+											}
+										} else {
+											echo "
+												<a href='".base_url()."simanis/login?msg=0' class='btn btn-primary  btn-icon icon-left  daftar'><i class='fa fa-list'></i> Daftar</a>";
+										}
+									
+									} else if (date("Y-m-d")<$data['mulaipendaftaran']) {
+										echo "
+										<a  class='btn btn-default  btn-icon icon-left' disabled><i class='fa fa-list'></i> Belum Dibuka</a>";
+									} else {
+										echo "
+										<a class='btn btn-default  btn-icon icon-left' disabled><i class='fa fa-list'></i> Sudah Tutup</a>";
+                                    };
+                ?>
                 </div>
 
             </form>

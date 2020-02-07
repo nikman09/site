@@ -17,8 +17,11 @@
 					<span class="title">Akun Pendaftar</span>
 				</a>
 			</li>
-		
-			
-
+			<li  class="<?= ($submenu == "statistik" ) ? "active root-level" : ""; ?> ">
+				<a href="<?php echo base_url() ?>simanis/admin/statistik">
+					<i class="fa fa-line-chart"></i>
+					<span class="title">Statistik</span>
+				</a>
+			</li>
 		</ul>
 	

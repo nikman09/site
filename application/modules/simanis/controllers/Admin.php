@@ -502,6 +502,20 @@ class Admin extends CI_Controller {
 
     }
  
+
+    public function statistik()
+    { 
+        cekloginadminpelatihan();  
+        $variabel['csrf'] = csrf();
+        $this->load->model("m_admin/m_admin_akun");
+        $this->load->model("m_admin/m_admin_pelatihandaftar");
+        $username = $this->session->userdata("pelatihan_admin_username");
+        $variabel['data'] = $this->m_admin_pelatihandaftar->jumlahpendaftar();
+        $variabel['totalakun'] = $this->m_admin_akun->totalakun();
+        $this->layout->renderadmin('v_admin/statistik/v_statistik',$variabel,'v_admin/statistik/v_statistik_js');
+   
+    }
+
     public function resizee()
     { 
         $variabel['csrf'] = csrf();

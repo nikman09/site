@@ -128,5 +128,10 @@ class M_admin_pelatihandaftar extends CI_Model
         $data = $this->db->get('pl_pelatihandaftar')->row_array();
         return $data["totalpendaftar"];
     }
+
+    function jumlahpendaftar()
+    {
+        return $this->db->query("select pl_pelatihan.nama as nama_pelatihan ,pl_pelatihan.kategori as kategori_pelatihan, pl_pelatihan.kuota as kuota_pelatihan, pl_pelatihan.mulaipelatihan as mulai_pelatihan, pl_pelatihan.pengumuman as pengumuman_pelatihan, count(id_pelatihandaftar) as totalpendaftar, pl_admin.nama as seksi from pl_pelatihandaftar right join pl_pelatihan on pl_pelatihandaftar.id_pelatihan = pl_pelatihan.id_pelatihan inner join pl_admin on pl_admin.username = pl_pelatihan.username GROUP by pl_pelatihan.id_pelatihan");
+    }
   
 }

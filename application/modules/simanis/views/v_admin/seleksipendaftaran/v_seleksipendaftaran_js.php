@@ -55,6 +55,26 @@ jQuery( document ).ready( function( $ ) {
                 });
             });
 
+            $('.dukung').click(function (e) {
+                var v_id_akun= this.id;
+                var v_url = "<?php echo base_url() ?>simanis/admin/dukungtampil";
+                $.ajax({
+                    type: 'POST',
+                    url: v_url,
+                    data: {
+                        id_akun : v_id_akun
+                    },
+                    beforeSend: function () {
+                    //	$("#loading").show();
+                    },
+                    success: function (response) {
+                    //	$("#loading").hide();
+                        $('#modal-dukung').html(response)
+                      
+                    }
+                });
+            });
+
             $('.seleksi').click(function (e) {
                 var v_id_pelatihandaftar= this.id;
                 var v_url = "<?php echo base_url() ?>simanis/admin/seleksitampil";

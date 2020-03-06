@@ -787,12 +787,12 @@ class Simanis extends CI_Controller {
                 if ($exec){
                  redirect(base_url("simanis/pendukung?id=".$id_dokumen."&msg=1"));
                 }   else redirect(base_url("simanis/pendukung?msg=0"));
-              } else {
-                $exec = $this->m_pelatihan_berkas->lihatdataakun($id_akun);
-                $variabel['data'] = $exec;
-                $this->layout->renderpel('v_pelatihan/pendukung/v_pendukung',$variabel,'v_pelatihan/pendukung/v_pendukung_js');
-            
-              }
+          } else {
+            $exec = $this->m_pelatihan_berkas->lihatdataakun($id_akun);
+            $variabel['data'] = $exec;
+            $this->layout->renderpel('v_pelatihan/pendukung/v_pendukung',$variabel,'v_pelatihan/pendukung/v_pendukung_js');
+        
+          }
     }
 
     

@@ -277,6 +277,16 @@ class Admin extends CI_Controller {
         $variabel['data'] = $this->m_admin_akun->lihatdatasatu($id_akun)->row_array();
         $this->load->view("v_admin/seleksipendaftaran/v_usaha",$variabel);
     }
+    public function dukungtampil()
+    {      
+        cekloginadminpelatihan();
+        $variabel['csrf'] = csrf();
+        $this->load->model("m_admin/m_admin_akun");
+        $this->load->model("m_admin/m_admin_berkas");
+        $id_akun = $this->input->post("id_akun");
+        $variabel['data'] =  $this->m_admin_berkas->lihatdataakun($id_akun);
+        $this->load->view("v_admin/seleksipendaftaran/v_dukung",$variabel);
+    }
 
     public function seleksitampil()
     {      

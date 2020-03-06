@@ -139,11 +139,12 @@
                         <th>Nama</th>
                         <th>Jenis Kelamin</th>
                         <th>Usia</th>
-                        <th>Kota</th>
+                        <th>Kab/Kota</th>
                         <th>Nomor HP</th>
                         <th>Pendidikan</th>
                         <th>Biodata</th>
                         <th>Data Usaha</th>
+                        <th>Data Dukung</th>
                         <th>Seleksi</th>
                     </tr>
                 </thead>
@@ -168,6 +169,9 @@
                                 <td>".$row['pendidikan']."</td>
                                 <td><a href='#' class='btn ".(lengkap($biodata)>=100?"btn-primary ":"btn-danger")." btn-sm btn-icon icon-left biodata' title='Lihat Biodata'  data-toggle='modal' id='".$row['id_akun']."' data-target='#myModal2'><i class='fa fa-user' ></i> ".lengkap($biodata)." %</a> </td>
                                 <td><a href='#' class='btn ".(usaha($biodata)>=100?"btn-primary ":"btn-danger")." btn-sm btn-icon icon-left usaha' title='Usaha'  data-toggle='modal' id='".$row['id_akun']."' data-target='#myModal3'><i class='fa fa-industry'></i> ".usaha($biodata)." %</a></td>
+                               
+                                <td><a href='#' class='btn ".(usaha($biodata)>=100?"btn-primary ":"btn-danger")." btn-sm btn-icon icon-left dukung' title='Data Dukung'  data-toggle='modal' id='".$row['id_akun']."' data-target='#myModal6'><i class='fa fa-star'></i> ".usaha($biodata)."</a></td>
+                               
                                 <td><a href='#' class='btn ";
                                 if ($row['status']=='Menunggu Hasil Seleksi')  echo 'btn-default';
                                 else if ($row['status']=='Lulus Seleksi')  echo 'btn-success';
@@ -216,6 +220,14 @@
 <div class="modal fade" id="myModal5">
     <div class="modal-dialog ">
         <div class="modal-content" id="modal-edit">
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="myModal6">
+    <div class="modal-dialog ">
+        <div class="modal-content" id="modal-dukung">
 
         </div>
     </div>

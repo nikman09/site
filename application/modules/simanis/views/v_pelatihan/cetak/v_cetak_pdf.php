@@ -78,7 +78,19 @@
         <tr><td>Institusi Pendidikan</td><td>:</td><td>'.$data['namapendidikan'].'</td></tr>
         <tr><td>Jurusan</td><td>:</td><td>'.$data['jurusan'].'</td></tr>
         <tr><td>Nilai Rata-rata UN / IPK</td><td>:</td><td>'.$data['nilai'].'</td></tr>
-        <tr><td>Tempat Pelatihan</td><td>:</td><td>'.$data['tempat'].'</td></tr>
+      
+    </table>
+    </div>';
+    $pdf->writeHTML($asd, false, true, false, false, '');
+    $pdf->ln(0.5);
+    $asd = '
+    <h4><u>Data Pekerjaan/Keahlian</u></h4>
+    <table border="0px" style="">
+        <tr><td width="130px">Pekerjaan</td><td width="10px">:</td><td  width="360px">'.$data['pekerjaan'].'</td> </tr>
+        <tr><td>Instansi/Perusahaan</td><td>:</td><td>'.$data['tempatkerja'].'</td></tr>
+        <tr><td>Posisi/Jabatan</td><td>:</td><td>'.$data['posisi'].'</td></tr>
+        <tr><td>Daftar Pelatihan</td><td>:</td><td>'.$data['daftarpelatihan'].'</td></tr>
+        <tr><td>Daftar Keahlian</td><td>:</td><td>'.$data['daftarkeahlian'].'</td></tr>
     </table>
     </div>';
     $pdf->writeHTML($asd, false, true, false, false, '');
@@ -101,7 +113,7 @@
     $pdf->ln(0.5);
 
     $asd = '
-    <h4><u>Data Pelatihan </u></h4>
+    <h4><u>Pelatihan </u></h4>
     <table border="0px" style="">
         <tr><td  width="130px">Nama Pelatihan</td><td  width="10px">:</td><td   width="360px">'.$data['nama'].'</td></tr>
         <tr><td>Kategori</td><td>:</td><td>'.$data['kategori'].'</td></tr>

@@ -240,6 +240,23 @@ class Admin extends CI_Controller {
         }
         
     }
+    
+      public function cetakbiodata()
+    {   
+ 
+      $this->load->model("m_pelatihan/m_pelatihan_pelatihandaftar");
+      $this->load->model("m_pelatihan/m_pelatihan_akun");
+      $variabel['csrf'] = csrf();
+      $id_akun = $this->input->get("id");
+      $exec = $this->m_pelatihan_pelatihandaftar->lihatdatasatuakun($id_akun);
+      if ($exec->num_rows()>0){
+         $variabel["data"] = $exec->row_array();
+         $this->load->view('v_pelatihan/cetak/v_cetak_pdf', $variabel);
+      } else {
+        redirect(base_url("simanis"));
+      }
+     
+    } 
 
     public function biodatatampil()
     {      

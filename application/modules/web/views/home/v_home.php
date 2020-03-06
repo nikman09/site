@@ -732,37 +732,35 @@
 				</section>
 				
 
-				<!-- <section  style="-->
-    <!--padding-top: 30px;-->
-    <!--padding-bottom: 30px">-->
-				<!--	<div class="container">-->
-				<!--		<div class="row">-->
-				<!--			<div class="col">-->
-				<!--				<div class="owl-carousel mb-0" data-plugin-options="{'responsive': {'0': {'items': 1}, '476': {'items': 1}, '768': {'items': 5}, '992': {'items': 7}, '1200': {'items': 7}}, 'autoplay': true, 'autoplayTimeout': 3000, 'dots': false}">-->
-				<!--					<div>-->
-				<!--						<img class="img-fluid opacity-2" src="https://drive.google.com/uc?id=1of5jv0GrJ43HO7C6wPkmXJxZFOMWZlnd" alt="">-->
-				<!--					</div>-->
-				<!--					<div>-->
-				<!--						<img class="img-fluid opacity-2" src="https://drive.google.com/uc?id=1vR_wKqig5azPt13ixV9f7NIWbpCtJaFL" alt="">-->
-				<!--					</div>-->
-				<!--					<div>-->
-				<!--						<img class="img-fluid opacity-2" src="https://drive.google.com/uc?id=1TeKNzeapu8z4-H6BrKmh8FQYJmNqX-IB" alt="">-->
-				<!--					</div>-->
-				<!--					<div>-->
-				<!--						<img class="img-fluid opacity-2" src="https://drive.google.com/uc?id=1JRet1Bxf2uIzCN4SfGISfiJAvaETqJj0" alt="">-->
-				<!--					</div>-->
-				<!--					<div>-->
-				<!--						<img class="img-fluid opacity-2" src="https://drive.google.com/uc?id=1FaIUhoan4lNw0o_934z13V3tBrBEBlcN" alt="">-->
-				<!--					</div>-->
-									<!-- <div>
-										<img class="img-fluid opacity-2" src="https://doc-0o-2o-docs.googleusercontent.com/docs/securesc/iasracd20i517a5u6kqfdb693tntmi6p/k49npvg8tk3jp6r3m7p8euvcu5942jkt/1572264000000/04995702770821001048/16859199919012491055/1Yg3_9aEsOxME4-kR-9Z_ftTV47GLIXtF" alt="">
-									</div> -->
+				 <section  style="
+    padding-top: 30px;
+    padding-bottom: 30px">
+					<div class="container">
+						<div class="row">
+							<div class="col">
+								<div class="owl-carousel mb-0" data-plugin-options="{'responsive': {'0': {'items': 1}, '476': {'items': 1}, '768': {'items': 5}, '992': {'items': 7}, '1200': {'items': 7}}, 'autoplay': true, 'autoplayTimeout': 3000, 'dots': false}">
+									<div>
+									<a href="https://simpeg.kalselprov.go.id/" target="_blank">	<img class="img-fluid opacity-2" src="http://kalselprov.go.id/storage/siLVxxNAxvqa7C1bOwjXKEMiddAkRg0DV8IymDhJ.png" alt=""> </a>
+									</div>
+									<div>
+										<img class="img-fluid opacity-2" src="http://kalselprov.go.id/storage/kiWFK3DcdsNaMWJnrhKtdE0t49SjtJ1wtjT7XER7.png" alt="">
+									</div>
+									<div>
+										<img class="img-fluid opacity-2" src="http://kalselprov.go.id/storage/E9PLjWfPI2pgzliTRMbLEAC3m781CMWiRvxluybX.png" alt="">
+									</div>
+									<div>
+										<img class="img-fluid opacity-2" src="http://kalselprov.go.id/storage/E4HzwzZq2n4sltEEYwXcQc4PTAGpG4IuANJF0UeW.png" alt="">
+									</div>
+									<div>
+										<img class="img-fluid opacity-2" src="http://www.kalselprov.go.id/storage/lRMuVhL0Y8x8INm5mCwaK698sW34Vn6dn8ewyEFW.png" alt="">
+									</div>
+								
 									
-				<!--				</div>-->
-				<!--			</div>-->
-				<!--		</div>-->
-				<!--	</div>-->
-				<!--</section> -->
+								</div>
+							</div>
+						</div>
+					</div>
+				</section> 
 				
 				
 			</div>

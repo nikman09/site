@@ -72,7 +72,7 @@
 								<textarea class="form-control" id="alamat" name="alamat" placeholder="Masukkan Tempat Lahir"><?php echo $data['alamat']; ?></textarea>
 							</div>
 							<div class="form-group">
-								<label for="field-1" class="control-label">Kanupaten/Kota</label>
+								<label for="field-1" class="control-label">Kabupaten/Kota</label>
 								<select  class="form-control" id="kota" name="kota" >
 									<option value="">.:Pilih Kabupaten/Kota:.</option>
 									<option value="Kabupaten Banjar" <?= $data['kota']=="Kabupaten Banjar"?"selected":"" ?>>Kabupaten Banjar</option>

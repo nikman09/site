@@ -54,7 +54,7 @@
                     <div class="form-group">
                         <label class="col-sm-4 control-label" style="margin-top:5px">Tanggal Pendaftaran</label>
                         <div class="col-sm-8" style="margin-top:5px">
-                             <input type="text" value="<?php echo tgl_indo($row['mulaipendaftaran'])." - ".tgl_indo($row['akhirpendaftaran']) ?>"  id="id_pelatihan"  class="form-control" name="id_pelatihan"  readonly /> 
+                             <input type="text" value="<?php echo tgl_indo($detail['mulaipendaftaran'])." - ".tgl_indo($detail['akhirpendaftaran']) ?>"  id="id_pelatihan"  class="form-control" name="id_pelatihan"  readonly /> 
                          </div>
                     </div>
 						
@@ -72,7 +72,7 @@
                     <div class="form-group">
                         <label class="col-sm-4 control-label" style="margin-top:5px">Tanggal Pelatihan</label>
                         <div class="col-sm-8" style="margin-top:5px">
-                             <input type="text" value="<?php echo tgl_indo($row['mulaipelatihan'])." - ".tgl_indo($row['akhirpelatihan']) ?>"  id="id_pelatihan"  class="form-control" name="id_pelatihan"  readonly /> 
+                             <input type="text" value="<?php echo tgl_indo($detail['mulaipelatihan'])." - ".tgl_indo($detail['akhirpelatihan']) ?>"  id="id_pelatihan"  class="form-control" name="id_pelatihan"  readonly /> 
                          </div>
                     </div>
                     <div class="text-right"  style="margin-top:5px">
@@ -156,8 +156,8 @@
                             <tr>
                                 <td>
                                 <div>
-									<a href='#' class='btn btn-primary btn-xs' title='Edit/Lihat' id='".$row['id_pelatihan']."' disabled><i class='fa fa-eye' id='".$row['id_pelatihan']."'  ></i></a>
-									<a href='#' class='btn btn-danger btn-xs hapus' title='Export PDF' id='".$row['id_pelatihan']."' disabled><i class='fa fa-file-pdf-o'></i></a>
+								<!--	<a href='#' class='btn btn-primary btn-xs' title='Edit/Lihat' id='".$row['id_pelatihan']."' disabled><i class='fa fa-eye' id='".$row['id_pelatihan']."'  ></i></a> -->
+									<a href='".base_url('simanis/admin/cetakbiodata')."?id=".$row['id_akun']."' class='btn btn-danger btn-xs hapus' title='Export PDF' id='".$row['id_pelatihan']."' ><i class='fa fa-file-pdf-o'></i> Export</a>
                                 </div>
                                 </td>
 								<td>".$row['nama']."</td>

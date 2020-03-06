@@ -40,7 +40,14 @@
 					<div class="post-content">
 						
 					<?php echo $data["isi"] ?>
+					
 						
+						<?php if ( $data['file']!="")  {
+						 ?>
+						<a href="<?php echo base_url(); ?>assets/images/pelatihan/pengumuman/<?php echo $data['file'] ?>" >Download Lampiran </a>
+						
+						<?php }
+						 ?>
 					</div>
 					
 				

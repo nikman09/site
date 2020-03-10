@@ -152,13 +152,14 @@
                 <?php
 					foreach($data->result_array() as $row){
                         $biodata = $this->m_admin_akun->lihatdatasatu($row["id_akun"])->row_array();
-                        
+                        $dukungjumlah = $this->m_admin_berkas->lihatdataakun($row["id_akun"])->num_rows();
 						echo "
                             <tr>
                                 <td>
                                 <div>
 								<!--	<a href='#' class='btn btn-primary btn-xs' title='Edit/Lihat' id='".$row['id_pelatihan']."' disabled><i class='fa fa-eye' id='".$row['id_pelatihan']."'  ></i></a> -->
-									<a href='".base_url('simanis/admin/cetakbiodata')."?id=".$row['id_akun']."' class='btn btn-danger btn-xs hapus' title='Export PDF' id='".$row['id_pelatihan']."' ><i class='fa fa-file-pdf-o'></i> Export</a>
+                                    <a href='".base_url('simanis/admin/cetakbiodata')."?id=".$row['id_akun']."' class='btn btn-danger btn-xs pdf' title='Export PDF' id='".$row['id_pelatihan']."' ><i class='fa fa-file-pdf-o'></i> Export</a>
+                                    <a href='https://wa.me/085248262002?text=Isi Pesan' class='btn btn-success btn-xs ' title='Export PDF' id='".$row['id_pelatihan']."' ><i class='fa fa-file-pdf-o'></i> WA </a>
                                 </div>
                                 </td>
 								<td>".$row['nama']."</td>
@@ -170,7 +171,7 @@
                                 <td><a href='#' class='btn ".(lengkap($biodata)>=100?"btn-primary ":"btn-danger")." btn-sm btn-icon icon-left biodata' title='Lihat Biodata'  data-toggle='modal' id='".$row['id_akun']."' data-target='#myModal2'><i class='fa fa-user' ></i> ".lengkap($biodata)." %</a> </td>
                                 <td><a href='#' class='btn ".(usaha($biodata)>=100?"btn-primary ":"btn-danger")." btn-sm btn-icon icon-left usaha' title='Usaha'  data-toggle='modal' id='".$row['id_akun']."' data-target='#myModal3'><i class='fa fa-industry'></i> ".usaha($biodata)." %</a></td>
                                
-                                <td><a href='#' class='btn ".(usaha($biodata)>=100?"btn-primary ":"btn-danger")." btn-sm btn-icon icon-left dukung' title='Data Dukung'  data-toggle='modal' id='".$row['id_akun']."' data-target='#myModal6'><i class='fa fa-star'></i> ".usaha($biodata)."</a></td>
+                                <td><a href='#' class='btn ".($dukungjumlah>=1?"btn-primary ":"btn-danger")." btn-sm btn-icon icon-left dukung' title='Data Dukung'  data-toggle='modal' id='".$row['id_akun']."' data-target='#myModal6'><i class='fa fa-list'></i> ".$dukungjumlah."</a></td>
                                
                                 <td><a href='#' class='btn ";
                                 if ($row['status']=='Menunggu Hasil Seleksi')  echo 'btn-default';

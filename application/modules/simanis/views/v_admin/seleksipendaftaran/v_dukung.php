@@ -6,12 +6,11 @@
 
                 <div class="modal-body">
             
-                    <div class="col-md-12">
+               
 
                     <table class="table table-bordered datable" id="table-12" style="font-size:12px">
                         <thead>
                         <tr>
-                                <th width="80px">Aksi</th>
                                 <th width="20px">#</th>
                                 <th>Nama Data Pendukung</th>
                                 <th>Dokumen/Bukti Pendukung</th>
@@ -24,13 +23,9 @@
 
                                 echo "
                                     <tr>
-                                        <td>
-                                        <div>
-                                            <a href='#' class='btn btn-primary btn-xs edit' title='Edit' data-toggle='modal' id='".$row['id_berkas']."' data-target='#myModal2'><i class='fa fa-edit' id='".$row['id_berkas']."'></i></a>
-                                            <a href='#' class='btn btn-danger btn-xs hapus' title='Hapus' id='".$row['id_berkas']."'><i class='fa fa-trash-o'></i></a>
-                                        </div>
+        
                                         <td>".++$i."</td>
-                                        </td>
+                               
                                         <td>".$row['nama']."</td>
                                         <td>";
                                         if ($row['file']!="") {
@@ -47,12 +42,12 @@
                         </tbody>
                     </table>
 
-                    </div>
+              
                 </div>
 
        
                 <div class="modal-footer">
-                     <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
+                     <button type="button" class="btn btn-default" data-dismiss="modal">Ok</button>
                 </div>
 
       

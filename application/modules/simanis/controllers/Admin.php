@@ -209,6 +209,7 @@ class Admin extends CI_Controller {
         $this->load->model("m_admin/m_admin_pelatihandaftar");
         $this->load->model("m_admin/m_admin_akun");
         $this->load->model("m_admin/m_admin_admin");
+        $this->load->model("m_admin/m_admin_berkas");
         $username = $this->session->userdata("pelatihan_admin_username");
         $pelatihanaktif = $this->session->userdata("pelatihan_admin_pelatihanaktif");
         if ($this->input->post()) {

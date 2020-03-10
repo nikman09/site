@@ -431,6 +431,17 @@
 		$persen = $lengkap/15*100;
 		return number_format((float)$persen, 2, '.', ''); 
        
+	}
+	
+	function ubahwa($wa)
+    {      
+       $wa = str_replace("+","",$wa);
+       $wa = str_replace("-","",$wa);
+       $wa = str_replace(" ","",$wa);
+       if (substr($wa,0,1)=="0") {
+        $asd = substr_replace($wa,"62",0,1);
+       }
+	   return $asd;
     }
 
 

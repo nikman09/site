@@ -135,7 +135,7 @@
             <table class="table table-bordered datatable "  id="table-1" style="font-size:12px">
                 <thead>
                     <tr>
-                        <th width="50px">Aksi</th>
+                        <th width="90px">Aksi</th>
                         <th>Nama</th>
                         <th>Jenis Kelamin</th>
                         <th>Usia</th>
@@ -158,8 +158,21 @@
                                 <td>
                                 <div>
 								<!--	<a href='#' class='btn btn-primary btn-xs' title='Edit/Lihat' id='".$row['id_pelatihan']."' disabled><i class='fa fa-eye' id='".$row['id_pelatihan']."'  ></i></a> -->
-                                    <a href='".base_url('simanis/admin/cetakbiodata')."?id=".$row['id_akun']."' class='btn btn-danger btn-xs pdf' title='Export PDF' id='".$row['id_pelatihan']."' ><i class='fa fa-file-pdf-o'></i> Export</a>
-                                    <a href='https://wa.me/085248262002?text=Isi Pesan' class='btn btn-success btn-xs ' title='Export PDF' id='".$row['id_pelatihan']."' ><i class='fa fa-file-pdf-o'></i> WA </a>
+                                    <a href='".base_url('simanis/admin/cetakbiodata')."?id=".$row['id_akun']."' class='btn btn-danger btn-xs pdf' title='Export PDF' id='".$row['id_pelatihan']."' target='_blank'><i class='fa fa-file-pdf-o'></i></a>
+                                    <a href='https://wa.me/".ubahwa($row['nohp'])."' class='btn btn-success btn-xs ' title='Whatsapp' id='".$row['id_pelatihan']."' target='_blank'><i class='fa fa-whatsapp'></i></a>
+                                    ";
+                                    if ($row['foto']=="") {
+                                        echo "<a href='#' class='btn btn-default btn-xs ' title='Whatsapp' id='".$row['id_pelatihan']."'  disabled><i class='fa fa-image'></i></a>";
+                                    } else {
+
+                                    echo "<a href='".base_url("assets/images/pelatihan/biodata/")."".$row['foto']."' class='btn btn-default btn-xs ' title='Foto' id='".$row['id_pelatihan']."' target='_blank'><i class='fa fa-image'></i></a>";
+                                    }
+                                    if ($row['ktp']=="") {
+                                        echo "<a href='#' class='btn btn-default btn-xs ' title='Whatsapp' id='".$row['id_pelatihan']."' disabled><i class='fa fa-credit-card' ></i></a>";
+                                    } else {
+                                    echo "<a href='".base_url("assets/images/pelatihan/biodata/")."".$row['ktp']."'' class='btn btn-default btn-xs ' title='KTP' id='".$row['id_pelatihan']."' target='_blank'><i class='fa fa-credit-card'></i></a>";
+                                    }
+                                echo "
                                 </div>
                                 </td>
 								<td>".$row['nama']."</td>

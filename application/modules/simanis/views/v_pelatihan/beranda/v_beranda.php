@@ -236,6 +236,15 @@
 	</table>
 	</div>
 </div>
+
+</div>
+
+<div class="container">
+
+		<div class="col-md-12">
+			<strong>* Dinas Perindustrian Tidak Memungut Biaya Apapun dan Tidak Memberikan Fasilitas Selain Pelatihan</strong>
+		</div>
+	
 </div>
 
 <?php 
@@ -243,7 +252,7 @@
 	
 ?>
 <div class="container">
-	<div class="row vspace">
+<div class="row vspace">
 		<div class="col-md-12">
 			
 			<div class="callout-action">
@@ -280,8 +289,6 @@
 <?php 
 	}
 ?>
-
-
 
 <div class="modal fade" id="myModal2">
     <div class="modal-dialog">

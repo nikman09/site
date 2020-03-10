@@ -29,7 +29,7 @@
 						</div>
 						<div id="collapseOne-2" class="panel-collapse collapse">
 							<div class="panel-body">
-							Pendaftaran dilakukan secara online melalui Link <a href="disperin.kalselprov.go.id" target="_blank">disperin.kalselprov.go.id/pelatihan</a>.
+							Pendaftaran dilakukan secara online melalui Link <a href="http://disperin.kalselprov.go.id/simanis" target="_blank">disperin.kalselprov.go.id/simanis</a>.
 							</div>
 						</div>
 					</div>
@@ -44,7 +44,22 @@
 						</div>
 						<div id="collapseTwo-2" class="panel-collapse collapse">
 							<div class="panel-body">
-								Informasi Pelatihan Dapat dilihat  melalui link <a href="disperin.kalselprov.go.id" target="_blank">disperin.kalselprov.go.id/pelatihan/informasi</a>.
+								Informasi Pelatihan Dapat dilihat  melalui link <a href="http://disperin.kalselprov.go.id/simanis/informasi" target="_blank">disperin.kalselprov.go.id/simanis/informasi</a>.
+							</div>
+						</div>
+					</div>
+
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" data-parent="#accordion-test-3" href="#collapseTwo-3" class="collapsed">
+									Apakah Ada Biaya Pendaftaran ?
+								</a>
+							</h4>
+						</div>
+						<div id="collapseTwo-3" class="panel-collapse collapse">
+							<div class="panel-body">
+							Dinas Perindustrian Tidak Memungut Biaya Apapun. Semua Pelatihan Yang Diselenggarakan Oleh Dinas Perindustrian  Gratis
 							</div>
 						</div>
 					</div>
@@ -56,6 +71,7 @@
 
 		
 		
-		
+		</div>
+		</div>
 </div>
 

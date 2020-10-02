@@ -723,7 +723,7 @@
 									</div>
 									<div class="col pl-1">
 										<h4 class="line-height-3 text-4"><a href="<?php echo base_url("web/kegiatanposts?ids=".$row['id_kegiatan']."") ?>" class="text-dark"><?php echo $row['judul'] ?></a></h4>
-										<p class="line-height-5 pr-3 mb-1"><?php echo substr($row['isi'],0,100) ?>.</p>
+										<p class="line-height-5 pr-3 mb-1"><?php echo strip_tags(substr($row['isi'],0,100)) ?>.</p> 
 										<a class="read-more text-color-dark font-weight-bold text-2" href="<?php echo base_url("web/kegiatanposts?ids=".$row['id_kegiatan']."") ?>"><strong>Selanjutnya</strong><i class="fas fa-chevron-right text-2 pl-2"></i></a>
 									</div>
 								</div>

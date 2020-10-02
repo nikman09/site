@@ -16,6 +16,8 @@ class Web extends CI_Controller {
         $this->load->model("m_navigasi");
         $this->load->model("m_pelatihan_pelatihan");
         $this->load->model("m_pelatihan_pengumuman");
+        $this->load->model("m_dokumen");
+        $this->load->model("m_dokumendetail");
     }
 
     // Dashboard
@@ -171,6 +173,29 @@ class Web extends CI_Controller {
       
       
     }
+
+    public function dokumen()
+    {   
+
+        $variabel['csrf'] = csrf();
+      
+        $id_dokumen = $this->input->get("p");
+        $exec = $this->m_dokumen->lihatdatasatu($id_dokumen);
+
+    
+     
+        if ($exec->num_rows()>0){
+            $variabel['data'] = $exec ->row_array();
+            $exec2 = $this->m_dokumendetail->lihatdatadokumen($id_dokumen);
+            $variabel['data2'] = $exec2;
+            $this->layout->render('dokumen/v_dokumen',$variabel,'dokumen/v_dokumen_js');
+        } else {
+            redirect(base_url("web"));
+        }
+
+        
+     
+    }  
 
     public function kontak()
     {   

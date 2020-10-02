@@ -18,10 +18,11 @@
                 <thead>
                     <tr>
                         <th width="50px">Aksi</th>
+                        <th>Judul</th>
 						<th>Tanggal</th>
                         <th>Bidang</th>
                         <th>Kategori</th>
-						<th>Judul</th>
+						
                         <th>Penulis</th>
                     </tr>
                 </thead>
@@ -35,11 +36,12 @@
 									<a href='".base_url("administrator/kegiatanedit?id=".$row['id_kegiatan']."")."' class='btn btn-primary btn-xs' title='Edit/Lihat' id='".$row['id_kegiatan']."'><i class='fa fa-edit' id='".$row['id_kegiatan']."'  ></i></a>
 									<a href='#' class='btn btn-danger btn-xs hapus' title='Hapus' id='".$row['id_kegiatan']."'><i class='fa fa-trash-o'></i></a>
 								</div>
-								</td>
+                                </td>
+                                <td><strong>".$row['judul']."</strong></td>
                                 <td>".tanggal($row['tanggal'])."</td>
                                 <td>".$row['bidang']."</td>
                                 <td>".$row['kategori']."</td>
-                                <td><strong>".$row['judul']."</strong></td>
+                               
                                 <td>".$row['userinput']."</td>
 
 							</tr>

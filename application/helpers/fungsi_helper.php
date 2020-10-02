@@ -366,7 +366,7 @@
 				if ($modul=="Laman") {
 					$link = "<a href='".base_url()."web/page?p=".$detail."' $blank class='dropdown-item $too '>$judul</a>";
 				} else if($modul=="Dokumen") {
-					$link= "<a href='".base_url()."web/page?p=".$detail."' $blank  class='dropdown-item $too '>$judul</a>";
+					$link= "<a href='".base_url()."web/dokumen?p=".$detail."' $blank  class='dropdown-item $too '>$judul</a>";
 				} else if($modul=="Kegiatan") {
 					$link = "<a href='".base_url()."web/kegiatan/".$detail."' $blank  class='dropdown-item $too '>$judul</a>";
 				} else if($modul=="Bidang") {

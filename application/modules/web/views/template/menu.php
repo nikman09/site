@@ -1,7 +1,3 @@
-<?php
-	$menu = $this->router->fetch_class();
-	$submenu = $this->router->fetch_method();
-?>
 	<ul class="nav nav-pills" id="mainNav">
 	<?php 
 	    function get_ol($array, $child = FALSE, $awal = TRUE)

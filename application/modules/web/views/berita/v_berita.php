@@ -45,7 +45,7 @@
 											<div class="post-content">
 
 												<h2><a href="<?php echo base_url("web/beritapost?ids=".$row['id_berita']."") ?>"><?php  echo $row['judul']; ?></a></h2>
-												<p> <?php echo substr($row['isi'] , 0, 200)?>  [...]</p>
+												<p> <?php echo  strip_tags(substr($row['isi'] , 0, 200))?>   [...]</p>
 
 											</div>
 										</div>

@@ -242,7 +242,7 @@
 <div class="container">
 
 		<div class="col-md-12">
-			<strong>* Dinas Perindustrian Tidak Memungut Biaya Apapun dan Tidak Memberikan Fasilitas Selain Pelatihan</strong>
+			<strong>* Dinas Perindustrian Tidak Memungut Biaya Apapun, Biaya Pendaftaran Gratis </strong>
 		</div>
 	
 </div>

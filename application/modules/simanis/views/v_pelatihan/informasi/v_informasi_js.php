@@ -14,6 +14,7 @@ var $table1 = jQuery( '#table-1' );
 			{ responsivePriority: 2, targets: 5 },
 			{ responsivePriority: 3, targets: 6 },
    		 ],
+   		 "order": [[ 6, "asc" ]],
 		"fnDrawCallback": function () {
 					$('.syarat').click(function (e) {
 					var v_id_pelatihan = this.id;

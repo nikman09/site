@@ -343,6 +343,18 @@
 				
 					</div>
 				</div> 
+				
+			<!--	<section class="border-0 m-3 " >
+					<div class="container">
+					<div class="row">
+					<div class="col-md-12">
+						<img src="<?php echo base_url() ?>assets/front-end/web2/bahan/corona.png" width="100%" alt="">
+					
+						</div>
+					</div>
+					</div>
+				</section> 
+				-->
 				<section class="border-0 m-0 bg-color-grey-scale-1 " >
 				<div class="container py-4 my-0">
 				

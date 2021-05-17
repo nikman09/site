@@ -111,6 +111,15 @@ class Admin extends CI_Controller {
         }
     }
 
+    public function pendaftaranhapus()
+    {
+        cekloginadminpelatihan();
+        $this->load->model("m_admin/m_admin_pelatihandaftar");
+        $id_daftar = $this->input->get("id");
+        $exec = $this->m_admin_pelatihandaftar->hapus($id_daftar);
+        redirect(base_url()."simanis/admin/seleksipendaftaran?msg=2");
+    }
+
     public function pelatihanhapus()
     {
         cekloginadminpelatihan();
@@ -124,7 +133,7 @@ class Admin extends CI_Controller {
             unlink($path1);
         }
         $exec = $this->m_admin_pelatihan->hapus($id_pelatihan);
-        redirect(base_url()."pelatihan/admin/pelatihan?msg=2");
+        redirect(base_url()."simanis/admin/pelatihan?msg=2");
     }
 
     public function pelatihanedit()
@@ -240,6 +249,17 @@ class Admin extends CI_Controller {
             }
         }
         
+    }
+    
+	public function pendaftaranexcel()
+    {   
+        cekloginadminpelatihan();
+        $variabel['csrf'] = csrf();
+        $this->load->model("m_admin/m_admin_pelatihandaftar");
+        $pelatihanaktif = $this->session->userdata("pelatihan_admin_pelatihanaktif");
+        $variabel['data'] = $this->m_admin_pelatihandaftar->lihatdatapelatihandaftaraktif($pelatihanaktif);
+        $this->load->view('v_admin/seleksipendaftaran/v_seleksipendaftaranxl',$variabel);
+               
     }
     
       public function cetakbiodata()

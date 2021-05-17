@@ -188,6 +188,7 @@
 							</div>
 							<br/>
 							<span>*Max 1 mb</span>
+							<span id="errNm1" ></span>
 						</div>	
 										
 					</div>
@@ -218,7 +219,9 @@
 								</div>
 							</div>
 							<br/>
-							<span>*Max 1 mb</span>
+							<span>Max 1 mb</span>
+							<div class="errorTxt"></div>
+							<span id="errNm2" ></span>
 						</div>	
 										
 					</div>
@@ -231,7 +234,7 @@
 							
 						</div>
                     </div>
-
+					<!-- <input type="file" name="inputimage" accept="image/*" > -->
 					<div class="row">
 					<div class="col-md-12">
 						<button type="submit" class="btn btn-primary  btn-icon icon-left  daftar" style="float:right"><i class='fa fa-save'></i>Simpan</button>
@@ -242,3 +245,4 @@
 </div>
 </div>
 </div>
+

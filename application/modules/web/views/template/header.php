@@ -8,9 +8,9 @@
 
 		<title>Dinas Perindustrian</title>	
 
-		<meta name="keywords" content="HTML5 Template" />
-		<meta name="description" content="Porto - Responsive HTML5 Template">
-		<meta name="author" content="okler.net">
+		<meta name="keywords" content="Dinas Perindustrian Provinsi Kalimantan Selatan, Industri, Kalimantan Selatan" />
+		<meta name="description" content="Dinas Perindustrian Provinsi Kalimantan Selatan, melaksanakan urusan pemerintahan yang menjadi kewenangan daerah dan tugas pembantuan bidang perindustrian.">
+		<meta name="author" content="Muhammad Ni'man Nasir>
 
 		<!-- Favicon -->
 		<link rel="apple-touch-icon" sizes="57x57" href="<?php echo base_url() ?>assets/images/favicon/apple-icon-57x57.png">

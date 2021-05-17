@@ -42,15 +42,23 @@
 												if ($item["status"]=="Menunggu Hasil Seleksi") {
 													echo "
 													<td><a href='".base_url()."simanis/status?msg=0' class='btn btn-primary  btn-icon icon-left  daftar' disabled><i class='fa fa-list'></i> Daftar</a></td>";
-												} else if ($item["status"]=="Tidak Lulus Seleksi"){
+												} else if ($item["status"]=="Tidak Lulus Seleksi" && $item["id_pelatihan"]==$row['id_pelatihan']){
+													echo "
+													<td><a href='".base_url()."simanis/status?msg=0' class='btn btn-primary  btn-icon icon-left  daftar' disabled><i class='fa fa-list'></i> Daftar</a></td>";
+													
+												} else if ($item["status"]=="Tidak Lulus Seleksi" && $item["id_pelatihan"]!=$row['id_pelatihan']){
 													echo "
 													<td><a href='".base_url()."simanis/persyaratan?i=".$row['id_pelatihan']."' class='btn btn-primary  btn-icon icon-left  daftar'><i class='fa fa-list'></i> Daftar</a></td>";
+													
+												}  else if ($item["status"]=="Lulus Seleksi" && $item["id_pelatihan"]==$row['id_pelatihan']){
+													echo "
+													<td><a href='".base_url()."simanis/status?msg=0' class='btn btn-primary  btn-icon icon-left  daftar' disabled><i class='fa fa-list'></i> Daftar</a></td>";
 													
 												} else if ($item["status"]=="Lulus Seleksi" && $item["id_pelatihan"]!=$row['id_pelatihan']){
 													echo "
-													<td><a href='".base_url()."simanis/persyaratan?i=".$row['id_pelatihan']."' class='btn btn-primary  btn-icon icon-left  daftar'><i class='fa fa-list'></i> Daftar</a></td>";
+													<td> <a href='".base_url()."simanis/persyaratan?i=".$row['id_pelatihan']."' class='btn btn-primary  btn-icon icon-left  daftar'><i class='fa fa-list'></i> Daftar</a></td>";
 													
-												}else {
+												} else {
 													echo "
 													<td><a href='".base_url()."simanis/persyaratan?i=".$row['id_pelatihan']."' class='btn btn-primary  btn-icon icon-left  daftar'><i class='fa fa-list'></i> Daftar</a></td>";
 												}

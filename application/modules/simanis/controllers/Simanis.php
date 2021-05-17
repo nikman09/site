@@ -150,11 +150,11 @@ class Simanis extends CI_Controller {
               if ($item["status"]=="Menunggu Hasil Seleksi") {
                 redirect(base_url("simanis"));
               } else {
-                $exec2 = $this->m_pelatihan_pelatihandaftar->lihatdatasatupelatihan($this->input->get("i"));
-                if ($exec2->num_rows()>0) {
-                  redirect(base_url("simanis/ket"));
+                // $exec2 = $this->m_pelatihan_pelatihandaftar->lihatdatasatupelatihan($this->input->get("i"));
+                // if ($exec2->num_rows()>0) {
+                  // redirect(base_url("simanis/ket"));
 
-                } else {
+                // } else {
                   if ($this->input->get("i")){
                     $array=array(
                         'id_pelatihan'=> $this->input->get("i"),
@@ -183,7 +183,7 @@ class Simanis extends CI_Controller {
                   else {
                     redirect(base_url("simanis"));
                   }
-                }
+                // }
               }
             } else {
               if ($this->input->get("i")){
@@ -375,15 +375,15 @@ class Simanis extends CI_Controller {
                 $foto = $upload["raw_name"].$upload["file_ext"];
                 $array['foto']=$foto;
 
-                $config['image_library'] = 'gd2';
-                $config['source_image'] = './assets/images/pelatihan/biodata/'.$upload["raw_name"].$upload["file_ext"];
-                $config['create_thumb'] = FALSE;
-                $config['maintain_ratio'] = TRUE;
-                $config['width']         = 600;
-                $config['height']       = 400;
-                $config['new_image'] = './assets/images/pelatihan/biodata/'.$upload["raw_name"].$upload["file_ext"];
-                $this->load->library('image_lib', $config);
-                $this->image_lib->resize();
+                // $config['image_library'] = 'gd2';
+                // $config['source_image'] = './assets/images/pelatihan/biodata/'.$upload["raw_name"].$upload["file_ext"];
+                // $config['create_thumb'] = FALSE;
+                // $config['maintain_ratio'] = TRUE;
+                // $config['width']         = 600;
+                // $config['height']       = 400;
+                // $config['new_image'] = './assets/images/pelatihan/biodata/'.$upload["raw_name"].$upload["file_ext"];
+                // $this->load->library('image_lib', $config);
+                // $this->image_lib->resize();
 
                 $query2 = $this->m_pelatihan_akun->lihatdatasatu($id_akun);
                 $row2 = $query2->row();
@@ -419,15 +419,15 @@ class Simanis extends CI_Controller {
                 $ktp = $upload["raw_name"].$upload["file_ext"];
                 $array['ktp']=$ktp;
 
-                $config['image_library'] = 'gd2';
-                $config['source_image'] = './assets/images/pelatihan/biodata/'.$upload["raw_name"].$upload["file_ext"];
-                $config['create_thumb'] = FALSE;
-                $config['maintain_ratio'] = TRUE;
-                $config['width']         = 900;
-                $config['height']       = 700;
-                $config['new_image'] = './assets/images/pelatihan/biodata/'.$upload["raw_name"].$upload["file_ext"];
-                $this->load->library('image_lib', $config);
-                $this->image_lib->resize();
+                // $config['image_library'] = 'gd2';
+                // $config['source_image'] = './assets/images/pelatihan/biodata/'.$upload["raw_name"].$upload["file_ext"];
+                // $config['create_thumb'] = FALSE;
+                // $config['maintain_ratio'] = TRUE;
+                // $config['width']         = 900;
+                // $config['height']       = 700;
+                // $config['new_image'] = './assets/images/pelatihan/biodata/'.$upload["raw_name"].$upload["file_ext"];
+                // $this->load->library('image_lib', $config);
+                // $this->image_lib->resize();
 
                 $query2 = $this->m_pelatihan_akun->lihatdatasatu($id_akun);
                 $row2 = $query2->row();
@@ -791,6 +791,40 @@ class Simanis extends CI_Controller {
             $exec = $this->m_pelatihan_berkas->lihatdataakun($id_akun);
             $variabel['data'] = $exec;
             $this->layout->renderpel('v_pelatihan/pendukung/v_pendukung',$variabel,'v_pelatihan/pendukung/v_pendukung_js');
+        
+          }
+    }
+
+    public function perusahaan()
+    {   
+        $variabel['csrf'] = csrf();
+        $this->load->model("m_pelatihan/m_pelatihan_berkas");
+        $id_akun = $this->session->userdata("pelatihan_idakun");
+        if ($this->input->post()) {
+          $id_akun = $this->session->userdata("pelatihan_idakun");
+            $array=array(
+                'nama'=> $this->input->post('nama'),
+                'id_akun'=> $id_akun,
+            );
+
+            //asdad
+            $config['upload_path'] = './assets/images/pelatihan/pendukung';
+            $config['allowed_types'] = 'jpg|jpeg|JPG|JPEG|PNG|png|PDF|pdf|doc|DOC';
+            $this->load->library('upload', $config);
+            $this->upload->do_upload("dokumen");
+            $upload = $this->upload->data();
+            $file = $upload["raw_name"].$upload["file_ext"];
+            $array['file']=$file;
+    
+            //adasd
+            $exec = $this->m_pelatihan_berkas->tambahdata($array);
+                if ($exec){
+                 redirect(base_url("simanis/pendukung?id=".$id_dokumen."&msg=1"));
+                }   else redirect(base_url("simanis/pendukung?msg=0"));
+          } else {
+            $exec = $this->m_pelatihan_berkas->lihatdataakun($id_akun);
+            $variabel['data'] = $exec;
+            $this->layout->renderpel('v_pelatihan/perusahaan/v_perusahaan',$variabel,'v_pelatihan/perusahaan/v_perusahaan_js');
         
           }
     }

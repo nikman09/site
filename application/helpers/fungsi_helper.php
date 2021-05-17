@@ -440,7 +440,9 @@
        $wa = str_replace(" ","",$wa);
        if (substr($wa,0,1)=="0") {
         $asd = substr_replace($wa,"62",0,1);
-       }
+       } else {
+		   $asd = $wa;
+	   }
 	   return $asd;
     }
 

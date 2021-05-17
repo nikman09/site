@@ -33,6 +33,7 @@ Banjarbaru.</p></li>
 								<ul class="list list-icons list-icons-lg">
 									<li class="mb-1"><a href=""><i class="fa fa-link text-color-primary"></i>Pemerintah Provinsi Kalsel</a></li>
 									<li class="mb-1"><a href=""><i class="fa fa-link text-color-primary"></i>Kementerian Perindustrian RI</a></li>
+									<li class="mb-1" ><a href="https://www.sparktraffic.com/?ref=1002966" style="color:#212529">Traffic Bot</a></li>
 									</ul>
 							</div>
 						</div>
@@ -43,10 +44,10 @@ Banjarbaru.</p></li>
 						<div class="col-md-6 col-lg-2">
 							<h5 class="text-3 mb-3">Sosial Media</h5>
 							<ul class="footer-social-icons social-icons m-0">
-								<li class="social-icons-facebook"><a href="http://www.facebook.com/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
-								<li class="social-icons-twitter"><a href="http://www.twitter.com/" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a></li>
-								<li class="social-icons-instagram"><a href="http://www.instagram.com/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a></li>
-								<li class="social-icons-youtube"><a href="http://www.youtube.com/" target="_blank" title="Youtubr"><i class="fab fa-youtube"></i></a></li>
+								<li class="social-icons-facebook"><a href="https://www.facebook.com/disperinkalselprov" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+								<li class="social-icons-twitter"><a href="https://twitter.com/disperinkalsel" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a></li>
+								<li class="social-icons-instagram"><a href="https://www.instagram.com/disperinkalselprov/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a></li>
+								<li class="social-icons-youtube"><a href="https://www.youtube.com/channel/UCskkGgZ2AuAo0u1qX2Gpsaw" target="_blank" title="Youtubr"><i class="fab fa-youtube"></i></a></li>
 							</ul>
 						</div>
 					</div>

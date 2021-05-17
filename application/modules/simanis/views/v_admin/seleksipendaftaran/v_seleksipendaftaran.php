@@ -127,7 +127,7 @@
 		</div>
        
         <div class="text-right"  style="margin-top:5px;margin-bottom:5px">
-                            <a class="btn  btn-success btn-icon icon-left syarat"  id="<?= $detail["id_pelatihan"] ?>" style=""><i class="fa fa-file-excel-o" ></i> Export to Excel</a>
+                            <a href="<?php echo base_url("simanis/admin/pendaftaranexcel") ?>" class="btn  btn-success btn-icon icon-left syarat"  id="<?= $detail["id_pelatihan"] ?>" style=""><i class="fa fa-file-excel-o" ></i> Export to Excel</a>
                            
                         </div>
                         <br/>
@@ -135,7 +135,7 @@
             <table class="table table-bordered datatable "  id="table-1" style="font-size:12px">
                 <thead>
                     <tr>
-                        <th width="90px">Aksi</th>
+                        <th width="120px">Aksi</th>
                         <th>Nama</th>
                         <th>Jenis Kelamin</th>
                         <th>Usia</th>
@@ -160,6 +160,7 @@
 								<!--	<a href='#' class='btn btn-primary btn-xs' title='Edit/Lihat' id='".$row['id_pelatihan']."' disabled><i class='fa fa-eye' id='".$row['id_pelatihan']."'  ></i></a> -->
                                     <a href='".base_url('simanis/admin/cetakbiodata')."?id=".$row['id_akun']."' class='btn btn-danger btn-xs pdf' title='Export PDF' id='".$row['id_pelatihan']."' target='_blank'><i class='fa fa-file-pdf-o'></i></a>
                                     <a href='https://wa.me/".ubahwa($row['nohp'])."' class='btn btn-success btn-xs ' title='Whatsapp' id='".$row['id_pelatihan']."' target='_blank'><i class='fa fa-whatsapp'></i></a>
+                                    <a href='#' class='btn btn-primary btn-xs hapusx' title='Hapus' id='".$row['id_pelatihandaftar']."' disabled><i class='fa fa-trash-o'></i></a>
                                     ";
                                     if ($row['foto']=="") {
                                         echo "<a href='#' class='btn btn-default btn-xs ' title='Whatsapp' id='".$row['id_pelatihan']."'  disabled><i class='fa fa-image'></i></a>";

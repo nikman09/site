@@ -95,6 +95,27 @@ jQuery( document ).ready( function( $ ) {
                     }
                 });
             });
+
+            $(".hapus").click(function (e) {
+                var v_id = this.id;
+                $.confirm({
+                    title: 'Hapus!',
+                    content: 'Yakin ingin menghapus ?',
+                    buttons: {
+                        hapus: {
+                            text: 'Hapus',
+                            btnClass: 'btn-primary',
+                            action: function(){
+                                window.location.assign("<?php echo base_url() ?>simanis/admin/pendaftaranhapus?id="+v_id);
+                            }
+                        },
+                        batal: function () {
+
+                        }
+                        
+                    }
+                    });
+                });
         }
     });
     // Initalize Select Dropdown after DataTables is created

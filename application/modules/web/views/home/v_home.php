@@ -8,9 +8,9 @@
 
 		<title>Dinas Perindustrian Kalsel</title>	
 
-		<meta name="keywords" content="HTML5 Template" />
-		<meta name="description" content="Porto - Responsive HTML5 Template">
-		<meta name="author" content="okler.net">
+		<meta name="keywords" content="Industri Kalsel, Disperin, Perindustrian Kalsel" />
+		<meta name="description" content="Dinas Perindustrian Provinsi Kalimantan Selatan, melaksanakan urusan pemerintahan yang menjadi kewenangan daerah dan tugas pembantuan bidang perindustrian.">
+		<meta name="author" content="Muhammad Ni'man Nasir">
 
 		<!-- Favicon -->
 		<link rel="apple-touch-icon" sizes="57x57" href="<?php echo base_url() ?>assets/images/favicon/apple-icon-57x57.png">
@@ -107,10 +107,10 @@
 								<div class="header-column justify-content-end">
 									<div class="header-row">
 										<ul class="header-social-icons social-icons d-none d-sm-block social-icons-clean">
-											<li class="social-icons-facebook"><a href="http://www.facebook.com/" target="_blank" title="Facebook" style="color: #e0e0e0 !important"><i class="fab fa-facebook-f"></i></a></li>
-											<li class="social-icons-twitter" ><a href="http://www.twitter.com/" target="_blank" title="Twitter"  style="color: #e0e0e0 !important"><i class="fab fa-twitter"></i></a></li>
-											<li class="social-icons-instagram" ><a href="http://www.instagram.com/" target="_blank" title="instagram"  style="color: #e0e0e0 !important"><i class="fab fa-instagram"></i></a></li>
-											<li class="social-icons-youtube" ><a href="http://www.youtube.com/" target="_blank" title="youtube"  style="color: #e0e0e0 !important"><i class="fab fa-youtube"></i></a></li>
+											<li class="social-icons-facebook"><a href="https://www.facebook.com/disperinkalselprov" target="_blank" title="Facebook" style="color: #e0e0e0 !important"><i class="fab fa-facebook-f"></i></a></li>
+											<li class="social-icons-twitter" ><a href="https://twitter.com/disperinkalsel" target="_blank" title="Twitter"  style="color: #e0e0e0 !important"><i class="fab fa-twitter"></i></a></li>
+											<li class="social-icons-instagram" ><a href="https://www.instagram.com/disperinkalselprov/" target="_blank" title="instagram"  style="color: #e0e0e0 !important"><i class="fab fa-instagram"></i></a></li>
+											<li class="social-icons-youtube" ><a href="https://www.youtube.com/channel/UCskkGgZ2AuAo0u1qX2Gpsaw" target="_blank" title="youtube"  style="color: #e0e0e0 !important"><i class="fab fa-youtube"></i></a></li>
 										</ul>
 									</div>
 								</div>
@@ -171,6 +171,41 @@
 				<div class="slider-container  rev_slider_wrapper " style="height: 650px;">
 					<div id="revolutionSlider" class="slider rev_slider " data-version="5.4.8" data-plugin-revolution-slider data-plugin-options="{'delay': 9000, 'gridwidth': 1170, 'gridheight': 650, 'disableProgressBar': 'on', 'responsiveLevels': [4096,1200,992,500], 'navigation' : {'arrows': { 'enable': true, 'style': 'arrows-style-1 arrows-big arrows-dark' }, 'bullets': {'enable': false, 'style': 'bullets-style-1 bullets-color-primary', 'h_align': 'center', 'v_align': 'bottom', 'space': 7, 'v_offset': 70, 'h_offset': 0}}}">
 						<ul>
+						<li data-transition="fade">
+				
+				<img src="<?php echo base_url() ?>assets/front-end/web2/bahan/investasi.jpg"  
+					alt=""
+					data-bgposition="right center"
+					data-bgpositionend="center center"
+					data-bgfit="cover" 
+					data-bgrepeat="no-repeat" 
+					data-kenburns="on"
+					data-duration="9000"
+					data-ease="Linear.easeNone"
+					data-scalestart="110"
+					data-scaleend="100"
+					data-rotatestart="0"
+					data-rotateend="0"
+					data-offsetstart="0 0"
+					data-offsetend="0 0"
+					data-bgparallax="0"
+					class="rev-slidebg">
+                <div class="tp-caption font-weight-extra-bold negative-ls-2" style="color:#fff"
+									data-frames='[{"delay":1000,"speed":2000,"frame":"0","from":"sX:1.5;opacity:0;fb:20px;","to":"o:1;fb:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
+									data-x="center"
+									data-y="center" data-voffset="['-50','-50','-50','40']"
+									data-fontsize="['50','50','50','50']"
+									data-lineheight="['55','55','55','95']">Investasi Industri</div>
+				
+								<div class="tp-caption font-weight-light" style="color:#fff"
+									data-frames='[{"from":"opacity:0;","speed":300,"to":"o:1;","delay":2000,"split":"chars","splitdelay":0.05,"ease":"Power2.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
+									data-x="center"
+									data-y="center" data-voffset="['-15','-15','-15','95']"
+									data-fontsize="['18','18','18','40']"
+									data-lineheight="['20','20','20','55']"
+									style="color: #b5b5b5;">Mari Berinvestasi Industri di Kalimantan Selatan</div>
+			
+			</li>
 							
 						<li data-transition="fade">
 								<img src="<?php echo base_url() ?>assets/front-end/web2/bahan/v1.jpg"  
@@ -287,41 +322,7 @@
 								
 								
 							</li>
-			<!--				<li data-transition="fade">-->
-				
-			<!--	<img src="<?php echo base_url() ?>assets/front-end/web2/img/slides/tes122.jpg"  -->
-			<!--		alt=""-->
-			<!--		data-bgposition="right center"-->
-			<!--		data-bgpositionend="center center"-->
-			<!--		data-bgfit="cover" -->
-			<!--		data-bgrepeat="no-repeat" -->
-			<!--		data-kenburns="on"-->
-			<!--		data-duration="9000"-->
-			<!--		data-ease="Linear.easeNone"-->
-			<!--		data-scalestart="110"-->
-			<!--		data-scaleend="100"-->
-			<!--		data-rotatestart="0"-->
-			<!--		data-rotateend="0"-->
-			<!--		data-offsetstart="0 0"-->
-			<!--		data-offsetend="0 0"-->
-			<!--		data-bgparallax="0"-->
-			<!--		class="rev-slidebg">-->
-   <!--             <div class="tp-caption font-weight-extra-bold negative-ls-2" style="color:#fff"-->
-			<!--						data-frames='[{"delay":1000,"speed":2000,"frame":"0","from":"sX:1.5;opacity:0;fb:20px;","to":"o:1;fb:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'-->
-			<!--						data-x="center"-->
-			<!--						data-y="center" data-voffset="['-50','-50','-50','40']"-->
-			<!--						data-fontsize="['50','50','50','50']"-->
-			<!--						data-lineheight="['55','55','55','95']">Dinas Perindustrian</div>-->
-				
-			<!--					<div class="tp-caption font-weight-light" style="color:#fff"-->
-			<!--						data-frames='[{"from":"opacity:0;","speed":300,"to":"o:1;","delay":2000,"split":"chars","splitdelay":0.05,"ease":"Power2.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'-->
-			<!--						data-x="center"-->
-			<!--						data-y="center" data-voffset="['-15','-15','-15','95']"-->
-			<!--						data-fontsize="['18','18','18','40']"-->
-			<!--						data-lineheight="['20','20','20','55']"-->
-			<!--						style="color: #b5b5b5;">Provinsi Kalimantan Selatan.</div>-->
-			
-			<!--</li>-->
+							
 							 
 						
 						</ul>
@@ -344,17 +345,8 @@
 					</div>
 				</div> 
 				
-			<!--	<section class="border-0 m-3 " >
-					<div class="container">
-					<div class="row">
-					<div class="col-md-12">
-						<img src="<?php echo base_url() ?>assets/front-end/web2/bahan/corona.png" width="100%" alt="">
-					
-						</div>
-					</div>
-					</div>
-				</section> 
-				-->
+				
+				
 				<section class="border-0 m-0 bg-color-grey-scale-1 " >
 				<div class="container py-4 my-0">
 				
@@ -447,13 +439,16 @@
 							</div>
 							<div class="col-lg-6" data-appear-animation="fadeInLeftShorter" style="margin-top:30px" >
 							
-							<iframe width="100%" height="300" src="https://www.youtube.com/embed/1p_UBv8igEE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+							<iframe width="100%" height="300" src="https://www.youtube.com/embed/OTp_CDzoY5Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 							
 							</div>
 						</div>
 					</div>
 				</section>
 				
+			
+			
+
 			
 			
 				<section>
@@ -559,6 +554,9 @@
 					</div>
 				</div>
 				</section>
+
+
+
 
 				<section>
 				<div class="container " >
@@ -694,14 +692,39 @@
 					</div>
 
 					
+	
+				</section>
+				
+					
+			
+				
+
+ <!--
+	<section>
+				<div class="container " >
+			
+				
+					<div class="row" style="padding-bottom:20px">
+					
+						<div class="col-lg-4" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="200">
+						<div id="gpr-kominfo-widget-container"></div>
+
+						</div>
+						<div class=" col-lg-8 appear-animation" data-appear-animation="fadeInDownShorter" data-appear-animation-delay="400">
+						<img  width="100%" height="785px"  data-sticky-width="120" data-sticky-height="40" src="<?php echo base_url() ?>assets/images/cegah.jpg"/>
+
+						</div>
+						
+
+
+					</div>
+
+					</div>
 
 				
 				
 				</section>
-
-
- <!--bg-color-grey-scale-1-->
-
+				-->
 										
 				<section class="section section-height-3 border-0 m-0" style="padding-top: 50px;padding-bottom: 20px;">
 					<div class="container pb-2">
@@ -742,7 +765,17 @@
 						</div>
 					</div>
 				</section>
-				
+
+<section class="border-0 m-3 ">
+					<div class="container" style="padding:0">
+					<div class="row">
+					<div class="col-md-12 appear-animation" data-appear-animation="fadeInUpShorter">
+						<a href="https://www.instagram.com/klinikikmkalsel/" target="_blank"> <img src="<?php echo base_url() ?>assets/images/klinik3.jpg" width="95%" alt=""></a>
+					
+						</div>
+					</div>
+					</div>
+				</section> 				
 
 				 <section  style="
     padding-top: 30px;
@@ -775,6 +808,8 @@
 				</section> 
 				
 				
+				
+				
 			</div>
 			
 			
@@ -782,6 +817,7 @@
 			<?php
 				$this->load->view("template/footer");
 			?>
+				<script type="text/javascript" src="https://widget.kominfo.go.id/gpr-widget-kominfo.min.js"></script>
 			<script>
 			jQuery( document ).ready( function( $ ) {
 			

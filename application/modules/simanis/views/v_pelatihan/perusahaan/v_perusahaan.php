@@ -14,21 +14,21 @@
 
 
 
-<div class="container">sds
+<div class="container">
 
 	<div class="row vspace" style="margin:5px;min-height:300px">
 
 	<div class="col-md-12">
 
-    <h3>Data Perusahaan</h3>
+    <h3>Data Usaha/Perusahaan</h3>
 
 						<hr/>
 
         <?php pesan_get2('msg',"Berhasil Menambah Data Pendukung","Berhasil Mengedit Data Pendukung","Berhasil Menghapus Data Pendukung") ?>
 
-        <a href="#" style="margin: 5px 0 10px 0px" class="btn  btn-primary tambah   btn-icon icon-left" data-toggle="modal" data-target="#myModal">
+        <a href="<?php echo base_url("simanis/tambahperusahaan") ?>" style="margin: 5px 0 10px 0px" class="btn  btn-primary tambah   btn-icon icon-left" >
 
-                <i class="fa fa-plus"></i> Tambah Data Pendukung</a>
+                <i class="fa fa-plus"></i> Tambah Data Usaha/Perusahaan</a>
 
                
 

@@ -758,6 +758,7 @@ class Simanis extends CI_Controller {
         cekloginpelatihan();
         $variabel['csrf'] = csrf();
         $this->load->model("m_pelatihan/m_pelatihan_akun");
+        $this->load->model("m_pelatihan/m_pelatihan_perusahaan");
         if ($this->input->post()) {
             $id_akun = $this->session->userdata("pelatihan_idakun");
             $array=array(
@@ -835,6 +836,8 @@ class Simanis extends CI_Controller {
             $exec = $this->m_pelatihan_akun->lihatdatasatu($id_akun);
             if ($exec->num_rows()>0){
                 $variabel['data'] = $exec ->row_array();
+                $variabel['masterbadan'] = $this->m_pelatihan_perusahaan->lihatmasterbadan();
+                $variabel['masterkota'] = $this->m_pelatihan_perusahaan->lihatmasterkota();
                 $this->layout->renderpel('v_pelatihan/perusahaan/v_perusahaantambah',$variabel,'v_pelatihan/perusahaan/v_perusahaantambah_js');
             } else {
                 redirect(base_url("simanis/datausaha"));

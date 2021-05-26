@@ -377,6 +377,8 @@
 					$link = "<a href='".base_url()."web/berita' $blank  class='dropdown-item $too '>$judul</a>";
 				} else if($modul=="Kontak") {
 					$link = "<a href='".base_url()."web/kontak' $blank  class='dropdown-item $too '>$judul</a>";
+				} else if($modul=="Saran") {
+					$link = "<a href='".base_url()."web/saran' $blank  class='dropdown-item $too '>$judul</a>";
 				}
 				 else if($modul=="URL") {
 					$link = "<a href='".$urll."'  $blank  class='dropdown-item $too '>$judul</a>";

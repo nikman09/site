@@ -18,6 +18,7 @@ class Administrator extends CI_Controller {
         $this->load->model("m_jadwaldetail");
         $this->load->model("m_pesan");
         $this->load->model("m_navigasi");
+        $this->load->model("m_saran");
     }
 
     // Dashboard
@@ -1130,6 +1131,33 @@ class Administrator extends CI_Controller {
         redirect(base_url()."administrator/pesan?msg=2");
     }
 
+    public function saran()
+    {   
+        $variabel['csrf'] = csrf();
+        $variabel['data'] = $this->m_saran->lihatdata();
+        $this->layout->render('sa/saran/v_saran',$variabel,'kontak/saran/v_saran_js');
+   
+    }
+
+    public function saranlihat()
+    {   
+        $id_saran = $this->input->get("id");
+        $exec = $this->m_saran->lihatdatasatu($id_saran);
+        if ($exec->num_rows()>0){
+            $variabel['data'] = $exec ->row_array();
+            $this->layout->render('kontak/saran/v_saranlihat',$variabel,'kontak/saran/v_saran_js');
+        } else {
+           // redirect(base_url("administrator"));
+        }
+
+    }
+
+    public function saranhapus()
+    {
+        $id_saran = $this->input->get("id");
+        $exec = $this->m_saran->hapus($id_saran);
+        redirect(base_url()."administrator/saran?msg=2");
+    }
 
     public function filemanager()
     {
@@ -1377,7 +1405,10 @@ class Administrator extends CI_Controller {
             } else if($modul=="Kontak") {
                 $array['url'] = "";
                 $array['detail'] = "";
-            } else if($modul=="URL") {
+            } else if($modul=="Saran") {
+                $array['url'] = "";
+                $array['detail'] = "";
+            }else if($modul=="URL") {
                 $array['url'] = $this->input->post('url');
                 $array['target']= $this->input->post('target') ;
                 $array['detail'] = "";

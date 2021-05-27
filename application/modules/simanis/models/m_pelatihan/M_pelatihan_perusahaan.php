@@ -15,13 +15,41 @@ class M_pelatihan_perusahaan extends CI_Model
     }
 
     function lihatmasterbadan()
-
     {
 
         $this->db->select("master_badan.*");
         $this->db->where("deleted_id",NULL);
         return $this->db->get('master_badan');
+    }
 
+    function lihatmasterizin()
+    {
+
+        $this->db->select("master_izin.*");
+        $this->db->where("deleted_id",NULL);
+        return $this->db->get('master_izin');
+    }
+
+    function lihatmasterkbli()
+    {
+
+        $this->db->select("master_kbli.*");
+        $this->db->where("deleted_id",NULL);
+        return $this->db->get('master_kbli');
+    }
+
+    function lihatmasterkomoditi()
+    {
+        $this->db->select("master_komoditi.*");
+        $this->db->where("deleted_id",NULL);
+        return $this->db->get('master_komoditi');
+    }
+
+    function lihatmasterproduk()
+    {
+        $this->db->select("master_produk.*");
+        $this->db->where("deleted_id",NULL);
+        return $this->db->get('master_produk');
     }
 
     function lihatmasterkota()
@@ -30,6 +58,24 @@ class M_pelatihan_perusahaan extends CI_Model
         $this->db->select("master_kota.*");
         $this->db->where("provinsi_id","63");
         return $this->db->get('master_kota');
+       
+    }
+
+    function getmasterkecamatan($kota_id)
+
+    {
+        $this->db->select("master_kecamatan.*");
+        $this->db->where("kota_id",$kota_id);
+        return $this->db->get('master_kecamatan');
+       
+    }
+
+    function getmasterkelurahan($kecamatan_id)
+
+    {
+        $this->db->select("master_kelurahan.*");
+        $this->db->where("kecamatan_id",$kecamatan_id);
+        return $this->db->get('master_kelurahan');
        
     }
     

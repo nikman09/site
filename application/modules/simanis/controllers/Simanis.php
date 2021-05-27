@@ -838,6 +838,10 @@ class Simanis extends CI_Controller {
                 $variabel['data'] = $exec ->row_array();
                 $variabel['masterbadan'] = $this->m_pelatihan_perusahaan->lihatmasterbadan();
                 $variabel['masterkota'] = $this->m_pelatihan_perusahaan->lihatmasterkota();
+                $variabel['masterizin'] = $this->m_pelatihan_perusahaan->lihatmasterizin();
+                $variabel['masterkbli'] = $this->m_pelatihan_perusahaan->lihatmasterkbli();
+                $variabel['masterkomoditi'] = $this->m_pelatihan_perusahaan->lihatmasterkomoditi();
+                $variabel['masterproduk'] = $this->m_pelatihan_perusahaan->lihatmasterproduk();
                 $this->layout->renderpel('v_pelatihan/perusahaan/v_perusahaantambah',$variabel,'v_pelatihan/perusahaan/v_perusahaantambah_js');
             } else {
                 redirect(base_url("simanis/datausaha"));
@@ -1121,6 +1125,31 @@ class Simanis extends CI_Controller {
           } else {
               echo 'Error! email tidak dapat dikirim.';
           }
+    }
+
+
+    function getkecamatan()
+
+    {
+      $this->load->model("m_pelatihan/m_pelatihan_perusahaan");
+      $id=$this->input->post('kota_id');
+
+      $data=$this->m_pelatihan_perusahaan->getmasterkecamatan($id)->result();;
+
+      echo json_encode($data);
+
+    }
+
+    function getkelurahan()
+
+    {
+      $this->load->model("m_pelatihan/m_pelatihan_perusahaan");
+      $id=$this->input->post('kecamatan_id');
+
+      $data=$this->m_pelatihan_perusahaan->getmasterkelurahan($id)->result();;
+
+      echo json_encode($data);
+
     }
 
 }

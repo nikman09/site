@@ -79,7 +79,7 @@
 								</div>	
 								<div class="form-group">
 									<label for="field-1" class="control-label">Nama Pemilik * </label>
-									<input type="text" class="form-control" id="pemilik" name="pemilik" placeholder=" Masukkan nama Pemilik"  value="">
+									<input type="text" class="form-control" id="pemilik" name="pemilik" placeholder=" Masukkan Nama Pemilik"  value="">
 								</div>
 								<div class="form-group">
 									<label for="field-1" class="control-label">Alamat * </label>
@@ -112,25 +112,31 @@
 								</div>
 								<div class="form-group">
 									<label for="field-1" class="control-label">Kodepos</label>
-									<input type="text" class="form-control" id="kodepos" name="kodepos" placeholder="Masukkan Kodepos"  value="">
+									<input type="text" class="form-control nilai" id="kodepos" name="kodepos" placeholder="Masukkan Kodepos"  value="">
 								</div>	
 								<div class="form-group">
 									<label for="field-1" class="control-label">Telepon</label>
-									<input type="text" class="form-control" id="telpon" name="telpon" placeholder="Masukkan Nomor Telepon"  value="">
+									<input type="text" class="form-control nilai" id="telpon" name="telpon" placeholder="Masukkan Nomor Telepon (ex. 0811777777)"  value="">
 								</div>	
 								<div class="form-group">
 									<label for="field-1" class="control-label">Fax</label>
-									<input type="text" class="form-control" id="fax" name="fax" placeholder="Masukkan Nomor Fax"  value="">
+									<input type="text" class="form-control nilai" id="fax" name="fax" placeholder="Masukkan Nomor Fax (ex. 0811777777)"  value="">
 								</div>
 								<div class="form-group">
 									<label for="field-1" class="control-label">Email</label>
-									<input type="text" class="form-control" id="email" name="email" placeholder="Masukkan Email"  value="">
+									<input type="text" class="form-control" id="email" name="email" placeholder="Masukkan Email "  value="">
 								</div>	
 								<div class="form-group">
 									<label for="field-1" class="control-label">Website</label>
 									<input type="text" class="form-control" id="website" name="website" placeholder="Masukkan Website"  value="">
 								</div>	
-								<div class="form-group">
+									
+						</div>
+
+						
+
+						<div class="col-md-6">
+							<div class="form-group">
 									<label for="field-1" class="control-label">Izin Usaha Industri *</label>
 									<select class="form-control" name="izin_id" id="izin_id" >
 										<option value="" disabled selected>.:Pilih Izin Usaha Industri:.</option>
@@ -141,13 +147,7 @@
 											}
 										?>
 									</select>
-								</div>	
-						</div>
-
-						
-
-						<div class="col-md-6">
-						
+								</div>
 								<div class="form-group">
 									<label for="field-1" class="control-label">KBLI *</label>
 									<select class="form-control" name="kbli_id" id="kbli_id" >
@@ -173,7 +173,7 @@
 									</select>
 								</div>		
 								<div class="form-group">
-									<label for="field-1" class="control-label">Master Produk *</label>
+									<label for="field-1" class="control-label"> Produk *</label>
 									<select class="form-control" name="produk_id" id="produk_id" >
 										<option value="" disabled selected>.:Pilih Produk:.</option>
 										<?php
@@ -186,15 +186,15 @@
 								</div>	
 							<div class="form-group">
 									<label for="field-1" class="control-label">Latitude</label>
-									<input type="text" class="form-control" id="latitude" name="latitude" placeholder="Masukkan Koordinat Latiude"  value="">
+									<input type="text" class="form-control" id="latitude" name="latitude" placeholder="Masukkan Koordinat Latitude"  value="">
 								</div>		
 								<div class="form-group">
-									<label for="field-1" class="control-label">Latitude</label>
+									<label for="field-1" class="control-label">Longitude</label>
 									<input type="text" class="form-control" id="latitude" name="longitude" placeholder="Masukkan Koordinat longitude"  value="">
 								</div>		
 								<div class="form-group">
 									<label for="field-1" class="control-label">Whatsapp</label>
-									<input type="text" class="form-control" id="wa" name="wa" placeholder="Masukkan Nomor Whatsapp"  value="">
+									<input type="text" class="form-control nilai" id="wa" name="wa" placeholder="Masukkan Nomor Whatsapp"  value="">
 								</div>	
 								<div class="form-group">
 									<label for="field-1" class="control-label">Facebook</label>
@@ -206,20 +206,17 @@
 								</div>	
 								<div class="form-group">
 									<label for="field-1" class="control-label">Tokopedia</label>
-									<input type="text" class="form-control" id="tokped" name="tokped" placeholder="Masukkan Tokopedia"  value="">
+									<input type="text" class="form-control" id="tokped" name="tokped" placeholder="Masukkan ID Tokopedia"  value="">
 								</div>
 								<div class="form-group">
 									<label for="field-1" class="control-label">Bukalapak</label>
-									<input type="text" class="form-control" id="bukalapak" name="bukalapak" placeholder="Masukkan Bukalapak"  value="">
+									<input type="text" class="form-control" id="bukalapak" name="bukalapak" placeholder="Masukkan ID Bukalapak"  value="">
 								</div>	
 								<div class="form-group">
 									<label for="field-1" class="control-label">Shopee</label>
-									<input type="text" class="form-control" id="shopee" name="shopee" placeholder="Masukkan Shopee"  value="">
+									<input type="text" class="form-control" id="shopee" name="shopee" placeholder="Masukkan ID Shopee"  value="">
 								</div>	
-								<div class="form-group">
-									<label for="field-1" class="control-label">Shopee</label>
-									<input type="text" class="form-control" id="shopee" name="shopee" placeholder="Masukkan Shopee"  value="">
-								</div>	
+							
 								<div class="form-group">
 
 									<label for="field-1" class="control-label">Upload Dokumen Legalitas Perusahaan</label>

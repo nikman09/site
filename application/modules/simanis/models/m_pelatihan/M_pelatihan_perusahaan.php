@@ -104,6 +104,31 @@ class M_pelatihan_perusahaan extends CI_Model
 
     }
 
+    function tambahdata($array)
+
+    {
+
+        return $this->db->insert('master_perusahaan',$array);
+
+    }
+
+    public function get_kode() {
+		$query = $this->db->query("SELECT MAX(RIGHT(kode,7)) AS kode FROM master_perusahaan");
+		$kode = "";
+	  
+		if($query->num_rows() > 0){ 
+			foreach($query->result() as $k){
+				$tmp = ((int)$k->kode)+1;
+				$kode = sprintf("%07s", $tmp);
+			}
+		}else{
+		  $kode = "0000001";
+		}
+		$karakter = "P"; 
+		return $karakter.$kode;
+    }
+
+
     function cekdata($id_pesan)
 
     {
@@ -116,14 +141,7 @@ class M_pelatihan_perusahaan extends CI_Model
 
 
 
-    function tambahdata($array)
-
-    {
-
-        return $this->db->insert('pl_pesan',$array);
-
-    }
-
+   
 
 
     function editdata($id_pesan,$array)

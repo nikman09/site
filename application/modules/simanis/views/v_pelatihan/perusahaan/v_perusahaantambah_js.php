@@ -138,6 +138,9 @@ jQuery(function ($) {
 
         });
 
+        $('#komoditi_id').select2({
+});
+
 
         jQuery.extend(jQuery.validator.messages, {
         required: "Kolom Ini Harus Diisi.",

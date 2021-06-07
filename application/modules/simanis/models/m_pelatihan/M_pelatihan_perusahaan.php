@@ -35,6 +35,7 @@ class M_pelatihan_perusahaan extends CI_Model
 
         $this->db->select("master_kbli.*");
         $this->db->where("deleted_id",NULL);
+        
         return $this->db->get('master_kbli');
     }
 

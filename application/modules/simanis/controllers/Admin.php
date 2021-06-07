@@ -387,6 +387,8 @@ class Admin extends CI_Controller {
                 $file = $upload["raw_name"].$upload["file_ext"];
                 $array['foto']=$file;
 
+                
+
                 $exec = $this->m_admin_pengumuman->tambahdata($array);
                 if ($exec) redirect(base_url("simanis/admin/pengumuman?msg=1"));
                 else redirect(base_url("simanis/admin/pengumumantambah?msg=0"));

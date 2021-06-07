@@ -14,8 +14,12 @@ jQuery(function ($) {
     });
 
     $('.nilai').inputmask('Regex', {regex: "^[0-9]{1,20}(\\.\\d{1,2})?$"});
-
+    $('.select3').select2({
+        theme: "bootstrap",
+        });
+    
     $('#form').validate({ // initialize plugin
+        ignore: [],     
             highlight: function (label) {
                 $(label).closest('.form-group').removeClass('has-success').addClass('has-error');
                 $('.error').css({'font-size':'9px','margin-bottom':'0px'});
@@ -138,9 +142,7 @@ jQuery(function ($) {
 
         });
 
-        $('#komoditi_id').select2({
-});
-
+     
 
         jQuery.extend(jQuery.validator.messages, {
         required: "Kolom Ini Harus Diisi.",

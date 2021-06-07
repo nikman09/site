@@ -115,9 +115,9 @@
 		}	
 
 		.modal-open .ui-datepicker{z-index: 2000!important}
-
-
-
+		.select2-container--default .select2-selection--single{
+    background-color: #000;
+}
 	
 
 	</style>

@@ -809,7 +809,6 @@ class Simanis extends CI_Controller {
                 'izin_id'=>$this->input->post('izin_id'),
                 'kbli_id'=>$this->input->post('kbli_id'),
                 'komoditi_id'=>$this->input->post('komoditi_id'),
-                'produk_id'=>$this->input->post('produk_id'),
                 'telpon'=>$this->input->post('telpon'),
                 'fax'=>$this->input->post('fax'),
                 'email'=>$this->input->post('email'),
@@ -828,7 +827,7 @@ class Simanis extends CI_Controller {
 
             );
 
-            
+             
               $nmfile = "dokumen_".time();
               $config['upload_path'] = './assets/images/pelatihan/perusahaan/gambar';
               $config['allowed_types'] = 'jpg|jpeg|JPG|JPEG|PNG|png';
@@ -837,7 +836,7 @@ class Simanis extends CI_Controller {
               $this->load->library('upload', $config);
               $this->upload->do_upload("gambar");
               $upload = $this->upload->data();
-              $file = $nmfile;
+              $file = $nmfile.$upload["file_ext"];;
               $array['gambar']=$file;
 
               $nmfile = "dokumen_".time();
@@ -847,15 +846,14 @@ class Simanis extends CI_Controller {
               $this->upload->initialize($config); 
               $this->upload->do_upload("legalitas");
               $upload = $this->upload->data();
-              $file = $nmfile;
+              $file = $nmfile.$upload["file_ext"];;
               $array['legalitas']=$file;
 
-         
-
+           
               $ftp_server = "siikalsel.disperin.kalselprov.go.id";
               // name file in serverA that you want to store file in serverB
                 $file = './assets/images/pelatihan/perusahaan/gambar/'.$array['gambar'].'';
-                $remote_file = 'web/uploads/contoh/'.$array['gambar'].'';
+                $remote_file = 'web/uploads/'.$array['gambar'].'';
         
               // set up basic connection
               $conn_id = ftp_connect($ftp_server);
@@ -869,14 +867,29 @@ class Simanis extends CI_Controller {
                }
         
                $file = './assets/images/pelatihan/perusahaan/legalitas/'.$array['legalitas'].'';
-               $remote_file = 'web/uploads/contoh/'.$array['legalitas'].'';
+               $remote_file = 'web/uploads/'.$array['legalitas'].'';
                if (ftp_put($conn_id, $remote_file, $file, FTP_ASCII)) {
                 echo "successfully uploaded $file\n";
                } else {
                 echo "There was a problem while uploading $file\n";
                }
-        
+
                $exec = $this->m_pelatihan_perusahaan->tambahdata($array);
+               $recordID= $this->db->insert_id();
+               $produk = $this->input->post('produk_id');
+               $result = array();
+               foreach($produk AS $key => $val){
+                if($_POST['produk_id'][$key] != ''){
+                  $result[] = array(
+                    "perusahaan_id"  => $recordID,
+                    "produk_id"  => $_POST['produk_id'][$key]
+                  );
+                }
+              }
+              $this->db->insert_batch('master_perusahaan_produk', $result);
+      
+        
+              
             if ($exec) redirect(base_url("simanis/tambahperusahaan?msg=1"));
             else redirect(base_url("simanis/tambahperusahaan?msg=0"));
 

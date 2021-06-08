@@ -38,14 +38,20 @@
 
                   <tr>
 
-                        <th width="80px">Aksi</th>
+                      
 
                         <th width="20px">#</th>
 
-                        <th>Nama Data Pendukung</th>
+                        <th>Nama Perusahaan</th>
 
-                        <th>Dokumen/Bukti Pendukung</th>
-
+                        <th>Pemilik</th>
+                        <th>Kab/Kota</th>
+                        <th>Kecamatan</th>
+                        <th>KBLI</th>
+                        <th>Produk</th>
+                        <th>Laporan Tahunan</th>
+                        <th>Legalitas</th>
+                        <th width="80px">Aksi</th>
                     </tr>
 
                 </thead>
@@ -64,29 +70,23 @@
 
 							<tr>
 
-								<td>
-
-								<div>
-
-									<a href='#' class='btn btn-primary btn-xs edit' title='Edit' data-toggle='modal' id='".$row['id_berkas']."' data-target='#myModal2'><i class='fa fa-edit' id='".$row['id_berkas']."'></i></a>
-
-									<a href='#' class='btn btn-danger btn-xs hapus' title='Hapus' id='".$row['id_berkas']."'><i class='fa fa-trash-o'></i></a>
-
-                                </div>
-
+							
                                 <td>".++$i."</td>
 
 								</td>
 
-                                <td>".$row['nama']."</td>
-
+                                <td>".$row['perusahaan']."</td>
+                                <td>".$row['pemilik']."</td>
+                                <td>".$row['kota']."</td>
+                                <td>".$row['kecamatan']."</td>
+                                <td>".$row['kbli']."</td>
+                                <td><a href='".base_url()."assets/images/pelatihan/pendukung/".$row['legalitas']."' class='btn btn-default btn-sm btn-icon icon-left ' title='Edit'  id='".$row['id']."'target='_blank' ><i class='fa fa-eye' id='".$row['id']."'></i> Produk</a></td>
+                                <td></td>
+                        
                                 <td>";
 
-                                if ($row['file']!="") {
-
-
-
-									echo "<a href='".base_url()."assets/images/pelatihan/pendukung/".$row['file']."' class='btn btn-default btn-sm btn-icon icon-left ' title='Edit'  id='".$row['id_berkas']."'target='_blank' ><i class='fa fa-eye' id='".$row['id_berkas']."'></i> View</a>";
+                                if ($row['legalitas']!="") {
+									echo "<a href='".base_url()."assets/images/pelatihan/pendukung/".$row['legalitas']."' class='btn btn-default btn-sm btn-icon icon-left ' title='Edit'  id='".$row['id']."'target='_blank' ><i class='fa fa-eye' id='".$row['id']."'></i> View</a>";
 
                                 } else {
 
@@ -95,7 +95,16 @@
                                 }
 
                                 echo "</td>
+                                <td>
 
+								<div>
+
+									<a href='#' class='btn btn-primary btn-xs edit' title='Edit' data-toggle='modal' id='".$row['id']."' data-target='#myModal2'><i class='fa fa-edit' id='".$row['id']."'></i></a>
+
+									<a href='#' class='btn btn-danger btn-xs hapus' title='Hapus' id='".$row['id']."'><i class='fa fa-trash-o'></i></a>
+
+                                </div>
+                                </td>
 							</tr>
 
 						";

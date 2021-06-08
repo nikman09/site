@@ -822,7 +822,7 @@ class Simanis extends CI_Controller {
                 'bukalapak'=>$this->input->post('bukalapak'),
                 'shopee'=>$this->input->post('shopee'),
                 'created_id'=>25,
-                'created_at'=>$this->input->post('shopee'),
+                'created_at'=>date('Y-m-d H:i:s'),
                 'simanis_id'=>  $id_akun,
 
             );
@@ -961,7 +961,7 @@ class Simanis extends CI_Controller {
     public function perusahaan()
     {   
         $variabel['csrf'] = csrf();
-        $this->load->model("m_pelatihan/m_pelatihan_berkas");
+        $this->load->model("m_pelatihan/m_pelatihan_perusahaan");
         $id_akun = $this->session->userdata("pelatihan_idakun");
         if ($this->input->post()) {
           $id_akun = $this->session->userdata("pelatihan_idakun");
@@ -985,7 +985,7 @@ class Simanis extends CI_Controller {
                  redirect(base_url("simanis/pendukung?id=".$id_dokumen."&msg=1"));
                 }   else redirect(base_url("simanis/pendukung?msg=0"));
           } else {
-            $exec = $this->m_pelatihan_berkas->lihatdataakun($id_akun);
+            $exec = $this->m_pelatihan_perusahaan->lihatdataakun($id_akun);
             $variabel['data'] = $exec;
             $this->layout->renderpel('v_pelatihan/perusahaan/v_perusahaan',$variabel,'v_pelatihan/perusahaan/v_perusahaan_js');
         

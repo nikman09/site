@@ -93,6 +93,17 @@ class M_pelatihan_perusahaan extends CI_Model
 
     }
 
+    function lihatdataakun($id_akun)
+
+    {
+        $this->db->select("master_perusahaan.*,master_kota.*,master_kbli.*,master_kecamatan.*")
+        ->join("master_kota","master_kota.id=master_perusahaan.kota_id","inner")
+        ->join("master_kbli","master_kbli.id=master_perusahaan.kbli_id","inner")
+        ->join("master_kecamatan","master_kecamatan.id=master_perusahaan.kecamatan_id","inner");
+        $this->db->where("master_perusahaan.simanis_id",$id_akun);
+
+        return $this->db->get('master_perusahaan');
+    }
 
 
     function lihatdata()

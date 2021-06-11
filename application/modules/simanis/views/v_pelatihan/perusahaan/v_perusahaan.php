@@ -24,7 +24,7 @@
 
 						<hr/>
 
-        <?php pesan_get2('msg',"Berhasil Menambah Data Pendukung","Berhasil Mengedit Data Pendukung","Berhasil Menghapus Data Pendukung") ?>
+        <?php pesan_get2('msg',"Berhasil Menambah Data Perusahaan","Berhasil Mengedit Data Perusahaan","Berhasil Menghapus Data Perusahaan") ?>
 
         <a href="<?php echo base_url("simanis/tambahperusahaan") ?>" style="margin: 5px 0 10px 0px" class="btn  btn-primary tambah   btn-icon icon-left" >
 

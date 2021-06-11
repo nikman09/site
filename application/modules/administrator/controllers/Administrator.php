@@ -445,8 +445,6 @@ class Administrator extends CI_Controller {
                 $upload = $this->upload->data();
                 $foto = $upload["raw_name"].$upload["file_ext"];
                 $array['foto']=$foto;
-
-                
                 $config['image_library'] = 'gd2';
                 $config['source_image'] = './assets/images/kegiatan/'.$upload["raw_name"].$upload["file_ext"];
                 $config['create_thumb'] = FALSE;
@@ -456,7 +454,6 @@ class Administrator extends CI_Controller {
                 $config['new_image'] = './assets/images/kegiatan/thumb/'.$upload["raw_name"].$upload["file_ext"];
                 $this->load->library('image_lib', $config);
                 $this->image_lib->resize();
-
                 $query2 = $this->m_kegiatan->lihatdatasatu($id_kegiatan);
                 $row2 = $query2->row();
                 $berkas1temp = $row2->foto;

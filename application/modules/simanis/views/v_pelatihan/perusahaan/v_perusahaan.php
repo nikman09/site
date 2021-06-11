@@ -48,7 +48,7 @@
                         <th>Kab/Kota</th>
                         <th>Kecamatan</th>
                         <th>KBLI</th>
-                        <th>Produk</th>
+                        <th>Jumlah Produk</th>
                         <th>Laporan Tahunan</th>
                         <th>Legalitas</th>
                         <th width="80px">Aksi</th>
@@ -80,13 +80,13 @@
                                 <td>".$row['kota']."</td>
                                 <td>".$row['kecamatan']."</td>
                                 <td>".$row['kbli']."</td>
-                                <td><a href='".base_url()."assets/images/pelatihan/pendukung/".$row['legalitas']."' class='btn btn-default btn-sm btn-icon icon-left ' title='Edit'  id='".$row['id']."'target='_blank' ><i class='fa fa-eye' id='".$row['id']."'></i> Produk</a></td>
-                                <td></td>
+                                <td><a href='".base_url()."assets/images/pelatihan/pendukung/".$row['legalitas']."' class='btn btn-success btn-sm btn-icon icon-left ' title='Edit'  id='".$row['id']."'target='_blank' ><i style='font-style: normal;'>01</i> Produk</a></td>
+                                <td><a href='".base_url()."assets/images/pelatihan/pendukung/".$row['legalitas']."' class='btn btn-success btn-sm btn-icon icon-left ' title='Edit'  id='".$row['id']."'target='_blank' ><i style='font-style: normal;'>01</i>Laporan</a></td>
                         
                                 <td>";
 
                                 if ($row['legalitas']!="") {
-									echo "<a href='".base_url()."assets/images/pelatihan/pendukung/".$row['legalitas']."' class='btn btn-default btn-sm btn-icon icon-left ' title='Edit'  id='".$row['id']."'target='_blank' ><i class='fa fa-eye' id='".$row['id']."'></i> View</a>";
+									echo "<a href='".base_url()."assets/images/pelatihan/pendukung/".$row['legalitas']."' class='btn btn-default btn-sm btn-icon icon-left ' title='Edit'  id='".$row['id_perusahaan']."'target='_blank' ><i class='fa fa-eye' id='".$row['id_perusahaan']."'></i> View</a>";
 
                                 } else {
 
@@ -99,9 +99,9 @@
 
 								<div>
 
-									<a href='#' class='btn btn-primary btn-xs edit' title='Edit' data-toggle='modal' id='".$row['id']."' data-target='#myModal2'><i class='fa fa-edit' id='".$row['id']."'></i></a>
+									<a href='#' class='btn btn-primary btn-xs edit' title='Edit' data-toggle='modal' id='".$row['id_perusahaan']."' data-target='#myModal2'><i class='fa fa-edit' id='".$row['id_perusahaan']."'></i></a>
 
-									<a href='#' class='btn btn-danger btn-xs hapus' title='Hapus' id='".$row['id']."'><i class='fa fa-trash-o'></i></a>
+									<a href='#' class='btn btn-danger btn-xs hapus' title='Hapus' id='".$row['id_perusahaan']."'><i class='fa fa-trash-o'></i></a>
 
                                 </div>
                                 </td>

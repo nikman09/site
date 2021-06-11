@@ -992,6 +992,26 @@ class Simanis extends CI_Controller {
           }
     }
 
+    public function perusahaanhapus()
+    {
+      $this->load->model("m_pelatihan/m_pelatihan_perusahaan");
+        $id_perusahaan = $this->input->get("id");
+        $query2 = $this->m_pelatihan_perusahaan->lihatdatasatuperusahaan($id_perusahaan);
+        $row2 = $query2->row();
+        $legalitas = $row2->legalitas;
+        $gambar = $row2->gambar;
+        $path2 ='./assets/images/pelatihan/perusahaan/legalitas/'.$legalitas;
+        $path1 ='./assets/images/pelatihan/perusahaan/gambar/'.$gambar;
+        if(is_file($path1)) {
+            unlink($path1);
+        }
+        if(is_file($path2)) {
+          unlink($path2);
+      }
+        $exec = $this->m_pelatihan_perusahaan->hapus($id_perusahaan);
+        redirect(base_url()."simanis/perusahaan?msg=2");
+    }
+
     
     public function pendukunghapus()
     {

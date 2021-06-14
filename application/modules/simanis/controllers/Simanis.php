@@ -864,6 +864,7 @@ class Simanis extends CI_Controller {
                 echo "successfully uploaded $file\n";
                } else {
                 echo "There was a problem while uploading $file\n";
+                $array['gambar']="";
                }
         
                $file = './assets/images/pelatihan/perusahaan/legalitas/'.$array['legalitas'].'';
@@ -872,6 +873,8 @@ class Simanis extends CI_Controller {
                 echo "successfully uploaded $file\n";
                } else {
                 echo "There was a problem while uploading $file\n";
+                $array['legalitas']="";
+
                }
 
                $exec = $this->m_pelatihan_perusahaan->tambahdata($array);
@@ -990,6 +993,19 @@ class Simanis extends CI_Controller {
             $this->layout->renderpel('v_pelatihan/perusahaan/v_perusahaan',$variabel,'v_pelatihan/perusahaan/v_perusahaan_js');
         
           }
+    }
+
+    public function lihatperusahaan()
+    {   
+        $variabel['csrf'] = csrf();
+        $this->load->model("m_pelatihan/m_pelatihan_perusahaan");
+        $id_akun = $this->session->userdata("pelatihan_idakun");
+        $id_perusahaan=$this->input->get("id");
+        $exec = $this->m_pelatihan_perusahaan->lihatdataakunsatu($id_akun,$id_perusahaan);
+        $variabel['data'] = $exec->row_array();
+        $variabel['produk'] = $this->m_pelatihan_perusahaan->lihatproduk($id_perusahaan);
+        $this->layout->renderpel('v_pelatihan/perusahaan/v_perusahaanlihat',$variabel,'v_pelatihan/perusahaan/v_perusahaan_js');
+      
     }
 
     public function perusahaanhapus()

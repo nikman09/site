@@ -51,7 +51,7 @@
                         <th>Jumlah Produk</th>
                         <th>Laporan Tahunan</th>
                         <th>Legalitas</th>
-                        <th width="80px">Aksi</th>
+                        <th width="100px">Aksi</th>
                     </tr>
 
                 </thead>
@@ -98,6 +98,7 @@
                                 <td>
 
 								<div>
+                                <a href='".base_url("simanis/lihatperusahaan?id=".$row['id_perusahaan']."")."' class='btn btn-info btn-xs lihat' title='Edit'  id='".$row['id_perusahaan']."' ><i class='fa fa-eye' id='".$row['id_perusahaan']."'></i></a>
 
 									<a href='#' class='btn btn-primary btn-xs edit' title='Edit' data-toggle='modal' id='".$row['id_perusahaan']."' data-target='#myModal2'><i class='fa fa-edit' id='".$row['id_perusahaan']."'></i></a>
 

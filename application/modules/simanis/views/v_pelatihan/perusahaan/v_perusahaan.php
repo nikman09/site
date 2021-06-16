@@ -37,13 +37,8 @@
                 <thead>
 
                   <tr>
-
-                      
-
                         <th width="20px">#</th>
-
                         <th>Nama Perusahaan</th>
-
                         <th>Pemilik</th>
                         <th>Kab/Kota</th>
                         <th>Kecamatan</th>
@@ -53,11 +48,8 @@
                         <th>Legalitas</th>
                         <th width="80px">Aksi</th>
                     </tr>
-
                 </thead>
-
                 <tbody>
-
                     <?php
 
                     $i=0;
@@ -120,11 +112,6 @@
     </div>
 
 </div>
-
-
-
-
-
 
 
 <div class="modal fade" id="myModal">

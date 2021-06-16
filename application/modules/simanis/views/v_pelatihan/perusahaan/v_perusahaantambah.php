@@ -193,7 +193,7 @@
 								</div>		
 								<div class="form-group">
 									<label for="field-1" class="control-label">Longitude</label>
-									<input type="text" class="form-control" id="latitude" name="longitude" placeholder="Masukkan Koordinat longitude"  value="">
+									<input type="text" class="form-control" id="longitude" name="longitude" placeholder="Masukkan Koordinat longitude"  value="">
 								</div>		
 								<div class="form-group">
 									<label for="field-1" class="control-label">Whatsapp</label>

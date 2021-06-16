@@ -105,6 +105,30 @@ class M_pelatihan_perusahaan extends CI_Model
         return $this->db->get('master_perusahaan');
     }
 
+    function lihatdataakunsatu($id_akun,$id_perusahaan)
+
+    {
+        $this->db->select("master_perusahaan.*,master_perusahaan.id as  id_perusahaan ,master_kota.*,master_kbli.*,master_kecamatan.*,master_kelurahan.*,master_izin.*,master_komoditi.*")
+        ->join("master_kota","master_kota.id=master_perusahaan.kota_id","inner")
+        ->join("master_kbli","master_kbli.id=master_perusahaan.kbli_id","inner")
+        ->join("master_kelurahan","master_kelurahan.id=master_perusahaan.kelurahan_id","inner")
+        ->join("master_izin","master_izin.id=master_perusahaan.izin_id","inner")
+        ->join("master_komoditi","master_komoditi.id=master_perusahaan.komoditi_id","inner")
+        ->join("master_kecamatan","master_kecamatan.id=master_perusahaan.kecamatan_id","inner");
+        $this->db->where("master_perusahaan.simanis_id",$id_akun);
+
+        $this->db->where("master_perusahaan.id",$id_perusahaan);
+        return $this->db->get('master_perusahaan');
+    }
+
+    function lihatproduk($id_perusahaan)
+    {
+        $this->db->select("master_perusahaan_produk.*,master_produk.*")
+        ->join("master_produk","master_produk.id=master_perusahaan_produk.produk_id","inner");
+        $this->db->where("master_perusahaan_produk.perusahaan_id",$id_perusahaan);
+        return $this->db->get('master_perusahaan_produk');
+    }
+
 
     function lihatdata()
 

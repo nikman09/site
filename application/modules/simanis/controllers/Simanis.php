@@ -876,7 +876,7 @@ class Simanis extends CI_Controller {
                 $array['legalitas']="";
 
                }
-
+              
                $exec = $this->m_pelatihan_perusahaan->tambahdata($array);
                $recordID= $this->db->insert_id();
                $produk = $this->input->post('produk_id');
@@ -890,11 +890,8 @@ class Simanis extends CI_Controller {
                 }
               }
               $this->db->insert_batch('master_perusahaan_produk', $result);
-      
-        
-              
-            if ($exec) redirect(base_url("simanis/tambahperusahaan?msg=1"));
-            else redirect(base_url("simanis/tambahperusahaan?msg=0"));
+              if ($exec) redirect(base_url("simanis/tambahperusahaan?msg=1"));
+              else redirect(base_url("simanis/tambahperusahaan?msg=0"));
 
         } else {
             $id_akun = $this->session->userdata("pelatihan_idakun");
@@ -1005,6 +1002,111 @@ class Simanis extends CI_Controller {
         $variabel['data'] = $exec->row_array();
         $variabel['produk'] = $this->m_pelatihan_perusahaan->lihatproduk($id_perusahaan);
         $this->layout->renderpel('v_pelatihan/perusahaan/v_perusahaanlihat',$variabel,'v_pelatihan/perusahaan/v_perusahaan_js');
+      
+    }
+
+
+    
+    public function editperusahaan()
+    {   
+        cekloginpelatihan();
+        $variabel['csrf'] = csrf();
+        $this->load->model("m_pelatihan/m_pelatihan_perusahaan");
+        $this->load->model("m_pelatihan/m_pelatihan_akun");
+        $id_akun = $this->session->userdata("pelatihan_idakun");
+        if ($this->input->post()) {
+            $id_akun = $this->session->userdata("pelatihan_idakun");
+            $array=array(
+                'unama'=> $this->input->post('unama'),
+                'upemilik'=> $this->input->post('upemilik'),
+                'ujalan'=>$this->input->post('ujalan'),
+                'udesa'=>$this->input->post('udesa'),
+                'ukecamatan'=>$this->input->post('ukecamatan'),
+                'ukabkota'=>$this->input->post('ukabkota'),
+                'utelp'=>$this->input->post('utelp'),
+                'ukomoditi'=>$this->input->post('ukomoditi'),
+                'ubentuk'=>$this->input->post('ubentuk'),
+                'utenagakerja'=>$this->input->post('utenagakerja'),
+                'uproduk'=>$this->input->post('uproduk'),
+                'umerek'=>$this->input->post('umerek'),
+                'uinvestasi'=>$this->input->post('uinvestasi'),
+                'ujumlahproduksi'=>$this->input->post('ujumlahproduksi'),
+                'usatuanproduksi'=>$this->input->post('usatuanproduksi'),
+                'unilaiproduksi'=>$this->input->post('unilaiproduksi'),
+                'unilaibahanbaku'=>$this->input->post('unilaibahanbaku'),
+                'upemasaran'=>$this->input->post('upemasaran'),
+                'ufotoproduk'=>$this->input->post('ufotoproduk')
+            );
+            $config['upload_path'] = './assets/images/pelatihan/produk';
+            $config['allowed_types'] = 'jpg|jpeg|JPG|JPEG|PNG|png';
+            $this->load->library('upload', $config);
+            if ($this->upload->do_upload("ufotoproduk"))
+            {
+                $upload = $this->upload->data();
+                $ufotoproduk = $upload["raw_name"].$upload["file_ext"];
+                $array['ufotoproduk']=$ufotoproduk;
+                $config['image_library'] = 'gd2';
+                $config['source_image'] = './assets/images/pelatihan/produk/'.$upload["raw_name"].$upload["file_ext"];
+                $config['create_thumb'] = FALSE;
+                $config['maintain_ratio'] = TRUE;
+                $config['width']         = 500;
+                $config['height']       = 400;
+                // $config['new_image'] = './assets/images/pelatihan/produk/'.$upload["raw_name"].$upload["file_ext"];
+                $this->load->library('image_lib', $config);
+                $this->image_lib->resize();
+
+                $query2 = $this->m_pelatihan_akun->lihatdatasatu($id_akun);
+                $row2 = $query2->row();
+                $berkas1temp = $row2->ufotoproduk;
+                $path1 ='./assets/images/pelatihan/produk/'.$berkas1temp.'';
+                // $path2 ='./assets/images/pelatihan/produk/thumb/'.$berkas1temp.'';
+                if(is_file($path1)) {
+                    unlink($path1);
+                    // unlink($path2); 
+                }
+               
+            } 
+                else if ($this->input->post('ufotoproduk')=="") 
+            {
+              
+                $query2 = $this->m_pelatihan_akun->lihatdatasatu($id_akun);
+                $row2 = $query2->row();
+                $berkas1temp = $row2->ufotoproduk;
+                $path1 ='./assets/images/pelatihan/produk/'.$berkas1temp.'';
+                // $path2 ='./assets/images/pelatihan/produk/thumb/'.$berkas1temp.'';
+                if(is_file($path1)) {
+                    unlink($path1); 
+                    // unlink($path2); 
+                }
+                $array['ufotoproduk']="";
+            }
+            
+           
+            $exec = $this->m_pelatihan_akun->editdata($id_akun,$array);
+            if ($exec) redirect(base_url("simanis/datausaha?msg=1"));
+            else redirect(base_url("simanis/datausaha?msg=0"));
+
+        } else {
+
+          $id_perusahaan=$this->input->get("id");
+          $exec = $this->m_pelatihan_perusahaan->lihatdataakunsatu($id_akun,$id_perusahaan);
+          if ($exec->num_rows()>0){
+              $variabel['data'] = $exec ->row_array();
+              $variabel['masterbadan'] = $this->m_pelatihan_perusahaan->lihatmasterbadan();
+              $variabel['masterkota'] = $this->m_pelatihan_perusahaan->lihatmasterkota();
+              $variabel['masterkecamatan'] = $this->m_pelatihan_perusahaan->getmasterkecamatan($variabel['data']['kota_id']);
+              $variabel['masterkelurahan'] = $this->m_pelatihan_perusahaan->getmasterkelurahan($variabel['data']['kecamatan_id']);
+              $variabel['masterizin'] = $this->m_pelatihan_perusahaan->lihatmasterizin();
+              $variabel['masterkbli'] = $this->m_pelatihan_perusahaan->lihatmasterkbli();
+              $variabel['masterkomoditi'] = $this->m_pelatihan_perusahaan->lihatmasterkomoditi();
+              $variabel['masterproduk'] = $this->m_pelatihan_perusahaan->lihatmasterproduk();
+              $variabel['produk'] = $this->m_pelatihan_perusahaan->lihatproduk($id_perusahaan);
+              $this->layout->renderpel('v_pelatihan/perusahaan/v_perusahaanedit',$variabel,'v_pelatihan/perusahaan/v_perusahaanedit_js');
+          } else {
+              redirect(base_url("simanis/datausaha"));
+          }
+           
+        }
       
     }
 

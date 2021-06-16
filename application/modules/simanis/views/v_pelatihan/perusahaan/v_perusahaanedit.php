@@ -55,23 +55,23 @@
 								
 								<div class="form-group">
 									<label for="field-1" class="control-label">Nama Usaha / Perusahaan *</label>
-									<input type="text" class="form-control" id="perusahaan" name="perusahaan" placeholder="Masukkan Nama Usaha / Perusahaan"  value="">
+									<input type="text" class="form-control" id="perusahaan" name="perusahaan" placeholder="Masukkan Nama Usaha / Perusahaan"  value="<?= $data['perusahaan'] ?>">
 								</div>	
 								<div class="form-group">
 									<label for="field-1" class="control-label">NPWP Perusahaan </label>
-									<input type="text" class="form-control" id="npwp" name="npwp" placeholder="Masukkan NPWP"  value="">
+									<input type="text" class="form-control" id="npwp" name="npwp" placeholder="Masukkan NPWP"  value="<?= $data['npwp'] ?>">
 								</div>	
 								<div class="form-group">
 									<label for="field-1" class="control-label">Nomor Daftar Industri </label>
-									<input type="text" class="form-control" id="ndi" name="ndi" placeholder=" Masukkan Nomor Daftar Industri"  value="">
+									<input type="text" class="form-control" id="ndi" name="ndi" placeholder=" Masukkan Nomor Daftar Industri"  value="<?= $data['ndi'] ?>">
 								</div>	
 								<div class="form-group">
 									<label for="field-1" class="control-label">Bentuk Badan Usaha * </label>
 									<select class="form-control select3" name="badan_id" id="badan_id" >
-										<option value=""  selected>.:Pilih Bentuk Badan usaha:.</option>
+										<option value="" >.:Pilih Bentuk Badan usaha:.</option>
 										<?php
 											foreach($masterbadan->result_array() as $row) {
-												echo "<option value='".$row['id']."' >".$row['badan']."</option>";
+												echo "<option value='".$row['id']."' ".($data['badan_id']==$row['id']?"selected":"")." >".$row['badan']."</option>";
 
 											}
 										?>
@@ -79,19 +79,19 @@
 								</div>	
 								<div class="form-group">
 									<label for="field-1" class="control-label">Nama Pemilik * </label>
-									<input type="text" class="form-control" id="pemilik" name="pemilik" placeholder=" Masukkan Nama Pemilik"  value="">
+									<input type="text" class="form-control" id="pemilik" name="pemilik" placeholder=" Masukkan Nama Pemilik"  value="<?= $data['pemilik'] ?>">
 								</div>
 								<div class="form-group">
 									<label for="field-1" class="control-label">Alamat * </label>
-									<input type="text" class="form-control" id="alamat" name="alamat" placeholder=" Masukkan Nama Jalan, Nomor, RT/RW"  value="">
+									<input type="text" class="form-control" id="alamat" name="alamat" placeholder=" Masukkan Nama Jalan, Nomor, RT/RW"  value="<?= $data['alamat'] ?>">
 								</div>
 								<div class="form-group">
 									<label for="field-1" class="control-label">Kabupaten/Kota * </label>
 									<select class="form-control select3" name="kota_id" id="kota_id" >
-										<option value=""  selected>.:Pilih Kabupaten/Kota:.</option>
+										<option value="" >.:Pilih Kabupaten/Kota:.</option>
 										<?php
 											foreach($masterkota->result_array() as $row) {
-												echo "<option value='".$row['id']."' >".$row['kota']."</option>";
+												echo "<option value='".$row['id']."'  ".($data['kota_id']==$row['id']?"selected":"")." >".$row['kota']."</option>";
 
 											}
 										?>
@@ -100,35 +100,47 @@
 								<div class="form-group">
 									<label for="field-1" class="control-label">Kecamatan * </label>
 									<select class="form-control select3" name="kecamatan_id" id="kecamatan_id" placeholder="asd"  >
-									<option value="" selected>.:Pilih Kecamatan:.</option>
+									<option value="">.:Pilih Kecamatan:.</option>
+									<?php
+											foreach($masterkecamatan->result_array() as $row) {
+												echo "<option value='".$row['id']."'  ".($data['kecamatan_id']==$row['id']?"selected":"")." >".$row['kecamatan']."</option>";
+
+											}
+										?>
 									</select>
 								</div>	
 
 								<div class="form-group">
 									<label for="field-1" class="control-label">Kelurahan * </label>
 									<select class="form-control select3" name="kelurahan_id" id="kelurahan_id" >
-									<option value=""  selected>.:Pilih Kelurahan:.</option>
+									<option value="" >.:Pilih Kelurahan:.</option>
+									<?php
+											foreach($masterkelurahan->result_array() as $row) {
+												echo "<option value='".$row['id']."'  ".($data['kelurahan_id']==$row['id']?"selected":"")." >".$row['kelurahan']."</option>";
+
+											}
+										?>
 									</select>
 								</div>
 								<div class="form-group">
 									<label for="field-1" class="control-label">Kodepos</label>
-									<input type="text" class="form-control nilai" id="kodepos" name="kodepos" placeholder="Masukkan Kodepos"  value="">
+									<input type="text" class="form-control nilai" id="kodepos" name="kodepos" placeholder="Masukkan Kodepos"  value="<?= $data['kodepos'] ?>">
 								</div>	
 								<div class="form-group">
 									<label for="field-1" class="control-label">Telepon</label>
-									<input type="text" class="form-control nilai" id="telpon" name="telpon" placeholder="Masukkan Nomor Telepon (ex. 0811777777)"  value="">
+									<input type="text" class="form-control nilai" id="telpon" name="telpon" placeholder="Masukkan Nomor Telepon (ex. 0811777777)"  value="<?= $data['telpon'] ?>">
 								</div>	
 								<div class="form-group">
 									<label for="field-1" class="control-label">Fax</label>
-									<input type="text" class="form-control nilai" id="fax" name="fax" placeholder="Masukkan Nomor Fax (ex. 0811777777)"  value="">
+									<input type="text" class="form-control nilai" id="fax" name="fax" placeholder="Masukkan Nomor Fax (ex. 0811777777)"  value="<?= $data['fax'] ?>">
 								</div>
 								<div class="form-group">
 									<label for="field-1" class="control-label">Email</label>
-									<input type="text" class="form-control" id="email" name="email" placeholder="Masukkan Email "  value="">
+									<input type="text" class="form-control" id="email" name="email" placeholder="Masukkan Email "  value="<?= $data['email'] ?>">
 								</div>	
 								<div class="form-group">
 									<label for="field-1" class="control-label">Website</label>
-									<input type="text" class="form-control" id="website" name="website" placeholder="Masukkan Website"  value="">
+									<input type="text" class="form-control" id="website" name="website" placeholder="Masukkan Website"  value="<?= $data['website'] ?>">
 								</div>	
 									
 						</div>
@@ -143,7 +155,7 @@
 										
 										<?php
 											foreach($masterizin->result_array() as $row) {
-												echo "<option value='".$row['id']."' >".$row['izin']."</option>";
+												echo "<option value='".$row['id']."'   ".($data['izin_id']==$row['id']?"selected":"")." >".$row['izin']."</option>";
 
 											}
 										?>
@@ -155,7 +167,7 @@
 										<option value="" selected>.:Pilih KBLI:.</option>
 										<?php
 											foreach($masterkbli->result_array() as $row) {
-												echo "<option value='".$row['id']."' >".$row['kode']."-".$row['kbli']."</option>";
+												echo "<option value='".$row['id']."'   ".($data['kbli_id']==$row['id']?"selected":"")." >".$row['kode']."-".$row['kbli']."</option>";
 
 											}
 										?>
@@ -167,7 +179,7 @@
 										<option value=""  selected>.:Pilih Komoditi:.</option>
 										<?php
 											foreach($masterkomoditi->result_array() as $row) {
-												echo "<option value='".$row['id']."' >".$row['komoditi']."</option>";
+												echo "<option value='".$row['id']."'   ".($data['komoditi_id']==$row['id']?"selected":"")." >".$row['komoditi']."</option>";
 
 											}
 										?>
@@ -179,7 +191,12 @@
 										
 										<?php
 											foreach($masterproduk->result_array() as $row) {
-												echo "<option value='".$row['id']."' >".$row['produk']."</option>";
+												echo "<option value='".$row['id']."'";
+												foreach($produk->result_array() as $row2) {
+													echo $row['id']==$row2['produk_id']?"selected":"";
+	
+												}
+												echo ">".$row['produk']."</option>";
 
 											}
 										?>
@@ -187,35 +204,35 @@
 								</div>	
 							<div class="form-group">
 									<label for="field-1" class="control-label">Latitude</label>
-									<input type="text" class="form-control" id="latitude" name="latitude" placeholder="Masukkan Koordinat Latitude"  value="">
+									<input type="text" class="form-control" id="latitude" name="latitude" placeholder="Masukkan Koordinat Latitude"  value="<?= $data['latitude'] ?>">
 								</div>		
 								<div class="form-group">
 									<label for="field-1" class="control-label">Longitude</label>
-									<input type="text" class="form-control" id="latitude" name="longitude" placeholder="Masukkan Koordinat longitude"  value="">
+									<input type="text" class="form-control" id="latitude" name="longitude" placeholder="Masukkan Koordinat longitude"  value="<?= $data['longitude'] ?>">
 								</div>		
 								<div class="form-group">
 									<label for="field-1" class="control-label">Whatsapp</label>
-									<input type="text" class="form-control nilai" id="wa" name="wa" placeholder="Masukkan Nomor Whatsapp"  value="">
+									<input type="text" class="form-control nilai" id="wa" name="wa" placeholder="Masukkan Nomor Whatsapp"  value="<?= $data['wa'] ?>">
 								</div>	
 								<div class="form-group">
 									<label for="field-1" class="control-label">Facebook</label>
-									<input type="text" class="form-control" id="fb" name="fb" placeholder="Masukkan ID Facebook"  value="">
+									<input type="text" class="form-control" id="fb" name="fb" placeholder="Masukkan ID Facebook"  value="<?= $data['fb'] ?>">
 								</div>			
 								<div class="form-group">
 									<label for="field-1" class="control-label">Instagram</label>
-									<input type="text" class="form-control" id="ig" name="ig" placeholder="Masukkan Instagram"  value="">
+									<input type="text" class="form-control" id="ig" name="ig" placeholder="Masukkan Instagram"  value="<?= $data['ig'] ?>">
 								</div>	
 								<div class="form-group">
 									<label for="field-1" class="control-label">Tokopedia</label>
-									<input type="text" class="form-control" id="tokped" name="tokped" placeholder="Masukkan ID Tokopedia"  value="">
+									<input type="text" class="form-control" id="tokped" name="tokped" placeholder="Masukkan ID Tokopedia"  value="<?= $data['tokped'] ?>">
 								</div>
 								<div class="form-group">
 									<label for="field-1" class="control-label">Bukalapak</label>
-									<input type="text" class="form-control" id="bukalapak" name="bukalapak" placeholder="Masukkan ID Bukalapak"  value="">
+									<input type="text" class="form-control" id="bukalapak" name="bukalapak" placeholder="Masukkan ID Bukalapak"  value="<?= $data['bukalapak'] ?>">
 								</div>	
 								<div class="form-group">
 									<label for="field-1" class="control-label">Shopee</label>
-									<input type="text" class="form-control" id="shopee" name="shopee" placeholder="Masukkan ID Shopee"  value="">
+									<input type="text" class="form-control" id="shopee" name="shopee" placeholder="Masukkan ID Shopee"  value="<?= $data['shopee'] ?>">
 								</div>	
 							
 								<div class="form-group">

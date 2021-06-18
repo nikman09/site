@@ -1016,76 +1016,181 @@ class Simanis extends CI_Controller {
         $id_akun = $this->session->userdata("pelatihan_idakun");
         if ($this->input->post()) {
             $id_akun = $this->session->userdata("pelatihan_idakun");
+            $id_perusahaan =  $this->input->post('id_perusahaan');
             $array=array(
-                'unama'=> $this->input->post('unama'),
-                'upemilik'=> $this->input->post('upemilik'),
-                'ujalan'=>$this->input->post('ujalan'),
-                'udesa'=>$this->input->post('udesa'),
-                'ukecamatan'=>$this->input->post('ukecamatan'),
-                'ukabkota'=>$this->input->post('ukabkota'),
-                'utelp'=>$this->input->post('utelp'),
-                'ukomoditi'=>$this->input->post('ukomoditi'),
-                'ubentuk'=>$this->input->post('ubentuk'),
-                'utenagakerja'=>$this->input->post('utenagakerja'),
-                'uproduk'=>$this->input->post('uproduk'),
-                'umerek'=>$this->input->post('umerek'),
-                'uinvestasi'=>$this->input->post('uinvestasi'),
-                'ujumlahproduksi'=>$this->input->post('ujumlahproduksi'),
-                'usatuanproduksi'=>$this->input->post('usatuanproduksi'),
-                'unilaiproduksi'=>$this->input->post('unilaiproduksi'),
-                'unilaibahanbaku'=>$this->input->post('unilaibahanbaku'),
-                'upemasaran'=>$this->input->post('upemasaran'),
-                'ufotoproduk'=>$this->input->post('ufotoproduk')
-            );
-            $config['upload_path'] = './assets/images/pelatihan/produk';
-            $config['allowed_types'] = 'jpg|jpeg|JPG|JPEG|PNG|png';
-            $this->load->library('upload', $config);
-            if ($this->upload->do_upload("ufotoproduk"))
-            {
-                $upload = $this->upload->data();
-                $ufotoproduk = $upload["raw_name"].$upload["file_ext"];
-                $array['ufotoproduk']=$ufotoproduk;
-                $config['image_library'] = 'gd2';
-                $config['source_image'] = './assets/images/pelatihan/produk/'.$upload["raw_name"].$upload["file_ext"];
-                $config['create_thumb'] = FALSE;
-                $config['maintain_ratio'] = TRUE;
-                $config['width']         = 500;
-                $config['height']       = 400;
-                // $config['new_image'] = './assets/images/pelatihan/produk/'.$upload["raw_name"].$upload["file_ext"];
-                $this->load->library('image_lib', $config);
-                $this->image_lib->resize();
+              'kode' =>$this->m_pelatihan_perusahaan->get_kode(),
+              'perusahaan'=> $this->input->post('perusahaan'),
+              'npwp'=> $this->input->post('npwp'),
+              'ndi'=>$this->input->post('ndi'),
+              'badan_id'=>$this->input->post('badan_id'),
+              'pemilik'=>$this->input->post('pemilik'),
+              'alamat'=>$this->input->post('alamat'),
+              'provinsi_id'=>63,
+              'kota_id'=>$this->input->post('kota_id'),
+              'kecamatan_id'=>$this->input->post('kecamatan_id'),
+              'kelurahan_id'=>$this->input->post('kelurahan_id'),
+              'kodepos'=>$this->input->post('kodepos'),
+              'izin_id'=>$this->input->post('izin_id'),
+              'kbli_id'=>$this->input->post('kbli_id'),
+              'komoditi_id'=>$this->input->post('komoditi_id'),
+              'telpon'=>$this->input->post('telpon'),
+              'fax'=>$this->input->post('fax'),
+              'email'=>$this->input->post('email'),
+              'website'=>$this->input->post('website'),
+              'latitude'=>$this->input->post('latitude'),
+              'longitude'=>$this->input->post('longitude'),
+              'wa'=>$this->input->post('wa'),
+              'fb'=>$this->input->post('fb'),
+              'ig'=>$this->input->post('ig'),
+              'tokped'=>$this->input->post('tokped'),
+              'bukalapak'=>$this->input->post('bukalapak'),
+              'shopee'=>$this->input->post('shopee'),
+              'created_id'=>25,
+              'created_at'=>date('Y-m-d H:i:s'),
 
-                $query2 = $this->m_pelatihan_akun->lihatdatasatu($id_akun);
-                $row2 = $query2->row();
-                $berkas1temp = $row2->ufotoproduk;
-                $path1 ='./assets/images/pelatihan/produk/'.$berkas1temp.'';
-                // $path2 ='./assets/images/pelatihan/produk/thumb/'.$berkas1temp.'';
-                if(is_file($path1)) {
-                    unlink($path1);
-                    // unlink($path2); 
-                }
-               
-            } 
-                else if ($this->input->post('ufotoproduk')=="") 
-            {
+
+          );
+
+          $ftp_server = "siikalsel.disperin.kalselprov.go.id";
+          $conn_id = ftp_connect($ftp_server);
+          $login_result = ftp_login($conn_id, "siikalselftp", "560493ff1221b589f2230e9861fc003835a512ef");
+
+          $nmfile = "gambar_".time();
+          $config['upload_path'] = './assets/images/pelatihan/perusahaan/gambar';
+          $config['allowed_types'] = 'jpg|jpeg|JPG|JPEG|PNG|png|PDF|pdf|doc|docx';
+          $config['file_name']  =  $nmfile;
+          $this->load->library('upload', $config);
+          if ($this->upload->do_upload("gambar"))
+          {
               
-                $query2 = $this->m_pelatihan_akun->lihatdatasatu($id_akun);
-                $row2 = $query2->row();
-                $berkas1temp = $row2->ufotoproduk;
-                $path1 ='./assets/images/pelatihan/produk/'.$berkas1temp.'';
-                // $path2 ='./assets/images/pelatihan/produk/thumb/'.$berkas1temp.'';
-                if(is_file($path1)) {
-                    unlink($path1); 
-                    // unlink($path2); 
-                }
-                $array['ufotoproduk']="";
-            }
-            
-           
-            $exec = $this->m_pelatihan_akun->editdata($id_akun,$array);
-            if ($exec) redirect(base_url("simanis/datausaha?msg=1"));
-            else redirect(base_url("simanis/datausaha?msg=0"));
+              $upload = $this->upload->data();
+              $file = $nmfile.$upload["file_ext"];
+              $array['gambar']=$file;
 
+              $query2 = $this->m_pelatihan_perusahaan->lihatdatasatuperusahaan($id_perusahaan);
+              $row2 = $query2->row();
+              $berkas1temp = $row2->gambar;
+              $path1 ='./assets/images/pelatihan/perusahaan/gambar/'.$berkas1temp.'';
+              $file = './assets/images/pelatihan/perusahaan/gambar/'.$array['gambar'].'';
+              $remote_file = 'web/uploads/'.$array['gambar'].'';
+              $filelawas = 'web/uploads/'.$berkas1temp.'';
+              if (ftp_put($conn_id, $remote_file, $file, FTP_BINARY )) {
+                echo "successfully uploaded $file\n";
+              } else {
+                  echo "There was a problem while uploading $file\n";
+              }
+      
+              if(is_file($path1)) {
+                  unlink($path1); //menghapus gambar di folder pengumuman
+                  ftp_delete($conn_id, $filelawas);
+              }
+          } 
+              else if ($this->input->post('gambar')=="") 
+          {
+              $query2 = $this->m_pelatihan_perusahaan->lihatdatasatuperusahaan($id_perusahaan);
+              $row2 = $query2->row();
+              $berkas1temp = $row2->gambar;
+              $path1 ='./assets/images/pelatihan/perusahaan/gambar/'.$berkas1temp.'';
+              $filelawas = 'web/uploads/'.$berkas1temp.'';
+              if(is_file($path1)) {
+                  unlink($path1); //menghapus gambar di folder pengumuman
+                  ftp_delete($conn_id, $filelawas);
+              }
+              $array['gambar']="";
+          }
+
+          $nmfile = "legalitas_".time();
+          $config['upload_path'] = './assets/images/pelatihan/perusahaan/legalitas';
+          $config['allowed_types'] = 'jpg|jpeg|JPG|JPEG|PNG|png|PDF|pdf|doc|docx';
+          $config['file_name']  =  $nmfile;
+          $this->upload->initialize($config); 
+          if ($this->upload->do_upload("legalitas"))
+          {
+              
+              $upload = $this->upload->data();
+              $file = $nmfile.$upload["file_ext"];
+              $array['legalitas']=$file;
+
+              $query2 = $this->m_pelatihan_perusahaan->lihatdatasatuperusahaan($id_perusahaan);
+              $row2 = $query2->row();
+              $berkas1temp = $row2->legalitas;
+              $path1 ='./assets/images/pelatihan/perusahaan/legalitas/'.$berkas1temp.'';
+              $file = './assets/images/pelatihan/perusahaan/legalitas/'.$array['legalitas'].'';
+              $remote_file = 'web/uploads/'.$array['legalitas'].'';
+              $filelawas = 'web/uploads/'.$berkas1temp.'';
+               if (ftp_put($conn_id, $remote_file, $file, FTP_BINARY )) {
+                 echo "successfully uploaded $file\n";
+               } else {
+                 echo "There was a problem while uploading $file\n";
+              }
+              if(is_file($path1)) {
+                  unlink($path1); //menghapus gambar di folder pengumuman
+                  ftp_delete($conn_id, $filelawas);
+              }
+
+            
+             
+          } 
+              else if ($this->input->post('legalitas')=="") 
+          {
+              $query2 = $this->m_pelatihan_perusahaan->lihatdatasatuperusahaan($id_perusahaan);
+              $row2 = $query2->row();
+              $berkas1temp = $row2->legalitas;
+              $path1 ='./assets/images/pelatihan/perusahaan/legalitas/'.$berkas1temp.'';
+              $filelawas = 'web/uploads/'.$berkas1temp.'';
+              if(is_file($path1)) {
+                  unlink($path1); //menghapus gambar di folder pengumuman
+                  ftp_delete($conn_id, $filelawas);
+              }
+              $array['legalitas']="";
+          }
+
+           //  echo  $array['legalitas'];
+            // $ftp_server = "siikalsel.disperin.kalselprov.go.id";
+            // $conn_id = ftp_connect($ftp_server);
+            // $login_result = ftp_login($conn_id, "siikalselftp", "560493ff1221b589f2230e9861fc003835a512ef");
+
+            // $file = './assets/images/pelatihan/perusahaan/gambar/'.$array['gambar'].'';
+            // $remote_file = 'web/uploads/'.$array['gambar'].'';
+            // if (ftp_put($conn_id, $remote_file, $file, FTP_ASCII)) {
+            //      echo "successfully uploaded $file\n";
+            //  } else {
+            //       echo "There was a problem while uploading $file\n";
+            //   $array['gambar']="";
+            //  }
+      
+            //  $file = './assets/images/pelatihan/perusahaan/legalitas/'.$array['legalitas'].'';
+            //  $remote_file = 'web/uploads/'.$array['legalitas'].'';
+            //   if (ftp_put($conn_id, $remote_file, $file, FTP_ASCII)) {
+            //     echo "successfully uploaded $file\n";
+            //   } else {
+            //     echo "There was a problem while uploading $file\n";
+            //     $array['legalitas']="";
+            //  }
+            
+             $exec = $this->m_pelatihan_perusahaan->editdata($id_perusahaan,$array);
+             $recordID=  $id_perusahaan;
+             $exec = $this->m_pelatihan_perusahaan->hapusproduk($id_perusahaan);
+
+             $produk = $this->input->post('produk_id');
+             $result = array();
+             if ($produk!=""){
+             foreach($produk AS $key => $val){
+              if($_POST['produk_id'][$key] != ''){
+                $result[] = array(
+                  "perusahaan_id"  => $recordID,
+                  "produk_id"  => $_POST['produk_id'][$key]
+                );
+              }
+            }
+          }
+
+            print_r($result);
+            $this->db->insert_batch('master_perusahaan_produk', $result);
+
+            if ($exec) redirect(base_url("simanis/editperusahaan?msg=1&id=".$id_perusahaan.""));
+            else redirect(base_url("simanis/editperusahaan?msg=0&id=".$id_perusahaan.""));
+            
         } else {
 
           $id_perusahaan=$this->input->get("id");
@@ -1120,11 +1225,20 @@ class Simanis extends CI_Controller {
         $gambar = $row2->gambar;
         $path2 ='./assets/images/pelatihan/perusahaan/legalitas/'.$legalitas;
         $path1 ='./assets/images/pelatihan/perusahaan/gambar/'.$gambar;
+        $filelawas2 = 'web/uploads/'.$legalitas.'';
+        $filelawas1 = 'web/uploads/'.$gambar.'';
+        $ftp_server = "siikalsel.disperin.kalselprov.go.id";
+        $conn_id = ftp_connect($ftp_server);
+        $login_result = ftp_login($conn_id, "siikalselftp", "560493ff1221b589f2230e9861fc003835a512ef");
+
         if(is_file($path1)) {
             unlink($path1);
+            ftp_delete($conn_id, $filelawas1);
+            
         }
         if(is_file($path2)) {
           unlink($path2);
+          ftp_delete($conn_id, $filelawas2);
       }
         $exec = $this->m_pelatihan_perusahaan->hapus($id_perusahaan);
         redirect(base_url()."simanis/perusahaan?msg=2");

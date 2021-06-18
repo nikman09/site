@@ -22,17 +22,15 @@
 
 		<div class="col-md-12">
 
-		<form id="form" role="form"  action="<?php echo base_url() ?>simanis/tambahperusahaan" method="post"  enctype="multipart/form-data" >
-
-                    <div class="row">
-
+		<form id="form" role="form"  action="<?php echo base_url() ?>simanis/editperusahaan" method="post"  enctype="multipart/form-data" >
 		<div class="row">
+			<div class="row">
 
 					<div class="col-md-12">
 
-					<?php pesan_get2('msg',"Berhasil Menyimpan Data Usaha !") ?>
+					<?php pesan_get2('msg',"Berhasil Memperbarui Data Perusahaan !") ?>
 
-						<h3>Data Usaha / Perusahaan</h3>
+						<h3>Edit Data Usaha / Perusahaan</h3>
 
 						<hr/>
 
@@ -51,7 +49,7 @@
 						<div class="col-md-6">	
 								
 							<input type="hidden" name="<?=$csrf['name']?>" value="<?=$csrf['hash']?>">
-
+							<input type="hidden" name="id_perusahaan" value="<?=$data['id_perusahaan']?>">
 								
 								<div class="form-group">
 									<label for="field-1" class="control-label">Nama Usaha / Perusahaan *</label>
@@ -235,52 +233,60 @@
 									<input type="text" class="form-control" id="shopee" name="shopee" placeholder="Masukkan ID Shopee"  value="<?= $data['shopee'] ?>">
 								</div>	
 							
+
+
+
+
+
+
+
+
+
 								<div class="form-group">
-
-									<label for="field-1" class="control-label">Upload Dokumen Legalitas Perusahaan</label>
-									<div class="fileinput fileinput-new" data-provides="fileinput" style="margin-bottom:0;display:inline">
-									<div class="input-group">
-										<div class="form-control uneditable-input" data-trigger="fileinput">
-											<i class="glyphicon glyphicon-file fileinput-exists"></i>
-											<span class="fileinput-filename"><?php echo set_value('legalitas') ?></span>
+									<label class=" control-label">Upload Dokumen Legalitas Perusahaan</label>
+								
+									<div class="fileinput <?php  echo ($data['legalitas']=="") ? "fileinput-new":"fileinput-exists" ?> " data-provides="fileinput">
+									<input type="hidden" value="<?php echo $data['legalitas'] ?>" name="legalitas">
+											<div class="input-group">
+												<div class="form-control uneditable-input" data-trigger="fileinput">
+													<i class="glyphicon glyphicon-file fileinput-exists"></i>
+													<span class="fileinput-filename"> <?php echo $data['legalitas'] ?></span>
+												</div>
+												<span class="input-group-addon btn btn-default btn-file">
+													<span class="fileinput-new">Select file</span>
+													<span class="fileinput-exists">Change</span>
+													<input type="file" name="legalitas" id="legalitas">
+												</span>
+												<a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
+											</div>
 										</div>
-										<span class="input-group-addon btn btn-default btn-file">
+							
+								</div>
 
-											<span class="fileinput-new">Select file</span>
-											<span class="fileinput-exists">Change</span>
-											<input type="file" name="legalitas" >
-
-										</span>
-
-										<a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
-
-									</div>
-
-									</div>
-
-									<div class="form-group">
-
-									<label for="field-1" class="control-label">Upload Gambar Tempat Usaha</label>
-									<div class="fileinput fileinput-new" data-provides="fileinput" style="margin-bottom:0;display:inline">
-									<div class="input-group">
-										<div class="form-control uneditable-input" data-trigger="fileinput">
-											<i class="glyphicon glyphicon-file fileinput-exists"></i>
-											<span class="fileinput-filename"><?php echo set_value('gambar') ?></span>
+								<div class="form-group">
+									<label class=" control-label">Upload Gambar Tempat Usaha</label>
+								
+									<div class="fileinput <?php  echo ($data['gambar']=="") ? "fileinput-new":"fileinput-exists" ?> " data-provides="fileinput">
+									<input type="hidden" value="<?php echo $data['gambar'] ?>" name="gambar">
+											<div class="input-group">
+												<div class="form-control uneditable-input" data-trigger="fileinput">
+													<i class="glyphicon glyphicon-file fileinput-exists"></i>
+													<span class="fileinput-filename"> <?php echo $data['gambar'] ?></span>
+												</div>
+												<span class="input-group-addon btn btn-default btn-file">
+													<span class="fileinput-new">Select file</span>
+													<span class="fileinput-exists">Change</span>
+													<input type="file" name="gambar" id="gambar">
+												</span>
+												<a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
+											</div>
 										</div>
-										<span class="input-group-addon btn btn-default btn-file">
+							
+								</div>
 
-											<span class="fileinput-new">Select file</span>
-											<span class="fileinput-exists">Change</span>
-											<input type="file" name="gambar" >
-
-										</span>
-
-										<a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
-
-									</div>
+								
 												<br/>
-												<br/>
-												<br/>
+												
 									</div>
 
 						</div>

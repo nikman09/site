@@ -180,13 +180,13 @@ class M_pelatihan_perusahaan extends CI_Model
    
 
 
-    function editdata($id_pesan,$array)
+    function editdata($id_perusahaan,$array)
 
     {
 
-        $this->db->where("id_pesan",$id_pesan);
+        $this->db->where("id",$id_perusahaan);
 
-        return $this->db->update('pl_pesan',$array);
+        return $this->db->update('master_perusahaan',$array);
 
     }
 
@@ -197,6 +197,14 @@ class M_pelatihan_perusahaan extends CI_Model
         $this->db->where("id",$id);
 
         return $this->db->delete('master_perusahaan');
+
+    }
+
+    function hapusproduk($id)
+
+    {
+        $this->db->where("perusahaan_id",$id);
+        return $this->db->delete('master_perusahaan_produk');
 
     }
 

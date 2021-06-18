@@ -27,6 +27,22 @@
         'stretchtext' => 4
     );
 
+    // echo $certificate = ''.base_url().'assets/images/3bb299f2484a7c47a45aab133950dc122a24f435.pem';
+        echo   $certificate = 'file://'.realpath('assets/images/3bb299f2484a7c47a45aab133950dc122a24f435.pem');
+        // set additional information
+        $info = array(
+            'Name' => 'TCPDF',
+            'Location' => 'Office',
+            'Reason' => 'Testing TCPDF',
+            'ContactInfo' => 'http://www.tcpdf.org',
+            );
+        
+        // set document signature
+        $pdf->setSignature($certificate, $certificate, 'tcpdfdemo', '', 2, $info);
+        
+
+
+
     $pdf->Image(''.base_url().'assets/images/go.png', 10, 10, 50, '', '', 'http://disperin.kalselprov.go.id/', '', false, 300);
     $pdf->SetX(150);
     $pdf->write1DBarcode($data['nodaf'], 'C128', '', '', '', 8, 0.4, $style, 'N');

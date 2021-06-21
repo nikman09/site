@@ -784,6 +784,8 @@ class Simanis extends CI_Controller {
       fwrite($dest, $src, strlen($src));
       fclose($dest); 
     }
+
+
     public function tambahperusahaan()
     {   
         cekloginpelatihan();
@@ -890,8 +892,8 @@ class Simanis extends CI_Controller {
                 }
               }
               $this->db->insert_batch('master_perusahaan_produk', $result);
-              if ($exec) redirect(base_url("simanis/tambahperusahaan?msg=1"));
-              else redirect(base_url("simanis/tambahperusahaan?msg=0"));
+              if ($exec) redirect(base_url("simanis/perusahaan?msg=1"));
+              else redirect(base_url("simanis/perusahaan?msg=0"));
 
         } else {
             $id_akun = $this->session->userdata("pelatihan_idakun");
@@ -906,7 +908,7 @@ class Simanis extends CI_Controller {
                 $variabel['masterproduk'] = $this->m_pelatihan_perusahaan->lihatmasterproduk();
                 $this->layout->renderpel('v_pelatihan/perusahaan/v_perusahaantambah',$variabel,'v_pelatihan/perusahaan/v_perusahaantambah_js');
             } else {
-                redirect(base_url("simanis/datausaha"));
+                redirect(base_url("simanis/perusahaan"));
             }
         }
       
@@ -958,38 +960,163 @@ class Simanis extends CI_Controller {
           }
     }
 
+    public function produk()
+    {   
+        cekloginpelatihan();
+        $variabel['csrf'] = csrf();
+        $this->load->model("m_pelatihan/m_pelatihan_produk");
+        $this->load->model("m_pelatihan/m_pelatihan_perusahaan");
+        $id_akun = $this->session->userdata("pelatihan_idakun");
+        $id_perusahaan = $this->input->get("id");
+        $perusahaan = $this->m_pelatihan_perusahaan->lihatdataakunsatu($id_akun,$id_perusahaan);
+        if ($perusahaan->num_rows()>0){
+          $exec = $this->m_pelatihan_produk->lihatdataakun($id_perusahaan);
+          $variabel['data'] = $exec;
+          $variabel['perusahaan'] = $perusahaan->row_array();
+          $this->layout->renderpel('v_pelatihan/perusahaan/v_produk',$variabel,'v_pelatihan/perusahaan/v_produk_js');
+
+        }
+         
+    }
+
+    
+    public function tambahproduk()
+    {   
+        cekloginpelatihan();
+        $variabel['csrf'] = csrf();
+        $this->load->model("m_pelatihan/m_pelatihan_akun");
+        $this->load->model("m_pelatihan/m_pelatihan_perusahaan");
+        $this->load->model("m_pelatihan/m_pelatihan_produk");
+        $id_akun = $this->session->userdata("pelatihan_idakun");
+        if ($this->input->post()) {
+            $id_akun = $this->session->userdata("pelatihan_idakun");
+            $array=array(
+                'kode' =>$this->m_pelatihan_perusahaan->get_kode(),
+                'perusahaan'=> $this->input->post('perusahaan'),
+                'npwp'=> $this->input->post('npwp'),
+                'ndi'=>$this->input->post('ndi'),
+                'badan_id'=>$this->input->post('badan_id'),
+                'pemilik'=>$this->input->post('pemilik'),
+                'alamat'=>$this->input->post('alamat'),
+                'provinsi_id'=>63,
+                'kota_id'=>$this->input->post('kota_id'),
+                'kecamatan_id'=>$this->input->post('kecamatan_id'),
+                'kelurahan_id'=>$this->input->post('kelurahan_id'),
+                'kodepos'=>$this->input->post('kodepos'),
+                'izin_id'=>$this->input->post('izin_id'),
+                'kbli_id'=>$this->input->post('kbli_id'),
+                'komoditi_id'=>$this->input->post('komoditi_id'),
+                'telpon'=>$this->input->post('telpon'),
+                'fax'=>$this->input->post('fax'),
+                'email'=>$this->input->post('email'),
+                'website'=>$this->input->post('website'),
+                'latitude'=>$this->input->post('latitude'),
+                'longitude'=>$this->input->post('longitude'),
+                'wa'=>$this->input->post('wa'),
+                'fb'=>$this->input->post('fb'),
+                'ig'=>$this->input->post('ig'),
+                'tokped'=>$this->input->post('tokped'),
+                'bukalapak'=>$this->input->post('bukalapak'),
+                'shopee'=>$this->input->post('shopee'),
+                'created_id'=>25,
+                'created_at'=>date('Y-m-d H:i:s'),
+                'simanis_id'=>  $id_akun,
+
+            );
+
+             
+              $nmfile = "dokumen_".time();
+              $config['upload_path'] = './assets/images/pelatihan/perusahaan/gambar';
+              $config['allowed_types'] = 'jpg|jpeg|JPG|JPEG|PNG|png';
+              $config['file_name']  =  $nmfile;
+          
+              $this->load->library('upload', $config);
+              $this->upload->do_upload("gambar");
+              $upload = $this->upload->data();
+              $file = $nmfile.$upload["file_ext"];;
+              $array['gambar']=$file;
+
+              $nmfile = "dokumen_".time();
+              $config['upload_path'] = './assets/images/pelatihan/perusahaan/legalitas';
+              $config['allowed_types'] = 'jpg|jpeg|JPG|JPEG|PNG|png|PDF|pdf|doc|docx';
+              $config['file_name']  =  $nmfile;
+              $this->upload->initialize($config); 
+              $this->upload->do_upload("legalitas");
+              $upload = $this->upload->data();
+              $file = $nmfile.$upload["file_ext"];;
+              $array['legalitas']=$file;
+
+           
+              $ftp_server = "siikalsel.disperin.kalselprov.go.id";
+              // name file in serverA that you want to store file in serverB
+                $file = './assets/images/pelatihan/perusahaan/gambar/'.$array['gambar'].'';
+                $remote_file = 'web/uploads/'.$array['gambar'].'';
+        
+              // set up basic connection
+              $conn_id = ftp_connect($ftp_server);
+        
+              // login with username and password
+              $login_result = ftp_login($conn_id, "siikalselftp", "560493ff1221b589f2230e9861fc003835a512ef");
+              if (ftp_put($conn_id, $remote_file, $file, FTP_ASCII)) {
+                echo "successfully uploaded $file\n";
+               } else {
+                echo "There was a problem while uploading $file\n";
+                $array['gambar']="";
+               }
+        
+               $file = './assets/images/pelatihan/perusahaan/legalitas/'.$array['legalitas'].'';
+               $remote_file = 'web/uploads/'.$array['legalitas'].'';
+               if (ftp_put($conn_id, $remote_file, $file, FTP_ASCII)) {
+                echo "successfully uploaded $file\n";
+               } else {
+                echo "There was a problem while uploading $file\n";
+                $array['legalitas']="";
+
+               }
+              
+               $exec = $this->m_pelatihan_perusahaan->tambahdata($array);
+               $recordID= $this->db->insert_id();
+               $produk = $this->input->post('produk_id');
+               $result = array();
+               foreach($produk AS $key => $val){
+                if($_POST['produk_id'][$key] != ''){
+                  $result[] = array(
+                    "perusahaan_id"  => $recordID,
+                    "produk_id"  => $_POST['produk_id'][$key]
+                  );
+                }
+              }
+              $this->db->insert_batch('master_perusahaan_produk', $result);
+              if ($exec) redirect(base_url("simanis/perusahaan?msg=1"));
+              else redirect(base_url("simanis/perusahaan?msg=0"));
+
+        } else {
+            $id_akun = $this->session->userdata("pelatihan_idakun");
+            $id_perusahaan = $this->input->get("id");
+            $perusahaan = $this->m_pelatihan_perusahaan->lihatdataakunsatu($id_akun,$id_perusahaan);
+            if ($perusahaan->num_rows()>0){
+                $variabel['data'] = $perusahaan ->row_array();
+                $variabel['masterpemasaran'] = $this->m_pelatihan_perusahaan->lihatmasterpemasaran();
+                $this->layout->renderpel('v_pelatihan/perusahaan/v_produktambah',$variabel,'v_pelatihan/perusahaan/v_produktambah_js');
+            } else {
+                redirect(base_url("simanis/perusahaan"));
+            }
+        }
+      
+    }
+
     public function perusahaan()
     {   
+        cekloginpelatihan();
         $variabel['csrf'] = csrf();
         $this->load->model("m_pelatihan/m_pelatihan_perusahaan");
         $id_akun = $this->session->userdata("pelatihan_idakun");
-        if ($this->input->post()) {
-          $id_akun = $this->session->userdata("pelatihan_idakun");
-            $array=array(
-                'nama'=> $this->input->post('nama'),
-                'id_akun'=> $id_akun,
-            );
-
-            //asdad
-            $config['upload_path'] = './assets/images/pelatihan/pendukung';
-            $config['allowed_types'] = 'jpg|jpeg|JPG|JPEG|PNG|png|PDF|pdf|doc|DOC';
-            $this->load->library('upload', $config);
-            $this->upload->do_upload("dokumen");
-            $upload = $this->upload->data();
-            $file = $upload["raw_name"].$upload["file_ext"];
-            $array['file']=$file;
-    
-            //adasd
-            $exec = $this->m_pelatihan_berkas->tambahdata($array);
-                if ($exec){
-                 redirect(base_url("simanis/pendukung?id=".$id_dokumen."&msg=1"));
-                }   else redirect(base_url("simanis/pendukung?msg=0"));
-          } else {
+      
             $exec = $this->m_pelatihan_perusahaan->lihatdataakun($id_akun);
             $variabel['data'] = $exec;
             $this->layout->renderpel('v_pelatihan/perusahaan/v_perusahaan',$variabel,'v_pelatihan/perusahaan/v_perusahaan_js');
         
-          }
+        
     }
 
     public function lihatperusahaan()

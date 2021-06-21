@@ -280,9 +280,10 @@
 					<div class="row">
 
 					<div class="col-md-12">
-
-						<button type="submit" class="btn btn-primary  btn-icon icon-left  daftar" style="float:right"><i class='fa fa-save'></i>Simpan</button>
-
+					<button type="submit" class="btn btn-primary  btn-icon icon-left  daftar" style="float:right;margin-left:10px"><i class='fa fa-save'></i>Simpan</button>
+												
+					<a href="<?php echo base_url("simanis/perusahaan") ?>" class="btn btn-default  btn-icon icon-left  daftar" style="float:right"><i class='fa fa-arrow-left'></i>Kembali</a>
+						
 						<br/>
 						<br/>
 							</form>

@@ -1,93 +1,19 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-
-
-class M_pelatihan_perusahaan extends CI_Model
-
+class M_pelatihan_produk extends CI_Model
 {
-
     function __construct()
-
     {
-
         parent::__construct();
-
     }
 
-    function lihatmasterbadan()
-    {
-
-        $this->db->select("master_badan.*");
-        $this->db->where("deleted_id",NULL);
-        return $this->db->get('master_badan');
-    }
-
-    function lihatmasterpemasaran()
-    {
-
-        $this->db->select("master_pemasaran.*");
-        $this->db->where("deleted_id",NULL);
-        return $this->db->get('master_pemasaran');
-    }
-
-    function lihatmasterizin()
-    {
-
-        $this->db->select("master_izin.*");
-        $this->db->where("deleted_id",NULL);
-        return $this->db->get('master_izin');
-    }
-
-    function lihatmasterkbli()
-    {
-
-        $this->db->select("master_kbli.*");
-        $this->db->where("deleted_id",NULL);
-        
-        return $this->db->get('master_kbli');
-    }
-
-    function lihatmasterkomoditi()
-    {
-        $this->db->select("master_komoditi.*");
-        $this->db->where("deleted_id",NULL);
-        return $this->db->get('master_komoditi');
-    }
-
-    function lihatmasterproduk()
-    {
-        $this->db->select("master_produk.*");
-        $this->db->where("deleted_id",NULL);
-        return $this->db->get('master_produk');
-    }
-
-    function lihatmasterkota()
+    function lihatdataakun($id_perusahaan)
 
     {
-        $this->db->select("master_kota.*");
-        $this->db->where("provinsi_id","63");
-        return $this->db->get('master_kota');
-       
+        $this->db->select("master_produk_perusahaan.*");
+        $this->db->where("master_produk_perusahaan.perusahaan_id",$id_perusahaan);
+        return $this->db->get('master_produk_perusahaan');
     }
-
-    function getmasterkecamatan($kota_id)
-
-    {
-        $this->db->select("master_kecamatan.*");
-        $this->db->where("kota_id",$kota_id);
-        return $this->db->get('master_kecamatan');
-       
-    }
-
-    function getmasterkelurahan($kecamatan_id)
-
-    {
-        $this->db->select("master_kelurahan.*");
-        $this->db->where("kecamatan_id",$kecamatan_id);
-        return $this->db->get('master_kelurahan');
-       
-    }
-    
 
     function lihatdatasatuperusahaan($id)
 
@@ -101,17 +27,7 @@ class M_pelatihan_perusahaan extends CI_Model
 
     }
 
-    function lihatdataakun($id_akun)
-
-    {
-        $this->db->select("master_perusahaan.*,master_perusahaan.id as  id_perusahaan ,master_kota.*,master_kbli.*,master_kecamatan.*")
-        ->join("master_kota","master_kota.id=master_perusahaan.kota_id","inner")
-        ->join("master_kbli","master_kbli.id=master_perusahaan.kbli_id","inner")
-        ->join("master_kecamatan","master_kecamatan.id=master_perusahaan.kecamatan_id","inner");
-        $this->db->where("master_perusahaan.simanis_id",$id_akun);
-
-        return $this->db->get('master_perusahaan');
-    }
+   
 
     function lihatdataakunsatu($id_akun,$id_perusahaan)
 

@@ -10,11 +10,7 @@
 
     });
 
-    var $table1 = jQuery( '#table-12' );            
-    // Initialize DataTable
-    $table1.DataTable( {
 
-    });
 
     $('.edit').click(function (e) {
 

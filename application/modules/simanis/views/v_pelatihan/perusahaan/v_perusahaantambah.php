@@ -177,7 +177,7 @@
 								</div>		
 								<div class="form-group">
 									<label for="field-1" class="control-label"> Produk *</label>
-									<select class="form-control select3" name="produk_id[]" id="produk_id" multiple="multiple" placeholder="Pilih Produk">
+									<select class="form-control select3" name="produk_id[]" id="produk_id" multiple="multiple" placeholder="Pilih Produk" required>
 										
 										<?php
 											foreach($masterproduk->result_array() as $row) {

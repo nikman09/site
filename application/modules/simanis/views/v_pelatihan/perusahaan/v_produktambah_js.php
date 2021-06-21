@@ -19,7 +19,7 @@ jQuery(function ($) {
         });
     
     $('#form').validate({ // initialize plugin
-        ignore: [],     
+            ignore: [],     
             highlight: function (label) {
                 $(label).closest('.form-group').removeClass('has-success').addClass('has-error');
                 $('.error').css({'font-size':'9px','margin-bottom':'0px'});
@@ -42,41 +42,17 @@ jQuery(function ($) {
             },
 
             rules: {
-                perusahaan: {
+                produk: {
                     required: true,
                 },
-                badan_id: {
+                pemasaran_id: {
                     required: true,
                 },
-                pemilik: {
+                nilai: {
                     required: true,
                 },
-                alamat: {
+                harga: {
                     required: true,
-                },
-                kota_id: {
-                    required: true,
-                },
-                kecamatan_id: {
-                    required: true,
-                },
-                kelurahan_id: {
-                    required: true,
-                },
-                izin_id: {
-                    required: true,
-                },
-                kbli_id: {
-                    required: true,
-                },
-                komoditi_id: {
-                    required: true,
-                },
-                produk_id: {
-                    required: true,
-                },
-                email: {
-                    email: true,
                 },
             },
             messages: {

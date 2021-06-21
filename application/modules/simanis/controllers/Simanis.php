@@ -862,7 +862,7 @@ class Simanis extends CI_Controller {
         
               // login with username and password
               $login_result = ftp_login($conn_id, "siikalselftp", "560493ff1221b589f2230e9861fc003835a512ef");
-              if (ftp_put($conn_id, $remote_file, $file, FTP_ASCII)) {
+              if (ftp_put($conn_id, $remote_file, $file, FTP_BINARY)) {
                 echo "successfully uploaded $file\n";
                } else {
                 echo "There was a problem while uploading $file\n";
@@ -871,7 +871,7 @@ class Simanis extends CI_Controller {
         
                $file = './assets/images/pelatihan/perusahaan/legalitas/'.$array['legalitas'].'';
                $remote_file = 'web/uploads/'.$array['legalitas'].'';
-               if (ftp_put($conn_id, $remote_file, $file, FTP_ASCII)) {
+               if (ftp_put($conn_id, $remote_file, $file, FTP_BINARY)) {
                 echo "successfully uploaded $file\n";
                } else {
                 echo "There was a problem while uploading $file\n";
@@ -990,106 +990,71 @@ class Simanis extends CI_Controller {
         $id_akun = $this->session->userdata("pelatihan_idakun");
         if ($this->input->post()) {
             $id_akun = $this->session->userdata("pelatihan_idakun");
+            $id_perusahaan = $this->input->post("id_perusahaan");
             $array=array(
-                'kode' =>$this->m_pelatihan_perusahaan->get_kode(),
-                'perusahaan'=> $this->input->post('perusahaan'),
-                'npwp'=> $this->input->post('npwp'),
-                'ndi'=>$this->input->post('ndi'),
-                'badan_id'=>$this->input->post('badan_id'),
-                'pemilik'=>$this->input->post('pemilik'),
-                'alamat'=>$this->input->post('alamat'),
-                'provinsi_id'=>63,
-                'kota_id'=>$this->input->post('kota_id'),
-                'kecamatan_id'=>$this->input->post('kecamatan_id'),
-                'kelurahan_id'=>$this->input->post('kelurahan_id'),
-                'kodepos'=>$this->input->post('kodepos'),
-                'izin_id'=>$this->input->post('izin_id'),
-                'kbli_id'=>$this->input->post('kbli_id'),
-                'komoditi_id'=>$this->input->post('komoditi_id'),
-                'telpon'=>$this->input->post('telpon'),
-                'fax'=>$this->input->post('fax'),
-                'email'=>$this->input->post('email'),
-                'website'=>$this->input->post('website'),
-                'latitude'=>$this->input->post('latitude'),
-                'longitude'=>$this->input->post('longitude'),
-                'wa'=>$this->input->post('wa'),
-                'fb'=>$this->input->post('fb'),
-                'ig'=>$this->input->post('ig'),
-                'tokped'=>$this->input->post('tokped'),
-                'bukalapak'=>$this->input->post('bukalapak'),
-                'shopee'=>$this->input->post('shopee'),
+               'perusahaan_id'=>  $id_perusahaan,
+                'kode' => $this->input->post('kode'),
+                'produk'=> $this->input->post('produk'),
+                'jenis'=> $this->input->post('jenis'),
+                'panjang'=>$this->input->post('panjang'),
+                'lebar'=>$this->input->post('lebar'),
+                'tinggi'=>$this->input->post('tinggi'),
+                'berat'=>$this->input->post('barat'),
+                'isi'=>$this->input->post('isi'),
+                'harga'=>$this->input->post('harga'),
+                'nilai'=>$this->input->post('nilai'),
+                'bahan'=>$this->input->post('bahan'),
                 'created_id'=>25,
                 'created_at'=>date('Y-m-d H:i:s'),
-                'simanis_id'=>  $id_akun,
 
             );
-
-             
-              $nmfile = "dokumen_".time();
-              $config['upload_path'] = './assets/images/pelatihan/perusahaan/gambar';
+              $nmfile = "katalog_".time();
+              $config['upload_path'] = './assets/images/pelatihan/perusahaan/produk';
               $config['allowed_types'] = 'jpg|jpeg|JPG|JPEG|PNG|png';
               $config['file_name']  =  $nmfile;
           
               $this->load->library('upload', $config);
-              $this->upload->do_upload("gambar");
-              $upload = $this->upload->data();
-              $file = $nmfile.$upload["file_ext"];;
-              $array['gambar']=$file;
-
-              $nmfile = "dokumen_".time();
-              $config['upload_path'] = './assets/images/pelatihan/perusahaan/legalitas';
-              $config['allowed_types'] = 'jpg|jpeg|JPG|JPEG|PNG|png|PDF|pdf|doc|docx';
-              $config['file_name']  =  $nmfile;
-              $this->upload->initialize($config); 
-              $this->upload->do_upload("legalitas");
-              $upload = $this->upload->data();
-              $file = $nmfile.$upload["file_ext"];;
-              $array['legalitas']=$file;
-
-           
-              $ftp_server = "siikalsel.disperin.kalselprov.go.id";
-              // name file in serverA that you want to store file in serverB
-                $file = './assets/images/pelatihan/perusahaan/gambar/'.$array['gambar'].'';
+              if($this->upload->do_upload("gambar")){
+                $upload = $this->upload->data();
+                $file = $nmfile.$upload["file_ext"];;
+                $array['gambar']=$file;
+                $ftp_server = "siikalsel.disperin.kalselprov.go.id";
+                $conn_id = ftp_connect($ftp_server);
+                $login_result = ftp_login($conn_id, "siikalselftp", "560493ff1221b589f2230e9861fc003835a512ef");
+                $file = './assets/images/pelatihan/perusahaan/produk/'.$array['gambar'].'';
                 $remote_file = 'web/uploads/'.$array['gambar'].'';
-        
-              // set up basic connection
-              $conn_id = ftp_connect($ftp_server);
-        
-              // login with username and password
-              $login_result = ftp_login($conn_id, "siikalselftp", "560493ff1221b589f2230e9861fc003835a512ef");
-              if (ftp_put($conn_id, $remote_file, $file, FTP_ASCII)) {
-                echo "successfully uploaded $file\n";
-               } else {
-                echo "There was a problem while uploading $file\n";
-                $array['gambar']="";
-               }
-        
-               $file = './assets/images/pelatihan/perusahaan/legalitas/'.$array['legalitas'].'';
-               $remote_file = 'web/uploads/'.$array['legalitas'].'';
-               if (ftp_put($conn_id, $remote_file, $file, FTP_ASCII)) {
-                echo "successfully uploaded $file\n";
-               } else {
-                echo "There was a problem while uploading $file\n";
-                $array['legalitas']="";
-
-               }
-              
-               $exec = $this->m_pelatihan_perusahaan->tambahdata($array);
-               $recordID= $this->db->insert_id();
-               $produk = $this->input->post('produk_id');
-               $result = array();
-               foreach($produk AS $key => $val){
-                if($_POST['produk_id'][$key] != ''){
-                  $result[] = array(
-                    "perusahaan_id"  => $recordID,
-                    "produk_id"  => $_POST['produk_id'][$key]
-                  );
-                }
+  
+                if (ftp_put($conn_id, $remote_file, $file, FTP_BINARY)) {
+                  echo "successfully uploaded $file\n";
+                 } else {
+                  echo "There was a problem while uploading $file\n";
+                  $array['gambar']="";
+                 }
               }
-              $this->db->insert_batch('master_perusahaan_produk', $result);
-              if ($exec) redirect(base_url("simanis/perusahaan?msg=1"));
-              else redirect(base_url("simanis/perusahaan?msg=0"));
 
+        
+               $exec = $this->m_pelatihan_produk->tambahdata($array);
+               $recordID= $this->db->insert_id();
+               $pemasaran = $this->input->post('pemasaran_id');
+               $result = array();
+
+               if ($pemasaran!=""){
+                foreach($pemasaran AS $key => $val){
+                 if($_POST['pemasaran_id'][$key] != ''){
+                   $result[] = array(
+                     "produk_id"  => $recordID,
+                     "pemasaran_id"  => $_POST['pemasaran_id'][$key]
+                     );
+                   }
+                 }
+               }
+             
+              $this->db->insert_batch('master_produk_pemasaran', $result);
+              if ($exec) redirect(base_url("simanis/produk?msg=1&id=$id_perusahaan"));
+              else redirect(base_url("simanis/perusahaan?msg=0&id=$id_perusahaan"));
+
+              // print_r($array);
+              // echo  $recordID;
         } else {
             $id_akun = $this->session->userdata("pelatihan_idakun");
             $id_perusahaan = $this->input->get("id");
@@ -1102,6 +1067,20 @@ class Simanis extends CI_Controller {
                 redirect(base_url("simanis/perusahaan"));
             }
         }
+      
+    }
+
+    public function lihatproduk()
+    {   
+        $variabel['csrf'] = csrf();
+        $this->load->model("m_pelatihan/m_pelatihan_perusahaan");
+        $this->load->model("m_pelatihan/m_pelatihan_produk");
+        $id_akun = $this->session->userdata("pelatihan_idakun");
+        $id_produk=$this->input->get("id");
+        $exec = $this->m_pelatihan_produk->lihatdatasatu($id_produk);
+        $variabel['data'] = $exec->row_array();
+        $variabel['pemasaran'] = $this->m_pelatihan_produk->lihatpemasaran($id_produk);
+        $this->layout->renderpel('v_pelatihan/perusahaan/v_produklihat',$variabel,'v_pelatihan/perusahaan/v_produk_js');
       
     }
 
@@ -1172,8 +1151,8 @@ class Simanis extends CI_Controller {
               'tokped'=>$this->input->post('tokped'),
               'bukalapak'=>$this->input->post('bukalapak'),
               'shopee'=>$this->input->post('shopee'),
-              'created_id'=>25,
-              'created_at'=>date('Y-m-d H:i:s'),
+              'update_id'=>25,
+              'create_id'=>date('Y-m-d H:i:s'),
 
 
           );
@@ -1307,10 +1286,10 @@ class Simanis extends CI_Controller {
                 $result[] = array(
                   "perusahaan_id"  => $recordID,
                   "produk_id"  => $_POST['produk_id'][$key]
-                );
+                  );
+                }
               }
             }
-          }
 
             print_r($result);
             $this->db->insert_batch('master_perusahaan_produk', $result);
@@ -1368,6 +1347,7 @@ class Simanis extends CI_Controller {
           ftp_delete($conn_id, $filelawas2);
       }
         $exec = $this->m_pelatihan_perusahaan->hapus($id_perusahaan);
+        $execproduk = $this->m_pelatihan_perusahaan->hapusproduk($id_perusahaan);
         redirect(base_url()."simanis/perusahaan?msg=2");
     }
 

@@ -20,11 +20,11 @@
 
 	<div class="col-md-12">
 
-    <h3>Data Produk</h3>
+    <h3>Data Produk "<?php echo $perusahaan["perusahaan"] ?>"</h3>
 
 						<hr/>
 
-        <?php pesan_get2('msg',"Berhasil Menambah Data Perusahaan","Berhasil Mengedit Data Perusahaan","Berhasil Menghapus Data Perusahaan") ?>
+        <?php pesan_get2('msg',"Berhasil Menambah Produk","Berhasil Mengedit Produk","Berhasil Menghapus Produk") ?>
 
         <a href="<?php echo base_url("simanis/tambahproduk?id=".$perusahaan["id_perusahaan"]."") ?>" style="margin: 5px 0 10px 0px" class="btn  btn-primary tambah   btn-icon icon-left" >
 
@@ -43,7 +43,7 @@
                         <th>Jenis</th>
                         <th>Harga</th>
                         <th>Nilai Pernjualan</th>
-                        <th>Gambar Produk</th>
+                        <th width="150px">Gambar Produk</th>
                         <th width="100px">Aksi</th>
                     </tr>
                 </thead>
@@ -73,12 +73,14 @@
                                 
                                 <td align='center'>";
 
-                                if ($row['legalitas']!="") {
-									echo "<a href='".base_url()."assets/images/pelatihan/perusahaan/produk/".$row['id']."' class='btn btn-default btn-sm  ' title='Edit'  id='".$row['id']."'target='_blank' ><i class='fa fa-file' id='".$row['id']."'></i></a>";
+                                if ($row['gambar']!="") {
+
+									echo "<a href='".base_url()."assets/images/pelatihan/perusahaan/produk/".$row['gambar']."'  id='".$row['id']."'target='_blank' ><img  class='thumbnail' src='".base_url()."assets/images/pelatihan/perusahaan/produk/".$row['gambar']."' width='150px'></a>";
 
                                 } else {
 
-                                    echo "<a href='#' class='btn btn-default btn-xs' disabled> <i class='fa fa-file'></li></a>";    
+                                  //  echo "<a href='#' class='btn btn-default btn-xs' disabled> <i class='fa fa-file'></li></a>";    
+                                 echo "<img  class='thumbnail' src='".base_url()."assets/images/not-available.png' width='150px'>";
 
                                 }
 
@@ -86,9 +88,9 @@
                                 <td>
 
 								<div>
-                                <a href='".base_url("simanis/lihatperusahaan?id=".$row['id']."")."' class='btn btn-primary btn-xs lihat' title='Edit'  id='".$row['id']."' ><i class='fa fa-eye' id='".$row['id']."'></i></a>
+                                <a href='".base_url("simanis/lihatproduk?id=".$row['id']."")."' class='btn btn-primary btn-xs lihat' title='Lihat'  id='".$row['id']."' ><i class='fa fa-eye' id='".$row['id']."'></i></a>
 
-                                <a href='".base_url("simanis/editperusahaan?id=".$row['id']."")."' class='btn btn-primary btn-xs edi' title='Edit'  id='".$row['id']."' ><i class='fa fa-edit' id='".$row['id']."'></i></a>
+                                <a href='".base_url("simanis/editproduk?id=".$row['id']."")."' class='btn btn-primary btn-xs edi' title='Edit'  id='".$row['id']."' ><i class='fa fa-edit' id='".$row['id']."'></i></a>
 
 
 									<a href='#' class='btn btn-primary btn-xs hapus' title='Hapus' id='".$row['id']."'><i class='fa fa-trash-o'></i></a>

@@ -67,19 +67,19 @@
 							
 								<div class="form-group">
 									<label for="field-1" class="control-label">Spesifikasi Panjang </label>
-									<input type="text" class="form-control" id="panjang" name="panjang" placeholder=" Masukkan Panjang"  value="">
+									<input type="text" class="form-control nilai" id="panjang" name="panjang" placeholder=" Masukkan Panjang (cm)"  value="">
 								</div>
 								<div class="form-group">
 									<label for="field-1" class="control-label">Spesifikasi Lebar </label>
-									<input type="text" class="form-control" id="lebar" name="lebar" placeholder=" Masukkan Lebar"  value="">
+									<input type="text" class="form-control nilai" id="lebar" name="lebar" placeholder=" Masukkan Lebar (cm)"  value="">
 								</div>
 								<div class="form-group">
 									<label for="field-1" class="control-label">Spesifikasi Tinggi </label>
-									<input type="text" class="form-control" id="tinggi" name="tinggi" placeholder=" Masukkan Tinggi"  value="">
+									<input type="text" class="form-control nilai" id="tinggi" name="tinggi" placeholder=" Masukkan Tinggi (cm)"  value="">
 								</div>
 								<div class="form-group">
-									<label for="field-1" class="control-label">Spesifikasi Barat </label>
-									<input type="text" class="form-control" id="barat" name="barat" placeholder=" Masukkan Barat"  value="">
+									<label for="field-1" class="control-label">Spesifikasi Berat </label>
+									<input type="text" class="form-control nilai" id="barat" name="barat" placeholder=" Masukkan Berat  (gram)"  value="">
 								</div>
 								
 								
@@ -99,23 +99,23 @@
 									<input type="text" class="form-control" id="lainnya" name="lainnya" placeholder=" Masukkan Informasi Lainnya"  value="">
 								</div>
 								<div class="form-group">
-									<label for="field-1" class="control-label">Harga Jual Produk</label>
+									<label for="field-1" class="control-label">Harga Jual Produk *</label>
 									<input type="text" class="form-control" id="harga" name="harga" placeholder=" Masukkan Harga Produk"  value="">
 								</div>
 								<div class="form-group">
 									<label for="field-1" class="control-label">Nilai Penjualan</label>
-									<input type="text" class="form-control" id="nilai" name="nilai" placeholder=" Masukkan Nilai"  value="">
+									<input type="text" class="form-control nilai" id="nilai" name="nilai" placeholder=" Masukkan Nilai Penjualan dalam Setahun"  value="">
 								</div>
 								<div class="form-group">
 									<label for="field-1" class="control-label">Bahan</label>
-									<input type="text" class="form-control" id="Bahan" name="Bahan" placeholder=" Masukkan Bahan"  value="">
+									<input type="text" class="form-control nilai" id="Bahan" name="Bahan" placeholder=" Masukkan Bahan"  value="">
 								</div>
 			
 
 								<div class="form-group">
 									<label for="field-1" class="control-label"> Wilayah Pemasaran *</label>
-									<select class="form-control select3" name="pemasaran_id[]" id="pemasaran_id" multiple="multiple" placeholder="Pilih Pemasaran">
-										
+									<select class="form-control select3" name="pemasaran_id[]" id="pemasaran_id" multiple="multiple" placeholder="Pilih Pemasaran" required>
+							
 										<?php
 											foreach($masterpemasaran->result_array() as $row) {
 												echo "<option value='".$row['id']."' >".$row['pemasaran']."</option>";

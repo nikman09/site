@@ -15,17 +15,27 @@ class M_pelatihan_produk extends CI_Model
         return $this->db->get('master_produk_perusahaan');
     }
 
-    function lihatdatasatuperusahaan($id)
-
+    function tambahdata($array)
     {
-
-        $this->db->select("master_perusahaan.*");
-
-        $this->db->where("master_perusahaan.id",$id);
-
-        return $this->db->get('master_perusahaan');
+        return $this->db->insert('master_produk_perusahaan',$array);
 
     }
+    
+    function lihatdatasatu($id)
+    {
+        $this->db->select("master_produk_perusahaan.*");
+        $this->db->where("master_produk_perusahaan.id",$id);
+        return $this->db->get('master_produk_perusahaan');
+    }
+
+    function lihatpemasaran($id_produk)
+    {
+        $this->db->select("master_produk_pemasaran.*,master_pemasaran.*")
+        ->join("master_pemasaran","master_pemasaran.id=master_produk_pemasaran.pemasaran_id","inner");
+        $this->db->where("master_produk_pemasaran.produk_id",$id_produk);
+        return $this->db->get('master_produk_pemasaran');
+    }
+
 
    
 
@@ -64,13 +74,7 @@ class M_pelatihan_produk extends CI_Model
 
     }
 
-    function tambahdata($array)
-
-    {
-
-        return $this->db->insert('master_perusahaan',$array);
-
-    }
+   
 
     public function get_kode() {
 		$query = $this->db->query("SELECT MAX(RIGHT(kode,7)) AS kode FROM master_perusahaan");

@@ -1084,6 +1084,31 @@ class Simanis extends CI_Controller {
       
     }
 
+    public function produkhapus()
+    {
+      $this->load->model("m_pelatihan/m_pelatihan_perusahaan");
+      $this->load->model("m_pelatihan/m_pelatihan_produk");
+        $id_produk = $this->input->get("id");
+        $query2 = $this->m_pelatihan_produk->lihatdatasatu($id_produk);
+        $row2 = $query2->row();
+        $gambar = $row2->gambar;
+        $path1 ='./assets/images/pelatihan/perusahaan/produk/'.$gambar;
+        $filelawas1 = 'web/uploads/'.$gambar.'';
+        $ftp_server = "siikalsel.disperin.kalselprov.go.id";
+        $conn_id = ftp_connect($ftp_server);
+        $login_result = ftp_login($conn_id, "siikalselftp", "560493ff1221b589f2230e9861fc003835a512ef");
+
+        if(is_file($path1)) {
+            unlink($path1);
+            ftp_delete($conn_id, $filelawas1);
+            
+        }
+        $exec = $this->m_pelatihan_produk->hapus($id_produk);
+        $execpemasaran = $this->m_pelatihan_produk->hapuspemasaran($id_produk);
+        redirect(base_url()."simanis/produk?msg=2&id=$id_produk");
+    }
+
+
     public function perusahaan()
     {   
         cekloginpelatihan();

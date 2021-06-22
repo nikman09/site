@@ -36,6 +36,18 @@ class M_pelatihan_produk extends CI_Model
         return $this->db->get('master_produk_pemasaran');
     }
 
+    function hapus($id)
+    {
+        $this->db->where("id",$id);
+        return $this->db->delete('master_produk_perusahaan');
+    }
+
+    function hapuspemasaran($id)
+    {
+        $this->db->where("produk_id",$id);
+        return $this->db->delete('master_produk_pemasaran');
+    }
+
 
    
 
@@ -115,24 +127,6 @@ class M_pelatihan_produk extends CI_Model
         $this->db->where("id",$id_perusahaan);
 
         return $this->db->update('master_perusahaan',$array);
-
-    }
-
-    function hapus($id)
-
-    {
-
-        $this->db->where("id",$id);
-
-        return $this->db->delete('master_perusahaan');
-
-    }
-
-    function hapusproduk($id)
-
-    {
-        $this->db->where("perusahaan_id",$id);
-        return $this->db->delete('master_perusahaan_produk');
 
     }
 

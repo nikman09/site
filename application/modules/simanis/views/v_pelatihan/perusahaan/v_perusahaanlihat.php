@@ -442,99 +442,25 @@ border-collapse: separate;">
 	
 
 	</div>
+	<div class="row">
 
+<div class="col-md-12">
+<br/>
+	<br/>	
+	<br/>
+	<br/>					
+<a href="<?php echo base_url("simanis/perusahaan") ?>" class="btn btn-default  btn-icon icon-left  daftar" style="float:right"><i class='fa fa-arrow-left'></i>Kembali</a>
+	
+
+		</form>
+
+</div>
+
+</div>
 </div>
 
 </div>
 
 
 
-<div class="modal fade" id="myModal">
 
-    <div class="modal-dialog">
-
-        <div class="modal-content" id="modal-tambah">
-
-            <div class="modal-header">
-
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-
-                <h4 class="modal-title">Konfirmasi Kehadiran</h4>
-
-            </div>
-
-            <form role="form" class="validate" action="<?php echo base_url() ?>simanis/status" method="post" id="form">
-
-                <div class="modal-body">
-
-                    <div class="row">
-
-                        <div class="col-md-12">
-
-                            <input type="hidden" name="<?=$csrf['name']?>" value="<?=$csrf['hash']?>">
-
-							<input type="hidden" name="id_pelatihandaftar" value="<?=$data['id_pelatihandaftar']?>">
-
-                            <div class="form-group">
-
-                                <label for="field-1" class="control-label">Konfirmasi Konfirmasi</label>
-
-                                <select type="text" class="form-control" id="konfirmasi" name="konfirmasi" placeholder="Kategori Berita">
-
-									<option value="">.:Pilih Konfirmasi:.</option>
-
-									<option value="Hadir">Hadir</option>
-
-									<option value="Tidak Bisa Hadir">Tidak Bisa Hadir</option>
-
-								</select>
-
-                            </div>
-
-							<div class="form-group">
-
-                                <label for="field-1" class="control-label">Alasan (*Jika tidak bisa berhadir)</label>
-
-                                <textarea class="form-control" id="alasan" name="alasan" placeholder="Masukkan Alasan"></textarea>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div class="modal-footer">
-
-                    <button type="submit" class="btn btn-primary">Konfirmasi</button>
-
-                </div>
-
-            </form>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-
-
-
-<div class="modal fade" id="myModal2">
-
-    <div class="modal-dialog">
-
-        <div class="modal-content" id="modal-edit">
-
-          
-
-         
-
-        </div>
-
-    </div>
-
-</div>

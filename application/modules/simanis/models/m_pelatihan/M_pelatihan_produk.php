@@ -20,6 +20,14 @@ class M_pelatihan_produk extends CI_Model
         return $this->db->insert('master_produk_perusahaan',$array);
 
     }
+
+    
+    function editdata($id_produk,$array)
+    {
+        $this->db->where("id",$id_produk);
+        return $this->db->update('master_produk_perusahaan',$array);
+    }
+
     
     function lihatdatasatu($id)
     {
@@ -119,16 +127,6 @@ class M_pelatihan_produk extends CI_Model
 
    
 
-
-    function editdata($id_perusahaan,$array)
-
-    {
-
-        $this->db->where("id",$id_perusahaan);
-
-        return $this->db->update('master_perusahaan',$array);
-
-    }
 
   
 

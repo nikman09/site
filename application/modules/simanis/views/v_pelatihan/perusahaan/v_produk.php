@@ -89,7 +89,6 @@
 
 								<div>
                                 <a href='".base_url("simanis/lihatproduk?id=".$row['id']."")."' class='btn btn-primary btn-xs lihat' title='Lihat'  id='".$row['id']."' ><i class='fa fa-eye' id='".$row['id']."'></i></a>
-
                                 <a href='".base_url("simanis/editproduk?id=".$row['id']."")."' class='btn btn-primary btn-xs edi' title='Edit'  id='".$row['id']."' ><i class='fa fa-edit' id='".$row['id']."'></i></a>
 
 

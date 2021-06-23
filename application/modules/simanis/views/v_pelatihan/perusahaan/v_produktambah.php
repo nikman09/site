@@ -108,7 +108,7 @@
 								</div>
 								<div class="form-group">
 									<label for="field-1" class="control-label">Bahan</label>
-									<input type="text" class="form-control nilai" id="Bahan" name="Bahan" placeholder=" Masukkan Bahan"  value="">
+									<input type="text" class="form-control nilai" id="bahan" name="bahan" placeholder=" Masukkan Bahan"  value="">
 								</div>
 			
 

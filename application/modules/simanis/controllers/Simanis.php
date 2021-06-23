@@ -992,7 +992,7 @@ class Simanis extends CI_Controller {
             $id_akun = $this->session->userdata("pelatihan_idakun");
             $id_perusahaan = $this->input->post("id_perusahaan");
             $array=array(
-               'perusahaan_id'=>  $id_perusahaan,
+                'perusahaan_id'=>  $id_perusahaan,
                 'kode' => $this->input->post('kode'),
                 'produk'=> $this->input->post('produk'),
                 'jenis'=> $this->input->post('jenis'),
@@ -1003,6 +1003,7 @@ class Simanis extends CI_Controller {
                 'isi'=>$this->input->post('isi'),
                 'harga'=>$this->input->post('harga'),
                 'nilai'=>$this->input->post('nilai'),
+                'lainnya'=>$this->input->post('lainnya'),
                 'bahan'=>$this->input->post('bahan'),
                 'created_id'=>25,
                 'created_at'=>date('Y-m-d H:i:s'),
@@ -1066,6 +1067,124 @@ class Simanis extends CI_Controller {
             } else {
                 redirect(base_url("simanis/perusahaan"));
             }
+        }
+      
+    }
+    
+    public function editproduk()
+    {   
+        cekloginpelatihan();
+        $variabel['csrf'] = csrf();
+        $this->load->model("m_pelatihan/m_pelatihan_akun");
+        $this->load->model("m_pelatihan/m_pelatihan_perusahaan");
+        $this->load->model("m_pelatihan/m_pelatihan_produk");
+        $id_akun = $this->session->userdata("pelatihan_idakun");
+        if ($this->input->post()) {
+            $id_akun = $this->session->userdata("pelatihan_idakun");
+            $id_produk =  $this->input->post('id_produk');
+            $array=array(
+
+                'kode' => $this->input->post('kode'),
+                'produk'=> $this->input->post('produk'),
+                'jenis'=> $this->input->post('jenis'),
+                'panjang'=>$this->input->post('panjang'),
+                'lebar'=>$this->input->post('lebar'),
+                'tinggi'=>$this->input->post('tinggi'),
+                'berat'=>$this->input->post('barat'),
+                'isi'=>$this->input->post('isi'),
+                'harga'=>$this->input->post('harga'),
+                'nilai'=>$this->input->post('nilai'),
+                'lainnya'=>$this->input->post('lainnya'),
+                'bahan'=>$this->input->post('bahan'),
+                'created_id'=>25,
+                'created_at'=>date('Y-m-d H:i:s'),
+
+          );
+
+          $ftp_server = "siikalsel.disperin.kalselprov.go.id";
+          $conn_id = ftp_connect($ftp_server);
+          $login_result = ftp_login($conn_id, "siikalselftp", "560493ff1221b589f2230e9861fc003835a512ef");
+
+          $nmfile = "katalog_".time();
+          $config['upload_path'] = './assets/images/pelatihan/perusahaan/produk';
+          $config['allowed_types'] = 'jpg|jpeg|JPG|JPEG|PNG|png|PDF|pdf|doc|docx';
+          $config['file_name']  =  $nmfile;
+          $this->load->library('upload', $config);
+          if ($this->upload->do_upload("gambar"))
+          {
+              
+              $upload = $this->upload->data();
+              $file = $nmfile.$upload["file_ext"];
+              $array['gambar']=$file;
+
+              $query2 = $this->m_pelatihan_produk->lihatdatasatu($id_produk);
+              $row2 = $query2->row();
+              $berkas1temp = $row2->gambar;
+              $path1 ='./assets/images/pelatihan/perusahaan/produk/'.$berkas1temp.'';
+              $file = './assets/images/pelatihan/perusahaan/produk/'.$array['gambar'].'';
+              $remote_file = 'web/uploads/'.$array['gambar'].'';
+              $filelawas = 'web/uploads/'.$berkas1temp.'';
+              if (ftp_put($conn_id, $remote_file, $file, FTP_BINARY )) {
+                echo "successfully uploaded $file\n";
+              } else {
+                  echo "There was a problem while uploading $file\n";
+              }
+      
+              if(is_file($path1)) {
+                  unlink($path1); //menghapus gambar di folder pengumuman
+                  ftp_delete($conn_id, $filelawas);
+              }
+          } 
+              else if ($this->input->post('gambar')=="") 
+          {
+              $query2 = $this->m_pelatihan_produk->lihatdatasatu($id_produk);
+              $row2 = $query2->row();
+              $berkas1temp = $row2->gambar;
+              $path1 ='./assets/images/pelatihan/perusahaan/produk/'.$berkas1temp.'';
+              $filelawas = 'web/uploads/'.$berkas1temp.'';
+              if(is_file($path1)) {
+                  unlink($path1); //menghapus gambar di folder pengumuman
+                  ftp_delete($conn_id, $filelawas);
+              }
+              $array['gambar']="";
+          }
+
+             $exec = $this->m_pelatihan_produk->editdata($id_produk,$array);
+            echo  $recordID=  $id_produk;
+             $exec = $this->m_pelatihan_produk->hapuspemasaran($id_produk);
+               $pemasaran = $this->input->post('pemasaran_id');
+               $result = array();
+
+               if ($pemasaran!=""){
+                foreach($pemasaran AS $key => $val){
+                 if($_POST['pemasaran_id'][$key] != ''){
+                   $result[] = array(
+                     "produk_id"  => $recordID,
+                     "pemasaran_id"  => $_POST['pemasaran_id'][$key]
+                     );
+                   }
+                 }
+               }
+               
+
+            print_r($result);
+            $this->db->insert_batch('master_produk_pemasaran', $result);
+
+            if ($exec) redirect(base_url("simanis/editproduk?msg=1&id=".$id_produk.""));
+            else redirect(base_url("simanis/editproduk?msg=0&id=".$id_produk.""));
+            
+        } else {
+          $id_produk=$this->input->get("id");
+          $exec = $this->m_pelatihan_produk->lihatdatasatu($id_produk);
+          if ($exec->num_rows()>0){
+              $variabel['data'] = $exec ->row_array();
+              $variabel['masterpemasaran'] = $this->m_pelatihan_perusahaan->lihatmasterpemasaran();
+              $variabel['pemasaran'] = $this->m_pelatihan_produk->lihatpemasaran($id_produk);
+              $this->layout->renderpel('v_pelatihan/perusahaan/v_produkedit',$variabel,'v_pelatihan/perusahaan/v_produkedit_js');
+          } else {
+              redirect(base_url("simanis/datausaha"));
+          }
+           
         }
       
     }

@@ -30,6 +30,14 @@ class M_pelatihan_perusahaan extends CI_Model
         return $this->db->get('master_pemasaran');
     }
 
+    function lihatmastersatuan()
+    {
+
+        $this->db->select("master_satuan.*");
+        $this->db->where("deleted_id",NULL);
+        
+        return $this->db->get('master_satuan');
+    }
     function lihatmasterizin()
     {
 

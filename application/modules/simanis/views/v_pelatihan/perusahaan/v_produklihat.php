@@ -272,15 +272,15 @@
 	<div class="col-md-4" style="border: 0px solid #000;border-radius:10px;">
 	<?php  if ($data['gambar']!="") {
 
-echo "<a href='".base_url()."assets/images/pelatihan/perusahaan/produk/".$data['gambar']."'  id='".$data['id']."'target='_blank' ><img  class='thumbnail' src='".base_url()."assets/images/pelatihan/perusahaan/produk/".$data['gambar']."' width='300px'></a>";
+		echo "<a href='".base_url()."assets/images/pelatihan/perusahaan/produk/".$data['gambar']."'  id='".$data['id']."'target='_blank' ><img  class='thumbnail' src='".base_url()."assets/images/pelatihan/perusahaan/produk/".$data['gambar']."' width='300px'></a>";
 
-} else {
+		} else {
 
-//  echo "<a href='#' class='btn btn-default btn-xs' disabled> <i class='fa fa-file'></li></a>";    
-echo "<img  class='thumbnail' src='".base_url()."assets/images/not-available.png' width='150px'>";
+		//  echo "<a href='#' class='btn btn-default btn-xs' disabled> <i class='fa fa-file'></li></a>";    
+		echo "<img  class='thumbnail' src='".base_url()."assets/images/not-available.png' width='150px'>";
 
-}
-?>
+		}
+		?>
 		
 
 
@@ -289,6 +289,17 @@ echo "<img  class='thumbnail' src='".base_url()."assets/images/not-available.png
 	
 
 	</div>
+
+	<div class="row">
+
+					<div class="col-md-12">
+					<a href="<?php echo base_url("simanis/produk?id=".$data['perusahaan_id']."") ?>" class="btn btn-default  btn-icon icon-left  daftar" style="float:right"><i class='fa fa-arrow-left'></i>Kembali</a>
+						
+						<br/>
+						<br/>
+							</form>
+
+					</div>
 
 </div>
 

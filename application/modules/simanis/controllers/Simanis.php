@@ -960,6 +960,76 @@ class Simanis extends CI_Controller {
           }
     }
 
+    public function tahunan()
+    {   
+        cekloginpelatihan();
+        $variabel['csrf'] = csrf();
+        $this->load->model("m_pelatihan/m_pelatihan_tahunan");
+        $this->load->model("m_pelatihan/m_pelatihan_perusahaan");
+        $id_akun = $this->session->userdata("pelatihan_idakun");
+        $id_perusahaan = $this->input->get("id");
+        $perusahaan = $this->m_pelatihan_perusahaan->lihatdataakunsatu($id_akun,$id_perusahaan);
+        if ($perusahaan->num_rows()>0){
+          $exec = $this->m_pelatihan_tahunan->lihatdataakun($id_perusahaan);
+          $variabel['data'] = $exec;
+          $variabel['perusahaan'] = $perusahaan->row_array();
+          $this->layout->renderpel('v_pelatihan/perusahaan/v_tahunan',$variabel,'v_pelatihan/perusahaan/V_tahunan_js');
+
+        }
+         
+    }
+
+
+    public function tambahtahunan()
+    {   
+        cekloginpelatihan();
+        $variabel['csrf'] = csrf();
+        $this->load->model("m_pelatihan/m_pelatihan_akun");
+        $this->load->model("m_pelatihan/m_pelatihan_perusahaan");
+        $this->load->model("m_pelatihan/m_pelatihan_produk");
+        $this->load->model("m_pelatihan/m_pelatihan_tahunan");
+        $id_akun = $this->session->userdata("pelatihan_idakun");
+        if ($this->input->post()) {
+          $id_akun = $this->session->userdata("pelatihan_idakun");
+          $id_perusahaan = $this->input->post("id_perusahaan");
+          $array=array(
+              'perusahaan_id'=>  $id_perusahaan,
+              'tahun' => $this->input->post('tahun'),
+              'laki'=> $this->input->post('laki'),
+              'perempuan'=> $this->input->post('perempuan'),
+              'investasi'=>$this->input->post('investasi'),
+              'kapasitas'=>$this->input->post('kapasitas'),
+              'satuan_id'=>$this->input->post('satuan_id'),
+              'produksi'=>$this->input->post('produksi'),
+              'bb'=>$this->input->post('bb'),
+              'ekspor'=>$this->input->post('ekspor'),
+              'negara'=>$this->input->post('negara'),
+              'created_id'=>25,
+              'created_at'=>date('Y-m-d H:i:s'),
+
+          );
+
+      
+             $exec = $this->m_pelatihan_tahunan->tambahdata($array);
+             $recordID= $this->db->insert_id();
+            if ($exec) redirect(base_url("simanis/tahunan?msg=1&id=$id_perusahaan"));
+            else redirect(base_url("simanis/tahunan?msg=0&id=$id_perusahaan"));
+
+      } else {
+            $id_akun = $this->session->userdata("pelatihan_idakun");
+            $id_perusahaan = $this->input->get("id");
+            $perusahaan = $this->m_pelatihan_perusahaan->lihatdataakunsatu($id_akun,$id_perusahaan);
+            if ($perusahaan->num_rows()>0){
+                $variabel['data'] = $perusahaan ->row_array();
+                $variabel['mastersatuan'] = $this->m_pelatihan_perusahaan->lihatmastersatuan();
+                $this->layout->renderpel('v_pelatihan/perusahaan/v_tahunantambah',$variabel,'v_pelatihan/perusahaan/v_tahunantambah_js');
+            } else {
+                redirect(base_url("simanis/perusahaan"));
+            }
+        }
+      
+    }
+
     public function produk()
     {   
         cekloginpelatihan();
@@ -1211,6 +1281,7 @@ class Simanis extends CI_Controller {
         $query2 = $this->m_pelatihan_produk->lihatdatasatu($id_produk);
         $row2 = $query2->row();
         $gambar = $row2->gambar;
+        $id_perusahaan = $row2->perusahaan_id;
         $path1 ='./assets/images/pelatihan/perusahaan/produk/'.$gambar;
         $filelawas1 = 'web/uploads/'.$gambar.'';
         $ftp_server = "siikalsel.disperin.kalselprov.go.id";
@@ -1224,7 +1295,7 @@ class Simanis extends CI_Controller {
         }
         $exec = $this->m_pelatihan_produk->hapus($id_produk);
         $execpemasaran = $this->m_pelatihan_produk->hapuspemasaran($id_produk);
-        redirect(base_url()."simanis/produk?msg=2&id=$id_produk");
+        redirect(base_url()."simanis/produk?msg=2&id=$id_perusahaan");
     }
 
 
@@ -1233,6 +1304,8 @@ class Simanis extends CI_Controller {
         cekloginpelatihan();
         $variabel['csrf'] = csrf();
         $this->load->model("m_pelatihan/m_pelatihan_perusahaan");
+
+        $this->load->model("m_pelatihan/m_pelatihan_produk");
         $id_akun = $this->session->userdata("pelatihan_idakun");
       
             $exec = $this->m_pelatihan_perusahaan->lihatdataakun($id_akun);

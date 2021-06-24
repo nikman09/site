@@ -26,9 +26,10 @@
 
         <?php pesan_get2('msg',"Berhasil Menambah Produk","Berhasil Mengedit Produk","Berhasil Menghapus Produk") ?>
 
+        <a href="<?php echo base_url("simanis/perusahaan") ?>" class="btn btn-default  btn-icon icon-left  daftar" style="margin: 5px 10px 10px 0px" ><i class='fa fa-arrow-left'></i>Kembali</a>
         <a href="<?php echo base_url("simanis/tambahproduk?id=".$perusahaan["id_perusahaan"]."") ?>" style="margin: 5px 0 10px 0px" class="btn  btn-primary tambah   btn-icon icon-left" >
 
-                <i class="fa fa-plus"></i> Tambah Produk</a>
+					        <i class="fa fa-plus"></i> Tambah Produk</a>
 
                
 

@@ -37,7 +37,7 @@
                 <thead>
 
                   <tr>
-                        <th width="20px">#</th>
+                        <th width="10px">#</th>
                         <th>Nama Perusahaan</th>
                         <th>Pemilik</th>
                         <th>Kab/Kota</th>
@@ -46,7 +46,7 @@
                         <th>Jumlah Produk</th>
                         <th>Laporan Tahunan</th>
                         <th>Legalitas</th>
-                        <th width="100px">Aksi</th>
+                        <th width="130px">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -72,31 +72,32 @@
                                 <td>".$row['kota']."</td>
                                 <td>".$row['kecamatan']."</td>
                                 <td>".$row['kbli']."</td>
-                                <td><a href='".base_url()."assets/images/pelatihan/pendukung/".$row['legalitas']."' class='btn btn-success btn-sm btn-icon icon-left ' title='Edit'  id='".$row['id']."'target='_blank' ><i style='font-style: normal;'>01</i> Produk</a></td>
+
+                                <td>";
+
+                                 $jumlah= $this->m_pelatihan_produk->lihatdataakun($row['id_perusahaan'])->num_rows();
+                                    if ($jumlah>0)
+                                    {
+                                        echo "<a href='".base_url()."simanis/produk?id=".$row['id_perusahaan']."' class='btn btn-success btn-sm btn-icon icon-left ' title='Edit'  id='".$row['id']."'><i style='font-style: normal;'>$jumlah</i>Produk</a>";
+                                    } else {
+                                        echo "<a href='".base_url()."simanis/produk?id=".$row['id_perusahaan']."' class='btn btn-danger btn-sm btn-icon icon-left ' title='Edit'  id='".$row['id']."><i style='font-style: normal;'>$jumlah</i>Produk</a>";
+                                    }
+                                echo "
+                                </td>
                                 <td><a href='".base_url()."assets/images/pelatihan/pendukung/".$row['legalitas']."' class='btn btn-success btn-sm btn-icon icon-left ' title='Edit'  id='".$row['id']."'target='_blank' ><i style='font-style: normal;'>01</i>Laporan</a></td>
-                        
                                 <td align='center'>";
 
                                 if ($row['legalitas']!="") {
 									echo "<a href='".base_url()."assets/images/pelatihan/perusahaan/legalitas/".$row['legalitas']."' class='btn btn-default btn-sm  ' title='Edit'  id='".$row['id_perusahaan']."'target='_blank' ><i class='fa fa-file' id='".$row['id_perusahaan']."'></i></a>";
-
                                 } else {
-
                                     echo "<a href='#' class='btn btn-default btn-xs' disabled> <i class='fa fa-file'></li></a>";    
-
                                 }
-
                                 echo "</td>
                                 <td>
-
-								<div>
+								<div style='width:100px'>
                                 <a href='".base_url("simanis/lihatperusahaan?id=".$row['id_perusahaan']."")."' class='btn btn-primary btn-xs lihat' title='Edit'  id='".$row['id_perusahaan']."' ><i class='fa fa-eye' id='".$row['id_perusahaan']."'></i></a>
-
                                 <a href='".base_url("simanis/editperusahaan?id=".$row['id_perusahaan']."")."' class='btn btn-primary btn-xs edi' title='Edit'  id='".$row['id_perusahaan']."' ><i class='fa fa-edit' id='".$row['id_perusahaan']."'></i></a>
-
-
 									<a href='#' class='btn btn-primary btn-xs hapus' title='Hapus' id='".$row['id_perusahaan']."'><i class='fa fa-trash-o'></i></a>
-
                                 </div>
                                 </td>
 							</tr>

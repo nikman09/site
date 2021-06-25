@@ -101,7 +101,7 @@
 								</div>
 								<div class="form-group">
 									<label for="field-1" class="control-label">Negara Tujuan Ekspor</label>
-									<input type="text" class="form-control nilai" id="negara" name="negara" placeholder=" Masukkan Negara Tujuan Ekspor"  value="">
+									<input type="text" class="form-control" id="negara" name="negara" placeholder=" Masukkan Negara Tujuan Ekspor"  value="">
 								</div>
 								
 

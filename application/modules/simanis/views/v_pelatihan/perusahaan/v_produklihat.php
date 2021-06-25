@@ -21,7 +21,7 @@
 	<div class="row vspace" style="padding:10px">
 
 	<?php pesan_get2('msg',"Berhasil Melakukan Pendaftaran Pelatihan !","Berhasil Melakukan Konfirmasi Kehadiran !") ?>
-	<h3 align="center">Data Usaha / Perusahaan</h3>
+	<h3 align="center">Data Produk</h3>
 		<div class="col-md-8" style="border: 0px solid #000;border-radius:10px;">
 
 		

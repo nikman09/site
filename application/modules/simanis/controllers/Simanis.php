@@ -980,6 +980,33 @@ class Simanis extends CI_Controller {
     }
 
 
+
+    public function lihattahunan()
+    {   
+        $variabel['csrf'] = csrf();
+        $this->load->model("m_pelatihan/m_pelatihan_perusahaan");
+        $this->load->model("m_pelatihan/m_pelatihan_tahunan");
+        $id_akun = $this->session->userdata("pelatihan_idakun");
+        $id_tahunan=$this->input->get("id");
+        $exec = $this->m_pelatihan_tahunan->lihatdatasatu($id_tahunan);
+        $variabel['data'] = $exec->row_array();
+        $this->layout->renderpel('v_pelatihan/perusahaan/v_tahunanlihat',$variabel,'v_pelatihan/perusahaan/v_tahunan_js');
+      
+    }
+    public function tahunanhapus()
+    {
+      $this->load->model("m_pelatihan/m_pelatihan_perusahaan");
+      $this->load->model("m_pelatihan/m_pelatihan_tahunan");
+        $id_tahunan = $this->input->get("id");
+        $query2 = $this->m_pelatihan_tahunan->lihatdatasatu($id_tahunan);
+        $row2 = $query2->row();
+        $id_perusahaan = $row2->perusahaan_id;
+        $exec = $this->m_pelatihan_tahunan->hapus($id_tahunan);
+        redirect(base_url()."simanis/tahunan?msg=2&id=$id_perusahaan");
+    }
+
+
+
     public function tambahtahunan()
     {   
         cekloginpelatihan();
@@ -1029,6 +1056,8 @@ class Simanis extends CI_Controller {
         }
       
     }
+
+   
 
     public function produk()
     {   

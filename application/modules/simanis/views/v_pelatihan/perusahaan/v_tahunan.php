@@ -72,7 +72,6 @@
                                 <td>".++$i."</td>
 
 								</td>
-
                                 <td>".$row['tahun']."</td>
                                 <td>".$row['laki']."</td>
                                 <td>".$row['perempuan']."</td>
@@ -86,11 +85,11 @@
                                 <td>
 
 								<div style='width:100px'>
-                                <a href='".base_url("simanis/lihattahunan?id=".$row['id']."")."' class='btn btn-primary btn-xs lihat' title='Lihat'  id='".$row['id']."' ><i class='fa fa-eye' id='".$row['id']."'></i></a>
-                                <a href='".base_url("simanis/edittahunan?id=".$row['id']."")."' class='btn btn-primary btn-xs edi' title='Edit'  id='".$row['id']."' ><i class='fa fa-edit' id='".$row['id']."'></i></a>
+                                <a href='".base_url("simanis/lihattahunan?id=".$row['tahunan_id']."")."' class='btn btn-primary btn-xs lihat' title='Lihat'  id='".$row['tahunan_id']."' ><i class='fa fa-eye' id='".$row['tahunan_id']."'></i></a>
+                                <a href='".base_url("simanis/edittahunan?id=".$row['tahunan_id']."")."' class='btn btn-primary btn-xs edi' title='Edit'  id='".$row['id']."' ><i class='fa fa-edit' id='".$row['tahunan_id']."'></i></a>
 
 
-									<a href='#' class='btn btn-primary btn-xs hapus' title='Hapus' id='".$row['id']."'><i class='fa fa-trash-o'></i></a>
+									<a href='#' class='btn btn-primary btn-xs hapus' title='Hapus' id='".$row['tahunan_id']."'><i class='fa fa-trash-o'></i></a>
 
                                 </div>
                                 </td>

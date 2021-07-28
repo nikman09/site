@@ -56,7 +56,7 @@
 
 			<tr>
 
-				<td width="150px" valign="top">
+				<td width="300px" valign="top">
 
 				Jumlah Tenaga Kerja Laki-laki 
 

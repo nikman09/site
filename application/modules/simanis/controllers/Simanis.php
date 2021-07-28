@@ -1057,6 +1057,51 @@ class Simanis extends CI_Controller {
       
     }
 
+    public function edittahunan()
+    {   
+        cekloginpelatihan();
+        $variabel['csrf'] = csrf();
+        $this->load->model("m_pelatihan/m_pelatihan_akun");
+        $this->load->model("m_pelatihan/m_pelatihan_perusahaan");
+        $this->load->model("m_pelatihan/m_pelatihan_produk");
+        $this->load->model("m_pelatihan/m_pelatihan_tahunan");
+        $id_akun = $this->session->userdata("pelatihan_idakun");
+        if ($this->input->post()) {
+            $id_akun = $this->session->userdata("pelatihan_idakun");
+            $id_perusahaan = $this->input->post("id_perusahaan");
+            $array=array(
+              'tahun' => $this->input->post('tahun'),
+              'laki'=> $this->input->post('laki'),
+              'perempuan'=> $this->input->post('perempuan'),
+              'investasi'=>$this->input->post('investasi'),
+              'kapasitas'=>$this->input->post('kapasitas'),
+              'satuan_id'=>$this->input->post('satuan_id'),
+              'produksi'=>$this->input->post('produksi'),
+              'bb'=>$this->input->post('bb'),
+              'ekspor'=>$this->input->post('ekspor'),
+              'negara'=>$this->input->post('negara'),
+              'update_id'=>25,
+              'update_at'=>date('Y-m-d H:i:s'),
+          );
+            $exec = $this->m_pelatihan_tahunan->editdata($id_perusahaan,$array);
+            // if ($exec) redirect(base_url("simanis/edittahunan?msg=1&id=".$id_produk.""));
+            // else redirect(base_url("simanis/edittahunan?msg=0&id=".$id_produk.""));
+            
+        } else {
+          $id_tahunan=$this->input->get("id");
+          $exec = $this->m_pelatihan_tahunan->lihatdatasatu($id_tahunan);
+          if ($exec->num_rows()>0){
+              $variabel['data'] = $exec ->row_array();
+              $variabel['mastersatuan'] = $this->m_pelatihan_perusahaan->lihatmastersatuan();
+              $this->layout->renderpel('v_pelatihan/perusahaan/v_tahunanedit',$variabel,'v_pelatihan/perusahaan/v_tahunanedit_js');
+          } else {
+              redirect(base_url("simanis/perusahaan"));
+          }
+           
+        }
+      
+    }
+
    
 
     public function produk()
@@ -1195,8 +1240,8 @@ class Simanis extends CI_Controller {
                 'nilai'=>$this->input->post('nilai'),
                 'lainnya'=>$this->input->post('lainnya'),
                 'bahan'=>$this->input->post('bahan'),
-                'created_id'=>25,
-                'created_at'=>date('Y-m-d H:i:s'),
+                'update_id'=>25,
+                'update_at'=>date('Y-m-d H:i:s'),
 
           );
 
@@ -1333,12 +1378,13 @@ class Simanis extends CI_Controller {
         cekloginpelatihan();
         $variabel['csrf'] = csrf();
         $this->load->model("m_pelatihan/m_pelatihan_perusahaan");
-
+        $this->load->model("m_pelatihan/m_pelatihan_tahunan");
         $this->load->model("m_pelatihan/m_pelatihan_produk");
         $id_akun = $this->session->userdata("pelatihan_idakun");
-      
             $exec = $this->m_pelatihan_perusahaan->lihatdataakun($id_akun);
+            
             $variabel['data'] = $exec;
+            
             $this->layout->renderpel('v_pelatihan/perusahaan/v_perusahaan',$variabel,'v_pelatihan/perusahaan/v_perusahaan_js');
         
         
@@ -1398,7 +1444,7 @@ class Simanis extends CI_Controller {
               'bukalapak'=>$this->input->post('bukalapak'),
               'shopee'=>$this->input->post('shopee'),
               'update_id'=>25,
-              'create_id'=>date('Y-m-d H:i:s'),
+              'update_at'=>date('Y-m-d H:i:s'),
 
 
           );

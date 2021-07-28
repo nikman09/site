@@ -29,9 +29,6 @@
         <a href="<?php echo base_url("simanis/tambahperusahaan") ?>" style="margin: 5px 0 10px 0px" class="btn  btn-primary tambah   btn-icon icon-left" >
 
                 <i class="fa fa-plus"></i> Tambah Data Usaha</a>
-
-               
-
             <table class="table table-bordered datatable" id="table-12" style="font-size:12px">
 
                 <thead>
@@ -80,13 +77,18 @@
                                     {
                                         echo "<a href='".base_url()."simanis/produk?id=".$row['id_perusahaan']."' class='btn btn-success btn-sm btn-icon icon-left ' title='Edit'  id='".$row['id']."'><i style='font-style: normal;'>$jumlah</i>Produk</a>";
                                     } else {
-                                        echo "<a href='".base_url()."simanis/produk?id=".$row['id_perusahaan']."' class='btn btn-danger btn-sm btn-icon icon-left ' title='Edit'  id='".$row['id']."><i style='font-style: normal;'>$jumlah</i>Produk</a>";
+                                        echo "<a href='".base_url()."simanis/produk?id=".$row['id_perusahaan']."' class='btn btn-danger btn-sm btn-icon icon-left ' title='Edit'  id='".$row['id']."'><i style='font-style: normal;'>$jumlah</i>Produk</a>";
                                     }
-                                echo "
-                                </td>
-                                <td><a href='".base_url()."assets/images/pelatihan/pendukung/".$row['legalitas']."' class='btn btn-success btn-sm btn-icon icon-left ' title='Edit'  id='".$row['id']."'target='_blank' ><i style='font-style: normal;'>01</i>Laporan</a></td>
+                                    echo "<td>";
+                                    $jumlahlaporan= $this->m_pelatihan_tahunan->lihatdataakun($row['id_perusahaan'])->num_rows();
+                                    if ($jumlahlaporan>0)
+                                    { 
+                                        echo "<a href='".base_url()."simanis/tahunan?id=".$row['id_perusahaan']."' class='btn btn-success btn-sm btn-icon icon-left ' title='Edit'  id='".$row['id']."'><i style='font-style: normal;'>$jumlahlaporan</i>Laporan</a>";
+                                    } else {
+                                        echo "<a href='".base_url()."simanis/tahunan?id=".$row['id_perusahaan']."' class='btn btn-danger btn-sm btn-icon icon-left ' title='Edit'  id='".$row['id']."'><i style='font-style: normal;'>$jumlahlaporan</i>Laporan</a>";
+                                    }
+                                echo " </td>
                                 <td align='center'>";
-
                                 if ($row['legalitas']!="") {
 									echo "<a href='".base_url()."assets/images/pelatihan/perusahaan/legalitas/".$row['legalitas']."' class='btn btn-default btn-sm  ' title='Edit'  id='".$row['id_perusahaan']."'target='_blank' ><i class='fa fa-file' id='".$row['id_perusahaan']."'></i></a>";
                                 } else {

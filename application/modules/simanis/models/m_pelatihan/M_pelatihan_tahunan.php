@@ -34,7 +34,7 @@ class M_pelatihan_tahunan extends CI_Model
     
     function lihatdatasatu($id)
     {
-        $this->db->select("master_perusahaan_tahun.*, ,master_satuan.* ")
+        $this->db->select("master_perusahaan_tahun.id as tahunan_id, master_perusahaan_tahun.*, master_satuan.* ")
         ->join("master_satuan","master_satuan.id=master_perusahaan_tahun.satuan_id","inner");
         $this->db->where("master_perusahaan_tahun.id",$id);
         return $this->db->get('master_perusahaan_tahun');

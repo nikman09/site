@@ -1068,7 +1068,7 @@ class Simanis extends CI_Controller {
         $id_akun = $this->session->userdata("pelatihan_idakun");
         if ($this->input->post()) {
             $id_akun = $this->session->userdata("pelatihan_idakun");
-            $id_perusahaan = $this->input->post("id_perusahaan");
+            $id_tahunan = $this->input->post("id_tahunan");
             $array=array(
               'tahun' => $this->input->post('tahun'),
               'laki'=> $this->input->post('laki'),
@@ -1080,12 +1080,14 @@ class Simanis extends CI_Controller {
               'bb'=>$this->input->post('bb'),
               'ekspor'=>$this->input->post('ekspor'),
               'negara'=>$this->input->post('negara'),
-              'update_id'=>25,
-              'update_at'=>date('Y-m-d H:i:s'),
+              'updated_id'=>25,
+              'updated_at'=>date('Y-m-d H:i:s'),
           );
-            $exec = $this->m_pelatihan_tahunan->editdata($id_perusahaan,$array);
-            // if ($exec) redirect(base_url("simanis/edittahunan?msg=1&id=".$id_produk.""));
-            // else redirect(base_url("simanis/edittahunan?msg=0&id=".$id_produk.""));
+          echo  $id_tahunan;
+          // print_r($array);
+            $exec = $this->m_pelatihan_tahunan->editdata($id_tahunan,$array);
+            if ($exec) redirect(base_url("simanis/edittahunan?msg=1&id=".$id_tahunan.""));
+            else  redirect(base_url("simanis/edittahunan?msg=0&id=".$id_tahunan.""));
             
         } else {
           $id_tahunan=$this->input->get("id");
@@ -1240,8 +1242,8 @@ class Simanis extends CI_Controller {
                 'nilai'=>$this->input->post('nilai'),
                 'lainnya'=>$this->input->post('lainnya'),
                 'bahan'=>$this->input->post('bahan'),
-                'update_id'=>25,
-                'update_at'=>date('Y-m-d H:i:s'),
+                'updated_id'=>25,
+                'updated_at'=>date('Y-m-d H:i:s'),
 
           );
 
@@ -1443,8 +1445,8 @@ class Simanis extends CI_Controller {
               'tokped'=>$this->input->post('tokped'),
               'bukalapak'=>$this->input->post('bukalapak'),
               'shopee'=>$this->input->post('shopee'),
-              'update_id'=>25,
-              'update_at'=>date('Y-m-d H:i:s'),
+              'updated_id'=>25,
+              'updated_at'=>date('Y-m-d H:i:s'),
 
 
           );

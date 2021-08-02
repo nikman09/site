@@ -15,7 +15,7 @@
 
 					<div class="col-md-12">
 
-					<?php pesan_get2('msg',"Berhasil Menyimpan Data Usaha !") ?>
+					<?php pesan_get2('msg',"Berhasil mengedit laporan tahunan !") ?>
 
 						<h3>Edit Data Tahunan</h3>
 

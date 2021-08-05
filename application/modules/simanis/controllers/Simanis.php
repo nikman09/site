@@ -233,6 +233,10 @@ class Simanis extends CI_Controller {
         cekloginpelatihan();
         $this->load->model("m_pelatihan/m_pelatihan_pelatihandaftar");
         $this->load->model("m_pelatihan/m_pelatihan_akun");
+        
+        $this->load->model("m_pelatihan/m_pelatihan_perusahaan");
+        $this->load->model("m_pelatihan/m_pelatihan_tahunan");
+        $this->load->model("m_pelatihan/m_pelatihan_produk");
         $variabel['csrf'] = csrf();
         $id_akun = $this->session->userdata("pelatihan_idakun");
         $id_pelatihandaftar =  $this->input->post('id_pelatihandaftar');
@@ -254,6 +258,8 @@ class Simanis extends CI_Controller {
             $biodata= $this->m_pelatihan_akun->lihatdatasatu($id_akun)->row_array();
             $variabel['persen']= lengkap($biodata);
             $variabel['persenusaha']= usaha($biodata);
+            $variabel['jumlahusaha'] = $this->m_pelatihan_perusahaan->lihatdataakun($id_akun)->num_rows();
+            
             // Akhir Biodata Lengkap
           $this->layout->renderpel("v_pelatihan/status/v_status",$variabel,"v_pelatihan/status/v_status_js");
         } else {
@@ -900,6 +906,7 @@ class Simanis extends CI_Controller {
             $exec = $this->m_pelatihan_akun->lihatdatasatu($id_akun);
             if ($exec->num_rows()>0){
                 $variabel['data'] = $exec ->row_array();
+          
                 $variabel['masterbadan'] = $this->m_pelatihan_perusahaan->lihatmasterbadan();
                 $variabel['masterkota'] = $this->m_pelatihan_perusahaan->lihatmasterkota();
                 $variabel['masterizin'] = $this->m_pelatihan_perusahaan->lihatmasterizin();
@@ -1068,7 +1075,7 @@ class Simanis extends CI_Controller {
         $id_akun = $this->session->userdata("pelatihan_idakun");
         if ($this->input->post()) {
             $id_akun = $this->session->userdata("pelatihan_idakun");
-            $id_tahunan = $this->input->post("id_tahunan");
+            $id_perusahaan = $this->input->post("id_perusahaan");
             $array=array(
               'tahun' => $this->input->post('tahun'),
               'laki'=> $this->input->post('laki'),
@@ -1080,14 +1087,12 @@ class Simanis extends CI_Controller {
               'bb'=>$this->input->post('bb'),
               'ekspor'=>$this->input->post('ekspor'),
               'negara'=>$this->input->post('negara'),
-              'updated_id'=>25,
-              'updated_at'=>date('Y-m-d H:i:s'),
+              'update_id'=>25,
+              'update_at'=>date('Y-m-d H:i:s'),
           );
-          echo  $id_tahunan;
-          // print_r($array);
-            $exec = $this->m_pelatihan_tahunan->editdata($id_tahunan,$array);
-            if ($exec) redirect(base_url("simanis/edittahunan?msg=1&id=".$id_tahunan.""));
-            else  redirect(base_url("simanis/edittahunan?msg=0&id=".$id_tahunan.""));
+            $exec = $this->m_pelatihan_tahunan->editdata($id_perusahaan,$array);
+            // if ($exec) redirect(base_url("simanis/edittahunan?msg=1&id=".$id_produk.""));
+            // else redirect(base_url("simanis/edittahunan?msg=0&id=".$id_produk.""));
             
         } else {
           $id_tahunan=$this->input->get("id");
@@ -1242,8 +1247,8 @@ class Simanis extends CI_Controller {
                 'nilai'=>$this->input->post('nilai'),
                 'lainnya'=>$this->input->post('lainnya'),
                 'bahan'=>$this->input->post('bahan'),
-                'updated_id'=>25,
-                'updated_at'=>date('Y-m-d H:i:s'),
+                'update_id'=>25,
+                'update_at'=>date('Y-m-d H:i:s'),
 
           );
 
@@ -1384,7 +1389,7 @@ class Simanis extends CI_Controller {
         $this->load->model("m_pelatihan/m_pelatihan_produk");
         $id_akun = $this->session->userdata("pelatihan_idakun");
             $exec = $this->m_pelatihan_perusahaan->lihatdataakun($id_akun);
-            
+            echo $exec ->num_rows();
             $variabel['data'] = $exec;
             
             $this->layout->renderpel('v_pelatihan/perusahaan/v_perusahaan',$variabel,'v_pelatihan/perusahaan/v_perusahaan_js');
@@ -1445,8 +1450,8 @@ class Simanis extends CI_Controller {
               'tokped'=>$this->input->post('tokped'),
               'bukalapak'=>$this->input->post('bukalapak'),
               'shopee'=>$this->input->post('shopee'),
-              'updated_id'=>25,
-              'updated_at'=>date('Y-m-d H:i:s'),
+              'update_id'=>25,
+              'update_at'=>date('Y-m-d H:i:s'),
 
 
           );

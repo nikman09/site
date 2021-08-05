@@ -108,7 +108,7 @@
 
 								<a href="<?php echo base_url() ?>simanis/perusahaan">
 
-									<span>Data Usaha</span>
+									<span>Data Usaha (SIIKALSEL)</span>
 
 								</a>
 

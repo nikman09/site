@@ -144,6 +144,7 @@
                         <th>Pendidikan</th>
                         <th>Biodata</th>
                         <th>Data Usaha</th>
+                        <th>SIIKALSEL</th>
                         <th>Data Dukung</th>
                         <th>Seleksi</th>
                     </tr>
@@ -153,6 +154,7 @@
 					foreach($data->result_array() as $row){
                         $biodata = $this->m_admin_akun->lihatdatasatu($row["id_akun"])->row_array();
                         $dukungjumlah = $this->m_admin_berkas->lihatdataakun($row["id_akun"])->num_rows();
+                        $jumlahusaha = $this->m_pelatihan_perusahaan->lihatdataakun($row["id_akun"])->num_rows();
 						echo "
                             <tr>
                                 <td>
@@ -183,7 +185,10 @@
                                 <td>".$row['nohp']."</td>
                                 <td>".$row['pendidikan']."</td>
                                 <td><a href='#' class='btn ".(lengkap($biodata)>=100?"btn-primary ":"btn-danger")." btn-sm btn-icon icon-left biodata' title='Lihat Biodata'  data-toggle='modal' id='".$row['id_akun']."' data-target='#myModal2'><i class='fa fa-user' ></i> ".lengkap($biodata)." %</a> </td>
+                                
                                 <td><a href='#' class='btn ".(usaha($biodata)>=100?"btn-primary ":"btn-danger")." btn-sm btn-icon icon-left usaha' title='Usaha'  data-toggle='modal' id='".$row['id_akun']."' data-target='#myModal3'><i class='fa fa-industry'></i> ".usaha($biodata)." %</a></td>
+                                
+                                <td><a href='".base_url("simanis/admin/perusahaan?id=".$row['id_akun']."")."' class='btn ".($jumlahusaha>=1?"btn-primary ":"btn-danger")." btn-sm btn-icon icon-left usaha' title='Usaha'  data-toggle='modal' id='".$row['id_akun']."'  target='_blank'><i class='fa fa-database'></i> ".$jumlahusaha." </a></td>
                                
                                 <td><a href='#' class='btn ".($dukungjumlah>=1?"btn-primary ":"btn-danger")." btn-sm btn-icon icon-left dukung' title='Data Dukung'  data-toggle='modal' id='".$row['id_akun']."' data-target='#myModal6'><i class='fa fa-list'></i> ".$dukungjumlah."</a></td>
                                

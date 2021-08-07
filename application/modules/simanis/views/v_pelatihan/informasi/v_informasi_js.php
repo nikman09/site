@@ -4,9 +4,9 @@
     $.ajaxSetup({
         data: csfrData
     });
-var $table1 = jQuery( '#table-1' );            
-    // Initialize DataTable
-    $table1.DataTable( {
+
+$(document).ready(function() {
+	var $table1 =    $('#table-1').DataTable( {
 		
 		responsive: true,
 		columnDefs: [
@@ -39,4 +39,14 @@ var $table1 = jQuery( '#table-1' );
 				});
 			}
     });
+	$table1.columns(3).search($('#tahun').val()).draw() ;
+	$('#tahun').change( function() {
+		$table1.columns(3).search($(this).val()).draw() ;
+    } );
+	$('#kategori').change( function() {
+		$table1.columns(1).search($(this).val()).draw() ;
+	
+    } );
+} );
 </script>
+

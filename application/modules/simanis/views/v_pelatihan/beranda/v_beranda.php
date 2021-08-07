@@ -162,9 +162,63 @@
 
 
 <div class="container">
+
+
+<!-- -->
+
+					
+
+<!-- -->
 	<div class="row vspace">
+	<div class="row">
+	<h3 align="center">Informasi Pelatihan</h3>
+<div class="col-md-6">	
+		
+		<input type="hidden" name="<?=$csrf['name']?>" value="<?=$csrf['hash']?>">
+			
+			<div class="form-group">
+				<label for="field-1" class="control-label">Tahun </label>
+				<select class="form-control select3" name="tahun" id="tahun"  placeholder="Pilih Tahun" required>
+						<?php
+							$tahun = date("Y");
+							$tahunawal = 2020;
+							for ($x = $tahun; $x >= $tahunawal; $x--) {
+								$thn = $x;
+									echo "<option value='$thn' >".$thn."</option>";
+							}
+						?>
+					</select>
+			</div>	
+			
+			
+			
+	</div>
+	
+	
+	
+	<div class="col-md-6">
+	
+	
+	<div class="form-group">
+				<label for="field-1" class="control-label">Kategori</label>
+				<select class="form-control" name="kategori" id="kategori" >
+					<option value=""  selected>Semua</option>
+					<option value="Umum">Umum</option>
+					<option value="ASN">ASN</option>
+					<option value="Pelaku Industri">Pelaku Industri</option>
+				</select>
+			</div>	
+		
+	
+	
+	
+	</div>
+</div>
+	<div class="row">
 		<div class="col-md-12">
-		<h3 align="center">Informasi Pelatihan</h3>
+
+	
+	
 		<table class="table  table-strip datable" id="table-1" style="font-size:12px;width:100%" >
 		<thead>
 			<tr>
@@ -244,7 +298,7 @@
 	</table>
 	</div>
 </div>
-
+				</div>
 </div>
 
 <div class="container">

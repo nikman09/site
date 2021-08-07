@@ -106,9 +106,9 @@
 
 							<li class="<?= ($submenu == "datausaha") ? "active" : ""; ?>">
 
-								<a href="<?php echo base_url() ?>simanis/perusahaan">
+								<a href="<?php echo base_url() ?>simanis/datausaha">
 
-									<span>Data Usaha (SIIKALSEL)</span>
+									<span>Data Usaha</span>
 
 								</a>
 
@@ -119,6 +119,15 @@
 								<a href="<?php echo base_url() ?>simanis/pendukung">
 
 									<span>Data Pendukung</span>
+
+								</a>
+
+								</li>
+								<li class="<?= ($submenu == "perusahaan") ? "active" : ""; ?>">
+
+								<a href="<?php echo base_url() ?>simanis/perusahaan">
+
+									<span>SIIKALSEL</span>
 
 								</a>
 

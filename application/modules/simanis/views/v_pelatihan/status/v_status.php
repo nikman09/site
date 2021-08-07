@@ -226,9 +226,9 @@
 
 				<td  valign="top">
 
-				<a href="<?php base_url() ?>biodata" class="btn <?=$persen<100?"btn-danger":"btn-primary" ?> btn-icon icon-left" ><i class=""><?=ROUND($persen, 2)?> %</i>&nbsp &nbsp&nbsp Pengisian Biodata  &nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp&nbsp</a>
+				<a href="<?php base_url() ?>biodata" class="btn <?=$persen<100?"btn-danger":"btn-primary" ?> btn-icon icon-left" ><i class=" fa fa-user"></i>&nbsp &nbsp&nbsp Pengisian Biodata  &nbsp &nbsp &nbsp&nbsp</a>
 
-				<br/>	<span style="color:#ba0c00;font-size:11px"><?=$persen<100?"Belum Lengkap":"" ?></span>
+				<br/>	<span style="<?=$persen<100?"color:#ba0c00;":"color:#000;" ?>font-size:11px"><?=$persen<100?"Biodata Belum Lengkap Diisi ($persen %)":"* Biodata Sudah Lengkap Diisi ($persen %)" ?></span>
 
 				</td>
 
@@ -238,7 +238,30 @@
 
 				<td width="150px"  valign="top">
 
-				  Data Usaha (SIIKALSEL)
+				  Data Usaha
+				</td>
+
+				
+
+				<td  valign="top">
+
+				   : 
+
+				</td>
+
+				<td  valign="top">
+				<a href="<?php base_url() ?>perusahaan" class="btn <?=$persenusaha<100?"btn-danger":"btn-primary" ?> btn-icon icon-left" ><i class="fa fa-shopping-cart"></i>&nbsp &nbsp&nbsp Formulir Data Usaha  &nbsp&nbsp</a>
+
+<br/>	<span style="<?=$persenusaha<100?"color:#ba0c00;":"color:#000;" ?>font-size:11px"><?=$persenusaha<1?"Belum Lengkap (Untuk Kategori Pelaku Industri Harus Melengkapi Formulir Data Usaha ($persenusaha %))":"* Untuk Kategori Pelaku Industri Harus Melengkapi Data Usaha ($persenusaha %)" ?></span>
+
+				</td>
+
+			</tr>
+			<tr>
+
+				<td width="150px"  valign="top">
+
+				SIIKALSEL
 
 				</td>
 
@@ -252,9 +275,10 @@
 
 				<td  valign="top">
 
-				<a href="<?php base_url() ?>perusahaan" class="btn <?=$jumlahusaha<1?"btn-danger":"btn-primary" ?> btn-icon icon-left" ><i class=""> <?=$jumlahusaha?></i>&nbsp &nbsp&nbsp Pengisian Data Usaha  &nbsp&nbsp &nbsp&nbsp</a>
+				
+				<a href="<?php base_url() ?>perusahaan" class="btn <?=$jumlahusaha<1?"btn-danger":"btn-primary" ?> btn-icon icon-left" ><i class="fa fa-database"></i>&nbsp &nbsp&nbsp Formulir  SIIKALSEL  &nbsp&nbsp &nbsp&nbsp</a>
 
-				<br/>	<span style="<?=$jumlahusaha<1?"color:#ba0c00;":"color:#000;" ?>font-size:11px"><?=$jumlahusaha<1?"Belum Lengkap (Untuk Kategori Pelaku Industri Harus Melengkapi Data Usaha)":"*Untuk Kategori Pelaku Industri Harus Melengkapi Data Usaha" ?></span>
+				<br/>	<span style="<?=$jumlahusaha<1?"color:#ba0c00;":"color:#000;" ?>font-size:11px"><?=$jumlahusaha<1?"Belum Lengkap (Untuk Kategori Pelaku Industri Harus Melengkapi  Formulir SIIKALSEL) ($jumlahusaha Data)":"*Untuk Kategori Pelaku Data Harus Melengkapi Formulir SIIKALSEL ($jumlahusaha Data)"  ?></span>
 
 				</td>
 

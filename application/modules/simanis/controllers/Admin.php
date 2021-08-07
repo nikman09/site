@@ -209,6 +209,112 @@ class Admin extends CI_Controller {
       
     }
 
+    public function perusahaan()
+    {   
+        cekloginadminpelatihan();
+        $variabel['csrf'] = csrf();
+        $this->load->model("m_admin/m_pelatihan_perusahaan");
+        $this->load->model("m_admin/m_pelatihan_tahunan");
+        $this->load->model("m_admin/m_pelatihan_produk");
+        $this->load->model("m_admin/m_admin_akun");
+        $id_akun = $this->input->get("id");
+        $exec = $this->m_pelatihan_perusahaan->lihatdataakun($id_akun);
+        $variabel['data'] = $exec;
+        $variabel['biodata'] = $this->m_admin_akun->lihatdatasatu($id_akun)->row_array();
+        $this->layout->renderadmin('v_admin/perusahaan/v_perusahaan',$variabel,'v_admin/perusahaan/v_perusahaan_js');
+        
+        
+    }
+
+    public function lihatperusahaan()
+    {   
+        cekloginadminpelatihan();
+        $variabel['csrf'] = csrf();
+        $this->load->model("m_admin/m_pelatihan_perusahaan");
+        $this->load->model("m_admin/m_pelatihan_tahunan");
+        $this->load->model("m_admin/m_pelatihan_produk");
+        $id_akun = $this->input->get("idk");
+        $id_perusahaan=$this->input->get("id");
+        $exec = $this->m_pelatihan_perusahaan->lihatdataakunsatu($id_akun,$id_perusahaan);
+        $variabel['data'] = $exec->row_array();
+        $variabel['produk'] = $this->m_pelatihan_perusahaan->lihatproduk($id_perusahaan);
+        $variabel['id_akun'] =$id_akun;
+        $this->layout->renderadmin('v_admin/perusahaan/v_perusahaanlihat',$variabel,'v_admin/perusahaan/v_perusahaan_js');
+      
+    }
+
+    public function produk()
+    {   
+        cekloginadminpelatihan();
+        $variabel['csrf'] = csrf();
+        $this->load->model("m_admin/m_pelatihan_produk");
+        $this->load->model("m_admin/m_pelatihan_perusahaan");
+        $id_akun = $this->input->get("idk");
+        $id_perusahaan=$this->input->get("id");
+        $perusahaan = $this->m_pelatihan_perusahaan->lihatdataakunsatu($id_akun,$id_perusahaan);
+        if ($perusahaan->num_rows()>0){
+          $exec = $this->m_pelatihan_produk->lihatdataakun($id_perusahaan);
+          $variabel['data'] = $exec;
+          $variabel['perusahaan'] = $perusahaan->row_array();
+          $this->layout->renderadmin('v_admin/perusahaan/v_produk',$variabel,'v_admin/perusahaan/v_produk_js');
+
+        } else redirect(base_url("simanis/admin/seleksipendaftaran"));
+         
+    } 
+
+    public function lihatproduk()
+    {   
+        cekloginadminpelatihan();
+        $variabel['csrf'] = csrf();
+        $this->load->model("m_admin/m_pelatihan_perusahaan");
+        $this->load->model("m_admin/m_pelatihan_produk");
+        $id_produk=$this->input->get("id");
+        $exec = $this->m_pelatihan_produk->lihatdatasatu($id_produk);
+        $variabel['data'] = $exec->row_array();
+        $variabel['pemasaran'] = $this->m_pelatihan_produk->lihatpemasaran($id_produk);
+        $id_akun = $this->input->get("idk");
+        $variabel['id_akun'] =$id_akun;
+        $this->layout->renderadmin('v_admin/perusahaan/v_produklihat',$variabel,'v_admin/perusahaan/v_produk_js');
+      
+    }
+
+
+    public function tahunan()
+    {   
+        cekloginadminpelatihan();
+        $variabel['csrf'] = csrf();
+        $this->load->model("m_admin/m_pelatihan_tahunan");
+        $this->load->model("m_admin/m_pelatihan_perusahaan");
+        $id_akun = $this->input->get("idk");
+        $id_perusahaan=$this->input->get("id");
+        $perusahaan = $this->m_pelatihan_perusahaan->lihatdataakunsatu($id_akun,$id_perusahaan);
+        if ($perusahaan->num_rows()>0){
+          $exec = $this->m_pelatihan_tahunan->lihatdataakun($id_perusahaan);
+          $variabel['data'] = $exec;
+          $variabel['perusahaan'] = $perusahaan->row_array();
+          $this->layout->renderadmin('v_admin/perusahaan/v_tahunan',$variabel,'v_admin/perusahaan/V_tahunan_js');
+
+        }
+         
+    }
+
+
+
+    public function lihattahunan()
+    {   
+        cekloginadminpelatihan();
+        $variabel['csrf'] = csrf();
+        $this->load->model("m_admin/m_pelatihan_perusahaan");
+        $this->load->model("m_admin/m_pelatihan_tahunan");
+        $id_akun = $this->session->userdata("pelatihan_idakun");
+        $id_tahunan=$this->input->get("id");
+        $exec = $this->m_pelatihan_tahunan->lihatdatasatu($id_tahunan);
+        $variabel['data'] = $exec->row_array();
+        $id_akun = $this->input->get("idk");
+        $variabel['id_akun'] =$id_akun;
+        $this->layout->renderadmin('v_admin/perusahaan/v_tahunanlihat',$variabel,'v_admin/perusahaan/v_tahunan_js');
+      
+    }
     public function seleksipendaftaran()
     {   
         cekloginadminpelatihan();
@@ -219,6 +325,9 @@ class Admin extends CI_Controller {
         $this->load->model("m_admin/m_admin_akun");
         $this->load->model("m_admin/m_admin_admin");
         $this->load->model("m_admin/m_admin_berkas");
+        $this->load->model("m_admin/m_pelatihan_perusahaan");
+        $this->load->model("m_admin/m_pelatihan_tahunan");
+        $this->load->model("m_admin/m_pelatihan_produk");
         $username = $this->session->userdata("pelatihan_admin_username");
         $pelatihanaktif = $this->session->userdata("pelatihan_admin_pelatihanaktif");
         if ($this->input->post()) {
@@ -243,6 +352,7 @@ class Admin extends CI_Controller {
                 $variabel['menungguhasil'] = $this->m_admin_pelatihandaftar->menungguhasil($pelatihanaktif);
                 $variabel['lulusseleksi'] = $this->m_admin_pelatihandaftar->lulusseleksi($pelatihanaktif);
                 $variabel['tidaklulus'] = $this->m_admin_pelatihandaftar->tidaklulus($pelatihanaktif);
+               
                 $this->layout->renderadmin('v_admin/seleksipendaftaran/v_seleksipendaftaran',$variabel,'v_admin/seleksipendaftaran/v_seleksipendaftaran_js');
             } else {
                 $this->layout->renderadmin('v_admin/seleksipendaftaran/v_seleksipendaftaranno',$variabel,'v_admin/seleksipendaftaran/v_seleksipendaftaran_js');

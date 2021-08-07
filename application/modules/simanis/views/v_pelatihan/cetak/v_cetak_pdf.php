@@ -47,7 +47,7 @@
     <table border="0px" style="">
         <tr><td width="130px">Nomor Pendaftaran</td><td width="10px">:</td><td  width="360px"><strong>'.$data['nodaf'].'</strong></td> </tr>
     </table>
-    </div>';
+    ';
     $pdf->writeHTML($asd, false, true, false, false, '');
     $pdf->SetFont('helvetica', '', 10);
    if ($data['foto']!="") {
@@ -59,7 +59,7 @@
     <h4><u>Data Diri</u></h4>
     <br/>
     <table border="0px" style="">
-        <tr><td td width="130px">Nama Lengkap</td><td width="10px">:</td><td width="360px">'.$data['namalengkap'].'</td></tr>
+        <tr><td  width="130px">Nama Lengkap</td><td width="10px">:</td><td width="230px">'.$data['namalengkap'].'</td></tr>
         <tr><td>NIK</td><td>:</td><td>'.$data['nik'].'</td></tr>
         <tr><td>Tempat / Tanggal Lahir</td><td>:</td><td>'.$data['tempatlahir'].' / '.tanggal($data['tanggallahir']).'</td></tr>
         <tr><td>Jenis Kelamin</td><td>:</td><td>'.$data['jk'].'</td></tr>
@@ -111,8 +111,44 @@
         <tr><td>Kota</td><td>:</td><td>'.$data['ukabkota'].'</td></tr>
     </table>
     </div>';
+//     $asd = '
+//     <h4><u>Data Usaha Industri</u></h4>
+//     <br/>
+//    ';
+//     $pdf->writeHTML($asd, false, true, false, false, '');
+//     $pdf->ln(0.5);
+//     $asd = '
+//     <table border="1px" style="" width="100%" cellpadding="2px">
+//       <tr>
+//             <td  width="15px" align="center"><b>#</b></td>
+//             <td width="150px" align="center"><b>Nama Usaha Industri</b></td>
+//             <td width="145px" align="center"><b>Kab/Kota</b></td>
+//             <td  width="30px" align="center"><b>Tipe</b></td>
+//             <td  width="200px" align="center"><b>KBLI</b></td>
+//         </tr>
+//   ';
+       
+//     $i=0;
+//     foreach($usaha->result_array() as $row){
+//         $asd .= '
+//             <tr>
+//                 <td align="center">'.++$i.'</td>
+//                 <td>'.$row['perusahaan'].'</td>
+//                 <td>'.$row['kota'].'</td>
+//                 <td>'.$row['badan'].'</td>
+//                 <td>'.$row['kbli'].'</td>
+//             </tr>
+//         ';
+
+//     }
+//     $asd .= ' 
+
+//     </table>
+//     </div>
+//     ';
     $pdf->writeHTML($asd, false, true, false, false, '');
     $pdf->ln(0.5);
+
 
     $asd = '
     <h4><u>Pelatihan </u></h4>
